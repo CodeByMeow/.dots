@@ -151,5 +151,5 @@ Print
   flameshot gui
 
 # Color pick
-super + shift + p
+ctrl + shift + p
   gpick -so | xargs echo -n | xclip -selection clipboard

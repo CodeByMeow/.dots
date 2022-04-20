@@ -30,7 +30,6 @@ Some packages for config require by plugins:
 - `nodejs` `npm`
 - `pip install ueberzug` `python3`
 - `sudo chmod +s (which light)`
-- `stow`  . `stow neovim`  _make symlink to config_
 
 <details>
     <summary>
@@ -40,6 +39,10 @@ Some packages for config require by plugins:
     Run checkheath in neovim command to make sure config working.
 </details>
 
+### Load myconfig
+You just run this command:  
+
+`curl https://raw.githubusercontent.com/katinbox/dotfiles/main/scripts/config-init.sh | bash`  
 
 ### Keyboard Keychrone K2 swap Fn 
 [here](https://mikeshade.com/posts/keychron-linux-function-keys)  
