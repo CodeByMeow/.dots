@@ -20,8 +20,9 @@ _Fishell:_ `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/
 _Fish theme:_ `omf instal bobthefish`  
 _Kitty:_ `kitty +kitten theme` . And select ___gruvbox dark___
 
+_Light:_ `sudo chmod +s (which light)`
 ###  Neovim  
-Some packages for config require by plugins: 
+Some packages require by plugins: 
 
 - _Packages_ _manager:_ ___Packer___  
 `git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -29,7 +30,6 @@ Some packages for config require by plugins:
  
 - `nodejs` `npm`
 - `pip install ueberzug` `python3`
-- `sudo chmod +s (which light)`
 
 <details>
     <summary>
