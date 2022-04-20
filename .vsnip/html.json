@@ -1,0 +1,279 @@
+{
+  "Get image random from Unsplash": {
+    "prefix": "random-image",
+    "body": ["https://source.unsplash.com/random"],
+    "description": "Get image random from Unsplash"
+  },
+  "UI Component for menu": {
+    "prefix": "html-menu",
+    "body": [
+      "<ul class=\"${1:menu}\">",
+      "  <li class=\"${1:menu}-item\">",
+      "    <a href=\"${2:#}\" class=\"${1:menu}-link\">${0}</a>",
+      "  </li>",
+      "</ul>",
+      ""
+    ],
+    "description": "UI Component for menu"
+  },
+  "UI Component for accordion": {
+    "prefix": "html-accordion",
+    "body": [
+      "<div class=\"${0:accordion}\">",
+      "  <div class=\"${0:accordion}-header\">Your header</div>",
+      "  <div class=\"${0:accordion}-content\">Your content</div>",
+      "</div>",
+      ""
+    ],
+    "description": "UI Component for accordion"
+  },
+  "UI Component for tab": {
+    "prefix": "html-tab",
+    "body": [
+      "<div class=\"${0:tab}\">",
+      "  <div class=\"${0:tab}-header\">",
+      "    <div class=\"${0:tab}-item\">title</div>",
+      "    <div class=\"${0:tab}-item\">title</div>",
+      "    <div class=\"${0:tab}-item\">title</div>",
+      "  </div>",
+      "  <div class=\"${0:tab}-content\">content</div>",
+      "</div>",
+      ""
+    ],
+    "description": "UI Component for tab"
+  },
+  "UI Component for dropdown": {
+    "prefix": "html-dropdown",
+    "body": [
+      "<div class=\"${0:dropdown}\">",
+      "  <div class=\"${0:dropdown}-select\">",
+      "    <span class=\"${0:dropdown}-value\">Value</span>",
+      "  </div>",
+      "  <div class=\"${0:dropdown}-list\">",
+      "    <div class=\"${0:dropdown}-item\">title</div>",
+      "    <div class=\"${0:dropdown}-item\">title</div>",
+      "    <div class=\"${0:dropdown}-item\">title</div>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "UI Component for dropdown"
+  },
+  "UI Component for modal": {
+    "prefix": "html-modal",
+    "body": [
+      "<div class=\"${0:modal}\">",
+      "  <div class=\"${0:modal}-container\">",
+      "    <div class=\"${0:modal}-close\">X</div>",
+      "    <div class=\"${0:modal}-content\">your content</div>",
+      "  </div>",
+      "</div>",
+      ""
+    ],
+    "description": "UI Component for modal"
+  },
+  "UI Component for link wrapped image": {
+    "prefix": "html-linkwrap-img",
+    "body": [
+      "<a href=\"#\" class=\"${0:yourclass}\">",
+      "  <img src=\"${1}\" alt=\"\" class=\"${0:yourclass}-image\" />",
+      "</a>"
+    ],
+    "description": "UI Component for link wrapped image"
+  },
+  "Import Ionicons": {
+    "prefix": "html-ionicons",
+    "body": [
+      "<script type=\"module\" src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js\"></script>",
+      "<script nomodule src=\"https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js\"></script>"
+    ],
+    "description": "Import Ionicons"
+  },
+  "Import slick slider": {
+    "prefix": "html-slick-slider",
+    "body": [
+      "<script",
+      "  type=\"text/javascript\"",
+      "  src=\"https://code.jquery.com/jquery-1.11.0.min.js\"",
+      "></script>",
+      "<script",
+      "  type=\"text/javascript\"",
+      "  src=\"https://code.jquery.com/jquery-migrate-1.2.1.min.js\"",
+      "></script>",
+      "<script",
+      "  type=\"text/javascript\"",
+      "  src=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js\"",
+      "></script>"
+    ],
+    "description": "Import slick slider"
+  },
+  "Import Fontawesome": {
+    "prefix": "html-fontawesome",
+    "body": [
+      "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\" integrity=\"sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />"
+    ],
+    "description": "Import Fontawesome"
+  },
+  "Import favicon": {
+    "prefix": "html-favicon",
+    "body": [
+      "<link rel=\"icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"
+    ],
+    "description": "Import favicon"
+  },
+  "Slick CSS import": {
+    "prefix": "html-slick-css",
+    "body": [
+      "<link",
+      "    rel=\"stylesheet\"",
+      "    type=\"text/css\"",
+      "    href=\"https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css\"",
+      "  />"
+    ],
+    "description": "Slick CSS import"
+  },
+  "Box item layout": {
+    "prefix": "html-box-item",
+    "body": [
+      "<div class=\"item\">",
+      "  <div class=\"item-image\">",
+      "    <img src=\"\" alt=\"\" class=\"item-img\">",
+      "  </div>",
+      "  <div class=\"item-content\">",
+      "    <h3 class=\"item-title\">Title</h3>",
+      "    <p class=\"item-text\">Text</p>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Box item layout"
+  },
+  "Subscribe form": {
+    "prefix": "html-subscribe-form",
+    "body": [
+      "<div class=\"subscribe\">",
+      "  <div class=\"subscribe-field\">",
+      "    <img src=\"\" alt=\"\" class=\"subscribe-icon\">",
+      "    <input type=\"email\" class=\"subscribe-input\" placeholder=\"Enter your email here\">",
+      "  </div>",
+      "  <button class=\"subscribe-button\">Subscribe</button>",
+      "</div>"
+    ],
+    "description": "Subscribe form"
+  },
+  "Footer column": {
+    "prefix": "html-footer-column",
+    "body": [
+      "<div class=\"footer-column\">",
+      "  <h3 class=\"footer-heading\">Products</h3>",
+      "  <ul class=\"footer-links\">",
+      "    <li>",
+      "      <a href=\"#!\" class=\"footer-link\">Packages</a>",
+      "    </li>",
+      "    <li>",
+      "      <a href=\"#!\" class=\"footer-link\">Packages</a>",
+      "    </li>",
+      "    <li>",
+      "      <a href=\"#!\" class=\"footer-link\">Packages</a>",
+      "    </li>",
+      "  </ul>",
+      "</div>"
+    ],
+    "description": "Footer column"
+  },
+  "List item": {
+    "prefix": "html-list-item",
+    "body": [
+      "<div class=\"item\">",
+      "  <div class=\"item-icon\">icon</div>",
+      "  <div class=\"item-title\">title</div>",
+      "</div>"
+    ],
+    "description": "List item"
+  },
+  "Search form icon": {
+    "prefix": "html-search",
+    "body": [
+      "<div class=\"search\">",
+      "  <div class=\"search-icon\"></div>",
+      "  <div class=\"search-field\">",
+      "    <input type=\"text\" class=\"search-input\" placeholder=\"Search\">",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Search form icon"
+  },
+  "Search form button": {
+    "prefix": "html-search-button",
+    "body": [
+      "<div class=\"search\">",
+      "  <div class=\"search-field\">",
+      "    <div class=\"search-icon\"></div>",
+      "    <input type=\"text\" class=\"search-input\" placeholder=\"Search\">",
+      "  </div>",
+      "  <button class=\"search-button\">Search</button>",
+      "</div>"
+    ],
+    "description": "Search form button"
+  },
+  "Navigation with logo and menu": {
+    "prefix": "html-nav-logo-menu",
+    "body": [
+      "<div class=\"\">",
+      "  <a href=\"#\" class=\"logo\">",
+      "    <img src=\"logo\" alt=\"\" class=\"logo-image\" />",
+      "  </a>",
+      "  <ul class=\"menu\">",
+      "    <li class=\"menu-item\">",
+      "      <a href=\"#\" class=\"menu-link\"></a>",
+      "    </li>",
+      "  </ul>",
+      "  <div class=\"\">",
+      "    <a href=\"#!\">Contact Us</a>",
+      "  </div>",
+      "</div>"
+    ],
+    "description": "Navigation with logo and menu"
+  },
+  "Simple layout": {
+    "prefix": "html-boxed-content",
+    "body": [
+      "<div class=\"\">",
+      "  <div class=\"\">",
+      "    <img src=\"\" alt=\"\">",
+      "  </div>",
+      "  <div class=\"\">Heading</div>",
+      "  <p class=\"\">Description</p>",
+      "</div>"
+    ],
+    "description": "Simple layout"
+  },
+  "Layout image with label": {
+    "prefix": "html-image-w-label",
+    "body": [
+      "<div class=\"\">",
+      "  <img src=\"\" alt=\"\">",
+      "  <span></span>",
+      "</div>"
+    ],
+    "description": "Layout image with label"
+  },
+  "Layout input with icon": {
+    "prefix": "html-input-icon",
+    "body": [
+      "<div class=\"field\">",
+      "  <input type=\"text\" placeholder=\"\" class=\"field-input\" />",
+      "  <div class=\"field-icon\"></div>",
+      "</div>"
+    ],
+    "description": "Layout input with icon"
+  },
+  "Custom checkbox": {
+    "prefix": "html-custom-checkbox",
+    "body": [
+      "<div class=\"\">",
+      "  <input type=\"$1\" style=\"display: none !important\" name=\"\" id=\"\" />",
+      "  <div class=\"\"></div>",
+      "</div>"
+    ],
+    "description": "Custom checkbox"
+  }
+}
