@@ -4,7 +4,7 @@
   <img width="300" height="300" src="./logo/catinbox.jpg">
 </p>
 
-### Update distro after install from iso (manjaro)  
+### Update system after install from iso (manjaro)  
   `sudo pacman-mirrors --fasttrack`  
   `sudo pacman -Syyu`  
   `pacman -S --needed git base-devel`
@@ -42,7 +42,7 @@ Some packages require by plugins:
 ### Load myconfig
 You just run this command:  
 
-`curl https://raw.githubusercontent.com/katinbox/dotfiles/main/scripts/config-init.sh | bash`  
+`stow home`  
 
 ### Keyboard Keychrone K2 swap Fn 
 [here](https://mikeshade.com/posts/keychron-linux-function-keys)  
