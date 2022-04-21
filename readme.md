@@ -39,11 +39,6 @@ Some packages require by plugins:
     Run checkheath in neovim command to make sure config working.
 </details>
 
-### Load myconfig
-You just run this command:  
-
-`stow home`  
-
 ### Keyboard Keychrone K2 swap Fn 
 [here](https://mikeshade.com/posts/keychron-linux-function-keys)  
 
