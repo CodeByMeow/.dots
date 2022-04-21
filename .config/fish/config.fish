@@ -9,7 +9,7 @@ alias g='git'
 alias vim='nvim'
 alias tm='tmux'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias setuntrack='config --local status.showUnstrackedFiles no'
+alias setuntrack='config config --local status.showUnstrackedFiles no'
 
 set -g theme_display_git_ahead_verbose yes
 set -g theme_display_git_dirty_verbose yes
