@@ -1,3 +1,5 @@
+set fish_greeting
+starship init fish | source
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
@@ -6,8 +8,6 @@ alias lt='ls --tree'
 alias g='git'
 alias vim='nvim'
 alias tm='tmux'
-# abbr -a -g config git --git-dir=$HOME/.dotfiles --work-tree=$HOME
-alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 set -g theme_display_git_ahead_verbose yes
 set -g theme_display_git_dirty_verbose yes
