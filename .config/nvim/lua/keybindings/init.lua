@@ -3,8 +3,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { silent = true, noremap = true }
 map('n', '<C-left>', '<C-w>h', opts)
 map('n', '<C-right>', '<C-w>l', opts)
-map('n', '<C-up>', '<C-w>k', opts)
-map('n', '<C-down>', '<C-w>j', opts)
+map('n', '<C-k>', '<C-w>k', opts)
+map('n', '<C-j>', '<C-w>j', opts)
 
 map('i', 'jk', '<ESC>', opts)
 map('i', 'kj', '<ESC>', opts)
