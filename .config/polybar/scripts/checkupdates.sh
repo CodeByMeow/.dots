@@ -10,4 +10,4 @@ else
   count=$(wc -l "/tmp/bspwm-eos-polybar-updates" | awk '{print $1}')
 fi
 
-echo "  $count"
+echo "$count"
