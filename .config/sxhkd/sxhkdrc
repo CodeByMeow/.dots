@@ -126,8 +126,7 @@ super + {Left,Down,Up,Right}
 
 # volume control
 XF86AudioLowerVolume
-	amixer set Master 5%-
-XF86AudioRaiseVolume
+	amixer set Master 5%- XF86AudioRaiseVolume
 	amixer set Master 5%+
 XF86AudioMute
 	amixer set Master toggle
@@ -151,5 +150,5 @@ Print
   flameshot gui
 
 # Color pick
-ctrl + shift + p
+alt + shift + p
   gpick -so | xargs echo -n | xclip -selection clipboard
