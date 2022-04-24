@@ -125,18 +125,25 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # volume control
-XF86AudioLowerVolume
-	amixer set Master 5%- XF86AudioRaiseVolume
-	amixer set Master 5%+
 XF86AudioMute
 	amixer set Master toggle
 
+shift + Up
+	amixer set Master 5%+
+
+shift + Down
+	amixer set Master 5%- XF86AudioRaiseVolume
+  
 # brightness control
 XF86MonBrightnessDown
 	light -U 10
 XF86MonBrightnessUp
 	light -A 10
 
+shift + Left
+	light -U 10
+shift + Right
+	light -A 10
 # lock screen
 super + x
 	betterlockscreen -l blur
@@ -145,9 +152,15 @@ super + x
 super + shift + r
     pkill -usr1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
-# PrintScreen
+# screenshot
 Print
-  flameshot gui
+    flameshot full -p ~/Pictures/Screenshots 
+
+shift + Print
+    flameshot full -c
+
+super + Print
+    flameshot gui
 
 # Color pick
 alt + shift + p
