@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
   use { 'hrsh7th/vim-vsnip' }
   use { 'onsails/lspkind-nvim' }
   use { 'tami5/lspsaga.nvim', config = "require('plugins.config.lspsaga')" }
-  use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' } }
+  use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.config.signature')" }
 
   -- Other
   use { 'antoyo/vim-licenses' }
