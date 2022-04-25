@@ -57,14 +57,14 @@ return require('packer').startup(function(use)
   use { 'windwp/nvim-autopairs', config = "require('plugins.config.autopairs')" }
 
   -- LSP
-use {'williamboman/nvim-lsp-installer'}
+  use { 'williamboman/nvim-lsp-installer' }
   use { 'lukas-reineke/lsp-format.nvim', config = "require('plugins.config.lspformat')" }
-  use {'neovim/nvim-lspconfig', config = "require('plugins.config.lsp')"}
-  use {'hrsh7th/cmp-nvim-lsp'}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/nvim-cmp'}
-  use {'hrsh7th/cmp-vsnip'}
-  use {'hrsh7th/vim-vsnip'}
+  use { 'neovim/nvim-lspconfig', config = "require('plugins.config.lsp')" }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'hrsh7th/cmp-buffer' }
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'hrsh7th/cmp-vsnip' }
+  use { 'hrsh7th/vim-vsnip' }
   use { 'onsails/lspkind-nvim' }
   use { 'tami5/lspsaga.nvim', config = "require('plugins.config.lspsaga')" }
   use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' } }
