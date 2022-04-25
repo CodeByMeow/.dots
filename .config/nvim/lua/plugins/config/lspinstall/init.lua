@@ -16,9 +16,9 @@ lsp_installer.settings({
         }
     }
 })
--- setup coq.lua
+--[[ -- setup coq.lua
 require("packer").loader("coq_nvim coq.artifacts")
 vim.g.coq_settings = {auto_start = true, clients = {tabnine = {enabled = true}}}
 
 -- run coq.lua
-vim.cmd("COQnow -s")
+vim.cmd("COQnow -s") ]]
