@@ -70,4 +70,10 @@ require 'lsp-format'.setup {
   }
 }
 
-vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.formatting_seq_sync()")
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function()
+    vim.lsp.buf.formatting_seq_sync()
+  end
+}
+)

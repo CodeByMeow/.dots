@@ -36,8 +36,28 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 
-vim.cmd[[
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-]]
+local set_nornu = {
+  pattern = "*",
+  callback = function()
+    vim.wo.rnu = false
+  end
+}
+
+local set_rnu = {
+  pattern = "*",
+  callback = function()
+    vim.wo.rnu = true
+  end
+}
+
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd("InsertEnter", set_nornu)
+autocmd("BufLeave", set_nornu)
+autocmd("FocusLost", set_nornu)
+autocmd("WinLeave", set_nornu)
+
+autocmd("BufEnter", set_rnu)
+autocmd("FocusGained", set_rnu)
+autocmd("InsertLeave", set_rnu)
+autocmd("WinEnter", set_rnu)

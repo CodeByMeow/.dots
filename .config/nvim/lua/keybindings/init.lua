@@ -1,5 +1,5 @@
 vim.g.mapleader = ' '
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-l>', '<C-w>l', opts)
