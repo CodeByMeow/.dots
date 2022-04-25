@@ -1,13 +1,18 @@
 vim.g.mapleader = ' '
 local map = vim.api.nvim_set_keymap
 local opts = { silent = true, noremap = true }
-map('n', '<C-left>', '<C-w>h', opts)
-map('n', '<C-right>', '<C-w>l', opts)
+map('n', '<C-h>', '<C-w>h', opts)
+map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-j>', '<C-w>j', opts)
 
 map('i', 'jk', '<ESC>', opts)
 map('i', 'kj', '<ESC>', opts)
+
+map('i', '<C-h>', '<left>', opts)
+map('i', '<C-l>', '<right>', opts)
+map('i', '<C-k>', '<up>', opts)
+map('i', '<C-j>', '<down>', opts)
 
 map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
