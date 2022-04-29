@@ -2,7 +2,7 @@
 	helper = store
 [user]
 	email = tranquanki28@gmail.com
-	name = Thien Khanh
+	name = Katinbox
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
