@@ -16,7 +16,7 @@
 `lolcat` `fd` `feh` `betterclockscreen` `dolphin` `lxappearance` `breeze`
 
 ### GUI terminal and customize with Gruvbox colorscheme
-_Fishell:_ `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`  
+_Fish shell:_ `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`  
 _Fish theme:_ `starship`  
 _Kitty:_ `kitty +kitten theme` . And select ___gruvbox dark___
 
