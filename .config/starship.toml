@@ -1,5 +1,5 @@
 format = """
-[  $username ]\
+[異  $username ]\
 (bold bg:black fg:white)\
 []\
 (bold bg:purple fg:black)\
@@ -67,7 +67,7 @@ $fill\
 [ $battery]\
 (bold bg:yellow fg:black)\
 [█](bold bg:none fg:yellow)
-[バカ](bold bg:none fg:white)\
+[ツ](bold bg:none fg:white)\
 $singularity\
 $kubernetes\
 $directory\
