@@ -93,7 +93,8 @@ return require('packer').startup({ function(use)
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons', config = "require('plugins.config.icon')" }
 
-end, config = {
+end,
+config = {
   display = {
     open_fn = function()
       return require('packer.util').float({ border = 'single' })
