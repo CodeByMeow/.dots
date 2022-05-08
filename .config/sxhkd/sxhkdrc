@@ -165,3 +165,9 @@ super + Print
 # Color pick
 alt + shift + p
   gpick -so | xargs echo -n | xclip -selection clipboard
+
+super + d
+  firefox
+
+super + v
+  dolphin
