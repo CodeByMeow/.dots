@@ -1,10 +1,10 @@
 set fish_greeting
 starship init fish | source
-alias ls='lsd'
+alias ls='logo-ls'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias lt='ls --tree'
+alias lr='ls -R'
 alias g='git'
 alias vim='nvim'
 alias tm='tmux'
