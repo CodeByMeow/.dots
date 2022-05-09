@@ -13,7 +13,7 @@
 ### Software
 `kitty` `bspwm` `sxhdk` `picom` `polybar` `fish` `cava` `rofi` `neofetch` `neovim` `ranger` `dunst` `uclutter` `peco`
 `xcorg-xsetroot` `acpilight` `light` `bluez-ultils` `blueman` `bluetooth-autoconnect` `ripgrep` `lazygit` `flameshot`
-`lolcat` `fd` `feh` `betterclockscreen` `dolphin` `lxappearance` `breeze`
+`lolcat` `fd` `feh` `betterclockscreen` `dolphin` `lxappearance` `breeze` `logo-ls`
 
 ### GUI terminal and customize with Gruvbox colorscheme
 _Fish shell:_ `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`  
