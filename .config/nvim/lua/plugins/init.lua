@@ -92,7 +92,12 @@ return require('packer').startup({ function(use)
   }
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons', config = "require('plugins.config.icon')" }
-
+  use({
+    "aserowy/tmux.nvim",
+    config = function()
+      require("tmux").setup()
+    end
+  })
 end,
 config = {
   display = {
