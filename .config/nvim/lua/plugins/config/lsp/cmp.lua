@@ -1,10 +1,11 @@
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
 local source_mapping = {
   buffer = " ﬘",
-  nvim_lsp = "  ",
+  nvim_lsp = "  ",
   nvim_lua = "  ",
   cmp_tabnine = " ",
   path = "  ",
+  treesitter = " 滑"
 }
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -60,20 +61,26 @@ cmp.setup({
     end, { "i", "s" })
   },
   sources = {
-    { name = 'nvim_lsp' }, -- For vsnip user.
-    { name = 'vsnip' }, -- For luasnip user.
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
     -- { name = 'luasnip' },
     -- For ultisnips user.
     -- { name = 'ultisnips' },
     { name = 'buffer' },
     { name = 'cmp_tabnine' },
+    { name = 'path' },
+    { name = 'treesitter' }
   },
   -- formatting = { format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }) }
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = lspkind.presets.default[vim_item.kind]
+      vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind);
       vim_item.menu = source_mapping[entry.source.name]
       return vim_item
     end
   },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  }
 })
