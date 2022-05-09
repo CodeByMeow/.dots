@@ -1,3 +1,4 @@
+add_newline = false
 format = """
 [望  $username ]\
 (bold bg:black fg:white)\
@@ -62,10 +63,6 @@ $fill\
 (bold bg:none fg:white)\
 [ $time ]\
 (bold bg:white fg:black)\
-[]\
-(bold bg:white fg:yellow)\
-[ $battery]\
-(bold bg:yellow fg:black)\
 [█](bold bg:none fg:yellow)
 [  ](bold bg:none fg:white)\
 $singularity\
@@ -106,38 +103,6 @@ deleted = "x"
 disabled = false
 format = "[$time]($style)"
 style = "bg:white fg:black"
-
-[battery]
-full_symbol = ""
-charging_symbol = ""
-unknown_symbol = ""
-discharging_symbol = ""
-format="[$symbol $percentage]($style) "
-
-[[battery.display]]
-threshold = 5
-discharging_symbol = ""
-style = "bg:yellow fg:black"
-
-[[battery.display]]
-threshold = 10
-discharging_symbol = "ﮊ"
-style = "bg:yellow fg:black"
-
-[[battery.display]]
-threshold = 30
-discharging_symbol = ""
-style = "bg:yellow fg:black"
-
-[[battery.display]]
-threshold = 50
-discharging_symbol = ""
-style = "bg:yellow fg:black"
-
-[[battery.display]]
-threshold = 100
-discharging_symbol = ""
-style = "bg:yellow fg:black"
 
 [directory]
 read_only = " "
