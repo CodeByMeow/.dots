@@ -53,9 +53,5 @@ function k
   bluetoothctl connect DC:2C:26:0F:A5:D2
 end
 
-function z
-  tmux new-session -s $argv
-end
-
 export VISUAL=nvim;
 export EDITOR=nvim;

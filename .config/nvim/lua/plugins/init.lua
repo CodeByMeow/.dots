@@ -44,7 +44,10 @@ return require('packer').startup({ function(use)
     },
     config = "require('plugins.config.neo-tree')"
   }
-  use { "ggandor/lightspeed.nvim", keys = { "s", "S", "t", "T", "f", "F" } }
+  use { 'ggandor/leap.nvim', config = function()
+    require('leap').set_default_keymaps()
+  end
+  }
   use {
     "max397574/better-escape.nvim",
     config = function()
@@ -55,7 +58,6 @@ return require('packer').startup({ function(use)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.config.telescope')" }
   use { 'nvim-telescope/telescope-media-files.nvim' }
   use { 'simrat39/symbols-outline.nvim', config = "require('plugins.config.symbols')" }
-
   use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
   use { 'windwp/nvim-autopairs', config = "require('plugins.config.autopairs')" }
 
