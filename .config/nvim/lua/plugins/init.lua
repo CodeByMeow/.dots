@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -7,9 +8,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.api.nvim_command('packadd packer.nvim')
 end
 return require('packer').startup({ function(use)
-  -- Packer can manage itself
   use { 'wbthomason/packer.nvim' }
-  -- GUI
   use { "ellisonleao/gruvbox.nvim", config = "require('plugins.config.theme')" }
   use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('plugins.config.treesitter')" }
   use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', event = "BufWinEnter", config = "require('plugins.config.bufferline')" }
@@ -35,7 +34,6 @@ return require('packer').startup({ function(use)
   use { "akinsho/toggleterm.nvim", config = "require('plugins.config.toggleterm')" }
   use { 'yamatsum/nvim-cursorline', config = "require('plugins.config.cursorline')" }
 
-  -- File explore
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -54,17 +52,13 @@ return require('packer').startup({ function(use)
     end,
   }
 
-  -- Telescopes
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.config.telescope')" }
   use { 'nvim-telescope/telescope-media-files.nvim' }
   use { 'simrat39/symbols-outline.nvim', config = "require('plugins.config.symbols')" }
 
-
-  -- Auto Complete
   use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
   use { 'windwp/nvim-autopairs', config = "require('plugins.config.autopairs')" }
 
-  -- LSP
   use { 'williamboman/nvim-lsp-installer' }
   use { 'lukas-reineke/lsp-format.nvim', config = "require('plugins.config.lspformat')" }
   use { 'neovim/nvim-lspconfig', config = "require('plugins.config.lsp')" }
@@ -77,8 +71,6 @@ return require('packer').startup({ function(use)
   use { 'onsails/lspkind-nvim' }
   use { 'tami5/lspsaga.nvim', config = "require('plugins.config.lspsaga')" }
   use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.config.signature')" }
-
-  -- Other
   use { 'antoyo/vim-licenses' }
   use { 'AndrewRadev/tagalong.vim' }
   use { 'tpope/vim-surround',
@@ -92,12 +84,7 @@ return require('packer').startup({ function(use)
   }
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons', config = "require('plugins.config.icon')" }
-  use({
-    "aserowy/tmux.nvim",
-    config = function()
-      require("tmux").setup()
-    end
-  })
+  use { 'aserowy/tmux.nvim', config = "require('plugins.config.tmux')" }
 end,
 config = {
   display = {
