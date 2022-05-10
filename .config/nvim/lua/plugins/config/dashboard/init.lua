@@ -6,8 +6,8 @@ vim.g.dashboard_preview_file = "~/.config/nvim/lua/plugins/config/dashboard/neov
 vim.g.dashboard_preview_file_height = 12
 vim.g.dashboard_preview_file_width = 80
 vim.g.dashboard_custom_section = {
-  a = { description = { '  Find File          ' }, command = 'Telescope find_files' },
-  b = { description = { '  Recent Files       ' }, command = 'Telescope oldfiles' },
+  a = { description = { '  Recent Files' }, command = 'Telescope oldfiles' },
+  b = { description = { '  Find File' }, command = 'Telescope find_files' },
 }
 vim.cmd("let packages = len(globpath('~/.local/share/nvim/site/pack/packer/start', '*', 0, 1))")
 
