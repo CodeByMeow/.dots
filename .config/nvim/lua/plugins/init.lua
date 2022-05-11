@@ -67,9 +67,10 @@ return require('packer').startup({ function(use)
   use { 'hrsh7th/cmp-nvim-lsp' }
   use { 'hrsh7th/cmp-buffer' }
   use { 'hrsh7th/nvim-cmp' }
-  use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   use { 'hrsh7th/cmp-vsnip' }
   use { 'hrsh7th/vim-vsnip' }
+  use { 'tzachar/cmp-tabnine', run = './install.sh' }
+  use { 'lukas-reineke/cmp-rg' }
   use { 'onsails/lspkind-nvim' }
   use { 'tami5/lspsaga.nvim', config = "require('plugins.config.lspsaga')" }
   use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.config.signature')" }

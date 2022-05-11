@@ -5,7 +5,8 @@ local source_mapping = {
   nvim_lua = "  ",
   cmp_tabnine = " ",
   path = "  ",
-  treesitter = " 滑"
+  treesitter = " 滑",
+  rg = " 識"
 }
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -69,9 +70,9 @@ cmp.setup({
     { name = 'buffer' },
     { name = 'cmp_tabnine' },
     { name = 'path' },
-    { name = 'treesitter' }
+    { name = 'treesitter' },
+    { name = 'rg' },
   },
-  -- formatting = { format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }) }
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind);
