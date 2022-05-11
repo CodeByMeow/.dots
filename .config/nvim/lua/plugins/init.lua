@@ -44,8 +44,8 @@ return require('packer').startup({ function(use)
     },
     config = "require('plugins.config.neo-tree')"
   }
-  use { 'ggandor/leap.nvim', config = function() require('leap').set_default_keymaps() end }
   use { "max397574/better-escape.nvim", config = function() require("better_escape").setup() end }
+  use { 'ggandor/lightspeed.nvim' }
 
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.config.telescope')" }
   use { 'nvim-telescope/telescope-media-files.nvim' }
