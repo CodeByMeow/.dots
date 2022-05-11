@@ -4,7 +4,7 @@ local condition = require('galaxyline.condition')
 -- onedark
 local colors = {
   bg = '#282828',
-  bg_dim = '#32302f',
+  bg_dim = '#282828',
   bg_light = '#444b59',
   black = '#222222',
   white = '#abb2bf',
