@@ -27,9 +27,7 @@ return require('packer').startup({ function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('gitsigns').setup { current_line_blame = true }
-    end
+    config = function() require('gitsigns').setup { current_line_blame = true } end
   }
   use { "akinsho/toggleterm.nvim", config = "require('plugins.config.toggleterm')" }
   use { 'yamatsum/nvim-cursorline', config = "require('plugins.config.cursorline')" }
@@ -44,16 +42,8 @@ return require('packer').startup({ function(use)
     },
     config = "require('plugins.config.neo-tree')"
   }
-  use { 'ggandor/leap.nvim', config = function()
-    require('leap').set_default_keymaps()
-  end
-  }
-  use {
-    "max397574/better-escape.nvim",
-    config = function()
-      require("better_escape").setup()
-    end,
-  }
+  use { 'ggandor/leap.nvim', config = function() require('leap').set_default_keymaps() end }
+  use { "max397574/better-escape.nvim", config = function() require("better_escape").setup() end }
 
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.config.telescope')" }
   use { 'nvim-telescope/telescope-media-files.nvim' }
@@ -81,17 +71,13 @@ return require('packer').startup({ function(use)
     config = "require('plugins.config.surround')"
   }
   use { 'christoomey/vim-titlecase' }
-  use {
-    'nacro90/numb.nvim',
-    config = function() require('numb').setup() end
-  }
+  use { 'nacro90/numb.nvim', config = function() require('numb').setup() end }
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons', config = "require('plugins.config.icon')" }
   use { 'aserowy/tmux.nvim', config = "require('plugins.config.tmux')" }
   use { 'jghauser/mkdir.nvim' }
-  use { 'petertriho/nvim-scrollbar', config = function()
-    require("scrollbar").setup()
-  end }
+  use { 'petertriho/nvim-scrollbar', config = function() require("scrollbar").setup() end }
+  use { 'haringsrob/nvim_context_vt' }
 
 end,
 config = {
