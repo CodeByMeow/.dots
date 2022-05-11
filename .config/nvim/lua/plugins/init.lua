@@ -88,6 +88,11 @@ return require('packer').startup({ function(use)
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons', config = "require('plugins.config.icon')" }
   use { 'aserowy/tmux.nvim', config = "require('plugins.config.tmux')" }
+  use { 'jghauser/mkdir.nvim' }
+  use { 'petertriho/nvim-scrollbar', config = function()
+    require("scrollbar").setup()
+  end }
+
 end,
 config = {
   display = {
