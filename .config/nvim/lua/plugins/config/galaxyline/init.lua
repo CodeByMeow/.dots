@@ -10,10 +10,10 @@ local colors = {
   white = '#abb2bf',
   gray = '#868c96',
   orange = '#D65D0E',
-  green = '#98971a',
+  green = '#A9B665',
   yellow = '#d79921',
   blue = '#458588',
-  cyan = '#689d6a', -- tweaked to match custom color
+  cyan = '#689d6a',
   teal = '#56b6c2',
 }
 
@@ -31,12 +31,13 @@ local function mode_alias(m)
 
   return alias[m] or ''
 end
+
 local function mode_color(m)
   local mode_colors = {
-    normal =  colors.green,
-    insert =  colors.blue,
-    visual =  colors.cyan,
-    replace =  colors.orange,
+    normal = colors.green,
+    insert = colors.blue,
+    visual = colors.cyan,
+    replace = colors.orange,
   }
 
   local color = {
@@ -53,7 +54,6 @@ local function mode_color(m)
   return color[m] or colors.bg_light
 end
 
-
 -- disable for these file types
 gl.short_line_list = { 'startify', 'nerdtree', 'term', 'fugitive', 'neo-tree' }
 
@@ -64,9 +64,9 @@ gl.section.left[1] = {
     separator_highlight = function()
       local m = vim.fn.mode() or vim.fn.visualmode()
       local color = mode_color(m)
-      return {color, colors.bg_light}
+      return { color, colors.bg_light }
     end,
-    highlight = {colors.bg, mode_color()},
+    highlight = { colors.bg, mode_color() },
     provider = function()
       local m = vim.fn.mode() or vim.fn.visualmode()
       local mode = mode_alias(m)
@@ -82,9 +82,9 @@ gl.section.left[2] = {
   CWD = {
     separator = ' ',
     separator_highlight = function()
-      return {colors.bg_light, condition.buffer_not_empty() and colors.bg_dim or colors.bg}
+      return { colors.bg_light, condition.buffer_not_empty() and colors.bg_dim or colors.bg }
     end,
-    highlight = {colors.white, colors.bg_light},
+    highlight = { colors.white, colors.bg_light },
     provider = function()
       local dirname = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
       return ' ' .. dirname .. ' '
@@ -96,7 +96,7 @@ gl.section.left[3] = {
   FileIcon = {
     provider = 'FileIcon',
     condition = condition.buffer_not_empty,
-    highlight = {colors.gray, colors.bg_dim},
+    highlight = { colors.gray, colors.bg_dim },
   }
 }
 
@@ -104,8 +104,8 @@ gl.section.left[4] = {
   FileName = {
     provider = 'FileName',
     condition = condition.buffer_not_empty,
-    highlight = {colors.gray, colors.bg_dim},
-    separator_highlight = {colors.bg_dim, colors.bg},
+    highlight = { colors.gray, colors.bg_dim },
+    separator_highlight = { colors.bg_dim, colors.bg },
     separator = '',
   },
 }
@@ -115,7 +115,7 @@ gl.section.left[5] = {
     icon = '  ',
     provider = 'DiffAdd',
     condition = condition.hide_in_width,
-    highlight = {colors.white, colors.bg},
+    highlight = { colors.white, colors.bg },
   }
 }
 
@@ -124,7 +124,7 @@ gl.section.left[6] = {
     icon = '  ',
     provider = 'DiffModified',
     condition = condition.hide_in_width,
-    highlight = {colors.gray, colors.bg},
+    highlight = { colors.gray, colors.bg },
   }
 }
 
@@ -133,7 +133,7 @@ gl.section.left[7] = {
     icon = '  ',
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
-    highlight = {colors.gray, colors.bg},
+    highlight = { colors.gray, colors.bg },
   }
 }
 
@@ -141,7 +141,7 @@ gl.section.left[7] = {
 gl.section.left[8] = {
   CocFunction = {
     icon = 'λ ',
-    highlight = {colors.gray, colors.bg},
+    highlight = { colors.gray, colors.bg },
     provider = function()
       local has_func, func_name = pcall(vim.api.nvim_buf_get_var, 0, 'coc_current_function')
       if not has_func then return '' end
@@ -151,7 +151,7 @@ gl.section.left[8] = {
 }
 gl.section.right[1] = {
   FileType = {
-    highlight = {colors.gray, colors.bg},
+    highlight = { colors.gray, colors.bg },
     provider = function()
       local buf = require('galaxyline.provider_buffer')
       return string.lower(buf.get_buffer_filetype())
@@ -164,7 +164,7 @@ gl.section.right[2] = {
     icon = ' ',
     separator = '  ',
     condition = condition.check_git_workspace,
-    highlight = {colors.teal, colors.bg},
+    highlight = { colors.teal, colors.bg },
     provider = 'GitBranch',
   }
 }
@@ -173,8 +173,8 @@ gl.section.right[3] = {
   FileLocation = {
     icon = ' ',
     separator = ' ',
-    separator_highlight = {colors.bg_dim, colors.bg},
-    highlight = {colors.gray, colors.bg_dim},
+    separator_highlight = { colors.bg_dim, colors.bg },
+    highlight = { colors.gray, colors.bg_dim },
     provider = function()
       local current_line = vim.fn.line('.')
       local total_lines = vim.fn.line('$')
@@ -192,4 +192,3 @@ gl.section.right[3] = {
 }
 
 vim.api.nvim_command('hi GalaxyViModeReverse guibg=' .. colors.bg_dim)
-
