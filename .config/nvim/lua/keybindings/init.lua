@@ -31,3 +31,6 @@ map('n', '<ESC>', ':noh<cr>', opts)
 
 --Quick delete word on insert mode
 map("i", "<C-w>", "<C-O>diw", opts)
+
+map("n", "<C-w>-", "<cmd>:sp<cr>", opts)
+map("n", "<C-w>\\", "<cmd>:vsp<cr>", opts)
