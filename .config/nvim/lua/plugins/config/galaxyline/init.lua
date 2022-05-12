@@ -4,7 +4,7 @@ local condition = require('galaxyline.condition')
 -- onedark
 local colors = {
   bg = '#282828',
-  bg_dim = '#282828',
+  bg_dim = '#3C3836',
   bg_light = '#444b59',
   black = '#222222',
   white = '#abb2bf',
@@ -162,9 +162,10 @@ gl.section.right[1] = {
 gl.section.right[2] = {
   GitBranch = {
     icon = ' ',
-    separator = '  ',
+    separator = ' ',
     condition = condition.check_git_workspace,
-    highlight = { colors.teal, colors.bg },
+    highlight = { colors.blue, colors.bg_dim },
+    separator_highlight = { colors.bg_dim, colors.bg },
     provider = 'GitBranch',
   }
 }
@@ -173,8 +174,8 @@ gl.section.right[3] = {
   FileLocation = {
     icon = ' ',
     separator = ' ',
-    separator_highlight = { colors.bg_dim, colors.bg },
-    highlight = { colors.gray, colors.bg_dim },
+    separator_highlight = { colors.bg_light, colors.bg_dim },
+    highlight = { colors.gray, colors.bg_light },
     provider = function()
       local current_line = vim.fn.line('.')
       local total_lines = vim.fn.line('$')

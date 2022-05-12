@@ -9,8 +9,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 return require('packer').startup({ function(use)
   use { 'wbthomason/packer.nvim' }
-  use { "ellisonleao/gruvbox.nvim", config = "require('plugins.config.theme')" }
-  use { "sainnhe/gruvbox-material" }
+  use { "sainnhe/gruvbox-material", config = "require('plugins.config.theme')" }
 
   use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('plugins.config.treesitter')" }
   use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', event = "BufWinEnter", config = "require('plugins.config.bufferline')" }
