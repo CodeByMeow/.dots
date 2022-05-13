@@ -18,7 +18,7 @@
 ### GUI terminal and customize with Gruvbox colorscheme
 _Fish shell:_ `curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish`  
 _Fish theme:_ `starship`  
-_Kitty:_ `kitty +kitten theme` . And select ___gruvbox dark___
+_Kitty:_ `kitty +kitten theme` . And select ___gruvbox material soft___
 
 _Light:_ `sudo chmod +s (which light)`
 ###  Neovim  
