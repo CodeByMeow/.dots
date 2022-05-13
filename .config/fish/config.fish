@@ -10,7 +10,6 @@ alias vim='nvim'
 alias tm='tmux'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias setuntrack='config config --local status.showUnstrackedFiles no'
-alias nf="neofetch --ascii ~/.config/neofetch/macintoshAscii"
 alias cra="create-react-app"
 
 set -g theme_display_git_ahead_verbose yes
@@ -47,7 +46,6 @@ set -g theme_color_scheme nord
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 set -g theme_newline_cursor yes
-set -g theme_newline_prompt '  '
 
 function k
   bluetoothctl connect DC:2C:26:0F:A5:D2
@@ -55,3 +53,7 @@ end
 
 export VISUAL=nvim;
 export EDITOR=nvim;
+
+function nf 
+  bash ~/.scripts/fetch.sh
+end

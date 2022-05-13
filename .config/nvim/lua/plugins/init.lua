@@ -79,7 +79,7 @@ return require('packer').startup({ function(use)
   use { 'jghauser/mkdir.nvim' }
   use { 'petertriho/nvim-scrollbar', config = function() require("scrollbar").setup() end }
   use { 'haringsrob/nvim_context_vt' }
-  
+
 end,
 config = {
   display = {
