@@ -1,7 +1,6 @@
 local gl = require("galaxyline")
 local gls = gl.section
 local iconz = require("nvim-nonicons")
-local condition = require('galaxyline.condition')
 
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
@@ -18,8 +17,7 @@ diagnostic = {
   info = iconz.get("info")
 },
 diff = { added = iconz.get("diff-added"),
-  modified = iconz.get("diff-modified"),
-  removed = iconz.get("diff-removed"),
+  modified = iconz.get("diff-modified"), removed = iconz.get("diff-removed"),
   -- add = " ",
   -- modified = " ",
   -- remove = " "
@@ -84,26 +82,26 @@ local mode_map = {
   -- i      = {" INSERT  ", colors.green},
   -- c      = {" COMMAND ", colors.orange},
   -- v      = {" VISUAL  ", colors.lightblue},
-  n      = { icons.normal .. "  NOR  ", colors.red },
-  no     = { icons.normal .. "  NOR  ", colors.red },
-  i      = { icons.insert .. "  INS  ", colors.green },
-  ic     = { icons.insert .. "  INS  ", colors.green },
-  c      = { icons.command .. "  COM ", colors.orange },
-  ce     = { icons.command .. "  COM ", colors.orange },
-  cv     = { icons.command .. "  COM ", colors.orange },
-  v      = { icons.visual .. "  VIS  ", colors.lightblue },
-  V      = { icons.visual .. "  VIS  ", colors.lightblue },
-  [""]  = { icons.visual .. "  VIS" .. icons.visual_block .. " ", colors.brown },
-  R      = { icons.replace .. "  REP ", colors.crimsonRed2 },
-  ['r?'] = { icons.replace .. "  REP ", colors.lightblue },
-  Rv     = { icons.replace .. "  REP ", colors.crimsonRed2 },
-  r      = { icons.replace .. "  REP ", colors.blue2 },
-  rm     = { icons.replace .. "  REP ", colors.blue2 },
-  s      = { icons.selection .. "  SEL  ", colors.greenYelenYel },
-  S      = { icons.selection .. "  SEL  ", colors.greenYelenYel },
-  ['']  = { icons.selection .. "  SEL  ", colors.greenYelenYel },
-  t      = { icons.terminal .. "  TER ", colors.magenta },
-  ['!']  = { "  !        ", colors.crimsonRed }
+  n      = { icons.normal .. "  NORMAL  ", colors.red },
+  no     = { icons.normal .. "  NORMAL  ", colors.red },
+  i      = { icons.insert .. "  INSERT  ", colors.green },
+  ic     = { icons.insert .. "  INSERT  ", colors.green },
+  c      = { icons.command .. "  COMMAND ", colors.orange },
+  ce     = { icons.command .. "  COMMAND ", colors.orange },
+  cv     = { icons.command .. "  COMMAND ", colors.orange },
+  v      = { icons.visual .. "  VISUAL  ", colors.lightblue },
+  V      = { icons.visual .. "  VISUAL  ", colors.lightblue },
+  [""]  = { icons.visual .. "  VISUAL" .. icons.visual_block .. " ", colors.brown },
+  R      = { icons.replace .. "  REPLACE ", colors.crimsonRed2 },
+  ['r?'] = { icons.replace .. "  REPLACE ", colors.lightblue },
+  Rv     = { icons.replace .. "  REPLACE ", colors.crimsonRed2 },
+  r      = { icons.replace .. "  REPLACE ", colors.blue2 },
+  rm     = { icons.replace .. "  REPLACE ", colors.blue2 },
+  s      = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
+  S      = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
+  ['']  = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
+  t      = { icons.terminal .. "  TERMINAL ", colors.magenta },
+  ['!']  = { "  !        ", colors.crimsonred }
 }
 
 ----------------------------=== Funcs ===--------------------------
@@ -124,38 +122,6 @@ local function highlight2(group, bg, fg, gui)
   vim.cmd(cmd)
 end
 
-local function get_coc_lsp()
-  local f, status = pcall(vim.api.nvim_get_var, 'coc_status')
-  if not f or status == '' then
-    return nil
-  else
-    return status
-  end
-end
-
-local function get_diagnostic_info()
-  if vim.fn.exists('*coc#rpc#start_server') == 1 then
-    return get_coc_lsp()
-  end
-  return nil
-end
-
-local function get_current_func()
-  local has_func, func_name = pcall(vim.api.nvim_buf_get_var, 0, 'coc_current_function')
-  if not has_func then return nil end
-  return func_name
-end
-
-local function get_function_info()
-  if vim.fn.exists('*coc#rpc#start_server') == 1 then
-    return get_current_func()
-  end
-  return ''
-end
-
-CocStatus = get_diagnostic_info
-CocFunc = get_function_info
-
 local checkwidth = function()
   local squeeze_width = vim.fn.winwidth(0) / 2
   if squeeze_width > 40 then
@@ -165,15 +131,6 @@ local checkwidth = function()
 end
 
 local white_space = function() return ' ' end
-
-local function trailing_whitespace()
-  local trail = vim.fn.search("\\s$", "nw")
-  if trail ~= 0 then
-    return ' '
-  else
-    return nil
-  end
-end
 
 local check_git_width = function()
   return checkwidth() and require("galaxyline.condition").check_git_workspace()
@@ -257,8 +214,6 @@ gls.left[i] = {
   }
 }
 
-----------------------------=== Right ===--------------------------
-i = 1
 ----------------------------=== Right ===--------------------------
 i = 1
 gls.right[i] = {
