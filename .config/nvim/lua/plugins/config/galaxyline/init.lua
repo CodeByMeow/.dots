@@ -15,6 +15,7 @@ local colors = {
   blue = '#458588',
   cyan = '#689d6a',
   teal = '#56b6c2',
+  red = '#EC98A0',
 }
 
 local function mode_alias(m)
@@ -55,7 +56,7 @@ local function mode_color(m)
 end
 
 -- disable for these file types
-gl.short_line_list = { 'startify', 'nerdtree', 'term', 'fugitive', 'neo-tree' }
+gl.short_line_list = { 'startify', 'term', 'fugitive', 'neo-tree' }
 
 gl.section.left[1] = {
   ViMode = {
@@ -115,7 +116,7 @@ gl.section.left[5] = {
     icon = '  ',
     provider = 'DiffAdd',
     condition = condition.hide_in_width,
-    highlight = { colors.white, colors.bg },
+    highlight = { colors.green, colors.bg },
   }
 }
 
@@ -124,7 +125,7 @@ gl.section.left[6] = {
     icon = '  ',
     provider = 'DiffModified',
     condition = condition.hide_in_width,
-    highlight = { colors.gray, colors.bg },
+    highlight = { colors.yellow, colors.bg },
   }
 }
 
@@ -133,44 +134,22 @@ gl.section.left[7] = {
     icon = '  ',
     provider = 'DiffRemove',
     condition = condition.hide_in_width,
-    highlight = { colors.gray, colors.bg },
+    highlight = { colors.red, colors.bg },
   }
 }
 
-
-gl.section.left[8] = {
-  CocFunction = {
-    icon = 'λ ',
-    highlight = { colors.gray, colors.bg },
-    provider = function()
-      local has_func, func_name = pcall(vim.api.nvim_buf_get_var, 0, 'coc_current_function')
-      if not has_func then return '' end
-      return func_name or ''
-    end,
-  }
-}
 gl.section.right[1] = {
-  FileType = {
-    highlight = { colors.gray, colors.bg },
-    provider = function()
-      local buf = require('galaxyline.provider_buffer')
-      return string.lower(buf.get_buffer_filetype())
-    end,
-  }
-}
-
-gl.section.right[2] = {
   GitBranch = {
     icon = ' ',
     separator = ' ',
     condition = condition.check_git_workspace,
-    highlight = { colors.blue, colors.bg_dim },
+    highlight = { colors.green, colors.bg_dim },
     separator_highlight = { colors.bg_dim, colors.bg },
     provider = 'GitBranch',
   }
 }
 
-gl.section.right[3] = {
+gl.section.right[2] = {
   FileLocation = {
     icon = ' ',
     separator = ' ',
