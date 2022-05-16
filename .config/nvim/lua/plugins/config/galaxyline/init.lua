@@ -148,7 +148,7 @@ local i = 1
 gls.left[i] = {
   leftRounded = {
     provider = function()
-      return ""
+      return "█"
     end,
     highlight = 'GalaxyViModeInv'
   }
@@ -158,7 +158,7 @@ i = i + 1
 gls.left[i] = {
   ViMode = {
     provider = function()
-      highlight2('GalaxyViMode', mode_hl(), colors.main_bg, 'bold')
+      highlight2('GalaxyViMode', mode_hl(), colors.main_bg)
       highlight1('GalaxyViModeInv', mode_hl(), 'bold')
       return string.format(' %s', mode_label())
     end,
@@ -169,9 +169,9 @@ i = i + 1
 gls.left[i] = {
   WhiteSpace = {
     provider = function()
-      highlight2('SecondGalaxyViMode', mode_hl(), colors.white, 'bold')
+      highlight2('SecondGalaxyViMode', colors.white, mode_hl(), 'bold')
     end,
-    separator = "",
+    separator = " ",
     separator_highlight = 'SecondGalaxyViMode'
   }
 }
@@ -328,7 +328,7 @@ i = i + 1
 gls.right[i] = {
   rightRounded = {
     provider = function()
-      return ""
+      return "█"
     end,
     highlight = { colors.grey, colors.bg }
   }
