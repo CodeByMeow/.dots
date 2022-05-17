@@ -29,7 +29,7 @@ for i in ${terminal[@]}; do
 declare -a web=(firefox)
 for i in ${web[@]}; do
     bspc rule -a $i desktop='^2' follow=on focus=on; done
-
+    
 # workspace 3 (Files)
 declare -a filem=(dolphin)
 for i in ${filem[@]}; do
