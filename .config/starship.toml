@@ -3,7 +3,7 @@ format = """
 [望  $username ]\
 (bold bg:black fg:white)\
 []\
-(bold bg:purple fg:black)\
+(bold bg:bright-purple fg:black)\
 [\
 $git_branch\
 $git_commit\
