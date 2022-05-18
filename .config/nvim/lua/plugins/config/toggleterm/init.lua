@@ -1,4 +1,4 @@
-require"toggleterm".setup {
+require "toggleterm".setup {
   size = 13,
   open_mapping = [[<c-\>]],
   shade_filetypes = {},
@@ -7,4 +7,7 @@ require"toggleterm".setup {
   start_in_insert = true,
   persist_size = true,
   direction = 'horizontal',
+  float_opts = {
+    border = 'curved',
+  },
 }
