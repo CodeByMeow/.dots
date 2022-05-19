@@ -1,12 +1,14 @@
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
+local icons = require('nvim-nonicons')
 local source_mapping = {
-  buffer = " ﬘",
-  nvim_lsp = "  ",
-  nvim_lua = "  ",
+  nvim_lsp = " ",
+  nvim_lua = icons.get('lua'),
+  path = icons.get('file-directory'),
+  rg = icons.get('tag'),
+  buffer = icons.get('device-camera'),
   cmp_tabnine = " ",
-  path = "  ",
   treesitter = " 滑",
-  rg = " 識"
+
 }
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -18,9 +20,40 @@ end
 local feedkey = function(key, mode)
   vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
+
 -- Setup nvim-cmp.
 local cmp = require 'cmp'
 local lspkind = require('lspkind')
+lspkind.init({
+  preset = 'codicons',
+  symbol_map = {
+    Text = icons.get('typography'),
+    Method = icons.get('package'),
+    Function = "",
+    Constructor = icons.get('gear'),
+    Field = icons.get('field'),
+    Variable = icons.get('variable'),
+    Class = icons.get('class'),
+    Interface = icons.get('interface'),
+    Module = icons.get('package'),
+    Property = icons.get('tools'),
+    Unit = icons.get('nodte'),
+    Value = icons.get('number'),
+    Enum = "",
+    Keyword = icons.get('keyword'),
+    Snippet = icons.get('snippet'),
+    Color = icons.get('heart'),
+    File = icons.get('file'),
+    Reference = icons.get('cross-reference'),
+    Folder = icons.get('file-directory'),
+    EnumMember = "",
+    Constant = icons.get('constant'),
+    Struct = icons.get('struct'),
+    Event = "ﯓ",
+    Operator = "",
+    TypeParameter = icons.get('type')
+  },
+})
 
 cmp.setup({
   snippet = {
@@ -74,11 +107,14 @@ cmp.setup({
     { name = 'rg' },
   },
   formatting = {
-    format = function(entry, vim_item)
-      vim_item.kind = string.format("%s %s", lspkind.presets.default[vim_item.kind], vim_item.kind);
-      vim_item.menu = source_mapping[entry.source.name]
-      return vim_item
-    end
+    format = lspkind.cmp_format({
+      mode = "text",
+      before = function(entry, vim_item)
+        vim_item.kind = string.format("%s %s", lspkind.symbol_map[vim_item.kind], vim_item.kind);
+        vim_item.menu = source_mapping[entry.source.name]
+        return vim_item
+      end
+    })
   },
   window = {
     completion = cmp.config.window.bordered(),
