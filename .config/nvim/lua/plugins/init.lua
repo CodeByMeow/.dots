@@ -74,7 +74,7 @@ return require('packer').startup({ function(use)
   use { 'christoomey/vim-titlecase' }
   use { 'nacro90/numb.nvim', config = function() require('numb').setup() end }
   use { 'max-0406/autoclose.nvim' }
-  use { 'kyazdani42/nvim-web-devicons', config = "require('plugins.config.icon')" }
+  use { 'kyazdani42/nvim-web-devicons' }
   use { 'aserowy/tmux.nvim', config = "require('plugins.config.tmux')" }
   use { 'jghauser/mkdir.nvim' }
   use { 'petertriho/nvim-scrollbar', config = function() require("scrollbar").setup() end }

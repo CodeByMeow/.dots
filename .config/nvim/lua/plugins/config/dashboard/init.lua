@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global
+local iconz = require('nvim-nonicons')
 vim.g.dashboard_default_executive = 'telescope'
 vim.g.dashboard_preview_command = 'cat'
 vim.g.dashboard_preview_pipeline = 'lolcat'
