@@ -45,7 +45,7 @@ nm-applet &
 xsetroot -cursor_name left_ptr &
 pkill polybar
 $HOME/.config/polybar/launch.sh &
-feh --bg-fill ~/.config/wallpaper/room.png &
+feh --bg-fill ~/.config/wallpaper/main.jpg &
 picom --experimental-backends &
 unclutter -idle 10 &
-betterclockscreen -u ~/.config/wallpaper/room.png &
+betterclockscreen -u ~/.config/wallpaper/main.jpg &
