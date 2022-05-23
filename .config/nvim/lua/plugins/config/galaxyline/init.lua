@@ -63,7 +63,7 @@ local colors = {
   yellow        = "#cccc00",
   creamyorange  = "#ff8800",
   orange        = "#FF8800",
-  bg            = "#000B0C15",
+  bg            = "#0B0C15",
   fg            = "#D8DEE9",
   magenta       = "#c678dd",
   red           = "#df8890",
@@ -216,7 +216,34 @@ gls.left[i] = {
 
 
 ----------------------------=== Right ===--------------------------
+
 i = 1
+gls.right[i] = {
+  ShowLspClient = {
+    provider = 'GetLspClient',
+    condition = function()
+      local tbl = { ['dashboard'] = true, [''] = true }
+      if tbl[vim.bo.filetype] then
+        return false
+      end
+      return true
+    end,
+    icon = ' ',
+    highlight = { colors.icon_inactive, colors.main_bg, nil },
+  }
+}
+
+i = i + 1
+gls.right[i] = {
+  rightRounded = {
+    provider = function()
+      return "█"
+    end,
+    highlight = { colors.main_bg }
+  }
+}
+
+i = i + 1
 gls.right[i] = {
   FileFormat = {
     provider = function() return vim.bo.filetype end,
@@ -254,6 +281,7 @@ gls.right[i] = {
     highlight = { colors.creamyorange, colors.main_bg }
   }
 }
+
 i = i + 1
 gls.right[i] = {
   DiffRemove = {
