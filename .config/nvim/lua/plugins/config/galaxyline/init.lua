@@ -1,6 +1,6 @@
-local gl = require("galaxyline")
-local gls = gl.section
+local gl    = require("galaxyline")
 local iconz = require("nvim-nonicons")
+local gls   = gl.section
 
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
@@ -214,13 +214,31 @@ gls.left[i] = {
   }
 }
 
+
 ----------------------------=== Right ===--------------------------
 i = 1
+gls.right[i] = {
+  FileFormat = {
+    provider = function() return vim.bo.filetype end,
+    highlight = { colors.commented, colors.main_bg },
+  }
+}
+
+i = i + 1
+gls.right[i] = {
+  rightRounded = {
+    provider = function()
+      return "█"
+    end,
+    highlight = { colors.main_bg }
+  }
+}
+
+i = i + 1
 gls.right[i] = {
   DiffAdd = {
     provider = "DiffAdd",
     condition = check_git_width,
-    -- icon = "   ",
     icon = "  " .. icons.diff.added .. " ",
     highlight = { colors.greenYel, colors.main_bg }
   }
@@ -321,15 +339,5 @@ gls.right[i] = {
     separator = " ",
     separator_highlight = { colors.white, colors.grey },
     highlight = { colors.white, colors.grey }
-  }
-}
-
-i = i + 1
-gls.right[i] = {
-  rightRounded = {
-    provider = function()
-      return "█"
-    end,
-    highlight = { colors.grey, colors.bg }
   }
 }
