@@ -1,17 +1,27 @@
-configuration{
-    modi: "drun,window";
-    lines: 5;
-    font: "Victor Mono 14";
-    show-icons: true;
-    icon-theme: "Oranchelo";
-    terminal: "st";
-    drun-display-format: "{icon} {name}";
-    location: 0;
-    disable-history: false;
-    hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-window: " 﩯  window";
-    sidebar-mode: true;
+configuration {
+
+	drun {
+		display-name: "";
+	}
+
+	window {
+		display-name: "";
+	}
+
+	dmenu {
+		display-name: "";
+	}
+
+	timeout {
+		delay: 10;
+		action: "kb-cancel";
+	}
+
+	modi: "drun,window";
+	
+	font: "Victor Mono 15";
+
+	icon-theme: "Papirus";
 }
 
-@theme "windows11-list-dark"
+@theme "~/.config/rofi/theme.rasi"
