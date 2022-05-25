@@ -47,7 +47,6 @@ return require('packer').startup({ function(use)
   use { 'ggandor/lightspeed.nvim' }
 
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.config.telescope')" }
-  use { 'nvim-telescope/telescope-media-files.nvim' }
   use { 'simrat39/symbols-outline.nvim', config = "require('plugins.config.symbols')" }
   use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
   use { 'windwp/nvim-autopairs', config = "require('plugins.config.autopairs')" }
@@ -83,7 +82,11 @@ return require('packer').startup({ function(use)
     'yamatsum/nvim-nonicons',
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
-
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = "require('plugins.config.todo-comments')"
+  }
 end,
 config = {
   display = {

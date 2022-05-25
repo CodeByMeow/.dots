@@ -24,13 +24,12 @@ local mappings = {
   f = { ":Telescope find_files<cr>", "Telescope Find Files" },
   r = { ":Telescope live_grep<cr>", "Telescope Live Grep" },
   o = { ":Telescope oldfiles<cr>", "Telescope Old Files" },
-  i = { ":Telescope media_files<cr>", "Telescope Media files" },
   b = { ":Telescope buffers<cr>", "Telescope Buffer" },
   e = { ":NeoTreeFloat<cr>", "Toggle Float" },
   s = { ":SymbolsOutline<cr>", "Toggle SymbolsOutline" },
   t = {
     name = "Terminal",
-    t = { ":ToggleTerm<cr>", "Split Below" },
+    t = { ":TodoTelescope<cr>", "Todo Telescope" },
     f = { toggle_float, "Floating Terminal" },
     l = { toggle_lazygit, "LazyGit" }
   },

@@ -48,4 +48,3 @@ telescope.setup {
   }
 }
 
-telescope.load_extension('media_files')
