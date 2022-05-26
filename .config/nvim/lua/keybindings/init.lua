@@ -34,3 +34,5 @@ map("i", "<C-w>", "<C-O>diw", opts)
 
 map("n", "<C-w>-", "<cmd>:sp<cr>", opts)
 map("n", "<C-w>\\", "<cmd>:vsp<cr>", opts)
+
+map("n", "ta", ":ToggleAlternate<cr>", opts)

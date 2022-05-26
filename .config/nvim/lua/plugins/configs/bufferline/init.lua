@@ -1,6 +1,9 @@
----@diagnostic disable: undefined-global
+local status_ok, bufferline = pcall(require, "bufferline")
+if not status_ok then
+  return
+end
 local colors = require('colors');
-require("bufferline").setup {
+bufferline.setup({
   options = {
     offsets = { { filetype = "Neotree", text = "", padding = 1 } },
     buffer_close_icon = "",
@@ -128,8 +131,7 @@ require("bufferline").setup {
       guibg = colors.black,
     },
   },
-}
-vim.cmd [[
-nnoremap <silent><TAB> :BufferLineCycleNext<CR>
-nnoremap <silent><S-TAB> :BufferLineCyclePrev<CR>
-]]
+})
+
+vim.api.nvim_set_keymap("n", "<TAB>", "<cmd>:BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-TAB>", "<cmd>:BufferLineCyclePrev<CR>", { noremap = true, silent = true })

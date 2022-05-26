@@ -1,15 +1,9 @@
 vim.g.completeopt = "menu,menuone,noselect,noinsert"
-local icons = require('nvim-nonicons')
-local source_mapping = {
-  nvim_lsp = " ",
-  nvim_lua = icons.get('lua'),
-  path = icons.get('file-directory'),
-  rg = icons.get('tag'),
-  buffer = icons.get('device-camera'),
-  cmp_tabnine = " ",
-  treesitter = " 滑",
+local ok, cmp = pcall(require, "cmp")
 
-}
+if not ok then
+  return
+end
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0
@@ -22,38 +16,10 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require 'cmp'
-local lspkind = require('lspkind')
-lspkind.init({
-  preset = 'codicons',
-  symbol_map = {
-    Text = icons.get('typography'),
-    Method = icons.get('package'),
-    Function = "",
-    Constructor = icons.get('gear'),
-    Field = icons.get('field'),
-    Variable = icons.get('variable'),
-    Class = icons.get('class'),
-    Interface = icons.get('interface'),
-    Module = icons.get('package'),
-    Property = icons.get('tools'),
-    Unit = icons.get('nodte'),
-    Value = icons.get('number'),
-    Enum = "",
-    Keyword = icons.get('keyword'),
-    Snippet = icons.get('snippet'),
-    Color = icons.get('heart'),
-    File = icons.get('file'),
-    Reference = icons.get('cross-reference'),
-    Folder = icons.get('file-directory'),
-    EnumMember = "",
-    Constant = icons.get('constant'),
-    Struct = icons.get('struct'),
-    Event = "ﯓ",
-    Operator = "",
-    TypeParameter = icons.get('type')
-  },
-})
+local cmp = require("cmp")
+local types = require("cmp.types")
+local kind = require("plugins.configs.lsp.kind")
+local str = require("cmp.utils.str")
 
 cmp.setup({
   snippet = {
@@ -68,6 +34,7 @@ cmp.setup({
       -- vim.fn["UltiSnips#Anon"](args.body)
     end
   },
+
   mapping = {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -107,17 +74,43 @@ cmp.setup({
     { name = 'rg' },
   },
   formatting = {
-    format = lspkind.cmp_format({
-      mode = "text",
+    format = kind.cmp_format({
+      with_text = true,
       before = function(entry, vim_item)
-        vim_item.kind = string.format("%s %s", lspkind.symbol_map[vim_item.kind], vim_item.kind);
-        vim_item.menu = source_mapping[entry.source.name]
+        -- Get the full snippet (and only keep first line)
+        local word = entry:get_insert_text()
+        if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet then
+          word = vim.lsp.util.parse_snippet(word)
+        end
+        word = str.oneline(word)
+
+        -- concatenates the string
+        local max = 50
+        if string.len(word) >= max then
+          local before = string.sub(word, 1, math.floor((max - 3) / 2))
+          word = before .. "..."
+        end
+
+        if entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
+            and string.sub(vim_item.abbr, -1, -1) == "~"
+        then
+          word = word .. "~"
+        end
+        vim_item.abbr = word
+
+        vim_item.dup = ({
+          buffer = 1,
+          path = 1,
+          nvim_lsp = 0,
+        })[entry.source.name] or 0
+
         return vim_item
-      end
-    })
+      end,
+    }),
   },
   window = {
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   }
+
 })

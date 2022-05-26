@@ -1,9 +1,8 @@
 ---@diagnostic disable: undefined-global
-local iconz = require('nvim-nonicons')
 vim.g.dashboard_default_executive = 'telescope'
 vim.g.dashboard_preview_command = 'cat'
 vim.g.dashboard_preview_pipeline = 'lolcat'
-vim.g.dashboard_preview_file = "~/.config/nvim/lua/plugins/config/dashboard/neovim.cat"
+vim.g.dashboard_preview_file = "~/.config/nvim/lua/plugins/configs/dashboard/neovim.cat"
 vim.g.dashboard_preview_file_height = 12
 vim.g.dashboard_preview_file_width = 80
 vim.g.dashboard_custom_section = {

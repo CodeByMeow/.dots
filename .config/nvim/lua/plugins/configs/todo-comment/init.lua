@@ -1,13 +1,13 @@
 require("todo-comments").setup({
-  signs = true, 
-  sign_priority = 8, 
-  
+  signs = true,
+  sign_priority = 8,
+
   keywords = {
     FIX = {
-      icon = " ", 
-      color = "error", 
-      alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, 
-      
+      icon = " ",
+      color = "error",
+      alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
+
     },
     TODO = { icon = " ", color = "info" },
     HACK = { icon = " ", color = "warning" },
@@ -15,22 +15,17 @@ require("todo-comments").setup({
     PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
     NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
   },
-  merge_keywords = true, 
-  
-  
-  
-  
+  merge_keywords = true,
   highlight = {
-    before = "", 
-    keyword = "wide", 
-    after = "fg", 
-    pattern = [[.*<(KEYWORDS)\s*:]], 
-    comments_only = true, 
-    max_line_len = 400, 
-    exclude = {}, 
+    before = "",
+    keyword = "wide",
+    after = "fg",
+    pattern = [[.*<(KEYWORDS)\s*:]],
+    comments_only = true,
+    max_line_len = 400,
+    exclude = {},
   },
-  
-  
+
   colors = {
     error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
     warning = { "DiagnosticWarning", "WarningMsg", "#FBBF24" },
@@ -47,9 +42,9 @@ require("todo-comments").setup({
       "--line-number",
       "--column",
     },
-    
-    
-    pattern = [[\b(KEYWORDS):]], 
-    
+
+
+    pattern = [[\b(KEYWORDS):]],
+
   },
 })

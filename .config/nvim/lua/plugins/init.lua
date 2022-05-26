@@ -9,29 +9,28 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 return require('packer').startup({ function(use)
   use { 'wbthomason/packer.nvim' }
-  use { "sainnhe/gruvbox-material", config = "require('plugins.config.theme')" }
+  use { "sainnhe/gruvbox-material", config = "require('plugins.configs.theme')" }
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('plugins.config.treesitter')" }
-  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', event = "BufWinEnter", config = "require('plugins.config.bufferline')" }
+  use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('plugins.configs.treesitter')" }
+  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', event = "BufWinEnter", config = "require('plugins.configs.bufferline')" }
   use { 'p00f/nvim-ts-rainbow', after = "nvim-treesitter" }
-  use { 'norcalli/nvim-colorizer.lua', config = "require('plugins.config.colorizer')", event = "BufRead" }
-  use { 'glepnir/dashboard-nvim', config = "require('plugins.config.dashboard')" }
-  use { "lukas-reineke/indent-blankline.nvim", config = "require('plugins.config.blankline')", event = "BufRead" }
-  use { "folke/zen-mode.nvim", config = "require('plugins.config.zen-mode')" }
-  use { 'folke/twilight.nvim', config = "require('plugins.config.twilight')" }
-  use { 'glepnir/galaxyline.nvim', branch = 'main', config = "require('plugins.config.galaxyline')", requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use { 'norcalli/nvim-colorizer.lua', config = "require('plugins.configs.colorizer')", event = "BufRead" }
+  use { 'glepnir/dashboard-nvim', config = "require('plugins.configs.dashboard')" }
+  use { "lukas-reineke/indent-blankline.nvim", config = "require('plugins.configs.blankline')", event = "BufRead" }
+  use { "folke/zen-mode.nvim", config = "require('plugins.configs.zen-mode')" }
+  use { 'folke/twilight.nvim', config = "require('plugins.configs.twilight')" }
+  use { 'glepnir/galaxyline.nvim', branch = 'main', config = "require('plugins.configs.galaxyline')", requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use { 'b3nj5m1n/kommentary' }
-  use { 'rcarriga/nvim-notify', config = "require('plugins.config.nvim-notify')" }
+  use { 'rcarriga/nvim-notify', config = "require('plugins.configs.nvim-notify')" }
   use { 'andymass/vim-matchup', require = 'nvim-treesitter/nvim-treesitter' }
-  use { 'karb94/neoscroll.nvim' }
-  use { 'folke/which-key.nvim', event = "BufWinEnter", config = "require('plugins.config.whichkey')" }
+  use { 'karb94/neoscroll.nvim', config = "require('plugins.configs.neoscroll')" }
   use {
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function() require('gitsigns').setup { current_line_blame = true } end
   }
-  use { "akinsho/toggleterm.nvim", config = "require('plugins.config.toggleterm')" }
-  use { 'yamatsum/nvim-cursorline', config = "require('plugins.config.cursorline')" }
+  use { "akinsho/toggleterm.nvim", config = "require('plugins.configs.toggleterm')" }
+  use { 'yamatsum/nvim-cursorline', config = "require('plugins.configs.cursorline')" }
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -41,19 +40,19 @@ return require('packer').startup({ function(use)
       "kyazdani42/nvim-web-devicons",
       "MunifTanjim/nui.nvim"
     },
-    config = "require('plugins.config.neo-tree')"
+    config = "require('plugins.configs.neo-tree')"
   }
-  use { "max397574/better-escape.nvim", config = function() require("better_escape").setup() end }
+  use { "max397574/better-escape.nvim", config = "require('plugins.configs.better-escape')" }
   use { 'ggandor/lightspeed.nvim' }
 
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.config.telescope')" }
-  use { 'simrat39/symbols-outline.nvim', config = "require('plugins.config.symbols')" }
+  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' }, cmd = "Telescope", config = "require('plugins.configs.telescope')" }
+  use { 'simrat39/symbols-outline.nvim', config = "require('plugins.configs.symbols')" }
   use { 'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" }
-  use { 'windwp/nvim-autopairs', config = "require('plugins.config.autopairs')" }
+  use { 'windwp/nvim-autopairs', config = "require('plugins.configs.autopairs')" }
 
   use { 'williamboman/nvim-lsp-installer' }
-  use { 'lukas-reineke/lsp-format.nvim', config = "require('plugins.config.lspformat')" }
-  use { 'neovim/nvim-lspconfig', config = "require('plugins.config.lsp')" }
+  use { 'lukas-reineke/lsp-format.nvim', config = "require('plugins.configs.lspformat')" }
+  use { 'neovim/nvim-lspconfig', config = "require('plugins.configs.lsp')" }
   use { 'hrsh7th/cmp-nvim-lsp' }
   use { 'hrsh7th/cmp-buffer' }
   use { 'hrsh7th/nvim-cmp' }
@@ -62,19 +61,19 @@ return require('packer').startup({ function(use)
   use { 'tzachar/cmp-tabnine', run = './install.sh' }
   use { 'lukas-reineke/cmp-rg' }
   use { 'onsails/lspkind-nvim' }
-  use { 'tami5/lspsaga.nvim', config = "require('plugins.config.lspsaga')" }
-  use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.config.signature')" }
+  use { 'tami5/lspsaga.nvim', config = "require('plugins.configs.lspsaga')" }
+  use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.configs.signature')" }
   use { 'antoyo/vim-licenses' }
   use { 'AndrewRadev/tagalong.vim' }
   use { 'tpope/vim-surround',
     keys = { "c", "d", "y" },
-    config = "require('plugins.config.surround')"
+    config = "require('plugins.configs.surround')"
   }
   use { 'christoomey/vim-titlecase' }
   use { 'nacro90/numb.nvim', config = function() require('numb').setup() end }
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons' }
-  use { 'aserowy/tmux.nvim', config = "require('plugins.config.tmux')" }
+  use { 'aserowy/tmux.nvim', config = "require('plugins.configs.tmux')" }
   use { 'jghauser/mkdir.nvim' }
   use { 'petertriho/nvim-scrollbar', config = function() require("scrollbar").setup() end }
   use { 'haringsrob/nvim_context_vt' }
@@ -85,8 +84,40 @@ return require('packer').startup({ function(use)
   use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
-    config = "require('plugins.config.todo-comments')"
+    config = "require('plugins.configs.todo-comments')"
   }
+  use({ "antoinemadec/FixCursorHold.nvim", event = "BufEnter" })
+  use({ "folke/trouble.nvim", config = "require('plugins.configs.trouble')" })
+
+  use({
+    "sindrets/winshift.nvim",
+    event = "BufRead",
+    config = function()
+      require("plugins.configs.winshift")
+    end,
+  })
+
+  use({ "rmagatti/alternate-toggler", event = "BufRead" })
+  use({
+    "kevinhwang91/nvim-hlslens",
+    keys = { "/" },
+    config = function()
+      require("hlslens").setup({
+        calm_down = true,
+        nearest_only = true,
+        nearest_float_when = "auto",
+      })
+    end,
+  })
+  use({
+    "beauwilliams/focus.nvim",
+    event = "BufRead",
+    config = function()
+      require("focus").setup()
+    end,
+  })
+
+  use({ 'linty-org/key-menu.nvim', config = "require('plugins.configs.key-menu')" })
 end,
 config = {
   display = {
