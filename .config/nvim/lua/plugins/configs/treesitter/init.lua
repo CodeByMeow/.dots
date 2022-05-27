@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "html", "javascript", "lua", "css", "php" },
+  ensure_installed = { "html", "javascript", "lua", "css", "php", "jsdoc", "json", "tsx" },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -19,28 +19,6 @@ require 'nvim-treesitter.configs'.setup {
   },
   matchup = {
     enable = true, -- mandatory, false will disable the whole extension
-  },
-  refactor = {
-    highlight_definitions = {
-      enable = false,
-      clear_on_cursor_move = true,
-    },
-    highlight_current_scope = {
-      enable = false,
-    },
-    smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "gr",
-      },
-    },
-    navigation = {
-      enable = true,
-      keymaps = {
-        goto_definition = "<leader>td",
-        list_definitions = "<leader>tl",
-      },
-    },
   },
   indent = { enable = true, disable = { "yaml" } },
   context_commentstring = {
