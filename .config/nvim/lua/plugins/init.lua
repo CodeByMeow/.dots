@@ -62,7 +62,6 @@ return require('packer').startup({ function(use)
   use { 'lukas-reineke/cmp-rg' }
   use { 'onsails/lspkind-nvim' }
   use { 'tami5/lspsaga.nvim', config = "require('plugins.configs.lspsaga')" }
-  use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.configs.signature')" }
   use { 'antoyo/vim-licenses' }
   use { 'AndrewRadev/tagalong.vim' }
   use { 'tpope/vim-surround',
@@ -118,6 +117,18 @@ return require('packer').startup({ function(use)
   })
 
   use({ 'linty-org/key-menu.nvim', config = "require('plugins.configs.key-menu')" })
+
+  use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.configs.signature')" }
+  use({
+    'ray-x/navigator.lua',
+    requires = {
+      { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' },
+      { 'neovim/nvim-lspconfig' },
+    },
+    config = "require('plugins.configs.navigator')"
+  })
+
+
 end,
 config = {
   display = {
