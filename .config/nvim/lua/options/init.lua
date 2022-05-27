@@ -36,6 +36,7 @@ vim.wo.signcolumn     = "yes"
 vim.opt.laststatus    = 3
 vim.opt.foldlevel     = 20
 vim.opt.termguicolors = true
+vim.opt.nrformats     = 'alpha'
 
 local set_nornu = {
   pattern = "*",
