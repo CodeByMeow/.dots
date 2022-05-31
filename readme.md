@@ -43,7 +43,8 @@ Some packages require by plugins:
 
 ### Font 
 [Victor Mono](https://rubjo.github.io/victor-mono/)  
-
+Iosevka
+Montserrat
 
 ### Fix some error
 Nerd font not load: let install `ttf-nerd-fonts-symbols`  
