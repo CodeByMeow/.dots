@@ -260,7 +260,7 @@ _G.packer_plugins = {
     url = "https://github.com/yamatsum/nvim-cursorline"
   },
   ["nvim-hlslens"] = {
-    config = { "\27LJ\2\nm\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\23nearest_float_when\tauto\17nearest_only\2\14calm_down\2\nsetup\fhlslens\frequire\0" },
+    config = { "\27LJ\2\nm\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\3\17nearest_only\2\14calm_down\2\23nearest_float_when\tauto\nsetup\fhlslens\frequire\0" },
     keys = { { "", "/" } },
     loaded = false,
     needs_bufread = false,
@@ -440,6 +440,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: gruvbox-material
+time([[Config for gruvbox-material]], true)
+require('plugins.configs.theme')
+time([[Config for gruvbox-material]], false)
 -- Config for: neoscroll.nvim
 time([[Config for neoscroll.nvim]], true)
 require('plugins.configs.neoscroll')
@@ -452,10 +456,10 @@ time([[Config for nvim-notify]], false)
 time([[Config for key-menu.nvim]], true)
 require('plugins.configs.key-menu')
 time([[Config for key-menu.nvim]], false)
--- Config for: tmux.nvim
-time([[Config for tmux.nvim]], true)
-require('plugins.configs.tmux')
-time([[Config for tmux.nvim]], false)
+-- Config for: numb.nvim
+time([[Config for numb.nvim]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tnumb\frequire\0", "config", "numb.nvim")
+time([[Config for numb.nvim]], false)
 -- Config for: zen-mode.nvim
 time([[Config for zen-mode.nvim]], true)
 require('plugins.configs.zen-mode')
@@ -472,10 +476,6 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for toggleterm.nvim]], true)
 require('plugins.configs.toggleterm')
 time([[Config for toggleterm.nvim]], false)
--- Config for: better-escape.nvim
-time([[Config for better-escape.nvim]], true)
-require('plugins.configs.better-escape')
-time([[Config for better-escape.nvim]], false)
 -- Config for: lsp-format.nvim
 time([[Config for lsp-format.nvim]], true)
 require('plugins.configs.lspformat')
@@ -496,10 +496,18 @@ time([[Config for twilight.nvim]], false)
 time([[Config for nvim-cursorline]], true)
 require('plugins.configs.cursorline')
 time([[Config for nvim-cursorline]], false)
--- Config for: nvim-scrollbar
-time([[Config for nvim-scrollbar]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14scrollbar\frequire\0", "config", "nvim-scrollbar")
-time([[Config for nvim-scrollbar]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('plugins.configs.lsp')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: better-escape.nvim
+time([[Config for better-escape.nvim]], true)
+require('plugins.configs.better-escape')
+time([[Config for better-escape.nvim]], false)
+-- Config for: dashboard-nvim
+time([[Config for dashboard-nvim]], true)
+require('plugins.configs.dashboard')
+time([[Config for dashboard-nvim]], false)
 -- Config for: lspsaga.nvim
 time([[Config for lspsaga.nvim]], true)
 require('plugins.configs.lspsaga')
@@ -508,14 +516,14 @@ time([[Config for lspsaga.nvim]], false)
 time([[Config for galaxyline.nvim]], true)
 require('plugins.configs.galaxyline')
 time([[Config for galaxyline.nvim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('plugins.configs.lsp')
-time([[Config for nvim-lspconfig]], false)
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-require('plugins.configs.dashboard')
-time([[Config for dashboard-nvim]], false)
+-- Config for: tmux.nvim
+time([[Config for tmux.nvim]], true)
+require('plugins.configs.tmux')
+time([[Config for tmux.nvim]], false)
+-- Config for: nvim-scrollbar
+time([[Config for nvim-scrollbar]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14scrollbar\frequire\0", "config", "nvim-scrollbar")
+time([[Config for nvim-scrollbar]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\nQ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
@@ -528,14 +536,6 @@ time([[Config for symbols-outline.nvim]], false)
 time([[Config for neo-tree.nvim]], true)
 require('plugins.configs.neo-tree')
 time([[Config for neo-tree.nvim]], false)
--- Config for: numb.nvim
-time([[Config for numb.nvim]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tnumb\frequire\0", "config", "numb.nvim")
-time([[Config for numb.nvim]], false)
--- Config for: gruvbox-material
-time([[Config for gruvbox-material]], true)
-require('plugins.configs.theme')
-time([[Config for gruvbox-material]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -554,9 +554,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'bufferline.nvim', 'nvim-treesitter'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'winshift.nvim', 'nvim-colorizer.lua', 'focus.nvim', 'alternate-toggler'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-ts-autotag'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'indent-blankline.nvim', 'winshift.nvim', 'alternate-toggler', 'nvim-colorizer.lua', 'focus.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'nvim-treesitter', 'bufferline.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufEnter * ++once lua require("packer.load")({'FixCursorHold.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")

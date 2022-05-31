@@ -36,10 +36,6 @@ declare -a filem=(dolphin)
 for i in ${filem[@]}; do
     bspc rule -a $i desktop='^3' follow=on focus=on; done
 
-# workspace 4 (FTP)
-declare -a ftp=(Filezilla)
-for i in ${ftp[@]}; do
-    bspc rule -a $i desktop='^4' follow=on focus=on; done
     
 # autostart
 nm-applet &
