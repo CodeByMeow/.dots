@@ -57,3 +57,4 @@ export EDITOR=nvim;
 function nf 
   bash ~/.scripts/fetch.sh
 end
+
