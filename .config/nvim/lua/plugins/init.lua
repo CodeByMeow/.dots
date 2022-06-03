@@ -120,7 +120,6 @@ return require('packer').startup({ function(use)
 
   use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.configs.signature')" }
 
-
 end,
 config = {
   display = {
