@@ -25,19 +25,19 @@ for i in ${filem[@]}; do
     bspc rule -a $i desktop='^3' follow=on focus=on; done
     
 workspaces
-bspc config top_padding 50
-bspc config window_gap 10
+config top_padding 50
+config window_gap 10
 
-bspc config single_monocle true
-bspc config focused_border_color "#68819A"
-bspc config normal_border_color "#282c34"
-bspc config border_width 2
-bspc config borderless_monocle true
-bspc config border_radius 8
+config single_monocle true
+config focused_border_color "#68819A"
+config normal_border_color "#282c34"
+config border_width 2
+config borderless_monocle true
+config border_radius 8
 
-bspc config split_ratio 0.52
-bspc config gapless_monocle true
-bspc rule -a Screenkey manage=off
+config split_ratio 0.52
+config gapless_monocle true
+rule -a Screenkey manage=off
 
 # autostart
 nm-applet &
