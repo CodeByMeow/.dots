@@ -68,7 +68,6 @@ return require('packer').startup({ function(use)
     keys = { "c", "d", "y" },
     config = "require('plugins.configs.surround')"
   }
-  use { 'christoomey/vim-titlecase' }
   use { 'nacro90/numb.nvim', config = function() require('numb').setup() end }
   use { 'max-0406/autoclose.nvim' }
   use { 'kyazdani42/nvim-web-devicons' }
@@ -119,7 +118,11 @@ return require('packer').startup({ function(use)
   use({ 'linty-org/key-menu.nvim', config = "require('plugins.configs.key-menu')" })
 
   use { 'ray-x/lsp_signature.nvim', requires = { 'neovim/nvim-lspconfig' }, config = "require('plugins.configs.signature')" }
-
+  use { "johmsalas/text-case.nvim",
+    config = function()
+      require('textcase').setup {}
+    end
+  }
 end,
 config = {
   display = {
