@@ -85,6 +85,7 @@ require("neo-tree").setup({
         "thumbs.db"
       },
       never_show = {
+        "node_modules"
       },
     },
     follow_current_file = true,
