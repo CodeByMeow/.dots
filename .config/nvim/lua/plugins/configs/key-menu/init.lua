@@ -51,7 +51,7 @@ map('n', '<Space>z', function()
   keymenu.open_window('<Space>z')
 end, { desc = 'Focus Mode' })
 map('n', '<Space>zz', ":ZenMode<cr>", { desc = 'Zen Mode' })
-map('n', '<Space>zt', ":ZenMode<cr>", { desc = 'Twilight' })
+map('n', '<Space>zt', ":Twilight<cr>", { desc = 'Twilight' })
 
 
 map('n', '<Space>l', function()

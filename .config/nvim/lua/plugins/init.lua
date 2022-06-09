@@ -123,6 +123,7 @@ return require('packer').startup({ function(use)
       require('textcase').setup {}
     end
   }
+
 end,
 config = {
   display = {
