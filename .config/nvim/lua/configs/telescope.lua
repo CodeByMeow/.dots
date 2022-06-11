@@ -94,5 +94,4 @@ if status_ok then
       }
     },
   })
-  telescope.load_extension('aerial')
 end

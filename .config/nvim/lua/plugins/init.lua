@@ -212,7 +212,8 @@ return require('packer').startup({ function(use)
   }
 
   -- LSP symbols
-  use { "stevearc/aerial.nvim",
+  use {
+    "stevearc/aerial.nvim",
     module = "aerial",
     cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
     config = function()
@@ -354,7 +355,7 @@ return require('packer').startup({ function(use)
 
   use {
     'ray-x/lsp_signature.nvim',
-    config = function ()
+    config = function()
       require "configs.signature"
     end
   }
