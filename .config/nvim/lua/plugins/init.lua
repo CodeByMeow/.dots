@@ -214,7 +214,6 @@ return require('packer').startup({ function(use)
   -- LSP symbols
   use {
     "stevearc/aerial.nvim",
-    module = "aerial",
     cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
     config = function()
       require "configs.aerial"
@@ -266,7 +265,6 @@ return require('packer').startup({ function(use)
   -- Commenting
   use {
     "numToStr/Comment.nvim",
-    module = { "Comment", "Comment.api" },
     keys = { "gc", "gb", "g<", "g>" },
     config = function()
       require "configs.Comment"
@@ -301,7 +299,6 @@ return require('packer').startup({ function(use)
   -- Get extra JSON schemas
   use {
     "b0o/SchemaStore.nvim",
-    module = "schemastore"
   }
 
   -- Hightlight cursor line
@@ -353,6 +350,7 @@ return require('packer').startup({ function(use)
     end,
   })
 
+  -- Hist info
   use {
     'ray-x/lsp_signature.nvim',
     config = function()
@@ -361,11 +359,11 @@ return require('packer').startup({ function(use)
   }
 
 end,
-config = {
-  display = {
-    open_fn = function()
-      return require('packer.util').float({ border = 'single' })
-    end
+  config = {
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'single' })
+      end
+    }
   }
-}
 })

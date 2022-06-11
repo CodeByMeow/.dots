@@ -10,29 +10,29 @@ if status_ok then
       Array = "",
       Boolean = "⊨",
       Class = "",
-      Constant = "",
+      Constant = "",
       Constructor = "",
       Key = "",
-      Function = "",
-      Method = "ƒ",
+      Function = "󰊕",
+      Method = "",
       Namespace = "",
       Null = "NULL",
       Number = "#",
       Object = "⦿",
       Property = "",
       TypeParameter = "𝙏",
-      Variable = "",
+      Variable = "",
       Enum = "ℰ",
       Package = "",
       EnumMember = "",
-      File = "",
-      Module = "",
-      Field = "",
-      Interface = "ﰮ",
+      File = "",
+      Module = "",
+      Field = "󰽏",
+      Interface = "",
       String = "𝓐",
       Struct = "𝓢",
-      Event = "",
-      Operator = "+",
+      Event = "󰛢",
+      Operator = "󰆖",
     },
     guides = {
       mid_item = "├ ",
@@ -40,13 +40,5 @@ if status_ok then
       nested_top = "│ ",
       whitespace = "  ",
     },
-    on_attach = function(bufnr)
-      -- Jump forwards/backwards with '{' and '}'
-      vim.keymap.set("n", "{", "<cmd>AerialPrev<cr>", { buffer = bufnr, desc = "Jump backwards in Aerial" })
-      vim.keymap.set("n", "}", "<cmd>AerialNext<cr>", { buffer = bufnr, desc = "Jump forwards in Aerial" })
-      -- Jump up the tree with '[[' or ']]'
-      vim.keymap.set("n", "[[", "<cmd>AerialPrevUp<cr>", { buffer = bufnr, desc = "Jump up and backwards in Aerial" })
-      vim.keymap.set("n", "]]", "<cmd>AerialNextUp<cr>", { buffer = bufnr, desc = "Jump up and forwards in Aerial" })
-    end,
   })
 end

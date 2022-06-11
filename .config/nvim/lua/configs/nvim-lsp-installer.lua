@@ -1,33 +1,42 @@
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if status_ok then
-  
-lsp_installer.on_server_ready(function(server)
+  lsp_installer.settings({
+    ui = {
+      icons = {
+        server_installed = "✓",
+        server_pending = "➜",
+        server_uninstalled = "✗"
+      }
+    }
+  })
+
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  local opts = { capabilities = capabilities }
-  if server.name == "sumneko_lua" then
-    opts = vim.tbl_deep_extend("force", {
-      settings = {
+  local servers = { "tsserver", "sumneko_lua", "cssls", "html", "emmet_ls", "intelephense" }
+  lsp_installer.setup({
+    ensure_installed = servers
+  })
+
+  local lspconfig = require('lspconfig')
+  local aerial = require('aerial')
+  local opts = {
+    capabilities = capabilities,
+    on_attach = aerial.on_attach
+  }
+
+  for _, server in pairs(servers) do
+    if server == 'sumneko_lua' then
+      opts.settings = {
         Lua = {
-          runtime = { version = 'LuaJIT', path = vim.split(package.path, ';') },
-          diagnostics = { globals = { 'vim' } },
-          workspace = { library = vim.api.nvim_get_runtime_file("", true), checkThirdParty = false },
-          telemetry = { enable = false }
+          diagnostics = {
+            globals = {
+              'vim',
+            }
+          }
         }
       }
-
-    }, opts)
+    end
+    lspconfig[server].setup(opts)
   end
-  server:setup(opts)
-end)
 
-lsp_installer.settings({
-  ui = {
-    icons = {
-      server_installed = "✓",
-      server_pending = "➜",
-      server_uninstalled = "✗"
-    }
-  }
-})
 
 end

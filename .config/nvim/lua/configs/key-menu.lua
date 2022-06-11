@@ -9,6 +9,7 @@ require 'key-menu'.set('n', '<Space>')
 
 map('n', '<Space>w', '<Cmd>w<CR>', { desc = 'Save' })
 map('n', '<Space>q', '<Cmd>q<CR>', { desc = 'Quit' })
+map('n', '<Space>s', '<Cmd>AerialToggle<CR>', { desc = 'Symbols' })
 
 -- You can also pass Lua functions to vim.keymap.set.
 local erase_all_lines = function()
@@ -25,9 +26,7 @@ map('n', '<Space>ff', ':Telescope find_files<cr>', { desc = 'Find files' })
 map('n', '<Space>fr', ':Telescope live_grep<cr>', { desc = 'Live grep' })
 map('n', '<Space>fo', ':Telescope oldfiles<cr>', { desc = 'Recent file' })
 map('n', '<Space>fb', ':Telescope buffers<cr>', { desc = 'Buffers' })
-map('n', '<Space>fs', ':Telescope aerial<cr>', { desc = 'Symbols' })
 map('n', '<Space>e', ':NeoTreeFloat<cr>', { desc = 'Explorer' })
-
 
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
@@ -52,12 +51,13 @@ map('n', '<Space>lk', "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = 'Hel
 map('n', '<Space>lK', "<cmd>Lspsaga hover_doc<cr>", { desc = 'Docs' })
 map('n', '<Space>lw', "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", { desc = 'Add workspace' })
 map('n', '<Space>lW', "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", { desc = 'Remove workspace' })
-map('n', '<Space>ll', "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", { desc = 'List workspace' })
+map('n', '<Space>ll', "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>",
+  { desc = 'List workspace' })
 map('n', '<Space>lt', "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = 'Type definition' })
 map('n', '<Space>ld', "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = 'Go To Definition' })
 map('n', '<Space>lD', "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = 'Go To Declaration' })
 map('n', '<Space>lr', "<cmd>lua vim.lsp.buf.references()<cr>", { desc = 'References' })
-map('n', '<Space>lf', "<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>", { desc = 'Format' })
+map('n', '<Space>lf', "<cmd>lua vim.lsp.buf.format()<cr>", { desc = 'Format' })
 map('n', '<Space>lR', "<cmd>Lspsaga rename<cr>", { desc = 'Rename' })
 map('n', '<Space>la', "<cmd>Lspsaga code_action<cr>", { desc = 'Action' })
 map('n', '<Space>le', "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = 'Show Line Diagnostic' })

@@ -4,7 +4,6 @@ if not status_ok then
 end
 local iconz = require("nvim-nonicons")
 local gls   = gl.section
-
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
 local icons = { sep = {
@@ -216,7 +215,6 @@ gls.left[i] = {
     highlight = { colors.bg, colors.main_bg }
   }
 }
-
 
 ----------------------------=== Right ===--------------------------
 

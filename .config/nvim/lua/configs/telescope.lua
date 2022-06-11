@@ -1,10 +1,8 @@
 local status_ok, telescope = pcall(require, "telescope")
 if status_ok then
   local actions = require "telescope.actions"
-
   telescope.setup({
     defaults = {
-
       prompt_prefix = " ",
       selection_caret = "❯ ",
       path_display = { "truncate" },
@@ -88,10 +86,6 @@ if status_ok then
       },
     },
     pickers = {},
-    extensions = {
-      aerial = {
-        show_nesting = true
-      }
-    },
+    extensions = {},
   })
 end

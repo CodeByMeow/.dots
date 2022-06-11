@@ -24,6 +24,7 @@ _Light:_ `sudo chmod +s (which light)`
 Some packages require by plugins: 
 
 - _Packages_ _manager:_ ___Packer___  
+- Requirement: neovim >= 0.8  
 `git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim`  
  

@@ -5,6 +5,7 @@ end
 
 for _, source in ipairs {
   "core.utils",
+  "core.utils.winbar",
   "core.options",
   "core.autocmds",
   "core.mappings",
@@ -15,3 +16,4 @@ for _, source in ipairs {
     vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault)
   end
 end
+
