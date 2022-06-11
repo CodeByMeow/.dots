@@ -45,7 +45,7 @@ COLOR_TEXT=""
 WEATHER_FONT_CODE=4
 
 # Font for the thermometer icon
-TEMP_FONT_CODE=2
+TEMP_FONT_CODE=3
 
 # Wind settings _______________________________________________________________
 
@@ -78,7 +78,7 @@ DISPLAY_WIND_UNIT="yes"
 HOT_TEMP=25
 
 # When the thermometer icon turns blue
-COLD_TEMP=0
+COLD_TEMP=20
 
 # Other settings ______________________________________________________________
 
