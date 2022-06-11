@@ -367,7 +367,7 @@ i = i + 1
 gls.right[i] = {
   PerCent = {
     provider = "LinePercent",
-    separator = " ",
+    separator = " 󰗈",
     separator_highlight = { colors.white, colors.grey },
     highlight = { colors.white, colors.grey }
   }

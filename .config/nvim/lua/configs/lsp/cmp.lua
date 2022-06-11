@@ -16,7 +16,6 @@ local feedkey = function(key, mode)
 end
 
 -- Setup nvim-cmp.
-local cmp = require("cmp")
 local types = require("cmp.types")
 local kind = require("configs.lsp.kind")
 local str = require("cmp.utils.str")
