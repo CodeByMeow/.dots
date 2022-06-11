@@ -42,12 +42,12 @@ Some packages require by plugins:
 [here](https://mikeshade.com/posts/keychron-linux-function-keys)  
 
 ### Font 
-[Victor Mono](https://rubjo.github.io/victor-mono/)  
-Iosevka
+Victor Mono  
+Iosevka  
 Montserrat
 
 ### Fix some error
-Nerd font not load: let install `ttf-nerd-fonts-symbols`  
+Nerd font not load: `yay -S ttf-nerd-fonts-symbols`  
 No sound: `alsactl restore`
 
 ### Break and save eye

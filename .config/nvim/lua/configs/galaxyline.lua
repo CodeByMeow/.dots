@@ -231,7 +231,7 @@ gls.right[i] = {
       end
       return true
     end,
-    icon = ' ',
+    icon = '󰘵  ',
     highlight = { colors.icon_inactive, colors.main_bg, nil },
   }
 }
