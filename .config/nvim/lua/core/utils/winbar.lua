@@ -26,10 +26,8 @@ end
 M.winbar = function()
   local symbols = aerial.get_location(true)
   local symbol_path = format_symbols(symbols, nil, '  ', true)
-  local file_path = vim.api.nvim_eval_statusline('%f', {}).str
-  file_path = file_path:gsub('/', '  ')
 
-  return file_path .. "  " .. (symbol_path == "" and "..." or symbol_path)
+  return(symbol_path == "" and "..." or symbol_path)
 end
 
 vim.o.winbar = "%{%v:lua.require('core.utils.winbar').winbar()%}"
