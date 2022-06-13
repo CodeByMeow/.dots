@@ -1,15 +1,15 @@
 configuration {
 
 	drun {
-		display-name: "";
+		display-name: "󰼁";
 	}
 
 	window {
-		display-name: "";
+		display-name: "󰫕";
 	}
 
 	dmenu {
-		display-name: "";
+		display-name: "󱀇";
 	}
 
 	timeout {
