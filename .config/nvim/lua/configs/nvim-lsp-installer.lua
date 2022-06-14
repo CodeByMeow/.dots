@@ -30,6 +30,7 @@ if status_ok then
           diagnostics = {
             globals = {
               'vim',
+              'katvim',
             }
           }
         }

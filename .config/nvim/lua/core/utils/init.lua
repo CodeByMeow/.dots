@@ -8,8 +8,4 @@ function katvim.vim_opts(options)
   end
 end
 
-function katvim.is_available(plugin)
-  return packer_plugins ~= nil and packer_plugins[plugin] ~= nil
-end
-
 return katvim

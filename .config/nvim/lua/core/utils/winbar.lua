@@ -1,6 +1,8 @@
+local status_ok, aerial = pcall(require, 'aerial')
+if not status_ok then
+  return
+end
 local M = {}
-
-local aerial = require('aerial')
 
 local function format_symbols(symbols, depth, separator, icons_enabled)
   local parts = {}
