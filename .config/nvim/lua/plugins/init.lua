@@ -177,7 +177,7 @@ return require('packer').startup({ function(use)
     'tzachar/cmp-tabnine',
     run = './install.sh'
   }
-  use {'hrsh7th/cmp-nvim-lsp-signature-help'}
+  use { 'hrsh7th/cmp-nvim-lsp-signature-help' }
 
   -- Built-in LSP
   use {
@@ -338,7 +338,7 @@ return require('packer').startup({ function(use)
   }
 
   -- Number of result search
-  use({
+  use {
     "kevinhwang91/nvim-hlslens",
     keys = { "/" },
     config = function()
@@ -348,7 +348,7 @@ return require('packer').startup({ function(use)
         nearest_float_when = "auto",
       })
     end,
-  })
+  }
 
 
 end,
