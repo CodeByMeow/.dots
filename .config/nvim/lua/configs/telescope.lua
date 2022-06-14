@@ -88,4 +88,8 @@ if status_ok then
     pickers = {},
     extensions = {},
   })
+  local is_available, _ = pcall(require, "aerial")
+  if is_available then
+    telescope.load_extension('aerial')
+  end
 end

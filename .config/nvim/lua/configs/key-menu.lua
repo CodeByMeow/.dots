@@ -19,15 +19,51 @@ map('n', '<Space>k', erase_all_lines, { desc = 'Erase all' })
 
 map('n', '<Space>x', ':bdelete<cr>', { desc = 'Close' })
 
-map('n', '<Space>f', function()
-  keymenu.open_window('<Space>f')
-end, { desc = 'Telescope' })
-map('n', '<Space>ff', ':Telescope find_files<cr>', { desc = 'Find files' })
-map('n', '<Space>fr', ':Telescope live_grep<cr>', { desc = 'Live grep' })
-map('n', '<Space>fo', ':Telescope oldfiles<cr>', { desc = 'Recent file' })
-map('n', '<Space>fb', ':Telescope buffers<cr>', { desc = 'Buffers' })
-map('n', '<Space>e', ':NeoTreeFloat<cr>', { desc = 'Explorer' })
+map('n', '<Space>e', '<cmd>NeoTreeFloat<cr>', { desc = 'Explorer' })
 
+local is_telecope_loaded, _ = pcall(require, "telescope")
+if is_telecope_loaded then
+  map('n', '<Space>f', function()
+    keymenu.open_window('<Space>f')
+  end, { desc = 'Telescope' })
+  map('n', '<Space>fw', function()
+    require("telescope.builtin").live_grep()
+  end, { desc = 'Search word' })
+  map('n', '<Space>ff', function()
+    require("telescope.builtin").find_files()
+  end, { desc = 'Search files' })
+  map('n', '<Space>fo', function()
+    require("telescope.builtin").oldfiles()
+  end, { desc = 'Search history' })
+  map('n', '<Space>fb', function()
+    require("telescope.builtin").buffers()
+  end, { desc = 'Search buffers' })
+  map('n', '<Space>fs', function()
+    local aerial_avail, _ = pcall(require, "aerial")
+    if aerial_avail then
+      require("telescope").extensions.aerial.aerial()
+    else
+      require("telescope.builtin").lsp_document_symbols()
+    end
+  end, { desc = 'Search symbols' })
+  map("n", "<Space>gt", function()
+    require("telescope.builtin").git_status()
+  end, { desc = "Git status" })
+  map("n", "<Space>gb", function()
+    require("telescope.builtin").git_branches()
+  end, { desc = "Git branchs" })
+  map("n", "<Space>gc", function()
+    require("telescope.builtin").git_commits()
+  end, { desc = "Git commits" })
+  map("n", "<Space>fr", function()
+    require("telescope.builtin").lsp_references()
+  end, { desc = "Search references" })
+  map("n", "<Space>fd", function()
+    require("telescope.builtin").diagnostics()
+  end, { desc = "Search diagnostics" })
+end
+
+-- Terminal
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
   local float = Terminal:new({ direction = "float" })
@@ -37,12 +73,19 @@ local toggle_lazygit = function()
   local lazygit = Terminal:new({ cmd = 'lazygit', direction = "float" })
   return lazygit:toggle()
 end
+
+local toggle_htop = function()
+  local htop = Terminal:new({ cmd = 'htop', direction = "float" })
+  return htop:toggle()
+end
+
 map('n', '<Space>t', function()
   keymenu.open_window('<Space>t')
 end, { desc = 'Terminal' })
 map('n', '<Space>tt', ':TodoTelescope<cr>', { desc = 'Todo' })
 map('n', '<Space>tf', toggle_float, { desc = 'Float' })
 map('n', '<Space>tl', toggle_lazygit, { desc = 'LazyGit' })
+map('n', '<Space>th', toggle_htop, { desc = 'Htop' })
 
 map('n', '<Space>l', function()
   keymenu.open_window('<Space>l')
@@ -64,7 +107,8 @@ map('n', '<Space>le', "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = 'Show L
 map('n', '<Space>ln', "<cmd>Lspsaga diagnostic_jump_next<cr>", { desc = 'Next Diagnostic' })
 map('n', '<Space>lN', "<cmd>Lspsaga diagnostic_jump_prev<cr>", { desc = 'Previous Diagnostic' })
 map('n', '<Space>lp', "<cmd>Lspsaga preview_definition<cr>", { desc = 'Preview definition' })
-
+map('n', '<Space>li', "<cmd>LspInfo<cr>", { desc = "LSP information" })
+map('n', '<Space>lI', "<cmd>LspInstallInfo<cr>", { desc = 'LSP installer' })
 
 map('n', '<Space>p', function()
   keymenu.open_window('<Space>p')
@@ -76,3 +120,18 @@ map('n', '<Space>pp', ":PackerProfile<cr>", { desc = 'Packer Profile' })
 map('n', '<Space>ps', ":PackerSync<cr>", { desc = 'Sync Plugins' })
 map('n', '<Space>pS', ":PackerStatus<cr>", { desc = 'Packer Status' })
 map('n', '<Space>pu', ":PackerUpdate<cr>", { desc = 'Update Plugins' })
+
+
+-- Comment
+local is_comment_loaded, _ = pcall(require, "Comment.nvim")
+if is_comment_loaded then
+  map("n", "<Space>/", function()
+    require("Comment.api").toggle_current_linewise()
+  end, { desc = "Comment line" })
+  map(
+    "v",
+    "<Space>/",
+    "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>",
+    { desc = "Toggle comment line" }
+  )
+end
