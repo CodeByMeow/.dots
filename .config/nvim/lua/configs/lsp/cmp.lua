@@ -61,6 +61,7 @@ cmp.setup({
     { name = 'path' },
     { name = 'treesitter' },
     { name = 'rg' },
+    { name = 'nvim_lsp_signature_help' },
   },
   formatting = {
     format = kind.cmp_format({

@@ -177,6 +177,7 @@ return require('packer').startup({ function(use)
     'tzachar/cmp-tabnine',
     run = './install.sh'
   }
+  use {'hrsh7th/cmp-nvim-lsp-signature-help'}
 
   -- Built-in LSP
   use {
@@ -349,13 +350,6 @@ return require('packer').startup({ function(use)
     end,
   })
 
-  -- Hist info
-  use {
-    'ray-x/lsp_signature.nvim',
-    config = function()
-      require "configs.signature"
-    end
-  }
 
 end,
 config = {

@@ -32,7 +32,7 @@ if is_telecope_loaded then
   map('n', '<Space>ff', function()
     require("telescope.builtin").find_files()
   end, { desc = 'Search files' })
-  map('n', '<Space>fo', function()
+  map('n', '<Space>fh', function()
     require("telescope.builtin").oldfiles()
   end, { desc = 'Search history' })
   map('n', '<Space>fb', function()
@@ -79,6 +79,11 @@ local toggle_htop = function()
   return htop:toggle()
 end
 
+local toggle_node = function()
+  local htop = Terminal:new({ cmd = 'node', direction = "float" })
+  return htop:toggle()
+end
+
 map('n', '<Space>t', function()
   keymenu.open_window('<Space>t')
 end, { desc = 'Terminal' })
@@ -86,6 +91,7 @@ map('n', '<Space>tt', ':TodoTelescope<cr>', { desc = 'Todo' })
 map('n', '<Space>tf', toggle_float, { desc = 'Float' })
 map('n', '<Space>tl', toggle_lazygit, { desc = 'LazyGit' })
 map('n', '<Space>th', toggle_htop, { desc = 'Htop' })
+map('n', '<Space>tn', toggle_node, { desc = 'Node' })
 
 map('n', '<Space>l', function()
   keymenu.open_window('<Space>l')
@@ -120,18 +126,3 @@ map('n', '<Space>pp', ":PackerProfile<cr>", { desc = 'Packer Profile' })
 map('n', '<Space>ps', ":PackerSync<cr>", { desc = 'Sync Plugins' })
 map('n', '<Space>pS', ":PackerStatus<cr>", { desc = 'Packer Status' })
 map('n', '<Space>pu', ":PackerUpdate<cr>", { desc = 'Update Plugins' })
-
-
--- Comment
-local is_comment_loaded, _ = pcall(require, "Comment.nvim")
-if is_comment_loaded then
-  map("n", "<Space>/", function()
-    require("Comment.api").toggle_current_linewise()
-  end, { desc = "Comment line" })
-  map(
-    "v",
-    "<Space>/",
-    "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>",
-    { desc = "Toggle comment line" }
-  )
-end
