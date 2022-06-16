@@ -46,15 +46,6 @@ if is_telecope_loaded then
       require("telescope.builtin").lsp_document_symbols()
     end
   end, { desc = 'Search symbols' })
-  map("n", "<Space>gt", function()
-    require("telescope.builtin").git_status()
-  end, { desc = "Git status" })
-  map("n", "<Space>gb", function()
-    require("telescope.builtin").git_branches()
-  end, { desc = "Git branchs" })
-  map("n", "<Space>gc", function()
-    require("telescope.builtin").git_commits()
-  end, { desc = "Git commits" })
   map("n", "<Space>fr", function()
     require("telescope.builtin").lsp_references()
   end, { desc = "Search references" })
@@ -62,6 +53,20 @@ if is_telecope_loaded then
     require("telescope.builtin").diagnostics()
   end, { desc = "Search diagnostics" })
 end
+
+-- Git
+map('n', '<Space>g', function()
+  keymenu.open_window('<Space>g')
+end, { desc = 'Git' })
+map("n", "<Space>gt", function()
+  require("telescope.builtin").git_status()
+end, { desc = "Git status" })
+map("n", "<Space>gb", function()
+  require("telescope.builtin").git_branches()
+end, { desc = "Git branchs" })
+map("n", "<Space>gc", function()
+  require("telescope.builtin").git_commits()
+end, { desc = "Git commits" })
 
 -- Terminal
 local Terminal = require('toggleterm.terminal').Terminal
