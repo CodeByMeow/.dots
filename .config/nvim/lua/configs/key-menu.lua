@@ -5,7 +5,7 @@ end
 
 vim.o.timeoutlen = 300
 local map = vim.keymap.set
-require 'key-menu'.set('n', '<Space>')
+keymenu.set('n', '<Space>')
 
 map('n', '<Space>w', '<Cmd>w<CR>', { desc = 'Save' })
 map('n', '<Space>q', '<Cmd>q<CR>', { desc = 'Quit' })
