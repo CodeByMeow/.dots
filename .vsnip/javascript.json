@@ -280,5 +280,13 @@
       "};"
     ],
     "description": "Class Property Function"
+  },
+
+  "Console Log": {
+    "prefix": "clg",
+    "body": [
+      "console.log($0)"
+    ],
+    "description": "Console log"
   }
 }

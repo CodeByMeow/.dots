@@ -27,9 +27,6 @@ map('n', '<ESC>', ':noh<cr>', opts)
 --Quick delete word on insert mode
 map("i", "<C-w>", "<C-O>diw", opts)
 
-map("n", "<C-w>-", "<cmd>:sp<cr>", opts)
-map("n", "<C-w>\\", "<cmd>:vsp<cr>", opts)
-
 map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
 map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
 
