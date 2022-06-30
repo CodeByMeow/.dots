@@ -350,6 +350,15 @@ return require('packer').startup({ function(use)
     end,
   }
 
+  -- Format
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    config = function ()
+      require "configs.null-ls"
+    end
+
+  }
+
 end,
 config = {
   display = {
