@@ -353,18 +353,26 @@ return require('packer').startup({ function(use)
   -- Format
   use {
     'jose-elias-alvarez/null-ls.nvim',
-    config = function ()
+    config = function()
       require "configs.null-ls"
     end
 
   }
 
-end,
-config = {
-  display = {
-    open_fn = function()
-      return require('packer.util').float({ border = 'single' })
+  -- Zendmode
+  use {
+    'folke/zen-mode.nvim',
+    config = function()
+      require "zen-mode".setup()
     end
   }
-}
+
+end,
+  config = {
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'single' })
+      end
+    }
+  }
 })
