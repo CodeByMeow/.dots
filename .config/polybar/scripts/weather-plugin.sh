@@ -86,7 +86,7 @@ COLD_TEMP=20
 # Other settings ______________________________________________________________
 
 # Display the weather description. yes/no
-DISPLAY_LABEL="yes"
+DISPLAY_LABEL="no"
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -7,9 +7,9 @@ fi
 
 # Foreground color formatting tags are optional
 if [[ $player_status = "Playing" ]]; then
-    echo "%{F#FFFFFF}$metadata%{F-}"
+    echo "%{T5}%{F#FFFFFF} $metadata%{F-}"
 elif [[ $player_status = "Paused" ]]; then
-    echo "%{F#999999} $metadata%{F-}"
+    echo "%{T5}%{F#999999} $metadata%{F-}"
 else
     echo ""
 fi
