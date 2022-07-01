@@ -21,6 +21,8 @@ map('n', '<Space>x', ':bdelete<cr>', { desc = 'Close' })
 
 map('n', '<Space>e', '<cmd>NeoTreeFloat<cr>', { desc = 'Explorer' })
 
+map('n', 'K', "<cmd>Lspsaga hover_doc<cr>", { desc = 'Docs' })
+
 local is_telecope_loaded, _ = pcall(require, "telescope")
 if is_telecope_loaded then
   map('n', '<Space>f', function()
@@ -102,7 +104,6 @@ map('n', '<Space>l', function()
   keymenu.open_window('<Space>l')
 end, { desc = 'LSP' })
 map('n', '<Space>lk', "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = 'Help' })
-map('n', '<Space>lK', "<cmd>Lspsaga hover_doc<cr>", { desc = 'Docs' })
 map('n', '<Space>lw', "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>", { desc = 'Add workspace' })
 map('n', '<Space>lW', "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>", { desc = 'Remove workspace' })
 map('n', '<Space>ll', "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>",
