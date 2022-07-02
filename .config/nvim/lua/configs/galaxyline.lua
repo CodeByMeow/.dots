@@ -2,45 +2,45 @@ local status_ok, gl = pcall(require, "galaxyline")
 if not status_ok then
   return
 end
-local iconz = require("nvim-nonicons")
-local gls   = gl.section
+local iconz        = require("nvim-nonicons")
+local gls          = gl.section
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
 local icons = { sep = {
   right = "",
   left = ""
 },
-diagnostic = {
-  -- error = " ",
-  error = iconz.get("x-circle-fill"),
-  -- warn = " ",
-  warn = iconz.get("alert"),
-  -- info = " "
-  info = iconz.get("info")
-},
-diff = { added = iconz.get("diff-added"),
-  modified = iconz.get("diff-modified"), removed = iconz.get("diff-removed"),
-  -- add = " ",
-  -- modified = " ",
-  -- remove = " "
-},
-git = iconz.get("git-branch"),
-line_nr = iconz.get("list-ordered"),
-file = {
-  read_only = '',
-  -- modified = '⨁ ',
-  -- modified = '✎',
-  modified = iconz.get("pencil"),
-},
-normal = iconz.get("vim-normal-mode"),
-insert = iconz.get("vim-insert-mode"),
-command = iconz.get("vim-command-mode"),
-visual = iconz.get("vim-visual-mode"),
-replace = iconz.get("vim-replace-mode"),
-selection = iconz.get("vim-select-mode"),
-terminal = iconz.get("terminal"),
-visual_block = iconz.get("field")
--- terminal  = iconz.get("vim-terminal-mode")
+  diagnostic = {
+    -- error = " ",
+    error = iconz.get("x-circle-fill"),
+    -- warn = " ",
+    warn = iconz.get("alert"),
+    -- info = " "
+    info = iconz.get("info")
+  },
+  diff = { added = iconz.get("diff-added"),
+    modified = iconz.get("diff-modified"), removed = iconz.get("diff-removed"),
+    -- add = " ",
+    -- modified = " ",
+    -- remove = " "
+  },
+  git = iconz.get("git-branch"),
+  line_nr = iconz.get("list-ordered"),
+  file = {
+    read_only = '',
+    -- modified = '⨁ ',
+    -- modified = '✎',
+    modified = iconz.get("pencil"),
+  },
+  normal = iconz.get("vim-normal-mode"),
+  insert = iconz.get("vim-insert-mode"),
+  command = iconz.get("vim-command-mode"),
+  visual = iconz.get("vim-visual-mode"),
+  replace = iconz.get("vim-replace-mode"),
+  selection = iconz.get("vim-select-mode"),
+  terminal = iconz.get("terminal"),
+  visual_block = iconz.get("field")
+  -- terminal  = iconz.get("vim-terminal-mode")
 }
 
 local colors = {
