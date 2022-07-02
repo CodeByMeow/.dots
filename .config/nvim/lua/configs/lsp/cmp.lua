@@ -60,7 +60,6 @@ cmp.setup({
     { name = 'cmp_tabnine' },
     { name = 'path' },
     { name = 'treesitter' },
-    { name = 'rg' },
     { name = 'nvim_lsp_signature_help' },
   },
   formatting = {

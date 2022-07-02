@@ -171,7 +171,6 @@ return require('packer').startup({ function(use)
   use { 'hrsh7th/nvim-cmp' }
   use { 'hrsh7th/cmp-vsnip' }
   use { 'hrsh7th/vim-vsnip' }
-  use { 'lukas-reineke/cmp-rg' }
   use { 'onsails/lspkind-nvim' }
   use {
     'tzachar/cmp-tabnine',
