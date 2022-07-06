@@ -35,11 +35,11 @@ repeat_by_len () {
 }
 
 printf '%b' "
-${bold}${blue}              ${end}${bold}${blue}${user}${cyan}@${purple}$(cat /etc/hostname)${end}
-${bold}${blue}              ${end}${green}$(repeat_by_len "${user}@$(cat /etc/hostname)" "─")
-${bold}${blue}     (\ /)    ${end}${bold}${purple}  ${blue}os${green} ${magenta} ${cyan}${distro}${end}
-${bold}${blue}    ( . .)    ${end}${bold}${yellow} ${blue}sh${green} ${magenta} ${cyan}${shell}${end}
-${bold}${blue}   c(\")(\")    ${end}${bold}${green}  ${blue}wm${green} ${magenta} ${cyan}${wm}${end}
-${bold}${blue}              ${end}${bold}${red}  ${blue}kr${green} ${magenta} ${cyan}${kernel}${end}
-${bold}${blue}              ${end}${bold}${white}  ${blue}pk${green} ${magenta} ${cyan}${packages}${end}
+${bold}${blue} ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀              ${end}${bold}${blue}${user}${cyan}@${purple}$(cat /etc/hostname)${end}
+${bold}${blue}⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀ ⠀${end}${green}$(repeat_by_len "${user}@$(cat /etc/hostname)" "─")
+${bold}${blue}⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀ ⠀${end}${bold}${purple}  ${blue}os${green} ${magenta} ${cyan}${distro}${end}
+${bold}${blue}⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⡇     ${end}${bold}${yellow} ${blue}sh${green} ${magenta} ${cyan}${shell}${end}
+${bold}${blue}⣶⣿⣦⣜⣿⣿⣿⡟⠻⣿⣿⣿⣿⣿⣿⣿⡿⢿⡏⣴⣺⣦⣙⣿⣷⣄⠀⠀  ${end}${bold}${green}  ${blue}wm${green} ${magenta} ${cyan}${wm}${end}
+${bold}${blue}⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧⠀⠀ ${end}${bold}${red}  ${blue}kr${green} ${magenta} ${cyan}${kernel}${end}
+${bold}${blue}⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣷  ${end}${bold}${white}  ${blue}pk${green} ${magenta} ${cyan}${packages}${end}
 "
