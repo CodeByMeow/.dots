@@ -1,14 +1,3 @@
-img[src~="thumbnail"] {
-   width:150px;
-   height:100px;
-}
-img[src~="bordered"] {
-   border: 1px solid black;
-}
-<div align="center">
-  ![logo](/logo/catinbox.jpg #thumbnail bordered)
-  <img width="300" height="300" src="./logo/catinbox.jpg" style="border-radius: 50%">
-</div>
 
 <div align="center">
 
