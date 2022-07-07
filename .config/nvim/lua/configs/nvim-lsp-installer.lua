@@ -17,7 +17,7 @@ if status_ok then
   })
 
   local lspconfig = require('lspconfig')
-  local _, aerial = pcall('require', "aerial")
+  local _, aerial = pcall(require, "aerial")
   local opts = {
     capabilities = capabilities,
     on_attach = aerial.on_attach
