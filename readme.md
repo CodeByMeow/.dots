@@ -11,7 +11,7 @@
 ### Installer Manager  
   [yay](https://github.com/Jguer/yay)  
 ### Software
-`yay -S kitty bspwm sxhdk picom polybar fish cava rofi neofetch neovim ranger dunst uclutter peco \
+`yay -S kitty bspwm sxhkd picom polybar fish cava rofi neofetch neovim ranger dunst uclutter peco \
 xcorg-xsetroot acpilight light bluez-ultils blueman bluetooth-autoconnect ripgrep lazygit flameshot \
 lolcat fd feh betterclockscreen dolphin lxappearance breeze logo-ls playerctrl `
 
