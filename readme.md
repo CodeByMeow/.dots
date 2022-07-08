@@ -1,6 +1,4 @@
-
 <div align="center">
-
 
 ```css
 
@@ -23,46 +21,65 @@
 - **Editor** :pencil2: Neovim
 
 ---
-### First, Update new system 
-  ``` 
-  sudo pacman-mirrors --fasttrack
-  sudo pacman -Syyu   
-  pacman -S --needed git base-devel 
-  ```
+
+### First, Update new system
+
+```
+sudo pacman-mirrors --fasttrack
+sudo pacman -Syyu
+pacman -S --needed git base-devel
+```
+
 ### AUR Helper
-  **Yay** :heart: [yay](https://github.com/Jguer/yay)  
+
+**Yay** :heart: [yay](https://github.com/Jguer/yay)
+
 ### Software
+
 ```
 sxhkd cava neovim dunst uclutter peco duf
 xcorg-xsetroot acpilight light bluez-ultils
-blueman bluetooth-autoconnect lazygit flameshot 
+blueman bluetooth-autoconnect lazygit flameshot
 lolcat fd feh dolphin lxappearance breeze logo-ls playerctrl
 ```
 
-### GUI terminal 
-- **Fish theme** :sparkles: `starship`  
+### GUI terminal
+
+- **Fish theme** :sparkles: `starship`
 - **Kitty**:seedling: `kitty +kitten theme`
 
 - **Light**:bulb: `sudo chmod +s (which light)`
 
-### Font 
-- Victor Mono  
-- Iosevka  
+### Font
+
+- Victor Mono
+- Iosevka
 - Montserrat
 
 ### Fix some error
+
 No sound :sound: `alsactl restore`
 
 ### Break and save eye
-__F.lux:sunny:__ `xflux`  
-__BreakTimer:bed:__ `breaktimer`
 
-### Keyboard Keychrone K2 swap Fn 
+**F.lux:sunny:** `xflux`  
+**BreakTimer:bed:** `breaktimer`
+
+### Keyboard Keychrone K2 swap Fn
+
 - Set the keyboard to :keyboard: Windows mode via the side switch.
 - Use **Fn + X + L** (hold for 4 seconds) to set the function key row to "Function" mode. (usually all that's necessary on Windows)
 - `echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode`
+- To persist this change, add a module option for hid_apple:
+- ```
+  echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
+  ```
+- You may need to rebuild your `initramfs` if `hid_apple` is included.
+  - ubuntu: `sudo update-initramfs -u`
+  - arch: `mkinitcpio -P`
 
 ### Git bare
+
 ```
 git clone --bare $REPO $HOME/.dotfiles
 git --git-dir=$HOME/.dotfiles/ config --local status.showUntrackedFiles no

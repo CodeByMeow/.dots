@@ -367,23 +367,23 @@ return require('packer').startup({ function(use)
   }
 
   -- Surround
-  use{
+  use {
     'kylechui/nvim-surround',
     config = function()
       require "configs.nvim-surround"
     end
   }
 
-  use{
+  use {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   }
 
   -- Startup time
-  use {
+  --[[ use {
     'dstein64/vim-startuptime'
-  }
-  
+  } ]]
+
 end,
   config = {
     display = {

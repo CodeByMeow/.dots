@@ -185,5 +185,19 @@
     "prefix": "meta",
     "body": "meta(name=\"${1:name}\" content=\"${2:content}\")",
     "description": "add a meta tag"
+  },
+  "Pug/Jade HTML Template": {
+    "prefix": "html",
+    "body": [
+      "doctype html",
+      "html(lang='en')",
+      "\thead",
+      "\t\tmeta(charset='utf-8')",
+      "\t\tmeta(http-equiv=\"X-UA-Compatible\", content=\"IE=edge\")",
+      "\t\tmeta(name=\"viewport\", content=\"width=device-width, initial-scale=1.0\")",
+      "\t\ttitle ${1:Document}",
+      "\tbody"
+    ],
+    "description": "html template"
   }
 }
