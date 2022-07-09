@@ -37,10 +37,10 @@ pacman -S --needed git base-devel
 ### Software
 
 ```
-sxhkd cava neovim dunst uclutter peco duf
-xcorg-xsetroot acpilight light bluez-ultils
+sxhkd cava neovim dunst unclutter peco duf
+xorg-xsetroot acpilight light
 blueman bluetooth-autoconnect lazygit flameshot
-lolcat fd feh dolphin lxappearance breeze logo-ls playerctrl
+lolcat fd feh dolphin lxappearance breeze logo-ls playerctl
 ```
 
 ### GUI terminal
