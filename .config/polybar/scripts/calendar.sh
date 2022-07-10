@@ -12,5 +12,5 @@ case "$1" in
             --title="calendar" --borders=0 >/dev/null &
         ;;
     *)
-        echo "$(date +"%a, %d %b")";;
+        echo "$(date +"%A, %d / %m")";;
 esac
