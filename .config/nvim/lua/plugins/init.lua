@@ -320,22 +320,6 @@ return require('packer').startup({ function(use)
   -- Context blame
   use { 'haringsrob/nvim_context_vt' }
 
-  -- Scrollbar
-  use {
-    'petertriho/nvim-scrollbar',
-    config = function()
-      require("scrollbar").setup()
-    end
-  }
-
-  -- Todo comment
-  use {
-    "folke/todo-comments.nvim",
-    config = function()
-      require "todo-comments".setup()
-    end
-  }
-
   -- Number of result search
   use {
     "kevinhwang91/nvim-hlslens",
@@ -356,14 +340,6 @@ return require('packer').startup({ function(use)
       require "configs.null-ls"
     end
 
-  }
-
-  -- Zendmode
-  use {
-    'folke/zen-mode.nvim',
-    config = function()
-      require "zen-mode".setup()
-    end
   }
 
   -- Surround

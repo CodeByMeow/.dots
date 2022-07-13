@@ -94,7 +94,6 @@ end
 map('n', '<Space>t', function()
   keymenu.open_window('<Space>t')
 end, { desc = 'Terminal' })
-map('n', '<Space>tt', ':TodoTelescope<cr>', { desc = 'Todo' })
 map('n', '<Space>tf', toggle_float, { desc = 'Float' })
 map('n', '<Space>tl', toggle_lazygit, { desc = 'LazyGit' })
 map('n', '<Space>th', toggle_htop, { desc = 'Htop' })
