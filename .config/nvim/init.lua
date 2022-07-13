@@ -7,7 +7,6 @@ for _, source in ipairs {
   "core.utils",
   "core.utils.winbar",
   "core.options",
-  "core.autocmds",
   "core.mappings",
   "plugins",
 } do

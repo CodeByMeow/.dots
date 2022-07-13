@@ -7,8 +7,8 @@ local gls          = gl.section
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
 local icons = { sep = {
-  right = "",
-  left = ""
+  right = "",
+  left = ""
 },
   diagnostic = {
     -- error = " ",
@@ -201,7 +201,7 @@ i = i + 1
 gls.left[i] = {
   teech = {
     provider = function()
-      return ""
+      return icons.sep.left
     end,
     separator = "",
     highlight = { colors.white, colors.main_bg }
@@ -300,7 +300,7 @@ gls.right[i] = {
     separator = " ",
     separator_highlight = { colors.main_bg, colors.main_bg },
     provider = function()
-      return ""
+      return icons.sep.left
     end,
     condition = require("galaxyline.condition").check_git_workspace,
     highlight = { colors.blue2, colors.main_bg }
@@ -340,7 +340,7 @@ i = i + 1
 gls.right[i] = {
   right_LeftRounded = {
     provider = function()
-      return ""
+      return icons.sep.right
     end,
     highlight = function()
       if require("galaxyline.condition").check_git_workspace() then

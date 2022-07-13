@@ -380,9 +380,9 @@ return require('packer').startup({ function(use)
   }
 
   -- Startup time
-  --[[ use {
+  use {
     'dstein64/vim-startuptime'
-  } ]]
+  }
 
 end,
   config = {
