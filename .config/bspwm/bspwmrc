@@ -23,7 +23,6 @@ for i in ${web[@]}; do
 declare -a filem=(dolphin)
 for i in ${filem[@]}; do
     bspc rule -a $i desktop='^3' follow=on focus=on; done
-    
 workspaces
 bspc config top_padding 50
 bspc config window_gap 10
