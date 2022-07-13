@@ -262,6 +262,24 @@ gls.right[i] = {
   }
 }
 
+i = i+1
+gls.right[i] = {
+   Encode = {
+    provider = 'FileEncode',
+    highlight = {colors.commented, colors.main_bg},
+  }
+}
+
+i = i + 1
+gls.right[i] = {
+  rightRounded = {
+    provider = function()
+      return "█"
+    end,
+    highlight = { colors.main_bg }
+  }
+}
+
 i = i + 1
 gls.right[i] = {
   DiffAdd = {

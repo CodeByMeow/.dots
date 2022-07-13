@@ -4,7 +4,7 @@ format = """
 (bold bg:black fg:blue)\
 [󰊠 󱙝 󰊠 󱙝 ]\
 (bold bg:black fg:white)\
-[]\
+[█]\
 (bold bg:bright-blue fg:black)\
 [\
 $git_branch\
@@ -14,9 +14,9 @@ $git_metrics\
 $git_status\
 $hg_branch\
 ]\
-(bold bg:blue fg:black)\
-[]\
-(bold bg:none fg:blue) \
+(bold bg:none fg:black)\
+[]\
+(bold bg:none fg:black) \
 $hg_branch\
 $docker_context\
 $package\
@@ -61,7 +61,7 @@ $openstack\
 $env_var\
 $crystal\
 $fill\
-[]\
+[]\
 (bold bg:none fg:white)\
 [󱑍 ]\
 (bold bg:white fg:black)\
