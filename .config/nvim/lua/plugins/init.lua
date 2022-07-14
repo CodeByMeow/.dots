@@ -360,6 +360,8 @@ return require('packer').startup({ function(use)
     'dstein64/vim-startuptime'
   }
 
+  use("nathom/filetype.nvim")
+
 end,
   config = {
     display = {
