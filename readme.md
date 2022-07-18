@@ -22,7 +22,7 @@
 
 ---
 
-### First, Update new system
+### (manjaro) Point to the Fastest Mirror and Update your System
 
 ```
 sudo pacman-mirrors --fasttrack
