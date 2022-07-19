@@ -349,10 +349,10 @@ local plugins = {
 
   {
     'j-hui/fidget.nvim',
-    config = function ()
+    config = function()
       require "plugins.configs.others".fidget()
     end
-  }
+  },
 
 }
 

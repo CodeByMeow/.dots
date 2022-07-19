@@ -9,4 +9,5 @@ vim.defer_fn(function()
    require "core.mappings"
 end, 0)
 
+require("core.packer").bootstrap()
 require "plugins"
