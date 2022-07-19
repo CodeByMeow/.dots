@@ -1,6 +1,4 @@
-local status_ok, indent_blankline = pcall(require, "indent_blankline")
-if status_ok then
-  indent_blankline.setup({
+require "indent_blankline".setup({
     buftype_exclude = {
       "nofile",
       "terminal",
@@ -47,4 +45,3 @@ if status_ok then
     context_char = "▏",
     show_current_context = true,
   })
-end

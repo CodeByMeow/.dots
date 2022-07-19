@@ -1,5 +1,5 @@
-local status_ok, keymenu = pcall(require, "key-menu")
-if not status_ok then
+local present, keymenu = pcall(require, "key-menu")
+if not present then
   return
 end
 
@@ -23,8 +23,8 @@ map('n', '<Space>e', '<cmd>NeoTreeFloat<cr>', { desc = 'Explorer' })
 
 map('n', 'K', "<cmd>Lspsaga hover_doc<cr>", { desc = 'Docs' })
 
-local is_telecope_loaded, _ = pcall(require, "telescope")
-if is_telecope_loaded then
+local telescope_present, _ = pcall(require, "telescope")
+if telescope_present then
   map('n', '<Space>f', function()
     keymenu.open_window('<Space>f')
   end, { desc = 'Telescope' })
@@ -118,7 +118,6 @@ map('n', '<Space>le', "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = 'Show L
 map('n', '<Space>ln', "<cmd>Lspsaga diagnostic_jump_next<cr>", { desc = 'Next Diagnostic' })
 map('n', '<Space>lN', "<cmd>Lspsaga diagnostic_jump_prev<cr>", { desc = 'Previous Diagnostic' })
 map('n', '<Space>lp', "<cmd>Lspsaga preview_definition<cr>", { desc = 'Preview definition' })
-map('n', '<Space>li', "<cmd>LspInfo<cr>", { desc = "LSP information" })
 map('n', '<Space>lI', "<cmd>LspInstallInfo<cr>", { desc = 'LSP installer' })
 
 map('n', '<Space>p', function()

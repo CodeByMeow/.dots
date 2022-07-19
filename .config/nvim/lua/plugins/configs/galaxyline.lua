@@ -1,7 +1,8 @@
-local status_ok, gl = pcall(require, "galaxyline")
-if not status_ok then
+local present, gl = pcall(require, "galaxyline")
+if not present then
   return
 end
+
 local iconz        = require("nvim-nonicons")
 local gls          = gl.section
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
@@ -318,7 +319,7 @@ gls.right[i] = {
     separator = " ",
     separator_highlight = { colors.main_bg, colors.main_bg },
     provider = function()
-      return icons.sep.left
+      return icons.sep.right
     end,
     condition = require("galaxyline.condition").check_git_workspace,
     highlight = { colors.blue2, colors.main_bg }

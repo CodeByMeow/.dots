@@ -1,5 +1,5 @@
-local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
-if status_ok then
+local present, treesitter = pcall(require, "nvim-treesitter.configs")
+if present then
   treesitter.setup {
     ensure_installed = { "html", "javascript", "lua", "css", "php", "jsdoc", "json", "tsx" },
     sync_install = false,

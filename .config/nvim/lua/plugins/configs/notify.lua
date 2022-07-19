@@ -1,6 +1,7 @@
-local status_ok, notify = pcall(require, "notify")
-local default = {
-  stages = "fade",
+local notify = require "notify"
+
+notify.setup({
+   stages = "fade",
   render = "default",
   timeout = 2000,
   minimum_width = 60,
@@ -10,9 +11,7 @@ local default = {
     INFO = "",
     DEBUG = "",
     TRACE = "",
-  },
-}
-
-notify.setup(default)
+  }
+})
 
 vim.notify = notify

@@ -1,8 +1,9 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
+local present, toggleterm = pcall(require, "toggleterm")
+if not present then
   return
 end
-toggleterm.setup {
+
+local options = {
   size = function(term)
     if term.direction == "horizontal" then
       return 15
@@ -22,6 +23,9 @@ toggleterm.setup {
     border = 'curved',
   },
 }
+
+
+toggleterm.setup(options)
 
 function _G.set_terminal_keymaps()
   local opts = { noremap = true }

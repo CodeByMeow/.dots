@@ -1,6 +1,4 @@
-local status_ok, tmux = pcall(require, "tmux")
-if status_ok then
-  tmux.setup({
+require "tmux".setup({
     copy_sync = {
       enable = true,
     },
@@ -11,4 +9,3 @@ if status_ok then
       enable_default_keybindings = false,
     }
   });
-end

@@ -1,9 +1,14 @@
-local status_ok, lspsaga = pcall(require, "lspsaga")
-if not status_ok then
+local present, lspsaga = pcall(require, "lspsaga")
+if not present then
   return
 end
 
-lspsaga.setup {
+local map = vim.api.nvim_set_keymap
+local opts = { silent = true, noremap = true }
+map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
+map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
+
+local options = {
   debug = false,
   use_saga_diagnostic_sign = true,
   error_sign = "✘",
@@ -44,3 +49,5 @@ lspsaga.setup {
   server_filetype_map = {},
   diagnostic_prefix_format = "%d. ",
 }
+
+lspsaga.setup(options)

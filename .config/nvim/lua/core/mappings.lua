@@ -1,4 +1,3 @@
-local is_available = katvim.is_available
 local map = vim.api.nvim_set_keymap
 local opts = { silent = true, noremap = true }
 
@@ -27,8 +26,3 @@ map('n', '<ESC>', ':noh<cr>', opts)
 --Quick delete word on insert mode
 map("i", "<C-w>", "<C-O>diw", opts)
 
-map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
-map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
-
-map("n", "<TAB>", "<cmd>BufferLineCycleNext<CR>", opts)
-map("n", "<S-TAB>", "<cmd>BufferLineCyclePrev<CR>", opts)
