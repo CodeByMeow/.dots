@@ -3,8 +3,8 @@ if not present then
   return
 end
 
-local iconz        = require("nvim-nonicons")
-local gls          = gl.section
+local iconz = require("nvim-nonicons")
+local gls = gl.section
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
 local icons = { sep = {
@@ -183,7 +183,6 @@ i = i + 1
 gls.left[i] = {
   FileIcon = {
     provider = "FileIcon",
-    separator = " ",
     separator_highlight = { colors.white, colors.white },
     highlight = { colors.creamydark, colors.white }
   }
@@ -263,11 +262,11 @@ gls.right[i] = {
   }
 }
 
-i = i+1
+i = i + 1
 gls.right[i] = {
-   Encode = {
+  Encode = {
     provider = 'FileEncode',
-    highlight = {colors.commented, colors.main_bg},
+    highlight = { colors.commented, colors.main_bg },
   }
 }
 

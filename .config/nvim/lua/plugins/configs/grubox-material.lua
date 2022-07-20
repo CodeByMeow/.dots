@@ -1,3 +1,7 @@
+local present = pcall(require, "gruvbox-material")
+if not present then
+   return
+end
 local g = vim.g
 g.gruvbox_material_background = 'soft'
 g.gruvbox_material_enable_bold = 1

@@ -1,4 +1,9 @@
-require "indent_blankline".setup({
+local present, indent_blankline = pcall(require, "indent_blankline")
+if not present then
+    return
+end
+
+local options = {
     buftype_exclude = {
       "nofile",
       "terminal",
@@ -44,4 +49,6 @@ require "indent_blankline".setup({
     char = "▏",
     context_char = "▏",
     show_current_context = true,
-  })
+  }
+
+indent_blankline.setup(options)

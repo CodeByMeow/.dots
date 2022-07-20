@@ -1,7 +1,8 @@
-local status_ok, impatient = pcall(require, "impatient")
-if status_ok then
+local present, impatient = pcall(require, "impatient")
+if present then
   impatient.enable_profile()
 end
+
 require "core"
 require "core.options"
 

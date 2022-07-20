@@ -1,11 +1,17 @@
-require "tmux".setup({
+local present, tmux = pcall(require, "tmux")
+if not present then
+    return
+end
+
+local options = {
     copy_sync = {
-      enable = true,
+        enable = true,
     },
     navigation = {
-      enable_default_keybindings = true,
+        enable_default_keybindings = true,
     },
     resize = {
-      enable_default_keybindings = false,
+        enable_default_keybindings = false,
     }
-  });
+}
+tmux.setup(options)

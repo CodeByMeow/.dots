@@ -2,6 +2,7 @@ local present, neotree = pcall(require, "neo-tree")
 if not present then
    return
 end
+
 local options = {
    close_if_last_window = true,
    popup_border_style = "rounded",

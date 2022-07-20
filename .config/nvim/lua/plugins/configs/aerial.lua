@@ -1,9 +1,9 @@
 local present, aerial = pcall(require, "aerial")
 if not present then
-   return
+  return
 end
 
-aerial.setup( {
+local options = {
   close_behavior = "global",
   backends = { "lsp", "treesitter", "markdown" },
   min_width = 28,
@@ -43,4 +43,6 @@ aerial.setup( {
     nested_top = "│ ",
     whitespace = "  ",
   },
-})
+}
+
+aerial.setup(options)
