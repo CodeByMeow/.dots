@@ -7,7 +7,7 @@ require "core"
 require "core.options"
 
 vim.defer_fn(function()
-   require "core.mappings"
+  require "core.mappings"
 end, 0)
 
 require("core.packer").bootstrap()
