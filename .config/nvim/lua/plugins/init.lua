@@ -302,7 +302,9 @@ local plugins = {
   { 'AndrewRadev/tagalong.vim' },
 
   -- Context blame
-  { 'haringsrob/nvim_context_vt' },
+  { 'haringsrob/nvim_context_vt',
+    after = "nvim-treesitter"
+  },
 
   -- Number of result search
   {
