@@ -32,15 +32,15 @@ pacman -S --needed git base-devel
 
 ### AUR Helper
 
-**Yay** :heart: [yay](https://github.com/Jguer/yay)
+**Yet Another Yogurt** :heart: [yay](https://github.com/Jguer/yay)
 
 ### Software
 
 ```
 sxhkd cava neovim dunst unclutter peco duf
-xorg-xsetroot acpilight light
+xorg-xsetroot acpilight light gpick
 blueman bluetooth-autoconnect lazygit flameshot
-lolcat fd feh dolphin lxappearance breeze logo-ls playerctl
+fd feh dolphin lxappearance breeze logo-ls playerctl
 ```
 
 ### GUI terminal
