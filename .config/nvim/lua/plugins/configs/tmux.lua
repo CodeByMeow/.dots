@@ -14,4 +14,5 @@ local options = {
         enable_default_keybindings = false,
     }
 }
+
 tmux.setup(options)
