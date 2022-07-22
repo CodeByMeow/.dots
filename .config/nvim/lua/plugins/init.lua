@@ -322,6 +322,7 @@ local plugins = {
   -- Format
   {
     'jose-elias-alvarez/null-ls.nvim',
+    module = 'lspconfig',
     config = function()
       require "plugins.configs.null-ls"
     end

@@ -9,7 +9,9 @@ gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer'
 
 local icons = { sep = {
   right = "",
-  left = ""
+  left = "",
+  before = "",
+  after = "",
 },
   diagnostic = {
     -- error = " ",
@@ -163,19 +165,40 @@ gls.left[i] = {
     provider = function()
       highlight2('GalaxyViMode', mode_hl(), colors.main_bg)
       highlight1('GalaxyViModeInv', mode_hl(), 'bold')
-      return string.format(' %s', mode_label())
+      return string.format('%s', mode_label())
     end,
   }
 }
 
 i = i + 1
 gls.left[i] = {
-  WhiteSpace = {
+  Before = {
     provider = function()
-      highlight2('SecondGalaxyViMode', colors.white, mode_hl(), 'bold')
+      highlight2('SecondGalaxyViMode', colors.nord, mode_hl(), 'bold')
     end,
-    separator = " ",
+    separator = icons.sep.left,
     separator_highlight = 'SecondGalaxyViMode'
+  }
+}
+
+i = i + 1
+gls.left[i] = {
+  Block = {
+    provider = function()
+      return " "
+    end,
+    highlight = {colors.bg, colors.nord}
+  }
+}
+
+i = i + 1
+gls.left[i] = {
+  BlockRight = {
+    provider = function()
+      return icons.sep.left
+    end,
+    separator_highlight = {colors.nord, colors.white},
+    highlight = { colors.nord, colors.white }
   }
 }
 
@@ -229,7 +252,7 @@ gls.right[i] = {
       end
       return true
     end,
-    icon = '󰘵  ',
+    icon = '󰉁 ',
     highlight = { colors.icon_inactive, colors.main_bg, nil },
   }
 }
@@ -266,6 +289,8 @@ i = i + 1
 gls.right[i] = {
   Encode = {
     provider = 'FileEncode',
+    separator = "󰻐 ",
+    separator_highlight = { colors.greenYel, colors.main_bg},
     highlight = { colors.commented, colors.main_bg },
   }
 }
@@ -321,7 +346,7 @@ gls.right[i] = {
       return icons.sep.right
     end,
     condition = require("galaxyline.condition").check_git_workspace,
-    highlight = { colors.blue2, colors.main_bg }
+    highlight = { colors.green, colors.main_bg }
   }
 }
 
@@ -332,7 +357,7 @@ gls.right[i] = {
       return icons.git .. ' '
     end,
     condition = check_git_terminal_workspace,
-    highlight = { colors.white, colors.blue2 }
+    highlight = { colors.commented, colors.green }
   }
 }
 
@@ -341,7 +366,7 @@ gls.right[i] = {
   GitBranch = {
     provider = "GitBranch",
     condition = require("galaxyline.condition").check_git_workspace,
-    highlight = { colors.white, colors.blue2 },
+    highlight = { colors.commented, colors.green },
   }
 }
 
@@ -350,7 +375,7 @@ gls.right[i] = {
   Space2 = {
     provider = white_space,
     condition = require("galaxyline.condition").check_git_workspace,
-    highlight = { colors.blue2, colors.blue2 },
+    highlight = { colors.green, colors.green },
   }
 }
 
@@ -362,7 +387,7 @@ gls.right[i] = {
     end,
     highlight = function()
       if require("galaxyline.condition").check_git_workspace() then
-        return { colors.grey, colors.blue2 }
+        return { colors.grey, colors.green }
       else
         return { colors.grey, colors.main_bg }
       end
@@ -383,8 +408,8 @@ i = i + 1
 gls.right[i] = {
   PerCent = {
     provider = "LinePercent",
-    separator = " 󰗈",
-    separator_highlight = { colors.white, colors.grey },
+    separator = "󰍲",
+    separator_highlight = { colors.blue, colors.grey },
     highlight = { colors.white, colors.grey }
   }
 }
