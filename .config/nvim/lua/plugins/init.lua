@@ -9,9 +9,9 @@ local plugins = {
   { "wbthomason/packer.nvim" },
 
   {
-    "sainnhe/gruvbox-material",
+    "catppuccin/nvim", as = "catppuccin",
     config = function()
-      require "plugins.configs.grubox-material"
+      require "plugins.configs.themes"
     end
   },
 
@@ -87,7 +87,7 @@ local plugins = {
     after = "nvim-web-devicons",
     config = function()
       require "plugins.configs.bufferline"
-    end,
+    end
   },
 
   -- Better buffer closing
@@ -131,7 +131,8 @@ local plugins = {
     end,
   },
 
-  { "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
     after = "nvim-lsp-installer",
     module = "lspconfig",
     event = "VimEnter",
@@ -142,7 +143,6 @@ local plugins = {
   },
 
   -- load luasnips + cmp related in insert mode only
-
   {
     "rafamadriz/friendly-snippets",
     module = "cmp_nvim_lsp",
@@ -188,15 +188,6 @@ local plugins = {
       require "plugins.configs.telescope"
     end,
   },
-
-  -- -- LSP symbols
-  -- {
-  --   "stevearc/aerial.nvim",
-  --   cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
-  --   config = function()
-  --     require "plugins.configs.aerial"
-  --   end,
-  -- },
 
   {
     "glepnir/lspsaga.nvim",
@@ -358,6 +349,13 @@ local plugins = {
       require "plugins.configs.others".fidget()
     end
   },
+
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
+  }
 
 }
 

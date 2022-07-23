@@ -185,6 +185,7 @@ i = i + 1
 gls.left[i] = {
   FileName = {
     provider = "FileName",
+    icon = " ";
     condition = require('galaxyline.condition').buffer_not_empty,
     highlight = { colors.main_bg, colors.white },
   }
