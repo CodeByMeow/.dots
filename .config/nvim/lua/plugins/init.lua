@@ -30,7 +30,8 @@ local plugins = {
     event = "BufReadPost",
     config = function()
       require "plugins.configs.indent-o-matic"
-    end },
+    end
+  },
 
   -- Tmux
   {
@@ -188,17 +189,18 @@ local plugins = {
     end,
   },
 
-  -- LSP symbols
-  {
-    "stevearc/aerial.nvim",
-    cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
-    config = function()
-      require "plugins.configs.aerial"
-    end,
-  },
+  -- -- LSP symbols
+  -- {
+  --   "stevearc/aerial.nvim",
+  --   cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
+  --   config = function()
+  --     require "plugins.configs.aerial"
+  --   end,
+  -- },
 
   {
-    "tami5/lspsaga.nvim",
+    "glepnir/lspsaga.nvim",
+    branch = "main",
     config = function()
       require "plugins.configs.lspsaga"
     end
@@ -355,6 +357,13 @@ local plugins = {
     config = function()
       require "plugins.configs.others".fidget()
     end
+  },
+
+  {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = function()
+      require("lsp_lines").setup()
+    end,
   },
 
 }

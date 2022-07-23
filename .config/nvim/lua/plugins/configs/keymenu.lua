@@ -9,7 +9,7 @@ keymenu.set('n', '<Space>')
 
 map('n', '<Space>w', '<Cmd>w<CR>', { desc = 'Save' })
 map('n', '<Space>q', '<Cmd>q<CR>', { desc = 'Quit' })
-map('n', '<Space>s', '<Cmd>AerialToggle<CR>', { desc = 'Symbols' })
+map('n', '<Space>s', '<Cmd>:LSoutlineToggle<CR>', { desc = 'Symbols' })
 
 -- You can also pass Lua functions to vim.keymap.set.
 local erase_all_lines = function()
@@ -21,7 +21,7 @@ map('n', '<Space>x', ':bdelete<cr>', { desc = 'Close' })
 
 map('n', '<Space>e', '<cmd>NeoTreeFloat<cr>', { desc = 'Explorer' })
 
-map('n', 'K', "<cmd>Lspsaga hover_doc<cr>", { desc = 'Docs' })
+map('n', 'K', "<cmd>Lspsaga hover_doc<CR>", { desc = 'Docs' })
 
 local telescope_present, _ = pcall(require, "telescope")
 if telescope_present then
@@ -41,12 +41,7 @@ if telescope_present then
     require("telescope.builtin").buffers()
   end, { desc = 'Search buffers' })
   map('n', '<Space>fs', function()
-    local aerial_avail, _ = pcall(require, "aerial")
-    if aerial_avail then
-      require("telescope").extensions.aerial.aerial()
-    else
       require("telescope.builtin").lsp_document_symbols()
-    end
   end, { desc = 'Search symbols' })
   map("n", "<Space>fr", function()
     require("telescope.builtin").lsp_references()
@@ -118,7 +113,6 @@ map('n', '<Space>le', "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = 'Show L
 map('n', '<Space>ln', "<cmd>Lspsaga diagnostic_jump_next<cr>", { desc = 'Next Diagnostic' })
 map('n', '<Space>lN', "<cmd>Lspsaga diagnostic_jump_prev<cr>", { desc = 'Previous Diagnostic' })
 map('n', '<Space>lp', "<cmd>Lspsaga preview_definition<cr>", { desc = 'Preview definition' })
-map('n', '<Space>lI', "<cmd>LspInstallInfo<cr>", { desc = 'LSP installer' })
 
 map('n', '<Space>p', function()
   keymenu.open_window('<Space>p')
