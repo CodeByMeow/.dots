@@ -25,11 +25,11 @@ local options = {
          '--smart-case'
       },
       prompt_prefix = "  ",
-      selection_caret = " ",
+      selection_caret = "󰆿 ",
       entry_prefix = "  ",
       initial_mode = "insert",
       selection_strategy = "reset",
-      sorting_strategy = "descending",
+      sorting_strategy = "ascending",
       layout_strategy = "horizontal",
       file_sorter = require 'telescope.sorters'.get_fuzzy_file,
       file_ignore_patterns = {},
@@ -56,7 +56,8 @@ local options = {
          n = {
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
-            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
+            ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+            ["q"] = actions.close,
          }
       }
    }

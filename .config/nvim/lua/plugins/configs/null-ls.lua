@@ -27,8 +27,7 @@ local options = {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-          vim.lsp.buf.format()
+          vim.lsp.buf.format({timeout_ms = 2000})
         end,
       })
     end
@@ -36,3 +35,4 @@ local options = {
 }
 
 null_ls.setup(options)
+

@@ -47,3 +47,4 @@ feh --bg-fill ~/.config/wallpaper/main.jpg &
 picom --experimental-backends &
 unclutter -idle 10 &
 betterclockscreen -u ~/.config/wallpaper/main.jpg &
+xrdb -merge ~/.Xresource

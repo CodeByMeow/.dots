@@ -9,7 +9,7 @@ gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer'
 
 local icons = { sep = {
   right = "",
-  left = ""
+  left = "",
 },
   diagnostic = {
     -- error = " ",
@@ -45,26 +45,19 @@ local icons = { sep = {
 }
 
 local colors = {
-  main          = "#ff87ff",
   bg_alt        = "#0B0C15",
   main_bg       = "#262626",
-  lightbg       = "#21252B",
   commented     = "#5c6370",
   grey          = "#3c4048",
   line_bg       = "#282c34",
-  creamydark    = "#282c34",
-  purple        = "#252930",
   cyan          = "#00FFFF",
   nord          = "#81A1C1",
-  lightblue     = "#81a1c1",
-  darkblue      = "#61afef",
   blue          = "#61afef",
   limegreen     = "#bbe67e",
   green         = "#7ed491",
   fg_green      = "#65a380",
   creamygreen   = "#a3be8c",
   yellow        = "#cccc00",
-  creamyorange  = "#ff8800",
   orange        = "#FF8800",
   bg            = "#0B0C15",
   fg            = "#D8DEE9",
@@ -85,8 +78,8 @@ local mode_map = {
   -- i      = {" INSERT  ", colors.green},
   -- c      = {" COMMAND ", colors.orange},
   -- v      = {" VISUAL  ", colors.lightblue},
-  n      = { icons.normal .. "  NORMAL  ", colors.darkblue },
-  no     = { icons.normal .. "  NORMAL  ", colors.darkblue },
+  n      = { icons.normal .. "  NORMAL  ", colors.blue },
+  no     = { icons.normal .. "  NORMAL  ", colors.blue },
   i      = { icons.insert .. "  INSERT  ", colors.green },
   ic     = { icons.insert .. "  INSERT  ", colors.green },
   c      = { icons.command .. "  COMMAND ", colors.orange },
@@ -100,9 +93,9 @@ local mode_map = {
   Rv     = { icons.replace .. "  REPLACE ", colors.crimsonRed2 },
   r      = { icons.replace .. "  REPLACE ", colors.blue2 },
   rm     = { icons.replace .. "  REPLACE ", colors.blue2 },
-  s      = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
-  S      = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
-  ['']  = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
+  s      = { icons.selection .. "  SELECT  ", colors.teal},
+  S      = { icons.selection .. "  SELECT  ", colors.teal },
+  ['']  = { icons.selection .. "  SELECT  ", colors.teal },
   t      = { icons.terminal .. "  TERMINAL ", colors.magenta },
   ['!']  = { "  !        ", colors.crimsonred }
 }
@@ -163,18 +156,18 @@ gls.left[i] = {
     provider = function()
       highlight2('GalaxyViMode', mode_hl(), colors.main_bg)
       highlight1('GalaxyViModeInv', mode_hl(), 'bold')
-      return string.format(' %s', mode_label())
+      return string.format('%s', mode_label())
     end,
   }
 }
 
 i = i + 1
 gls.left[i] = {
-  WhiteSpace = {
+  Before = {
     provider = function()
       highlight2('SecondGalaxyViMode', colors.white, mode_hl(), 'bold')
     end,
-    separator = " ",
+    separator = icons.sep.left,
     separator_highlight = 'SecondGalaxyViMode'
   }
 }
@@ -184,7 +177,7 @@ gls.left[i] = {
   FileIcon = {
     provider = "FileIcon",
     separator_highlight = { colors.white, colors.white },
-    highlight = { colors.creamydark, colors.white }
+    highlight = { colors.line_bg, colors.white }
   }
 }
 
@@ -193,7 +186,7 @@ gls.left[i] = {
   FileName = {
     provider = "FileName",
     condition = require('galaxyline.condition').buffer_not_empty,
-    highlight = { colors.creamydark, colors.white },
+    highlight = { colors.main_bg, colors.white },
   }
 }
 
@@ -229,8 +222,8 @@ gls.right[i] = {
       end
       return true
     end,
-    icon = '󰘵  ',
-    highlight = { colors.icon_inactive, colors.main_bg, nil },
+    icon = '󱑠 ',
+    highlight = { colors.limegreen, colors.main_bg, nil },
   }
 }
 
@@ -248,7 +241,8 @@ i = i + 1
 gls.right[i] = {
   FileFormat = {
     provider = function() return vim.bo.filetype end,
-    highlight = { colors.commented, colors.main_bg },
+    highlight = { colors.greenYel, colors.main_bg },
+    icon = "󰊄 ",
   }
 }
 
@@ -266,7 +260,9 @@ i = i + 1
 gls.right[i] = {
   Encode = {
     provider = 'FileEncode',
-    highlight = { colors.commented, colors.main_bg },
+    separator = "󰻐 ",
+    separator_highlight = { colors.nord, colors.main_bg},
+    highlight = { colors.nord, colors.main_bg },
   }
 }
 
@@ -321,7 +317,7 @@ gls.right[i] = {
       return icons.sep.right
     end,
     condition = require("galaxyline.condition").check_git_workspace,
-    highlight = { colors.blue2, colors.main_bg }
+    highlight = { colors.green, colors.main_bg }
   }
 }
 
@@ -332,7 +328,7 @@ gls.right[i] = {
       return icons.git .. ' '
     end,
     condition = check_git_terminal_workspace,
-    highlight = { colors.white, colors.blue2 }
+    highlight = { colors.commented, colors.green }
   }
 }
 
@@ -341,7 +337,7 @@ gls.right[i] = {
   GitBranch = {
     provider = "GitBranch",
     condition = require("galaxyline.condition").check_git_workspace,
-    highlight = { colors.white, colors.blue2 },
+    highlight = { colors.commented, colors.green },
   }
 }
 
@@ -350,7 +346,7 @@ gls.right[i] = {
   Space2 = {
     provider = white_space,
     condition = require("galaxyline.condition").check_git_workspace,
-    highlight = { colors.blue2, colors.blue2 },
+    highlight = { colors.green, colors.green },
   }
 }
 
@@ -362,7 +358,7 @@ gls.right[i] = {
     end,
     highlight = function()
       if require("galaxyline.condition").check_git_workspace() then
-        return { colors.grey, colors.blue2 }
+        return { colors.grey, colors.green }
       else
         return { colors.grey, colors.main_bg }
       end
@@ -383,8 +379,8 @@ i = i + 1
 gls.right[i] = {
   PerCent = {
     provider = "LinePercent",
-    separator = " 󰗈",
-    separator_highlight = { colors.white, colors.grey },
+    separator = "󰮾",
+    separator_highlight = { colors.blue, colors.grey },
     highlight = { colors.white, colors.grey }
   }
 }
