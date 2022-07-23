@@ -93,9 +93,9 @@ local mode_map = {
   Rv     = { icons.replace .. "  REPLACE ", colors.crimsonRed2 },
   r      = { icons.replace .. "  REPLACE ", colors.blue2 },
   rm     = { icons.replace .. "  REPLACE ", colors.blue2 },
-  s      = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
-  S      = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
-  ['']  = { icons.selection .. "  SELECT  ", colors.greenYelenYel },
+  s      = { icons.selection .. "  SELECT  ", colors.teal},
+  S      = { icons.selection .. "  SELECT  ", colors.teal },
+  ['']  = { icons.selection .. "  SELECT  ", colors.teal },
   t      = { icons.terminal .. "  TERMINAL ", colors.magenta },
   ['!']  = { "  !        ", colors.crimsonred }
 }

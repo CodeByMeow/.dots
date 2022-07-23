@@ -13,9 +13,9 @@ local options = {
   saga_winblend = 0,
   -- when cursor in saga window you config these to move
   move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-  diagnostic_header = { " ", " ", " ", "ﴞ " },
+  diagnostic_header = { " ", " ", " ", "" },
   -- show diagnostic source
-  show_diagnostic_source = false,
+  show_diagnostic_source = true,
   -- add bracket or something with diagnostic source, just have 2 elements
   diagnostic_source_bracket = {},
   -- use emoji lightbulb in default
@@ -65,14 +65,15 @@ local options = {
     win_position = 'right',
     -- set the special filetype in there which in left like nvimtree neotree defx
     left_with = '',
-    win_width = 30,
+    win_width = 40,
     auto_enter = true,
     auto_preview = true,
     virt_text = '┃',
     jump_key = 'o',
     -- auto refresh when change buffer
     auto_refresh = true,
-  }
+  },
+  server_filetype_map = { metals = { "sbt", "scala" } }
 }
 local action = require("lspsaga.action")
 -- scroll down hover doc or scroll in definition preview
