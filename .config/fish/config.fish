@@ -1,5 +1,7 @@
 set fish_greeting
 starship init fish | source
+thefuck --alias | source
+
 alias ls='logo-ls'
 alias l='ls -l'
 alias la='ls -a'
