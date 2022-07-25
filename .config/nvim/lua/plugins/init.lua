@@ -30,7 +30,7 @@ local plugins = {
     event = "BufReadPost",
     config = function()
       require "plugins.configs.indent-o-matic"
-    end
+    end,
   },
 
   -- Tmux
@@ -68,8 +68,11 @@ local plugins = {
   {
     "lukas-reineke/indent-blankline.nvim",
     opt = true,
+    setup = function()
+      require("core.lazy_load").on_file_open "indent-blankline.nvim"
+    end,
     config = function()
-      require "plugins.configs.blankline"
+      require("plugins.configs.others").blankline()
     end,
   },
 
@@ -79,6 +82,7 @@ local plugins = {
     config = function()
       require "colorizer".setup()
     end,
+    event = "BufRead"
   },
 
   -- Tabline
@@ -87,7 +91,8 @@ local plugins = {
     after = "nvim-web-devicons",
     config = function()
       require "plugins.configs.bufferline"
-    end
+    end,
+    event = "BufWinEnter"
   },
 
   -- Better buffer closing
@@ -179,12 +184,12 @@ local plugins = {
     "linty-org/key-menu.nvim",
     config = function()
       require "plugins.configs.keymenu"
-    end
+    end,
+    event = "BufWinEnter"
   },
 
   {
     "nvim-telescope/telescope.nvim",
-    -- cmd = "Telescope",
     config = function()
       require "plugins.configs.telescope"
     end,
@@ -238,6 +243,7 @@ local plugins = {
     config = function()
       require "plugins.configs.autopairs"
     end,
+    after = "nvim-cmp"
   },
 
   -- Comment
@@ -256,7 +262,8 @@ local plugins = {
     branch = "v2.x",
     config = function()
       require "plugins.configs.neotree"
-    end
+    end,
+    cmd = "NeoTreeFloatToggle"
   },
 
   -- Parenthesis highlighting
@@ -268,7 +275,8 @@ local plugins = {
   -- Autoclose tags
   {
     "windwp/nvim-ts-autotag",
-    after = "nvim-treesitter"
+    after = "nvim-treesitter",
+    event = "InsertEnter"
   },
 
   { 'max-0406/autoclose.nvim' },
