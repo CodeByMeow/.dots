@@ -13,7 +13,7 @@ local options = {
   saga_winblend = 0,
   -- when cursor in saga window you config these to move
   move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-  diagnostic_header = { "  ", "  ", "  ", " " },
+  diagnostic_header = { " ", " ", " ", "" },
   -- show diagnostic source
   show_diagnostic_source = true,
   -- add bracket or something with diagnostic source, just have 2 elements
