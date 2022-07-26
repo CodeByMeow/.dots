@@ -9,7 +9,7 @@ local plugins = {
   { "wbthomason/packer.nvim" },
 
   {
-    "catppuccin/nvim", as = "catppuccin",
+    "ellisonleao/gruvbox.nvim",
     config = function()
       require "plugins.configs.themes"
     end
