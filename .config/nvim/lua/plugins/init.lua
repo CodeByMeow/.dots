@@ -185,7 +185,6 @@ local plugins = {
     config = function()
       require "plugins.configs.keymenu"
     end,
-    event = "BufWinEnter"
   },
 
   {
