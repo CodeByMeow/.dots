@@ -363,7 +363,10 @@ local plugins = {
     config = function()
       require("lsp_lines").setup()
     end,
-  }
+  },
+
+  -- Auto mkdir parent path
+  { 'jghauser/mkdir.nvim' },
 
 }
 
