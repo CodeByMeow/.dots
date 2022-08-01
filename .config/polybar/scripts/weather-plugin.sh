@@ -22,7 +22,7 @@ UNITS="metric"
 
 # Color Settings ______________________________________________________________
 
-COLOR_CLOUD="#606060"
+COLOR_CLOUD="#b3deef"
 COLOR_THUNDER="#d3b987"
 COLOR_LIGHT_RAIN="#73cef4"
 COLOR_HEAVY_RAIN="#b3deef"
@@ -38,7 +38,7 @@ COLOR_HOT="#f43753"
 COLOR_NORMAL_TEMP="#FFFFFF"
 
 # Leave "" if you want the default polybar color
-COLOR_TEXT=$COLOR_THUNDER
+COLOR_TEXT=$COLOR_COLD
 # Polybar settings ____________________________________________________________
 
 # Font for the weather icons
@@ -53,7 +53,7 @@ TEXT_FONT_CODE=3
 # Wind settings _______________________________________________________________
 
 # Display info about the wind or not. yes/no
-DISPLAY_WIND="yes"
+DISPLAY_WIND="no"
 
 # Display in knots. yes/no
 KNOTS="yes"
