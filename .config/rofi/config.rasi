@@ -1,13 +1,13 @@
 configuration {
-	font:							"Iosevka Nerd Font 13";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"";
+    font:			"Iosevka Nerd Font 13";
+    show-icons:                 true;
+    icon-theme: 		"candi-icons";
+    display-drun: 		"";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+     hide-scrollbar: 				true;
+     sidebar-mode: 					false;
 }
 @theme "/dev/null"
 
