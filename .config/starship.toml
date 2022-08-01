@@ -1,11 +1,9 @@
 add_newline = false
 format = """
-[█ ]\
-(bold bg:black fg:blue)\
-[󰊠 󱙝 󰊠 󱙝 ]\
-(bold bg:black fg:white)\
-[]\
-(bold bg:none fg:black) \
+[╭─](bold #ECEFF4)\
+$username\
+$hostname\
+$directory\
 [\
 $git_branch\
 $git_commit\
@@ -59,33 +57,35 @@ $openstack\
 $env_var\
 $crystal\
 $fill\
-[]\
-(bold bg:none fg:white)\
-[󱑍 ]\
-(bold bg:white fg:black)\
-[ $time ]\
-(bold bg:white fg:black)\
-[█](bold bg:none fg:yellow)
-[󰮯 ](bold bg:none fg:white)\
+$time\
+(fg: black)
+[│](bold #ECEFF4)
+[╰─](bold #ECEFF4)\
 $singularity\
 $kubernetes\
-$directory\
 $status\
-$character
+$character 
 """
 
 [fill]
 symbol = " "
 
 [username]
-show_always = true
-style_user = "bold bg:none fg:white"
-style_root = "bold bg:none fg:white"
+style_user = "bold #D28D93"
+style_root = "bold #EBCB8B"
 format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+style = "bold #D28D93"
+format = "[@](bold #D28D93)[$hostname]($style) [in](#ECEFF4) "
+disabled = false
 
 [git_branch]
 symbol = " "
-format = " on [$symbol$branch]($style) "
+format = "on [$symbol$branch]($style) "
 style = "bold bg:none fg:green"
 
 [git_commit]
@@ -103,14 +103,12 @@ deleted = "x"
 
 [time]
 disabled = false
-format = "[$time]($style)"
-style = "bg:white fg:black"
+format = "$time"
 
 [directory]
 read_only = " "
 truncation_length = 3
 truncation_symbol = "./"
-style = "bold bg:none fg:yellow"
 
 [status]
 disabled = false
@@ -119,9 +117,8 @@ disabled = false
 disabled = true
 
 [character]
-success_symbol = "[󱁂 ](bold white)"
-error_symbol = "[󱁂 ](bold red)"
-vicmd_symbol = "[󱁂 ](bold yellow)"
+success_symbol = "[❯](bold #D28D93)"
+error_symbol = "[✗](bold #D28D93)"
 
 [aws]
 symbol = " "

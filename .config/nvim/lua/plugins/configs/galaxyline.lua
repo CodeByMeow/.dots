@@ -8,8 +8,8 @@ local gls = gl.section
 gl.short_line_list = { 'plug', 'fugitive', 'NvimTree', 'vista', 'dbui', 'packer', 'startify', 'neo-tree' }
 
 local icons = { sep = {
-  right = "",
-  left = "",
+  right = "",
+  left = "",
 },
   diagnostic = {
     -- error = " ",
@@ -381,7 +381,7 @@ gls.right[i] = {
   PerCent = {
     provider = "LinePercent",
     separator = "󰮾",
-    separator_highlight = { colors.blue, colors.grey },
+    separator_highlight = { colors.commented, colors.grey },
     highlight = { colors.white, colors.grey }
   }
 }
