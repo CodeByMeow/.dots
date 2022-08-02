@@ -19,7 +19,7 @@ map('n', '<Space>k', erase_all_lines, { desc = 'Erase all' })
 
 map('n', '<Space>x', ':bdelete<cr>', { desc = 'Close' })
 
-map('n', '<Space>e', '<cmd>NeoTreeFloat<cr>', { desc = 'Explorer' })
+map('n', '<Space>e', '<cmd>NeoTreeFloatToggle<cr>', { desc = 'Explorer' })
 
 map('n', 'K', "<cmd>Lspsaga hover_doc<CR>", { desc = 'Docs' })
 
