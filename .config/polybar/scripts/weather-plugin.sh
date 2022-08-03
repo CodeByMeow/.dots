@@ -22,7 +22,7 @@ UNITS="metric"
 
 # Color Settings ______________________________________________________________
 
-COLOR_CLOUD="#b3deef"
+COLOR_CLOUD="#EBDBB2"
 COLOR_THUNDER="#d3b987"
 COLOR_LIGHT_RAIN="#73cef4"
 COLOR_HEAVY_RAIN="#b3deef"
@@ -38,7 +38,7 @@ COLOR_HOT="#f43753"
 COLOR_NORMAL_TEMP="#FFFFFF"
 
 # Leave "" if you want the default polybar color
-COLOR_TEXT=$COLOR_COLD
+COLOR_TEXT=$COLOR_CLOUD
 # Polybar settings ____________________________________________________________
 
 # Font for the weather icons
