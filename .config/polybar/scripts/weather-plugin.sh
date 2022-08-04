@@ -48,12 +48,12 @@ WEATHER_FONT_CODE=2
 TEMP_FONT_CODE=3
 
 # Font for text
-TEXT_FONT_CODE=3
+TEXT_FONT_CODE=2
 
 # Wind settings _______________________________________________________________
 
 # Display info about the wind or not. yes/no
-DISPLAY_WIND="no"
+DISPLAY_WIND="yes"
 
 # Display in knots. yes/no
 KNOTS="yes"
@@ -86,7 +86,7 @@ COLD_TEMP=20
 # Other settings ______________________________________________________________
 
 # Display the weather description. yes/no
-DISPLAY_LABEL="no"
+DISPLAY_LABEL="yes"
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

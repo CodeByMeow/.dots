@@ -42,3 +42,5 @@ $HOME/.config/polybar/launch.sh &
 feh --bg-fill ~/.config/wallpaper/main.png &
 picom --experimental-backends &
 unclutter -idle 10 &
+
+ibus-daemon
