@@ -12,6 +12,7 @@ local plugins = {
     "ellisonleao/gruvbox.nvim",
     config = function()
       require "plugins.configs.themes"
+      vim.cmd("colorscheme gruvbox")
     end
   },
 
@@ -278,7 +279,7 @@ local plugins = {
     event = "InsertEnter"
   },
 
-  { 'max-0406/autoclose.nvim' },
+  { "max-0406/autoclose.nvim" },
 
   -- Context based commenting
   {
@@ -287,8 +288,8 @@ local plugins = {
   },
 
   {
-    'andymass/vim-matchup',
-    after = 'nvim-treesitter'
+    "andymass/vim-matchup",
+    after = "nvim-treesitter"
   },
 
   -- Get extra JSON schemas
@@ -297,13 +298,13 @@ local plugins = {
   },
 
   -- Light speed
-  { 'ggandor/lightspeed.nvim' },
+  { "ggandor/lightspeed.nvim" },
 
   -- Auto rename tag html
-  { 'AndrewRadev/tagalong.vim' },
+  { "AndrewRadev/tagalong.vim" },
 
   -- Context blame
-  { 'haringsrob/nvim_context_vt',
+  { "haringsrob/nvim_context_vt",
     after = "nvim-treesitter"
   },
 
@@ -322,8 +323,8 @@ local plugins = {
 
   -- Format
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    module = 'lspconfig',
+    "jose-elias-alvarez/null-ls.nvim",
+    module = "lspconfig",
     config = function()
       require "plugins.configs.null-ls"
     end
@@ -331,7 +332,7 @@ local plugins = {
 
   -- Surround
   {
-    'kylechui/nvim-surround',
+    "kylechui/nvim-surround",
     config = function()
       require "plugins.configs.surround"
     end
@@ -344,15 +345,15 @@ local plugins = {
 
   -- Statusline
   {
-    'glepnir/galaxyline.nvim',
-    branch = 'main',
+    "glepnir/galaxyline.nvim",
+    branch = "main",
     config = function()
       require "plugins.configs.galaxyline"
     end
   },
 
   {
-    'j-hui/fidget.nvim',
+    "j-hui/fidget.nvim",
     config = function()
       require "plugins.configs.others".fidget()
     end
@@ -366,7 +367,7 @@ local plugins = {
   },
 
   -- Auto mkdir parent path
-  { 'jghauser/mkdir.nvim' },
+  { "jghauser/mkdir.nvim" },
 
 }
 
