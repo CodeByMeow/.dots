@@ -52,11 +52,13 @@ TEXT_FONT_CODE=2
 
 # Wind settings _______________________________________________________________
 
+WIND_FONT_CODE=2
+
 # Display info about the wind or not. yes/no
 DISPLAY_WIND="yes"
 
 # Display in knots. yes/no
-KNOTS="yes"
+KNOTS="no"
 
 # How many decimals after the floating point
 DECIMALS=0
@@ -223,16 +225,16 @@ function setIcons {
         fi
     fi
     if [ "$DISPLAY_WIND" = "yes" ] && [ `echo "$WINDFORCE >= $MIN_WIND" |bc -l` -eq 1 ]; then
-        WIND="%{T$WEATHER_FONT_CODE}%{F$COLOR_WIND}%{F-}%{T-}"
+        WIND="%{T$WEATHER_FONT_CODE}%{F$COLOR_WIND}%{F-}%{T$WIND_FONT_CODE}"
         if [ $DISPLAY_FORCE = "yes" ]; then
             WIND="$WIND $COLOR_TEXT_BEGIN$WINDFORCE$COLOR_TEXT_END"
             if [ $DISPLAY_WIND_UNIT = "yes" ]; then
                 if [ $KNOTS = "yes" ]; then
-                    WIND="$WIND ${COLOR_TEXT_BEGIN}kn$COLOR_TEXT_END"
+                    WIND="$WIND %{T$WIND_FONT_CODE}${COLOR_TEXT_BEGIN}kn$COLOR_TEXT_END"
                 elif [ $UNITS = "imperial" ]; then
-                    WIND="$WIND ${COLOR_TEXT_BEGIN}mph$COLOR_TEXT_END"
+                    WIND="$WIND %{T$WIND_FONT_CODE}${COLOR_TEXT_BEGIN}mph$COLOR_TEXT_END"
                 else
-                    WIND="$WIND ${COLOR_TEXT_BEGIN}km/h$COLOR_TEXT_END"
+                    WIND="$WIND %{T$WIND_FONT_CODE}${COLOR_TEXT_BEGIN}km/h$COLOR_TEXT_END"
                 fi
             fi
         fi

@@ -28,6 +28,7 @@ for i in ${filem[@]}; do
 declare -a filem=(notion-app)
 for i in ${filem[@]}; do
     bspc rule -a $i desktop='^4' follow=on focus=on; done
+    
 workspaces
 
 bspc config window_gap 10
