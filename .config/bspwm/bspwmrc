@@ -19,18 +19,14 @@ declare -a web=(firefox)
 for i in ${web[@]}; do
     bspc rule -a $i desktop='^2' follow=on focus=on; done
     
-# workspace 3 (Files)
-declare -a filem=(dolphin)
+# workspace 3 (Note)
+declare -a filem=(notion-app)
 for i in ${filem[@]}; do
     bspc rule -a $i desktop='^3' follow=on focus=on; done
     
-# workspace 4 (Note)
-declare -a filem=(notion-app)
-for i in ${filem[@]}; do
-    bspc rule -a $i desktop='^4' follow=on focus=on; done
+bspc rule -a 'dolphin' focus=on state=floating
     
 workspaces
-
 bspc config window_gap 10
 bspc config single_monocle true
 bspc config borderless_monocle true

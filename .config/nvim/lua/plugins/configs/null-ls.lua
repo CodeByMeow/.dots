@@ -27,12 +27,13 @@ local options = {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({timeout_ms = 2000})
+          vim.lsp.buf.format({ timeout_ms = 2000 })
         end,
       })
+    else
+      return
     end
   end
 }
 
 null_ls.setup(options)
-
