@@ -23,6 +23,11 @@ for i in ${web[@]}; do
 declare -a filem=(dolphin)
 for i in ${filem[@]}; do
     bspc rule -a $i desktop='^3' follow=on focus=on; done
+    
+# workspace 4 (Note)
+declare -a filem=(notion-app)
+for i in ${filem[@]}; do
+    bspc rule -a $i desktop='^4' follow=on focus=on; done
 workspaces
 
 bspc config window_gap 10
