@@ -2,10 +2,10 @@
 	helper = store
 [user]
 	email = tranquanki28@gmail.com
-	name = Katinbox
+	name = katinbox
 [core]
 	excludesfile = ~/.gitignore
-	editor = nvim
+	editor = vim
 [push]
   default = simple
 [color]
@@ -37,15 +37,18 @@
   dump = cat-file -p
   find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
   # edit conflicted file on merge
-  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; nvim `f`"
+  edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   # add conflicted file on merge
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
+  
+[difftool]
+    prompt = true
 [diff]
-  tool = nvimdiff
+  tool = vimdiff
 [difftool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+	cmd = vim -d \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "nvimdiff"]
-	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = vim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
