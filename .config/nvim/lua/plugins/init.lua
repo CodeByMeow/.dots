@@ -362,6 +362,14 @@ local plugins = {
   -- Auto mkdir parent path
   { "jghauser/mkdir.nvim" },
 
+  -- Wilder
+  {
+    'gelguy/wilder.nvim',
+    config = function ()
+      require "plugins.configs.wilder"
+    end
+  },
+
 }
 
 require("core.packer").run(plugins)

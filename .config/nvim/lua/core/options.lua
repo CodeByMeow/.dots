@@ -12,6 +12,7 @@ opt.showmode = false
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul = true -- cursor line
+opt.cmdheight = 0
 
 -- Indenting
 opt.expandtab = true
@@ -30,7 +31,6 @@ opt.ruler = false
 
 -- disable nvim intro
 opt.shortmess:append "sI"
-
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
