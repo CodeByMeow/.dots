@@ -37,7 +37,7 @@ if telescope_present then
   map('n', '<Space>fh', function()
     telescope_builtin.oldfiles()
   end, { desc = 'Search history' })
-  map('n', '<Space>fb', function()
+  map('n', '\\\\', function()
     telescope_builtin.buffers()
   end, { desc = 'Search buffers' })
   map('n', '<Space>fs', function()
