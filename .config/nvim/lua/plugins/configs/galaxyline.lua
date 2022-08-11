@@ -189,7 +189,7 @@ gls.left[i] = {
     provider = function()
       highlight2('SecondGalaxyViMode', colors.white, mode_hl(), 'bold')
     end,
-    separator = icons.sep.left,
+    separator = icons.sep.left .. " ",
     separator_highlight = 'SecondGalaxyViMode'
   }
 }
