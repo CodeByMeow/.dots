@@ -12,7 +12,6 @@ opt.showmode = false
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cul = true -- cursor line
-opt.cmdheight = 0
 
 -- Indenting
 opt.expandtab = true

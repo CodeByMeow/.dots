@@ -71,7 +71,7 @@ local plugins = {
     opt = true,
     setup = function()
       require("core.lazy_load").on_file_open "indent-blankline.nvim"
-    end,
+   end,
     config = function()
       require("plugins.configs.others").blankline()
     end,
