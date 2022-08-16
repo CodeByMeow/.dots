@@ -19,17 +19,13 @@
 
   "Import React, { useState }": {
     "prefix": "imrs",
-    "body": [
-      "import React, { useState } from 'react';\n"
-    ],
+    "body": ["import React, { useState } from 'react';\n"],
     "description": "Import React, { useState }"
   },
 
   "Import React, { useState, useEffect }": {
     "prefix": "imrse",
-    "body": [
-      "import React, { useState, useEffect } from 'react';\n"
-    ],
+    "body": ["import React, { useState, useEffect } from 'react';\n"],
     "description": "Import React, { useState, useEffect }"
   },
 
@@ -116,7 +112,7 @@
     ],
     "description": "Function Syntax Component"
   },
-  
+
   "componentDidMount": {
     "prefix": "cdm",
     "body": ["componentDidMount() {", "\t$0", "}"],
@@ -125,29 +121,39 @@
 
   "useEffect": {
     "prefix": "uef",
-    "body": [
-      "useEffect(() => {",
-      "\t$1",
-      "}, []);"
-    ],
+    "body": ["useEffect(() => {", "\t$1", "}, []);"],
     "description": "useEffect Hook"
   },
 
   "componentWillMount": {
     "prefix": "cwm",
-    "body": ["//WARNING! To be deprecated in React v17. Use componentDidMount instead.", "componentWillMount() {", "\t$0", "}"],
+    "body": [
+      "//WARNING! To be deprecated in React v17. Use componentDidMount instead.",
+      "componentWillMount() {",
+      "\t$0",
+      "}"
+    ],
     "description": "componentWillMount"
   },
 
   "componentWillReceiveProps": {
     "prefix": "cwrp",
-    "body": ["//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.", "componentWillReceiveProps(nextProps) {", "\t$0", "}"],
+    "body": [
+      "//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.",
+      "componentWillReceiveProps(nextProps) {",
+      "\t$0",
+      "}"
+    ],
     "description": "componentWillReceiveProps"
   },
 
   "getDerivedStateFromProps": {
     "prefix": "gds",
-    "body": ["static getDerivedStateFromProps(nextProps, prevState) {", "\t$0", "}"],
+    "body": [
+      "static getDerivedStateFromProps(nextProps, prevState) {",
+      "\t$0",
+      "}"
+    ],
     "description": "getDerivedStateFromProps"
   },
 
@@ -159,7 +165,12 @@
 
   "componentWillUpdate": {
     "prefix": "cwu",
-    "body": ["//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.", "componentWillUpdate(nextProps, nextState) {", "\t$0", "}"],
+    "body": [
+      "//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.",
+      "componentWillUpdate(nextProps, nextState) {",
+      "\t$0",
+      "}"
+    ],
     "description": "componentWillUpdate"
   },
 
@@ -195,7 +206,11 @@
 
   "Functional setState": {
     "prefix": "ssf",
-    "body": ["this.setState(prevState => {", "\treturn { $1: prevState.$1 };", "});"],
+    "body": [
+      "this.setState(prevState => {",
+      "\treturn { $1: prevState.$1 };",
+      "});"
+    ],
     "description": "Functional setState"
   },
 
@@ -271,22 +286,16 @@
     ],
     "description": "Context Provider"
   },
-  
+
   "Class Property Function": {
     "prefix": "cpf",
-    "body": [
-      "$1 = (${2:e${TM_SELECTED_TEXT}}) => {",
-      "\t $0",
-      "};"
-    ],
+    "body": ["$1 = (${2:e${TM_SELECTED_TEXT}}) => {", "\t $0", "};"],
     "description": "Class Property Function"
   },
 
   "Console Log": {
-    "prefix": "clg",
-    "body": [
-      "console.log($0)"
-    ],
+    "prefix": "lg",
+    "body": ["console.log($0)"],
     "description": "Console log"
   }
 }
