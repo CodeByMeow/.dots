@@ -71,7 +71,7 @@ local plugins = {
     opt = true,
     setup = function()
       require("core.lazy_load").on_file_open "indent-blankline.nvim"
-   end,
+    end,
     config = function()
       require("plugins.configs.others").blankline()
     end,
@@ -365,10 +365,18 @@ local plugins = {
   -- Wilder
   {
     'gelguy/wilder.nvim',
-    config = function ()
+    config = function()
       require "plugins.configs.wilder"
     end
   },
+
+  -- Convert template string
+  {
+    'axelvc/template-string.nvim',
+    config = function()
+      require "plugins.configs.template-string"
+    end
+  }
 
 }
 
