@@ -4,7 +4,6 @@ if not present then
 end
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 local lsp_formatting = function(bufnr)
@@ -28,7 +27,6 @@ local options = {
     formatting.isort,
     formatting.codespell.with({ filetypes = { 'markdown' } }),
     formatting.stylua,
-    diagnostics.eslint,
     completion.spell,
   },
   on_attach = function(client, bufnr)
