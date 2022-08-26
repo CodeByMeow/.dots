@@ -148,9 +148,6 @@ shift + Left
 	light -U 10
 shift + Right
 	light -A 10
-# lock screen
-super + x
-	betterlockscreen -l blur
 
 # Reload sxhkdrc
 super + shift + r

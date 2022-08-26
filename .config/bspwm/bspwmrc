@@ -49,3 +49,5 @@ picom --experimental-backends &
 unclutter -idle 10 &
 
 ibus-daemon
+xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
+
