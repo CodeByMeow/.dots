@@ -16,4 +16,3 @@ gruvbox.setup {
   overrides = {},
 }
 
-vim.cmd([[colorscheme gruvbox]])

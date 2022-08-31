@@ -15,8 +15,8 @@ packer.startup({ function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true }
   }
 
-  use { "lewis6991/impatient.nvim" } -- Optimize
-  use { "nathom/filetype.nvim" }
+  use "lewis6991/impatient.nvim" -- Optimize
+  use "nathom/filetype.nvim"
 
   use "onsails/lspkind-nvim" -- vscode-like pictograms
   use "glepnir/lspsaga.nvim" -- LSP UIs
@@ -42,7 +42,7 @@ packer.startup({ function(use)
 
   use "nvim-lua/plenary.nvim" -- Common utilities
   use "nvim-telescope/telescope.nvim"
-  use "nvim-neo-tree/neo-tree.nvim"
+  use 'nvim-telescope/telescope-file-browser.nvim'
   use "MunifTanjim/nui.nvim" -- Neovim UI Enhancer
 
   use "dstein64/vim-startuptime"
@@ -66,13 +66,7 @@ packer.startup({ function(use)
   use "dinhhuy258/git.nvim" -- Git blame and browser
 
   use "rcarriga/nvim-notify"
-  use {
-    "lukas-reineke/indent-blankline.nvim",
-    opt = true,
-    setup = function()
-      require("utils").on_file_open "indent-blankline.nvim"
-    end
-  }
+  use {"lukas-reineke/indent-blankline.nvim"}
 
   -- Better buffer closing
   use {
@@ -117,6 +111,9 @@ packer.startup({ function(use)
 
   -- Convert template string
   use "axelvc/template-string.nvim"
+
+  -- Popup API
+  use "nvim-lua/popup.nvim"
 
 end,
   config = {

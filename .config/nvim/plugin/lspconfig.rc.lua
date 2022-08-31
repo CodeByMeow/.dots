@@ -1,5 +1,8 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
+local status2, mason_lspconfig = pcall(require, "mason-lspconfig")
+if (not status2) then return end
+
 
 local protocol = require('vim.lsp.protocol')
 
@@ -56,32 +59,34 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" },
-  capabilities = capabilities
+local servers = { "tsserver", "sumneko_lua", "cssls", "html", "emmet_ls", "intelephense" }
+mason_lspconfig.setup({
+  ensure_installed = servers,
+  automatic_installation = true,
+})
+local opts = {
+  capabilities = capabilities,
 }
 
-nvim_lsp.sumneko_lua.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false
-      },
-    },
-  },
-}
-
-nvim_lsp.tailwindcss.setup {}
+for _, server in pairs(servers) do
+  if server == 'sumneko_lua' then
+    opts.settings = {
+      Lua = {
+        diagnostics = {
+          globals = {
+            'vim',
+          },
+          workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false
+          },
+        }
+      }
+    }
+  end
+  nvim_lsp[server].setup(opts)
+end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -108,4 +113,3 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
-

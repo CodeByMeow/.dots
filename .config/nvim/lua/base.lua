@@ -10,7 +10,6 @@ vim.wo.number = true
 vim.g.did_load_filetypes = 0
 vim.g.do_filetype_lua = 1
 vim.g.cursorhold_updatetime = 100
-vim.g.mapleader = '<Space>'
 
 vim.opt.title = true
 vim.opt.autoindent = true
