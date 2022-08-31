@@ -66,7 +66,7 @@ packer.startup({ function(use)
   use "dinhhuy258/git.nvim" -- Git blame and browser
 
   use "rcarriga/nvim-notify"
-  use {"lukas-reineke/indent-blankline.nvim"}
+  use { "lukas-reineke/indent-blankline.nvim" }
 
   -- Better buffer closing
   use {
@@ -114,6 +114,13 @@ packer.startup({ function(use)
 
   -- Popup API
   use "nvim-lua/popup.nvim"
+
+  -- Surround
+  use {
+    "kylechui/nvim-surround", config = function()
+      require('nvim-surround').setup()
+    end
+  }
 
 end,
   config = {
