@@ -1,14 +1,8 @@
-local present, impatient = pcall(require, "impatient")
-if present then
+local status, impatient = pcall(require, "impatient")
+if status then
    impatient.enable_profile()
 end
-
-require "core"
-require "core.options"
-
-vim.defer_fn(function()
-   require "core.mappings"
-end, 0)
-
-require("core.packer").bootstrap()
-require "plugins"
+require('base')
+require('highlights')
+require('maps')
+require('plugins')
