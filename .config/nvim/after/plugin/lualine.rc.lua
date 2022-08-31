@@ -1,12 +1,34 @@
 local status, lualine = pcall(require, 'lualine')
 if (not status) then return end
 
-lualine.setup{
+local function getclientnames()
+  local bufnr = vim.fn.bufnr('')
+  local clients = vim.lsp.buf_get_clients(bufnr)
+  local clientnames_tbl = {}
+
+  for _, v in pairs(clients) do
+    if v.name then
+      table.insert(clientnames_tbl, v.name)
+    end
+  end
+
+  return table.concat(clientnames_tbl, ',')
+end
+
+local lsp_text_provider = function()
+  local bufnr = vim.fn.bufnr('')
+  local clients = vim.lsp.buf_get_clients(bufnr)
+  if vim.tbl_isempty(clients) then return '' end
+  local names = getclientnames()
+  return string.format('  LSP [%s]', names)
+end
+
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'gruvbox',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -21,35 +43,35 @@ lualine.setup{
     }
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch'},
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch' },
     lualine_c = { {
       'filename',
       file_status = true, -- display file status
       path = 0, -- 0 - just filename
     } },
-    lualine_x = {{
+    lualine_x = { {
       'diagnostics',
-      sources = { 'nvim_diagnostic'},
-      symbols = { error = " ", warn = " ", hint = " ", info = " "},
+      sources = { 'nvim_diagnostic' },
+      symbols = { error = " ", warn = " ", hint = " ", info = " " },
       'encoding',
       'filetye'
-    }},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
+    } },
+    lualine_y = { lsp_text_provider, 'progress' },
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {{
+    lualine_c = { {
       'filename',
       file_status = true,
       path = 1 -- 1 =  relative path
-    }},
-    lualine_x = {'location'},
+    } },
+    lualine_x = { 'location' },
     lualine_y = {},
     lualine_z = {}
   },
   tabline = {},
-  extensions = {'fugitive'}
+  extensions = { 'fugitive' }
 }
