@@ -10,7 +10,7 @@ packer.startup({ function(use)
   use "wbthomason/packer.nvim"
   use {
     "ellisonleao/gruvbox.nvim",
-    config = function ()
+    config = function()
       require 'theme.gruvbox'
     end
   }
@@ -126,6 +126,10 @@ packer.startup({ function(use)
       require('nvim-surround').setup()
     end
   }
+  --Tmux
+  use "aserowy/tmux.nvim"
+
+
 
 end,
   config = {
