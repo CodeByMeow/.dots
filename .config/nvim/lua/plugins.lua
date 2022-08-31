@@ -8,7 +8,12 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup({ function(use)
   use "wbthomason/packer.nvim"
-  use "ellisonleao/gruvbox.nvim"
+  use {
+    "ellisonleao/gruvbox.nvim",
+    config = function ()
+      require 'theme.gruvbox'
+    end
+  }
   -- Statusline
   use {
     "nvim-lualine/lualine.nvim",
