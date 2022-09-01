@@ -56,8 +56,9 @@ lualine.setup {
       symbols = { error = " ", warn = " ", hint = " ", info = " " },
       'encoding',
       'filetye'
-    } },
-    lualine_y = { lsp_text_provider, 'progress' },
+    },
+      lsp_text_provider },
+    lualine_y = { 'progress' },
     lualine_z = { 'location' }
   },
   inactive_sections = {
