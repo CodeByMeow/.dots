@@ -64,3 +64,5 @@ set NPM_PACKAGES "$HOME/.npm-packages"
 set PATH $PATH $NPM_PACKAGES/bin
 
 set MANPATH $NPM_PACKAGES/share/man $MANPATH  
+xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
+
