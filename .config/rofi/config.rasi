@@ -1,49 +1,52 @@
 configuration {
-    font:			    "Iosevka Nerd Font 13";
-    show-icons:         true;
+    font:		        "Iosevka Nerd Font 13";
+    show-icons:                 true;
     icon-theme: 		"candi-icons";
     display-drun: 		" ";
-    drun-display-format: "{name}";
-    disable-history:    false;
-    fullscreen:         false;
-    hide-scrollbar: 	true;
+    drun-display-format:        "{name}";
+    disable-history:            false;
+    fullscreen:                 false;
+    hide-scrollbar: 	        true;
     sidebar-mode: 		false;
 }
 @theme "/dev/null"
 
 * {
-	bg:			    	            #3C3836;
-	fg:			    	            #EBDBB2;
-	button:				            #232a2d;
-	background-color:	            @bg;
-	text-color:			            @fg;
+    bg:			    #0F0F1B;
+    fg:			    #EBDBB2;
+    button:		    #232a2d;
+    background-color:	    @bg;
+    text-color:		    @fg;
 }
 
 window {
-    location:                       center;
-    anchor:                         center;
-    height:                         50%;
-    width:                          30%;
-    orientation:                    horizontal;
-    children:                       [mainbox];
-    x-offset:                       0px;        
-    y-offset:                       0px;
-    border-radius:			        12px;
+    location:               center;
+    anchor:                 center;
+    height:                 50%;
+    width:                  30%;
+    orientation:            horizontal;
+    children:               [mainbox];
+    x-offset:               0px;        
+    y-offset:               0px;
+    border-radius:	    12px;
 }
 
-prompt { enabled: false; }
+prompt {
+    enabled: false; 
+}
 
 entry {
-	placeholder:			        "  Search...";
+	placeholder:		        "  Search...";
 	placeholder-color:              @fg;
 	expand:                         true;
 	padding:                        1.5%;
-	border-radius:			        12px;
+	border-radius:		        12px;
+        background-color:               #ff000000;
 }
 
 inputbar {
-	children: 			            [ prompt, entry ];
-	background-image:               url("~/.config/rofi/images/j.jpg", width);
+	children: 			[ prompt, entry ];
+	background-image:               url("~/.config/rofi/rose.png", width);
 	expand:                         false;
 	border-radius:                  0px 0 80px 0px;
 	padding:                        62px 120px 62px 120px;
