@@ -14,11 +14,9 @@ packer.startup({ function(use)
       require 'theme.gruvbox'
     end
   }
+  use "kyazdani42/nvim-web-devicons"
   -- Statusline
-  use {
-    "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true }
-  }
+  use "nvim-lualine/lualine.nvim"
 
   use "lewis6991/impatient.nvim" -- Optimize
   use "nathom/filetype.nvim"
@@ -104,11 +102,6 @@ packer.startup({ function(use)
   use {
     "kevinhwang91/nvim-hlslens",
     keys = { "/" },
-  }
-
-  use {
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
   }
 
   -- Standalone UI for nvim-lsp progress

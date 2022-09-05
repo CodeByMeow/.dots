@@ -1,6 +1,5 @@
 set fish_greeting
 starship init fish | source
-thefuck --alias | source
 
 alias ls='logo-ls'
 alias l='ls -l'
@@ -64,5 +63,8 @@ set NPM_PACKAGES "$HOME/.npm-packages"
 set PATH $PATH $NPM_PACKAGES/bin
 
 set MANPATH $NPM_PACKAGES/share/man $MANPATH  
-xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
+
+function tap
+  xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
+end
 

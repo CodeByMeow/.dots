@@ -46,7 +46,7 @@ fd feh dolphin lxappearance breeze logo-ls playerctl
 ### GUI terminal
 
 - **Fish theme** :sparkles: `starship`
-- **Z jump** :sparkles: `fiser install jethrokuan/z`
+- **Z jump** : `fisher install jethrokuan/z`
 - **Kitty**:seedling: `kitty +kitten theme`
 
 - **Light**:bulb: `sudo chmod +s (which light)`
