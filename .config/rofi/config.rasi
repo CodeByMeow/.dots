@@ -12,7 +12,7 @@ configuration {
 @theme "/dev/null"
 
 * {
-    bg:			    #0F0F1B;
+    bg:			    #3C3836;
     fg:			    #EBDBB2;
     button:		    #232a2d;
     background-color:	    @bg;
@@ -46,7 +46,7 @@ entry {
 
 inputbar {
 	children: 			[ prompt, entry ];
-	background-image:               url("~/.config/rofi/rose.png", width);
+	background-image:               url("~/.config/rofi/cofffe-cup.jpg", width);
 	expand:                         false;
 	border-radius:                  0px 0 80px 0px;
 	padding:                        62px 120px 62px 120px;
