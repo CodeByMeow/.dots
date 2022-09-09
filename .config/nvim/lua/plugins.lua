@@ -115,12 +115,13 @@ packer.startup({ function(use)
 
   -- Surround
   use {
-    "kylechui/nvim-surround", config = function()
-      require('nvim-surround').setup()
-    end
+    "kylechui/nvim-surround", config = function() require('nvim-surround').setup() end
   }
   --Tmux
   use "aserowy/tmux.nvim"
+
+  --vim diff
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
 
 
