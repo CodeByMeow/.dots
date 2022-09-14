@@ -85,17 +85,17 @@
 [urgency_low]
     background = "#1E1E2E"
     foreground = "#D9E0EE"
-    frame_color = "#575268"
+    frame_color = "#504945"
     timeout = 5
 
 [urgency_normal]
     background = "#1E1E2E"
     foreground = "#D9E0EE"
-    frame_color = "#575268"
+    frame_color = "#504945"
     timeout = 5
 
 [urgency_critical]
     background = "#1E1E2E"
     foreground = "#D9E0EE"
-    frame_color = "#575268"
+    frame_color = "#504945"
     timeout = 10

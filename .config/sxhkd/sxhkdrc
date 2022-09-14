@@ -172,3 +172,6 @@ super + d
 
 super + v
   nautilus
+
+super + x
+  betterlockscreen -l
