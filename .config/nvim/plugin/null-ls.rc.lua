@@ -13,7 +13,10 @@ null_ls.setup {
     formatting.cmake_format,
     formatting.codespell.with({ filetypes = { 'markdown' } }),
     completion.spell,
-    diagnostics.fish
+    diagnostics.fish,
+    null_ls.builtins.diagnostics.eslint_d.with({
+      diagnostics_format = '[eslint] #{m}\n(#{c})'
+    }),
   },
   on_attach = function(client, bufnr)
     if client.server_capabilities.documentFormattingProvider then
@@ -22,12 +25,11 @@ null_ls.setup {
         group = augroup_format,
         buffer = 0,
         callback = function()
-          -- v0.8 using vim.lsp.buf.format()
-          vim.lsp.buf.formatting_sync(nil, 2000)
+          vim.lsp.buf.formatting_seq_sync()
         end
       })
     end
   end,
 }
 
-vim.keymap.set('n', 'fm', '<cmd>lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', 'fm', '<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>', { noremap = true, silent = true })

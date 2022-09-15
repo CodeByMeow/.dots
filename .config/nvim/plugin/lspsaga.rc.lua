@@ -61,7 +61,9 @@ saga.init_lsp_saga {
     show_file = true,
     click_support = false,
   }, ]]
+
 }
+
 --[[ local function get_file_name(include_path)
   local file_name = require('lspsaga.symbolwinbar').get_file_name({})
   if vim.fn.bufname '%' == '' then return '' end
@@ -96,11 +98,11 @@ local function config_winbar()
     if sym ~= nil then win_val = win_val .. sym end
     vim.wo.winbar = win_val
   end
-end ]]
+end 
 
 local events = { 'BufEnter', 'BufWinEnter', 'CursorMoved' }
 
---[[ vim.api.nvim_create_autocmd(events, {
+vim.api.nvim_create_autocmd(events, {
   pattern = '*',
   callback = function() config_winbar() end,
 })
@@ -108,7 +110,7 @@ local events = { 'BufEnter', 'BufWinEnter', 'CursorMoved' }
 vim.api.nvim_create_autocmd('User', {
   pattern = 'LspsagaUpdateSymbol',
   callback = function() config_winbar() end,
-}) ]]
+})]]
 
 local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)

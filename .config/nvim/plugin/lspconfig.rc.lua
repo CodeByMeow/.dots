@@ -66,6 +66,7 @@ mason_lspconfig.setup({
 })
 local opts = {
   capabilities = capabilities,
+
 }
 
 for _, server in pairs(servers) do
