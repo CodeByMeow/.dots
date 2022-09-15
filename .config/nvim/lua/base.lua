@@ -44,7 +44,6 @@ vim.opt.smartcase = true
 vim.opt.mouse = "a"
 
 vim.opt.ruler = false
-vim.opt.cmdheight = 0
 
 -- disable nvim intro
 vim.opt.shortmess:append "sI"

@@ -14,6 +14,7 @@ packer.startup({ function(use)
       require 'theme.gruvbox'
     end
   }
+
   use "kyazdani42/nvim-web-devicons"
   -- Statusline
   use "nvim-lualine/lualine.nvim"

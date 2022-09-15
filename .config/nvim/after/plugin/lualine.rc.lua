@@ -20,7 +20,7 @@ local lsp_text_provider = function()
   local clients = vim.lsp.buf_get_clients(bufnr)
   if vim.tbl_isempty(clients) then return '' end
   local names = getclientnames()
-  return string.format('  LSP [%s]', names)
+  return string.format('󰒔  LSP [%s]', names)
 end
 
 lualine.setup {

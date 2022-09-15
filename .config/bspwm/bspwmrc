@@ -48,7 +48,5 @@ feh --bg-fill ~/.config/wallpaper/land.jpg &
 picom --experimental-backends &
 unclutter -idle 10 &
 betterlockscreen -u ~/.config/wallpaper/land.jpg &
-
-ibus-daemon &
-xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
+ibus-daemon 
 
