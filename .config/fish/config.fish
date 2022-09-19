@@ -68,3 +68,4 @@ function tap
   xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
 end
 
+$HOME/.welcome/welcome.sh
