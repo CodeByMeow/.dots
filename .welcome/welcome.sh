@@ -124,11 +124,10 @@ EVEN='\e[38;2;171;54;3m'
 # them to change how they display!       #
 #========================================#
 
-greetings=("Welcome" "Greetings" "Hello" "Hi") # Add your own greetings!
+greetings=("Welcome" "Yo!" "Hello" "Hi") # Add your own greetings!
 randgreeting="on"  #< Turn the random greetings on (eg. "Hello <user>, Hi <user>")
 twelvehour="on"     #< Switch between 12 and 24 hour time (eg. 8:00 PM vs 20:00)
 rechargenotif="off" #< Notify that you should recharge if below 15%
-flatpakupd="off"    #< Check for flatpak updates, this slows startup down A LOT
 goodgreeting="on"   #< Display greetings like "Good afternoon," else "It's afternoon"
 
 welcome
