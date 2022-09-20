@@ -113,7 +113,7 @@ vim.api.nvim_create_autocmd('User', {
 })]]
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
+vim.keymap.set('n', '<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
 vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
 vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
 vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<Cr>', opts)
