@@ -40,7 +40,9 @@ packer.startup({ function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     -- run = ":TSUpdate",
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = function()
+      require('nvim-treesitter.install').update({ with_sync = true })
+    end,
   }
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
@@ -117,15 +119,26 @@ packer.startup({ function(use)
 
   -- Surround
   use {
-    "kylechui/nvim-surround", config = function() require('nvim-surround').setup() end
+    "kylechui/nvim-surround",
+    config = function()
+      require('nvim-surround').setup()
+    end
   }
   --Tmux
   use "aserowy/tmux.nvim"
 
   --vim diff
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
 
-
+  --highlight color
+  use {
+    'brenoprata10/nvim-highlight-colors', config = function()
+      require('nvim-highlight-colors').setup {}
+    end
+  }
 
 end,
   config = {
