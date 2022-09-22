@@ -14,14 +14,11 @@ packer.startup({ function(use)
       require 'theme.gruvbox'
     end
   }
-
   use "kyazdani42/nvim-web-devicons"
   -- Statusline
   use "nvim-lualine/lualine.nvim"
-
   use "lewis6991/impatient.nvim" -- Optimize
   use "nathom/filetype.nvim"
-
   use "onsails/lspkind-nvim" -- vscode-like pictograms
   use "glepnir/lspsaga.nvim" -- LSP UIs
   use "L3MON4D3/LuaSnip" -- Snippet
@@ -36,7 +33,6 @@ packer.startup({ function(use)
   use "MunifTanjim/prettier.nvim"
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-
   use {
     "nvim-treesitter/nvim-treesitter",
     -- run = ":TSUpdate",
@@ -46,20 +42,16 @@ packer.startup({ function(use)
   }
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
-
   use "nvim-lua/plenary.nvim" -- Common utilities
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-file-browser.nvim'
   use "MunifTanjim/nui.nvim" -- Neovim UI Enhancer
-
   use "dstein64/vim-startuptime"
   use "max397574/better-escape.nvim"
-
   use {
     "yamatsum/nvim-nonicons",
     requires = { "kyazdani42/nvim-web-devicons" }
   }
-
   use "akinsho/bufferline.nvim"
   use "norcalli/nvim-colorizer.lua"
   -- Parenthesis highlighting
@@ -68,13 +60,10 @@ packer.startup({ function(use)
     after = "nvim-treesitter"
   }
   use "karb94/neoscroll.nvim" -- Smooth scrolling
-
   use "lewis6991/gitsigns.nvim"
   use "dinhhuy258/git.nvim" -- Git blame and browser
-
   use "rcarriga/nvim-notify"
   use { "lukas-reineke/indent-blankline.nvim" }
-
   -- Better buffer closing
   use {
     "famiu/bufdelete.nvim",
@@ -82,7 +71,6 @@ packer.startup({ function(use)
   }
   use "akinsho/toggleterm.nvim"
   use "yamatsum/nvim-cursorline"
-
   use {
     "numToStr/Comment.nvim",
     module = "Comment",
@@ -93,30 +81,23 @@ packer.startup({ function(use)
     "JoosepAlviste/nvim-ts-context-commentstring",
     after = "nvim-treesitter"
   }
-
   use {
     "andymass/vim-matchup",
     after = "nvim-treesitter"
   }
-
   -- Auto rename tag html
   use "AndrewRadev/tagalong.vim"
-
   -- Number of result search
   use {
     "kevinhwang91/nvim-hlslens",
     keys = { "/" },
   }
-
   -- Standalone UI for nvim-lsp progress
   use "j-hui/fidget.nvim"
-
   -- Convert template string
   use "axelvc/template-string.nvim"
-
   -- Popup API
   use "nvim-lua/popup.nvim"
-
   -- Surround
   use {
     "kylechui/nvim-surround",
@@ -126,20 +107,17 @@ packer.startup({ function(use)
   }
   --Tmux
   use "aserowy/tmux.nvim"
-
   --vim diff
   use {
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim'
   }
-
   --highlight color
   use {
     'brenoprata10/nvim-highlight-colors', config = function()
       require('nvim-highlight-colors').setup {}
     end
   }
-
 end,
   config = {
     display = {
