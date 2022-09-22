@@ -50,7 +50,6 @@ packer.startup({ function(use)
   use "max397574/better-escape.nvim"
   use {
     "yamatsum/nvim-nonicons",
-    requires = { "kyazdani42/nvim-web-devicons" }
   }
   use "akinsho/bufferline.nvim"
   use "norcalli/nvim-colorizer.lua"
