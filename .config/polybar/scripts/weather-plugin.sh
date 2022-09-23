@@ -5,7 +5,7 @@
 # API settings ________________________________________________________________
 
 APIKEY=`cat $HOME/.owm-key`
-CITY_NAME='SaiGon'
+CITY_NAME='Ho%20Chi%20Minh%20City'
 COUNTRY_CODE='VN'
 # Desired output language
 LANG="en"
@@ -88,7 +88,7 @@ COLD_TEMP=20
 # Other settings ______________________________________________________________
 
 # Display the weather description. yes/no
-DISPLAY_LABEL="yes"
+DISPLAY_LABEL="no"
 
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
