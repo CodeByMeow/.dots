@@ -60,6 +60,7 @@ packer.startup({ function(use)
   }
   use "karb94/neoscroll.nvim" -- Smooth scrolling
   use "lewis6991/gitsigns.nvim"
+  use { 'dinhhuy258/git.nvim' }
   use "rcarriga/nvim-notify"
   use { "lukas-reineke/indent-blankline.nvim" }
   -- Better buffer closing
