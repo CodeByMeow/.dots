@@ -53,6 +53,8 @@ set NPM_PACKAGES "$HOME/.npm-packages"
 set PATH $PATH $NPM_PACKAGES/bin
 set MANPATH $NPM_PACKAGES/share/man $MANPATH  
 
+set -U Z_DATA "$HOME/.z"
+
 function k
   bluetoothctl connect DC:2C:26:0F:A5:D2
 end
