@@ -1,5 +1,6 @@
 set fish_greeting
 starship init fish | source
+$HOME/.welcome/welcome.sh
 
 alias ls='logo-ls'
 alias l='ls -l'
@@ -48,24 +49,22 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 set -g theme_newline_cursor yes
 
+set NPM_PACKAGES "$HOME/.npm-packages"
+set PATH $PATH $NPM_PACKAGES/bin
+set MANPATH $NPM_PACKAGES/share/man $MANPATH  
+
 function k
   bluetoothctl connect DC:2C:26:0F:A5:D2
 end
 
-export VISUAL=nvim;
-export EDITOR=nvim;
-
 function nf 
   bash ~/.scripts/fetch.sh
 end
-set NPM_PACKAGES "$HOME/.npm-packages"
-
-set PATH $PATH $NPM_PACKAGES/bin
-
-set MANPATH $NPM_PACKAGES/share/man $MANPATH  
 
 function tap
   xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
 end
 
-$HOME/.welcome/welcome.sh
+export VISUAL=nvim;
+export EDITOR=nvim;
+
