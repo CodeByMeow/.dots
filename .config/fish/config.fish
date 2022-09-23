@@ -1,6 +1,6 @@
 set fish_greeting
 starship init fish | source
-$HOME/.welcome/welcome.sh
+$HOME/.scripts/welcome.sh
 
 alias ls='logo-ls'
 alias l='ls -l'
