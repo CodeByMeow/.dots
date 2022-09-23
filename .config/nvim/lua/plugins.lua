@@ -117,6 +117,10 @@ packer.startup({ function(use)
       require('nvim-highlight-colors').setup {}
     end
   }
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end,
   config = {
     display = {
