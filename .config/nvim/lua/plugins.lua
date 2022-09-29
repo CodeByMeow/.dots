@@ -121,6 +121,8 @@ packer.startup({ function(use)
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
+  -- Delay repeat execution of certain keys
+  use 'ja-ford/delaytrain.nvim'
 end,
   config = {
     display = {
