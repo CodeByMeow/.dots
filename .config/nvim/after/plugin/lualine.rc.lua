@@ -53,7 +53,7 @@ lualine.setup {
     lualine_x = { {
       'diagnostics',
       sources = { 'nvim_diagnostic' },
-      symbols = { error = " ", warn = " ", hint = " ", info = " " },
+      symbols = { error = "󰅚 ", warn = "󰻍 ", hint = "󰌶 ", info = "󰋽 " },
       'encoding',
       'filetye'
     },

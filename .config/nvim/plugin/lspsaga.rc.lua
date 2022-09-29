@@ -11,9 +11,9 @@ saga.init_lsp_saga {
   saga_winblend = 0,
   -- when cursor in saga window you config these to move
   move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-  diagnostic_header = { "󰅚 ", "󰻍 ", "󰋽 ", "󰌶" },
+  diagnostic_header = { "󰅚 ", "󰻍 ", "󰋽 ", "󰌶 " },
   -- use emoji lightbulb in default
-  code_action_icon = "󰌶",
+  code_action_icon = "󰌶 ",
   -- if true can press number to execute the codeaction in codeaction window
   code_action_num_shortcut = true,
   -- same as nvim-lightbulb but async
