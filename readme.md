@@ -41,6 +41,7 @@ sxhkd cava neovim dunst unclutter peco duf
 xorg-xsetroot acpilight light gpick
 blueman bluetooth-autoconnect lazygit flameshot
 fd feh dolphin lxappearance breeze logo-ls playerctl
+peaclock
 ```
 
 ### GUI terminal
