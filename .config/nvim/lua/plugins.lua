@@ -113,7 +113,8 @@ packer.startup({ function(use)
   }
   --highlight color
   use {
-    'brenoprata10/nvim-highlight-colors', config = function()
+    'brenoprata10/nvim-highlight-colors',
+    config = function()
       require('nvim-highlight-colors').setup {}
     end
   }
@@ -123,6 +124,14 @@ packer.startup({ function(use)
   })
   -- Delay repeat execution of certain keys
   use 'ja-ford/delaytrain.nvim'
+  -- Number toggle
+  use {
+    "sitiom/nvim-numbertoggle",
+    config = function()
+      require("numbertoggle").setup()
+    end
+  }
+
 end,
   config = {
     display = {
