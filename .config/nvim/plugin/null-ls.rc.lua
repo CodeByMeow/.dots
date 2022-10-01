@@ -22,11 +22,11 @@ null_ls.setup {
         group = augroup_format,
         buffer = 0,
         callback = function()
-          vim.lsp.buf.formatting_seq_sync()
+          vim.lsp.buf.format()
         end
       })
     end
   end,
 }
 
-vim.keymap.set('n', 'fm', '<cmd>lua vim.lsp.buf.formatting_seq_sync()<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', 'fm', '<cmd>lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
