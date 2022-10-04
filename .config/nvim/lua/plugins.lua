@@ -65,9 +65,6 @@ packer.startup({ function(use)
   use({
     "folke/noice.nvim",
     event = "VimEnter",
-    config = function()
-      require("noice").setup()
-    end,
     requires = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
@@ -113,9 +110,6 @@ packer.startup({ function(use)
   -- Surround
   use {
     "kylechui/nvim-surround",
-    config = function()
-      require('nvim-surround').setup()
-    end
   }
   --Tmux
   use "aserowy/tmux.nvim"
@@ -127,9 +121,6 @@ packer.startup({ function(use)
   --highlight color
   use {
     'brenoprata10/nvim-highlight-colors',
-    config = function()
-      require('nvim-highlight-colors').setup {}
-    end
   }
   use({
     "iamcco/markdown-preview.nvim",
@@ -140,9 +131,6 @@ packer.startup({ function(use)
   -- Number toggle
   use {
     "sitiom/nvim-numbertoggle",
-    config = function()
-      require("numbertoggle").setup()
-    end
   }
 
 end,
