@@ -132,6 +132,9 @@ packer.startup({ function(use)
   use {
     "sitiom/nvim-numbertoggle",
   }
+  use {
+    "folke/zen-mode.nvim"
+  }
 
 end,
   config = {
