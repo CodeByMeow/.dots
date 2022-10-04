@@ -62,16 +62,6 @@ packer.startup({ function(use)
   use "lewis6991/gitsigns.nvim"
   use { 'dinhhuy258/git.nvim' }
   use "rcarriga/nvim-notify"
-  use({
-    "folke/noice.nvim",
-    event = "VimEnter",
-    requires = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-      "hrsh7th/nvim-cmp",
-    }
-  })
   use { "lukas-reineke/indent-blankline.nvim" }
   -- Better buffer closing
   use {
