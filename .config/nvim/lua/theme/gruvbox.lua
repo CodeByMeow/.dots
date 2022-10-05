@@ -1,8 +1,7 @@
-vim.g.gruvbox_style = "medium" --"medium" and "hard"
-vim.g.gruvbox_italic_boolean = true
-vim.g.gruvbox_italic_variable = false
-vim.g.gruvbox_italic_comment = true
-vim.g.gruvbox_italic_keyword = true
-vim.g.gruvbox_italic_function = true
-vim.g.gruvbox_bold = true
-vim.cmd [[colorscheme gruvbox]]
+vim.g.gruvbox_material_background = 'soft' -- 'hard', 'medium', 'soft'
+vim.g.gruvbox_material_disable_italic_comment = 0
+vim.g.gruvbox_material_enable_bold = 0
+vim.g.gruvbox_material_enable_italic = 1
+vim.g.gruvbox_material_diagnostic_text_highlight = 1
+vim.g.gruvbox_material_better_performance = 1
+vim.cmd [[colorscheme gruvbox-material]]

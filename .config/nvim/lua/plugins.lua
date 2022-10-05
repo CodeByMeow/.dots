@@ -9,7 +9,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup({ function(use)
   use "wbthomason/packer.nvim"
   use {
-    "rafamadriz/gruvbox",
+    'sainnhe/gruvbox-material',
     config = function()
       require 'theme.gruvbox'
     end

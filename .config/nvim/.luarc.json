@@ -3,7 +3,8 @@
     "Lua.diagnostics.disable": [
         "redundant-parameter",
         "unused-local",
-        "need-check-nil"
+        "need-check-nil",
+        "undefined-doc-name"
     ],
     "Lua.workspace.checkThirdParty": false
 }
