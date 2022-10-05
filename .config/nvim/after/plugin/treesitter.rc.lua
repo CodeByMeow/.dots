@@ -26,4 +26,5 @@ ts.setup {
   autotag = { enable = true },
   incremental_selection = { enable = true },
   indent = { enable = true, disable = { "yaml" } },
+  markid = { enable = true },
 }

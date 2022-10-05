@@ -58,6 +58,7 @@ packer.startup({ function(use)
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter"
   }
+  use 'David-Kunz/markid'
   use "karb94/neoscroll.nvim" -- Smooth scrolling
   use "lewis6991/gitsigns.nvim"
   use { 'dinhhuy258/git.nvim' }
