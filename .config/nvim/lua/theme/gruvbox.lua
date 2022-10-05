@@ -1,19 +1,8 @@
-local status, gruvbox = pcall(require, 'gruvbox')
-if (not status) then return end
-
-gruvbox.setup {
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = true,
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "soft", -- can be "hard", "soft" or empty string
-  overrides = {},
-}
-
+vim.g.gruvbox_style = "medium" --"medium" and "hard"
+vim.g.gruvbox_italic_boolean = true
+vim.g.gruvbox_italic_variable = false
+vim.g.gruvbox_italic_comment = true
+vim.g.gruvbox_italic_keyword = true
+vim.g.gruvbox_italic_function = true
+vim.g.gruvbox_bold = true
 vim.cmd [[colorscheme gruvbox]]
