@@ -15,6 +15,10 @@ packer.startup({ function(use)
     end
   }
   use "kyazdani42/nvim-web-devicons"
+  use {
+    'yamatsum/nvim-nonicons',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
   -- Statusline
   use "nvim-lualine/lualine.nvim"
   use "lewis6991/impatient.nvim" -- Optimize
