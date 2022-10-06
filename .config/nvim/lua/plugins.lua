@@ -48,9 +48,6 @@ packer.startup({ function(use)
   use "MunifTanjim/nui.nvim" -- Neovim UI Enhancer
   use "dstein64/vim-startuptime"
   use "max397574/better-escape.nvim"
-  use {
-    "yamatsum/nvim-nonicons",
-  }
   use "akinsho/bufferline.nvim"
   use "norcalli/nvim-colorizer.lua"
   -- Parenthesis highlighting
