@@ -28,7 +28,7 @@ telescope.setup {
     prompt_prefix = "󰍉  ",
     selection_caret = "󱞩  ",
     entry_prefix = "  ",
-    file_ignore_pattern = { "node_modules" }
+    file_ignore_patterns = { "node_modules" }
   },
   extensions = {
     file_browser = {
