@@ -9,15 +9,15 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup({ function(use)
   use "wbthomason/packer.nvim"
   use {
-    'sainnhe/gruvbox-material',
+    "sainnhe/gruvbox-material",
     config = function()
-      require 'theme.gruvbox'
+      require "theme.gruvbox"
     end
   }
   use "kyazdani42/nvim-web-devicons"
   use {
-    'yamatsum/nvim-nonicons',
-    requires = { 'kyazdani42/nvim-web-devicons' }
+    "yamatsum/nvim-nonicons",
+    requires = { "kyazdani42/nvim-web-devicons" }
   }
   -- Statusline
   use "nvim-lualine/lualine.nvim"
@@ -41,14 +41,14 @@ packer.startup({ function(use)
     "nvim-treesitter/nvim-treesitter",
     -- run = ":TSUpdate",
     run = function()
-      require('nvim-treesitter.install').update({ with_sync = true })
+      require("nvim-treesitter.install").update({ with_sync = true })
     end,
   }
   use "windwp/nvim-autopairs"
   use "windwp/nvim-ts-autotag"
   use "nvim-lua/plenary.nvim" -- Common utilities
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  use "nvim-telescope/telescope-file-browser.nvim"
   use "MunifTanjim/nui.nvim" -- Neovim UI Enhancer
   use "dstein64/vim-startuptime"
   use "max397574/better-escape.nvim"
@@ -59,10 +59,10 @@ packer.startup({ function(use)
     "p00f/nvim-ts-rainbow",
     after = "nvim-treesitter"
   }
-  use 'David-Kunz/markid'
+  use "David-Kunz/markid" -- Highlight same variable params
   use "karb94/neoscroll.nvim" -- Smooth scrolling
   use "lewis6991/gitsigns.nvim"
-  use { 'dinhhuy258/git.nvim' }
+  use { "dinhhuy258/git.nvim" }
   use "rcarriga/nvim-notify"
   use { "lukas-reineke/indent-blankline.nvim" }
   -- Better buffer closing
@@ -101,25 +101,25 @@ packer.startup({ function(use)
   use "nvim-lua/popup.nvim"
   -- Surround
   use {
-    "kylechui/nvim-surround",
+    "tpope/vim-surround"
   }
   --Tmux
   use "aserowy/tmux.nvim"
-  --vim diff
+  -- Vim diff
   use {
-    'sindrets/diffview.nvim',
-    requires = 'nvim-lua/plenary.nvim'
+    "sindrets/diffview.nvim",
+    requires = "nvim-lua/plenary.nvim"
   }
-  --highlight color
+  -- Highlight color
   use {
-    'brenoprata10/nvim-highlight-colors',
+    "brenoprata10/nvim-highlight-colors",
   }
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
   })
   -- Delay repeat execution of certain keys
-  use 'ja-ford/delaytrain.nvim'
+  use "ja-ford/delaytrain.nvim"
   -- Number toggle
   use {
     "sitiom/nvim-numbertoggle",
