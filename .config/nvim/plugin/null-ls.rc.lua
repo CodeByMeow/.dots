@@ -11,7 +11,6 @@ null_ls.setup {
     formatting.prettier,
     formatting.clang_format,
     formatting.cmake_format,
-    formatting.codespell.with({ filetypes = { 'markdown' } }),
     completion.spell,
     diagnostics.fish,
   },
@@ -22,7 +21,7 @@ null_ls.setup {
         group = augroup_format,
         buffer = 0,
         callback = function()
-          vim.lsp.buf.format()
+          vim.lsp.buf.format({ timeout_ms = 2000 })
         end
       })
     end
