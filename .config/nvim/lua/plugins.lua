@@ -49,7 +49,6 @@ packer.startup({ function(use)
   use "nvim-lua/plenary.nvim" -- Common utilities
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
-  use "xiyaowong/telescope-emoji.nvim" -- emojis search
   use "MunifTanjim/nui.nvim" -- Neovim UI Enhancer
   use "dstein64/vim-startuptime"
   use "max397574/better-escape.nvim"
@@ -128,7 +127,10 @@ packer.startup({ function(use)
   use {
     "folke/zen-mode.nvim"
   }
-
+  use "stevearc/dressing.nvim"
+  use({
+    "ziontee113/icon-picker.nvim",
+  })
 end,
   config = {
     display = {
