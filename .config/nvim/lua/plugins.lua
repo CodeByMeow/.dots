@@ -127,10 +127,6 @@ packer.startup({ function(use)
   use {
     "folke/zen-mode.nvim"
   }
-  use "stevearc/dressing.nvim"
-  use({
-    "ziontee113/icon-picker.nvim",
-  })
 end,
   config = {
     display = {
