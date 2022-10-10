@@ -54,6 +54,7 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension("emoji")
 
 vim.keymap.set('n', ';f',
   function()
@@ -74,7 +75,7 @@ end)
 vim.keymap.set('n', ';;', function()
   builtin.resume()
 end)
-vim.keymap.set('n', ';e', function()
+vim.keymap.set('n', ';d', function()
   builtin.diagnostics()
 end)
 vim.keymap.set("n", "sf", function()
@@ -89,3 +90,4 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
+vim.keymap.set('n', ';e', '<cmd>Telescope emoji<cr>')
