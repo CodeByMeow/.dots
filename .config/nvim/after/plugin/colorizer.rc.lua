@@ -4,3 +4,4 @@ if (not status) then return end
 colorizer.setup {
   "*"
 }
+

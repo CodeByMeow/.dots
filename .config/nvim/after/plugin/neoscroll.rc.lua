@@ -13,3 +13,4 @@ neoscroll.setup {
   post_hook = nil,
   performance_mode = false,
 }
+

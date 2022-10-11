@@ -65,6 +65,6 @@ function tap
   xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
 end
 
-export VISUAL=nvim;
-export EDITOR=nvim;
+export VISUAL=vim;
+export EDITOR=vim;
 

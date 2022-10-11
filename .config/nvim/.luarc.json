@@ -1,10 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
     "Lua.diagnostics.disable": [
-        "redundant-parameter",
-        "unused-local",
-        "need-check-nil",
-        "undefined-doc-name"
-    ],
-    "Lua.workspace.checkThirdParty": false
+        "unused-local"
+    ]
 }

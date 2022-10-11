@@ -7,31 +7,31 @@ if (not status2) then return end
 local protocol = require('vim.lsp.protocol')
 
 protocol.CompletionItemKind = {
-  '', -- Text
-  '', -- Method
+  '󰉿', -- Text
+  '', -- Method
   '', -- Function
-  '', -- Constructor
-  '', -- Field
-  '', -- Variable
-  '', -- Class
-  'ﰮ', -- Interface
-  '', -- Module
+  '', -- Constructor
+  '󰓹', -- Field
+  '󰫧', -- Variable
+  'ﴯ', -- Class
+  '', -- Interface
+  '', -- Module
   '', -- Property
-  '', -- Unit
+  '󰩨', -- Unit
   '', -- Value
   '', -- Enum
-  '', -- Keyword
-  '', -- Snippet
-  '', -- Color
+  '󰌋', -- Keyword
+  '󰘦', -- Snippet
+  '󰉦', -- Color
   '', -- File
   '', -- Reference
   '', -- Folder
   '', -- EnumMember
   '', -- Constant
-  '', -- Struct
-  '', -- Event
-  'ﬦ', -- Operator
-  '', -- TypeParameter
+  '', -- Struct
+  '', -- Event
+  '', -- Operator
+  '', -- TypeParameter
 }
 
 -- Set up completion using nvim_cmp with LSP source
@@ -94,3 +94,4 @@ vim.diagnostic.config({
     source = "always", -- Or "if_many"
   },
 })
+

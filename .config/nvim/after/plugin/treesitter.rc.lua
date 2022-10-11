@@ -28,3 +28,4 @@ ts.setup {
   indent = { enable = true, disable = { "yaml" } },
   markid = { enable = true },
 }
+

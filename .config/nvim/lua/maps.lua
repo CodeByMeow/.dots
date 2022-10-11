@@ -51,3 +51,4 @@ keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
 
 -- Close current buffer
 keymap.set('n', '<Space>x', '<cmd>:bd<cr>')
+
