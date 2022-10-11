@@ -10,19 +10,21 @@
 
 </div>
 
-- **Window Manager** :bento: BSPWM
-- **Panel** :blossom: Polybar
-- **Application Launcher** :rocket: Rofi
+- **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
+- **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
+- **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
-- **Terminal Emulator** :cat: Kitty
-- **Shell** 🐟 Fish
+- **Terminal Emulator** :cat: [ Kitty ](https://github.com/kovidgoyal/kitty)
+- **Shell** 🐟 [ Fish ](https://github.com/fish-shell/fish-shell)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
-- **File Manager** :flower_playing_cards: Ranger
-- **Editor** :pencil2: Neovim
+- **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
+- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
 
 ---
 
-### (manjaro) Point to the Fastest Mirror and Update your System
+### (Majaro OS)
+
+> Point to the Fastest Mirror and Update your System
 
 ```
 sudo pacman-mirrors --fasttrack
@@ -37,36 +39,37 @@ pacman -S --needed git base-devel
 ### Software
 
 ```
-sxhkd cava neovim dunst unclutter peco duf
+sxhkd cava dunst unclutter peco duf
 xorg-xsetroot acpilight light gpick
-blueman bluetooth-autoconnect lazygit flameshot
-fd feh dolphin lxappearance breeze logo-ls playerctl
+blueman bluetooth-autoconnect flameshot
+fd feh nautilus lxappearance breeze logo-ls playerctl
 peaclock
 ```
 
-### GUI terminal
+### Shell setup
 
-- **Fish theme** :sparkles: `starship`
-- **Z jump** : `fisher install jethrokuan/z`
-- **Kitty**:seedling: `kitty +kitten theme`
+- :sparkles: [ starship ](https://starship.rs/) - Shell theme
+- [z for fish](https://github.com/jethrokuan/z) : - Directory jumping  
+  `fisher install jethrokuan/z`
+- `kitty +kitten theme` - Terminal color scheme. I use Gruvbox material
+
+### System
 
 - **Light**:bulb: `sudo chmod +s (which light)`
 
 ### Font
 
-- Victor Mono
-- Iosevka
+- [ Victor Mono ](https://rubjo.github.io/victor-mono/)
+- [ Iosevka ](https://github.com/be5invis/Iosevka)
 - Montserrat
-
-### Fix some error
-
-No sound :sound: `alsactl restore`
 
 ### Break and save eye
 
-**BreakTimer:bed:** `breaktimer`
+No sound :sound: `alsactl restore`
 
-### Keyboard Keychrone K2 swap Fn
+BreakTimer:bed: `breaktimer`
+
+#### Keyboard Keychrone K2 swap Fn
 
 - Set the keyboard to :keyboard: Windows mode via the side switch.
 - Use **Fn + X + L** (hold for 4 seconds) to set the function key row to "Function" mode. (usually all that's necessary on Windows)
@@ -78,4 +81,3 @@ No sound :sound: `alsactl restore`
 - You may need to rebuild your `initramfs` if `hid_apple` is included.
   - ubuntu: `sudo update-initramfs -u`
   - arch: `mkinitcpio -P`
-
