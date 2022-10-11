@@ -18,6 +18,7 @@
 - **Shell** 🐟 [ Fish ](https://github.com/fish-shell/fish-shell)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
+  - [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
 - **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
 
 ---
@@ -78,6 +79,7 @@ peaclock
 
 - [ Victor Mono ](https://rubjo.github.io/victor-mono/)
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
+- [Material Design](https://github.com/Templarian/MaterialDesign-Font)
 - Montserrat
 
 ### Break and Fix
