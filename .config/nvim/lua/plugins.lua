@@ -36,6 +36,7 @@ packer.startup({ function(use)
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
   }
+  use 'nvim-treesitter/nvim-treesitter-context'
   use "David-Kunz/markid" -- Highlight same variable params
   use {
     "p00f/nvim-ts-rainbow",
