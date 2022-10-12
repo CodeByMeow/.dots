@@ -3,7 +3,7 @@
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:true
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/home/kat/\x2ez
+SETUVAR Z_DATA:/home/rose/\x2ez
 SETUVAR Z_DATA_DIR:/home/rose/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/rose\x24
 SETUVAR __fish_initialized:3400
