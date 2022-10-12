@@ -1,54 +1,53 @@
-local keymap = vim.keymap
+local nnoremap = require("katinbox.keymap").nnoremap
+local inoremap = require("katinbox.keymap").inoremap
+local vnoremap = require("katinbox.keymap").vnoremap
+local nmap = require("katinbox.keymap").nmap
 
 -- Do not yank with x
-keymap.set('n', 'x', '"_x')
+nnoremap('x', '"_x')
 
 -- Increment/decrement
-keymap.set('n', '+', '<C-a>')
-keymap.set('n', '-', '<C-x>')
+nnoremap('+', '<C-a>')
+nnoremap('-', '<C-x>')
 
 -- Delete a word backwords
-keymap.set('n', 'dw', 'vb"_d')
+nnoremap('dw', 'vb"_d')
 
 -- Select all
-keymap.set('n', '<C-a>', 'gg<S-v>G')
+nnoremap('<C-a>', 'gg<S-v>G')
 
 -- New tab
-keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
+nnoremap('te', ':tabedit<Return>')
 
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
+nnoremap('ss', ':split<Return><C-w>w', { silent = true })
+nnoremap('sv', ':vsplit<Return><C-w>w', { silent = true })
 
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
-keymap.set('', 'sh', '<C-w>h')
-keymap.set('', 'sj', '<C-w>j')
-keymap.set('', 'sk', '<C-w>k')
-keymap.set('', 'sl', '<C-w>l')
+nmap('<Space>', '<C-w>w')
+nmap('sh', '<C-w>h')
+nmap('sj', '<C-w>j')
+nmap('sk', '<C-w>k')
+nmap('sl', '<C-w>l')
 
 -- Resize window
-keymap.set('n', '<C-w><left>', '<C-w><')
-keymap.set('n', '<C-w><right>', '<C-w>>')
-keymap.set('n', '<C-w><up>', '<C-w>+')
-keymap.set('n', '<C-w><down>', '<C-w>-')
+nnoremap('<C-w><left>', '<C-w><')
+nnoremap('<C-w><right>', '<C-w>>')
+nnoremap('<C-w><up>', '<C-w>+')
+nnoremap('<C-w><down>', '<C-w>-')
 
 -- Move around
-keymap.set('i', '<C-h>', '<left>')
-keymap.set('i', '<C-j>', '<down>')
-keymap.set('i', '<C-k>', '<up>')
-keymap.set('i', '<C-l>', '<right>')
+inoremap('<C-h>', '<left>')
+inoremap('<C-j>', '<down>')
+inoremap('<C-k>', '<up>')
+inoremap('<C-l>', '<right>')
 
-keymap.set('n', '<A-j>', ':m .+1<CR>')
-keymap.set('n', '<A-k>', ':m .-2<CR>')
-keymap.set('i', '<A-k>', '<ESC>:m .-2<CR>==gi')
-keymap.set('i', '<A-j>', '<ESC>:m .+1<CR>==gi')
-keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
-keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
-
--- Escape highlight search
-keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
+nnoremap('<A-j>', ':m .+1<CR>')
+nnoremap('<A-k>', ':m .-2<CR>')
+inoremap('<A-k>', '<ESC>:m .-2<CR>==gi')
+inoremap('<A-j>', '<ESC>:m .+1<CR>==gi')
+vnoremap('<A-j>', ":m '>+1<CR>gv=gv")
+vnoremap('<A-k>', ":m '<-2<CR>gv=gv")
 
 -- Close current buffer
-keymap.set('n', '<Space>x', '<cmd>:bd<cr>')
-
+nnoremap('<Space>x', '<cmd>:bd<cr>')

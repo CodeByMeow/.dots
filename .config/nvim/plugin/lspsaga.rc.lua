@@ -1,5 +1,6 @@
 local status, saga = pcall(require, 'lspsaga')
 if (not status) then return end
+local nnoremap = require("katinbox.keymap").nnoremap
 
 saga.init_lsp_saga {
   server_filetype_map = {},
@@ -99,11 +100,10 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
-vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<Cr>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<Cr>', opts)
-vim.keymap.set('n', 'ga', '<Cmd>Lspsaga code_action<Cr>', opts)
-vim.keymap.set('n', 'gl', '<Cmd>Lspsaga show_line_diagnostics<Cr>', opts)
-
+nnoremap('<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
+nnoremap('K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
+nnoremap('gd', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
+nnoremap('gp', '<Cmd>Lspsaga preview_definition<Cr>', opts)
+nnoremap('gr', '<Cmd>Lspsaga rename<Cr>', opts)
+nnoremap('ga', '<Cmd>Lspsaga code_action<Cr>', opts)
+nnoremap('gl', '<Cmd>Lspsaga show_line_diagnostics<Cr>', opts)

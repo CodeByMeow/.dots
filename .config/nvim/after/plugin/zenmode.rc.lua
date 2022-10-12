@@ -1,6 +1,7 @@
 local status, zenmode = pcall(require, 'zen-mode')
 if (not status) then return end
+local nnoremap = require("katinbox.keymap").nnoremap
 
 zenmode.setup()
 
-vim.keymap.set('n', ';z', '<cmd>:ZenMode<cr>', { noremap = true, silent = true })
+nnoremap(';z', '<cmd>:ZenMode<cr>', { silent = true })

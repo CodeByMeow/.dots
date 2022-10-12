@@ -1,10 +1,11 @@
+local nnoremap = require("katinbox.keymap").nnoremap
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
-local actions = require('telescope.actions')
+local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 
 local function telescope_buffer_dir()
-  return vim.fn.expand('%:p:h')
+  return vim.fn.expand("%:p:h")
 end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
@@ -38,14 +39,14 @@ telescope.setup {
       mappings = {
         -- your custom insert mode mappings
         ["i"] = {
-          ["<C-w>"] = function() vim.cmd('normal vbd') end,
+          ["<C-w>"] = function() vim.cmd("normal vbd") end,
         },
         ["n"] = {
           -- your custom normal mode mappings
           ["N"] = fb_actions.create,
           ["h"] = fb_actions.goto_parent_dir,
           ["/"] = function()
-            vim.cmd('startinsert')
+            vim.cmd("startinsert")
           end
         },
       },
@@ -55,29 +56,29 @@ telescope.setup {
 
 telescope.load_extension("file_browser")
 
-vim.keymap.set('n', ';f',
+nnoremap(";f",
   function()
     builtin.find_files({
       no_ignore = false,
       hidden = true
     })
   end)
-vim.keymap.set('n', ';r', function()
+nnoremap(";r", function()
   builtin.live_grep()
 end)
-vim.keymap.set('n', '\\\\', function()
+nnoremap("\\\\", function()
   builtin.buffers()
 end)
-vim.keymap.set('n', ';t', function()
+nnoremap(";t", function()
   builtin.help_tags()
 end)
-vim.keymap.set('n', ';;', function()
+nnoremap(";;", function()
   builtin.resume()
 end)
-vim.keymap.set('n', ';d', function()
+nnoremap(";d", function()
   builtin.diagnostics()
 end)
-vim.keymap.set("n", "sf", function()
+nnoremap("sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),
@@ -89,4 +90,3 @@ vim.keymap.set("n", "sf", function()
     layout_config = { height = 40 }
   })
 end)
-
