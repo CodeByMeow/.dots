@@ -46,7 +46,7 @@ sxhkd cava dunst unclutter duf
 xorg-xsetroot acpilight gpick
 blueman bluetooth-autoconnect flameshot
 fd feh nautilus lxappearance logo-ls playerctl
-peaclock
+peaclock alacritty
 ```
 
 ### Shell setup
