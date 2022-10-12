@@ -19,9 +19,6 @@ packer.startup({ function(use)
 
   use {
     "sainnhe/gruvbox-material",
-    config = function()
-      require "gruvbox-material"
-    end
   } -- Gruvbox theme
   use "nvim-lualine/lualine.nvim" -- Statusline
   use "j-hui/fidget.nvim" -- Standalone UI for nvim-lsp progress

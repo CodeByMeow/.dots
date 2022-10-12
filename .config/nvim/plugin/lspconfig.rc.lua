@@ -7,26 +7,26 @@ if (not status2) then return end
 local protocol = require('vim.lsp.protocol')
 
 protocol.CompletionItemKind = {
-  '󰉿 ', -- Text
+  '󰉿', -- Text
   '', -- Method
   '', -- Function
   '', -- Constructor
-  '󰓹 ', -- Field
+  '󰓹', -- Field
   '󰫧 ', -- Variable
   'ﴯ', -- Class
   '', -- Interface
   '', -- Module
   '', -- Property
-  '󰩨 ', -- Unit
+  '󰩨', -- Unit
   '', -- Value
   '', -- Enum
-  '󰌋 ', -- Keyword
-  '󰘦 ', -- Snippet
-  '󰉦 ', -- Color
-  ' ', -- File
+  '󰌋', -- Keyword
+  '󰘦', -- Snippet
+  '󰉦', -- Color
+  '', -- File
   '', -- Reference
-  ' ', -- Folder
-  ' ', -- EnumMember
+  '󰝰', -- Folder
+  '', -- EnumMember
   '', -- Constant
   '', -- Struct
   '', -- Event
