@@ -12,6 +12,7 @@ vim.g.do_filetype_lua = 1
 vim.g.cursorhold_updatetime = 100
 
 vim.opt.title = true
+vim.opt.colorcolumn = "80"
 vim.opt.autoindent = true
 vim.opt.hlsearch = false
 vim.opt.backup = false
