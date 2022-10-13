@@ -67,4 +67,4 @@ end
 
 export VISUAL=vim;
 export EDITOR=vim;
-
+export OPEN_WEATHER_API_KEY="57bd40b5b3815bd818f41385fe75207b"
