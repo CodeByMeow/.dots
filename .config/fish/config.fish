@@ -1,5 +1,6 @@
 set fish_greeting
 starship init fish | source
+thefuck --alias | source
 
 set -g theme_display_git_ahead_verbose yes
 set -g theme_display_git_dirty_verbose yes
@@ -68,6 +69,8 @@ alias g='git'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias setuntrack='config config --local status.showUnstrackedFiles no'
 alias rgf='rg --files | peco'
+alias fk='fuck'
+alias fck='fuck'
 
 # Fish
 alias fi='fisher install'
