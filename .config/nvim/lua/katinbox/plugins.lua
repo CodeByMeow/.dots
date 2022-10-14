@@ -17,9 +17,7 @@ packer.startup({ function(use)
   use "sitiom/nvim-numbertoggle" -- Number toggle
   use "nvim-lua/popup.nvim" -- Popup API
 
-  use {
-    "sainnhe/gruvbox-material",
-  } -- Gruvbox theme
+  use "sainnhe/gruvbox-material"
   use "nvim-lualine/lualine.nvim" -- Statusline
   use "j-hui/fidget.nvim" -- Standalone UI for nvim-lsp progress
   use "akinsho/bufferline.nvim"

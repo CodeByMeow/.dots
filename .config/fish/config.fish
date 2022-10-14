@@ -1,16 +1,6 @@
 set fish_greeting
 starship init fish | source
-
-alias ls='logo-ls'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lr='ls -R'
-alias g='git'
-alias tm='tmux'
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias setuntrack='config config --local status.showUnstrackedFiles no'
-alias rgf='rg --files | peco'
+thefuck --alias | source
 
 set -g theme_display_git_ahead_verbose yes
 set -g theme_display_git_dirty_verbose yes
@@ -67,4 +57,33 @@ end
 
 export VISUAL=vim;
 export EDITOR=vim;
+export OPEN_WEATHER_API_KEY="57bd40b5b3815bd818f41385fe75207b"
 
+#Misc
+alias ls='logo-ls'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lr='ls -R'
+alias g='git'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias setuntrack='config config --local status.showUnstrackedFiles no'
+alias rgf='rg --files | peco'
+alias fk='fuck'
+alias fck='fuck'
+
+# Fish
+alias fi='fisher install'
+alias fl='fisher list'
+alias fu='fisher update'
+alias fr='fisher remove'
+
+#Tmux
+alias tsa='tmux-sendall'                # Send a command to all windows and panes that don't have a process running
+alias tks='tmux kill-server'            # Kill everything
+alias tl='tmux list-sessions'           # List all of the open tmux sessions
+alias tn='tmux new-session -s'          # Create a new tmux session - Specify a name
+alias tk='tmux kill-session -a'         # Kill all of the OTHER tmux sessions
+alias t='tmux attach || tmux new-session'   # Attaches tmux to the last session; creates a new session if none exists.
+alias tpi='$HOME/.config/tmux/plugins/tpm/bin/install_plugins' # Installs Tmux plugins
+alias tpu='$HOME/.config/tmux/plugins/tpm/bin/update_plugins all' # Updates all Tmux plugins

@@ -62,10 +62,12 @@ peaclock alacritty
    kitty +kitten theme
   ```
 
-- [ghs](https://github.com/x-motemen/ghq) - Local Git repository organizer
+- [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
 - [peco](https://github.com/peco/peco) - Interactive filtering
 - [logo-ls](https://github.com/Yash-Handa/logo-ls) - `ls` replacements
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
+- [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
+  - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
 ### System
 
@@ -84,7 +86,7 @@ peaclock alacritty
 
 ### Break and Fix
 
-`breaktimer`  
+[ Breaktimer ](https://breaktimer.app/) - Break timer  
 No sound :sound: `alsactl restore`
 
 #### Keyboard Keychrone K2 swap Fn
