@@ -79,7 +79,6 @@ alias fu='fisher update'
 alias fr='fisher remove'
 
 #Tmux
-alias tsa='tmux-sendall'                # Send a command to all windows and panes that don't have a process running
 alias tks='tmux kill-server'            # Kill everything
 alias tl='tmux list-sessions'           # List all of the open tmux sessions
 alias tn='tmux new-session -s'          # Create a new tmux session - Specify a name
