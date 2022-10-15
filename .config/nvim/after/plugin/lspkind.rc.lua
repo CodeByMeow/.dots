@@ -5,7 +5,7 @@ lspkind.init({
     mode = "symbol_text",
     preset = "codicons",
     symbol_map = {
-        Text = "󰉿",
+        Text = "",
         Method = "",
         Function = "󰊕",
         Constructor = "",

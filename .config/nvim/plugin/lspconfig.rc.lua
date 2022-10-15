@@ -7,7 +7,7 @@ if (not status2) then return end
 local protocol = require('vim.lsp.protocol')
 
 protocol.CompletionItemKind = {
-    '', -- Text
+    '', -- Text
     '', -- Method
     '', -- Function
     '', -- Constructor
