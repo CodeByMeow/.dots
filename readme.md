@@ -81,8 +81,7 @@ peaclock alacritty
 
 - [ Victor Mono ](https://rubjo.github.io/victor-mono/)
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
-- [Material Design](https://github.com/Templarian/MaterialDesign-Font)
-- Montserrat
+- Font Awesome 6 Pro
 
 ### Break and Fix
 
