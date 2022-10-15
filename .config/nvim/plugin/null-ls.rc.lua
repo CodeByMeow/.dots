@@ -8,25 +8,25 @@ local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
 
 null_ls.setup {
-  sources = {
-    formatting.prettier,
-    formatting.clang_format,
-    formatting.cmake_format,
-    completion.spell,
-    diagnostics.fish,
-  },
-  on_attach = function(client, bufnr)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup_format,
-        buffer = 0,
-        callback = function()
-          vim.lsp.buf.format({ timeout_ms = 2000 })
+    sources = {
+        formatting.prettier.with { extra_args = { "--tab-width=4" } },
+        formatting.clang_format,
+        formatting.cmake_format,
+        completion.spell,
+        diagnostics.fish,
+    },
+    on_attach = function(client, bufnr)
+        if client.server_capabilities.documentFormattingProvider then
+            vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup_format,
+                buffer = 0,
+                callback = function()
+                    vim.lsp.buf.format({ timeout_ms = 2000 })
+                end
+            })
         end
-      })
-    end
-  end,
+    end,
 }
 
 nnoremap('fm', '<cmd>lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
