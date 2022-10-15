@@ -63,59 +63,59 @@ vim.cmd([[let &t_Cs = "\e[4:0m"]])
 
 -- Turn off paste mode on living insert
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = '*',
-  command = 'set nopaste',
+    pattern = '*',
+    command = 'set nopaste',
 })
 
 vim.opt.formatoptions:append { 'r' }
 
 -- disable some builtin vim plugins
 local default_plugins = {
-  "2html_plugin",
-  "getscript",
-  "getscriptPlugin",
-  "gzip",
-  "logipat",
-  "netrw",
-  "netrwPlugin",
-  "netrwSettings",
-  "netrwFileHandlers",
-  "matchit",
-  "tar",
-  "tarPlugin",
-  "rrhelper",
-  "spellfile_plugin",
-  "vimball",
-  "vimballPlugin",
-  "zip",
-  "zipPlugin",
-  "tutor",
-  "rplugin",
-  "syntax",
-  "synmenu",
-  "optwin",
-  "compiler",
-  "bugreport",
-  "ftplugin",
+    "2html_plugin",
+    "getscript",
+    "getscriptPlugin",
+    "gzip",
+    "logipat",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers",
+    "matchit",
+    "tar",
+    "tarPlugin",
+    "rrhelper",
+    "spellfile_plugin",
+    "vimball",
+    "vimballPlugin",
+    "zip",
+    "zipPlugin",
+    "tutor",
+    "rplugin",
+    "syntax",
+    "synmenu",
+    "optwin",
+    "compiler",
+    "bugreport",
+    "ftplugin",
 }
 
 for _, plugin in pairs(default_plugins) do
-  vim.g["loaded_" .. plugin] = 1
+    vim.g["loaded_" .. plugin] = 1
 end
 
 local default_providers = {
-  "node",
-  "perl",
-  "python3",
-  "ruby",
+    "node",
+    "perl",
+    "python3",
+    "ruby",
 }
 
 for _, provider in ipairs(default_providers) do
-  vim.g["loaded_" .. provider .. "_provider"] = 0
+    vim.g["loaded_" .. provider .. "_provider"] = 0
 end
 
 -- set shada path
 vim.schedule(function()
-  vim.opt.shadafile = vim.fn.expand "$HOME" .. "/.local/share/nvim/shada/main.shada"
-  vim.cmd [[ silent! rsh ]]
+    vim.opt.shadafile = vim.fn.expand "$HOME" .. "/.local/share/nvim/shada/main.shada"
+    vim.cmd [[ silent! rsh ]]
 end)
