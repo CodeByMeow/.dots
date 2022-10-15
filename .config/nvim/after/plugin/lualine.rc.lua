@@ -1,5 +1,6 @@
 local status, lualine = pcall(require, 'lualine')
 if (not status) then return end
+local theme = require("katinbox.lualine.theme.gruvbox-material")
 
 local function getclientnames()
     local bufnr = vim.fn.bufnr('')
@@ -47,7 +48,7 @@ end
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = 'gruvbox-material',
+        theme = theme.theme(),
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
