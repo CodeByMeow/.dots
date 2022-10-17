@@ -1,6 +1,6 @@
 add_newline = false
 format = """
-[╭─](bold #ECEFF4)\
+[╭─](bold #EBDBB2)\
 $username\
 $hostname\
 $directory\
@@ -58,8 +58,8 @@ $env_var\
 $crystal\
 $fill\
 (fg: black)
-[│](bold #ECEFF4)
-[╰─](bold #ECEFF4)\
+[│](bold #EBDBB2)
+[╰─](bold #EBDBB2)\
 $singularity\
 $kubernetes\
 $character\
@@ -79,7 +79,7 @@ show_always = true
 [hostname]
 ssh_only = false
 style = "bold #D28D93"
-format = "[@](bold #D28D93)[$hostname]($style) [in](#ECEFF4) "
+format = "[@](bold #D28D93)[$hostname]($style) [in](#EBDBB2) "
 disabled = false
 
 [git_branch]
