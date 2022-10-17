@@ -62,8 +62,8 @@ $fill\
 [╰─](bold #ECEFF4)\
 $singularity\
 $kubernetes\
-$status\
-$character 
+$character\
+$status
 """
 
 [fill]
@@ -116,8 +116,8 @@ disabled = false
 disabled = true
 
 [character]
-success_symbol = "[❯](bold #D28D93)"
-error_symbol = "[✗](bold #D28D93)"
+success_symbol = "[ ](bold fg:green)"
+error_symbol = "[ ](bold fg:red)"
 
 [aws]
 symbol = " "
