@@ -1,15 +1,15 @@
 local M = {}
 M.theme = function()
     local colors = {
-        darkgray = "#1D2021",
+        foceground = "#EBDBB2",
         gray = "#727169",
         innerbg = nil,
-        outerbg = "#16161D",
-        normal = "#AA9A85",
-        insert = "#84A799",
-        visual = "#FE8112",
-        command = "#FB4731",
-        replace = "#e6c384",
+        outerbg = "#3C3836",
+        normal = "#98971A",
+        insert = "#458588",
+        visual = "#B16286",
+        command = "#D65D0E",
+        replace = "#CC241D",
     }
     return {
         inactive = {
@@ -18,27 +18,27 @@ M.theme = function()
             c = { fg = colors.gray, bg = colors.innerbg },
         },
         visual = {
-            a = { fg = colors.darkgray, bg = colors.visual, gui = "bold" },
+            a = { fg = colors.foceground, bg = colors.visual, gui = "bold" },
             b = { fg = colors.gray, bg = colors.outerbg },
             c = { fg = colors.gray, bg = colors.innerbg },
         },
         replace = {
-            a = { fg = colors.darkgray, bg = colors.replace, gui = "bold" },
+            a = { fg = colors.foceground, bg = colors.replace, gui = "bold" },
             b = { fg = colors.gray, bg = colors.outerbg },
             c = { fg = colors.gray, bg = colors.innerbg },
         },
         normal = {
-            a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
+            a = { fg = colors.foceground, bg = colors.normal, gui = "bold" },
             b = { fg = colors.gray, bg = colors.outerbg },
             c = { fg = colors.gray, bg = colors.innerbg },
         },
         insert = {
-            a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
+            a = { fg = colors.foceground, bg = colors.insert, gui = "bold" },
             b = { fg = colors.gray, bg = colors.outerbg },
             c = { fg = colors.gray, bg = colors.innerbg },
         },
         command = {
-            a = { fg = colors.darkgray, bg = colors.command, gui = "bold" },
+            a = { fg = colors.foceground, bg = colors.command, gui = "bold" },
             b = { fg = colors.gray, bg = colors.outerbg },
             c = { fg = colors.gray, bg = colors.innerbg },
         },
