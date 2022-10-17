@@ -38,7 +38,7 @@ font:
         family: Victor Mono
         style: Bold Italic
     # Point size
-    size: 12.0
+    size: 15.0
 env:
     TERM: xterm-256color
 window:
@@ -51,5 +51,7 @@ window:
         instance: Alacritty
         # General application class
         general: Alacritty
+    opacity: 0.7
+    decorations: none
 scrolling:
     history: 5000
