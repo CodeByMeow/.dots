@@ -10,22 +10,27 @@
 
 </div>
 
-- **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
-- **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
-- **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
-- **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
-- **Terminal Emulator** :cat: [ Kitty ](https://github.com/kovidgoyal/kitty)
-- **Shell** 🐟 [ Fish ](https://github.com/fish-shell/fish-shell)
-- **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
-- **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
-  - [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
-- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
+### Screenshot
+
+![2022](https://github.com/katinbox/dotfiles/blob/main/assets/image/2022.png)
+![rofi](https://github.com/katinbox/dotfiles/blob/main/assets/image/rofi.png)
+
+-   **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
+-   **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
+-   **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
+-   **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
+-   **Terminal Emulator** :cat: [ Kitty ](https://github.com/kovidgoyal/kitty)
+-   **Shell** 🐟 [ Fish ](https://github.com/fish-shell/fish-shell)
+-   **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
+-   **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
+    -   [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
+-   **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
 
 ---
 
 _Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
-### (Majaro OS)
+### Majaro User
 
 > Point to the Fastest Mirror and Update your System
 
@@ -51,57 +56,38 @@ peaclock alacritty
 
 ### Shell setup
 
-- [ starship ](https://starship.rs/) - Shell theme
-- [z for fish](https://github.com/jethrokuan/z) : - Directory jumping
-  ```
-  fisher install jethrokuan/z
-  ```
-- Terminal color scheme. I use Gruvbox material
+-   [ starship ](https://starship.rs/) - Shell theme
+-   [z for fish](https://github.com/jethrokuan/z) : - Directory jumping
+    ```
+    fisher install jethrokuan/z
+    ```
+-   Terminal color scheme. I use Gruvbox material
 
-  ```
-   kitty +kitten theme
-  ```
+    ```
+     kitty +kitten theme
+    ```
 
-- [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
-- [peco](https://github.com/peco/peco) - Interactive filtering
-- [logo-ls](https://github.com/Yash-Handa/logo-ls) - `ls` replacements
-- [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-- [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
-  - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
+-   [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
+-   [peco](https://github.com/peco/peco) - Interactive filtering
+-   [logo-ls](https://github.com/Yash-Handa/logo-ls) - `ls` replacements
+-   [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
+-   [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
+    -   [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
 ### System
 
-- [light](https://archlinux.org/packages/community/x86_64/light/):bulb: - Backlight controllers
+-   [light](https://archlinux.org/packages/community/x86_64/light/):bulb: - Backlight controllers
 
-  ```
-  sudo chmod +s (which light)
-  ```
+    ```
+    sudo chmod +s (which light)
+    ```
 
 ### Font
 
-- [ Victor Mono ](https://rubjo.github.io/victor-mono/)
-- [ Iosevka ](https://github.com/be5invis/Iosevka)
-- Font Awesome 6 Pro
+-   [ Victor Mono ](https://rubjo.github.io/victor-mono/)
+-   [ Iosevka ](https://github.com/be5invis/Iosevka)
+-   Font Awesome 6 Pro
 
-### Break and Fix
+### Break
 
-[ Breaktimer ](https://breaktimer.app/) - Break timer  
-No sound :sound: `alsactl restore`
-
-#### Keyboard Keychrone K2 swap Fn
-
-Set the keyboard to :keyboard: Windows mode via the side switch.
-
-Use **Fn + X + L** (hold for 4 seconds) to set the function key row to "Function" mode. (usually all that's necessary on Windows)
-`echo 0 | sudo tee /sys/module/hid_apple/parameters/fnmode`
-
-To persist this change, add a module option for hid_apple:
-
-```
- echo "options hid_apple fnmode=0" | sudo tee -a /etc/modprobe.d/hid_apple.conf
-```
-
-You may need to rebuild your `initramfs` if `hid_apple` is included.
-
-- ubuntu: `sudo update-initramfs -u`
-- arch: `mkinitcpio -P`
+[ Breaktimer ](https://breaktimer.app/) - Break timer
