@@ -52,3 +52,5 @@
 	cmd = vim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
+[init]
+	defaultBranch = main
