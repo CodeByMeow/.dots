@@ -78,7 +78,6 @@ packer.startup({ function(use)
     use { "tzachar/cmp-tabnine", run = "./install.sh" }
     use "neovim/nvim-lspconfig" -- LSP
     use "jose-elias-alvarez/null-ls.nvim" -- Use Neovim as a language server to inject LSP diagnostic, code actin and more via Lua
-    use "MunifTanjim/prettier.nvim"
 
     use "lewis6991/gitsigns.nvim"
     use "dinhhuy258/git.nvim"
