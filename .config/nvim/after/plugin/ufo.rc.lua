@@ -8,10 +8,10 @@ ufo.setup {
     end
 }
 
-nnoremap('zR', function()
+nnoremap('zr', function()
     ufo.openAllFolds()
 end)
 
-nnoremap('zM', function()
+nnoremap('zm', function()
     ufo.closeAllFolds()
 end)
