@@ -26,8 +26,8 @@ telescope.setup {
                 ["q"] = actions.close
             },
         },
-        prompt_prefix = "🔍  ",
-        selection_caret = "  ",
+        prompt_prefix = " 🔍 ",
+        selection_caret = " ",
         entry_prefix = "  ",
         file_ignore_patterns = { "node_modules" }
     },
