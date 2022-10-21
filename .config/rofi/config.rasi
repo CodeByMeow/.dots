@@ -46,7 +46,7 @@ entry {
 
 inputbar {
 	children: 			[ prompt, entry ];
-	background-image:               url("~/.config/rofi/autronas.jpg", width);
+	background-image:               url("~/.config/rofi/rofi.png", width);
 	expand:                         false;
 	border-radius:                  0px 0 80px 0px;
 	padding:                        62px 120px 62px 120px;
