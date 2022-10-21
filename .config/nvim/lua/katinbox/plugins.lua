@@ -107,7 +107,7 @@ packer.startup({ function(use)
     -- Delay repeat execution of certain keys
     use "ja-ford/delaytrain.nvim"
     use "folke/zen-mode.nvim"
-
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
 end,
     config = {
