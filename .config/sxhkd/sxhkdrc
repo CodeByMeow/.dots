@@ -174,4 +174,7 @@ super + v
   nautilus
 
 super + x
-  betterlockscreen -l
+    betterlockscreen -l
+
+super + n
+    notion-app
