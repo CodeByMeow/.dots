@@ -177,4 +177,4 @@ super + x
     betterlockscreen -l
 
 super + n
-    notion-app
+    firefox --new-window www.notion.so

@@ -44,10 +44,6 @@ packer.startup({ function(use)
     -- Auto rename tag html
     use "AndrewRadev/tagalong.vim"
     -- Number of result search
-    use {
-        "kevinhwang91/nvim-hlslens",
-        keys = { "/" },
-    }
 
     use "kyazdani42/nvim-web-devicons"
 
