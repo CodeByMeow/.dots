@@ -77,6 +77,8 @@ peaclock
 -   [ Victor Mono ](https://rubjo.github.io/victor-mono/)
 -   [ Iosevka ](https://github.com/be5invis/Iosevka)
 -   Font Awesome 6 Pro
+-   Monocraft
+-   JetBrans Mono
 
 ### Break
 
