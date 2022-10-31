@@ -7,7 +7,7 @@ saga.init_lsp_saga {
     border_style = "rounded",
     saga_winblend = 0,
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-    diagnostic_header = { " ", " ", " ", " " },
+    diagnostic_header = { "", "", "", "💡" },
     code_action_icon = " ",
     code_action_num_shortcut = true,
     code_action_lightbulb = {
@@ -17,9 +17,9 @@ saga.init_lsp_saga {
         virtual_text = true,
     },
     finder_icons = {
-        def = ' ',
-        ref = ' ',
-        link = '🔗 ',
+        def = "",
+        ref = "",
+        link = "",
     },
     max_preview_lines = 10,
     finder_action_keys = {
