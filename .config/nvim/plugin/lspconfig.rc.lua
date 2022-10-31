@@ -15,7 +15,7 @@ protocol.CompletionItemKind = {
     '', -- Class
     '', -- Interface
     '', -- Module
-    '', -- Property
+    '', -- Property
     '📐', -- Unit
     '', -- Value
     '', -- Enum
