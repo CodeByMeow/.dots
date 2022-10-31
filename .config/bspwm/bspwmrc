@@ -10,7 +10,7 @@ workspaces() {
 	done
 }
 # workspace 1 (Terminals)
-declare -a terminal=(kitty)
+declare -a terminal=(alacrity)
 for i in ${terminal[@]}; do
     bspc rule -a $i desktop='^1' follow=on focus=on; done
 

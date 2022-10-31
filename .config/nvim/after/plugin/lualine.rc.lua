@@ -21,7 +21,7 @@ local lsp_text_provider = function()
     local clients = vim.lsp.buf_get_clients(bufnr)
     if vim.tbl_isempty(clients) then return '' end
     local names = getclientnames()
-    return string.format('  LSP [%s]', names)
+    return string.format('  LSP [%s]', names)
 end
 
 local function diff_source()
@@ -50,7 +50,7 @@ lualine.setup {
         icons_enabled = true,
         theme = theme.theme(),
         component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -94,7 +94,7 @@ lualine.setup {
         lualine_y = { 'progress' },
         lualine_z = {
             { getColumn, padding = { left = 1, right = 0 } },
-            { getLines, icon = "", padding = 1 }
+            { getLines, icon = " ", padding = 1 }
         }
     },
     tabline = {},

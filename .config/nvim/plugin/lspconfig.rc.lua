@@ -6,31 +6,31 @@ if (not status2) then return end
 local protocol = require('vim.lsp.protocol')
 
 protocol.CompletionItemKind = {
-    '', -- Text
-    '', -- Method
-    '', -- Function
-    '', -- Constructor
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
     '', -- Field
-    '⒳ ', -- Variable
-    'ﴯ', -- Class
-    '', -- Interface
-    '', -- Module
-    '', -- Property
+    ' ', -- Variable
+    '', -- Class
+    '', -- Interface
+    '', -- Module
+    '', -- Property
     '📐', -- Unit
-    '', -- Value
-    '', -- Enum
+    '', -- Value
+    '', -- Enum
     '', -- Keyword
-    '', -- Snippet
-    '', -- Color
+    '', -- Snippet
+    '', -- Color
     '', -- File
-    '', -- Reference
+    '', -- Reference
     '', -- Folder
     '', -- EnumMember
-    '', -- Constant
-    '', -- Struct
-    '', -- Event
-    '', -- Operator
-    '', -- TypeParameter
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    '', -- Operator
+    '', -- TypeParameter
 }
 
 -- Set up completion using nvim_cmp with LSP source
@@ -45,7 +45,6 @@ mason_lspconfig.setup({
 })
 local opts = {
     capabilities = capabilities,
-
 }
 
 for _, server in pairs(servers) do
@@ -72,13 +71,13 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
     underline = true,
     update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "" },
+    virtual_text = { spacing = 4, prefix = " " },
     severity_sort = true,
 }
 )
 
 -- Diagnostic symbols in the sign column (gutter)
-local signs = { Error = "", Warn = "", Info = "", Hint = "💡" }
+local signs = { Error = " ", Warn = " ", Info = " ", Hint = "💡" }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })

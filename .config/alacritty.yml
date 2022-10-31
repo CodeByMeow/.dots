@@ -26,32 +26,62 @@ colors:
 #Font
 font:
     normal:
-        family: Victor Mono
-        style: Normal
+        family: JetBrains Mono
     bold:
-        family: Victor Mono
-        style: Bold
+        family: JetBrains Mono
     italic:
         family: Victor Mono
-        style: Italic
     bold_italic:
         family: Victor Mono
-        style: Bold Italic
     # Point size
     size: 15.0
 env:
     TERM: xterm-256color
-window:
-    padding:
-        x: 1
-        y: 1
-    title: Alacritty
-    class:
-        # Application instance name
-        instance: Alacritty
-        # General application class
-        general: Alacritty
-    opacity: 0.7
-    decorations: none
 scrolling:
     history: 5000
+      # Garuda Linux configuration for Alacritty
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 100
+    lines: 30
+  dynamic_padding: true
+  decorations: full
+  title: Alacritty
+  class:
+    instance: Alacritty
+    general: Alacritty
+  gtk_theme_variant: dark
+
+draw_bold_text_with_bright_colors: true
+
+save_to_clipboard: true
+
+window.dynamic_title: true
+
+cursor:
+  style: Underline
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/fish
+  args:
+    - --login
+
+mouse:
+  hide_when_typing: true
+
+key_bindings:
+    # (Windows, Linux, and BSD only)
+  - { key: V,        mods: Control|Shift, action: Paste            }
+  - { key: C,        mods: Control|Shift, action: Copy             }
+  - { key: Insert,   mods: Shift,         action: PasteSelection   }
+  - { key: Key0,     mods: Control,       action: ResetFontSize    }
+  - { key: Equals,   mods: Control,       action: IncreaseFontSize }
+  - { key: Plus,     mods: Control,       action: IncreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+  - { key: Minus,    mods: Control,       action: DecreaseFontSize }
+
