@@ -10,16 +10,11 @@
 
 </div>
 
-### Screenshot
-
-![2022](https://github.com/katinbox/dotfiles/blob/main/assets/image/2022.png)
-![rofi](https://github.com/katinbox/dotfiles/blob/main/assets/image/rofi.png)
-
 -   **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
 -   **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
 -   **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 -   **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
--   **Terminal Emulator** :cat: [ Kitty ](https://github.com/kovidgoyal/kitty)
+-   **Terminal Emulator** :a: [ Alacritty ](https://github.com/alacritty/alacritty)
 -   **Shell** 🐟 [ Fish ](https://github.com/fish-shell/fish-shell)
 -   **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 -   **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
@@ -51,7 +46,7 @@ sxhkd cava dunst unclutter duf
 xorg-xsetroot acpilight gpick
 blueman bluetooth-autoconnect flameshot
 fd feh nautilus lxappearance logo-ls playerctl
-peaclock alacritty
+peaclock
 ```
 
 ### Shell setup
@@ -62,11 +57,6 @@ peaclock alacritty
     fisher install jethrokuan/z
     ```
 -   Terminal color scheme. I use Gruvbox material
-
-    ```
-     kitty +kitten theme
-    ```
-
 -   [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
 -   [peco](https://github.com/peco/peco) - Interactive filtering
 -   [logo-ls](https://github.com/Yash-Handa/logo-ls) - `ls` replacements
