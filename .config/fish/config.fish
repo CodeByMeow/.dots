@@ -60,15 +60,14 @@ export EDITOR=vim;
 export OPEN_WEATHER_API_KEY="57bd40b5b3815bd818f41385fe75207b"
 
 #Misc
-alias ls='logo-ls'
-alias l='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lr='ls -R'
+alias ls='lsd'
+alias l='ls -l --header'
+alias la='ls -la --header'
+alias lt='l --tree'
 alias g='git'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias setuntrack='config config --local status.showUnstrackedFiles no'
-alias rgf='rg --files | peco'
+alias fz='rg --files | peco'
 alias fk='fuck'
 alias fck='fuck'
 
