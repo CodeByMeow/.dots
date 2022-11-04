@@ -94,7 +94,7 @@ lualine.setup {
         lualine_y = { 'progress' },
         lualine_z = {
             { getColumn, padding = { left = 1, right = 0 } },
-            { getLines, icon = " ", padding = 1 }
+            { getLines, icon = " ", padding = 1 }
         }
     },
     tabline = {},

@@ -2,7 +2,7 @@
 # VERSION: 3.0
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/home/kat/\x2ez
+SETUVAR Z_DATA:/home/rose/\x2ez
 SETUVAR Z_DATA_DIR:/home/kat/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/kat\x24
 SETUVAR __fish_initialized:3400

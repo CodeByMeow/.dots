@@ -10,20 +10,20 @@ protocol.CompletionItemKind = {
     '', -- Method
     '', -- Function
     '', -- Constructor
-    '', -- Field
+    ' ', -- Field
     ' ', -- Variable
-    '', -- Class
+    ' ', -- Class
     '', -- Interface
     '', -- Module
-    '', -- Property
+    '#', -- Property
     '📐', -- Unit
     '', -- Value
     '', -- Enum
     '', -- Keyword
     '', -- Snippet
     '', -- Color
-    '', -- File
-    '', -- Reference
+    '', -- File
+    '', -- Reference
     '', -- Folder
     '', -- EnumMember
     '', -- Constant
