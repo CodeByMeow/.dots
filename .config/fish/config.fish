@@ -57,7 +57,6 @@ end
 
 export VISUAL=nvim;
 export EDITOR=nvim;
-export OPEN_WEATHER_API_KEY="57bd40b5b3815bd818f41385fe75207b"
 
 #nvim
 alias vim='nvim'
