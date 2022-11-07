@@ -74,7 +74,7 @@ devicon.setup {
             name = "Py",
         },
         [".env"] = {
-            icon = "",
+            icon = "",
             color = "#faf743",
             cterm_color = "226",
             name = "Env",
@@ -92,7 +92,7 @@ devicon.setup {
             name = "GitIgnore",
         },
         [".DS_Store"] = {
-            icon = "",
+            icon = "",
             color = "#41535b",
             cterm_color = "59",
             name = "DsStore",
@@ -104,7 +104,7 @@ devicon.setup {
             name = "Log",
         },
         ["lock"] = {
-            icon = "",
+            icon = "",
             color = "#bbbbbb",
             cterm_color = "250",
             name = "Lock",
@@ -194,13 +194,13 @@ devicon.setup {
             name = "Yaml",
         },
         ["conf"] = {
-            icon = "",
+            icon = "",
             color = "#6d8086",
             cterm_color = "66",
             name = "Conf",
         },
         ["ini"] = {
-            icon = "",
+            icon = "",
             color = "#6d8086",
             cterm_color = "66",
             name = "Ini",
