@@ -50,6 +50,7 @@ telescope.setup {
                     end
                 },
             },
+            dir_icon = "",
         },
     },
 }
