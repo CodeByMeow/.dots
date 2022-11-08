@@ -44,3 +44,4 @@ picom --experimental-backends &
 unclutter -idle 10 &
 betterlockscreen -u ~/.config/wallpaper/bg.jpg
 ibus-daemon 
+tap
