@@ -43,18 +43,6 @@ set MANPATH $NPM_PACKAGES/share/man $MANPATH
 
 set -U Z_DATA "$HOME/.z"
 
-function k
-  bluetoothctl connect DC:2C:26:0F:A5:D2
-end
-
-function nf 
-  bash ~/.scripts/fetch.sh
-end
-
-function tap
-  xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
-end
-
 export VISUAL=nvim;
 export EDITOR=nvim;
 
@@ -87,3 +75,19 @@ alias tk='tmux kill-session -a'         # Kill all of the OTHER tmux sessions
 alias t='tmux attach || tmux new-session'   # Attaches tmux to the last session; creates a new session if none exists.
 alias tpi='$HOME/.config/tmux/plugins/tpm/bin/install_plugins' # Installs Tmux plugins
 alias tpu='$HOME/.config/tmux/plugins/tpm/bin/update_plugins all' # Updates all Tmux plugins
+
+function k
+    bluetoothctl connect DC:2C:26:0F:A5:D2
+end
+
+function nf 
+    bash ~/.scripts/fetch.sh
+end
+
+function tap
+    xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
+end
+
+function mkfile
+    mkdir -p $( dirname $argv) && touch $argv 
+end
