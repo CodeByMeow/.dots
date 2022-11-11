@@ -91,7 +91,7 @@ lualine.setup {
         lualine_x = {
             lsp_text_provider, { "filetype", icon_only = false }
         },
-        lualine_y = { 'progress' },
+        lualine_y = { 'filesize', 'progress' },
         lualine_z = {
             { getColumn, padding = { left = 1, right = 0 } },
             { getLines, icon = "|", padding = 1 }
