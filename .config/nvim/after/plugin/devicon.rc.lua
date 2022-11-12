@@ -80,7 +80,7 @@ devicon.setup {
             name = "Env",
         },
         ["md"] = {
-            icon = "",
+            icon = " ",
             color = "#238FE1",
             cterm_color = "white",
             name = "Md",
