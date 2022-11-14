@@ -50,7 +50,7 @@ local opts = { noremap = true, silent = true }
 nnoremap('<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
 nnoremap('K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
 nnoremap('gd', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
-nnoremap('gp', '<Cmd>Lspsaga preview_definition<Cr>', opts)
+nnoremap('gp', '<Cmd>Lspsaga peek_definition<Cr>', opts)
 nnoremap('gr', '<Cmd>Lspsaga rename<Cr>', opts)
 nnoremap('ga', '<Cmd>Lspsaga code_action<Cr>', opts)
 nnoremap('gl', '<Cmd>Lspsaga show_line_diagnostics<Cr>', opts)
