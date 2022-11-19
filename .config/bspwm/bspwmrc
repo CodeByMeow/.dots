@@ -18,8 +18,6 @@ for i in ${terminal[@]}; do
 declare -a web=(firefox)
 for i in ${web[@]}; do
     bspc rule -a $i desktop='^2' follow=on focus=on; done
-
-bspc rule -a 'Org.gnome.Nautilus' focus=on state=floating
     
 workspaces
 bspc config window_gap 12
@@ -38,7 +36,7 @@ rule -a Screenkey manage=off
 nm-applet &
 xsetroot -cursor_name left_ptr &
 pkill polybar
-$HOME/.config/polybar/launch.sh &
+~/.config/polybar/launch.sh &
 feh --bg-fill ~/.config/wallpaper/bg.jpg
 picom --experimental-backends &
 unclutter -idle 10 &

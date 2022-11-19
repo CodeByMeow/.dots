@@ -170,9 +170,6 @@ alt + shift + p
 super + d
   firefox
 
-super + v
-  nautilus
-
 super + x
     betterlockscreen -l
 
