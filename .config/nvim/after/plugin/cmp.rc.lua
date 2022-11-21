@@ -20,8 +20,16 @@ cmp.setup({
         }),
     }),
     window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+            winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+            side_padding = 1,
+            border = "none"
+        }),
+        documentation = cmp.config.window.bordered({
+            winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,Search:None",
+            border = "single",
+            side_padding = 1,
+        }),
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -36,8 +44,3 @@ cmp.setup({
         format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
     }
 })
-
-vim.cmd [[
-  set completeopt=menuone,noinsert,noselect
-  highlight! default link CmpItemKind CmpItemMenuDefault
-]]
