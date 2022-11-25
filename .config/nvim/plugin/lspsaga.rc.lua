@@ -4,8 +4,8 @@ local nnoremap = require("katinbox.keymap").nnoremap
 
 saga.init_lsp_saga {
     server_filetype_map = {},
-    border_style = "rounded",
-    saga_winblend = 0,
+    border_style = "single",
+    saga_winblend = 10,
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
     diagnostic_header = { " ", " ", " ", " " },
     code_action_icon = " ",
@@ -54,3 +54,6 @@ nnoremap('gp', '<Cmd>Lspsaga peek_definition<Cr>', opts)
 nnoremap('gr', '<Cmd>Lspsaga rename<Cr>', opts)
 nnoremap('ga', '<Cmd>Lspsaga code_action<Cr>', opts)
 nnoremap('gl', '<Cmd>Lspsaga show_line_diagnostics<Cr>', opts)
+
+vim.api.nvim_set_hl(0, 'LspFloatWinNormal', { link = 'Pmenu' })
+vim.api.nvim_set_hl(0, 'LspSagaBorderTitle', { link = 'FloatBorder' })
