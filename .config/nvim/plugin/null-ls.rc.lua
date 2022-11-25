@@ -10,14 +10,6 @@ local completion = null_ls.builtins.completion
 null_ls.setup {
     sources = {
         formatting.prettier.with {
-            extra_args = function(params)
-                return params.options
-                    and params.options.tabSize
-                    and {
-                        "--tab-width",
-                        params.options.tabSize,
-                    }
-            end,
             env = function(params)
                 return { PRETTIERD_DEFAULT_CONFIG = params.root }
             end,
