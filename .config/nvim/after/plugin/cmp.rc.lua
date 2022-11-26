@@ -45,7 +45,7 @@ cmp.setup({
             vim_item.kind = lspkind.symbolic(vim_item.kind, { mode = "symbol_text" })
             if entry.source.name == "cmp_tabnine" then
                 local detail = (entry.completion_item.data or {}).detail
-                vim_item.kind = ""
+                vim_item.kind = ""
                 if detail and detail:find('.*%%.*') then
                     vim_item.kind = vim_item.kind .. ' ' .. detail
                 end
@@ -58,5 +58,5 @@ cmp.setup({
             vim_item.abbr = string.sub(vim_item.abbr, 1, maxwidth)
             return vim_item
         end,
-    }
+    },
 })
