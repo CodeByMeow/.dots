@@ -7,7 +7,7 @@ saga.init_lsp_saga {
     border_style = "single",
     saga_winblend = 10,
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-    diagnostic_header = { " ", " ", " ", " " },
+    diagnostic_header = { " ", " ", " ", " " },
     code_action_icon = " ",
     code_action_num_shortcut = true,
     code_action_lightbulb = {
