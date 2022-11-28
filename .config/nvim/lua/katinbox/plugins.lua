@@ -106,6 +106,8 @@ packer.startup({ function(use)
     use "folke/zen-mode.nvim"
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
+    use 'lervag/vimtex' -- Latex
+
 end,
     config = {
         display = {
