@@ -24,6 +24,7 @@ packer.startup({ function(use)
 
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
+    use "xiyaowong/telescope-emoji.nvim"
 
     use {
         "nvim-treesitter/nvim-treesitter",

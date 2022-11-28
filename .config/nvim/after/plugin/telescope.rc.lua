@@ -56,6 +56,7 @@ telescope.setup {
 }
 
 telescope.load_extension("file_browser")
+telescope.load_extension("emoji")
 
 nnoremap(";f",
     function()
@@ -91,3 +92,5 @@ nnoremap("sf", function()
         layout_config = { height = 40 }
     })
 end)
+
+nnoremap(";e", "<cmd>:Telescope emoji<cr>")
