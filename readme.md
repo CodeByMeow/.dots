@@ -57,7 +57,7 @@ peaclock latextrun-git zathura okular mkpdf
   fisher install jethrokuan/z
   ```
 - Terminal color scheme. I use Gruvbox material
-- [lsd] - `ls` replacements
+- [lsd](https://github.com/Peltoche/lsd) - `ls` replacements
 - [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
 - [peco](https://github.com/peco/peco) - Interactive filtering
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
@@ -82,4 +82,4 @@ peaclock latextrun-git zathura okular mkpdf
 
 ### Break
 
-[ Breaktimer ](https://breaktimer.app/) - Break timer
+[ Breaktimer ](https://breaktimer.app/) - Pomodoro app.
