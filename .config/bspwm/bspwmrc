@@ -37,9 +37,9 @@ nm-applet &
 xsetroot -cursor_name left_ptr &
 pkill polybar
 ~/.config/polybar/launch.sh &
-feh --bg-fill ~/.config/wallpaper/bg.jpg
+feh --bg-fill ~/.config/wallpaper/bg.png
 picom --experimental-backends &
 unclutter -idle 10 &
-betterlockscreen -u ~/.config/wallpaper/bg.jpg
+betterlockscreen -u ~/.config/wallpaper/bg.png
 ibus-daemon 
 tap
