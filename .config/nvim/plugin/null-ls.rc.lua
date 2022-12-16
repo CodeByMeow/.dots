@@ -17,7 +17,6 @@ null_ls.setup {
         formatting.clang_format,
         formatting.cmake_format,
         completion.spell,
-        diagnostics.fish,
     },
     on_attach = function(client, bufnr)
         if client.server_capabilities.documentFormattingProvider then
