@@ -1,14 +1,15 @@
 local status, saga = pcall(require, 'lspsaga')
 if (not status) then return end
-local nnoremap = require("katinbox.keymap").nnoremap
 
 saga.init_lsp_saga {
     server_filetype_map = {},
+    -- Options with default value
+    -- "single" | "double" | "rounded" | "bold" | "plus"
     border_style = "single",
-    saga_winblend = 10,
+    saga_winblend = 0,
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-    diagnostic_header = { " ", " ", " ", " " },
-    code_action_icon = " ",
+    diagnostic_header = { "E ", "W ", "I ", "H " },
+    code_action_icon = "",
     code_action_num_shortcut = true,
     code_action_lightbulb = {
         enable = true,
@@ -17,9 +18,9 @@ saga.init_lsp_saga {
         virtual_text = true,
     },
     finder_icons = {
-        def = " ",
-        ref = " ",
-        link = " ",
+        def = 'DEF ',
+        ref = 'REF ',
+        link = 'LINK ',
     },
     max_preview_lines = 10,
     finder_action_keys = {
@@ -47,13 +48,8 @@ saga.init_lsp_saga {
 }
 
 local opts = { noremap = true, silent = true }
-nnoremap('<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
-nnoremap('K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
-nnoremap('gd', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
-nnoremap('gp', '<Cmd>Lspsaga peek_definition<Cr>', opts)
-nnoremap('gr', '<Cmd>Lspsaga rename<Cr>', opts)
-nnoremap('ga', '<Cmd>Lspsaga code_action<Cr>', opts)
-nnoremap('gl', '<Cmd>Lspsaga show_line_diagnostics<Cr>', opts)
-
-vim.api.nvim_set_hl(0, 'LspFloatWinNormal', { link = 'Pmenu' })
-vim.api.nvim_set_hl(0, 'LspSagaBorderTitle', { link = 'FloatBorder' })
+vim.keymap.set('n', '<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
+vim.keymap.set('n', 'gs', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
+vim.keymap.set('n', 'R', '<Cmd>Lspsaga rename<Cr>', opts)
+vim.keymap.set('n', 'ga', '<Cmd>Lspsaga code_action<Cr>', opts)

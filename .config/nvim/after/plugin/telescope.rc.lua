@@ -1,11 +1,10 @@
-local nnoremap = require("katinbox.keymap").nnoremap
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
-local actions = require("telescope.actions")
+local actions = require('telescope.actions')
 local builtin = require("telescope.builtin")
 
 local function telescope_buffer_dir()
-    return vim.fn.expand("%:p:h")
+    return vim.fn.expand('%:p:h')
 end
 
 local fb_actions = require "telescope".extensions.file_browser.actions
@@ -26,10 +25,10 @@ telescope.setup {
                 ["q"] = actions.close
             },
         },
-        prompt_prefix = " 🔍 ",
-        selection_caret = " ",
+        prompt_prefix = "  ",
+        selection_caret = "  ",
         entry_prefix = "  ",
-        file_ignore_patterns = { "node_modules" }
+        file_ignore_pattern = { "node_modules" }
     },
     extensions = {
         file_browser = {
@@ -39,48 +38,46 @@ telescope.setup {
             mappings = {
                 -- your custom insert mode mappings
                 ["i"] = {
-                    ["<C-w>"] = function() vim.cmd("normal vbd") end,
+                    ["<C-w>"] = function() vim.cmd('normal vbd') end,
                 },
                 ["n"] = {
                     -- your custom normal mode mappings
                     ["N"] = fb_actions.create,
                     ["h"] = fb_actions.goto_parent_dir,
                     ["/"] = function()
-                        vim.cmd("startinsert")
+                        vim.cmd('startinsert')
                     end
                 },
             },
-            dir_icon = "",
         },
     },
 }
 
 telescope.load_extension("file_browser")
-telescope.load_extension("emoji")
 
-nnoremap(";f",
+vim.keymap.set('n', ';f',
     function()
         builtin.find_files({
             no_ignore = false,
             hidden = true
         })
     end)
-nnoremap(";r", function()
+vim.keymap.set('n', ';r', function()
     builtin.live_grep()
 end)
-nnoremap("\\\\", function()
+vim.keymap.set('n', '\\\\', function()
     builtin.buffers()
 end)
-nnoremap(";t", function()
+vim.keymap.set('n', ';t', function()
     builtin.help_tags()
 end)
-nnoremap(";;", function()
+vim.keymap.set('n', ';;', function()
     builtin.resume()
 end)
-nnoremap(";d", function()
+vim.keymap.set('n', ';e', function()
     builtin.diagnostics()
 end)
-nnoremap("sf", function()
+vim.keymap.set("n", "sf", function()
     telescope.extensions.file_browser.file_browser({
         path = "%:p:h",
         cwd = telescope_buffer_dir(),
@@ -92,5 +89,3 @@ nnoremap("sf", function()
         layout_config = { height = 40 }
     })
 end)
-
-nnoremap(";e", "<cmd>:Telescope emoji<cr>")

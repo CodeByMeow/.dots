@@ -7,11 +7,11 @@ notify.setup {
     timeout = 2000,
     minimum_width = 60,
     icons = {
-        ERROR = "",
-        WARN = "",
-        INFO = "",
-        DEBUG = "",
-        TRACE = "",
+        ERROR = "ERROR",
+        WARN = "WARNING",
+        INFO = "INFO",
+        DEBUG = "DEBUG",
+        TRACE = "TRACE",
     }
 }
 
