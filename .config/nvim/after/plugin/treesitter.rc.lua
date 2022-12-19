@@ -3,7 +3,7 @@ if (not status) then return end
 
 ts.setup {
     ensure_installed = { "help", "html", "javascript", "lua", "css", "php", "jsdoc", "json", "tsx" },
-    sync_install = false,
+    sync_install = true,
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,

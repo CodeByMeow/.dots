@@ -1,5 +1,6 @@
 local keymap = vim.keymap
 
+vim.g.mapleader = " "
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
 
@@ -14,11 +15,11 @@ keymap.set('n', 'dw', 'vb"_d')
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
 -- New tab
-keymap.set('n', 'te', ':tabedit<Return>', {silent = true})
+keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
 
 -- Split window
-keymap.set('n', 'ss', ':split<Return><C-w>w', {silent = true})
-keymap.set('n', 'sv', ':vsplit<Return><C-w>w', {silent = true})
+keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
+keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
@@ -51,9 +52,13 @@ keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
 keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 
 -- Escape highlight search
-keymap.set('n', '<ESC>', '<cmd>:noh<cr>', {noremap = true, silent = true})
+keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
 
--- Close current buffer 
+-- Close current buffer
 keymap.set('n', '<Space>x', '<cmd>:bd<cr>')
 
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
