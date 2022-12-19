@@ -292,6 +292,11 @@ _G.packer_plugins = {
     path = "/home/kat/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow",
     url = "https://github.com/p00f/nvim-ts-rainbow"
   },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/home/kat/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/kat/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -311,6 +316,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kat/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/home/kat/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["tagalong.vim"] = {
     loaded = true,
@@ -359,6 +369,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kat/.local/share/nvim/site/pack/packer/start/vim-startuptime",
     url = "https://github.com/dstein64/vim-startuptime"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/kat/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
@@ -370,9 +385,9 @@ time([[Config for gruvbox-material]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd vim-matchup ]]
 vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd nvim-ts-context-commentstring ]]
-vim.cmd [[ packadd vim-matchup ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads

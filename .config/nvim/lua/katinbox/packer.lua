@@ -113,6 +113,9 @@ return require('packer').startup({ function(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+
+    use 'lervag/vimtex' -- Latex
 
 end,
     config = {
