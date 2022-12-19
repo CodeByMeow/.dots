@@ -20,6 +20,7 @@ saga.init_lsp_saga {
     finder_icons = {
         def = 'DEF ',
         ref = 'REF ',
+        imp = 'IMP ',
         link = 'LINK ',
     },
     max_preview_lines = 10,
