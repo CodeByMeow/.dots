@@ -147,7 +147,7 @@ font:
     bold_italic:
         family: Victor Mono
     # Point size
-    size: 12.0
+    size: 15.0
 env:
     TERM: xterm-256color
 scrolling:
