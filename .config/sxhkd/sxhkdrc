@@ -3,7 +3,7 @@
 #
 
 # terminal emulator
-super + l
+super + Return
 	alacritty
 
 # program launcher
