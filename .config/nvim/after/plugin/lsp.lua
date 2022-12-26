@@ -2,10 +2,12 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
-lsp.ensure_installed({
+local server_list = {
     "tsserver", "sumneko_lua", "cssls", "html", "emmet_ls", "intelephense", "tailwindcss", "texlab",
     "jsonls"
-})
+}
+
+lsp.ensure_installed(server_list)
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
@@ -54,6 +56,8 @@ lsp.set_preferences({
         info = 'I'
     }
 })
+
+lsp.setup_servers(server_list)
 
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
