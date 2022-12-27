@@ -3,8 +3,6 @@ if (not status) then return end
 
 saga.init_lsp_saga {
     server_filetype_map = {},
-    -- Options with default value
-    -- "single" | "double" | "rounded" | "bold" | "plus"
     border_style = "single",
     saga_winblend = 0,
     move_in_saga = { prev = '<C-p>', next = '<C-n>' },

@@ -57,19 +57,6 @@ lsp.set_preferences({
     }
 })
 
-lsp.setup_servers(server_list)
-
-lsp.on_attach(function(client, bufnr)
-    local opts = { buffer = bufnr, remap = false }
-
-    if client.name == "eslint" then
-        vim.cmd.LspStop('eslint')
-        return
-    end
-
-
-end)
-
 lsp.setup()
 
 vim.diagnostic.config({
