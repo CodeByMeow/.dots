@@ -48,17 +48,30 @@ lsp.setup_nvim_cmp({
 
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
         hint = 'H',
         info = 'I'
-    }
+    },
+    setup_servers_on_start = true,
+    set_lsp_keymaps = false,
+    configure_diagnostics = true,
+    cmp_capabilities = true,
+    manage_nvim_cmp = true,
+    call_servers = 'local',
 })
+
+lsp.nvim_workspace()
 
 lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,
+    signs = true,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = false,
+    float = true,
 })
