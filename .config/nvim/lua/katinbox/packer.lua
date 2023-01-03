@@ -6,11 +6,16 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup({ function(use)
+return packer.startup({ function(use)
     use 'wbthomason/packer.nvim'
     use "nvim-lua/plenary.nvim"
     use "nvim-lualine/lualine.nvim"
-    use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            require('nvim-treesitter.install').update({ with_sync = true })
+        end
+    }
     use { "nvim-telescope/telescope.nvim", requires = 'nvim-telescope/telescope-file-browser.nvim' }
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
