@@ -218,11 +218,6 @@ _G.packer_plugins = {
     path = "/home/kat/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
     url = "https://github.com/karb94/neoscroll.nvim"
   },
-  ["no-neck-pain.nvim"] = {
-    loaded = true,
-    path = "/home/kat/.local/share/nvim/site/pack/packer/start/no-neck-pain.nvim",
-    url = "https://github.com/shortcuts/no-neck-pain.nvim"
-  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/kat/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -390,9 +385,9 @@ time([[Config for gruvbox-material]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-ts-context-commentstring ]]
 vim.cmd [[ packadd nvim-ts-rainbow ]]
 vim.cmd [[ packadd vim-matchup ]]
-vim.cmd [[ packadd nvim-ts-context-commentstring ]]
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
