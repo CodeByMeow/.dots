@@ -5,3 +5,4 @@ end
 require('katinbox.packer')
 require("katinbox.remap")
 require('katinbox.set')
+require('katinbox.colorscheme')

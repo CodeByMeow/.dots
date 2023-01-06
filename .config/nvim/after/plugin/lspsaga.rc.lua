@@ -44,6 +44,7 @@ saga.init_lsp_saga {
         quit = 'q',
     },
     rename_in_select = true,
+    custom_kind = require("catppuccin.groups.integrations.lsp_saga").custom_kind(),
 }
 
 local opts = { noremap = true, silent = true }

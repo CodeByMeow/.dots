@@ -49,7 +49,7 @@ lsp.setup_nvim_cmp({
 
         local line = context.cursor_line
         local col = context.cursor.col
-        local char_before_cursor = string.sub(line, col - 1, col)
+        local char_before_cursor = string.sub(line, col - 1, col - 1)
 
         if char_before_cursor == "." then
             if kind == 2 or kind == 5 then
