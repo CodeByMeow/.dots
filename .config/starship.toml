@@ -70,7 +70,7 @@ $status
 symbol = " "
 
 [username]
-style_user = "bold #D28D93"
+style_user = "bold #EB6F92"
 style_root = "bold #EBCB8B"
 format = "[$user]($style)"
 disabled = false
@@ -78,8 +78,8 @@ show_always = true
 
 [hostname]
 ssh_only = false
-style = "bold #D28D93"
-format = "[@](bold #D28D93)[$hostname]($style) [in](#EBDBB2) "
+style = "bold #EB6F92"
+format = "[@](bold #EB6F92)[$hostname]($style) [in](#EBDBB2) "
 disabled = false
 
 [git_branch]
