@@ -164,7 +164,7 @@ super + Print
     flameshot gui
 
 # Color pick
-alt + shift + i
+ctrl + shift + i
   gpick -so | xargs echo -n | xclip -selection clipboard
 
 super + d

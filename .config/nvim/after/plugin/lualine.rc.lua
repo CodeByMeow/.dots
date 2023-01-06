@@ -11,7 +11,6 @@ local function getclientnames()
             table.insert(clientnames_tbl, v.name)
         end
     end
-
     return table.concat(clientnames_tbl, ',')
 end
 
@@ -26,8 +25,8 @@ end
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = 'rose-pine',
-        component_separators = { left = '', right = '' },
+        theme = 'rose-pine-alt',
+        component_separators = { left = '|', right = '|' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
