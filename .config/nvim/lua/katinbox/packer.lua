@@ -8,7 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return packer.startup({ function(use)
     use 'wbthomason/packer.nvim'
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'rose-pine/neovim', as = 'rose-pine' }
     use "nvim-lua/plenary.nvim"
     use "nvim-lualine/lualine.nvim"
     use {
