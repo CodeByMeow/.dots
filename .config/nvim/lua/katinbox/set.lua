@@ -1,48 +1,73 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+local opt = vim.opt -- for conciseness
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- line number
+opt.nu = true
+opt.relativenumber = true
 
-vim.opt.smartindent = true
+-- tab & indentation
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.autoindent = true
+opt.smartindent = true
 
-vim.opt.wrap = false
+-- line wrapping
+opt.wrap = false
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+-- search settings
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- cursor line
+opt.cursorline = true
 
-vim.opt.termguicolors = true
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+opt.hlsearch = false
+opt.incsearch = true
 
-vim.opt.updatetime = 50
+-- appearance
+opt.termguicolors = true
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+opt.winblend = 0
+opt.wildoptions = 'pum'
+opt.pumblend = 5
+opt.background = 'dark'
+opt.colorcolumn = "80"
 
-vim.opt.colorcolumn = "80"
+-- backspace
+opt.backspace = "indent,eol,start"
+
+-- clipboard
+opt.clipboard:append("unnamedplus")
+
+opt.updatetime = 50
 
 vim.scriptencoding = 'utf-8'
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
 
 -- disable nvim intro
-vim.opt.shortmess:append "sI"
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.timeoutlen = 400
+opt.shortmess:append "sI"
+
+-- slit windows
+opt.splitbelow = true
+opt.splitright = true
+
+opt.timeoutlen = 400
+opt.iskeyword:append("-")
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Cs = "\e[4:0m"]])
 
-vim.opt.ruler = false
+opt.ruler = false
 vim.o.foldcolumn = '1' -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99

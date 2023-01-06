@@ -2,10 +2,12 @@ local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
 
-lsp.ensure_installed({
+local server_list = {
     "tsserver", "sumneko_lua", "cssls", "html", "emmet_ls", "intelephense", "tailwindcss", "texlab",
     "jsonls"
-})
+}
+
+lsp.ensure_installed(server_list)
 
 -- Fix Undefined global 'vim'
 lsp.configure('sumneko_lua', {
@@ -42,32 +44,57 @@ lsp.setup_nvim_cmp({
         { name = 'path' },
         { name = 'treesitter' },
     }),
+    entry_filter = function(entry, context)
+        local kind = entry:get_kind()
+
+        local line = context.cursor_line
+        local col = context.cursor.col
+        local char_before_cursor = string.sub(line, col - 1, col - 1)
+
+        if char_before_cursor == "." then
+            if kind == 2 or kind == 5 then
+                return true
+            else
+                return false
+            end
+        elseif string.match(line, "^%s*%w*$") then
+            if kind == 3 or kind == 6 then
+                return true
+            else
+                return false
+            end
+        end
+
+        return true
+    end
 })
 
 
 lsp.set_preferences({
-    suggest_lsp_servers = false,
+    suggest_lsp_servers = true,
     sign_icons = {
         error = 'E',
         warn = 'W',
         hint = 'H',
         info = 'I'
-    }
+    },
+    setup_servers_on_start = true,
+    set_lsp_keymaps = false,
+    configure_diagnostics = true,
+    cmp_capabilities = true,
+    manage_nvim_cmp = true,
+    call_servers = 'local',
 })
 
-lsp.on_attach(function(client, bufnr)
-    local opts = { buffer = bufnr, remap = false }
-
-    if client.name == "eslint" then
-        vim.cmd.LspStop('eslint')
-        return
-    end
-
-
-end)
+lsp.nvim_workspace()
 
 lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true,
+    signs = true,
+    update_in_insert = false,
+    underline = true,
+    severity_sort = false,
+    float = true,
 })

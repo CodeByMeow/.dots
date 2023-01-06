@@ -164,14 +164,11 @@ super + Print
     flameshot gui
 
 # Color pick
-alt + shift + p
+alt + shift + i
   gpick -so | xargs echo -n | xclip -selection clipboard
 
 super + d
   firefox
-
-super + x
-    betterlockscreen -l
 
 super + n
     firefox --new-window www.notion.so

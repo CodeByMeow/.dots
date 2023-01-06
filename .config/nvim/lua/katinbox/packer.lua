@@ -6,23 +6,20 @@ end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup({ function(use)
+return packer.startup({ function(use)
     use 'wbthomason/packer.nvim'
+    use { 'rose-pine/neovim', as = 'rose-pine' }
     use "nvim-lua/plenary.nvim"
     use "nvim-lualine/lualine.nvim"
-    use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            require('nvim-treesitter.install').update({ with_sync = true })
+        end
+    }
     use { "nvim-telescope/telescope.nvim", requires = 'nvim-telescope/telescope-file-browser.nvim' }
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
-    use { 'sainnhe/gruvbox-material', config = function()
-        vim.g.gruvbox_material_background = 'soft' -- 'hard', 'medium', 'soft'
-        vim.g.gruvbox_material_disable_italic_comment = 0
-        vim.g.gruvbox_material_enable_bold = 0
-        vim.g.gruvbox_material_enable_italic = 1
-        vim.g.gruvbox_material_diagnostic_text_highlight = 1
-        vim.g.gruvbox_material_better_performance = 1
-        vim.cmd [[colorscheme gruvbox-material]]
-    end }
     use "nvim-treesitter/playground"
     use "mbbill/undotree"
     use "kyazdani42/nvim-web-devicons"
