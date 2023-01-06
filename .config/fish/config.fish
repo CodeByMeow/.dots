@@ -93,4 +93,4 @@ function mkfile
     mkdir -p $( dirname $argv) && touch $argv 
 end
 
-source './themes/rose-pine.fish'
+source ~/.config/fish/themes/rose-pine.fish
