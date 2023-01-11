@@ -48,16 +48,18 @@ lualine.setup {
             'filename',
             file_status = true, -- display file status
             path = 0, -- 0 - just filename
-        } },
-        lualine_x = { {
-            'diagnostics',
-            sources = { 'nvim_diagnostic' },
-            symbols = { error = "E ", warn = "W ", hint = "H ", info = "I " },
-            'encoding',
-            'filetye'
+        }, 'diff' },
+        lualine_x = {
+            {
+                'diagnostics',
+                sources = { 'nvim_diagnostic' },
+                symbols = { error = "E ", warn = "W ", hint = "H ", info = "I " },
+                'encoding',
+                'filetye'
+            },
+            lsp_text_provider
         },
-            lsp_text_provider },
-        lualine_y = { 'progress' },
+        lualine_y = { 'filesize', 'progress' },
         lualine_z = { 'location' }
     },
     inactive_sections = {
