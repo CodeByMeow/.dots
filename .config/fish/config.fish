@@ -48,6 +48,7 @@ export EDITOR=nvim;
 
 #nvim
 alias vim='nvim'
+alias nvim='$HOME/nvim/nvim.appimage'
 
 #Misc
 alias ls='lsd'
