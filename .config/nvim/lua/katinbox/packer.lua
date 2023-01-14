@@ -60,7 +60,10 @@ return packer.startup({ function(use)
     }
     use 'David-Kunz/markid'
     use "lukas-reineke/indent-blankline.nvim"
-    use "glepnir/lspsaga.nvim" -- LSP UIs
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+    })
     use "karb94/neoscroll.nvim" -- Smooth scrolling
     use "lewis6991/gitsigns.nvim"
     use 'dinhhuy258/git.nvim'

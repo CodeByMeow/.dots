@@ -1,54 +1,133 @@
 local status, saga = pcall(require, 'lspsaga')
 if (not status) then return end
 
-saga.setup {
-    server_filetype_map = {},
-    border_style = "single",
-    saga_winblend = 0,
-    move_in_saga = { prev = '<C-p>', next = '<C-n>' },
-    diagnostic_header = { "", "", "", "" },
-    code_action_icon = "",
-    code_action_num_shortcut = true,
-    code_action_lightbulb = {
-        enable = true,
-        sign = true,
-        sign_priority = 20,
-        virtual_text = true,
-    },
-    finder_icons = {
-        def = 'DEF ',
-        ref = 'REF ',
-        imp = 'IMP ',
-        link = 'LINK ',
-    },
-    max_preview_lines = 10,
-    finder_action_keys = {
-        open = "o",
-        vsplit = "s",
-        split = "i",
-        tabe = "t",
-        quit = "q",
-        scroll_down = "<C-f>",
-        scroll_up = "<C-b>", -- quit can be a table
-    },
-    code_action_keys = {
-        quit = "q",
-        exec = "<CR>",
-    },
-    rename_action_quit = "<C-c>",
-    definition_action_keys = {
-        edit = '<C-c>o',
-        vsplit = '<C-c>v',
-        split = '<C-c>i',
-        tabe = '<C-c>t',
-        quit = 'q',
-    },
-    rename_in_select = true,
+local colors = {
+    red = '#e95678',
+    magenta = '#b33076',
+    orange = '#FF8700',
+    yellow = '#f7bb3b',
+    green = '#afd700',
+    cyan = '#36d0e0',
+    blue = '#61afef',
+    purple = '#CBA6F7',
+    white = '#d1d4cf',
+    black = '#1c1c19',
+    gray = '#6e6b6b',
+    fg = '#f2f2bf',
 }
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<C-n>', '<Cmd>Lspsaga diagnostic_jump_next<Cr>', opts)
-vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<Cr>', opts)
-vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<Cr>', opts)
-vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<Cr>', opts)
-vim.keymap.set('n', 'ga', '<Cmd>Lspsaga code_action<Cr>', opts)
+saga.setup {
+    preview = {
+        lines_above = 0,
+        lines_below = 10,
+    },
+    scroll_preview = {
+        scroll_down = '<C-f>',
+        scroll_up = '<C-b>',
+    },
+    request_timeout = 2000,
+    ui = {
+        -- currently only round theme
+        theme = 'round',
+        -- border type can be single,double,rounded,solid,shadow.
+        border = 'single',
+        winblend = 0,
+        expand = '',
+        collapse = '',
+        preview = ' ',
+        code_action = '💡',
+        diagnostic = '🐞',
+        incoming = ' ',
+        outgoing = ' ',
+        colors = {
+            --float window normal bakcground color
+            normal_bg = '#1d1536',
+            --title background color
+            title_bg = colors.red,
+            red = colors.red,
+            magenta = colors.magenta,
+            orange = colors.orange,
+            yellow = colors.yellow,
+            green = colors.green,
+            cyan = colors.cyan,
+            blue = colors.blue,
+            purple = colors.purple,
+            white = colors.white,
+            black = colors.black,
+        },
+        kind = {
+            File = ' ',
+            Module = ' ',
+            Namespace = ' ',
+            Package = ' ',
+            Class = ' ',
+            Method = ' ',
+            Property = ' ',
+            Field = ' ',
+            Constructor = ' ',
+            Enum = '了',
+            Interface = ' ',
+            Function = ' ',
+            Variable = ' ',
+            Constant = ' ',
+            String = ' ',
+            Number = ' ',
+            Boolean = ' ',
+            Array = '[] ',
+            Object = ' ',
+            Key = ' ',
+            Null = ' ',
+            EnumMember = ' ',
+            Struct = ' ',
+            Event = '',
+            Operator = ' ',
+            TypeParameter = ' ',
+
+            TypeAlias = ' ',
+            Parameter = ' ',
+            StaticMethod = ' ',
+            Macro = ' ',
+            Text = ' ',
+            Snippet = ' ',
+            Folder = ' ',
+            Unit = ' ',
+            Value = ' ',
+        },
+    },
+    symbol_in_winbar = {
+        enable = true,
+        separator = '  ',
+        hide_keyword = true,
+        show_file = true,
+        folder_level = 2,
+        respect_root = false,
+    },
+}
+
+local keymap = vim.keymap.set
+
+keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+
+-- Code action
+keymap({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>")
+
+-- Rename
+keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
+
+keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+
+-- Go to Definition
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+
+-- Show buffer diagnostic
+keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+
+-- Diagnsotic jump can use `<c-o>` to jump back
+keymap("n", "<C-N>", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+keymap("n", "<C-n>", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+
+-- Toglle Outline
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
+
+-- Hover Doc
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
