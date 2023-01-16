@@ -46,11 +46,9 @@ return {
     { "tzachar/cmp-tabnine", build = "./install.sh" },
 
     "lewis6991/impatient.nvim", -- Optimize
-    "nathom/filetype.nvim",
     "max397574/better-escape.nvim",
     "jose-elias-alvarez/null-ls.nvim",
     "akinsho/bufferline.nvim",
-    -- "norcalli/nvim-colorizer.lua",
     'David-Kunz/markid',
     "lukas-reineke/indent-blankline.nvim",
     "glepnir/lspsaga.nvim",
