@@ -223,6 +223,12 @@ devicon.setup {
             cterm_color = "113",
             name = "Txt",
         },
+        ["tex"] = {
+            icon = "",
+            color = "#89e051",
+            cterm_color = "113",
+            name = "LaTex"
+        }
     }
 
 }
