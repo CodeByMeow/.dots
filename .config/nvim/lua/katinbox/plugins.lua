@@ -20,7 +20,6 @@ return {
 
     "mbbill/undotree",
     "kyazdani42/nvim-web-devicons",
-    "dstein64/vim-startuptime",
 
     {
         'VonHeikemen/lsp-zero.nvim',
