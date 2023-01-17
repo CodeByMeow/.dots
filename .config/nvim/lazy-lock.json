@@ -51,5 +51,6 @@
   "toggleterm.nvim": { "branch": "main", "commit": "a54e6c471ce1cd8ef8357e34598a28a955297131" },
   "undotree": { "branch": "master", "commit": "1a23ea84bd02c34f50d8e10a8b4bfc89597ffe4e" },
   "vim-matchup": { "branch": "master", "commit": "db5120dd9887c988de7cd973ddb951e465d413e5" },
-  "vimtex": { "branch": "master", "commit": "57da13348bce93dda80d4d4494db42e07c96b018" }
+  "vimtex": { "branch": "master", "commit": "57da13348bce93dda80d4d4494db42e07c96b018" },
+  "vimwiki": { "branch": "dev", "commit": "fea8bee382b2051b0137fd2cacf0862823ee69b3" }
 }
