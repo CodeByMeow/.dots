@@ -67,7 +67,7 @@ saga.setup {
             Constructor = ' ',
             Enum = '了',
             Interface = ' ',
-            Function = ' ',
+            Function = '  ',
             Variable = ' ',
             Constant = ' ',
             String = '  ',
@@ -82,7 +82,6 @@ saga.setup {
             Event = '',
             Operator = ' ',
             TypeParameter = ' ',
-
             TypeAlias = ' ',
             Parameter = ' ',
             StaticMethod = ' ',
