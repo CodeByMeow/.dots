@@ -87,7 +87,6 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     },
 
-    'lervag/vimtex', -- Latex
     'vimwiki/vimwiki' -- VimWiki
 
 }
