@@ -3,7 +3,7 @@ if (not status) then return end
 
 notify.setup {
     stages = "slide",
-    render = "default",
+    render = "minimal",
     timeout = 2000,
     minimum_width = 60,
     icons = {

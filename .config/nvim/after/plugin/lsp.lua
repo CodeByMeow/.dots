@@ -35,7 +35,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
-local ts_utils = require('nvim-treesitter.ts_utils')
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
     sources = cmp.config.sources({

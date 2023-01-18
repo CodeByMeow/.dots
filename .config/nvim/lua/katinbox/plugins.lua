@@ -72,14 +72,12 @@ return {
     "aserowy/tmux.nvim",
     -- Number toggle
     "sitiom/nvim-numbertoggle",
+    --highlight color
+    'brenoprata10/nvim-highlight-colors',
     --vim diff
     {
         'sindrets/diffview.nvim',
         build = 'nvim-lua/plenary.nvim'
-    },
-    --highlight color
-    {
-        'brenoprata10/nvim-highlight-colors',
     },
     {
         "iamcco/markdown-preview.nvim",
@@ -87,5 +85,6 @@ return {
     },
 
     'lervag/vimtex', -- Latex
+    'vimwiki/vimwiki' -- VimWiki
 
 }
