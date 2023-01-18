@@ -54,9 +54,6 @@ keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
 -- Escape highlight search
 keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
 
--- Close current buffer
-keymap.set('n', '<Space>x', '<cmd>:bd<cr>')
-
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
