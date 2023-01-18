@@ -14,7 +14,10 @@ return {
             "andymass/vim-matchup",
         }
     },
-    { "nvim-telescope/telescope.nvim", dependencies = { 'nvim-telescope/telescope-file-browser.nvim' } },
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = { 'nvim-telescope/telescope-file-browser.nvim' }
+    },
     "windwp/nvim-autopairs",
     "windwp/nvim-ts-autotag",
 
