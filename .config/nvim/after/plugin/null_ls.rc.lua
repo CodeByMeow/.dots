@@ -16,6 +16,9 @@ null_ls.setup {
         diagnostics.fish,
     },
     on_attach = function(client, bufnr)
+        if vim.bo.filetype == 'vimwiki' then
+            return;
+        end
         if client.server_capabilities.documentFormattingProvider then
             vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
             vim.api.nvim_create_autocmd("BufWritePre", {
