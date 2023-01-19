@@ -224,7 +224,7 @@ devicon.setup {
             name = "Txt",
         },
         ["tex"] = {
-            icon = "",
+            icon = " ",
             color = "#89e051",
             cterm_color = "113",
             name = "LaTex"
