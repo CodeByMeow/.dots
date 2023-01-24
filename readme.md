@@ -19,7 +19,7 @@
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
   - [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
-- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
+- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
 
 ---
 
@@ -56,7 +56,7 @@ peaclock latextrun-git zathura okular mkpdf
   ```
   fisher install jethrokuan/z
   ```
-- Terminal color scheme. I use Gruvbox material
+- Terminal color scheme: Rose pine
 - [lsd](https://github.com/Peltoche/lsd) - `ls` replacements
 - [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
 - [peco](https://github.com/peco/peco) - Interactive filtering
