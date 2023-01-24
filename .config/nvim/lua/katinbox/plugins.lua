@@ -71,13 +71,13 @@ return {
     "axelvc/template-string.nvim",
     -- Surround
     "kylechui/nvim-surround",
-    --Tmux
+    -- Tmux
     "aserowy/tmux.nvim",
     -- Number toggle
     "sitiom/nvim-numbertoggle",
-    --highlight color
+    -- Highlight color
     'brenoprata10/nvim-highlight-colors',
-    --vim diff
+    -- Vim diff
     {
         'sindrets/diffview.nvim',
         build = 'nvim-lua/plenary.nvim'
