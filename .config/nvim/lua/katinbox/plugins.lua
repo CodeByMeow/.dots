@@ -67,8 +67,6 @@ return {
     "AndrewRadev/tagalong.vim",
     -- Standalone UI for nvim-lsp progress
     "j-hui/fidget.nvim",
-    -- Convert template string
-    "axelvc/template-string.nvim",
     -- Surround
     "kylechui/nvim-surround",
     -- Tmux
