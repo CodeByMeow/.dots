@@ -27,3 +27,5 @@ ts.setup {
     indent = { enable = true, disable = { "yaml" } },
     markid = { enable = true },
 }
+
+vim.keymap.set('n', ';p', '<cmd>:TSPlaygroundToggle<cr>', { noremap = true, silent = true })
