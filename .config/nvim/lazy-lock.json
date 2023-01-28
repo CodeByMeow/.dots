@@ -46,7 +46,6 @@
   "tagalong.vim": { "branch": "main", "commit": "7b8cf57d8b5cbf5ece29e8198e72e8db39d9fe26" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "304508fb7bea78e3c0eeddd88c4837501e403ae8" },
   "telescope.nvim": { "branch": "master", "commit": "dce1156ca103b8222e4abbfc63f9c6887abf5ec6" },
-  "template-string.nvim": { "branch": "main", "commit": "fa94fd309f511ac19bcba0b4390104520f07a08d" },
   "tmux.nvim": { "branch": "main", "commit": "4e746b3707d4e499acc50d4e64c2fc4f0faf9a44" },
   "toggleterm.nvim": { "branch": "main", "commit": "a54e6c471ce1cd8ef8357e34598a28a955297131" },
   "undotree": { "branch": "master", "commit": "1a23ea84bd02c34f50d8e10a8b4bfc89597ffe4e" },
