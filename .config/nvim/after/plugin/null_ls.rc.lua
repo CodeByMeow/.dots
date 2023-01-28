@@ -8,6 +8,7 @@ local completion = null_ls.builtins.completion
 
 null_ls.setup {
     sources = {
+        formatting.black,
         formatting.prettier,
         formatting.clang_format,
         formatting.cmake_format,
