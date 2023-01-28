@@ -6,17 +6,17 @@ toggleterm.setup {
         if term.direction == "horizontal" then
             return 15
         elseif term.direction == "vertical" then
-            return vim.o.columns * 0.4
+            return vim.o.columns * 0.5
         end
     end,
-    open_mapping = [[<c-\>]],
+    open_mapping = [[tt]],
     shade_filetypes = {},
     shade_terminals = true,
     shading_factor = '2',
     start_in_insert = true,
     insert_mapping = true,
     persist_size = true,
-    direction = 'horizontal',
+    direction = 'vertical',
     float_opts = {
         border = 'curved',
     },
@@ -33,3 +33,4 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+-- vim.keymap.set("n", "tt", "<cmd>:ToggleTerm size=80 direction=vertical<cr>")
