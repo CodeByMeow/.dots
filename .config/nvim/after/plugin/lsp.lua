@@ -38,7 +38,13 @@ cmp_mappings['<S-Tab>'] = nil
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
     sources = cmp.config.sources({
-        { name = 'nvim_lsp', },
+        { name = 'nvim_lsp', entry_filter = function(entry, ctx)
+            if entry:get_kind() == 15 then
+                return false
+            end
+
+            return true
+        end },
         { name = 'luasnip' },
         { name = 'cmp_tabnine' },
         { name = 'buffer' },
@@ -67,7 +73,7 @@ lsp.setup_nvim_cmp({
         end
 
         return true
-    end
+    end,
 })
 
 
