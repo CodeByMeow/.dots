@@ -84,5 +84,5 @@ return {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,
     },
-
+    { 'kevinhwang91/nvim-ufo', dependencies = { 'kevinhwang91/promise-async' } }
 }
