@@ -23,7 +23,7 @@ return {
     },
 
     "mbbill/undotree",
-    "kyazdani42/nvim-web-devicons",
+    "nvim-tree/nvim-web-devicons",
 
     {
         "VonHeikemen/lsp-zero.nvim",
