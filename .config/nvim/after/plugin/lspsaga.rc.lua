@@ -113,10 +113,15 @@ keymap({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>")
 -- Rename
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
 
+-- Peek definition
+-- You can edit the file containing the definition in the floating window
+-- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
+-- It also supports tagstack
+-- Use <C-t> to jump back
 keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to Definition
-keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+-- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Show buffer diagnostic
 keymap("n", "<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
@@ -127,6 +132,13 @@ keymap("n", "<C-n>", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- Toglle Outline
 keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
+--
+-- Call hierarchy
+keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+
+-- Floating terminal
+keymap({ "n", "t" }, "<C-\\>", "<cmd>Lspsaga term_toggle<CR>")

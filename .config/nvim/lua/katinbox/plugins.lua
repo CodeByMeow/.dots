@@ -53,14 +53,17 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     "akinsho/bufferline.nvim",
     "lukas-reineke/indent-blankline.nvim",
-    "glepnir/lspsaga.nvim",
+    {
+        "glepnir/lspsaga.nvim",
+        event = "BufRead",
+        dependencies = { { "nvim-tree/nvim-web-devicons" } }
+    },
     "karb94/neoscroll.nvim", -- Smooth scrolling
     "lewis6991/gitsigns.nvim",
     "dinhhuy258/git.nvim",
     "rcarriga/nvim-notify",
     -- Better buffer closing
     "famiu/bufdelete.nvim",
-    "akinsho/toggleterm.nvim",
     "yamatsum/nvim-cursorline",
     "numToStr/Comment.nvim",
     -- Auto rename tag html
