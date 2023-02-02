@@ -66,7 +66,7 @@ saga.setup {
             Field = ' ',
             Constructor = ' ',
             Enum = ' ',
-            Interface = ' ',
+            Interface = ' ',
             Function = '  ',
             Variable = ' ',
             Constant = ' ',
