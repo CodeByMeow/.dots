@@ -29,4 +29,4 @@ ts.setup {
     markid = { enable = true },
 }
 
-vim.keymap.set('n', ';p', '<cmd>:TSPlaygroundToggle<cr>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>p', '<cmd>:TSPlaygroundToggle<cr>', { noremap = true, silent = true })

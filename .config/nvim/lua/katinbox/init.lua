@@ -1,3 +1,4 @@
+require("katinbox.coldmak")
 require("katinbox.remap")
 require('katinbox.lazy')
 require('katinbox.set')
