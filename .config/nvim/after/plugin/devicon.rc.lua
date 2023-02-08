@@ -232,3 +232,4 @@ devicon.setup {
     }
 
 }
+

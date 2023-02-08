@@ -3,9 +3,6 @@ local opts = { noremap = true, silent = true }
 
 -- Colemak Keybindings {{{
 ----------------------
-map('n', 'm', 'h', opts)
-map('x', 'm', 'h', opts)
-map('o', 'm', 'h', opts)
 map('n', 'n', 'j', opts)
 map('x', 'n', 'j', opts)
 map('o', 'n', 'j', opts)
@@ -31,3 +28,4 @@ map('n', 'gl', 'u', opts)
 map('x', 'gl', ':<C-U>undo<CR>', opts)
 
 -- }}}
+

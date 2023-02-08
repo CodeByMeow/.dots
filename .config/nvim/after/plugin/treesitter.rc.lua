@@ -30,3 +30,4 @@ ts.setup {
 }
 
 vim.keymap.set('n', '<leader>p', '<cmd>:TSPlaygroundToggle<cr>', { noremap = true, silent = true })
+

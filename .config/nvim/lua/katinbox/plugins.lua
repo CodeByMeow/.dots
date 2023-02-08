@@ -1,6 +1,11 @@
 return {
     { "rose-pine/neovim", as = "rose-pine" },
-    "nvim-lua/plenary.nvim",
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            { "nvim-lua/plenary.nvim" }
+        }
+    },
     "nvim-lualine/lualine.nvim",
     {
         "nvim-treesitter/nvim-treesitter",
@@ -17,14 +22,8 @@ return {
             "David-Kunz/markid",
         }
     },
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-telescope/telescope-file-browser.nvim" }
-    },
-
     "mbbill/undotree",
     "nvim-tree/nvim-web-devicons",
-
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
@@ -44,13 +43,11 @@ return {
             -- Snippets
             { "L3MON4D3/LuaSnip" },
             { "rafamadriz/friendly-snippets" },
+            { "tzachar/cmp-tabnine", build = "./install.sh" },
         }
     },
-    { "tzachar/cmp-tabnine", build = "./install.sh" },
-
-    "lewis6991/impatient.nvim", -- Optimize
-    "max397574/better-escape.nvim",
     "jose-elias-alvarez/null-ls.nvim",
+    "max397574/better-escape.nvim",
     "akinsho/bufferline.nvim",
     "lukas-reineke/indent-blankline.nvim",
     {
@@ -58,12 +55,11 @@ return {
         event = "BufRead",
         dependencies = { { "nvim-tree/nvim-web-devicons" } }
     },
-    "karb94/neoscroll.nvim", -- Smooth scrolling
+    -- Better buffer closing
+    "famiu/bufdelete.nvim",
     "lewis6991/gitsigns.nvim",
     "dinhhuy258/git.nvim",
     "rcarriga/nvim-notify",
-    -- Better buffer closing
-    "famiu/bufdelete.nvim",
     "yamatsum/nvim-cursorline",
     "numToStr/Comment.nvim",
     -- Auto rename tag html
@@ -74,8 +70,6 @@ return {
     "kylechui/nvim-surround",
     -- Tmux
     "aserowy/tmux.nvim",
-    -- Number toggle
-    "sitiom/nvim-numbertoggle",
     -- Highlight color
     "brenoprata10/nvim-highlight-colors",
     -- Vim diff
@@ -87,7 +81,4 @@ return {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,
     },
-    { 'kevinhwang91/nvim-ufo', dependencies = { 'kevinhwang91/promise-async' } },
-    -- Vimwiki
-    "vimwiki/vimwiki"
 }

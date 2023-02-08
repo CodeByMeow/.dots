@@ -1,5 +1,4 @@
-require("katinbox.coldmak")
-require("katinbox.remap")
-require('katinbox.lazy')
 require('katinbox.set')
-require('katinbox.colorscheme')
+require('katinbox.codemak')
+require('katinbox.remap')
+require('katinbox.lazy')

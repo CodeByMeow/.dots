@@ -34,3 +34,4 @@ null_ls.setup {
 }
 
 vim.keymap.set('n', 'fm', '<cmd>lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
+
