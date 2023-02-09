@@ -1,5 +1,5 @@
 return {
-    { "rose-pine/neovim", as = "rose-pine" },
+    { "rose-pine/neovim", name = "rose-pine" },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {

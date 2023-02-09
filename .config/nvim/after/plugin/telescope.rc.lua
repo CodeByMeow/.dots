@@ -6,7 +6,7 @@ local builtin = require("telescope.builtin")
 telescope.setup {
     defaults = {
         layout_config = {
-            width = 1.75,
+            width = 0.75,
             prompt_position = "top",
             preview_cutoff = 121,
             horizontal = { mirror = false },
@@ -18,11 +18,19 @@ telescope.setup {
             n = {
                 ["q"] = actions.close
             },
+            i = {
+                ["<C-e>"] = actions.move_selection_previous,
+            }
         },
-        prompt_prefix = " ",
-        selection_caret = " ",
+        prompt_prefix = "🔍 ",
+        selection_caret = "> ",
         entry_prefix = "  ",
         file_ignore_pattern = { "node_modules" }
+    },
+    pickers = {
+        find_files = {
+            theme = "dropdown",
+        }
     },
 }
 
@@ -44,4 +52,3 @@ end)
 vim.keymap.set('n', '<leader>d', function()
     builtin.diagnostics()
 end)
-
