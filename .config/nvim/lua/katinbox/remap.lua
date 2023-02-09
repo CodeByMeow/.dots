@@ -28,10 +28,10 @@ keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 -- Move window
 keymap.set('n', '<Space>', '<C-w>w')
 
-keymap.set('', 'sm', '<C-w>h')
-keymap.set('', 'sn', '<C-w>j')
-keymap.set('', 'se', '<C-w>k')
-keymap.set('', 'si', '<C-w>l')
+keymap.set('n', 'sh', '<C-w>h')
+keymap.set('n', 'sn', '<C-w>j')
+keymap.set('n', 'se', '<C-w>k')
+keymap.set('n', 'si', '<C-w>l')
 
 keymap.set('n', '<A-n>', ':m .+1<CR>')
 keymap.set('n', '<A-e>', ':m .-2<CR>')
