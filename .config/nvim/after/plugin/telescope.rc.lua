@@ -23,14 +23,26 @@ telescope.setup {
             }
         },
         prompt_prefix = "🔍 ",
-        selection_caret = "> ",
+        selection_caret = " ",
         entry_prefix = "  ",
         file_ignore_pattern = { "node_modules" }
     },
     pickers = {
         find_files = {
             theme = "dropdown",
-        }
+        },
+        live_grep = {
+            theme = "dropdown",
+        },
+        buffers = {
+            theme = "dropdown",
+        },
+        help_tags = {
+            theme = "dropdown",
+        },
+        diagnostics = {
+            theme = "dropdown",
+        },
     },
 }
 
@@ -40,6 +52,7 @@ vim.keymap.set('n', '<leader>f', function()
         hidden = true
     })
 end)
+
 vim.keymap.set('n', '<leader>g', function()
     builtin.live_grep()
 end)

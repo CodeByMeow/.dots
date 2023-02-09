@@ -105,7 +105,7 @@ saga.setup {
 
 local keymap = vim.keymap.set
 
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
 keymap({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>")
@@ -121,7 +121,7 @@ keymap("n", "gR", "<cmd>Lspsaga rename ++project<CR>")
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
+keymap("n", "gt", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to Definition
 -- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
@@ -134,14 +134,14 @@ keymap("n", "<C-N>", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 keymap("n", "<C-n>", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- Toglle Outline
-keymap("n", "lo", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<Leader>o", "<cmd>Lspsaga outline<CR>")
 --
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Hover Doc
-keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
+keymap("n", "<C-e>", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Floating terminal
-keymap({ "n", "t" }, "tt", "<cmd>Lspsaga term_toggle<CR>")
+keymap({ "n", "t" }, "<leader>t", "<cmd>Lspsaga term_toggle<CR>")
