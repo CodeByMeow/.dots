@@ -43,7 +43,7 @@ keymap.set('v', '<A-e>', ":m '<-2<CR>gv=gv")
 -- Escape highlight search
 keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "m", "nzzzv")
-vim.keymap.set("n", "k", "Nzzzv")
+vim.keymap.set("n", "k", "nzzzv")
+vim.keymap.set("n", "m", "Nzzzv")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

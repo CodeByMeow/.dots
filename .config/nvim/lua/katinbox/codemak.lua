@@ -28,4 +28,3 @@ map('n', 'gl', 'u', opts)
 map('x', 'gl', ':<C-U>undo<CR>', opts)
 
 -- }}}
-

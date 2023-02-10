@@ -124,10 +124,10 @@ keymap("n", "gR", "<cmd>Lspsaga rename ++project<CR>")
 keymap("n", "gt", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to Definition
--- keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Show buffer diagnostic
-keymap("n", "sb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+keymap("n", "st", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "<C-N>", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
