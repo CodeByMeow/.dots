@@ -43,11 +43,11 @@ set MANPATH $NPM_PACKAGES/share/man $MANPATH
 
 set -U Z_DATA "$HOME/.z"
 
-export VISUAL=nvim;
-export EDITOR=nvim;
-
 #nvim
 alias vim="$HOME/nvim/nvim.appimage"
+
+export VISUAL=vim;
+export EDITOR=vim;
 
 #Misc
 alias ls='lsd'

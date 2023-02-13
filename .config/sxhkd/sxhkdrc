@@ -39,7 +39,7 @@ super + g
 	bspc node -s biggest.window
 
 # rotate parent node
-super + shift + n
+super + ctrl+ n
 	bspc node @parent -R 90
 
 #
@@ -157,7 +157,7 @@ super + Print
     flameshot gui
 
 # Color pick
-ctrl + i
+ctrl + shift + p
   gpick -so | xargs echo -n | xclip -selection clipboard
 
 super + d

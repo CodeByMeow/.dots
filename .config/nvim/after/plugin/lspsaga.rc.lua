@@ -130,18 +130,16 @@ keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 keymap("n", "st", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- Diagnsotic jump can use `<c-o>` to jump back
-keymap("n", "<C-N>", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-keymap("n", "<C-n>", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+keymap("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+keymap("n", "<leader>dn", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- Toglle Outline
 keymap("n", "<Leader>o", "<cmd>Lspsaga outline<CR>")
---
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
-
 -- Hover Doc
-keymap("n", "<C-e>", "<cmd>Lspsaga hover_doc<CR>")
+keymap("n", "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Floating terminal
 keymap({ "n", "t" }, "<leader>t", "<cmd>Lspsaga term_toggle<CR>")

@@ -4,14 +4,14 @@ if not status then return end
 lsp.preset('recommended')
 
 local server_list = {
-    "tsserver", "sumneko_lua", "cssls", "html", "emmet_ls", "intelephense", "tailwindcss", "texlab",
+    "tsserver", "lua_ls", "cssls", "html", "emmet_ls", "intelephense", "tailwindcss", "texlab",
     "jsonls", "pyright"
 }
 
 lsp.ensure_installed(server_list)
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -26,62 +26,8 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-e>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
 })
-local t = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-local cmd_mappings = {
-    ['<C-n>'] = cmp.mapping({
-        c = function()
-            if cmp.visible() then
-                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-            else
-                vim.api.nvim_feedkeys(t('<Down>'), 'n', true)
-            end
-        end,
-        i = function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-            else
-                fallback()
-            end
-        end
-    }),
-    ['<C-e>'] = cmp.mapping({
-        c = function()
-            if cmp.visible() then
-                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-            else
-                vim.api.nvim_feedkeys(t('<Up>'), 'n', true)
-            end
-        end,
-        i = function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-            else
-                fallback()
-            end
-        end
-    }),
-}
-cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmd_mappings,
-    sources = {
-        { name = 'buffer' }
-    }
-})
-
-cmp.setup.cmdline(':', {
-    mapping = cmd_mappings,
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    })
-})
-
 -- disable completion with tab
 -- this helps with copilot setup
 cmp_mappings['<Tab>'] = nil

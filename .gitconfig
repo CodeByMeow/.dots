@@ -5,7 +5,7 @@
 	name = katinbox
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 [push]
   default = simple
 [color]
