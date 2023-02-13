@@ -24,10 +24,62 @@ lsp.configure('sumneko_lua', {
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-e>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-e>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
+})
+local t = function(str)
+    return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+local cmd_mappings = {
+    ['<C-n>'] = cmp.mapping({
+        c = function()
+            if cmp.visible() then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+            else
+                vim.api.nvim_feedkeys(t('<Down>'), 'n', true)
+            end
+        end,
+        i = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+            else
+                fallback()
+            end
+        end
+    }),
+    ['<C-e>'] = cmp.mapping({
+        c = function()
+            if cmp.visible() then
+                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+            else
+                vim.api.nvim_feedkeys(t('<Up>'), 'n', true)
+            end
+        end,
+        i = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+            else
+                fallback()
+            end
+        end
+    }),
+}
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmd_mappings,
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+cmp.setup.cmdline(':', {
+    mapping = cmd_mappings,
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
 })
 
 -- disable completion with tab
@@ -38,6 +90,7 @@ cmp_mappings['<S-Tab>'] = nil
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
     sources = cmp.config.sources({
+        ---@diagnostic disable-next-line: unused-local
         { name = 'nvim_lsp', entry_filter = function(entry, ctx)
             if entry:get_kind() == 15 then
                 return false
@@ -45,6 +98,7 @@ lsp.setup_nvim_cmp({
 
             return true
         end },
+        { name = 'nvim_lua' },
         { name = 'luasnip' },
         { name = 'cmp_tabnine' },
         { name = 'buffer' },
@@ -105,4 +159,3 @@ vim.diagnostic.config({
     severity_sort = false,
     float = true,
 })
-
