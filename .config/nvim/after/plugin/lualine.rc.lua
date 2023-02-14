@@ -29,7 +29,9 @@ lualine.setup {
         component_separators = { left = '|', right = '|' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
-            statusline = {},
+            statusline = {
+                'netrw'
+            },
             winbar = {},
         },
         ignore_focus = {},
@@ -77,4 +79,3 @@ lualine.setup {
     tabline = {},
     extensions = { 'fugitive' }
 }
-

@@ -41,6 +41,7 @@ opt.pumblend = 5
 opt.background = 'dark'
 opt.colorcolumn = "80"
 
+
 -- backspace
 opt.backspace = "indent,eol,start"
 
@@ -73,3 +74,10 @@ vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decr
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 4
+vim.g.netrw_altv = 1
+vim.g.netrw_winsize = 25
+
+vim.api.nvim_create_autocmd("VimEnter", { command = ":Lexplore", pattern = { "*" } })

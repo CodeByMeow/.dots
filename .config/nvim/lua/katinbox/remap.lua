@@ -2,12 +2,11 @@ local keymap = vim.keymap
 
 vim.g.mapleader = " "
 
-keymap.set('n', '<leader>nn', vim.cmd.Ex)
+keymap.set('n', '<leader>n', vim.cmd.Lex)
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
 keymap.set('n', '<leader>w', '<cmd>:w<cr>')
-keymap.set('n', '<leader>q', '<cmd>:q<cr>')
-keymap.set('n', '<leader>Q', '<cmd>:q!<cr>')
+keymap.set('n', '<leader>q', '<cmd>:qa<cr>')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
