@@ -9,7 +9,7 @@ font:
     bold_italic:
         family: Victor Mono
     # Point size
-    size: 15.0
+    size: 12.0
 env:
     TERM: xterm-256color
 scrolling:
@@ -29,6 +29,7 @@ window:
     instance: Alacritty
     general: Alacritty
   decorations_theme_variant: dark
+  opacity: 0.9
 
 draw_bold_text_with_bright_colors: true
 

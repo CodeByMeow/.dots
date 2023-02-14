@@ -19,7 +19,7 @@
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
   - [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
-- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
+- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
 
 ---
 
@@ -47,6 +47,7 @@ xorg-xsetroot acpilight gpick
 blueman bluetooth-autoconnect flameshot
 fd feh nautilus lxappearance lsd playerctl
 peaclock latextrun-git zathura okular mkpdf
+picom-junaburg-git
 ```
 
 ### Shell setup
