@@ -2,7 +2,6 @@ local keymap = vim.keymap
 
 vim.g.mapleader = " "
 
-keymap.set('n', '<leader>n', vim.cmd.Lex)
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
 keymap.set('n', '<leader>w', '<cmd>:w<cr>')

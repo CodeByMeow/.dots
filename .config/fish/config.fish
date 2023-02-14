@@ -46,8 +46,8 @@ set -U Z_DATA "$HOME/.z"
 #nvim
 alias vim="$HOME/nvim/nvim.appimage"
 
-export VISUAL=vim;
-export EDITOR=vim;
+export VISUAL="$HOME/nvim/nvim.appimage"
+export EDITOR="$HOME/nvim/nvim.appimage";
 
 #Misc
 alias ls='lsd'
