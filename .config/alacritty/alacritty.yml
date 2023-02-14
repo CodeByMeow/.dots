@@ -29,7 +29,6 @@ window:
     instance: Alacritty
     general: Alacritty
   decorations_theme_variant: dark
-  opacity: 0.9
 
 draw_bold_text_with_bright_colors: true
 
