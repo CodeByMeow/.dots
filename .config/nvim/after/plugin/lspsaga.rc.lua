@@ -142,4 +142,4 @@ keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 keymap("n", "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Floating terminal
-keymap({ "n", "t" }, "<leader>t", "<cmd>Lspsaga term_toggle<CR>")
+keymap({ "n", "t" }, "tt", "<cmd>Lspsaga term_toggle<CR>")
