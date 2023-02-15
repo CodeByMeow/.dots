@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
 keymap.set('n', '<leader>w', '<cmd>:w<cr>')
-keymap.set('n', '<leader>q', '<cmd>:qa<cr>')
+keymap.set('n', '<leader>q', '<cmd>:q<cr>')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
@@ -42,7 +42,8 @@ keymap.set('v', '<A-e>', ":m '<-2<CR>gv=gv")
 -- Escape highlight search
 keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "m", "nzzzv")
-vim.keymap.set("n", "M", "Nzzzv")
+keymap.set("n", "m", "nzzzv")
+keymap.set("n", "M", "Nzzzv")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("c", "<C-e>", "<C-p>")

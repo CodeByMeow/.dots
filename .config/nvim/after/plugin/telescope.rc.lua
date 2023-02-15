@@ -20,29 +20,13 @@ telescope.setup {
             },
             i = {
                 ["<C-e>"] = actions.move_selection_previous,
+                ["<C-q>"] = actions.close,
             }
         },
         prompt_prefix = "🔍 ",
         selection_caret = " ",
         entry_prefix = "  ",
         file_ignore_pattern = { "node_modules" }
-    },
-    pickers = {
-        find_files = {
-            theme = "dropdown",
-        },
-        live_grep = {
-            theme = "dropdown",
-        },
-        buffers = {
-            theme = "dropdown",
-        },
-        help_tags = {
-            theme = "dropdown",
-        },
-        diagnostics = {
-            theme = "dropdown",
-        },
     },
 }
 

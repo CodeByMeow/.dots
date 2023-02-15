@@ -3,7 +3,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            { "nvim-lua/plenary.nvim" }
+            "nvim-lua/plenary.nvim",
         }
     },
     "nvim-lualine/lualine.nvim",
@@ -28,22 +28,22 @@ return {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
             -- LSP Support
-            { "neovim/nvim-lspconfig" },
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
+            "neovim/nvim-lspconfig",
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
 
             -- Autocompletion
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "saadparwaiz1/cmp_luasnip" },
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-nvim-lua" },
-            { "hrsh7th/cmp-cmdline" },
+            "hrsh7th/nvim-cmp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "saadparwaiz1/cmp_luasnip",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+            "hrsh7th/cmp-cmdline",
 
             -- Snippets
-            { "L3MON4D3/LuaSnip" },
-            { "rafamadriz/friendly-snippets" },
+            "L3MON4D3/LuaSnip",
+            "rafamadriz/friendly-snippets",
             { "tzachar/cmp-tabnine", build = "./install.sh" },
         }
     },
@@ -82,5 +82,5 @@ return {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,
     },
-    "kevinhwang91/rnvimr"
+    "kevinhwang91/rnvimr",
 }
