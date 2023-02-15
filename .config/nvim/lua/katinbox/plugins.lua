@@ -83,4 +83,5 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     },
     "kevinhwang91/rnvimr",
+    "ThePrimeagen/harpoon"
 }
