@@ -39,7 +39,7 @@ super + g
 	bspc node -s biggest.window
 
 # rotate parent node
-super + ctrl+ n
+super + ctrl+ r
 	bspc node @parent -R 90
 
 #
