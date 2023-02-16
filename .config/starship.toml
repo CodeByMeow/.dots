@@ -1,6 +1,6 @@
 add_newline = false
 format = """
-[╭─](bold #EBDBB2)\
+[┌─](bold #EBDBB2)\
 $username\
 $hostname\
 $directory\
@@ -59,7 +59,7 @@ $crystal\
 $fill\
 (fg: black)
 [│](bold #EBDBB2)
-[╰─](bold #EBDBB2)\
+[└─](bold #EBDBB2)\
 $singularity\
 $kubernetes\
 $character\

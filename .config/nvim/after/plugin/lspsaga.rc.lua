@@ -127,7 +127,7 @@ keymap("n", "gt", "<cmd>Lspsaga peek_definition<CR>")
 keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Show buffer diagnostic
-keymap("n", "st", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+keymap("n", "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
