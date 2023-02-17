@@ -93,4 +93,14 @@ function mkfile
     mkdir -p $( dirname $argv) && touch $argv 
 end
 
+# Add this to your ~/.config/fish/config.fish
+function rangercd
+    set tmpfile "/tmp/pwd-from-ranger"
+    ranger --choosedir=$tmpfile $argv
+    set rangerpwd (cat $tmpfile)
+    if test "$PWD" != $rangerpwd
+        cd $rangerpwd
+    end
+end
+
 source ~/.config/fish/themes/rose-pine.fish
