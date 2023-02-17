@@ -63,8 +63,6 @@ return {
     "rcarriga/nvim-notify",
     "yamatsum/nvim-cursorline",
     "numToStr/Comment.nvim",
-    -- Auto rename tag html
-    "AndrewRadev/tagalong.vim",
     -- Standalone UI for nvim-lsp progress
     "j-hui/fidget.nvim",
     -- Surround
