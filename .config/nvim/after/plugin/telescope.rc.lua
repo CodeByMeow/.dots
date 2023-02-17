@@ -30,22 +30,22 @@ telescope.setup {
     },
 }
 
-vim.keymap.set('n', 'ff', function()
+vim.keymap.set('n', '<leader>f', function()
     builtin.find_files({
         no_ignore = false,
         hidden = true
     })
 end)
 
-vim.keymap.set('n', 'fg', function()
+vim.keymap.set('n', '<leader>g', function()
     builtin.live_grep()
 end)
-vim.keymap.set('n', 'fb', function()
+vim.keymap.set('n', '<leader>b', function()
     builtin.buffers()
 end)
-vim.keymap.set('n', 'fh', function()
+vim.keymap.set('n', '<leader>h', function()
     builtin.help_tags()
 end)
-vim.keymap.set('n', 'fd', function()
+vim.keymap.set('n', '<leader>d', function()
     builtin.diagnostics()
 end)
