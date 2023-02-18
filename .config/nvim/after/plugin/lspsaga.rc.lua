@@ -130,8 +130,8 @@ keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 keymap("n", "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 
 -- Diagnsotic jump can use `<c-o>` to jump back
-keymap("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
-keymap("n", "<leader>dn", "<cmd>Lspsaga diagnostic_jump_next<CR>")
+keymap("n", "<leader>j", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+keymap("n", "<leader>k", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- Toglle Outline
 keymap("n", "<Leader>o", "<cmd>Lspsaga outline<CR>")

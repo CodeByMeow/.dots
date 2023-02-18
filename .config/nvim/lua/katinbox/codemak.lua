@@ -20,6 +20,8 @@ map('x', 'u', 'i', opts)
 map('x', 'U', 'I', opts)
 map('o', 'u', 'i', opts)
 map('o', 'U', 'I', opts)
+map('i', '<C-h>', '<Left>', opts)
+map('i', '<C-i>', '<Right>', opts)
 
 -- Undo/redo
 map('n', 'l', 'u', opts)
