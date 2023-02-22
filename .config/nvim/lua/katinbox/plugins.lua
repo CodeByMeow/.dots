@@ -54,7 +54,7 @@ return {
     {
         "glepnir/lspsaga.nvim",
         event = "BufRead",
-        dependencies = { { "nvim-tree/nvim-web-devicons" } }
+        dependencies = { { "nvim-tree/nvim-web-devicons" }, { "nvim-treesitter/nvim-treesitter" } }
     },
     -- Better buffer closing
     "famiu/bufdelete.nvim",
