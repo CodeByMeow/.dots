@@ -4,7 +4,7 @@ if not status then return end
 lsp.preset('recommended')
 
 local server_list = {
-    "tsserver", "lua_ls", "cssls", "html", "emmet_ls", "intelephense", "tailwindcss", "texlab",
+    "tsserver", "lua_ls", "cssls", "html", "intelephense", "tailwindcss", "texlab",
     "jsonls", "pyright"
 }
 

@@ -48,6 +48,7 @@ return {
             { "tzachar/cmp-tabnine", build = "./install.sh" },
         }
     },
+    "mattn/emmet-vim",
     "jose-elias-alvarez/null-ls.nvim",
     "max397574/better-escape.nvim",
     "akinsho/bufferline.nvim",

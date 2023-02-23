@@ -12,6 +12,7 @@
   "cmp-tabnine": { "branch": "main", "commit": "1b1c0235c54e3fc9e77504ed8d36028f64e6f48d" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "diffview.nvim": { "branch": "main", "commit": "503837ddd29d561b80e4a95ce7fc038701b3d4d0" },
+  "emmet-vim": { "branch": "master", "commit": "def5d57a1ae5afb1b96ebe83c4652d1c03640f4d" },
   "fidget.nvim": { "branch": "main", "commit": "688b4fec4517650e29c3e63cfbb6e498b3112ba1" },
   "friendly-snippets": { "branch": "main", "commit": "6fa50a94ba5378bb73013a6e163376d8e69bd8a5" },
   "git.nvim": { "branch": "main", "commit": "3f69f102875377f3db8d2bd154f9c1901417034d" },
