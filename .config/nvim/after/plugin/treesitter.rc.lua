@@ -27,7 +27,20 @@ ts.setup {
     incremental_selection = { enable = true },
     indent = { enable = true, disable = { "yaml" } },
     markid = { enable = true },
+    textobjects = {
+        select = {
+            enable = true
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ["<leader>a"] = "@parameter.inner",
+            },
+            swap_previous = {
+                ["<leader>A"] = "@parameter.inner",
+            },
+        }
+    }
 }
 
 vim.keymap.set('n', '<leader>p', '<cmd>:TSPlaygroundToggle<cr>', { noremap = true, silent = true })
-

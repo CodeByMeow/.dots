@@ -17,9 +17,10 @@ return {
             "nvim-treesitter/playground",
             "JoosepAlviste/nvim-ts-context-commentstring",
             "andymass/vim-matchup",
-            "windwp/nvim-autopairs",
             "windwp/nvim-ts-autotag",
             "David-Kunz/markid",
+            "nvim-treesitter/nvim-treesitter-textobjects",
+            { "windwp/nvim-autopairs", config = true, event = "InsertEnter" },
         }
     },
     "mbbill/undotree",
