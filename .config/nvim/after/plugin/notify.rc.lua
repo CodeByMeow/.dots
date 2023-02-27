@@ -15,3 +15,5 @@ notify.setup {
 }
 
 vim.notify = notify
+
+vim.keymap.set('n', '<leader>n', '<cmd>Telescope notify<cr>')
