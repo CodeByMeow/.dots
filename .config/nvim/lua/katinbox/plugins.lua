@@ -73,11 +73,6 @@ return {
     "aserowy/tmux.nvim",
     -- Highlight color
     "brenoprata10/nvim-highlight-colors",
-    -- Vim diff
-    {
-        "sindrets/diffview.nvim",
-        build = "nvim-lua/plenary.nvim"
-    },
     {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,
