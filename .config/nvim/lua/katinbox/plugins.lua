@@ -79,5 +79,20 @@ return {
     },
     "kevinhwang91/rnvimr",
     "ThePrimeagen/harpoon",
-    "vimwiki/vimwiki"
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        dependencies = { { "nvim-lua/plenary.nvim" } },
+    },
+    {
+        "jghauser/mkdir.nvim",
+        build = function()
+            require('mkdir')
+        end,
+        event = "BufWritePre"
+    },
+    {
+        "ray-x/lsp_signature.nvim"
+    }
+
 }

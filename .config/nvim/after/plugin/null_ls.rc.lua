@@ -5,7 +5,6 @@ local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
-
 null_ls.setup {
     sources = {
         formatting.black,
@@ -17,7 +16,7 @@ null_ls.setup {
         diagnostics.fish,
     },
     on_attach = function(client, bufnr)
-        if vim.bo.filetype == 'vimwiki' then
+        if vim.bo.filetype == "norg" then
             return;
         end
         if client.server_capabilities.documentFormattingProvider then
@@ -34,4 +33,3 @@ null_ls.setup {
 }
 
 vim.keymap.set('n', 'fm', '<cmd>lua vim.lsp.buf.format()<cr>', { noremap = true, silent = true })
-
