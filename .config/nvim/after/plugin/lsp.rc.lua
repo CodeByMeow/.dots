@@ -4,7 +4,7 @@ if not status then return end
 lsp.preset('recommended')
 
 local server_list = {
-    "tsserver", "lua_ls", "cssls", "html", "intelephense", "tailwindcss", "texlab",
+    "tsserver", "lua_ls", "cssls", "html", "intelephense", "tailwindcss",
     "jsonls", "pyright"
 }
 
@@ -37,13 +37,16 @@ lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
     sources = cmp.config.sources({
         ---@diagnostic disable-next-line: unused-local
-        { name = 'nvim_lsp', entry_filter = function(entry, ctx)
-            if entry:get_kind() == 15 then
-                return false
-            end
+        {
+            name = 'nvim_lsp',
+            entry_filter = function(entry, ctx)
+                if entry:get_kind() == 15 then
+                    return false
+                end
 
-            return true
-        end },
+                return true
+            end
+        },
         { name = 'nvim_lua' },
         { name = 'luasnip' },
         { name = 'cmp_tabnine' },

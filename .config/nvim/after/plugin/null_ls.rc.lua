@@ -5,15 +5,18 @@ local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local completion = null_ls.builtins.completion
+
 null_ls.setup {
     sources = {
-        formatting.black,
         formatting.prettier,
         formatting.clang_format,
         formatting.cmake_format,
         formatting.codespell.with({ filetypes = { 'markdown' } }),
         completion.spell,
         diagnostics.fish,
+        diagnostics.eslint_d.with({
+            diagnostics_format = '[eslint] #{m}\n(#{c})'
+        }),
     },
     on_attach = function(client, bufnr)
         if vim.bo.filetype == "norg" then
