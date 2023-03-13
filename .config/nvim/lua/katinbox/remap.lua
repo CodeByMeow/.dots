@@ -47,3 +47,4 @@ keymap.set("n", "M", "Nzzzv")
 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap.set("c", "<C-e>", "<C-p>")
+keymap.set("n", "<leader>e", vim.cmd.Ex)
