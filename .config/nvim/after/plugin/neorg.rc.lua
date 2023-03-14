@@ -28,3 +28,5 @@ require('neorg').setup {
         },
     }
 }
+
+vim.keymap.set("n", "<leader>ww", "<cmd>:Neorg workspace notes<cr>")
