@@ -93,6 +93,9 @@ return {
     },
     {
         "ray-x/lsp_signature.nvim"
+    },
+    {
+        "folke/zen-mode.nvim"
     }
 
 }
