@@ -63,6 +63,8 @@ opt.splitright = true
 
 opt.timeoutlen = 400
 opt.iskeyword:append("-")
+-- number of item show popup menu
+opt.ph = 7
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
