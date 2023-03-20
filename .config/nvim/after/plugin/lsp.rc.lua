@@ -28,14 +28,19 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-Space>'] = cmp.mapping.complete(),
 })
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
     sources = cmp.config.sources({
-        ---@diagnostic disable-next-line: unused-local
         {
             name = 'nvim_lsp',
-            entry_filter = function(entry, ctx)
+            entry_filter = function(entry)
                 if entry:get_kind() == 15 then
                     return false
                 end
@@ -44,15 +49,14 @@ lsp.setup_nvim_cmp({
             end
         },
         { name = 'nvim_lua' },
-        { name = 'luasnip' },
+        { name = 'buffer',     keyword_length = 3 },
+        { name = 'luasnip',    keyword_length = 2 },
         { name = 'cmp_tabnine' },
-        { name = 'buffer' },
         { name = 'path' },
         { name = 'treesitter' },
     }),
     entry_filter = function(entry, context)
         local kind = entry:get_kind()
-
         local line = context.cursor_line
         local col = context.cursor.col
         local char_before_cursor = string.sub(line, col - 1, col - 1)
