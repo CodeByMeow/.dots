@@ -91,11 +91,10 @@ return {
         end,
         event = "BufWritePre"
     },
-    {
-        "ray-x/lsp_signature.nvim"
-    },
-    {
-        "folke/zen-mode.nvim"
-    }
+
+    "ray-x/lsp_signature.nvim",
+    "folke/zen-mode.nvim",
+    "github/copilot.vim"
+
 
 }
