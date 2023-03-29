@@ -94,7 +94,4 @@ return {
 
     "ray-x/lsp_signature.nvim",
     "folke/zen-mode.nvim",
-    "github/copilot.vim"
-
-
 }

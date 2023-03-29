@@ -11,7 +11,6 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp-tabnine": { "branch": "main", "commit": "4c8a0db92e75c848fb066edd280072389db80d24" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
-  "copilot.vim": { "branch": "release", "commit": "b6e5624351ba735e25eb8864d7d22819aad00606" },
   "emmet-vim": { "branch": "master", "commit": "def5d57a1ae5afb1b96ebe83c4652d1c03640f4d" },
   "fidget.nvim": { "branch": "main", "commit": "0ba1e16d07627532b6cae915cc992ecac249fb97" },
   "friendly-snippets": { "branch": "main", "commit": "8d91ba2dc2421a54981115f61b914974f938fa77" },
