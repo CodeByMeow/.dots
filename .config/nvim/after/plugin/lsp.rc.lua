@@ -28,6 +28,13 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-Space>'] = cmp.mapping.complete(),
 })
+
+-- disable completion with tab
+-- this helps with copilot setup
+-- cmp_mappings['<Tab>'] = nil
+-- cmp_mappings['<S-Tab>'] = nil
+
+
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
