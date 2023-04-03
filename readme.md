@@ -52,6 +52,7 @@ blueman bluetooth-autoconnect flameshot
 fd feh nautilus lxappearance lsd playerctl
 peaclock latextrun-git zathura okular mkpdf
 picom-junaburg-git moc
+mpv yt-dlp
 ```
 
 ### Shell setup
