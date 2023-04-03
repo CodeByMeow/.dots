@@ -23,7 +23,7 @@
     # ArchLinux install all requirements is extremely convenient
     yay -S ranger python-pynvim ueberzug
     ```
-- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.8)
+- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
 
 ---
 
@@ -51,7 +51,7 @@ xorg-xsetroot acpilight gpick
 blueman bluetooth-autoconnect flameshot
 fd feh nautilus lxappearance lsd playerctl
 peaclock latextrun-git zathura okular mkpdf
-picom-junaburg-git
+picom-junaburg-git moc
 ```
 
 ### Shell setup
