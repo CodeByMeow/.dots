@@ -76,7 +76,7 @@ alias t='tmux attach || tmux new-session'   # Attaches tmux to the last session;
 alias tpi='$HOME/.config/tmux/plugins/tpm/bin/install_plugins' # Installs Tmux plugins
 alias tpu='$HOME/.config/tmux/plugins/tpm/bin/update_plugins all' # Updates all Tmux plugins
 
-alias yt='ytfzf -ts --rii --notify-playing'
+alias yt='ytfzf -ts --notify-playing'
 
 function k
     bluetoothctl connect DC:2C:26:0F:A5:D2
