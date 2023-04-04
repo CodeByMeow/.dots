@@ -9,11 +9,6 @@ workspaces() {
 		let name++
 	done
 }
-# workspace 1 (Terminals)
-declare -a terminal=(alacrity)
-for i in ${terminal[@]}; do
-    bspc rule -a $i desktop='^1' follow=on focus=on; done
-
 # workspace 2 (Internet Browser)
 declare -a web=(firefox)
 for i in ${web[@]}; do

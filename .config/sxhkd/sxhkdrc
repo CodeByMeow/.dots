@@ -7,7 +7,7 @@ super + Return
 	alacritty
 
 # program launcher (Apps)
-super + space
+super + @space
 	rofi -show drun -show-icons
 
 # make sxhkd reload its configuration files:
@@ -98,11 +98,11 @@ super + ctrl + {1-9}
 	bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
-super + ctrl + space
+super + ctrl + @space
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
+super + ctrl + shift + @space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
