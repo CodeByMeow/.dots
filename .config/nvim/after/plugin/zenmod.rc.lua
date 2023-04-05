@@ -8,7 +8,7 @@ vim.keymap.set("n", "<leader>z", function()
             -- comment the lines to not apply the options
             options = {
                 enabled = true,
-                -- ruler = false,              -- disables the ruler text in the cmd line area
+                ruler = false,              -- disables the ruler text in the cmd line area
                 showcmd = false,            -- disables the command in the last line of the screen
             },
             twilight = { enabled = true },  -- enable to start Twilight when zen mode opens

@@ -16,7 +16,7 @@ for i in ${web[@]}; do
 
 declare -a yt=(mpv)
 for i in ${yt[@]}; do
-    bspc rule -a $i desktop='^1' follow=on focus=off state=floating rectangle=267x150+1648+930; done
+    bspc rule -a $i desktop='^1' follow=on focus=off state=floating rectangle=800x450+560+315; done
     
 workspaces
 bspc config window_gap 12
