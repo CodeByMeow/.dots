@@ -61,6 +61,8 @@ mpv yt-dlp
 - [z for fish](https://github.com/jethrokuan/z) : - Directory jumping
   ```
   fisher install jethrokuan/z
+  -- Nvm 
+  fisher install jorgebucaran/nvm.fish
   ```
 - Terminal color scheme: Rose pine
 - [lsd](https://github.com/Peltoche/lsd) - `ls` replacements
