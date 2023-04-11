@@ -14,9 +14,6 @@ null_ls.setup {
         formatting.codespell.with({ filetypes = { 'markdown' } }),
         completion.spell,
         diagnostics.fish,
-        diagnostics.eslint_d.with({
-            diagnostics_format = '[eslint] #{m}\n(#{c})'
-        }),
     },
     on_attach = function(client, bufnr)
         if vim.bo.filetype == "norg" then
