@@ -19,7 +19,7 @@ local lsp_text_provider = function()
     local clients = vim.lsp.buf_get_clients(bufnr)
     if vim.tbl_isempty(clients) then return '' end
     local names = getclientnames()
-    return string.format(' [%s]', names)
+    return string.format(icons.kind["Method"][1] .. '[%s]', names)
 end
 
 local function fg(name)
@@ -71,20 +71,10 @@ lualine.setup {
                 icon_only = true,
                 separator = "",
                 padding = {
-                    left = 1, right = 0 }
+                    left = 1, right = 0
+                }
             },
             { "filename", path = 1, symbols = { modified = " ", readonly = " ", unnamed = " " } },
-            {
-                function() return require("noice").api.status.command.get() end,
-                cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
-                color = fg("Statement")
-            },
-            -- stylua: ignore
-            {
-                function() return require("noice").api.status.mode.get() end,
-                cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
-                color = fg("Constant"),
-            },
         },
         lualine_x = {
             { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = fg("Special") },
@@ -109,7 +99,7 @@ lualine.setup {
         lualine_z = {
             {
                 function()
-                    return " " .. os.date("%R")
+                    return icons.kind["Unit"][1] .. os.date("%R")
                 end,
             },
         }
