@@ -95,7 +95,7 @@ keymap("n", "<Leader>o", "<cmd>Lspsaga outline<CR>")
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 -- Hover Doc
-keymap("n", "<leader><leader>", "<cmd>Lspsaga hover_doc<CR>")
+keymap("n", "<S-h>", "<cmd>Lspsaga hover_doc<CR>")
 
 -- Floating terminal
 keymap({ "n", "t" }, "<leader>t", "<cmd>Lspsaga term_toggle<CR>")

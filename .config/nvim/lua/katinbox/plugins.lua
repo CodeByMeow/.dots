@@ -62,11 +62,11 @@ return {
     "famiu/bufdelete.nvim",
     "lewis6991/gitsigns.nvim",
     "dinhhuy258/git.nvim",
-    "rcarriga/nvim-notify",
+    -- "rcarriga/nvim-notify",
     "yamatsum/nvim-cursorline",
     "numToStr/Comment.nvim",
     -- Standalone UI for nvim-lsp progress
-    "j-hui/fidget.nvim",
+    -- "j-hui/fidget.nvim",
     -- Surround
     "kylechui/nvim-surround",
     -- Tmux
@@ -92,6 +92,17 @@ return {
         event = "BufWritePre"
     },
 
-    "ray-x/lsp_signature.nvim",
     "folke/zen-mode.nvim",
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        },
+    },
 }

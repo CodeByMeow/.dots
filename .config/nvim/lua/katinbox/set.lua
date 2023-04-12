@@ -80,3 +80,11 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 vim.g.netrw_liststyle = 3
+
+-- disable EditorConfig
+vim.g.editorconfig = false
+
+--showcmdloc
+opt.cmdheight = 0
+opt.statusline = "%f - %y %=%S %l / %L"
+opt.showcmdloc = "statusline"

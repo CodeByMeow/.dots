@@ -25,7 +25,7 @@ keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })
 
 -- Move window
-keymap.set('n', '<Space>', '<C-w>w')
+keymap.set('n', '<leader><leader>', '<C-w>w')
 
 keymap.set('n', 'sh', '<C-w>h')
 keymap.set('n', 'sn', '<C-w>j')
@@ -45,6 +45,6 @@ keymap.set('n', '<ESC>', '<cmd>:noh<cr>', { noremap = true, silent = true })
 keymap.set("n", "m", "nzzzv")
 keymap.set("n", "M", "Nzzzv")
 
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap.set("c", "<C-e>", "<C-p>")
 keymap.set("n", "<leader>e", vim.cmd.Ex)

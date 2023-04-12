@@ -26,7 +26,7 @@ lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'rose-pine-alt',
-        component_separators = { left = '|', right = '|' },
+        component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {
@@ -46,11 +46,33 @@ lualine.setup {
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch' },
-        lualine_c = { {
-            'filename',
-            file_status = true, -- display file status
-            path = 0, -- 0 - just filename
-        }, 'diff' },
+        lualine_c = {
+            {
+                'filename',
+                file_status = true, -- display file status
+                path = 0,           -- 0 - just filename
+            },
+            'diff',
+            {
+                require("noice").api.status.message.get_hl,
+                cond = require("noice").api.status.message.has,
+            },
+            {
+                require("noice").api.status.command.get,
+                cond = require("noice").api.status.command.has,
+                color = { fg = "#ff9e64" },
+            },
+            {
+                require("noice").api.status.mode.get,
+                cond = require("noice").api.status.mode.has,
+                color = { fg = "#ff9e64" },
+            },
+            {
+                require("noice").api.status.search.get,
+                cond = require("noice").api.status.search.has,
+                color = { fg = "#ff9e64" },
+            },
+        },
         lualine_x = {
             {
                 'diagnostics',
@@ -62,7 +84,14 @@ lualine.setup {
             lsp_text_provider
         },
         lualine_y = { 'filesize', 'progress' },
-        lualine_z = { 'location' }
+        lualine_z = {
+            { 'location' },
+            {
+                function()
+                    return " " .. os.date("%R")
+                end,
+            },
+        }
     },
     inactive_sections = {
         lualine_a = {},
@@ -74,8 +103,8 @@ lualine.setup {
         } },
         lualine_x = { 'location' },
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
     },
     tabline = {},
-    extensions = { 'fugitive' }
+    extensions = { 'fugitive', 'lazy' }
 }
