@@ -13,13 +13,12 @@ bufferline.setup {
         offsets = {
             { filetype = "NvimTree", text = "", padding = 1 },
             { filetype = "neo-tree", text = "", padding = 1 },
-            { filetype = "Outline", text = "", padding = 1 },
+            { filetype = "Outline",  text = "", padding = 1 },
         },
         buffer_close_icon = "x",
-        modified_icon = "M",
+        modified_icon = " ",
         close_icon = "x",
         max_name_length = 14,
         max_prefix_length = 13,
-        separator_style = "thin",
     },
 }

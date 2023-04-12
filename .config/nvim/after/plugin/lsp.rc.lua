@@ -90,10 +90,7 @@ lsp.setup_nvim_cmp({
 lsp.set_preferences({
     suggest_lsp_servers = true,
     sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
+        error = " ", warn = " ", hint = "✎ ", info = " "
     },
     setup_servers_on_start = true,
     set_lsp_keymaps = false,

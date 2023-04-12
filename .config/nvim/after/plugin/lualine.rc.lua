@@ -77,7 +77,7 @@ lualine.setup {
             {
                 'diagnostics',
                 sources = { 'nvim_diagnostic' },
-                symbols = { error = "E ", warn = "W ", hint = "H ", info = "I " },
+                symbols = { error = " ", warn = " ", hint = "✎ ", info = " " },
                 'encoding',
                 'filetye'
             },

@@ -2,12 +2,22 @@ local noice = require('noice')
 noice.setup({
     cmdline = {
         format = {
-            cmdline = { icon = ">" },
+            cmdline = { icon = " " },
             search_down = { icon = "🔍⌄" },
             search_up = { icon = "🔍⌃" },
-            filter = { icon = "$" },
+            filter = { icon = " " },
             lua = { icon = "☾" },
             help = { icon = "?" },
+        },
+    },
+    routes = {
+        {
+            filter = {
+                event = "msg_show",
+                kind = "",
+                find = "written",
+            },
+            opts = { skip = true },
         },
     },
     lsp = {
