@@ -1,5 +1,5 @@
-local status, lualine = pcall(require, 'lualine')
-if (not status) then return end
+local lualine = require('lualine')
+local icons = require('katinbox.config').icons
 
 local function getclientnames()
     local bufnr = vim.fn.bufnr('')
@@ -58,7 +58,12 @@ lualine.setup {
             {
                 'diagnostics',
                 sources = { 'nvim_diagnostic' },
-                symbols = { error = " ", warn = " ", hint = "💡", info = " " },
+                symbols = {
+                    error = icons.diagnostics.Error,
+                    warn = icons.diagnostics.Warn,
+                    hint = icons.diagnostics.Hint,
+                    info = icons.diagnostics.Info
+                },
                 'encoding',
             },
             {
@@ -86,9 +91,9 @@ lualine.setup {
             {
                 "diff",
                 symbols = {
-                    added = " ",
-                    modified = " ",
-                    removed = " ",
+                    added = icons.git.added,
+                    modified = icons.git.modified,
+                    removed = icons.git.removed,
                 },
             },
             lsp_text_provider,
@@ -102,7 +107,6 @@ lualine.setup {
             { "location", padding = { left = 0, right = 1 } },
         },
         lualine_z = {
-            { 'location' },
             {
                 function()
                     return " " .. os.date("%R")

@@ -10,6 +10,16 @@ font:
     family: Victor Mono
   # Point size
   size: 15.0
+emoji:
+  font:
+    family: FontAwesome 6 Pro
+    style: Regular
+
+fallback_glyph:
+  font:
+    family: FontAwesome 6 Pro
+    style: Regular
+
 env:
   TERM: xterm-256color
 scrolling:
