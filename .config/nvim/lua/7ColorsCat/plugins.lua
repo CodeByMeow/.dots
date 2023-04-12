@@ -109,4 +109,5 @@ return {
 
     -- ui components
     { "MunifTanjim/nui.nvim",        lazy = true },
+    { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' }
 }
