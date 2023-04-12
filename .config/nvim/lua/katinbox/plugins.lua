@@ -1,5 +1,5 @@
 return {
-    { "rose-pine/neovim", name = "rose-pine" },
+    { "rose-pine/neovim",            name = "rose-pine" },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
@@ -24,7 +24,6 @@ return {
         }
     },
     "mbbill/undotree",
-    "nvim-tree/nvim-web-devicons",
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
@@ -105,4 +104,9 @@ return {
             "rcarriga/nvim-notify",
         },
     },
+    -- icons
+    { "nvim-tree/nvim-web-devicons", lazy = true },
+
+    -- ui components
+    { "MunifTanjim/nui.nvim",        lazy = true },
 }

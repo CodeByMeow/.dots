@@ -17,9 +17,6 @@ keymap.set('n', 'dw', 'vb"_d')
 -- Select all
 keymap.set('n', '<C-a>', 'gg<S-v>G')
 
--- New tab
-keymap.set('n', 'te', ':tabedit<Return>', { silent = true })
-
 -- Split window
 keymap.set('n', 'ss', ':split<Return><C-w>w', { silent = true })
 keymap.set('n', 'sv', ':vsplit<Return><C-w>w', { silent = true })

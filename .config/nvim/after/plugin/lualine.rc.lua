@@ -19,7 +19,15 @@ local lsp_text_provider = function()
     local clients = vim.lsp.buf_get_clients(bufnr)
     if vim.tbl_isempty(clients) then return '' end
     local names = getclientnames()
-    return string.format('LSP [%s]', names)
+    return string.format(' [%s]', names)
+end
+
+local function fg(name)
+    return function()
+        ---@type {foreground?:number}?
+        local hl = vim.api.nvim_get_hl_by_name(name, true)
+        return hl and hl.foreground and { fg = string.format("#%06x", hl.foreground) }
+    end
 end
 
 lualine.setup {
@@ -48,42 +56,51 @@ lualine.setup {
         lualine_b = { 'branch' },
         lualine_c = {
             {
-                'filename',
-                file_status = true, -- display file status
-                path = 0,           -- 0 - just filename
-            },
-            'diff',
-            {
-                require("noice").api.status.message.get_hl,
-                cond = require("noice").api.status.message.has,
+                'diagnostics',
+                sources = { 'nvim_diagnostic' },
+                symbols = { error = " ", warn = " ", hint = "💡", info = " " },
+                'encoding',
             },
             {
-                require("noice").api.status.command.get,
-                cond = require("noice").api.status.command.has,
-                color = { fg = "#ff9e64" },
+                "filetype",
+                icon_only = true,
+                separator = "",
+                padding = {
+                    left = 1, right = 0 }
             },
+            { "filename", path = 1, symbols = { modified = " ", readonly = " ", unnamed = " " } },
             {
-                require("noice").api.status.mode.get,
-                cond = require("noice").api.status.mode.has,
-                color = { fg = "#ff9e64" },
+                function() return require("noice").api.status.command.get() end,
+                cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+                color = fg("Statement")
             },
+            -- stylua: ignore
             {
-                require("noice").api.status.search.get,
-                cond = require("noice").api.status.search.has,
-                color = { fg = "#ff9e64" },
+                function() return require("noice").api.status.mode.get() end,
+                cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+                color = fg("Constant"),
             },
         },
         lualine_x = {
+            { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = fg("Special") },
             {
-                'diagnostics',
-                sources = { 'nvim_diagnostic' },
-                symbols = { error = " ", warn = " ", hint = "✎ ", info = " " },
-                'encoding',
-                'filetye'
+                "diff",
+                symbols = {
+                    added = " ",
+                    modified = " ",
+                    removed = " ",
+                },
             },
-            lsp_text_provider
+            lsp_text_provider,
         },
-        lualine_y = { 'filesize', 'progress' },
+        lualine_y = { 'filesize',
+            {
+                "progress",
+                separator = " ",
+                padding = { left = 1, right = 0 }
+            },
+            { "location", padding = { left = 0, right = 1 } },
+        },
         lualine_z = {
             { 'location' },
             {
@@ -93,18 +110,5 @@ lualine.setup {
             },
         }
     },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { {
-            'filename',
-            file_status = true,
-            path = 1 -- 1 =  relative path
-        } },
-        lualine_x = { 'location' },
-        lualine_y = {},
-        lualine_z = {},
-    },
-    tabline = {},
     extensions = { 'fugitive', 'lazy' }
 }

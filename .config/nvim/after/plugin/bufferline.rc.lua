@@ -1,7 +1,4 @@
-local status, bufferline = pcall(require, "bufferline")
-
-if (not status) then return end
-
+local bufferline = require("bufferline")
 local map = vim.api.nvim_set_keymap
 local opts = { silent = true, noremap = true }
 

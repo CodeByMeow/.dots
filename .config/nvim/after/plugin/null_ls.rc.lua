@@ -15,6 +15,7 @@ null_ls.setup {
         completion.spell,
         diagnostics.fish,
     },
+    ---@diagnostic disable-next-line: unused-local
     on_attach = function(client, bufnr)
         if vim.bo.filetype == "norg" then
             return;
