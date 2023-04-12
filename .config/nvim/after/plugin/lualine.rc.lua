@@ -1,5 +1,5 @@
 local lualine = require('lualine')
-local icons = require('katinbox.config').icons
+local icons = require('7ColorsCat.config').icons
 
 local function getclientnames()
     local bufnr = vim.fn.bufnr('')

@@ -1,1 +1,1 @@
-require('katinbox')
+require('7ColorsCat')

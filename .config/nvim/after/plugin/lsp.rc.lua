@@ -1,5 +1,5 @@
-local status, lsp = pcall(require, 'lsp-zero')
-if not status then return end
+local lsp = require('lsp-zero')
+local icons = require('7ColorsCat.config').icons
 
 lsp.preset('recommended')
 
@@ -90,7 +90,10 @@ lsp.setup_nvim_cmp({
 lsp.set_preferences({
     suggest_lsp_servers = true,
     sign_icons = {
-        error = " ", warn = " ", hint = "💡", info = " "
+        error = icons.diagnostics.Error,
+        warn = icons.diagnostics.Warn,
+        hint = icons.diagnostics.Hint,
+        info = icons.diagnostics.Info
     },
     setup_servers_on_start = true,
     set_lsp_keymaps = false,
@@ -103,12 +106,3 @@ lsp.set_preferences({
 lsp.nvim_workspace()
 
 lsp.setup()
-
-vim.diagnostic.config({
-    virtual_text = true,
-    signs = true,
-    update_in_insert = false,
-    underline = true,
-    severity_sort = false,
-    float = true,
-})

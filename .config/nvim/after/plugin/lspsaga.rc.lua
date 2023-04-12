@@ -1,4 +1,4 @@
-local icons = require('katinbox.config').icons
+local icons = require('7ColorsCat.config').icons
 
 require("lspsaga").setup {
     request_timeout = 2000,
