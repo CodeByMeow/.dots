@@ -1,5 +1,4 @@
-local status, autopair = pcall(require, 'nvim-autopairs')
-if (not status) then return end
+local autopair = require('nvim-autopairs')
 
 autopair.setup {
     disable_filetype = { 'Telescope', 'vim' }

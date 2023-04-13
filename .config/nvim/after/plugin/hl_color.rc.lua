@@ -1,4 +1,3 @@
-local status, hl_colors = pcall(require, 'nvim-highlight-colors')
-if (not status) then return end
+local hl_colors = require('nvim-highlight-colors')
 
 hl_colors.setup()

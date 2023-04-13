@@ -1,5 +1,4 @@
-local status, git = pcall(require, "git")
-if (not status) then return end
+local git = require("git")
 
 git.setup({
     keymaps = {

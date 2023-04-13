@@ -1,5 +1,4 @@
-local status, blankline = pcall(require, 'indent_blankline')
-if (not status) then return end
+local blankline = require('indent_blankline')
 
 vim.opt.list = true
 vim.opt.listchars:append "eol:↴"
