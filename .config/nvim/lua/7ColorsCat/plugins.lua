@@ -6,7 +6,6 @@ return {
             "nvim-lua/plenary.nvim",
         }
     },
-    "nvim-lualine/lualine.nvim",
     {
         "nvim-treesitter/nvim-treesitter",
         build = function()
@@ -23,7 +22,6 @@ return {
             { "windwp/nvim-autopairs", config = true, event = "InsertEnter" },
         }
     },
-    "mbbill/undotree",
     {
         "VonHeikemen/lsp-zero.nvim",
         dependencies = {
@@ -47,37 +45,15 @@ return {
             { "tzachar/cmp-tabnine", build = "./install.sh" },
         }
     },
-    "mattn/emmet-vim",
-    "jose-elias-alvarez/null-ls.nvim",
-    "max397574/better-escape.nvim",
-    "akinsho/bufferline.nvim",
-    "lukas-reineke/indent-blankline.nvim",
     {
         "glepnir/lspsaga.nvim",
         event = "BufRead",
         dependencies = { { "nvim-tree/nvim-web-devicons" }, { "nvim-treesitter/nvim-treesitter" } }
     },
-    -- Better buffer closing
-    "famiu/bufdelete.nvim",
-    "lewis6991/gitsigns.nvim",
-    "dinhhuy258/git.nvim",
-    -- "rcarriga/nvim-notify",
-    "yamatsum/nvim-cursorline",
-    "numToStr/Comment.nvim",
-    -- Standalone UI for nvim-lsp progress
-    -- "j-hui/fidget.nvim",
-    -- Surround
-    "kylechui/nvim-surround",
-    -- Tmux
-    "aserowy/tmux.nvim",
-    -- Highlight color
-    "brenoprata10/nvim-highlight-colors",
     {
         "iamcco/markdown-preview.nvim",
         build = function() vim.fn["mkdp#util#install"]() end,
     },
-    "kevinhwang91/rnvimr",
-    "ThePrimeagen/harpoon",
     {
         "nvim-neorg/neorg",
         build = ":Neorg sync-parsers",
@@ -91,7 +67,6 @@ return {
         event = "BufWritePre"
     },
 
-    "folke/zen-mode.nvim",
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -106,8 +81,29 @@ return {
     },
     -- icons
     { "nvim-tree/nvim-web-devicons", lazy = true },
-
     -- ui components
     { "MunifTanjim/nui.nvim",        lazy = true },
-    { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' }
+    { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
+    "nvim-lualine/lualine.nvim",
+    "mbbill/undotree",
+    "mattn/emmet-vim",
+    "jose-elias-alvarez/null-ls.nvim",
+    "max397574/better-escape.nvim",
+    "akinsho/bufferline.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    "folke/zen-mode.nvim",
+    -- Better buffer closing
+    "famiu/bufdelete.nvim",
+    "lewis6991/gitsigns.nvim",
+    "dinhhuy258/git.nvim",
+    "yamatsum/nvim-cursorline",
+    "numToStr/Comment.nvim",
+    -- Surround
+    "kylechui/nvim-surround",
+    -- Tmux
+    "aserowy/tmux.nvim",
+    -- Highlight color
+    "brenoprata10/nvim-highlight-colors",
+    "kevinhwang91/rnvimr",
+    "ThePrimeagen/harpoon",
 }

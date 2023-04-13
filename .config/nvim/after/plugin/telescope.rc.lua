@@ -24,9 +24,9 @@ telescope.setup {
             }
         },
         prompt_prefix = "🔍 ",
-        selection_caret = " ",
+        selection_caret = " ",
         entry_prefix = "  ",
-        file_ignore_patterns = { "node_modules", ".git" }
+        file_ignore_patterns = { "node_modules", ".git/" }
     },
 }
 
