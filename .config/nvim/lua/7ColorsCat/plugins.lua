@@ -1,10 +1,30 @@
 return {
+    "nvim-lualine/lualine.nvim",
+    "mbbill/undotree",
+    "mattn/emmet-vim",
+    "jose-elias-alvarez/null-ls.nvim",
+    "max397574/better-escape.nvim",
+    "akinsho/bufferline.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    "folke/zen-mode.nvim",
+    -- Better buffer closing
+    "famiu/bufdelete.nvim",
+    "lewis6991/gitsigns.nvim",
+    "dinhhuy258/git.nvim",
+    "yamatsum/nvim-cursorline",
+    "numToStr/Comment.nvim",
+    -- Surround
+    "kylechui/nvim-surround",
+    -- Tmux
+    "aserowy/tmux.nvim",
+    -- Highlight color
+    "brenoprata10/nvim-highlight-colors",
+    "kevinhwang91/rnvimr",
+    "ThePrimeagen/harpoon",
     { "rose-pine/neovim",            name = "rose-pine" },
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        }
+        dependencies = "nvim-lua/plenary.nvim",
     },
     {
         "nvim-treesitter/nvim-treesitter",
@@ -85,26 +105,5 @@ return {
     { "MunifTanjim/nui.nvim",        lazy = true },
     { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
     { 'kevinhwang91/nvim-ufo',       dependencies = 'kevinhwang91/promise-async' },
-    "nvim-lualine/lualine.nvim",
-    "mbbill/undotree",
-    "mattn/emmet-vim",
-    "jose-elias-alvarez/null-ls.nvim",
-    "max397574/better-escape.nvim",
-    "akinsho/bufferline.nvim",
-    "lukas-reineke/indent-blankline.nvim",
-    "folke/zen-mode.nvim",
-    -- Better buffer closing
-    "famiu/bufdelete.nvim",
-    "lewis6991/gitsigns.nvim",
-    "dinhhuy258/git.nvim",
-    "yamatsum/nvim-cursorline",
-    "numToStr/Comment.nvim",
-    -- Surround
-    "kylechui/nvim-surround",
-    -- Tmux
-    "aserowy/tmux.nvim",
-    -- Highlight color
-    "brenoprata10/nvim-highlight-colors",
-    "kevinhwang91/rnvimr",
-    "ThePrimeagen/harpoon",
+    { "ziontee113/icon-picker.nvim", dependencies = 'stevearc/dressing.nvim' }
 }

@@ -19,7 +19,7 @@ local lsp_text_provider = function()
     local clients = vim.lsp.buf_get_clients(bufnr)
     if vim.tbl_isempty(clients) then return '' end
     local names = getclientnames()
-    return string.format(icons.kind["Method"][1] .. '[%s]', names)
+    return string.format('🧐 [%s]', names)
 end
 
 local function fg(name)
@@ -99,7 +99,7 @@ lualine.setup {
         lualine_z = {
             {
                 function()
-                    return icons.kind["Unit"][1] .. os.date("%R")
+                    return "🥯 " .. os.date("%R")
                 end,
             },
         }
