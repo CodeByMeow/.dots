@@ -84,6 +84,7 @@ return {
     -- ui components
     { "MunifTanjim/nui.nvim",        lazy = true },
     { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
+    { 'kevinhwang91/nvim-ufo',       dependencies = 'kevinhwang91/promise-async' },
     "nvim-lualine/lualine.nvim",
     "mbbill/undotree",
     "mattn/emmet-vim",
