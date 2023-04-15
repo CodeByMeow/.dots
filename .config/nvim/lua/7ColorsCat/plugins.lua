@@ -21,6 +21,7 @@ return {
     "brenoprata10/nvim-highlight-colors",
     "kevinhwang91/rnvimr",
     "ThePrimeagen/harpoon",
+    "karb94/neoscroll.nvim",
     { "rose-pine/neovim",            name = "rose-pine" },
     {
         "nvim-telescope/telescope.nvim",
