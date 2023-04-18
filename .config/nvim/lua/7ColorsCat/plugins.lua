@@ -11,7 +11,6 @@ return {
     "famiu/bufdelete.nvim",
     "lewis6991/gitsigns.nvim",
     "dinhhuy258/git.nvim",
-    "yamatsum/nvim-cursorline",
     "numToStr/Comment.nvim",
     -- Surround
     "kylechui/nvim-surround",
@@ -22,6 +21,7 @@ return {
     "kevinhwang91/rnvimr",
     "ThePrimeagen/harpoon",
     "karb94/neoscroll.nvim",
+    "RRethy/vim-illuminate",
     { "rose-pine/neovim",            name = "rose-pine" },
     {
         "nvim-telescope/telescope.nvim",
