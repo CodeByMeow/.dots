@@ -56,17 +56,6 @@ lualine.setup {
         lualine_b = { 'branch' },
         lualine_c = {
             {
-                'diagnostics',
-                sources = { 'nvim_diagnostic' },
-                symbols = {
-                    error = icons.diagnostics.Error,
-                    warn = icons.diagnostics.Warn,
-                    hint = icons.diagnostics.Hint,
-                    info = icons.diagnostics.Info
-                },
-                'encoding',
-            },
-            {
                 "filetype",
                 icon_only = true,
                 separator = "",
@@ -78,6 +67,17 @@ lualine.setup {
         },
         lualine_x = {
             { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = fg("Special") },
+            {
+                'diagnostics',
+                sources = { 'nvim_diagnostic' },
+                symbols = {
+                    error = icons.diagnostics.Error,
+                    warn = icons.diagnostics.Warn,
+                    hint = icons.diagnostics.Hint,
+                    info = icons.diagnostics.Info
+                },
+                'encoding',
+            },
             {
                 "diff",
                 symbols = {
