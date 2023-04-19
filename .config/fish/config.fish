@@ -75,6 +75,7 @@ alias tpi='$HOME/.config/tmux/plugins/tpm/bin/install_plugins' # Installs Tmux p
 alias tpu='$HOME/.config/tmux/plugins/tpm/bin/update_plugins all' # Updates all Tmux plugins
 
 alias yt='ytfzf -ts --notify-playing'
+alias sf='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
 
 function k
     bluetoothctl connect DC:2C:26:0F:A5:D2
