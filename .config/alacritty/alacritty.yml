@@ -9,15 +9,15 @@ font:
   bold_italic:
     family: Victor Mono
   # Point size
-  size: 15.0
+  size: 12.0
 emoji:
   font:
-    family: FontAwesome 6 Pro
+    family: Font Awesome 6 Pro
     style: Regular
 
 fallback_glyph:
   font:
-    family: FontAwesome 6 Pro
+    family: Font Awesome 6 Pro
     style: Regular
 
 env:
