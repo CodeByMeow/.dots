@@ -4,7 +4,7 @@ local icons = require('7ColorsCat.config').icons
 lsp.preset('recommended')
 
 local server_list = {
-    "tsserver", "lua_ls", "cssls", "html", "intelephense", "tailwindcss",
+    "tsserver", "lua_ls", "cssls", "html", "intelephense",
     "jsonls", "pyright", "eslint"
 }
 

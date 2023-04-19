@@ -1,4 +1,5 @@
 local icons = require("7ColorsCat.config").icons
+
 local function get_diagnostic_label(props)
     local icons = {
         error = icons.diagnostics.Error,
