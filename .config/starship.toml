@@ -117,10 +117,10 @@ disabled = true
 
 [character]
 success_symbol = "[](bold #EBDBB2)"
-error_symbol = "[](bold fg:red)"
+error_symbol = "[⛔ ](bold fg:red)"
 
 [aws]
-symbol = " "
+symbol = " "
 
 [conda]
 symbol = " "
@@ -129,7 +129,7 @@ symbol = " "
 symbol = " "
 
 [docker_context]
-symbol = " "
+symbol = " "
 
 [elixir]
 symbol = " "
@@ -138,13 +138,13 @@ symbol = " "
 symbol = " "
 
 [golang]
-symbol = " "
+symbol = " "
 
 [hg_branch]
 symbol = " "
 
 [java]
-symbol = " "
+symbol = " "
 
 [julia]
 symbol = " "
@@ -156,10 +156,10 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [package]
-symbol = " "
+symbol = " "
 
 [perl]
 symbol = " "
@@ -171,13 +171,13 @@ symbol = " "
 symbol = " "
 
 [ruby]
-symbol = " "
+symbol = " "
 
 [rust]
 symbol = " "
 
 [swift]
-symbol = "ﯣ "
+symbol = " "
 
 [lua]
 symbol = " "

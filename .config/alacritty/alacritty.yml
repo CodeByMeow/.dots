@@ -1,23 +1,23 @@
 #Font
 font:
   normal:
-    family: JetBrains Mono
+    family: monospace
   bold:
-    family: JetBrains Mono
+    family: monospace
   italic:
-    family: Victor Mono
+    family: italic-monospace
   bold_italic:
-    family: Victor Mono
+    family: italic-monospace
   # Point size
-  size: 12.0
+  size: 14.0
 emoji:
   font:
-    family: Font Awesome 6 Pro
+    family: Noto Color Emoji
     style: Regular
 
 fallback_glyph:
   font:
-    family: Font Awesome 6 Pro
+    family: Noto Color Emoji
     style: Regular
 
 env:

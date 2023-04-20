@@ -87,6 +87,7 @@ mpv yt-dlp
 - Font Awesome 6 Pro
 - Monocraft
 - JetBrans Mono
+- Noto-fonts-emoji
 
 ### Break
 

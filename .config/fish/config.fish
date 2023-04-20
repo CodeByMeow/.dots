@@ -105,3 +105,4 @@ function rangercd
 end
 
 source ~/.config/fish/themes/rose-pine.fish
+

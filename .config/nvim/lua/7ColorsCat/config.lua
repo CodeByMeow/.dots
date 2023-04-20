@@ -45,7 +45,7 @@ M.icons = {
         ["Macro"] = { ' ', 'Macro' },
         ["Text"] = { ' ', 'String' },
         ["Snippet"] = { ' ', '@variable' },
-        ["Folder"] = { ' ', '@parameter' },
+        ["Folder"] = { '📂 ', '@parameter' },
         ["Unit"] = { ' ', 'Number' },
         ["Value"] = { ' ', '@variable' },
     }
