@@ -77,11 +77,6 @@ return {
         build = function() vim.fn["mkdp#util#install"]() end,
     },
     {
-        "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        dependencies = { { "nvim-lua/plenary.nvim" } },
-    },
-    {
         "jghauser/mkdir.nvim",
         build = function()
             require('mkdir')
