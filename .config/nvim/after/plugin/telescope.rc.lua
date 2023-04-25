@@ -48,3 +48,6 @@ end)
 vim.keymap.set('n', '<leader>d', function()
     builtin.diagnostics()
 end)
+
+vim.cmd('highlight TelescopeNormal guibg=transparent')
+vim.cmd('highlight TelescopeBorder guifg=transparent guibg=transparent')
