@@ -5,7 +5,7 @@ lsp.preset('recommended')
 
 local server_list = {
     "tsserver", "lua_ls", "cssls", "html", "intelephense",
-    "jsonls", "pyright", "eslint"
+    "jsonls", "pyright", "eslint", "tailwindcss"
 }
 
 lsp.ensure_installed(server_list)

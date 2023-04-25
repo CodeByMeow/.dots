@@ -36,7 +36,7 @@ window:
     instance: Alacritty
     general: Alacritty
   decorations_theme_variant: Dark
-  opacity: 0.0
+  opacity: 0.65
 
 draw_bold_text_with_bright_colors: true
 
