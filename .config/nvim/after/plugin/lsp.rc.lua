@@ -21,6 +21,12 @@ lsp.configure('lua_ls', {
     }
 })
 
+lsp.configure('tailwindcss', {
+    on_attach = function(_, bufnr)
+        require('tailwindcss-colors').buf_attach(bufnr)
+    end
+})
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({

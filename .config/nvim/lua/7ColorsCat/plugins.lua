@@ -102,5 +102,11 @@ return {
     { "MunifTanjim/nui.nvim",        lazy = true },
     { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
     { 'kevinhwang91/nvim-ufo',       dependencies = 'kevinhwang91/promise-async' },
-    { "ziontee113/icon-picker.nvim", dependencies = 'stevearc/dressing.nvim' }
+    { "ziontee113/icon-picker.nvim", dependencies = 'stevearc/dressing.nvim' },
+    {
+        "themaxmarchuk/tailwindcss-colors.nvim",
+        -- load only on require("tailwindcss-colors")
+        module = "tailwindcss-colors",
+        -- run the setup function after plugin is loaded
+    }
 }

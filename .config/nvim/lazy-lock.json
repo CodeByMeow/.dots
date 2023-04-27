@@ -52,6 +52,7 @@
   "promise-async": { "branch": "main", "commit": "e94f35161b8c5d4a4ca3b6ff93dd073eb9214c0e" },
   "rnvimr": { "branch": "main", "commit": "5edff6189cb0f4fae77ee751de5109a8f87cb9c7" },
   "rose-pine": { "branch": "main", "commit": "667851c05f87874826084474b5f04829940b6451" },
+  "tailwindcss-colors.nvim": { "branch": "main", "commit": "ccb5be2f84673c1a0ef90a0c0a76733e85e5265b" },
   "telescope.nvim": { "branch": "master", "commit": "713d26b98583b160b50fb827adb751f768238ed3" },
   "tmux.nvim": { "branch": "main", "commit": "b6da35847df972f50df27d938b6e5ea09bcc8391" },
   "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
