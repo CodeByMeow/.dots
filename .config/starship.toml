@@ -156,10 +156,10 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [package]
-symbol = " "
+symbol = "📦 "
 
 [perl]
 symbol = " "
