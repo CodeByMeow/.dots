@@ -93,5 +93,3 @@ mpv yt-dlp
 
 [ Breaktimer ](https://breaktimer.app/) - Pomodoro app.
 
-### Some fun
-oneko

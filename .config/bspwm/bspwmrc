@@ -39,4 +39,3 @@ feh --bg-fill ~/.config/wallpaper/bg.jpg
 picom --experimental-backends &
 unclutter -idle 10 &
 ibus-daemon &
-oneko -tora -speed 28
