@@ -108,5 +108,15 @@ return {
         -- load only on require("tailwindcss-colors")
         module = "tailwindcss-colors",
         -- run the setup function after plugin is loaded
-    }
+    },
+    -- DAP
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            "theHamsta/nvim-dap-virtual-text",
+            "rcarriga/nvim-dap-ui",
+            "nvim-telescope/telescope-dap.nvim"
+        },
+    },
+    "sunjon/shade.nvim"
 }

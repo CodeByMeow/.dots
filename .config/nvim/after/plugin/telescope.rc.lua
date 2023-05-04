@@ -51,3 +51,5 @@ end)
 
 vim.cmd('highlight TelescopeNormal guibg=transparent')
 vim.cmd('highlight TelescopeBorder guifg=transparent guibg=transparent')
+
+require('telescope').load_extension('dap')
