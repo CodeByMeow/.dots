@@ -37,7 +37,6 @@ return {
             "p00f/nvim-ts-rainbow",
             "nvim-treesitter/playground",
             "JoosepAlviste/nvim-ts-context-commentstring",
-            "andymass/vim-matchup",
             "windwp/nvim-ts-autotag",
             "David-Kunz/markid",
             "nvim-treesitter/nvim-treesitter-textobjects",

@@ -18,9 +18,6 @@ ts.setup {
         extended_mode = false,
         max_file_lines = nil,
     },
-    matchup = {
-        enable = true,
-    },
     autopairs = { enable = true },
     autotag = { enable = true },
     incremental_selection = { enable = true },
