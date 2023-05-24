@@ -1,5 +1,5 @@
 return {
-    "nvim-lualine/lualine.nvim",
+    "tamton-aquib/staline.nvim",
     "mbbill/undotree",
     "mattn/emmet-vim",
     "jose-elias-alvarez/null-ls.nvim",
@@ -117,5 +117,5 @@ return {
             "nvim-telescope/telescope-dap.nvim"
         },
     },
-    "sunjon/shade.nvim"
+    "sunjon/shade.nvim",
 }
