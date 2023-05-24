@@ -1,7 +1,7 @@
 local icons = require("7ColorsCat.config").icons.diagnostics
 require "staline".setup {
     sections = {
-        left = { '  ', 'mode', 'cwd', 'branch', ' ', 'lsp' },
+        left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
         mid = { 'lsp_name' },
         right = { 'file_name', 'file_size', 'line_column' }
     },
