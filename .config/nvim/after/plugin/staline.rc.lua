@@ -6,16 +6,16 @@ require "staline".setup {
         right = { 'file_name', 'file_size', 'line_column' }
     },
     mode_colors = {
-        i = "#d4be98",
-        n = "#84a598",
-        c = "#8fbf7f",
-        v = "#fc802d",
+        i = "#3e8fb0",
+        n = "#689D6A",
+        c = "#f6c177",
+        v = "#c4a7e7",
     },
     mode_icons = {
-        n = "NORMAL",
-        i = "INSERT",
-        c = "COMMAND",
-        v = "VISUAL", -- etc..
+        n = "🐌 NORMAL",
+        i = "🐢 INSERT",
+        c = "🦔 COMMAND",
+        v = "🦩 VISUAL", -- etc..
     },
     lsp_symbols = {
         Error = icons.Error,
@@ -24,9 +24,10 @@ require "staline".setup {
         Hint = icons.Hint,
     },
     defaults = {
-        true_colors = true,
-        line_column = "[%l/%L] :%c 並%p%% ",
-        branch_symbol = " ",
-        lsp_client_symbol = "  ",
+        true_colors       = true,
+        line_column       = "[%l/%L] :%c 並%p%% ",
+        branch_symbol     = " ",
+        lsp_client_symbol = "🦉 ",
+        mod_symbol        = " 🐣",
     }
 }

@@ -11,14 +11,11 @@ null_ls.setup {
         formatting.clang_format,
         formatting.cmake_format,
         formatting.codespell.with({ filetypes = { 'markdown' } }),
+        formatting.isort,
         completion.spell,
         diagnostics.fish,
     },
-    ---@diagnostic disable-next-line: unused-local
-    on_attach = function(client, bufnr)
-        if vim.bo.filetype == "norg" then
-            return;
-        end
+    on_attach = function(client)
         if client.server_capabilities.documentFormattingProvider then
             vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
             vim.api.nvim_create_autocmd("BufWritePre", {
