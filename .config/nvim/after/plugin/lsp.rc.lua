@@ -112,3 +112,10 @@ lsp.set_preferences({
 lsp.nvim_workspace()
 
 lsp.setup()
+
+vim.keymap.set("i", "<leader><Tab>", function()
+    require('luasnip').jump(1)
+end)
+vim.keymap.set("i", "<leader><S-Tab>", function()
+    require('luasnip').jump(-1)
+end)

@@ -74,7 +74,7 @@ alias t='tmux attach || tmux new-session'   # Attaches tmux to the last session;
 alias tpi='$HOME/.config/tmux/plugins/tpm/bin/install_plugins' # Installs Tmux plugins
 alias tpu='$HOME/.config/tmux/plugins/tpm/bin/update_plugins all' # Updates all Tmux plugins
 
-alias yt='ytfzf -ts --notify-playing'
+alias yt='ytfzf --ii --detach -ts --notify-playing'
 alias sf='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
 
 function k

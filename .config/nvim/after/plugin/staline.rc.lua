@@ -9,13 +9,15 @@ require "staline".setup {
         i = "#3e8fb0",
         n = "#689D6A",
         c = "#f6c177",
-        v = "#c4a7e7",
+        v = "#CE6CA0",
+        s = "#C74E01"
     },
     mode_icons = {
-        n = "🐌 NORMAL",
-        i = "🐢 INSERT",
-        c = "🦔 COMMAND",
+        n = "🪲 NORMAL",
+        i = "🐟 INSERT",
+        c = "🐗 COMMAND",
         v = "🦩 VISUAL", -- etc..
+        s = "🐡 SELECT"
     },
     lsp_symbols = {
         Error = icons.Error,
@@ -27,7 +29,7 @@ require "staline".setup {
         true_colors       = true,
         line_column       = "[%l/%L] :%c 並%p%% ",
         branch_symbol     = " ",
-        lsp_client_symbol = "🦉 ",
-        mod_symbol        = " 🐣",
+        lsp_client_symbol = "🛸 ",
+        mod_symbol        = " 🌊",
     }
 }
