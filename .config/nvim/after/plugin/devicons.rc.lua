@@ -9,7 +9,7 @@ require 'nvim-web-devicons'.setup {
             name = "Gitignore"
         },
         ["readme.md"] = {
-            icon = "車",
+            icon = "",
             color = "#3789CB",
             name = "Readme"
         },
