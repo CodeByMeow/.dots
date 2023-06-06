@@ -77,10 +77,6 @@ alias tpu='$HOME/.config/tmux/plugins/tpm/bin/update_plugins all' # Updates all 
 alias yt='ytfzf --ii --detach -ts --notify-playing'
 alias sf='LD_PRELOAD=/usr/local/lib/spotify-adblock.so spotify'
 
-function k
-    bluetoothctl connect DC:2C:26:0F:A5:D2
-end
-
 function nf 
     bash ~/.scripts/fetch.sh
 end
@@ -106,3 +102,6 @@ end
 
 source ~/.config/fish/themes/rose-pine.fish
 
+function notify
+    tmux display-message $argv 
+end
