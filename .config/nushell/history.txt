@@ -171,3 +171,118 @@ z
 e readme.md
 g dot open
 e gitbare.md
+bash
+exac nu
+z fish
+e config.nu
+nvm
+npm -h
+e config.fish
+zi
+node-ts index.ts
+yay -S node-ts
+yay -Ss node-ts
+npm i -g node-ts
+l
+ls
+node-ts index.ts
+which node-
+which node-ts
+$env.PATH
+z fish
+e config.nu
+exac nu
+node-ts index.ts
+npm init -y
+node-ts index.ts
+ni -D node-ts
+e config.fish
+npm i -g @antfu/ni
+ni -D node-ts
+ni -h
+yt
+ta
+ni
+which nde
+which none
+which node
+which npm
+cd .npm-packages/
+ls
+cd bin/
+ls
+$env.PATH
+t
+ta
+ls
+./ts-node 
+npm -h
+ni
+./ni
+npm-config
+nu -c ni
+nu -c ./ni
+nu -c 'spawn "ni"'
+nu -c
+nu st
+http get https://www.youtube.com
+http get https://www.youtube.com | table
+http get https://wttr.in
+curl https://wttr.in
+curl wttr.in
+curl wttr.in/?lang=vi
+curl wttr.in/0?lang=vi
+curl wttr.in/?lang=vi&view=1
+curl wttr.in/?lang=vi&view=0
+curl wttr.in/?lang=vi&view=2
+curl wttr.in/?lang=vi&view=T2
+curl wttr.in/?lang=vi&view=T
+curl wttr.in/?lang=vi&view=1
+curl wttr.in/?lang=vi&view=2
+curl wttr.in/?0pq&lang=vi
+z config
+cd polybar/
+chmod +x scripts/wtti.in.sh
+e
+polybar-msg cmd restart
+cd scripts/
+ls
+./wtti.in.sh
+curl -s https://wtti.in/?view=1
+e
+cd scripts/
+./wtti.in.sh
+curl -s https://wtti.in/?view=1
+curl wtti.in/?view=1
+mv wtti.in.sh wttr.in.sh
+./wtti.in.sh
+./wttr.in.sh
+curl wtti.in/?view=2
+curl wttr.in/?view=2
+curl wttr.in/?view=0
+./wttr.in.sh
+e wttr.in.sh
+polybar-msg cmd restart
+yay -S xdotool
+polybar-msg cmd restart
+yay -S dzen2
+polybar-msg cmd restart
+e
+curl -ks v3.wttr.in
+curl -ks v3.wttr.in/HoChiMinh.sxl
+curl -ks v3.wttr.in/SaiGon.sxl
+curl wttr.in/
+curl -ks v3.wttr.in/"Ho Chi Minh City".sxl
+curl -ks v3.wttr.in/HoChiMinhCity.sxl
+cd ..
+polybar-msg cmd restart
+e 
+g dot add -u
+g dot add ./scripts/
+g dot st
+g dot ci -m "weather polybar"
+g dot ps
+g dot open
+g dot rm --cached ../fish
+g dot rm --cached ../fish -r
+g dot add nu
