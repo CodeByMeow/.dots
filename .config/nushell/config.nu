@@ -544,11 +544,11 @@ let-env config = {
 alias g = git
 
 #Tmux
+alias ta = tmux attach
 alias tks = tmux kill-server            # Kill everything
 alias tl = tmux list-sessions           # List all of the open tmux sessions
 alias tn = tmux new-session -s          # Create a new tmux session - Specify a name
 alias tk = tmux kill-session -a         # Kill all of the OTHER tmux sessions
-alias t = tmux attach or tmux new-session   # Attaches tmux to the last session; creates a new session if none exists.
 alias tpi = ~/.config/tmux/plugins/tpm/bin/install_plugins # Installs Tmux plugins
 alias tpu = ~/.config/tmux/plugins/tpm/bin/update_plugins all # Updates all Tmux plugins
 

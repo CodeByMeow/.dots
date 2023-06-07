@@ -117,7 +117,7 @@ disabled = true
 
 [character]
 success_symbol = "[](bold #EBDBB2)"
-error_symbol = "[ ](bold fg:red)"
+error_symbol = "[](bold fg:red)"
 
 [aws]
 symbol = " "

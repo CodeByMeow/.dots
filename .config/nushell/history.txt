@@ -84,3 +84,82 @@ g dot add.
 g dot add .
 g dot st
 g dot rm --cached history.txt
+g dot add -u
+g dot st
+g dot ci -m 'feat: replace nushell insteal of fishshell'
+g dot ps
+cd
+t
+tmux
+t
+e config.nu
+t
+tmux
+e config.nu
+t
+e config.nu
+t
+e config.nu
+g dot st
+g dot add -u
+g dot ci -m 'fix: alias tmux'
+g dot ps
+man zoxide
+z --list
+z rm config.nu
+z st
+z 
+zl
+z i
+zi
+z zns
+cd ..
+ls
+ls | grep z
+ls | grep .z
+du
+duf
+trash-list
+trash-empty 
+trash-list
+mpv "https://youtu.be/VsTY-kyp2Js?t=74" --no-video
+yt
+e config.nu
+fzf
+ls
+cd unix/
+l
+ls
+ls -l
+ls -a
+ls -h
+ls -s | where typue 
+ls -s | where type == dir
+cd learnings/
+ls
+cd typescript/basic/
+ls
+e index.ts
+z .config
+ls
+e starship.toml
+z nvim
+e 
+vim
+e 
+z web
+cd
+cd web
+l
+ls
+cd apj/apj-local-build/
+l
+ls
+cd data/html/
+ls
+e
+z .config
+ls
+vim starship.toml
+e starship.toml
+g dot st

@@ -16,7 +16,7 @@ require 'nvim-web-devicons'.setup {
     },
     override_by_extension = {
         ["log"] = {
-            icon = "",
+            icon = "",
             color = "#81e043",
             name = "Log"
         },
@@ -26,7 +26,7 @@ require 'nvim-web-devicons'.setup {
             name = "JavaScript"
         },
         ["php"] = {
-            icon = "",
+            icon = "",
             color = "#6181B6",
             name = "PHP"
         }
