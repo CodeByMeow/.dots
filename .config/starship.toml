@@ -105,7 +105,7 @@ disabled = false
 format = "$time"
 
 [directory]
-read_only = " "
+read_only = " "
 truncation_length = 3
 truncation_symbol = "./"
 
@@ -117,7 +117,7 @@ disabled = true
 
 [character]
 success_symbol = "[](bold #EBDBB2)"
-error_symbol = "[⛔ ](bold fg:red)"
+error_symbol = "[ ](bold fg:red)"
 
 [aws]
 symbol = " "

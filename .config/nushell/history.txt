@@ -1,0 +1,86 @@
+rm history.txt
+nf
+e config.nu
+ls
+dotfile add .
+z .dotfiles
+ls
+zp
+z p
+zi
+l
+ls
+[1 2 3 4 5] | input list 'Rate it'
+ [Banana Kiwi Pear Peach Strawberry] | input list -m 'Add fruits to the basket'
+e config.nu
+notify "ni"
+$env
+$env | grep HOME
+HOME
+pwd $HOME
+pwd HOME
+cd $HOME
+cd HOME
+cd (HOME)
+$env.HOME
+e config.nu
+e config.fish
+dotfile st
+cd $env.HOME/.dofiles
+cd HOME/.dofiles
+cd $HOME/.dofiles
+cd $env.home
+cd $env.HOME
+$env.HOME/.scripts/fetch.sh
+$env.HOME/ .scripts/fetch.sh
+z nus
+ls 
+e config.fish
+e config.nu
+dotfile st
+e config.nu
+dotfile st
+git init --bare $HOME/.dotfiles<\n>
+git init --bare $env.HOME/.dotfiles<\n>
+git init --bare $env.$HOME/.dotfiles<\n>
+git init --bare ~/.dotfiles<\n>
+dotfile st
+e config.nu
+dotfile st
+dotfiles config --local status.showUntrackedFiles no 
+dotfile config --local status.showUntrackedFiles no 
+cd
+ls
+ls | grep dotfile
+dotfile st
+e config.nu
+z nus
+e config.nu
+dotfile st
+e config.nu
+dotfile st
+git init --bare $HOME/.dotfiles<\n>
+git init --bare $env.HOME/.dotfiles<\n>
+git init --bare $env.home/.dotfiles<\n>
+git init --bare $env.PATH.HOME/.dotfiles<\n>
+$env.PATH
+$env.HOME
+e config.nu
+z .dotfiles
+g st
+g st --worktree=~
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME st
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME status
+cd
+e .gitconfig
+g dtf st
+e .gitconfig
+g dtf st
+g dtf add -u
+e .gitconfig
+g dot st
+z nus
+g dot add.
+g dot add .
+g dot st
+g dot rm --cached history.txt
