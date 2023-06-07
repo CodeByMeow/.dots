@@ -15,7 +15,7 @@
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
 - **Terminal Emulator** :a: [ Alacritty ](https://github.com/alacritty/alacritty)
-- **Shell** 🐟 [ Fish ](https://github.com/fish-shell/fish-shell)
+- **Shell** 🐚 [ Nushell ](https://www.nushell.sh)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
   - [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
@@ -58,17 +58,9 @@ mpv yt-dlp
 ### Shell setup
 
 - [ starship ](https://starship.rs/) - Shell theme
-- [z for fish](https://github.com/jethrokuan/z) : - Directory jumping
-  ```
-  fisher install jethrokuan/z
-  -- Nvm 
-  fisher install jorgebucaran/nvm.fish
-  ```
-- Terminal color scheme: Rose pine
-- [lsd](https://github.com/Peltoche/lsd) - `ls` replacements
-- [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
+- [z](https://github.com/ajeetdsouza/zoxide) : - Directory jumping
+- [rose-pine](https://rosepinetheme.com/)Terminal color scheme: Rose pine for alacritty
 - [peco](https://github.com/peco/peco) - Interactive filtering
-- [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
 - [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
   - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
@@ -92,4 +84,3 @@ mpv yt-dlp
 ### Break
 
 [ Breaktimer ](https://breaktimer.app/) - Pomodoro app.
-

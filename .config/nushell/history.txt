@@ -163,3 +163,11 @@ ls
 vim starship.toml
 e starship.toml
 g dot st
+g dot add -u
+g dot ci --amend --no-edit
+g dot ps -f
+g dot open
+z 
+e readme.md
+g dot open
+e gitbare.md
