@@ -544,6 +544,7 @@ let-env config = {
 alias g = git
 
 #Tmux
+alias tm = tmux
 alias ta = tmux attach
 alias tks = tmux kill-server            # Kill everything
 alias tl = tmux list-sessions           # List all of the open tmux sessions

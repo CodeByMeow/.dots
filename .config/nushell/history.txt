@@ -286,3 +286,18 @@ g dot open
 g dot rm --cached ../fish
 g dot rm --cached ../fish -r
 g dot add nu
+g dot add -u
+g dot st
+g dot ci --amend --no-edit
+g dot ps -f
+t
+tm
+z tmux
+l
+ls
+e nus
+z nus
+l
+ls
+e config.nu
+g dot add 
