@@ -22,7 +22,6 @@ return {
     "ThePrimeagen/harpoon",
     "karb94/neoscroll.nvim",
     "RRethy/vim-illuminate",
-    "b0o/incline.nvim",
     { "rose-pine/neovim",            name = "rose-pine" },
     {
         "nvim-telescope/telescope.nvim",
