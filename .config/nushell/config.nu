@@ -542,6 +542,7 @@ let-env config = {
 }
 
 alias g = git
+alias vim =  nvim
 
 #Tmux
 alias tm = tmux

@@ -367,3 +367,26 @@ evince thaysonbi.com-code-complete-2nd-Edition.pdf
 ls
 z alac
 e alacritty.yml
+g dot add -u
+g dot ci -m 'style(ter): alacritty window'
+g dot ps
+z vim
+e
+e index.ts
+e 
+e
+e 
+e
+e index.ts
+e ini
+e index.ts
+e
+sudo rm /urs/bin/e
+which e
+sudo rm /usr/bin/e
+sudo ln -s /usr/bin/nvim /usr/bin/vim
+yay -Rna vim
+yay -Rsa vim
+z nus
+nvim config.nu
+vim config.nu
