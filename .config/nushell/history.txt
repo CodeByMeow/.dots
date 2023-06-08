@@ -352,3 +352,18 @@ e
 g dot add -u
 z tmux
 e 
+g dot add -u
+g dot st
+g dot ci -m 'update icons'
+g dot ps
+e index.ts
+sudo manjaro-settings-manager 
+z 
+cd Documents/
+ls
+open thaysonbi.com-code-complete-2nd-Edition.pdf
+yay -S evince
+evince thaysonbi.com-code-complete-2nd-Edition.pdf
+ls
+z alac
+e alacritty.yml
