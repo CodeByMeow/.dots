@@ -301,3 +301,38 @@ l
 ls
 e config.nu
 g dot add 
+g dot co -f
+ta
+tm
+tn
+tm list
+tm ls
+yay -S lobster-git
+date
+date now
+lobster 
+yay -S socat
+lobster flash
+lobster flash -i
+z
+e readme.md
+g dot add -u
+g dot ci -m 'docs: update readme'
+g dot ps
+yay -S ueberzugpp
+lobster flash -i
+yay -Rns ueberzug
+yay -S ueberzugpp
+lobster flash -i
+lobster -i -l=vi doremon
+lobster -i -l vi doremon
+lobster -i doremon --rofi
+tn workspace
+lobster -i doremon --rofi
+lobster -i doremon 
+tm
+lobster -i doremon 
+sudo lobster -i doremon
+yay -Rsa lobster
+yay -Rsa lobster-git
+e readme.md
