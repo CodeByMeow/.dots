@@ -336,3 +336,19 @@ sudo lobster -i doremon
 yay -Rsa lobster
 yay -Rsa lobster-git
 e readme.md
+g dot co -f
+z bsp
+z ala
+e bspwmrc
+mpv "https://www.youtube.com/watch?v=O6bk36F4luU"
+z learn
+ls
+cd typescript/basic/
+ls
+tsc index.ts
+node index.js
+z vim
+e
+g dot add -u
+z tmux
+e 
