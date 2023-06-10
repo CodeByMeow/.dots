@@ -1,4 +1,4 @@
 #!/bin/bash
-out=$(curl -s "wttr.in/?view=2")
+out=$(curl -s "wttr.in/?view=4")
 echo $out
 
