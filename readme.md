@@ -59,7 +59,7 @@ mpv yt-dlp
 
 - [ starship ](https://starship.rs/) - Shell theme
 - [z](https://github.com/ajeetdsouza/zoxide) : - Directory jumping
-- [rose-pine](https://rosepinetheme.com/)Terminal color scheme: Rose pine for alacritty
+- [rose-pine](https://rosepinetheme.com/): - Color scheme
 - [peco](https://github.com/peco/peco) - Interactive filtering
 - [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
   - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
