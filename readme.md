@@ -80,6 +80,7 @@ mpv yt-dlp
 - Monocraft
 - JetBrans Mono
 - Noto-fonts-emoji
+- [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 
 ### Break
 
