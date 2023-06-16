@@ -543,6 +543,7 @@ let-env config = {
 
 alias g = git
 alias vim =  nvim
+alias tap = xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
 
 #Tmux
 alias tm = tmux
