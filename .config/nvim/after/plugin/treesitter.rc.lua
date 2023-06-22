@@ -36,7 +36,8 @@ ts.setup {
                 ["<leader>A"] = "@parameter.inner",
             },
         }
-    }
+    },
+    ignore_install = { 'help' }
 }
 
 vim.keymap.set('n', '<leader>p', '<cmd>:TSPlaygroundToggle<cr>', { noremap = true, silent = true })

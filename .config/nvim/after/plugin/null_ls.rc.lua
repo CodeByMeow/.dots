@@ -13,7 +13,6 @@ null_ls.setup {
         formatting.codespell.with({ filetypes = { 'markdown' } }),
         formatting.isort,
         completion.spell,
-        diagnostics.fish,
     },
     on_attach = function(client)
         if client.server_capabilities.documentFormattingProvider then
