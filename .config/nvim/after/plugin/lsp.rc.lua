@@ -5,7 +5,7 @@ lsp.preset('recommended')
 
 local server_list = {
     "tsserver", "lua_ls", "cssls", "html", "intelephense",
-    "jsonls", "pyright", "eslint", "tailwindcss"
+    "jsonls", "eslint", "tailwindcss"
 }
 
 lsp.ensure_installed(server_list)
@@ -33,13 +33,13 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
     ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
 })
 
 -- disable completion with tab
 -- this helps with copilot setup
 -- cmp_mappings['<Tab>'] = nil
 -- cmp_mappings['<S-Tab>'] = nil
-
 
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
