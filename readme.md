@@ -50,8 +50,7 @@ sxhkd cava dunst unclutter duf
 xorg-xsetroot acpilight gpick
 blueman bluetooth-autoconnect flameshot
 fd feh nautilus lxappearance lsd playerctl
-peaclock latextrun-git zathura okular mkpdf
-picom-junaburg-git polybar-spotify-git spotify
+mkpdf polybar-spotify-git spotify
 mpv yt-dlp
 ```
 
