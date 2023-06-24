@@ -13,6 +13,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "dressing.nvim": { "branch": "master", "commit": "1cbc4eef2ef7d745aa1a559b22589e33860cf077" },
   "emmet-vim": { "branch": "master", "commit": "def5d57a1ae5afb1b96ebe83c4652d1c03640f4d" },
+  "flash.nvim": { "branch": "main", "commit": "5e1096eab9823c566a63817642fc1d28f40b1af0" },
   "friendly-snippets": { "branch": "main", "commit": "5749f093759c29e3694053d048ceb940fe12c3d3" },
   "git.nvim": { "branch": "main", "commit": "7a342e61f28e321ef08e00fca4be74ff3ef88335" },
   "gitsigns.nvim": { "branch": "main", "commit": "a36bc3360d584d39b4fb076d855c4180842d4444" },
