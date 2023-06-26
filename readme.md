@@ -29,16 +29,6 @@
 
 _Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
-### Manjaro User
-
-> Point to the Fastest Mirror and Update your System
-
-```
-sudo pacman-mirrors --fasttrack
-sudo pacman -Syyu
-pacman -S --needed git base-devel
-```
-
 ### AUR Helper
 
 **Yet Another Yogurt** :heart: [yay](https://github.com/Jguer/yay)
@@ -47,11 +37,8 @@ pacman -S --needed git base-devel
 
 ```
 sxhkd cava dunst unclutter duf
-xorg-xsetroot acpilight gpick
-blueman bluetooth-autoconnect flameshot
-fd feh nautilus lxappearance lsd playerctl
-mkpdf polybar-spotify-git spotify
-mpv yt-dlp
+acpilight gpick bluetooth-autoconnect flameshot
+feh playerctl
 ```
 
 ### Shell setup

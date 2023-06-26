@@ -2,7 +2,7 @@ local ts = require("nvim-treesitter.configs")
 
 ts.setup {
     ensure_installed = { "help", "html", "javascript", "typescript", "lua", "css", "php", "jsdoc", "json", "tsx",
-        "markdown" },
+        "markdown", "markdown_inline" },
     sync_install = true,
     highlight = {
         enable = true,
