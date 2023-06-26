@@ -1,183 +1,124 @@
-add_newline = false
 format = """
-[┌─](bold #EBDBB2)\
+[█](#9A348E)\
 $username\
-$hostname\
+[](bg:#DA627D fg:#9A348E)\
 $directory\
-[\
+[](fg:#DA627D bg:#FCA17D)\
 $git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
 $git_status\
-$hg_branch\
-]\
-(bold bg:none fg:white)\
-$hg_branch\
-$docker_context\
-$package\
-$cmake\
-$cobol\
-$dart\
-$deno\
-$dotnet\
+[](fg:#FCA17D bg:#86BBD8)\
+$c\
 $elixir\
 $elm\
-$erlang\
 $golang\
-$helm\
+$haskell\
 $java\
 $julia\
-$kotlin\
-$lua\
-$nim\
 $nodejs\
-$ocaml\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$rlang\
-$red\
-$ruby\
+$nim\
 $rust\
-$scala\
-$swift\
-$terraform\
-$vlang\
-$vagrant\
-$zig\
-$nix_shell\
-$conda\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$fill\
-(fg: black)
-[│](bold #EBDBB2)
-[└─](bold #EBDBB2)\
-$singularity\
-$kubernetes\
-$character\
-$status
+[](fg:#86BBD8 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#33658A)\
+$time\
+[ ](fg:#33658A)\
 """
-
-[fill]
-symbol = " "
-
+ 
+# Disable the blank line at the start of the prompt
+# add_newline = false
+ 
+# You can also replace your username with a neat symbol like  to save some space
 [username]
-style_user = "bold #EB6F92"
-style_root = "bold #EBCB8B"
-format = "[$user]($style)"
-disabled = false
 show_always = true
-
-[hostname]
-ssh_only = false
-style = "bold #EB6F92"
-format = "[@](bold #EB6F92)[$hostname]($style) [in](#EBDBB2) "
-disabled = false
-
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user ]($style)'
+ 
+[directory]
+style = "bg:#DA627D"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+ 
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = "📄 "
+"Downloads" = "📥 "
+"Music" = "🎜 "
+"Pictures" = "📷 "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+ 
+[c]
+symbol = "© "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[docker_context]
+symbol = "🐳 "
+style = "bg:#06969A"
+format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+ 
+[elixir]
+symbol = "💧 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[elm]
+symbol = "🌳 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
 [git_branch]
-symbol = " "
-format = "on [$symbol$branch]($style) "
-style = "bold bg:none fg:green"
-
-[git_commit]
-style = "bold bg:none fg:blue"
-
-[git_state]
-style = "bold bg:none fg:cyan"
-
+symbol = "☊"
+style = "bg:#FCA17D"
+format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+ 
 [git_status]
-style = "bold bg:none fg:blue"
-ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}"
-deleted = "x"
-
+style = "bg:#FCA17D"
+format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+ 
+[golang]
+symbol = "🐹 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[haskell]
+symbol = "λ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[java]
+symbol = "☕ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[julia]
+symbol = "ஃ "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[nodejs]
+symbol = "🔷 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[nim]
+symbol = "👑 "
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
+[rust]
+symbol = "🦀"
+style = "bg:#86BBD8"
+format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+ 
 [time]
 disabled = false
-format = "$time"
-
-[directory]
-read_only = " "
-truncation_length = 3
-truncation_symbol = "./"
-
-[status]
-disabled = false
-
-[line_break]
-disabled = true
-
-[character]
-success_symbol = "[](bold #EBDBB2)"
-error_symbol = "[](bold fg:red)"
-
-[aws]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[golang]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = "📦 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = " "
-
-[swift]
-symbol = " "
-
-[lua]
-symbol = " "
+time_format = "%R" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[[ 🤍 $time ](bg:#33658A)]($style)'
