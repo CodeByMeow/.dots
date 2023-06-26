@@ -46,7 +46,7 @@ M.icons = {
         ["Text"] = { ' ', 'String' },
         ["Snippet"] = { '  ', '@variable' },
         ["Folder"] = { ' ', '@parameter' },
-        ["Unit"] = { '綠', 'Number' },
+        ["Unit"] = { '📌', 'Number' },
         ["Value"] = { ' ', '@variable' },
     }
 }
