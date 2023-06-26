@@ -125,10 +125,16 @@ super + {Left,Down,Up,Right}
 XF86AudioMute
 	amixer set Master toggle
 
+shift + Up
+	amixer set Master 5%+
+    
 XF86AudioRaiseVolume
 	amixer set Master 5%+
 
 XF86AudioLowerVolume
+	amixer set Master 5%-  
+    
+shift + Down
 	amixer set Master 5%-  
   
 # brightness control

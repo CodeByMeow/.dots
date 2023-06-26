@@ -11,6 +11,7 @@
 </div>
 
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
+- **Dislay Manger** 📺 [Ly](https://github.com/fairyglade/ly)
 - **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
