@@ -149,5 +149,6 @@ return {
                 desc = "Remote Flash",
             },
         },
-    }
+    },
+    'lambdalisue/suda.vim'
 }
