@@ -35,7 +35,7 @@ nm-applet &
 xsetroot -cursor_name left_ptr &
 pkill polybar
 ~/.config/polybar/launch.sh &
-feh --bg-fill ~/.config/wallpaper/bg.jpg
+nitrogen --restore &
 picom &
 unclutter -idle 10 &
 ibus-daemon

@@ -39,7 +39,7 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 ```
 sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
-feh playerctl xorg-xsetroot
+nitrogen playerctl xorg-xsetroot
 ```
 
 ### Shell setup
