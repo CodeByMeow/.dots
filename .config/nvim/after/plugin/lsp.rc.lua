@@ -2,7 +2,6 @@ local lsp = require('lsp-zero')
 local icons = require('7ColorsCat.config').icons
 
 lsp.preset('recommended')
-
 local server_list = {
     "tsserver", "lua_ls", "cssls", "html", "intelephense",
     "jsonls", "eslint", "tailwindcss"
@@ -48,6 +47,9 @@ cmp.event:on(
     cmp_autopairs.on_confirm_done()
 )
 
+require('luasnip.loaders.from_vscode').lazy_load()
+
+
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
     sources = cmp.config.sources({
@@ -90,6 +92,7 @@ lsp.setup_nvim_cmp({
 
         return true
     end,
+
 })
 
 

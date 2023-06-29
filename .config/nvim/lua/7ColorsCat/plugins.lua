@@ -60,7 +60,10 @@ return {
             "hrsh7th/cmp-cmdline",
 
             -- Snippets
-            "L3MON4D3/LuaSnip",
+            {
+                "L3MON4D3/LuaSnip",
+                build = "make install_jsregexp"
+            },
             "rafamadriz/friendly-snippets",
             { "tzachar/cmp-tabnine", build = "./install.sh" },
         }
