@@ -45,7 +45,7 @@ truncation_symbol = "…/"
 [directory.substitutions]
 "Documents" = "📄 "
 "Downloads" = "📥 "
-"Music" = "🎜 "
+"Music" = "🎵 "
 "Pictures" = "📷 "
 # Keep in mind that the order matters. For example:
 # "Important Documents" = "  "
@@ -74,7 +74,7 @@ style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [git_branch]
-symbol = "☊"
+symbol = ""
 style = "bg:#FCA17D"
 format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
  
@@ -103,7 +103,7 @@ style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
 [nodejs]
-symbol = "🔷 "
+symbol = "💠 "
 style = "bg:#86BBD8"
 format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
  
@@ -121,6 +121,6 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
-format = '[[ 🤍 $time ](bg:#33658A)]($style)'
+format = '[[  $time ](bg:#33658A)]($style)'
 
 
