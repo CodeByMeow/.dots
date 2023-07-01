@@ -4,8 +4,10 @@ vim.g.mapleader = " "
 
 -- Do not yank with x
 keymap.set('n', 'x', '"_x')
+
 keymap.set('n', '<leader>w', '<cmd>:w<cr>')
 keymap.set('n', '<leader>q', '<cmd>:q<cr>')
+keymap.set('n', '<leader>x', '<cmd>:bdelete<cr>')
 
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')

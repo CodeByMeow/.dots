@@ -7,8 +7,6 @@ return {
     "akinsho/bufferline.nvim",
     "lukas-reineke/indent-blankline.nvim",
     "folke/zen-mode.nvim",
-    -- Better buffer closing
-    "famiu/bufdelete.nvim",
     "lewis6991/gitsigns.nvim",
     "dinhhuy258/git.nvim",
     "numToStr/Comment.nvim",
@@ -153,5 +151,5 @@ return {
             },
         },
     },
-    'lambdalisue/suda.vim'
+    'lambdalisue/suda.vim',
 }
