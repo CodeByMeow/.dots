@@ -99,7 +99,7 @@ return {
     { "nvim-tree/nvim-web-devicons", lazy = true },
     -- ui components
     { "MunifTanjim/nui.nvim",        lazy = true },
-    { 'TimUntersberger/neogit',      dependencies = 'nvim-lua/plenary.nvim' },
+    { 'NeogitOrg/neogit',            dependencies = 'nvim-lua/plenary.nvim' },
     { 'kevinhwang91/nvim-ufo',       dependencies = 'kevinhwang91/promise-async' },
     { "ziontee113/icon-picker.nvim", dependencies = 'stevearc/dressing.nvim' },
     {
