@@ -8,8 +8,7 @@ font:
     family: italic-monospace
   bold_italic:
     family: italic-monospace
-  # Point size
-  size: 14.0
+  size: 16.0
 emoji:
   font:
     family: Noto Color Emoji
