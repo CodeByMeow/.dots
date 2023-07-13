@@ -23,15 +23,11 @@ require("lspsaga").setup {
         folder_level = 2,
         respect_root = false,
     },
-    outline = {
-        layout = 'normal',
-        close_after_jump = true
-    }
 }
 
 local keymap = vim.keymap.set
 
-keymap("n", "gf", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "gf", "<cmd>Lspsaga finder<CR>")
 
 -- Code action
 keymap({ "n", "v" }, "ga", "<cmd>Lspsaga code_action<CR>")
