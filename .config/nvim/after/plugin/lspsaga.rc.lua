@@ -23,6 +23,10 @@ require("lspsaga").setup {
         folder_level = 2,
         respect_root = false,
     },
+    outline = {
+        layout = 'normal',
+        close_after_jump = true
+    }
 }
 
 local keymap = vim.keymap.set
