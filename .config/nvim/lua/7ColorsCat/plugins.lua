@@ -66,10 +66,13 @@ return {
             { "tzachar/cmp-tabnine", build = "./install.sh" },
         }
     },
-    {
-        "glepnir/lspsaga.nvim",
-        event = "BufRead",
-        dependencies = { { "nvim-tree/nvim-web-devicons" }, { "nvim-treesitter/nvim-treesitter" } }
+    'nvimdev/lspsaga.nvim',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons'      -- optional
     },
     {
         "iamcco/markdown-preview.nvim",
