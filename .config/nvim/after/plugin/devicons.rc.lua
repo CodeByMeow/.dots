@@ -29,6 +29,11 @@ require 'nvim-web-devicons'.setup {
             icon = "",
             color = "#6181B6",
             name = "PHP"
-        }
+        },
+        ["svg"] = {
+            icon = "",
+            color = "#F79400",
+            name = "SVG"
+        },
     },
 }
