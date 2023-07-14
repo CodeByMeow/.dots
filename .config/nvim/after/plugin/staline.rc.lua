@@ -1,23 +1,23 @@
 local icons = require("7ColorsCat.config").icons.diagnostics
 require "staline".setup {
     sections = {
-        left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
+        left = { 'mode', ' ', 'branch', ' ', 'lsp' },
         mid = { 'lsp_name' },
         right = { 'file_name', 'file_size', 'line_column' }
     },
     mode_colors = {
-        i = "#3e8fb0",
         n = "#689D6A",
+        i = "#3e8fb0",
         c = "#f6c177",
         v = "#CE6CA0",
         s = "#C74E01"
     },
     mode_icons = {
-        n = "🪲 NORMAL",
-        i = "🐟 INSERT",
-        c = "🐗 COMMAND",
-        v = "🦩 VISUAL", -- etc..
-        s = "🐡 SELECT"
+        n = "NORMAL",
+        i = "INSERT",
+        c = "COMMAND",
+        v = "VISUAL", -- etc..
+        s = "SELECT"
     },
     lsp_symbols = {
         Error = icons.Error,
