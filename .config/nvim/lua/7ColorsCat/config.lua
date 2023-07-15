@@ -25,7 +25,7 @@ M.icons = {
         ['Enum'] = { ' ', '@number' },
         ['Interface'] = { ' ', 'Type' },
         ['Function'] = { ' ', 'Function' },
-        ['Variable'] = { ' ', '@variable' },
+        ['Variable'] = { ' ', '@preproc' },
         ['Constant'] = { ' ', 'Constant' },
         ['String'] = { ' ', 'String' },
         ['Number'] = { ' ', 'Number' },
@@ -47,7 +47,7 @@ M.icons = {
         -- for completion sb microsoft!!!
         ['Text'] = { ' ', 'String' },
         ['Snippet'] = { ' ', '@variable' },
-        ['Folder'] = { ' ', 'Title' },
+        ['Folder'] = { ' ', 'Character' },
         ['Unit'] = { ' ', 'Number' },
         ['Value'] = { ' ', '@variable' },
     }

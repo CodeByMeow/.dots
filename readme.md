@@ -11,7 +11,7 @@
 </div>
 
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
-- **Dislay Manger** 📺 [Ly](https://github.com/fairyglade/ly)
+- **Display Manager** 📺 [Ly](https://github.com/fairyglade/ly)
 - **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
@@ -40,7 +40,7 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
-skippy-xd
+skippy-xd tree-sitter-cli peco
 ```
 
 ### Shell setup

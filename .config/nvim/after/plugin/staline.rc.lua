@@ -29,7 +29,7 @@ require "staline".setup {
         true_colors       = true,
         line_column       = "[%l/%L] :%c 並%p%% ",
         branch_symbol     = " ",
-        lsp_client_symbol = " ",
+        lsp_client_symbol = "📡 ",
         mod_symbol        = "  ",
     }
 }
