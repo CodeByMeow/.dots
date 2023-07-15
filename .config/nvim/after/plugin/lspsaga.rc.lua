@@ -1,29 +1,10 @@
-local icons = require('7ColorsCat.config').icons
+local kind = require('7ColorsCat.config').icons.kind
 
-require("lspsaga").setup {
-    request_timeout = 2000,
+require("lspsaga").setup({
     ui = {
-        title = true,
-        -- border type can be single,double,rounded,solid,shadow.
-        border = 'single',
-        winblend = 0,
-        expand = '',
-        collapse = '',
-        code_action = icons.diagnostics.Hint,
-        diagnostic = icons.diagnostics.Info,
-        incoming = ' ',
-        outgoing = ' ',
-        kind = icons.kind
+        kind = kind,
     },
-    symbol_in_winbar = {
-        enable = true,
-        separator = '  ',
-        hide_keyword = true,
-        show_file = true,
-        folder_level = 2,
-        respect_root = false,
-    },
-}
+})
 
 local keymap = vim.keymap.set
 

@@ -16,7 +16,7 @@ require "staline".setup {
         n = "NORMAL",
         i = "INSERT",
         c = "COMMAND",
-        v = "VISUAL", -- etc..
+        v = "VISUAL",
         s = "SELECT"
     },
     lsp_symbols = {
@@ -30,6 +30,6 @@ require "staline".setup {
         line_column       = "[%l/%L] :%c 並%p%% ",
         branch_symbol     = " ",
         lsp_client_symbol = " ",
-        mod_symbol        = " ",
+        mod_symbol        = "  ",
     }
 }

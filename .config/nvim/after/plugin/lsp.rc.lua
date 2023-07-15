@@ -49,6 +49,33 @@ cmp.event:on(
 
 require('luasnip.loaders.from_vscode').lazy_load()
 
+local cmp_kinds = {
+    Text = icons.kind["Text"][1],
+    Method = icons.kind["Method"][1],
+    Function = icons.kind["Function"][1],
+    Constructor = icons.kind["Constructor"][1],
+    Field = icons.kind["Field"][1],
+    Variable = icons.kind["Variable"][1],
+    Class = icons.kind["Class"][1],
+    Interface = icons.kind["Interface"][1],
+    Module = icons.kind["Module"][1],
+    Property = icons.kind["Property"][1],
+    Unit = icons.kind["Unit"][1],
+    Value = icons.kind["Value"][1],
+    Enum = icons.kind["Enum"][1],
+    Keyword = icons.kind["Key"][1],
+    Snippet = icons.kind["Snippet"][1],
+    File = icons.kind["File"][1],
+    -- Reference = icons.kind["Reference"][1],
+    Folder = icons.kind["Folder"][1],
+    EnumMember = icons.kind["EnumMember"][1],
+    Constant = icons.kind["Constant"][1],
+    Struct = icons.kind["Struct"][1],
+    Event = icons.kind["Event"][1],
+    Operator = icons.kind["Operator"][1],
+    TypeParameter = icons.kind["TypeParameter"][1],
+    Color = '  ',
+}
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
@@ -92,6 +119,12 @@ lsp.setup_nvim_cmp({
 
         return true
     end,
+    formatting = {
+        format = function(_, vim_item)
+            vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. vim_item.kind
+            return vim_item
+        end,
+    },
 
 })
 
@@ -119,6 +152,7 @@ lsp.setup()
 vim.keymap.set("i", "<leader><Tab>", function()
     require('luasnip').jump(1)
 end)
+
 vim.keymap.set("i", "<leader><S-Tab>", function()
     require('luasnip').jump(-1)
 end)
