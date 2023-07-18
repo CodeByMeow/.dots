@@ -27,9 +27,7 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = function()
-            require("nvim-treesitter.install").update({ with_sync = true })
-        end,
+        build = ":TSUpdate",
         dependencies = {
             "p00f/nvim-ts-rainbow",
             "nvim-treesitter/playground",

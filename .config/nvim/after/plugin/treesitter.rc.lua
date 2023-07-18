@@ -25,7 +25,25 @@ ts.setup {
     markid = { enable = true },
     textobjects = {
         select = {
-            enable = true
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["af"] = "@function.outer",
+                ["if"] = "@function.inner",
+                ["aC"] = "@class.outer",
+                ["iC"] = "@class.inner",
+                ["ac"] = "@conditional.outer",
+                ["ic"] = "@conditional.inner",
+                ["ae"] = "@block.outer",
+                ["ie"] = "@block.inner",
+                ["al"] = "@loop.outer",
+                ["il"] = "@loop.inner",
+                ["is"] = "@statement.inner",
+                ["as"] = "@statement.outer",
+                ["ad"] = "@comment.outer",
+                ["am"] = "@call.outer",
+                ["im"] = "@call.inner"
+            }
         },
         swap = {
             enable = true,
@@ -35,7 +53,7 @@ ts.setup {
             swap_previous = {
                 ["<leader>sp"] = "@parameter.inner",
             },
-        }
+        },
     },
     ignore_install = { 'help' }
 }
