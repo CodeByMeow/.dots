@@ -29,13 +29,13 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         dependencies = {
-            "p00f/nvim-ts-rainbow",
             "nvim-treesitter/playground",
             "JoosepAlviste/nvim-ts-context-commentstring",
             "windwp/nvim-ts-autotag",
             "David-Kunz/markid",
             "nvim-treesitter/nvim-treesitter-textobjects",
             { "windwp/nvim-autopairs", config = true, event = "InsertEnter" },
+            "https://gitlab.com/HiPhish/rainbow-delimiters.nvim"
         }
     },
     {
