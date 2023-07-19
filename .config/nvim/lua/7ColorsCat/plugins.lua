@@ -2,7 +2,6 @@ return {
     "tamton-aquib/staline.nvim",
     "mbbill/undotree",
     "mattn/emmet-vim",
-    "jose-elias-alvarez/null-ls.nvim",
     "max397574/better-escape.nvim",
     "akinsho/bufferline.nvim",
     "lukas-reineke/indent-blankline.nvim",
@@ -123,7 +122,6 @@ return {
     {
         "folke/flash.nvim",
         event = "VeryLazy",
-        opts = {},
         keys = {
             {
                 "s",
@@ -134,23 +132,8 @@ return {
                 end,
                 desc = "Flash",
             },
-            {
-                "S",
-                mode = { "n", "o", "x" },
-                function()
-                    require("flash").treesitter()
-                end,
-                desc = "Flash Treesitter",
-            },
-            {
-                "r",
-                mode = "o",
-                function()
-                    require("flash").remote()
-                end,
-                desc = "Remote Flash",
-            },
         },
     },
     'lambdalisue/suda.vim',
+    'nvimdev/guard.nvim'
 }

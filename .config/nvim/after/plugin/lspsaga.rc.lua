@@ -1,7 +1,7 @@
 local kind = require('7ColorsCat.config').icons.kind
 
 require("lspsaga").setup({
-    ui = {
+ ui = {
         kind = kind,
     },
 })
