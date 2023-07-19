@@ -11,6 +11,7 @@ ft("typescriptreact"):fmt("lsp"):append("prettier")
 -- prettier
 ft("html"):fmt("prettier")
 ft("css"):fmt("prettier")
+ft("json"):fmt("prettier")
 
 -- call setup LAST
 require("guard").setup({
