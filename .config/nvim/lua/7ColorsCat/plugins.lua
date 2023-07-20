@@ -141,4 +141,9 @@ return {
 	},
 	"lambdalisue/suda.vim",
 	"nvimdev/guard.nvim",
+	{
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
 }
