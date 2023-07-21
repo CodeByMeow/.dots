@@ -1,7 +1,4 @@
 format = """
-[█](#9A348E)\
-$username\
-[](bg:#DA627D fg:#9A348E)\
 $directory\
 [](fg:#DA627D bg:#FCA17D)\
 $git_branch\
@@ -35,7 +32,7 @@ style_root = "bg:#9A348E"
 format = '[$user ]($style)'
  
 [directory]
-style = "bg:#DA627D"
+style = "bg:#DA627D fg:#FFFFFF"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -47,11 +44,6 @@ truncation_symbol = "…/"
 "Downloads" = "📥 "
 "Music" = "🎵 "
 "Pictures" = "📷 "
-# Keep in mind that the order matters. For example:
-# "Important Documents" = "  "
-# will not be replaced, because "Documents" was already substituted before.
-# So either put "Important Documents" before "Documents" or use the substituted version:
-# "Important  " = "  "
  
 [c]
 symbol = "© "
@@ -121,6 +113,6 @@ format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
-format = '[[  $time ](bg:#33658A)]($style)'
+format = '[[$time](bg:#33658A)]($style)'
 
 
