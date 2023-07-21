@@ -1,0 +1,118 @@
+{
+  "settingsVersion": "1.67.7",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://keytest.vn/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://app.diagrams.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://mockapi.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://bongo.cat/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://zty.pe/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.keybr.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.edclub.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.typing.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.kidztype.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://calendar.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://osu-web.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.notion.so/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://danhgia.apj.vn/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://qwertysteno.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://host212.vietnix.vn:2083/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://config.qmk.fm/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://portal.vietnix.vn/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https://cpuv2proxmox8.vietnix.vn/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://cpuv2proxmox8.vietnix.vn:8006/?console=kvm&novnc=1&vmid=2803&vmname=2803&node=cpuv2proxmox8",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://app.spline.design/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://chat.zalo.me/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://nickcoutsos.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://zalooa.freshdesk.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\nmap n scrollDown\nmap e scrollUp\nmap t LinkHints.activateMode\nmap T LinkHints.activateModeToOpenInNewTab\nmap N previousTab\nmap E nextTab\nmap m performFind\nmap M performBackwardsFind\n\nunmap j\nunmap k\nunmap f\nunmap F\nunmap J\nunmap K",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 60,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "/* Mocha palette */\n\n:root {\n  --rosewater: #f5e0dc;\n  --peach: #fab387;\n  --green: #a6e3a1;\n  --blue: #89b4fa;\n  --lavender: #b4befe;\n  --text: #cdd6f4;\n  --surface2: #585b70;\n  --surface0: #313244;\n  --base: #1e1e2e;\n  --mantle: #181825;\n}\n#vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {\n  padding: 3px 4px;\n  background: var(--peach);\n  border: 1;\n  border-color: var(--mantle);\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n\n#vimiumHintMarkerContainer div span {\n  color: var(--mantle);\n  text-shadow: none;\n}\n\n#vimiumHintMarkerContainer div > .matchingCharacter {\n  opacity: 1.0;\n}\n\n#vimiumHintMarkerContainer div > .matchingCharacter ~ span {\n  color: var(--surface2);\n}\n\n#vomnibar {\n  background: var(--base);\n  border: 2px solid var(--lavender);\n  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;\n  max-height: calc(100vh - 70px);\n  overflow: hidden;\n}\n\n@keyframes show {\n  0% {\n    transform: translateY(50px);\n    opacity: 0;\n  }\n  100% {\n    transform: translateY(0);\n    opacity: 1;\n  }\n}\n\n#vomnibar input {\n  color: var(--text);\n  background: var(--base);\n  border: none;\n  height: unset;\n  padding: 16px 30px;\n}\n\n#vomnibar .vomnibarSearchArea {\n  border: none;\n  padding: unset;\n  background: var(--base)\n}\n\n#vomnibar ul {\n  padding: 0;\n  margin: 0;\n  background: var(--base);\n  border-top: 1px solid var(--surface0);\n}\n\n#vomnibar li {\n  padding: 10px;\n  border-bottom: 1px solid var(--surface0)\n}\n\n#vomnibar li .vomnibarTopHalf,\n#vomnibar li .vomnibarBottomHalf {\n  padding: 3px 0;\n}\n\n#vomnibar li .vomnibarSource {\n  color: var(--peach);\n}\n\n#vomnibar li em,\n#vomnibar li .vomnibarTitle {\n  color: var(--blue);\n  font-weight: bold;\n}\n\n#vomnibar li .vomnibarUrl {\n  color: var(--rosewater);\n}\n\n#vomnibar li .vomnibarMatch {\n  color: var(--green);\n  font-weight: bold;\n}\n\n#vomnibar li .vomnibarTitle .vomnibarMatch {\n  color: var(--blue);\n}\n\n#vomnibar li.vomnibarSelected {\n  background-color: var(--surface0);\n}\n\ndiv.vimiumHUD {\n  background: var(--base);\n  border: none;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n\ndiv.vimiumHUD span#hud-find-input,\ndiv.vimiumHUD .vimiumHUDSearchAreaInner {\n  color: var(--text)\n}\n\ndiv.vimiumHUD .hud-find {\n  background-color: var(--base);\n  border: none;\n}\n\ndiv.vimiumHUD .vimiumHUDSearchArea {\n  background-color: var(--base);\n}"
+}
