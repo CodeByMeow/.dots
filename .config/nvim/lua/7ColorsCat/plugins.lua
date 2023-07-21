@@ -1,6 +1,5 @@
 return {
 	-- THEMES
-	{ "rose-pine/neovim", name = "rose-pine", priority = 1000 },
 	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 	"tamton-aquib/staline.nvim",

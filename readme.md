@@ -70,6 +70,9 @@ skippy-xd tree-sitter-cli peco
 - Noto-fonts-emoji
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 
+### App icons
+- [Candy icons](https://github.com/EliverLara/candy-icons) 
+
 ### Break
 
 [ Breaktimer ](https://breaktimer.app/) - Pomodoro app.
