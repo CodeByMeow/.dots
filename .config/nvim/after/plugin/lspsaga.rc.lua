@@ -1,9 +1,9 @@
-local kind = require('7ColorsCat.config').icons.kind
+local kind = require("7ColorsCat.config").icons.kind
 
 require("lspsaga").setup({
- ui = {
-        kind = kind,
-    },
+	ui = {
+		kind = kind,
+	},
 })
 
 local keymap = vim.keymap.set
