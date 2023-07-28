@@ -40,7 +40,7 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
-skippy-xd tree-sitter-cli peco
+skippy-xd tree-sitter-cli peco onefetch
 ```
 
 ### Shell setup
