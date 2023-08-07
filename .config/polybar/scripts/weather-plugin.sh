@@ -56,7 +56,7 @@ DISPLAY_WIND="yes"
 BEAUFORTICON="yes"
 
 # Display in knots. yes/no
-KNOTS="yes"
+KNOTS="false"
 
 # How many decimals after the floating point
 DECIMALS=0
