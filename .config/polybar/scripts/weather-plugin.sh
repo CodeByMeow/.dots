@@ -56,7 +56,7 @@ DISPLAY_WIND="yes"
 BEAUFORTICON="yes"
 
 # Display in knots. yes/no
-KNOTS="yes"
+KNOTS="false"
 
 # How many decimals after the floating point
 DECIMALS=0
@@ -78,10 +78,10 @@ DISPLAY_WIND_UNIT="yes"
 # Thermometer settings ________________________________________________________
 
 # When the thermometer icon turns red
-HOT_TEMP=25
+HOT_TEMP=30
 
 # When the thermometer icon turns blue
-COLD_TEMP=0
+COLD_TEMP=16
 
 # Other settings ______________________________________________________________
 
@@ -295,7 +295,7 @@ function setIcons {
     elif [ `echo "$TEMP >= $HOT_TEMP" | bc` -eq 1 ]; then
         TEMP="%{F$COLOR_HOT}%{T$TEMP_FONT_CODE}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON$COLOR_TEXT_END"
     else
-        TEMP="%{F$COLOR_NORMAL_TEMP}%{T$TEMP_FONT_CODE}{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON$COLOR_TEXT_END"
+        TEMP="%{F$COLOR_NORMAL_TEMP}%{T$TEMP_FONT_CODE}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON$COLOR_TEXT_END"
     fi
 }
 
