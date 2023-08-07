@@ -66,7 +66,7 @@ skippy-xd tree-sitter-cli peco onefetch
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
 - Font Awesome 6 Pro
 - Monocraft
-- JetBrans Mono
+- JetBrans Mono Nerd Font
 - Noto-fonts-emoji
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 
