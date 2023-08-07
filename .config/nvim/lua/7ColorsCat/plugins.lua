@@ -154,4 +154,18 @@ return {
 			show_unknown_classes = true, -- Shows the unknown classes popup
 		},
 	},
+	{
+		"bennypowers/nvim-regexplainer",
+		config = function()
+			require("regexplainer").setup({
+				mappings = {
+					toggle = "<leader>e",
+				},
+			})
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"MunifTanjim/nui.nvim",
+		},
+	},
 }
