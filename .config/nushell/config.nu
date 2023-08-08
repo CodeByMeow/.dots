@@ -181,7 +181,7 @@ let light_theme = {
 
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
   ls: {
@@ -558,7 +558,7 @@ alias yt = ytfzf --ii --detach -ts --notify-playing
 alias nf = bash ~/.scripts/fetch.sh
 alias notify = tmux display-message
 
-let-env PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man"])
+$env.PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man"])
 
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu
