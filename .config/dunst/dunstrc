@@ -1,4 +1,5 @@
 [global]
+    font = Iosevka 12
     frame_color = "#89B4FA"
     monitor = 0
     follow = mouse
@@ -20,7 +21,6 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = Iosevka
     line_height = 0
     markup = full
     alignment = left
