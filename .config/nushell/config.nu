@@ -559,6 +559,8 @@ alias nf = bash ~/.scripts/fetch.sh
 alias notify = tmux display-message
 
 $env.PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man"])
+$env.EDITOR = nvim
+$env.VISUAL = nvim
 
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu

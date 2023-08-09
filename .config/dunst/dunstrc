@@ -1,4 +1,5 @@
 [global]
+    frame_color = "#89B4FA"
     monitor = 0
     follow = mouse
     width = 320
@@ -7,7 +8,7 @@
     offset = 10x45
     scale = 0
     notification_limit = 0
-    progress_bar = false
+    progress_bar = true
     indicate_hidden = yes
     transparency = 25
     separator_height = 2
@@ -15,7 +16,6 @@
     horizontal_padding = 10
     text_icon_padding = 0
     frame_width = 1
-    frame_color = "#232136"
     gap_size = 0
     separator_color = frame
     sort = yes
@@ -34,7 +34,6 @@
     icon_position = left
     min_icon_size = 0
     max_icon_size = 32
-    icon_path = /usr/share/icons/Paper/16x16/status/:/usr/share/icons/Paper/16x16/devices/:/usr/share/icons/Paper/16x16/apps/
     sticky_history = yes
     history_length = 20
     always_run_script = true
@@ -46,20 +45,14 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#232136"
-    foreground = "#e0def4"
-    frame_color = "#3e8fb0"
-    timeout = 5
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
 
 [urgency_normal]
-    background = "#232136"
-    foreground = "#e0def4"
-    frame_color = "#3e8fb0"
-    timeout = 5
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
 
 [urgency_critical]
-    background = "#eb6f92"
-    foreground = "#faf4ed"
-    frame_color = "#eb6f92"
-    timeout = 10
-    default_icon = /usr/share/icons/Paper/16x16/status/dialog-warning.png
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    frame_color = "#FAB387"
