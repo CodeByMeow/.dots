@@ -9,17 +9,18 @@ workspaces() {
         name=$((name + 1))
     done
 }
+# Default floating window size and position (centered)
+bspc rule -a '*' state=floating rectangle=800x600
+
 # workspace 2 (Internet Browser)
 declare -a web=(firefox)
 for i in ${web[@]}; do
-    bspc rule -a $i desktop='^2' follow=on focus=on; done
+    bspc rule -a $i desktop='^2' state=tiled follow=on focus=on; done
 
 declare -a yt=(mpv -f)
 for i in ${yt[@]}; do
     bspc rule -a $i desktop='^1' follow=on focus=off state=floating rectangle=800x450+560+315; done
 
-# Default floating window size and position (centered)
-bspc rule -a '*' state=floating rectangle=800x600
 
 workspaces
 bspc config window_gap 12
