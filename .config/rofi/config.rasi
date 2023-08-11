@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,window";
+    modi: "drun";
     font: "Iosevka Nerd Font 13";
     icon-theme: "candy-icons";
     show-icons: true;
@@ -8,9 +8,7 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "   Apps ";
-    display-run: "   Run ";
-    display-window: " 﩯  Window";
+    display-drun: " Apps ";
     sidebar-mode: true;
 }
 
