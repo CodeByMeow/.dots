@@ -181,7 +181,7 @@ let light_theme = {
 
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
   ls: {
@@ -555,10 +555,12 @@ alias tpi = ~/.config/tmux/plugins/tpm/bin/install_plugins # Installs Tmux plugi
 alias tpu = ~/.config/tmux/plugins/tpm/bin/update_plugins all # Updates all Tmux plugins
 
 alias yt = ytfzf --ii --detach -ts --notify-playing
-alias nf = bash ~/.scripts/fetch.sh
+alias meowfetch = bash ~/.scripts/meowfetch.sh
 alias notify = tmux display-message
 
-let-env PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man"])
+$env.PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man"])
+$env.EDITOR = nvim
+$env.VISUAL = nvim
 
 source ~/.cache/starship/init.nu
 source ~/.zoxide.nu

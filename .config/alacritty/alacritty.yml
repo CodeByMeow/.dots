@@ -8,7 +8,7 @@ font:
     family: italic-monospace
   bold_italic:
     family: italic-monospace
-  size: 16.0
+  size: 12.0
 emoji:
   font:
     family: Noto Color Emoji
@@ -36,6 +36,9 @@ window:
     general: Alacritty
   decorations_theme_variant: Dark
   opacity: 0.7
+  padding:
+    x: 4
+    y: 4
 
 draw_bold_text_with_bright_colors: true
 
@@ -73,4 +76,4 @@ key_bindings:
   - { key: Minus, mods: Control, action: DecreaseFontSize }
 
 import:
-  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+  - ~/.config/alacritty/catppuccin-mocha.yml

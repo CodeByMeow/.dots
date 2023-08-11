@@ -9,7 +9,7 @@ artist=$(playerctl metadata --format "{{ artist }}" 2>/dev/null)
 
 # Check if title is empty (no media player found)
 if [ -z "$title" ]; then
-    echo " "
+    echo "  No Music Playing"
 else
     # Truncate the title if it exceeds the maximum length
     if [ ${#title} -gt $max_length ]; then

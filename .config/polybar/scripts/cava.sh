@@ -25,6 +25,10 @@ echo "
 [general]
 bars = 10
 
+[input]
+method = pipewire
+source = auto
+
 [output]
 method = raw
 raw_target = $pipe

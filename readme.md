@@ -16,7 +16,7 @@
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
 - **Terminal Emulator** :a: [ Alacritty ](https://github.com/alacritty/alacritty)
-- **Shell** 🐚 [ Nushell ](https://www.nushell.sh)
+- **Shell**  [ Nushell ](https://www.nushell.sh)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
   - [Icon for ranger](https://github.com/alexanderjeurissen/ranger_devicons)
@@ -40,14 +40,15 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
-skippy-xd tree-sitter-cli peco onefetch
+tree-sitter-cli peco onefetch
+jq bc nodejs npm lxappearance nemo
+catppuccin-gtk-theme-mocha
 ```
 
 ### Shell setup
 
 - [ starship ](https://starship.rs/) - Shell theme
 - [z](https://github.com/ajeetdsouza/zoxide) : - Directory jumping
-- [rose-pine](https://rosepinetheme.com/): - Color scheme
 - [peco](https://github.com/peco/peco) - Interactive filtering
 - [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
   - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
@@ -73,6 +74,3 @@ skippy-xd tree-sitter-cli peco onefetch
 ### App icons
 - [Candy icons](https://github.com/EliverLara/candy-icons) 
 
-### Break
-
-[ Breaktimer ](https://breaktimer.app/) - Pomodoro app.
