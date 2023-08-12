@@ -17,6 +17,6 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "$title - $artist"
+    echo "  $title - $artist"
 fi
 
