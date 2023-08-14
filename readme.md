@@ -74,3 +74,5 @@ catppuccin-gtk-theme-mocha
 ### App icons
 - [Candy icons](https://github.com/EliverLara/candy-icons) 
 
+### Games
+- tint
