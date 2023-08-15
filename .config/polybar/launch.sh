@@ -10,4 +10,5 @@ polybar -q workspace &
 polybar -q cava &
 polybar -q player &
 polybar -q weather &
+polybar -q network &
 polybar -q right &
