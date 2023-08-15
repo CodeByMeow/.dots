@@ -1,4 +1,4 @@
-video_pref="bestvideo[height<=?720][fps<=?30]"
+video_pref="bestvideo[height<=?720][fps<=?60]"
 audio_pref="bestaudio/audio"
 is_detach=yes
 skip_thumb_download=no
