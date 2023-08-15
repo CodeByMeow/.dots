@@ -35,7 +35,7 @@ return {
 			"windwp/nvim-ts-autotag",
 			"David-Kunz/markid",
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			{ "windwp/nvim-autopairs", config = true, event = "InsertEnter" },
+			{ "windwp/nvim-autopairs", event = "InsertEnter" },
 			"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 		},
 	},
