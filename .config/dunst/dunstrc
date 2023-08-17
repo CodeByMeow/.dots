@@ -31,6 +31,7 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
+    icon_path = /home/lisa/.config/dunst/icons/
     min_icon_size = 0
     max_icon_size = 32
     sticky_history = yes
@@ -46,12 +47,17 @@
 [urgency_low]
     background = "#1E1E2E"
     foreground = "#CDD6F4"
+    timeout = 5
+    new_icon = bell
 
 [urgency_normal]
     background = "#1E1E2E"
     foreground = "#CDD6F4"
+    timeout = 10
+    new_icon = bell
 
 [urgency_critical]
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
-    frame_color = "#FAB387"
+    background = "#f38ba8"
+    foreground = "#1E1E2E"
+    frame_color = "#f38ba8"
+    timeout = 0
