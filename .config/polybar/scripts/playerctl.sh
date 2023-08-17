@@ -5,7 +5,6 @@ max_length=20
 
 # Get the title and artist of the currently playing media using Playerctl
 title=$(playerctl metadata --format "{{ title }}" 2>/dev/null)
-artist=$(playerctl metadata --format "{{ artist }}" 2>/dev/null)
 
 # Check if title is empty (no media player found)
 if [ -z "$title" ]; then
@@ -17,6 +16,6 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "  $title - $artist"
+    echo "  $title"
 fi
 
