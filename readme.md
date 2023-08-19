@@ -67,7 +67,7 @@ catppuccin-gtk-theme-mocha
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
 - Font Awesome 6 Pro
 - Monocraft
-- JetBrans Mono Nerd Font
+- JetBrains Mono Nerd Font
 - Noto-fonts-emoji
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 
