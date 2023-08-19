@@ -18,7 +18,7 @@ return {
 	"aserowy/tmux.nvim",
 	-- Highlight color
 	"brenoprata10/nvim-highlight-colors",
-	"kevinhwang91/rnvimr",
+    "kelly-lin/ranger.nvim",
 	"ThePrimeagen/harpoon",
 	"karb94/neoscroll.nvim",
 	"RRethy/vim-illuminate",
