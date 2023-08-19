@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Maximum length for the title
-max_length=20
+max_length=30
 
 # Get the title and artist of the currently playing media using Playerctl
 title=$(playerctl metadata --format "{{ title }}" 2>/dev/null)
