@@ -5,7 +5,7 @@
 # API settings ________________________________________________________________
 
 
-APIKEY=`cat $HOME/.owm-key`
+APIKEY=`cat $HOME/.config/polybar/scripts/Weather/.owm-key`
 # if you leave these empty location will be picked based on your ip-adres
 # Desired output language
 LANG="vi"
