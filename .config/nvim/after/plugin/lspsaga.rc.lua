@@ -1,8 +1,8 @@
 local kind = require("7ColorsCat.config").icons.kind
-
 require("lspsaga").setup({
 	ui = {
 		kind = kind,
+		border = "rounded",
 	},
 })
 

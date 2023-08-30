@@ -18,7 +18,7 @@ return {
 	"aserowy/tmux.nvim",
 	-- Highlight color
 	"brenoprata10/nvim-highlight-colors",
-    "kelly-lin/ranger.nvim",
+	"kelly-lin/ranger.nvim",
 	"ThePrimeagen/harpoon",
 	"karb94/neoscroll.nvim",
 	"RRethy/vim-illuminate",
@@ -69,8 +69,8 @@ return {
 		"nvimdev/lspsaga.nvim",
 		event = "LspAttach",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter", -- optional
-			"nvim-tree/nvim-web-devicons", -- optional
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
 		},
 	},
 	{
@@ -91,11 +91,7 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
 		},
 	},
@@ -126,17 +122,6 @@ return {
 	{
 		"folke/flash.nvim",
 		event = "VeryLazy",
-		keys = {
-			{
-				"s",
-				mode = { "n", "x", "o" },
-				function()
-					-- default options: exact mode, multi window, all directions, with a backdrop
-					require("flash").jump()
-				end,
-				desc = "Flash",
-			},
-		},
 	},
 	"lambdalisue/suda.vim",
 	"nvimdev/guard.nvim",
@@ -146,26 +131,19 @@ return {
 	},
 	{
 		"MaximilianLloyd/tw-values.nvim",
-		keys = {
-			{ "<leader>sv", "<cmd>TWValues<cr>", desc = "Show tailwind CSS values" },
-		},
 		opts = {
-			border = "rounded", -- Valid window border style,
-			show_unknown_classes = true, -- Shows the unknown classes popup
+			border = "rounded",
+			show_unknown_classes = true,
 		},
 	},
 	{
 		"bennypowers/nvim-regexplainer",
-		config = function()
-			require("regexplainer").setup({
-				mappings = {
-					toggle = "<leader>e",
-				},
-			})
-		end,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"MunifTanjim/nui.nvim",
 		},
 	},
+	{ "piersolenski/wtf.nvim", dependencies = {
+		"MunifTanjim/nui.nvim",
+	}, event = "VeryLazy" },
 }
