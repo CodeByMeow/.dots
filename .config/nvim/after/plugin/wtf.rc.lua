@@ -11,6 +11,6 @@ vim.keymap.set("n", "gw", function()
 	require("wtf").ai()
 end)
 
-vim.keymap.set("n", "gW", function()
+vim.keymap.set("n", "<leader>gw", function()
 	require("wtf").search()
 end)
