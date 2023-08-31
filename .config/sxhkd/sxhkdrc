@@ -164,5 +164,5 @@ ctrl + shift + space
   gpick -so | xargs echo -n | xclip -selection clipboard
 
 super + d
-  firefox
+  firefox-developer-edition
 

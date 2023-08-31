@@ -11,10 +11,9 @@ workspaces() {
 }
 
 # Application rules
-bspc rule -a firefox state=tiled desktop='^2' follow=on
-bspc rule -a Nemo state=floating follow=on
-bspc rule -a Polypane desktop='^3' follow=on
+bspc rule -a firefoxdeveloperedition desktop='^2' follow=on
 bspc rule -a Virt-manager desktop='^6' follow=on
+bspc rule -a Nemo state=floating follow=on
 
 
 
