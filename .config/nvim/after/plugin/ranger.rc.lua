@@ -2,7 +2,7 @@ local ranger_nvim = require("ranger-nvim")
 ranger_nvim.setup({
 	replace_netrw = true,
 	ui = {
-		border = "rounded",
+		border = "solid",
 		height = 0.65,
 		width = 0.65,
 		x = 0.5,
