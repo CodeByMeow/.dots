@@ -126,10 +126,6 @@ return {
 	"lambdalisue/suda.vim",
 	"nvimdev/guard.nvim",
 	{
-		"nvim-neorg/neorg",
-		dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
-	},
-	{
 		"MaximilianLloyd/tw-values.nvim",
 		opts = {
 			border = "rounded",

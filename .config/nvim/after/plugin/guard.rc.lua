@@ -9,7 +9,7 @@ ft("html, css, json"):fmt("prettier")
 -- call setup LAST
 require("guard").setup({
 	-- the only option for the setup function
-	fmt_on_save = false,
+	fmt_on_save = true,
 	lsp_as_default_formatter = true,
 })
 

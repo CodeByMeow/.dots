@@ -3,8 +3,8 @@ ranger_nvim.setup({
 	replace_netrw = true,
 	ui = {
 		border = "solid",
-		height = 0.65,
-		width = 0.65,
+		height = 0.7,
+		width = 0.7,
 		x = 0.5,
 		y = 0.5,
 	},

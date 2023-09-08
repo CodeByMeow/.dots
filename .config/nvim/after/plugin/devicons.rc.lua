@@ -49,5 +49,10 @@ require("nvim-web-devicons").setup({
 			color = "#F79400",
 			name = "SVG",
 		},
+		["pug"] = {
+			icon = "🐶",
+			color = "#F79400",
+			name = "PUG",
+		},
 	},
 })
