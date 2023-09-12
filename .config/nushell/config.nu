@@ -557,7 +557,6 @@ alias tpu = ~/.config/tmux/plugins/tpm/bin/update_plugins all # Updates all Tmux
 alias yt = ytfzf --ii --detach -ts --notify-playing
 alias meowfetch = bash ~/meowfetch.sh
 alias notify = tmux display-message
-alias y = yay
 
 $env.PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man"])
 $env.EDITOR = nvim

@@ -166,3 +166,5 @@ ctrl + shift + space
 super + d
   firefox-developer-edition
 
+super + x
+  betterlockscreen -l dimblur u ~/wallpapers/
