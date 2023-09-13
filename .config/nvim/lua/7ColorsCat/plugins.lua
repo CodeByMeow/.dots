@@ -126,13 +126,6 @@ return {
 	"lambdalisue/suda.vim",
 	"nvimdev/guard.nvim",
 	{
-		"MaximilianLloyd/tw-values.nvim",
-		opts = {
-			border = "rounded",
-			show_unknown_classes = true,
-		},
-	},
-	{
 		"bennypowers/nvim-regexplainer",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
