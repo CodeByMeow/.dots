@@ -12,7 +12,7 @@ workspaces() {
 
 # Application rules
 bspc rule -a firefoxdeveloperedition desktop='^2' follow=on
-bspc rule -a Virt-manager desktop='^6' follow=on
+bspc rule -a Postbird desktop='^6' follow=on
 bspc rule -a Nemo state=floating follow=on
 
 
