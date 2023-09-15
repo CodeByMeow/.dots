@@ -37,7 +37,7 @@ inputbar {
 prompt {
     background-color: @bg-col;
     text-color: @fg-col;
-    margin: 20px 0px 0px 20px;
+    margin: 20px 0px 0px 25px;
 }
 
 textbox-prompt-colon {
