@@ -1,13 +1,12 @@
 * {
-    bg-col:  transparent;
-    bg-col-light: transparent;
-    border-col: transparent;
-    selected-col: transparent;
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #1e1e2e;
+    selected-col: #1e1e2e;
     blue: #89b4fa;
     fg-col: #cdd6f4;
     fg-col2: #f38ba8;
     grey: #6c7086;
-
     width: 600;
     font: "SF Pro Display 14";
 }
@@ -36,10 +35,8 @@ inputbar {
 }
 
 prompt {
-    background-color: @blue;
-    padding: 6px;
-    text-color: @bg-col;
-    border-radius: 3px;
+    background-color: @bg-col;
+    text-color: @fg-col;
     margin: 20px 0px 0px 20px;
 }
 
