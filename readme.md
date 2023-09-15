@@ -72,7 +72,5 @@ betterlockscreen postbird
 - JetBrains Mono Nerd Font
 - Noto-fonts-emoji
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
-
-### App icons
-- [Candy icons](https://github.com/EliverLara/candy-icons) 
+- SF Pro Display (ver Vietnames)
 
