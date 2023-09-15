@@ -1,6 +1,5 @@
 local ft = require("guard.filetype")
 
--- use stylua to format lua files and no linter
 ft("lua"):fmt("stylua")
 
 ft("typescript,javascript,typescriptreact"):fmt("prettier")

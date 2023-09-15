@@ -124,7 +124,13 @@ return {
 		event = "VeryLazy",
 	},
 	"lambdalisue/suda.vim",
-	"nvimdev/guard.nvim",
+    {
+    "nvimdev/guard.nvim",
+    -- Builtin configuration, optional
+    dependencies = {
+        "nvimdev/guard-collection",
+    }},
+
 	{
 		"bennypowers/nvim-regexplainer",
 		dependencies = {
