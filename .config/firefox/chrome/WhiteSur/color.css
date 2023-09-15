@@ -30,7 +30,7 @@
 
 	/* Popups and menus */
 	--macos-menu-background: color-mix(in srgb, #292929 70%, var(--toolbar-field-focus-background-color));
-	--macos-menu-border-color: #ffffff33;
+	--macos-menu-border-color: transparent;
 	--macos-menu-outline-color: #101010;
 	--macos-menu-shadow: 0 5px 8px #0000004d, inset 0 0 0 1px #ffffff0f;
 	--macos-menu-button-hover-background: #ffffff33;

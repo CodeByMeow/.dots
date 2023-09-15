@@ -10,7 +10,7 @@
 	--macos-menu-item-padding: 2px 8px;
 	--macos-menu-item-margin: 0;
 	--macos-menu-border-radius: 6px;
-	--macos-toolbar-border-radius: 8px;
+	--macos-toolbar-border-radius: 18px;
 
 	--panel-item-hover-bgcolor: var(--macos-menu-item-hover) !important;
 	--panel-item-active-bgcolor: var(--macos-menu-item-hover) !important;

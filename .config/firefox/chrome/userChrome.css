@@ -1,6 +1,5 @@
 @import "WhiteSur/parts/buttons-fixes.css";
 @import "WhiteSur/parts/buttons.css";
-@import "WhiteSur/parts/csd.css";
 @import "WhiteSur/parts/custom-icons.css";
 @import "WhiteSur/parts/entries.css";
 @import "WhiteSur/parts/findbar.css";
@@ -23,7 +22,7 @@
 
 @import "WhiteSur/customs/extension-menu-in-grid.css";
 /* @import "WhiteSur/customs/tab-preview-on-hover.css"; */
-/* @import "WhiteSur/customs/hide-single-tab.css"; */
+@import "WhiteSur/customs/hide-single-tab.css";
 /* @import "WhiteSur/customs/mini-tabbar.css"; */
 
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
