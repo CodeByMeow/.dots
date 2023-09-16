@@ -42,9 +42,9 @@ acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco onefetch
 jq bc nodejs npm lxappearance nemo
-catppuccin-gtk-theme-mocha
 firefox-developer-edition
 betterlockscreen postbird
+bibata-cursor-theme-bin
 ```
 
 ### Shell setup
