@@ -44,7 +44,6 @@ tree-sitter-cli peco onefetch
 jq bc nodejs npm lxappearance nemo
 firefox-developer-edition
 betterlockscreen postbird
-bibata-cursor-theme-bin
 ```
 
 ### Shell setup
