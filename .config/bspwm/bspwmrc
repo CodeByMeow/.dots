@@ -12,9 +12,10 @@ workspaces() {
 
 # Application rules
 bspc rule -a firefoxdeveloperedition desktop='^2' follow=on
+bspc rule -a notion-app  desktop='^4' follow=on
+bspc rule -a notion-app  desktop='^5' follow=on
 bspc rule -a Postbird desktop='^6' follow=on
 bspc rule -a Nemo state=floating follow=on
-bspc rule -a Notion state=tiled desktop='^4' follow=on
 
 
 
