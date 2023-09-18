@@ -1,7 +1,8 @@
 return {
 	-- THEMES
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "catppuccin/nvim", name = "catppuccin" },
 
+	-- PLUGINS
 	"tamton-aquib/staline.nvim",
 	"mbbill/undotree",
 	"mattn/emmet-vim",
@@ -124,12 +125,13 @@ return {
 		event = "VeryLazy",
 	},
 	"lambdalisue/suda.vim",
-    {
-    "nvimdev/guard.nvim",
-    -- Builtin configuration, optional
-    dependencies = {
-        "nvimdev/guard-collection",
-    }},
+	{
+		"nvimdev/guard.nvim",
+		-- Builtin configuration, optional
+		dependencies = {
+			"nvimdev/guard-collection",
+		},
+	},
 
 	{
 		"bennypowers/nvim-regexplainer",
