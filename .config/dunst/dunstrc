@@ -1,5 +1,5 @@
 [global]
-    font = Iosevka 12
+    font = SF Pro Display 12
     monitor = 0
     follow = mouse
     width = 320
@@ -44,17 +44,17 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#1E1E2E"
+    background = "#242424"
     foreground = "#CDD6F4"
     timeout = 5
 
 [urgency_normal]
-    background = "#1E1E2E"
+    background = "#242424"
     foreground = "#CDD6F4"
     timeout = 10
 
 [urgency_critical]
     background = "#f38ba8"
-    foreground = "#1E1E2E"
+    foreground = "#242424"
     frame_color = "#f38ba8"
     timeout = 0
