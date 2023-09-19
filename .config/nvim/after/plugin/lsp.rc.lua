@@ -69,7 +69,6 @@ local cmp_kinds = {
 	Keyword = icons.kind["Key"][1],
 	Snippet = icons.kind["Snippet"][1],
 	File = icons.kind["File"][1],
-	-- Reference = icons.kind["Reference"][1],
 	Folder = icons.kind["Folder"][1],
 	EnumMember = icons.kind["EnumMember"][1],
 	Constant = icons.kind["Constant"][1],
