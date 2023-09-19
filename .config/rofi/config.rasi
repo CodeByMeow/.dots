@@ -1,6 +1,5 @@
 configuration{
-    modi: "drun";
-    font: "Iosevka Nerd Font 13";
+    modi: "drun,window";
     show-icons: true;
     terminal: "alacritty";
     drun-display-format: "{icon} {name}";
@@ -8,6 +7,8 @@ configuration{
     disable-history: false;
     hide-scrollbar: true;
     display-drun: "";
+    display-window: "";
+    sidebar-mode: true;
 }
 
-@theme "catppuccin-mocha"
+@theme "whitesur"
