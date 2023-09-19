@@ -1,5 +1,5 @@
 [global]
-    font = SF Pro Display 12
+    font = SF Pro Display 11
     monitor = 0
     follow = mouse
     width = 320
@@ -7,7 +7,7 @@
     origin = top-right
     offset = 12x56
     scale = 0
-    notification_limit = 0
+    notification_limit = 10
     progress_bar = true
     indicate_hidden = yes
     transparency = 25
@@ -31,6 +31,8 @@
     hide_duplicate_count = false
     show_indicators = yes
     icon_position = left
+    icon_corner_radius = 9
+    icon_path = /home/lisa/.icons/Reversal-black/status/32
     min_icon_size = 0
     max_icon_size = 32
     sticky_history = yes
@@ -51,10 +53,11 @@
 [urgency_normal]
     background = "#242424"
     foreground = "#CDD6F4"
-    timeout = 10
+    timeout = 9
 
 [urgency_critical]
     background = "#f38ba8"
     foreground = "#242424"
-    frame_color = "#f38ba8"
+    frame_color = "#242424"
     timeout = 0
+    default_icon = /home/lisa/.icons/Reversal-black/status/32/dialog-warning.svg
