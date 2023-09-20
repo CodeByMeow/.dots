@@ -2,8 +2,7 @@ local ft = require("guard.filetype")
 
 ft("lua"):fmt("stylua")
 
-ft("typescript,javascript,typescriptreact"):fmt("prettier")
-ft("html, css, json"):fmt("prettier")
+ft("html, css, json,typescript,javascript,typescriptreact,yaml"):fmt("prettier")
 
 -- call setup LAST
 require("guard").setup({
