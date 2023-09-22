@@ -73,3 +73,5 @@ betterlockscreen postbird
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - SF Pro Display (ver Vietnames)
 
+### Music
+    `youtube-music-bin`
