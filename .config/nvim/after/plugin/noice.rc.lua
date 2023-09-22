@@ -2,9 +2,9 @@ local noice = require("noice")
 noice.setup({
 	cmdline = {
 		format = {
-			cmdline = { icon = " " },
-			search_down = { icon = " ⌄" },
-			search_up = { icon = " ⌃" },
+			cmdline = { icon = "↪️ " },
+			search_down = { icon = " ▼ " },
+			search_up = { icon = " ▲" },
 			filter = { icon = " " },
 			lua = { icon = " " },
 			help = { icon = " " },
@@ -15,6 +15,7 @@ noice.setup({
 		override = {
 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 			["vim.lsp.util.stylize_markdown"] = true,
+			["cmp.entry.get_documentation"] = true,
 		},
 		signature = {
 			enabled = true,
