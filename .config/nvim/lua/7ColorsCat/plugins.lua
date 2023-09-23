@@ -140,8 +140,4 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	{
-		"stefanlogue/hydrate.nvim",
-		version = "*",
-	},
 }
