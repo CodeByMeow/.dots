@@ -140,7 +140,8 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	{ "piersolenski/wtf.nvim", dependencies = {
-		"MunifTanjim/nui.nvim",
-	}, event = "VeryLazy" },
+	{
+		"stefanlogue/hydrate.nvim",
+		version = "*",
+	},
 }
