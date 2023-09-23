@@ -20,7 +20,6 @@
   "guard-collection": { "branch": "main", "commit": "05a1ecaedbb039179f8ada93634c555397576a4c" },
   "guard.nvim": { "branch": "main", "commit": "28e7db652cd4e7b44156158ba746eeea8495206d" },
   "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
-  "hydrate.nvim": { "branch": "main", "commit": "b580ef7438d851e0532111d1ad87cb683cfd87fc" },
   "icon-picker.nvim": { "branch": "master", "commit": "e6dca182518eeb7a51470c13605a5bce08a816e4" },
   "indent-blankline.nvim": { "branch": "master", "commit": "9637670896b68805430e2f72cf5d16be5b97a22a" },
   "lazy.nvim": { "branch": "main", "commit": "2a9354c7d2368d78cbd5575a51a2af5bd8a6ad01" },
