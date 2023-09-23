@@ -5,7 +5,7 @@ noice.setup({
 			cmdline = { icon = "↪️ " },
 			search_down = { icon = " ▼ " },
 			search_up = { icon = " ▲" },
-			filter = { icon = " " },
+			filter = { icon = " " },
 			lua = { icon = " " },
 			help = { icon = " " },
 		},
