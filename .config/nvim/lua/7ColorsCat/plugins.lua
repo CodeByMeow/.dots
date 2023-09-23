@@ -140,4 +140,5 @@ return {
 			"MunifTanjim/nui.nvim",
 		},
 	},
+	"stevearc/oil.nvim",
 }
