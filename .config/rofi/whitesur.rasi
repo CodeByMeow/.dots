@@ -5,7 +5,7 @@
     fg-col: #cdd6f4;
     selected-col: #E8F0F7;
     blue: #89b4fa;
-    fg-col2: #f38ba8;
+    fg-col2: #1F232F;
     grey: #6c7086;
     width: 600;
     font: "SF Pro Display 14";
@@ -18,9 +18,9 @@ element-text, element-icon , mode-switcher {
 
 window {
     height: 360px;
-    border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
+    border-radius: 18px;
 }
 
 mainbox {
@@ -30,7 +30,7 @@ mainbox {
 inputbar {
     children: [prompt,entry];
     background-color: @bg-col;
-    border-radius: 5px;
+    border-radius: 9px;
     padding: 2px;
 }
 
@@ -74,6 +74,7 @@ element-icon {
 element selected {
     background-color:  @selected-col ;
     text-color: @fg-col2  ;
+    border-radius: 18px;
 }
 
 mode-switcher {
