@@ -27,7 +27,7 @@ $time\
  
 [directory]
 style = "bg:#ED6544 fg:#FFFFFF"
-format = "[ $path ]($style)"
+format = "[$path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
  

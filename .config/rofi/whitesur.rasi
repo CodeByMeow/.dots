@@ -1,7 +1,7 @@
 * {
     bg-col:  transparent;
     bg-col-light: transparent;
-    border-col: transparent;
+    border-col: #cdd6f4;
     fg-col: #cdd6f4;
     selected-col: #E8F0F7;
     blue: #89b4fa;
@@ -21,6 +21,7 @@ window {
     border-color: @border-col;
     background-color: @bg-col;
     border-radius: 18px;
+    border: 2px;
 }
 
 mainbox {
@@ -54,21 +55,20 @@ entry {
 
 listview {
     border: 0px 0px 0px;
-    padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
+    margin: 12px;
     columns: 2;
     lines: 5;
     background-color: @bg-col;
 }
 
 element {
-    padding: 5px;
+    padding: 7px;
     background-color: @bg-col;
     text-color: @fg-col  ;
 }
 
 element-icon {
-    size: 25px;
+    size: 24px;
 }
 
 element selected {
