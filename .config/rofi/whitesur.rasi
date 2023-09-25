@@ -69,6 +69,7 @@ element {
 
 element-icon {
     size: 24px;
+    padding:0px 5px 0px 0px;
 }
 
 element selected {
