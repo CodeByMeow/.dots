@@ -12,7 +12,7 @@
     indicate_hidden = yes
     transparency = 25
     separator_height = 2
-    padding = 10
+    padding = 5
     horizontal_padding = 10
     text_icon_padding = 0
     frame_width = 0
@@ -20,7 +20,7 @@
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    line_height = 0
+    line_height = 2
     markup = full
     alignment = left
     vertical_alignment = center
@@ -38,7 +38,7 @@
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    corner_radius = 9
+    corner_radius = 4
     ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
@@ -46,18 +46,19 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#242424"
-    foreground = "#CDD6F4"
+    background = "#CDD6F4"
+    foreground = "#242424"
     timeout = 5
 
 [urgency_normal]
-    background = "#242424"
-    foreground = "#CDD6F4"
-    timeout = 9
+    font = SF Pro Display 11
+    background = "#CDD6F4"
+    foreground = "#242424"
+    timeout = 5
 
 [urgency_critical]
-    background = "#f38ba8"
+    background = "#ED6544"
     foreground = "#242424"
     frame_color = "#242424"
-    timeout = 0
+    timeout = 15
     default_icon = /home/lisa/.icons/Reversal-black/status/32/dialog-warning.svg
