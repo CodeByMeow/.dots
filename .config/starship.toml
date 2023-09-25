@@ -1,9 +1,9 @@
 format = """
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
+[](fg:#ED6544 bg:#F5B469)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#86BBD8)\
+[](fg:#F5B469 bg:#86BBD8)\
 $c\
 $elixir\
 $elm\
@@ -32,7 +32,7 @@ style_root = "bg:#9A348E"
 format = '[$user ]($style)'
  
 [directory]
-style = "bg:#DA627D fg:#FFFFFF"
+style = "bg:#ED6544 fg:#FFFFFF"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
