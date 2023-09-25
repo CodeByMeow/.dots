@@ -27,4 +27,7 @@ require("staline").setup({
 		cool_symbol = "  ",
 		full_path = false,
 	},
+	special_table = {
+		NvimTree = { "Nvimtree", " " },
+	},
 })
