@@ -7,7 +7,7 @@ configuration{
     disable-history: false;
     hide-scrollbar: true;
     display-drun: "";
-    display-window: "";
+    display-window: " ";
     sidebar-mode: true;
     drun-display-format:  "{name}";
 	window-format:        "{w} · {c} · {t}";

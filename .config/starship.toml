@@ -89,7 +89,7 @@ style = "bg:#55D6A7 fg:#23303A"
 format = '[$symbol ($version)]($style)'
  
 [nodejs]
-symbol = " "
+symbol = ""
 style = "bg:#87C149 fg:#23303A"
 format = '[$symbol ($version)]($style)'
  
