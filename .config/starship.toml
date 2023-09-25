@@ -1,9 +1,9 @@
 format = """
 $directory\
-[](fg:#ED6544 bg:#F5B469)\
+[ ](fg:#ED6544 bg:#55D6A7)\
 $git_branch\
 $git_status\
-[](fg:#F5B469 bg:#86BBD8)\
+[ ](fg:#55D6A7 bg:#87C149)\
 $c\
 $elixir\
 $elm\
@@ -14,9 +14,9 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[](fg:#86BBD8 bg:#06969A)\
+[ ](fg:#87C149 bg:#06969A)\
 $docker_context\
-[](fg:#06969A bg:#33658A)\
+[ ](fg:#06969A bg:#33658A)\
 $time\
 [ ](fg:#33658A)\
 """
@@ -24,12 +24,6 @@ $time\
 # Disable the blank line at the start of the prompt
 # add_newline = false
  
-# You can also replace your username with a neat symbol like  to save some space
-[username]
-show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
-format = '[$user ]($style)'
  
 [directory]
 style = "bg:#ED6544 fg:#FFFFFF"
@@ -47,72 +41,72 @@ truncation_symbol = "…/"
  
 [c]
 symbol = "© "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#6295CB fg:#23303A"
+format = '[$symbol ($version) ($style)'
  
 [docker_context]
 symbol = "🐳 "
-style = "bg:#06969A"
-format = '[[ $symbol $context ](bg:#06969A)]($style) $path'
+style = "bg:#099CEC"
+format = '[$symbol $context ]($style) $path'
  
 [elixir]
 symbol = "💧 "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#4B295D"
+format = '[$symbol ($version)]($style)'
  
 [elm]
 symbol = "🌳 "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#55D6A7 fg:#23303A"
+format = '[ $symbol ($version) ]($style)'
  
 [git_branch]
 symbol = ""
-style = "bg:#FCA17D"
-format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+style = "bg:#55D6A7 fg:#23303A"
+format = '[$symbol $branch ]($style)'
  
 [git_status]
-style = "bg:#FCA17D"
-format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+style = "bg:#55D6A7 fg:#23303A"
+format = '[($all_status$ahead_behind )]($style)'
  
 [golang]
 symbol = "🐹 "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#67CFDC fg:#23303A"
+format = '[$symbol ($version) ]($style)'
  
 [haskell]
 symbol = "λ "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#55D6A7 fg:#23303A"
+format = '[$symbol ($version) ]($style)'
  
 [java]
 symbol = "☕ "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#55D6A7 fg:#23303A"
+format = '[$symbol ($version)]($style)'
  
 [julia]
 symbol = "ஃ "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#55D6A7 fg:#23303A"
+format = '[$symbol ($version)]($style)'
  
 [nodejs]
-symbol = "💠 "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+symbol = " "
+style = "bg:#87C149 fg:#23303A"
+format = '[$symbol ($version)]($style)'
  
 [nim]
 symbol = "👑 "
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#EBCD00 fg:#23303A"
+format = '[$symbol ($version)($style)'
  
 [rust]
 symbol = "🦀"
-style = "bg:#86BBD8"
-format = '[[ $symbol ($version) ](bg:#86BBD8)]($style)'
+style = "bg:#FF5F00 fg:#23303A"
+format = '[$symbol ($version)($style)'
  
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
-format = '[[$time](bg:#33658A)]($style)'
+format = '[$time]($style)'
 
 
