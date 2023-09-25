@@ -1,10 +1,10 @@
 * {
-    bg-col:  #242424;
-    bg-col-light: #242424;
-    border-col: #242424;
-    selected-col: #242424;
-    blue: #89b4fa;
+    bg-col:  transparent;
+    bg-col-light: transparent;
+    border-col: transparent;
     fg-col: #cdd6f4;
+    selected-col: #E8F0F7;
+    blue: #89b4fa;
     fg-col2: #f38ba8;
     grey: #6c7086;
     width: 600;
