@@ -36,8 +36,6 @@ keymap("n", "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>")
 keymap("n", "<leader>j", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
 keymap("n", "<leader>k", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
--- Toglle Outline
-keymap("n", "<Leader>o", "<cmd>Lspsaga outline<CR>")
 -- Call hierarchy
 keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")

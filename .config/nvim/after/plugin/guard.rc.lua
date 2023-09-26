@@ -9,7 +9,7 @@ ft("html, css, json"):fmt("prettier")
 require("guard").setup({
 	-- the only option for the setup function
 	fmt_on_save = true,
-	lsp_as_default_formatter = true,
+	lsp_as_default_formatter = false,
 })
 
 vim.keymap.set({ "n", "v" }, "fm", "<cmd>GuardFmt<CR>")
