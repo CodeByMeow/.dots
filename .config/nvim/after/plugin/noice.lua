@@ -48,8 +48,7 @@ noice.setup({
 	views = {
 		cmdline_popup = {
 			border = {
-				style = "none",
-				padding = { 1, 1 },
+				style = "rounded",
 			},
 			filter_options = {},
 			win_options = {
