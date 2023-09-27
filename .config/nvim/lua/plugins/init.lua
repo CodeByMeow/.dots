@@ -139,4 +139,6 @@ return {
 		"nvimdev/lspsaga.nvim",
 		event = "LspAttach",
 	},
+	-- HIGHLIGHT COLOR
+	{ "brenoprata10/nvim-highlight-colors", config = true },
 }
