@@ -74,4 +74,4 @@ betterlockscreen postbird
 - SF Pro Display (ver Vietnames)
 
 ### Music
-    `youtube-music-bin`
+    youtube-music-bin
