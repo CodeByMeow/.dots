@@ -1,5 +1,16 @@
-local icons = require("7ColorsCat.config").icons.diagnostics
+local icons = require("core.kind").diagnostics
+local catppuccin_mocha = {
+	n = "#a6e3a1",
+	i = "#f2cdcd",
+	c = "#fab387",
+	v = "#cba6f7", -- etc...
+	s = "#f9e2af",
+	R = "#f38ba8",
+	V = "#cba6f7",
+}
+
 require("staline").setup({
+	mode_colors = catppuccin_mocha,
 	sections = {
 		left = { "-mode", "file_name", "branch", " ", "lsp" },
 		mid = { "lsp_name" },
@@ -10,7 +21,9 @@ require("staline").setup({
 		i = "INSERT",
 		c = "COMMAND",
 		v = "VISUAL",
+		V = "VISUAL",
 		s = "SELECT",
+		R = "REPLACE",
 	},
 	lsp_symbols = {
 		Error = icons.Error,
@@ -26,8 +39,5 @@ require("staline").setup({
 		mod_symbol = "  ",
 		cool_symbol = "  ",
 		full_path = false,
-	},
-	special_table = {
-		NvimTree = { "Nvimtree", " " },
 	},
 })

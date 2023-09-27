@@ -1,1 +1,1 @@
-require('7ColorsCat')
+require "core"	

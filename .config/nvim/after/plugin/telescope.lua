@@ -5,7 +5,8 @@ local builtin = require("telescope.builtin")
 telescope.setup({
 	defaults = {
 		layout_config = {
-			width = 0.75,
+			width = 0.65,
+            height = 0.7,
 			prompt_position = "top",
 			preview_cutoff = 121,
 			horizontal = { mirror = false },
@@ -22,7 +23,7 @@ telescope.setup({
 				["<C-q>"] = actions.close,
 			},
 		},
-		prompt_prefix = "🔍 ",
+		prompt_prefix = " ",
 		selection_caret = " ",
 		entry_prefix = "  ",
 		file_ignore_patterns = { "node_modules", ".git/" },
@@ -47,8 +48,3 @@ end)
 vim.keymap.set("n", "<leader>d", function()
 	builtin.diagnostics()
 end)
-
-vim.cmd("highlight TelescopeNormal guibg=transparent")
-vim.cmd("highlight TelescopeBorder guifg=transparent guibg=transparent")
-
-require("telescope").load_extension("dap")

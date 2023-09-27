@@ -1,6 +1,6 @@
 local M = {}
 
-M.icons = {
+M = {
 	diagnostics = {
 		Error = " ",
 		Warn = " ",

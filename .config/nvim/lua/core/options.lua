@@ -86,14 +86,7 @@ vim.g.editorconfig = false
 
 --showcmdloc
 opt.cmdheight = 0
-opt.statusline = "%f - %y %=%S %l / %L"
 opt.showcmdloc = "statusline"
 
-vim.diagnostic.config({
-    virtual_text = false,
-    signs = true,
-    update_in_insert = false,
-    underline = true,
-    severity_sort = false,
-    float = true,
-})
+opt.laststatus=2 
+opt.showtabline=2

@@ -1,6 +1,4 @@
-local ts = require("nvim-treesitter.configs")
-
-ts.setup({
+require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"help",
 		"html",
@@ -16,7 +14,6 @@ ts.setup({
 		"markdown_inline",
 		"vim",
 		"bash",
-		"norg",
 	},
 	sync_install = true,
 	auto_install = true,
@@ -74,4 +71,4 @@ ts.setup({
 	ignore_install = { "help" },
 })
 
-vim.keymap.set("n", "<leader>p", "<cmd>:TSPlaygroundToggle<cr>", { noremap = true, silent = true })
+

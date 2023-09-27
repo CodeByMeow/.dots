@@ -1,11 +1,4 @@
-local indent = require("indent_blankline")
-
-vim.opt.list = true
-vim.opt.listchars:append("eol:⤸")
--- vim.opt.listchars:append('space:⋅')
--- vim.opt.listchars:append('tab:  ')
-
-indent.setup({
+require("indent_blankline").setup({
 	char = "│",
 	space_char_blankline = " ",
 	show_first_indent_level = true,
@@ -53,3 +46,8 @@ indent.setup({
 		"for",
 	},
 })
+
+vim.opt.list = true
+vim.opt.listchars:append("eol:⤸")
+-- vim.opt.listchars:append('space:⋅')
+-- vim.opt.listchars:append('tab:  ')
