@@ -1,10 +1,8 @@
 local lsp_zero = require("lsp-zero")
 local icons = require("core.kind")
-
 lsp_zero.on_attach(function(client, bufnr)
 	lsp_zero.default_keymaps({ buffer = bufnr })
 end)
-
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -24,14 +22,12 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
-
 lsp_zero.set_sign_icons({
 	error = icons.diagnostics.Error,
 	warn = icons.diagnostics.Warn,
 	hint = icons.diagnostics.Hint,
 	info = icons.diagnostics.Info,
 })
-
 vim.diagnostic.config({
 	virtual_text = false,
 	severity_sort = true,
@@ -43,35 +39,21 @@ vim.diagnostic.config({
 		prefix = "",
 	},
 })
-
 local cmp = require("cmp")
 local cmp_action = lsp_zero.cmp_action()
 local cmp_format = lsp_zero.cmp_format()
-
 require("luasnip.loaders.from_vscode").lazy_load()
-
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
 local cmp_mappings = cmp.mapping.preset.insert({
-	-- confirm completion item
 	["<CR>"] = cmp.mapping.confirm({ select = false }),
-
-	-- toggle completion menu
 	["<C-e>"] = cmp_action.toggle_completion(),
-
-	-- tab complete
 	["<Tab>"] = cmp_action.tab_complete(),
 	["<S-Tab>"] = cmp.mapping.select_prev_item(),
-
-	-- navigate between snippet placeholder
 	["<C-d>"] = cmp_action.luasnip_jump_forward(),
 	["<C-b>"] = cmp_action.luasnip_jump_backward(),
 })
-
--- If you want insert `(` after select function or method item
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-
 local cmp_kinds = {
 	Text = icons.kind["Text"][1],
 	Method = icons.kind["Method"][1],
@@ -101,21 +83,12 @@ local cmp_kinds = {
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
-		-- confirm completion item
 		["<CR>"] = cmp.mapping.confirm({ select = false }),
-
-		-- toggle completion menu
 		["<C-e>"] = cmp_action.toggle_completion(),
-
-		-- tab complete
 		["<Tab>"] = cmp_action.tab_complete(),
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
-
-		-- navigate between snippet placeholder
 		["<C-d>"] = cmp_action.luasnip_jump_forward(),
 		["<C-b>"] = cmp_action.luasnip_jump_backward(),
-
-		-- scroll documentation window
 		["<C-f>"] = cmp.mapping.scroll_docs(5),
 		["<C-u>"] = cmp.mapping.scroll_docs(-5),
 	}),
@@ -126,7 +99,6 @@ cmp.setup({
 				if entry:get_kind() == 15 then
 					return false
 				end
-
 				return true
 			end,
 		},
@@ -136,13 +108,13 @@ cmp.setup({
 		{ name = "cmp_tabnine" },
 		{ name = "path" },
 		{ name = "treesitter" },
+		{ name = "calc" },
 	}),
 	entry_filter = function(entry, context)
 		local kind = entry:get_kind()
 		local line = context.cursor_line
 		local col = context.cursor.col
 		local char_before_cursor = string.sub(line, col - 1, col - 1)
-
 		if char_before_cursor == "." then
 			if kind == 2 or kind == 5 then
 				return true
@@ -156,12 +128,14 @@ cmp.setup({
 				return false
 			end
 		end
-
 		return true
 	end,
 	formatting = {
-		format = function(_, vim_item)
+		format = function(entry, vim_item)
 			vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
+			if entry.source.name == "calc" then
+				vim_item.kind = " 󰃬 "
+			end
 			return vim_item
 		end,
 	},
