@@ -128,6 +128,10 @@ return {
 		end,
 	},
 	-- GIT
+	{ "lewis6991/gitsigns.nvim", opts = {
+		current_line_blame = true,
+	}, event = "VeryLazy" },
+
 	{ "NeogitOrg/neogit", opts = { kind = "auto" }, config = true, keys = { { "<leader>g", vim.cmd.Neogit } } },
 	-- LSPSAGA
 	{
