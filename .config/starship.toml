@@ -1,9 +1,10 @@
 format = """
+[█](fg:#ED6544)\
 $directory\
-[ ](fg:#ED6544 bg:#55D6A7)\
+[ ](fg:#ED6544 bg:#55D6A7)\
 $git_branch\
 $git_status\
-[ ](fg:#55D6A7 bg:#87C149)\
+[ ](fg:#55D6A7 bg:#87C149)\
 $c\
 $elixir\
 $elm\
@@ -14,11 +15,11 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[ ](fg:#87C149 bg:#06969A)\
+[ ](fg:#87C149 bg:#06969A)\
 $docker_context\
-[ ](fg:#06969A bg:#33658A)\
+[ ](fg:#06969A bg:#33658A)\
 $time\
-[ ](fg:#33658A)\
+[ ](fg:#33658A)\
 """
  
 # Disable the blank line at the start of the prompt
