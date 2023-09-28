@@ -44,14 +44,6 @@ local cmp_action = lsp_zero.cmp_action()
 local cmp_format = lsp_zero.cmp_format()
 require("luasnip.loaders.from_vscode").lazy_load()
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
-local cmp_mappings = cmp.mapping.preset.insert({
-	["<CR>"] = cmp.mapping.confirm({ select = false }),
-	["<C-e>"] = cmp_action.toggle_completion(),
-	["<Tab>"] = cmp_action.tab_complete(),
-	["<S-Tab>"] = cmp.mapping.select_prev_item(),
-	["<C-d>"] = cmp_action.luasnip_jump_forward(),
-	["<C-b>"] = cmp_action.luasnip_jump_backward(),
-})
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 local cmp_kinds = {
@@ -83,7 +75,7 @@ local cmp_kinds = {
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
-		["<CR>"] = cmp.mapping.confirm({ select = false }),
+		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<C-e>"] = cmp_action.toggle_completion(),
 		["<Tab>"] = cmp_action.tab_complete(),
 		["<S-Tab>"] = cmp.mapping.select_prev_item(),
@@ -136,12 +128,23 @@ cmp.setup({
 			if entry.source.name == "calc" then
 				vim_item.kind = " 󰃬 "
 			end
+
 			return vim_item
 		end,
 	},
 	preselect = "item",
 	completion = {
 		completeopt = "menu,menuone,noinsert",
+	},
+	window = {
+		completion = {
+			border = "rounded",
+			scrollbar = "║",
+		},
+		documentation = {
+			border = "rounded",
+			scrollbar = "║",
+		},
 	},
 })
 

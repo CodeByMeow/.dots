@@ -64,10 +64,7 @@ return {
 	"hrsh7th/cmp-cmdline",
 	"hrsh7th/cmp-calc",
 	-- SNIPPETS
-	{
-		"L3MON4D3/LuaSnip",
-		build = "make install_jsregexp",
-	},
+	{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 	"rafamadriz/friendly-snippets",
 	{ "tzachar/cmp-tabnine", build = "./install.sh" },
 	-- NOICE
@@ -129,16 +126,11 @@ return {
 		end,
 	},
 	-- GIT
-	{ "lewis6991/gitsigns.nvim", opts = {
-		current_line_blame = true,
-	}, event = "VeryLazy" },
+	{ "lewis6991/gitsigns.nvim", opts = { current_line_blame = true }, event = "VeryLazy" },
 
 	{ "NeogitOrg/neogit", opts = { kind = "auto" }, config = true, keys = { { "<leader>g", vim.cmd.Neogit } } },
 	-- LSPSAGA
-	{
-		"nvimdev/lspsaga.nvim",
-		event = "LspAttach",
-	},
+	{ "nvimdev/lspsaga.nvim", event = "LspAttach" },
 	-- HIGHLIGHT COLOR
 	{ "brenoprata10/nvim-highlight-colors", config = true },
 }
