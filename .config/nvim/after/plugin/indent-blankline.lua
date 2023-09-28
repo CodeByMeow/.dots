@@ -1,53 +1,24 @@
-require("indent_blankline").setup({
-	char = "│",
-	space_char_blankline = " ",
-	show_first_indent_level = true,
-	show_end_of_lien = true,
-	show_trailing_blankline_indent = false,
-	show_current_context = true,
-	show_current_context_start = false,
-	filetype_exclude = {
-		"startify",
-		"dashboard",
-		"dotooagenda",
-		"log",
-		"fugitive",
-		"gitcommit",
-		"packer",
-		"vimwiki",
-		"markdown",
-		"json",
-		"txt",
-		"vista",
-		"help",
-		"todoist",
-		"NvimTree",
-		"peekaboo",
-		"git",
-		"TelescopePrompt",
-		"undotree",
-		"flutterToolsOutline",
-		"yaml",
-		"yml",
-		"", -- for all buffers without a file type
-	},
-	buftype_exclude = { "terminal", "nofile" },
-	context_patterns = {
-		"class",
-		"function",
-		"method",
-		"block",
-		"list_literal",
-		"selector",
-		"^if",
-		"^table",
-		"if_statement",
-		"while",
-		"for",
-	},
-})
+local highlight = {
+	"RainbowRed",
+	"RainbowYellow",
+	"RainbowBlue",
+	"RainbowOrange",
+	"RainbowGreen",
+	"RainbowViolet",
+	"RainbowCyan",
+}
+local hooks = require("ibl.hooks")
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+	vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+	vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+	vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+	vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+	vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+	vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+	vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
 
-vim.opt.list = true
-vim.opt.listchars:append("eol:⤸")
--- vim.opt.listchars:append('space:⋅')
--- vim.opt.listchars:append('tab:  ')
+vim.g.rainbow_delimiters = { highlight = highlight }
+require("ibl").setup({ scope = { highlight = highlight } })
+
+hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
