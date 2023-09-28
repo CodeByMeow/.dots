@@ -87,7 +87,22 @@ return {
 	-- ICONS PICKER
 	{ "ziontee113/icon-picker.nvim", dependencies = "stevearc/dressing.nvim" },
 	-- FILE MANAGER
-	"stevearc/oil.nvim",
+	{
+		"stevearc/oil.nvim",
+		keys = { {
+			"<leader>i",
+			vim.cmd.Oil,
+		} },
+		opts = {
+			columns = {
+				"icon",
+				"size",
+			},
+			keymaps = {
+				["q"] = "actions.close",
+			},
+		},
+	},
 	-- COMMENT
 	{ "numToStr/Comment.nvim", config = true },
 	-- UNDO TREE
