@@ -47,8 +47,8 @@ require("nvim-treesitter.configs").setup({
 				["iC"] = "@class.inner",
 				["ac"] = "@conditional.outer",
 				["ic"] = "@conditional.inner",
-				["ae"] = "@block.outer",
-				["ie"] = "@block.inner",
+				["ab"] = "@block.outer",
+				["ib"] = "@block.inner",
 				["al"] = "@loop.outer",
 				["il"] = "@loop.inner",
 				["is"] = "@statement.inner",
@@ -70,5 +70,3 @@ require("nvim-treesitter.configs").setup({
 	},
 	ignore_install = { "help" },
 })
-
-

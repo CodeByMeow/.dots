@@ -6,7 +6,7 @@ telescope.setup({
 	defaults = {
 		layout_config = {
 			width = 0.65,
-            height = 0.7,
+			height = 0.7,
 			prompt_position = "top",
 			preview_cutoff = 121,
 			horizontal = { mirror = false },
@@ -23,7 +23,7 @@ telescope.setup({
 				["<C-q>"] = actions.close,
 			},
 		},
-		prompt_prefix = " ",
+		prompt_prefix = "    ",
 		selection_caret = " ",
 		entry_prefix = "  ",
 		file_ignore_patterns = { "node_modules", ".git/" },

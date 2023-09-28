@@ -3,6 +3,7 @@ require("lspsaga").setup({
 	ui = {
 		kind = kind,
 		border = "rounded",
+		code_action = " ",
 	},
 })
 
