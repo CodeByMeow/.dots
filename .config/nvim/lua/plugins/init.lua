@@ -152,6 +152,7 @@ return {
 		"ziontee113/icon-picker.nvim",
 		keys = { { "<leader><leader>y", vim.cmd.IconPickerYank } },
 		dependencies = "stevearc/dressing.nvim",
+		config = true,
 	},
 	-- FILE MANAGER
 	{
