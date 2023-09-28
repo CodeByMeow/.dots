@@ -7,6 +7,7 @@ local catppuccin_mocha = {
 	s = "#f9e2af",
 	R = "#f38ba8",
 	V = "#cba6f7",
+	t = "#89b4fa",
 }
 
 require("staline").setup({
@@ -24,6 +25,7 @@ require("staline").setup({
 		V = "VISUAL",
 		s = "SELECT",
 		R = "REPLACE",
+		t = "TERMINAL",
 	},
 	lsp_symbols = {
 		Error = icons.Error,
