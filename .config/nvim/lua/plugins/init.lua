@@ -10,7 +10,7 @@ return {
 	-- TELESCOPE
 	"nvim-telescope/telescope.nvim",
 	-- ESCAPE
-	"max397574/better-escape.nvim",
+	{ "max397574/better-escape.nvim", opts = { mapping = { "ii" }, key = "<ESC>" } },
 	-- BUFTER
 	{
 		"akinsho/bufferline.nvim",
@@ -25,7 +25,8 @@ return {
 			options = {
 				diagnostics = "nvim_lsp",
 				diagnostics_indicator = function(count, level)
-					local icon = level:match("error") and " " or " "
+					local kind = require("core.kind")
+					local icon = level:match("error") and kind.diagnostics.Error or kind.diagnostics.Warn
 					return " " .. icon .. count
 				end,
 			},
@@ -34,11 +35,73 @@ return {
 	-- INDENT
 	"lukas-reineke/indent-blankline.nvim",
 	-- QUICK REOPEN
-	"ThePrimeagen/harpoon",
+	{
+		"ThePrimeagen/harpoon",
+		keys = {
+			{
+				"ha",
+				function()
+					require("harpoon.mark").add_file()
+				end,
+			},
+			{
+				"hm",
+				function()
+					require("harpoon.ui").toggle_quick_menu()
+				end,
+			},
+			{
+				"hn",
+				function()
+					require("harpoon.ui").nav_next()
+				end,
+			},
+			{
+				"he",
+				function()
+					require("harpoon.ui").nav_prev()
+				end,
+			},
+		},
+	},
 	-- SCROLL SMOOTH
 	{ "karb94/neoscroll.nvim", config = true },
 	-- TMUX VIM
-	"aserowy/tmux.nvim",
+	{
+		"aserowy/tmux.nvim",
+		opts = {
+			copy_sync = {
+				enable = true,
+			},
+			navigation = {
+				enable_default_keybindings = false,
+			},
+			resize = {
+				enable_default_keybindings = false,
+			},
+		},
+		keys = {
+			{
+				"<C-h>",
+				function()
+					require("tmux").move_left()
+				end,
+			},
+			{
+				"<C-n>",
+				function()
+					require("tmux").move_bottom()
+				end,
+			},
+			{
+				"<C-e>",
+				function()
+					require("tmux").move_top()
+				end,
+			},
+		},
+		config = true,
+	},
 	-- HIGHLIGHT SYNTAX
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -85,7 +148,11 @@ return {
 		},
 	},
 	-- ICONS PICKER
-	{ "ziontee113/icon-picker.nvim", dependencies = "stevearc/dressing.nvim" },
+	{
+		"ziontee113/icon-picker.nvim",
+		keys = { { "<leader><leader>y", vim.cmd.IconPickerYank } },
+		dependencies = "stevearc/dressing.nvim",
+	},
 	-- FILE MANAGER
 	{
 		"stevearc/oil.nvim",
@@ -108,7 +175,7 @@ return {
 	-- UNDO TREE
 	{
 		"mbbill/undotree",
-		keys = { { "<leader>u", vim.cmd.UndotreeToggle, desc = "Toggle UndoTree" } },
+		keys = { { "<leader>u", vim.cmd.UndotreeToggle } },
 	},
 	-- SURROUND
 	{ "kylechui/nvim-surround", config = true },
@@ -135,6 +202,10 @@ return {
 		dependencies = {
 			"nvimdev/guard-collection",
 		},
+		keys = { {
+			"fm",
+			vim.cmd.GuardFmt,
+		} },
 	},
 	-- AUTO CONVERT STRING TEMPLATE
 	{
@@ -151,7 +222,6 @@ return {
 	},
 	-- GIT
 	{ "lewis6991/gitsigns.nvim", opts = { current_line_blame = true }, event = "VeryLazy" },
-
 	{ "NeogitOrg/neogit", opts = { kind = "auto" }, config = true, keys = { { "<leader>g", vim.cmd.Neogit } } },
 	-- LSPSAGA
 	{ "nvimdev/lspsaga.nvim", event = "LspAttach" },

@@ -11,5 +11,3 @@ require("guard").setup({
 	fmt_on_save = true,
 	lsp_as_default_formatter = true,
 })
-
-vim.keymap.set({ "n", "v" }, "fm", "<cmd>GuardFmt<CR>")

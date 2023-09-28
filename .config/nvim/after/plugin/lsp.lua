@@ -1,6 +1,6 @@
 local lsp_zero = require("lsp-zero")
 local icons = require("core.kind")
-lsp_zero.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(_, bufnr)
 	lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 require("mason").setup({})
@@ -41,7 +41,6 @@ vim.diagnostic.config({
 })
 local cmp = require("cmp")
 local cmp_action = lsp_zero.cmp_action()
-local cmp_format = lsp_zero.cmp_format()
 require("luasnip.loaders.from_vscode").lazy_load()
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")

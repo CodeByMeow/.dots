@@ -79,5 +79,3 @@ end)
 vim.keymap.set("n", "<leader>nh", function()
 	noice.cmd("history")
 end)
-
-vim.keymap.set("n", "<leader>nt", "<CMD>:Noice telescope<CR>")

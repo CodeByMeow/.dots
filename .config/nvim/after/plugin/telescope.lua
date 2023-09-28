@@ -48,3 +48,8 @@ end)
 vim.keymap.set("n", "<leader>d", function()
 	builtin.diagnostics()
 end)
+
+require("telescope").load_extension("notify")
+vim.keymap.set("n", "<leader>n", function()
+	telescope.extensions.notify.notify()
+end)
