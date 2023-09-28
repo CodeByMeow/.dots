@@ -3,7 +3,7 @@ return {
 	{ "catppuccin/nvim", name = "catppuccin", opts = { transparent_background = true } },
 	-- BASE
 	"nvim-lua/plenary.nvim",
-	{ "nvim-tree/nvim-web-devicons", lazy = true },
+	{ "nvim-tree/nvim-web-devicons", lazy = true, config = true },
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- STATUS LINE
 	"tamton-aquib/staline.nvim",
