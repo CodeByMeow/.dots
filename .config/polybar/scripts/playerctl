@@ -8,7 +8,7 @@ title=$(playerctl metadata --format "{{ title }}" 2>/dev/null)
 
 # Check if title is empty (no media player found)
 if [ -z "$title" ]; then
-    echo "🔭 Looking for new planet..."
+    echo " Looking for new planet..."
 else
     # Truncate the title if it exceeds the maximum length
     if [ ${#title} -gt $max_length ]; then
@@ -16,6 +16,6 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "Detected: 🪐 $title"
+    echo "Detected:  $title"
 fi
 
