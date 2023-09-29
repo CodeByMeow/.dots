@@ -16,6 +16,6 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "Detected: %{T5}%{F#6C71C4}  %{F-}%{T-} $title"
+    echo "%{T5}%{F#2AA198} %{F-}%{T-} $title"
 fi
 
