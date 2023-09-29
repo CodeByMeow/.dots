@@ -46,19 +46,19 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#CDD6F4"
-    foreground = "#242424"
+    background = "#93A1A1"
+    foreground = "#073642"
     timeout = 5
 
 [urgency_normal]
     font = SF Pro Display 11
-    background = "#CDD6F4"
-    foreground = "#242424"
+    background = "#93A1A1"
+    foreground = "#073642"
     timeout = 5
 
 [urgency_critical]
-    background = "#ED6544"
-    foreground = "#242424"
-    frame_color = "#242424"
+    background = "#DC322F"
+    foreground = "#073642"
+    frame_color = "#073642"
     timeout = 15
     default_icon = /home/lisa/.icons/Reversal-black/status/32/dialog-warning.svg
