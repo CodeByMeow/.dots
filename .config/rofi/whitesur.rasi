@@ -1,12 +1,12 @@
 * {
     bg-col:  transparent;
     bg-col-light: transparent;
-    border-col: #cdd6f4;
-    fg-col: #cdd6f4;
-    selected-col: #E8F0F7;
-    blue: #89b4fa;
-    fg-col2: #1F232F;
-    grey: #6c7086;
+    border-col:#002b36;
+    fg-col:#93a1a1;
+    selected-col:#657b83;
+    blue:#268bd2;
+    fg-col2:#073642;
+    grey:#586e75;
     width: 600;
     font: "SF Pro Display 14";
 }
