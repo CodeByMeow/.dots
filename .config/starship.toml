@@ -1,10 +1,10 @@
 format = """
-[█](fg:#ED6544)\
+[█](fg:#002B36)\
 $directory\
-[ ](fg:#ED6544 bg:#55D6A7)\
+[ ](fg:#002B36 bg:#01AF87)\
 $git_branch\
 $git_status\
-[ ](fg:#55D6A7 bg:#87C149)\
+[ ](fg:#01AF87 bg:#01AFAF)\
 $c\
 $elixir\
 $elm\
@@ -15,11 +15,11 @@ $julia\
 $nodejs\
 $nim\
 $rust\
-[ ](fg:#87C149 bg:#06969A)\
+[ ](fg:#01AFAF bg:#01AFD7)\
 $docker_context\
-[ ](fg:#06969A bg:#33658A)\
+[ ](fg:#01AFD7 bg:#01AFFF)\
 $time\
-[ ](fg:#33658A)\
+[ ](fg:#01AFFF)\
 """
  
 # Disable the blank line at the start of the prompt
@@ -27,7 +27,7 @@ $time\
  
  
 [directory]
-style = "bg:#ED6544 fg:#FFFFFF"
+style = "bg:#002B36 fg:#86AEFE"
 format = "[$path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -107,7 +107,7 @@ format = '[$symbol ($version)($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#33658A"
+style = "bg:#01AFFF fg:#23303A"
 format = '[$time]($style)'
 
 
