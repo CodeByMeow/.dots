@@ -57,16 +57,16 @@ format = '[$symbol ($version)]($style)'
  
 [elm]
 symbol = "🌳 "
-style = "bg:#55D6A7 fg:#23303A"
+style = "bg:#01AF87 fg:#23303A"
 format = '[ $symbol ($version) ]($style)'
  
 [git_branch]
 symbol = ""
-style = "bg:#55D6A7 fg:#23303A"
+style = "bg:#01AF87 fg:#23303A"
 format = '[$symbol $branch ]($style)'
  
 [git_status]
-style = "bg:#55D6A7 fg:#23303A"
+style = "bg:#01AF87 fg:#23303A"
 format = '[($all_status$ahead_behind )]($style)'
  
 [golang]
@@ -76,22 +76,22 @@ format = '[$symbol ($version) ]($style)'
  
 [haskell]
 symbol = "λ "
-style = "bg:#55D6A7 fg:#23303A"
+style = "bg:#01AF87 fg:#23303A"
 format = '[$symbol ($version) ]($style)'
  
 [java]
 symbol = "☕ "
-style = "bg:#55D6A7 fg:#23303A"
+style = "bg:#01AF87 fg:#23303A"
 format = '[$symbol ($version)]($style)'
  
 [julia]
 symbol = "ஃ "
-style = "bg:#55D6A7 fg:#23303A"
+style = "bg:#01AF87 fg:#23303A"
 format = '[$symbol ($version)]($style)'
  
 [nodejs]
 symbol = ""
-style = "bg:#87C149 fg:#23303A"
+style = "bg:#01AFAF fg:#23303A"
 format = '[$symbol ($version)]($style)'
  
 [nim]

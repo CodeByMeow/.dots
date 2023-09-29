@@ -1,6 +1,5 @@
 return {
 	-- THEME
-	{ "catppuccin/nvim", name = "catppuccin", opts = { transparent_background = true } },
 	{
 		"svrana/neosolarized.nvim",
 		dependencies = { "tjdevries/colorbuddy.nvim" },
