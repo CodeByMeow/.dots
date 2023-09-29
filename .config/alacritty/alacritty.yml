@@ -1,18 +1,14 @@
 #Font
 font:
   normal:
-    family: monospace
+    family: JetBrainsMono Nerd Font
   bold:
-    family: monospace
+    family: JetBrainsMono Nerd Font
   italic:
-    family: italic-monospace
+    family: Victor Mono
   bold_italic:
-    family: italic-monospace
+    family: Victor Mono
   size: 16.0
-emoji:
-  font:
-    family: Noto Color Emoji
-    style: Regular
 
 fallback_glyph:
   font:
