@@ -1,6 +1,11 @@
 return {
 	-- THEME
 	{ "catppuccin/nvim", name = "catppuccin", opts = { transparent_background = true } },
+	{
+		"svrana/neosolarized.nvim",
+		dependencies = { "tjdevries/colorbuddy.nvim" },
+		opts = { comment_italics = true, background_set = false },
+	},
 	-- BASE
 	"nvim-lua/plenary.nvim",
 	{ "nvim-tree/nvim-web-devicons", lazy = true, config = true },
