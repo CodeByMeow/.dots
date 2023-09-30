@@ -11,7 +11,7 @@ workspaces() {
 }
 
 # Application rules
-bspc rule -a Alacritty desktop=^1 follow=on
+bspc rule -a kitty desktop=^1 follow=on
 bspc rule -a firefoxdeveloperedition desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
 bspc rule -a notion-app  desktop=^4 follow=on
