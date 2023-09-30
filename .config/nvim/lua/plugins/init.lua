@@ -35,6 +35,7 @@ return {
 					local icon = level:match("error") and kind.diagnostics.Error or kind.diagnostics.Warn
 					return " " .. icon .. count
 				end,
+				modified_icon = "",
 			},
 		},
 	},
@@ -152,6 +153,15 @@ return {
 		dependencies = {
 			"rcarriga/nvim-notify",
 		},
+		config = function()
+			require("telescope").load_extension("notify")
+		end,
+		keys = { {
+			"<leader>n",
+			function()
+				require("telescope").extensions.notify.notify()
+			end,
+		} },
 	},
 	-- ICONS PICKER
 	{
@@ -163,8 +173,9 @@ return {
 	-- FILE MANAGER
 	{
 		"stevearc/oil.nvim",
+		-- code
 		keys = { {
-			"<leader>i",
+			"<leader>e",
 			vim.cmd.Oil,
 		} },
 		opts = {
@@ -181,8 +192,16 @@ return {
 	{ "numToStr/Comment.nvim", config = true },
 	-- UNDO TREE
 	{
-		"mbbill/undotree",
-		keys = { { "<leader>u", vim.cmd.UndotreeToggle } },
+		"debugloop/telescope-undo.nvim",
+		config = function()
+			require("telescope").load_extension("undo")
+		end,
+		keys = { {
+			"<leader>u",
+			function()
+				require("telescope").extensions.undo.undo()
+			end,
+		} },
 	},
 	-- SURROUND
 	{ "kylechui/nvim-surround", config = true },

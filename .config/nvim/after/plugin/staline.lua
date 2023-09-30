@@ -1,4 +1,5 @@
 local icons = require("core.kind").diagnostics
+local git = require("core.kind").git
 
 require("staline").setup({
 	sections = {
@@ -41,8 +42,8 @@ require("staline").setup({
 		line_column = "[%l/%L] :%c 並%p%% ",
 		branch_symbol = " ",
 		lsp_client_symbol = " ",
-		mod_symbol = "  ",
-		cool_symbol = "  ",
+		mod_symbol = " " .. git.modified,
+		cool_symbol = " " .. " ",
 		full_path = false,
 	},
 })

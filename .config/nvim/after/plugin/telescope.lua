@@ -5,7 +5,7 @@ local builtin = require("telescope.builtin")
 telescope.setup({
 	defaults = {
 		layout_config = {
-			width = 0.65,
+			width = 0.7,
 			height = 0.7,
 			prompt_position = "top",
 			preview_cutoff = 121,
@@ -47,9 +47,4 @@ vim.keymap.set("n", "<leader>h", function()
 end)
 vim.keymap.set("n", "<leader>d", function()
 	builtin.diagnostics()
-end)
-
-require("telescope").load_extension("notify")
-vim.keymap.set("n", "<leader>n", function()
-	telescope.extensions.notify.notify()
 end)
