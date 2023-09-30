@@ -15,7 +15,7 @@
 - **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
-- **Terminal Emulator** :a: [ Alacritty ](https://github.com/alacritty/alacritty)
+- **Terminal Emulator** :a: [ Kitty ](https://sw.kovidgoyal.net/kitty)
 - **Shell**  [ Nushell ](https://www.nushell.sh)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Ranger ](https://github.com/ranger/ranger)
