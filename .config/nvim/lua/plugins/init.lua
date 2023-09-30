@@ -2,8 +2,10 @@ return {
 	-- THEME
 	{
 		"svrana/neosolarized.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
 		dependencies = { "tjdevries/colorbuddy.nvim" },
-		opts = { comment_italics = true, background_set = false },
+		config = true,
 	},
 	-- BASE
 	"nvim-lua/plenary.nvim",

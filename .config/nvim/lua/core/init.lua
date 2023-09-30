@@ -1,5 +1,4 @@
 require("core.options")
 require("core.mappings")
 require("core.lazy")
-require("core.theme")
 require("core.kind")
