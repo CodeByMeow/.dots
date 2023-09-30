@@ -250,6 +250,8 @@ return {
 	},
 	-- GIT
 	{ "lewis6991/gitsigns.nvim", opts = { current_line_blame = true }, event = "VeryLazy" },
+	-- SCROLL BAR
+	{ "lewis6991/satellite.nvim", config = true },
 	{ "NeogitOrg/neogit", opts = { kind = "auto" }, config = true, keys = { { "<leader>g", vim.cmd.Neogit } } },
 	-- LSPSAGA
 	{ "nvimdev/lspsaga.nvim", event = "LspAttach" },
