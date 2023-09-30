@@ -1,6 +1,7 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
+local icons = require("nvim-nonicons")
 
 telescope.setup({
 	defaults = {
@@ -23,9 +24,9 @@ telescope.setup({
 				["<C-q>"] = actions.close,
 			},
 		},
-		prompt_prefix = "    ",
-		selection_caret = " ",
-		entry_prefix = "  ",
+		prompt_prefix = "  " .. icons.get("telescope") .. "  ",
+		selection_caret = " ❯ ",
+		entry_prefix = "   ",
 		file_ignore_patterns = { "node_modules", ".git/" },
 	},
 })

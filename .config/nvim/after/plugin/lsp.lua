@@ -69,7 +69,7 @@ local cmp_kinds = {
 	Event = icons.kind["Event"][1],
 	Operator = icons.kind["Operator"][1],
 	TypeParameter = icons.kind["TypeParameter"][1],
-	Color = "  ",
+	Color = "  ",
 }
 
 cmp.setup({

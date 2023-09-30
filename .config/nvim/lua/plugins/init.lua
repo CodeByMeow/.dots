@@ -10,6 +10,7 @@ return {
 	-- BASE
 	"nvim-lua/plenary.nvim",
 	{ "nvim-tree/nvim-web-devicons", lazy = true, config = true },
+	{ "yamatsum/nvim-nonicons", config = true },
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- STATUS LINE
 	"tamton-aquib/staline.nvim",
@@ -32,10 +33,10 @@ return {
 				diagnostics = "nvim_lsp",
 				diagnostics_indicator = function(count, level)
 					local kind = require("core.kind")
-					local icon = level:match("error") and kind.diagnostics.Error or kind.diagnostics.Warn
+					local icon = level:match("error") and kind.diagnostics.error or kind.diagnostics.Warn
 					return " " .. icon .. count
 				end,
-				modified_icon = "",
+				modified_icon = " ",
 			},
 		},
 	},
@@ -126,10 +127,11 @@ return {
 			{ "<leader>p", vim.cmd.TSPlaygroundToggle },
 		},
 	},
-	-- CURRENT WORD
-	"RRethy/vim-illuminate",
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false },
+	-- CURSOR WORD
+	-- { "dominikduda/vim_current_word" },
+	{ "nyngwang/murmur.lua", config = true },
 	-- LSP SUPPORT
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false },
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",

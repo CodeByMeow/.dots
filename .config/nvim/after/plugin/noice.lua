@@ -1,12 +1,13 @@
 local noice = require("noice")
+local icons = require("nvim-nonicons")
 noice.setup({
 	cmdline = {
 		format = {
 			cmdline = { icon = "↪️ " },
 			search_down = { icon = " ▼ " },
 			search_up = { icon = " ▲" },
-			filter = { icon = " " },
-			lua = { icon = " " },
+			filter = { icon = " " },
+			lua = { icon = icons.get("lua") },
 			help = { icon = " " },
 		},
 	},
@@ -68,8 +69,10 @@ noice.setup({
 	},
 })
 
+local nonicons_extention = require("nvim-nonicons.extentions.nvim-notify")
 require("notify").setup({
-	background_colour = "#242424",
+	icons = nonicons_extention.icons,
+	background_colour = "#000000",
 })
 
 vim.keymap.set("n", "<leader>nl", function()

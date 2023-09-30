@@ -9,8 +9,8 @@ M = {
 	},
 	git = {
 		added = " ",
-		modified = " ",
-		removed = " ",
+		modified = " ",
+		removed = " ",
 	},
 	kind = {
 		["File"] = { " ", "Tag" },
@@ -44,7 +44,6 @@ M = {
 		["Parameter"] = { " ", "@parameter" },
 		["StaticMethod"] = { " ", "Function" },
 		["Macro"] = { " ", "Macro" },
-		-- for completion sb microsoft!!!
 		["Text"] = { " ", "String" },
 		["Snippet"] = { " ", "@variable" },
 		["Folder"] = { " ", "Include" },
