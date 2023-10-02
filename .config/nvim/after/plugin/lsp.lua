@@ -3,6 +3,8 @@ local icons = require("core.kind")
 lsp_zero.on_attach(function(_, bufnr)
 	lsp_zero.default_keymaps({ buffer = bufnr })
 end)
+
+-- LSP MANAGER
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	ensure_installed = {
@@ -39,6 +41,8 @@ vim.diagnostic.config({
 		prefix = "",
 	},
 })
+
+-- CMP
 local cmp = require("cmp")
 local cmp_action = lsp_zero.cmp_action()
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -132,9 +136,6 @@ cmp.setup({
 		end,
 	},
 	preselect = "item",
-	completion = {
-		completeopt = "menu,menuone,noinsert",
-	},
 	window = {
 		completion = {
 			border = "rounded",
@@ -158,12 +159,5 @@ cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
 		{ name = "path" },
-	}, {
-		{
-			name = "cmdline",
-			option = {
-				ignore_cmds = { "Man", "!" },
-			},
-		},
 	}),
 })
