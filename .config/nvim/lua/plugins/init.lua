@@ -9,8 +9,21 @@ return {
 	},
 	-- BASE
 	"nvim-lua/plenary.nvim",
-	{ "nvim-tree/nvim-web-devicons", lazy = true, config = true },
-	{ "yamatsum/nvim-nonicons", config = true },
+	{
+		"nvim-tree/nvim-web-devicons",
+		lazy = true,
+		config = true,
+	},
+	{ "yamatsum/nvim-nonicons" },
+	opts = {
+		override_by_filename = {
+			[".gitignore"] = {
+				icon = "",
+				color = "#f1502f",
+				name = "Gitignore",
+			},
+		},
+	},
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- STATUS LINE
 	"tamton-aquib/staline.nvim",
