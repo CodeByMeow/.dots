@@ -74,11 +74,3 @@ require("notify").setup({
 	icons = nonicons_extention.icons,
 	background_colour = "#000000",
 })
-
-vim.keymap.set("n", "<leader>nl", function()
-	noice.cmd("last")
-end)
-
-vim.keymap.set("n", "<leader>nh", function()
-	noice.cmd("history")
-end)
