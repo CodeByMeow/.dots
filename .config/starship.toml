@@ -46,7 +46,7 @@ style = "bg:#6295CB fg:#23303A"
 format = '[$symbol ($version) ($style)'
  
 [docker_context]
-symbol = "🐳 "
+symbol = " "
 style = "bg:#099CEC"
 format = '[$symbol $context ]($style) $path'
  
@@ -66,11 +66,22 @@ style = "bg:#01AF87 fg:#23303A"
 format = '[$symbol $branch ]($style)'
  
 [git_status]
+conflicted = "🏳"
+ahead = "🏎"
+behind = "😰"
+diverged = "😵"
+up_to_date = "痢"
+untracked = " "
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "凜"
+deleted = " "
 style = "bg:#01AF87 fg:#23303A"
 format = '[($all_status$ahead_behind )]($style)'
  
 [golang]
-symbol = "🐹 "
+symbol = " "
 style = "bg:#67CFDC fg:#23303A"
 format = '[$symbol ($version) ]($style)'
  
