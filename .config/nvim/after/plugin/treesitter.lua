@@ -1,6 +1,5 @@
 require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-		"help",
 		"html",
 		"javascript",
 		"typescript",
@@ -15,22 +14,9 @@ require("nvim-treesitter.configs").setup({
 		"vim",
 		"bash",
 	},
-	sync_install = true,
-	auto_install = true,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
-	rainbow = {
-		enable = true,
-		disable = { "html" },
-		extended_mode = false,
-		max_file_lines = nil,
-	},
+	highlight = { enable = true },
+	context_commentstring = { enable = true },
+	rainbow = { enable = true, disable = { "html" } },
 	autopairs = { enable = true },
 	autotag = { enable = true },
 	incremental_selection = { enable = true },
@@ -60,12 +46,8 @@ require("nvim-treesitter.configs").setup({
 		},
 		swap = {
 			enable = true,
-			swap_next = {
-				["<leader>sn"] = "@parameter.inner",
-			},
-			swap_previous = {
-				["<leader>sp"] = "@parameter.inner",
-			},
+			swap_next = { ["<leader>sn"] = "@parameter.inner" },
+			swap_previous = { ["<leader>sp"] = "@parameter.inner" },
 		},
 	},
 	ignore_install = { "help" },

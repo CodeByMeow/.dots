@@ -1,13 +1,36 @@
-local icons = require("core.kind").diagnostics
-local git = require("core.kind").git
 local nonicon = require("nvim-nonicons")
-local vimNormalMode = nonicon.get("vim-normal-mode")
-local vimInsertMode = nonicon.get("vim-insert-mode")
-local vimReplaceMode = nonicon.get("vim-replace-mode")
-local vimSelectMode = nonicon.get("vim-select-mode")
-local vimTerminalMode = nonicon.get("vim-terminal-mode")
-local vimVisualMode = nonicon.get("vim-visual-mode")
-local vimCommandMode = nonicon.get("vim-command-mode")
+local git = require("core.kind").git
+local icons = require("core.kind").diagnostics
+
+local modes = {
+	"n",
+	"no",
+	"niI",
+	"niR",
+	"no",
+	"niV",
+	"nov",
+	"noV",
+	"i",
+	"ic",
+	"ix",
+	"s",
+	"S",
+	"v",
+	"V",
+	"",
+	"r",
+	"r?",
+	"R",
+	"c",
+	"t",
+	"!",
+}
+
+local mode_icons = {}
+for _, mode in ipairs(modes) do
+	mode_icons[mode] = nonicon.get("vim-" .. mode .. "-mode")
+end
 
 require("staline").setup({
 	sections = {
@@ -15,30 +38,7 @@ require("staline").setup({
 		mid = { "lsp_name" },
 		right = { "file_size", vim.bo.fileencoding:upper(), "line_column" },
 	},
-	mode_icons = {
-		["n"] = vimNormalMode,
-		["no"] = vimNormalMode,
-		["niI"] = vimNormalMode,
-		["niR"] = vimNormalMode,
-		["no"] = vimNormalMode,
-		["niV"] = vimNormalMode,
-		["nov"] = vimNormalMode,
-		["noV"] = vimNormalMode,
-		["i"] = vimInsertMode,
-		["ic"] = vimInsertMode,
-		["ix"] = vimInsertMode,
-		["s"] = vimSelectMode,
-		["S"] = vimSelectMode,
-		["v"] = vimVisualMode,
-		["V"] = vimVisualMode,
-		[""] = vimVisualMode,
-		["r"] = vimReplaceMode,
-		["r?"] = vimReplaceMode,
-		["R"] = vimReplaceMode,
-		["c"] = vimCommandMode,
-		["t"] = vimTerminalMode,
-		["!"] = vimTerminalMode,
-	},
+	mode_icons = mode_icons,
 	lsp_symbols = {
 		Error = icons.Error,
 		Info = icons.Info,
@@ -49,7 +49,7 @@ require("staline").setup({
 		true_colors = true,
 		line_column = "[%l/%L] :%c 並%p%% ",
 		branch_symbol = " ",
-		lsp_client_symbol = " ",
+		lsp_client_symbol = " ",
 		mod_symbol = " " .. git.modified,
 		cool_symbol = " " .. " ",
 		full_path = false,
