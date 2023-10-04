@@ -40,6 +40,6 @@ ${bold}${blue}⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀
 ${bold}${blue}⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀ ⠀${end}${bold}${purple} ${blue}os${green}  ${magenta} ${cyan}${distro}${end}
 ${bold}${blue}⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⡇     ${end}${bold}${yellow} ${blue}sh${green}  ${magenta} ${cyan}${shell}${end}
 ${bold}${blue}⣶⣿⣦⣜⣿⣿⣿⡟⠻⣿⣿⣿⣿⣿⣿⣿⡿⢿⡏⣴⣺⣦⣙⣿⣷⣄⠀⠀  ${end}${bold}${green} ${blue}wm${green}  ${magenta} ${cyan}${wm}${end}
-${bold}${blue}⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧⠀⠀ ${end}${bold}${red} ${blue}kn${green}  ${magenta} ${cyan}${kernel}${end}
-${bold}${blue}⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣷  ${end}${bold}${cyan} ${blue}pk${green}  ${magenta} ${cyan}${packages}${end}
+${bold}${blue}⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧⠀⠀ ${end}${bold}${red} ${blue}kn${green}  ${magenta} ${cyan}${kernel}${end}
+${bold}${blue}⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣷  ${end}${bold}${cyan} ${blue}pk${green}  ${magenta} ${cyan}${packages}${end}
 "
