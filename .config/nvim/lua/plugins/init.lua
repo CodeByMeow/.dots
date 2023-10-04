@@ -5,7 +5,14 @@ return {
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		dependencies = { "tjdevries/colorbuddy.nvim" },
-		config = true,
+		config = function()
+			local n = require("neosolarized").setup({
+				comment_italics = true,
+				background_set = false,
+			})
+			n.Group.link("HoverNormal", n.groups.Normal)
+			n.Group.link("HoverBorder", n.groups.Information)
+		end,
 	},
 	-- BASE
 	"nvim-lua/plenary.nvim",
@@ -14,16 +21,7 @@ return {
 		lazy = true,
 		config = true,
 	},
-	{ "yamatsum/nvim-nonicons" },
-	opts = {
-		override_by_filename = {
-			[".gitignore"] = {
-				icon = "",
-				color = "#f1502f",
-				name = "Gitignore",
-			},
-		},
-	},
+	"yamatsum/nvim-nonicons",
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- STATUS LINE
 	"tamton-aquib/staline.nvim",
