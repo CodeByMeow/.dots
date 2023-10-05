@@ -13,4 +13,4 @@ configuration{
 	window-format:        "{w} · {c} · {t}";
 }
 
-@theme "whitesur"
+@theme "solarized"
