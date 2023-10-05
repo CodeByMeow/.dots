@@ -204,18 +204,7 @@ return {
 	-- COMMENT
 	{ "numToStr/Comment.nvim", config = true },
 	-- UNDO TREE
-	{
-		"debugloop/telescope-undo.nvim",
-		config = function()
-			require("telescope").load_extension("undo")
-		end,
-		keys = { {
-			"<leader>u",
-			function()
-				require("telescope").extensions.undo.undo()
-			end,
-		} },
-	},
+	{ "mbbill/undotree", keys = { { "<leader>u", vim.cmd.UndotreeToggle } } },
 	-- SURROUND
 	{ "kylechui/nvim-surround", config = true },
 	-- DIANOGTIC HELP
