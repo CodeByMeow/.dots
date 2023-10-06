@@ -8,7 +8,7 @@ title=$(playerctl metadata --format "{{ title }}" 2>/dev/null)
 
 # Check if title is empty (no media player found)
 if [ -z "$title" ]; then
-    echo "%{T5}%{F#2AA198} %{F-}%{T-}"
+    echo "%{T5}%{F#2AA198}🗼         📻%{F-}%{T-}"
 else
     # Truncate the title if it exceeds the maximum length
     if [ ${#title} -gt $max_length ]; then
