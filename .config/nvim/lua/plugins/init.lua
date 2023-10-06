@@ -179,7 +179,7 @@ return {
 	-- ICONS PICKER
 	{
 		"ziontee113/icon-picker.nvim",
-		keys = { { "<leader><leader>y", "<cmd>:IconPickerYank nerd_font<cr>" } },
+		keys = { { "<leader><leader>y", "<cmd>:IconPickerYank emoji nerd_font<cr>" } },
 		dependencies = "stevearc/dressing.nvim",
 		config = true,
 	},

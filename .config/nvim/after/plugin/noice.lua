@@ -3,7 +3,7 @@ local icons = require("nvim-nonicons")
 noice.setup({
 	cmdline = {
 		format = {
-			cmdline = { icon = "↪️ " },
+			cmdline = { icon = " " },
 			search_down = { icon = " ▼ " },
 			search_up = { icon = " ▲" },
 			filter = { icon = " " },

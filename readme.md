@@ -70,6 +70,7 @@ betterlockscreen postbird
 - JetBrains Mono Nerd Font
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - SF Pro Display (ver Vietnames)
+- Noto-fonts-emoji
 
 ### Music
     youtube-music-bin
