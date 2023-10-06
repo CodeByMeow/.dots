@@ -37,7 +37,7 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 ### Software
 
 ```
-sxhkd cava glava dunst unclutter duf
+sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco onefetch

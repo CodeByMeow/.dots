@@ -47,5 +47,4 @@ nitrogen --restore &
 picom &
 unclutter -idle 10 &
 ibus-daemon &
-glava -d 
 
