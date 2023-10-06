@@ -37,7 +37,7 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 ### Software
 
 ```
-sxhkd cava dunst unclutter duf
+sxhkd cava glava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco onefetch
@@ -67,9 +67,7 @@ betterlockscreen postbird
 - [ Victor Mono ](https://rubjo.github.io/victor-mono/)
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
 - Font Awesome 6 Pro
-- Monocraft
 - JetBrains Mono Nerd Font
-- Noto-fonts-emoji
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - SF Pro Display (ver Vietnames)
 
