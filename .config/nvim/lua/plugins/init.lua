@@ -255,6 +255,7 @@ return {
 	{ "nvimdev/lspsaga.nvim", event = "LspAttach" },
 	-- HIGHLIGHT COLOR
 	{ "brenoprata10/nvim-highlight-colors", config = true },
+	-- MINIMAP
 	{
 		"gorbit99/codewindow.nvim",
 		config = function()
@@ -263,4 +264,5 @@ return {
 			codewindow.apply_default_keybinds()
 		end,
 	},
+	"segeljakt/vim-silicon",
 }
