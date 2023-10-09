@@ -6,7 +6,9 @@
 
 
 APIKEY=`cat $HOME/.config/polybar/scripts/Weather/.owm-key`
-# if you leave these empty location will be picked based on your ip-adres
+
+CITY_NAME='Ho Chi Minh City'
+COUNTRY_CODE=VN
 # Desired output language
 LANG="vi"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you
@@ -22,20 +24,20 @@ UNITS="metric"
 
 # Color Settings ______________________________________________________________
 
-COLOR_CLOUD="#657b83"
-COLOR_THUNDER="#d75f00"
-COLOR_LIGHT_RAIN="#268bd2"
-COLOR_HEAVY_RAIN="#839496"
-COLOR_SNOW="#fdf6e3"
-COLOR_FOG="#586e75"
-COLOR_TORNADO="#d75f00"
-COLOR_SUN="#cb4b16"
-COLOR_MOON="#fdf6e3"
-COLOR_ERR="#dc322f"
-COLOR_WIND="#268bd2"
-COLOR_COLD="#839496"
-COLOR_HOT="#dc322f"
-COLOR_NORMAL_TEMP="#fdf6e3"
+COLOR_CLOUD="#606060"
+COLOR_THUNDER="#d3b987"
+COLOR_LIGHT_RAIN="#73cef4"
+COLOR_HEAVY_RAIN="#b3deef"
+COLOR_SNOW="#FFFFFF"
+COLOR_FOG="#606060"
+COLOR_TORNADO="#d3b987"
+COLOR_SUN="#ffc24b"
+COLOR_MOON="#FFFFFF"
+COLOR_ERR="#f43753"
+COLOR_WIND="#73cef4"
+COLOR_COLD="#b3deef"
+COLOR_HOT="#f43753"
+COLOR_NORMAL_TEMP="#FFFFFF"
 
 # Leave "" if you want the default polybar color
 COLOR_TEXT=""
@@ -73,12 +75,12 @@ MIN_WIND=11
 DISPLAY_FORCE="yes"
 
 # Display the wind unit if wind force is displayed. yes/no
-DISPLAY_WIND_UNIT="no"
+DISPLAY_WIND_UNIT="yes"
 
 # Thermometer settings ________________________________________________________
 
 # When the thermometer icon turns red
-HOT_TEMP=30
+HOT_TEMP=25
 
 # When the thermometer icon turns blue
 COLD_TEMP=16
@@ -141,7 +143,6 @@ function getData {
     #     echo `date +%s` >> "$HOME/.weather-last"
     fi
 }
-
 function setIcons {
     if [ $WID -le 232 ]; then
         #Thunderstorm
@@ -265,7 +266,7 @@ function setIcons {
         fi
     fi
     if [ "$DISPLAY_WIND" = "yes" ] && [ `echo "$WINDFORCE >= $MIN_WIND" |bc -l` -eq 1 ]; then
-        WIND="%{T$WEATHER_FONT_CODE}%{F$COLOR_WIND}$WINDICON%{F-}"
+        WIND="%{T$WEATHER_FONT_CODE}%{F$COLOR_WIND}$WINDICON%{F-}%{T-}"
         if [ $DISPLAY_FORCE = "yes" ]; then
             WIND="$WIND $COLOR_TEXT_BEGIN$WINDFORCE$COLOR_TEXT_END"
             if [ $DISPLAY_WIND_UNIT = "yes" ]; then
@@ -291,16 +292,17 @@ function setIcons {
     TEMP=`echo "$TEMP" | cut -d "." -f 1`
     
     if [ "$TEMP" -le $COLD_TEMP ]; then
-        TEMP="%{F$COLOR_COLD}%{T$TEMP_FONT_CODE}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON$COLOR_TEXT_END"
+        TEMP="%{F$COLOR_COLD}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON%{T-}$COLOR_TEXT_END"
     elif [ `echo "$TEMP >= $HOT_TEMP" | bc` -eq 1 ]; then
-        TEMP="%{F$COLOR_HOT}%{T$TEMP_FONT_CODE}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON$COLOR_TEXT_END"
+        TEMP="%{F$COLOR_HOT}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON%{T-}$COLOR_TEXT_END"
     else
-        TEMP="%{F$COLOR_NORMAL_TEMP}%{T$TEMP_FONT_CODE}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON$COLOR_TEXT_END"
+        TEMP="%{F$COLOR_NORMAL_TEMP}%{T$TEMP_FONT_CODE}%{T-}%{F-} $COLOR_TEXT_BEGIN$TEMP%{T$TEMP_FONT_CODE}$TEMP_ICON%{T-}$COLOR_TEXT_END"
     fi
 }
 
 function outputCompact {
-    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR}$ICON%{F-}$ERR_MSG$COLOR_TEXT_BEGIN $DESCRIPTION$COLOR_TEXT_END| $TEMP"
+    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR}$ICON %{F-}%{T-} $ERR_MSG$COLOR_TEXT_BEGIN$DESCRIPTION$COLOR_TEXT_END| $TEMP"
+    # echo "Output: $OUTPUT" >> "$HOME/.weather.log"
     echo "$OUTPUT"
 }
 
