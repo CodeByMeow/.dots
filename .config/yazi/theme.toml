@@ -1,0 +1,28 @@
+[tab]
+active    = { fg = "#839496", bg = "#002B36" }
+inactive  = { fg = "#93A1A1", bg = "#073642" }
+max_width = 1
+
+[status]
+primary	  = { normal = "#93A1A1", select = "#839496", unset = "#586E75" }
+secondary = { normal = "#839496", select = "#839496", unset = "#839496" }
+tertiary  = { normal = "#657B83", select = "#657B83", unset = "#657B83" }
+body      = { normal = "#073642", select = "#073642", unset = "#073642" }
+emphasis  = { normal = "#839496", select = "#839496", unset = "#839496" }
+info      = { normal = "#268BD2", select = "#268BD2", unset = "#268BD2" }
+success   = { normal = "#859900", select = "#859900", unset = "#859900" }
+warning   = { normal = "#B58900", select = "#B58900", unset = "#B58900" }
+danger    = { normal = "#CB4B16", select = "#CB4B16", unset = "#CB4B16" }
+separator = { opening = "", closing = "" }
+
+[progress]
+gauge = { fg = "#586E75", bg = "#073642" }
+label = { fg = "#839496", bold = true }
+
+[selection]
+hovered = { fg = "#073642", bg = "#839496" }
+
+[marker]
+selecting = { fg = "#859900", bg = "#859900" }
+selected  = { fg = "#B58900", bg = "#B58900" }
+
