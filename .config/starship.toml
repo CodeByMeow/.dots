@@ -66,17 +66,6 @@ style = "bg:#01AF87 fg:#23303A"
 format = '[$symbol $branch ]($style)'
  
 [git_status]
-conflicted = "🏳"
-ahead = "🏎"
-behind = "😰"
-diverged = "😵"
-up_to_date = "痢"
-untracked = "❓"
-stashed = "📦"
-modified = "📝"
-staged = '[++\($count\)]'
-renamed = "凜"
-deleted = " "
 style = "bg:#01AF87 fg:#23303A"
 format = '[($all_status$ahead_behind )]($style)'
  
