@@ -264,5 +264,10 @@ return {
 			codewindow.apply_default_keybinds()
 		end,
 	},
+	-- TAKE A PICTURE
 	"segeljakt/vim-silicon",
+	-- LEETCODE
+	{ "kawre/leetcode.nvim", build = ":TSUpdate", opts = {
+		lang = "typescript",
+	} },
 }
