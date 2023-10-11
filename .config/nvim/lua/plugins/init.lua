@@ -267,7 +267,7 @@ return {
 	-- TAKE A PICTURE
 	"segeljakt/vim-silicon",
 	-- LEETCODE
-	{ "kawre/leetcode.nvim", build = ":TSUpdate", opts = {
-		lang = "typescript",
-	} },
+	-- { "kawre/leetcode.nvim", build = ":TSUpdate", opts = {
+	-- 	lang = "typescript",
+	-- } },
 }
