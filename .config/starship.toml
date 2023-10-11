@@ -1,113 +1,51 @@
-format = """
-[█](fg:#002B36)\
+format = """\
+[](bg:#002B36 fg:#7DF9AA)\
+[󰀵 ](bg:#7DF9AA fg:#090c0c)\
+[](fg:#7DF9AA bg:#1C3A5E)\
+$time\
+[](fg:#1C3A5E bg:#3B76F0)\
 $directory\
-[ ](fg:#002B36 bg:#01AF87)\
+[](fg:#3B76F0 bg:#FCF392)\
 $git_branch\
 $git_status\
-[ ](fg:#01AF87 bg:#01AFAF)\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-[ ](fg:#01AFAF bg:#01AFD7)\
-$docker_context\
-[ ](fg:#01AFD7 bg:#01AFFF)\
-$time\
-[ ](fg:#01AFFF)\
+$git_metrics\
+[](fg:#FCF392 bg:#002B36)\
+$character\
 """
- 
-# Disable the blank line at the start of the prompt
-# add_newline = false
- 
- 
+
 [directory]
-style = "bg:#002B36 fg:#86AEFE"
-format = "[$path]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
- 
-# Here is how you can shorten some long paths by text replacement
-# similar to mapped_locations in Oh My Posh:
-[directory.substitutions]
-"Documents" = "📄 "
-"Downloads" = "📥 "
-"Music" = "🎵 "
-"Pictures" = "📷 "
- 
-[c]
-symbol = "© "
-style = "bg:#6295CB fg:#23303A"
-format = '[$symbol ($version) ($style)'
- 
-[docker_context]
-symbol = " "
-style = "bg:#099CEC"
-format = '[$symbol $context ]($style) $path'
- 
-[elixir]
-symbol = "💧 "
-style = "bg:#4B295D"
-format = '[$symbol ($version)]($style)'
- 
-[elm]
-symbol = "🌳 "
-style = "bg:#01AF87 fg:#23303A"
-format = '[ $symbol ($version) ]($style)'
- 
+format = "[ ﱮ $path ]($style)"
+style = "fg:#E4E4E4 bg:#3B76F0"
+
 [git_branch]
-symbol = ""
-style = "bg:#01AF87 fg:#23303A"
-format = '[$symbol $branch ]($style)'
- 
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+symbol = "  "
+style = "fg:#1C3A5E bg:#FCF392"
+
 [git_status]
-style = "bg:#01AF87 fg:#23303A"
-format = '[($all_status$ahead_behind )]($style)'
- 
-[golang]
-symbol = " "
-style = "bg:#67CFDC fg:#23303A"
-format = '[$symbol ($version) ]($style)'
- 
-[haskell]
-symbol = "λ "
-style = "bg:#01AF87 fg:#23303A"
-format = '[$symbol ($version) ]($style)'
- 
-[java]
-symbol = "☕ "
-style = "bg:#01AF87 fg:#23303A"
-format = '[$symbol ($version)]($style)'
- 
-[julia]
-symbol = "ஃ "
-style = "bg:#01AF87 fg:#23303A"
-format = '[$symbol ($version)]($style)'
- 
-[nodejs]
-symbol = ""
-style = "bg:#01AFAF fg:#23303A"
-format = '[$symbol ($version)]($style)'
- 
-[nim]
-symbol = "👑 "
-style = "bg:#EBCD00 fg:#23303A"
-format = '[$symbol ($version)($style)'
- 
-[rust]
-symbol = "🦀"
-style = "bg:#FF5F00 fg:#23303A"
-format = '[$symbol ($version)($style)'
- 
+format = '[$all_status]($style)'
+style = "fg:#1C3A5E bg:#FCF392"
+
+[git_metrics]
+format = "([+$added]($added_style))[]($added_style)"
+added_style = "fg:#1C3A5E bg:#FCF392"
+deleted_style = "fg:bright-red bg:235"
+disabled = false
+
+[hg_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = " "
+
+[cmd_duration]
+format = "[  $duration ]($style)"
+style = "fg:bright-white bg:18"
+
+[character]
+success_symbol = '[ ➜](bold green) '
+error_symbol = '[ ✗](#E84D44) '
+
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#01AFFF fg:#23303A"
-format = '[$time]($style)'
-
-
+style = "bg:#1d2230"
+format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)'
