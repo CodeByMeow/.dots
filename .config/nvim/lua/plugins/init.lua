@@ -127,7 +127,13 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/playground",
-			"JoosepAlviste/nvim-ts-context-commentstring",
+			{
+				"JoosepAlviste/nvim-ts-context-commentstring",
+				lazy = true,
+				opts = {
+					enable_autocmd = false,
+				},
+			},
 			"windwp/nvim-ts-autotag",
 			"David-Kunz/markid",
 			"nvim-treesitter/nvim-treesitter-textobjects",
@@ -175,6 +181,34 @@ return {
 				require("telescope").extensions.notify.notify()
 			end,
 		} },
+		opts = {
+			lsp = {
+				override = {
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true,
+				},
+			},
+			routes = {
+				{
+					filter = {
+						event = "msg_show",
+						any = {
+							{ find = "%d+L, %d+B" },
+							{ find = "; after #%d+" },
+							{ find = "; before #%d+" },
+						},
+					},
+					view = "mini",
+				},
+			},
+			presets = {
+				bottom_search = true,
+				command_palette = true,
+				long_message_to_split = true,
+				inc_rename = true,
+			},
+		},
 	},
 	-- ICONS PICKER
 	{
@@ -188,7 +222,7 @@ return {
 		"stevearc/oil.nvim",
 		-- code
 		keys = { {
-			"<leader>e",
+			"<leader>i",
 			vim.cmd.Oil,
 		} },
 		opts = {
@@ -267,7 +301,7 @@ return {
 	-- TAKE A PICTURE
 	"segeljakt/vim-silicon",
 	-- LEETCODE
-	-- { "kawre/leetcode.nvim", build = ":TSUpdate", opts = {
-	-- 	lang = "typescript",
-	-- } },
+	{ "kawre/leetcode.nvim", opts = {
+		lang = "typescript",
+	} },
 }
