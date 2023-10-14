@@ -559,7 +559,7 @@ alias yt = ytfzf --ii --detach -ts --notify-playing
 alias meowfetch = bash ~/meowfetch.sh
 alias notify = tmux display-message
 
-$env.PATH = ($env.PATH | append ["~/.npm-packages", "~/.npm-packages/bin", "~/.npm-packages/share/man", "~/.cargo/bin"])
+$env.PATH = ($env.PATH | append ["~/.node-modules/", "~/.node-modules/bin", "~/.node-modules//share/man", "~/.cargo/bin"])
 $env.EDITOR = nvim
 $env.VISUAL = nvim
 

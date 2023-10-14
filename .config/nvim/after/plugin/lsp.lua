@@ -15,7 +15,7 @@ require("mason-lspconfig").setup({
 		"intelephense",
 		"jsonls",
 		"eslint",
-		"prisma",
+		"prismals",
 	},
 	handlers = {
 		lsp_zero.default_setup,

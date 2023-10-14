@@ -75,7 +75,7 @@ MIN_WIND=11
 DISPLAY_FORCE="yes"
 
 # Display the wind unit if wind force is displayed. yes/no
-DISPLAY_WIND_UNIT="yes"
+DISPLAY_WIND_UNIT="no"
 
 # Thermometer settings ________________________________________________________
 
