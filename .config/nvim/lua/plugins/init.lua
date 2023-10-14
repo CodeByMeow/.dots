@@ -8,6 +8,7 @@ return {
 	},
 	"yamatsum/nvim-nonicons",
 	{ "MunifTanjim/nui.nvim", lazy = true },
+	-- MINI
 	{
 		"echasnovski/mini.nvim",
 		version = false,
@@ -313,9 +314,6 @@ return {
 			"fm",
 			vim.cmd.GuardFmt,
 		} },
-		config = function()
-			require("plugins.config.guard")
-		end,
 	},
 	-- AUTO CONVERT STRING TEMPLATE
 	{
