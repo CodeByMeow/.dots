@@ -1,4 +1,64 @@
 return {
+	-- BASE
+	"nvim-lua/plenary.nvim",
+	{
+		"nvim-tree/nvim-web-devicons",
+		lazy = true,
+		config = true,
+	},
+	"yamatsum/nvim-nonicons",
+	{ "MunifTanjim/nui.nvim", lazy = true },
+	{
+		"echasnovski/mini.nvim",
+		version = false,
+		config = function()
+			require("mini.pick").setup()
+			require("mini.basics").setup()
+			require("mini.animate").setup()
+			require("mini.bufremove").setup()
+			require("mini.comment").setup()
+			require("mini.files").setup({
+				mappings = {
+					go_in = "i",
+					go_in_plus = "I",
+				},
+			})
+			require("mini.cursorword").setup()
+			require("mini.tabline").setup()
+		end,
+		keys = {
+			{
+				"<leader>f",
+				function()
+					vim.cmd("Pick files")
+				end,
+			},
+			{
+				"<leader>z",
+				function()
+					vim.cmd("Pick grep_live")
+				end,
+			},
+			{
+				"<leader>b",
+				function()
+					vim.cmd("Pick buffers")
+				end,
+			},
+			{
+				"<leader>h",
+				function()
+					vim.cmd("Pick help")
+				end,
+			},
+			{
+				"<leader>e",
+				function()
+					MiniFiles.open()
+				end,
+			},
+		},
+	},
 	-- THEME
 	{
 		"svrana/neosolarized.nvim",
@@ -14,45 +74,44 @@ return {
 			n.Group.link("HoverBorder", n.groups.Information)
 		end,
 	},
-	-- BASE
-	"nvim-lua/plenary.nvim",
+	-- INDENT
 	{
-		"nvim-tree/nvim-web-devicons",
-		lazy = true,
-		config = true,
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			local highlight = {
+				"RainbowRed",
+				"RainbowYellow",
+				"RainbowBlue",
+				"RainbowOrange",
+				"RainbowGreen",
+				"RainbowViolet",
+				"RainbowCyan",
+			}
+			local hooks = require("ibl.hooks")
+			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+				vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+				vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+				vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+				vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+				vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+				vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+				vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+			end)
+
+			vim.g.rainbow_delimiters = { highlight = highlight }
+			require("ibl").setup({ scope = { highlight = highlight } })
+			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+		end,
 	},
-	"yamatsum/nvim-nonicons",
-	{ "MunifTanjim/nui.nvim", lazy = true },
-	-- STATUS LINE
-	"tamton-aquib/staline.nvim",
-	-- TELESCOPE
-	"nvim-telescope/telescope.nvim",
+	-- MOVE
+	{ "folke/flash.nvim", event = "VeryLazy", keys = { {
+		"s",
+		function()
+			require("flash").jump()
+		end,
+	} } },
 	-- ESCAPE
 	{ "max397574/better-escape.nvim", opts = { mapping = { "ii" }, key = "<ESC>" } },
-	-- BUFTER
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		keys = {
-			{ "<TAB>", vim.cmd.BufferLineCycleNext },
-			{ "<S-TAB>", vim.cmd.BufferLineCyclePrev },
-		},
-		config = true,
-		event = "VeryLazy",
-		opts = {
-			options = {
-				diagnostics = "nvim_lsp",
-				diagnostics_indicator = function(count, level)
-					local kind = require("core.kind")
-					local icon = level:match("error") and kind.diagnostics.error or kind.diagnostics.Warn
-					return " " .. icon .. count
-				end,
-				modified_icon = " ",
-			},
-		},
-	},
-	-- INDENT
-	"lukas-reineke/indent-blankline.nvim",
 	-- QUICK REOPEN
 	{
 		"ThePrimeagen/harpoon",
@@ -83,8 +142,14 @@ return {
 			},
 		},
 	},
-	-- SCROLL SMOOTH
-	{ "karb94/neoscroll.nvim", config = true },
+	-- STATUS LINE
+	{
+		"tamton-aquib/staline.nvim",
+		config = function()
+			require("plugins.config.staline")
+		end,
+	},
+
 	-- TMUX VIM
 	{
 		"aserowy/tmux.nvim",
@@ -127,28 +192,21 @@ return {
 		build = ":TSUpdate",
 		dependencies = {
 			"nvim-treesitter/playground",
-			{
-				"JoosepAlviste/nvim-ts-context-commentstring",
-				lazy = true,
-				opts = {
-					enable_autocmd = false,
-				},
-			},
 			"windwp/nvim-ts-autotag",
 			"David-Kunz/markid",
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			{ "windwp/nvim-autopairs", event = "InsertEnter" },
+			{ "windwp/nvim-autopairs", event = "InsertEnter", config = function() require("plugins.config.autopairs") end},
 			"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 		},
 		keys = {
 			{ "<leader>p", vim.cmd.TSPlaygroundToggle },
 		},
+		config = function()
+			require("plugins.config.treesitter")
+		end,
 	},
-	-- CURSOR WORD
-	-- { "dominikduda/vim_current_word" },
-	{ "nyngwang/murmur.lua", config = true },
 	-- LSP SUPPORT
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false },
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false},
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
@@ -172,15 +230,6 @@ return {
 		dependencies = {
 			"rcarriga/nvim-notify",
 		},
-		config = function()
-			require("telescope").load_extension("notify")
-		end,
-		keys = { {
-			"<leader>n",
-			function()
-				require("telescope").extensions.notify.notify()
-			end,
-		} },
 		opts = {
 			lsp = {
 				override = {
@@ -209,6 +258,9 @@ return {
 				inc_rename = true,
 			},
 		},
+		config = function()
+			require("plugins.config.noice")
+		end,
 	},
 	-- ICONS PICKER
 	{
@@ -235,8 +287,6 @@ return {
 			},
 		},
 	},
-	-- COMMENT
-	{ "numToStr/Comment.nvim", config = true },
 	-- UNDO TREE
 	{ "mbbill/undotree", keys = { { "<leader>u", vim.cmd.UndotreeToggle } } },
 	-- SURROUND
@@ -245,17 +295,6 @@ return {
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
 	-- WIN VIEW
 	"sunjon/shade.nvim",
-	-- MOVE
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		keys = { {
-			"s",
-			function()
-				require("flash").jump()
-			end,
-		} },
-	},
 	-- SUDO
 	"lambdalisue/suda.vim",
 	-- FORMAT
@@ -268,6 +307,9 @@ return {
 			"fm",
 			vim.cmd.GuardFmt,
 		} },
+		config = function()
+			require("plugins.config.guard")
+		end,
 	},
 	-- AUTO CONVERT STRING TEMPLATE
 	{
@@ -286,7 +328,7 @@ return {
 	{ "lewis6991/gitsigns.nvim", opts = { current_line_blame = true }, event = "VeryLazy" },
 	{ "NeogitOrg/neogit", opts = { kind = "auto" }, config = true, keys = { { "<leader>g", vim.cmd.Neogit } } },
 	-- LSPSAGA
-	{ "nvimdev/lspsaga.nvim", event = "LspAttach" },
+	{ "nvimdev/lspsaga.nvim", event = "LspAttach"},
 	-- HIGHLIGHT COLOR
 	{ "brenoprata10/nvim-highlight-colors", config = true },
 	-- MINIMAP
@@ -304,4 +346,6 @@ return {
 	{ "kawre/leetcode.nvim", opts = {
 		lang = "typescript",
 	} },
+	-- SCROLL SMOOTH
+	{ "karb94/neoscroll.nvim", config = true },
 }

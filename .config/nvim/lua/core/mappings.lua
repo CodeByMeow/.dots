@@ -77,3 +77,7 @@ keymap.set("n", "M", "Nzzzv")
 
 keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap.set("c", "<C-e>", "<C-p>")
+
+-- Switch tabs
+keymap.set("n", "<Tab>", vim.cmd.bn)
+keymap.set("n", "<S-Tab>", vim.cmd.bprev)

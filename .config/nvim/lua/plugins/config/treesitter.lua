@@ -15,7 +15,6 @@ require("nvim-treesitter.configs").setup({
 		"bash",
 	},
 	highlight = { enable = true },
-	context_commentstring = { enable = true },
 	rainbow = { enable = true, disable = { "html" } },
 	autopairs = { enable = true },
 	autotag = { enable = true },
