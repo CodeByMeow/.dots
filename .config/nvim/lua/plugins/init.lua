@@ -195,7 +195,13 @@ return {
 			"windwp/nvim-ts-autotag",
 			"David-Kunz/markid",
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			{ "windwp/nvim-autopairs", event = "InsertEnter", config = function() require("plugins.config.autopairs") end},
+			{
+				"windwp/nvim-autopairs",
+				event = "InsertEnter",
+				config = function()
+					require("plugins.config.autopairs")
+				end,
+			},
 			"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 		},
 		keys = {
@@ -206,7 +212,7 @@ return {
 		end,
 	},
 	-- LSP SUPPORT
-	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false},
+	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false },
 	"neovim/nvim-lspconfig",
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
@@ -328,7 +334,7 @@ return {
 	{ "lewis6991/gitsigns.nvim", opts = { current_line_blame = true }, event = "VeryLazy" },
 	{ "NeogitOrg/neogit", opts = { kind = "auto" }, config = true, keys = { { "<leader>g", vim.cmd.Neogit } } },
 	-- LSPSAGA
-	{ "nvimdev/lspsaga.nvim", event = "LspAttach"},
+	{ "nvimdev/lspsaga.nvim", event = "LspAttach" },
 	-- HIGHLIGHT COLOR
 	{ "brenoprata10/nvim-highlight-colors", config = true },
 	-- MINIMAP

@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins/mini", {
+require("lazy").setup("plugins", {
 	ui = {
 		border = "rounded",
 		size = { width = 0.65, height = 0.7 },
