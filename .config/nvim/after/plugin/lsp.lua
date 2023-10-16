@@ -17,7 +17,6 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"eslint",
 		"prismals",
-		"tailwindcss",
 	},
 	handlers = {
 		lsp_zero.default_setup,
@@ -135,7 +134,6 @@ cmp.setup({
 			if entry.source.name == "calc" then
 				vim_item.kind = " 󰃬 "
 			end
-			vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
 
 			return vim_item
 		end,

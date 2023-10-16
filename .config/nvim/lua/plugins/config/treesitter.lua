@@ -14,6 +14,7 @@ require("nvim-treesitter.configs").setup({
 		"vim",
 		"bash",
 		"prisma",
+		"regex",
 	},
 	auto_install = true,
 	highlight = { enable = true },

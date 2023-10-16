@@ -1,3 +1,4 @@
+---@diagnostic disable: different-requires
 return {
 	-- BASE
 	"nvim-lua/plenary.nvim",
@@ -391,14 +392,6 @@ return {
 					dashboard.section.footer.val = "󱐌 Lazy-loaded " .. stats.loaded .. " plugins in " .. ms .. "ms"
 					pcall(vim.cmd.AlphaRedraw)
 				end,
-			})
-		end,
-	},
-	{
-		"roobert/tailwindcss-colorizer-cmp.nvim",
-		config = function()
-			require("tailwindcss-colorizer-cmp").setup({
-				color_square_width = 2,
 			})
 		end,
 	},
