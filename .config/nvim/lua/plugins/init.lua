@@ -27,6 +27,7 @@ return {
 				mappings = {
 					go_in = "i",
 					go_in_plus = "I",
+					synchronize = "<leader>w",
 				},
 			})
 			require("mini.cursorword").setup()
@@ -282,24 +283,6 @@ return {
 		keys = { { "<leader><leader>y", "<cmd>:IconPickerYank emoji nerd_font<cr>" } },
 		dependencies = "stevearc/dressing.nvim",
 		config = true,
-	},
-	-- FILE MANAGER
-	{
-		"stevearc/oil.nvim",
-		-- code
-		keys = { {
-			"<leader>i",
-			vim.cmd.Oil,
-		} },
-		opts = {
-			columns = {
-				"icon",
-				"size",
-			},
-			keymaps = {
-				["q"] = "actions.close",
-			},
-		},
 	},
 	-- UNDO TREE
 	{ "mbbill/undotree", keys = { { "<leader>u", vim.cmd.UndotreeToggle } } },
