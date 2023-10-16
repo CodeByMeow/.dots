@@ -12,6 +12,7 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		version = false,
+		lazy = false,
 		config = function()
 			require("mini.pick").setup()
 			require("mini.basics").setup()
@@ -352,4 +353,44 @@ return {
 	} },
 	-- SCROLL SMOOTH
 	{ "karb94/neoscroll.nvim", config = true },
+	-- STARTER
+	{
+		"goolord/alpha-nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		event = "VimEnter",
+		opts = function()
+			local dashboard = require("alpha.themes.dashboard")
+			local logo = [[
+                                             
+      ████ ██████           █████      ██
+     ███████████             █████ 
+     █████████ ███████████████████ ███   ███████████
+    █████████  ███    █████████████ █████ ██████████████
+   █████████ ██████████ █████████ █████ █████ ████ █████
+ ███████████ ███    ███ █████████ █████ █████ ████ █████
+██████  █████████████████████ ████ █████ █████ ████ ██████
+]]
+			dashboard.section.header.val = vim.split(logo, "\n")
+			dashboard.section.buttons.val = {
+				dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
+				dashboard.button("g", " " .. " Find text", ":Pick grep_live<CR>"),
+				dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
+				dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+			}
+			dashboard.section.header.opts.hl = "AlphaHeader"
+			dashboard.opts.layout[1].val = 6
+			return dashboard
+		end,
+		config = function(_, dashboard)
+			require("alpha").setup(dashboard.opts)
+			vim.api.nvim_create_autocmd("User", {
+				callback = function()
+					local stats = require("lazy").stats()
+					local ms = math.floor(stats.startuptime * 100) / 100
+					dashboard.section.footer.val = "󱐌 Lazy-loaded " .. stats.loaded .. " plugins in " .. ms .. "ms"
+					pcall(vim.cmd.AlphaRedraw)
+				end,
+			})
+		end,
+	},
 }
