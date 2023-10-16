@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 local lsp_zero = require("lsp-zero")
 local icons = require("core.kind")
 lsp_zero.on_attach(function(_, bufnr)
@@ -16,6 +17,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"eslint",
 		"prismals",
+		"tailwindcss",
 	},
 	handlers = {
 		lsp_zero.default_setup,
@@ -25,6 +27,7 @@ require("mason-lspconfig").setup({
 		end,
 	},
 })
+
 lsp_zero.set_sign_icons({
 	error = icons.diagnostics.Error,
 	warn = icons.diagnostics.Warn,
@@ -132,6 +135,7 @@ cmp.setup({
 			if entry.source.name == "calc" then
 				vim_item.kind = " 󰃬 "
 			end
+			vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
 
 			return vim_item
 		end,
