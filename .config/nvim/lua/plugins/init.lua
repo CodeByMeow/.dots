@@ -14,7 +14,11 @@ return {
 		version = false,
 		lazy = false,
 		config = function()
-			require("mini.pick").setup()
+			require("mini.pick").setup({
+				mappings = {
+					move_up = "<C-e>",
+				},
+			})
 			require("mini.basics").setup()
 			require("mini.animate").setup()
 			require("mini.bufremove").setup()
@@ -70,10 +74,12 @@ return {
 		config = function()
 			local n = require("neosolarized").setup({
 				comment_italics = true,
-				background_set = false,
 			})
 			n.Group.link("HoverNormal", n.groups.Normal)
 			n.Group.link("HoverBorder", n.groups.Information)
+			n.Group.link("MiniPickMatchCurrent", n.groups.PmenuSel)
+			n.Group.link("@string", n.Group.new("SteamString", n.colors.cyan, n.colors.none, n.styles.italic))
+			n.Group.link("@keyword", n.Group.new("SteamKeyWord", n.colors.green, n.colors.none, n.styles.italic))
 		end,
 	},
 	-- INDENT
