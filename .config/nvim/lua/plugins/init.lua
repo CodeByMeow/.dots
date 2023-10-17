@@ -397,7 +397,15 @@ return {
 				callback = function()
 					local stats = require("lazy").stats()
 					local ms = math.floor(stats.startuptime * 100) / 100
-					dashboard.section.footer.val = "󱐌 Lazy-loaded " .. stats.loaded .. " plugins in " .. ms .. "ms"
+					local version = "  󰥱 v"
+						.. vim.version().major
+						.. "."
+						.. vim.version().minor
+						.. "."
+						.. vim.version().patch
+					local plugin = "󱐌 Neovim loaded " .. stats.loaded .. " plugins ﮣ in " .. ms .. "ms"
+					local footer = version .. "\t" .. plugin .. "\n"
+					dashboard.section.footer.val = footer
 					pcall(vim.cmd.AlphaRedraw)
 				end,
 			})
