@@ -54,9 +54,6 @@ return {
 					line_down = "<M-n>",
 				},
 			})
-			require("mini.splitjoin").setup({
-				mappings = { toggle = "<leader>y" },
-			})
 		end,
 		keys = {
 			{
