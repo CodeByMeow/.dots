@@ -33,6 +33,7 @@ lsp_zero.set_sign_icons({
 	hint = icons.diagnostics.Hint,
 	info = icons.diagnostics.Info,
 })
+
 vim.diagnostic.config({
 	virtual_text = false,
 	severity_sort = true,
@@ -90,7 +91,7 @@ cmp.setup({
 		["<C-f>"] = cmp.mapping.scroll_docs(5),
 		["<C-u>"] = cmp.mapping.scroll_docs(-5),
 	}),
-	sources = cmp.config.sources({
+	sources = {
 		{
 			name = "nvim_lsp",
 			entry_filter = function(entry)
@@ -103,11 +104,10 @@ cmp.setup({
 		{ name = "nvim_lua" },
 		{ name = "buffer", keyword_length = 3 },
 		{ name = "luasnip", keyword_length = 2 },
-		{ name = "cmp_tabnine" },
 		{ name = "path" },
 		{ name = "treesitter" },
 		{ name = "calc" },
-	}),
+	},
 	entry_filter = function(entry, context)
 		local kind = entry:get_kind()
 		local line = context.cursor_line
@@ -134,7 +134,6 @@ cmp.setup({
 			if entry.source.name == "calc" then
 				vim_item.kind = " 󰃬 "
 			end
-
 			return vim_item
 		end,
 	},

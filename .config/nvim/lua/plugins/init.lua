@@ -15,15 +15,13 @@ return {
 		version = false,
 		lazy = false,
 		config = function()
-			require("mini.pick").setup({
-				mappings = {
-					move_up = "<C-e>",
-				},
-			})
+			require("mini.pick").setup()
 			require("mini.basics").setup()
 			require("mini.animate").setup()
 			require("mini.bufremove").setup()
 			require("mini.comment").setup()
+			require("mini.cursorword").setup()
+			require("mini.tabline").setup()
 			require("mini.files").setup({
 				mappings = {
 					go_in = "i",
@@ -31,8 +29,6 @@ return {
 					synchronize = "<leader>w",
 				},
 			})
-			require("mini.cursorword").setup()
-			require("mini.tabline").setup()
 			require("mini.hipatterns").setup({
 				highlighters = {
 					-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
@@ -40,9 +36,22 @@ return {
 					hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
 					todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
 					note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-
-					-- Highlight hex color strings (`#rrggbb`) using that color
 					hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+				},
+			})
+			require("mini.move").setup({
+				mappings = {
+					-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
+					left = "<M-h>",
+					right = "<M-i>",
+					down = "<M-n>",
+					up = "<M-e>",
+
+					-- Move current line in Normal mode
+					line_left = "<M-h>",
+					line_right = "<M-i>",
+					line_up = "<M-e>",
+					line_down = "<M-n>",
 				},
 			})
 		end,
@@ -250,7 +259,6 @@ return {
 	-- SNIPPETS
 	{ "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
 	"rafamadriz/friendly-snippets",
-	{ "tzachar/cmp-tabnine", build = "./install.sh" },
 	-- NOICE
 	{
 		"folke/noice.nvim",
