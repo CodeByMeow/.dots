@@ -317,20 +317,21 @@ return {
 	"lambdalisue/suda.vim",
 	-- FORMAT
 	{
-		"nvimdev/guard.nvim",
-		dependencies = {
-			"nvimdev/guard-collection",
+		"mhartington/formatter.nvim",
+		keys = {
+			{
+				"fm",
+				function()
+					vim.cmd("Format")
+				end,
+			},
+			{
+				"fw",
+				function()
+					vim.cmd("FormatWrite")
+				end,
+			},
 		},
-		keys = { {
-			"fm",
-			vim.cmd.GuardFmt,
-		} },
-	},
-	-- AUTO CONVERT STRING TEMPLATE
-	{
-		"chrisgrieser/nvim-puppeteer",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		lazy = false, -- plugin lazy-loads itself
 	},
 	-- MARKDOWN PREVIEW
 	{
