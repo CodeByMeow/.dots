@@ -22,6 +22,10 @@ require("formatter").setup({
 		javascript = {
 			require("formatter.filetypes.javascript").prettier,
 		},
+		json = {
+			require("formatter.filetypes.json").jsbeautify,
+			require("formatter.filetypes.json").prettier,
+		},
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},
