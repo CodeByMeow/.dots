@@ -7,6 +7,7 @@
 ─┴┘└─┘ ┴ └  ┴┴─┘└─┘└─┘
 
 ```
+![snapshot](https://github.com/CodeByMeow/dotfiles/assets/43630437/a7b6e86c-e0be-4416-97a7-d4655f846967)
 
 </div>
 
