@@ -16,6 +16,5 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "%{T5}%{F#2AA198} %{F-}%{T2} $title %{T5}%{F#2AA198} %{T-}"
+    echo "%{T2}$title%{T-}"
 fi
-
