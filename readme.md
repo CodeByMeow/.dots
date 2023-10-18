@@ -8,6 +8,7 @@
 
 ```
 ![snapshot](https://github.com/CodeByMeow/dotfiles/assets/43630437/a7b6e86c-e0be-4416-97a7-d4655f846967)
+![snapshot-2](https://github.com/CodeByMeow/dotfiles/assets/43630437/e793bd99-d891-47ac-bd3b-13018ab0e086)
 
 </div>
 
