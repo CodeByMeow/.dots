@@ -17,7 +17,6 @@ return {
 		config = function()
 			require("mini.pick").setup()
 			require("mini.basics").setup()
-			require("mini.animate").setup()
 			require("mini.bufremove").setup()
 			require("mini.comment").setup()
 			require("mini.cursorword").setup()
