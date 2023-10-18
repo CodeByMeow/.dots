@@ -89,3 +89,5 @@ opt.showcmdloc = "statusline"
 
 opt.laststatus = 2
 opt.showtabline = 2
+
+vim.g.netrw_browsex_viewer = "xdg-open"

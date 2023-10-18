@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+vim.g.mapleader = " "
 
 -- Colemak Keybindings {{{
 ----------------------
@@ -29,48 +30,53 @@ map("x", "gl", ":<C-U>undo<CR>", opts)
 
 -- }}}
 
-local keymap = vim.keymap
-
-vim.g.mapleader = " "
-
 -- Do not yank with x
-keymap.set("n", "x", '"_x')
+map("n", "x", '"_x')
 
-keymap.set("n", "<leader>w", "<cmd>:w<cr>")
-keymap.set("n", "<leader>q", "<cmd>:q<cr>")
-keymap.set("n", "<leader>x", "<cmd>:bdelete<cr>")
+map("n", "<leader>w", "<cmd>:w<cr>")
+map("n", "<leader>q", "<cmd>:q<cr>")
+map("n", "<leader>x", "<cmd>:bdelete<cr>")
 
 -- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
 
 -- Delete a word backwords
-keymap.set("n", "dw", 'vb"_d')
+map("n", "dw", 'vb"_d')
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+map("n", "<C-a>", "gg<S-v>G")
 
 -- Split window
-keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
-keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
+map("n", "ss", ":split<Return><C-w>w", { silent = true })
+map("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
 
 -- Move window
-keymap.set("n", "<leader><leader>", "<C-w>w")
+map("n", "<leader><leader>", "<C-w>w")
 
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sn", "<C-w>j")
-keymap.set("n", "se", "<C-w>k")
-keymap.set("n", "si", "<C-w>l")
+map("n", "sh", "<C-w>h")
+map("n", "sn", "<C-w>j")
+map("n", "se", "<C-w>k")
+map("n", "si", "<C-w>l")
+
+map("n", "<A-n>", ":m .+1<CR>")
+map("n", "<A-e>", ":m .-2<CR>")
+map("i", "<A-n>", "<ESC>:m .+1<CR>==gi")
+map("i", "<A-e>", "<ESC>:m .-2<CR>==gi")
+map("v", "<A-n>", ":m '>+1<CR>gv=gv")
+map("v", "<A-e>", ":m '<-2<CR>gv=gv")
 
 -- Escape highlight search
-keymap.set("n", "<ESC>", "<cmd>:noh<cr>", { noremap = true, silent = true })
+map("n", "<ESC>", "<cmd>:noh<cr>", { noremap = true, silent = true })
 
-keymap.set("n", "m", "nzzzv")
-keymap.set("n", "M", "Nzzzv")
+map("n", "m", "nzzzv")
+map("n", "M", "Nzzzv")
 
-keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-keymap.set("c", "<C-e>", "<C-p>")
+map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("c", "<C-e>", "<C-p>")
 
 -- Switch tabs
-keymap.set("n", "<Tab>", vim.cmd.bn)
-keymap.set("n", "<S-Tab>", vim.cmd.bprev)
+map("n", "<Tab>", vim.cmd.bn)
+map("n", "<S-Tab>", vim.cmd.bp)
+
+map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')

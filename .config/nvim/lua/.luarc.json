@@ -1,7 +1,8 @@
 {
     "diagnostics.globals": [
         "vim",
-        "MiniFiles"
+        "MiniFiles",
+        "open_url_for_current_word"
     ],
     "diagnostics.disable": [
         "different-requires"
