@@ -1,25 +1,15 @@
 #!/bin/bash
 # Launch Rofi
-MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
+MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -hide-scrollbar true \
 -bw 0 \
--theme-str "window {width: 300;}" \
+-theme-str "*{font: \"Iosevka Nerd Font 14\";} window {width: 180; height: 150;} entry{enabled: false;} inputbar{enabled: false;} element-text{horizontal-align: 0;}" \
 -xoffset -12 -yoffset 53 \
 -location 3 \
 -columns 1 \
-<<< "  Lock|  Logout|  Reboot|  Shutdown")"
+<<< "  Lock|  Reboot|  Shutdown")"
 case "$MENU" in
   *Lock) betterlockscreen -l;;
-  *Logout) openbox --exit;;
   *Reboot) systemctl reboot ;;
   *Shutdown) systemctl -i poweroff
 esac
-
-# More Options
-# -fullscreen \
-
-# Theming help
-# color window = background, border, separator
-# color normal = background, foreground, background-alt, highlight-background, highlight-foreground
-# color active = background, foreground, background-alt, highlight-background, highlight-foreground
-# color urgent = background, foreground, background-alt, highlight-background, highlight-foreground
