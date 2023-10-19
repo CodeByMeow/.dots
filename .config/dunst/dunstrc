@@ -38,7 +38,7 @@
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    corner_radius = 18
+    corner_radius = 9
     ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
