@@ -30,7 +30,7 @@ def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         $time_segment_color
-        (date now | date format '%m/%d/%Y %r')
+        (date now | format date '%m/%d/%Y %r')
     ] | str join | str replace --all "([/:])" $"(ansi light_magenta_bold)${1}($time_segment_color)" |
         str replace --all "([AP]M)" $"(ansi light_magenta_underline)${1}")
 
@@ -87,7 +87,6 @@ starship init nu | save -f ~/.cache/starship/init.nu
 zoxide init nushell | save -f ~/.zoxide.nu
 
 $env.FZF_DEFAULT_OPTS = "
---color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc 
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
