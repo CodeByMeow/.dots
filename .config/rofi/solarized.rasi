@@ -1,5 +1,5 @@
 * {
-    bg-col:  transparent;
+    bg-col:  #002B36;
     bg-col-light: transparent;
     border-col:#002b36;
     fg-col:#93a1a1;

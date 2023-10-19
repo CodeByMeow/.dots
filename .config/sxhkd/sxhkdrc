@@ -14,6 +14,8 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+super + p
+    bash ~/.config/polybar/scripts/sysmenu
 #
 # bspwm hotkeys
 #
@@ -81,7 +83,7 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-# 
+#
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
@@ -127,16 +129,16 @@ XF86AudioMute
 
 shift + Up
 	amixer set Master 5%+
-    
+
 XF86AudioRaiseVolume
 	amixer set Master 5%+
 
 XF86AudioLowerVolume
-	amixer set Master 5%-  
-    
+	amixer set Master 5%-
+
 shift + Down
-	amixer set Master 5%-  
-  
+	amixer set Master 5%-
+
 # brightness control
 XF86MonBrightnessDown
 	light -U 10
@@ -167,4 +169,4 @@ super + d
   firefox-developer-edition
 
 super + x
-  betterlockscreen -l 
+  betterlockscreen -l
