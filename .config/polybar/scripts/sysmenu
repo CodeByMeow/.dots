@@ -3,10 +3,9 @@
 MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -hide-scrollbar true \
 -bw 0 \
--theme-str "*{font: \"Iosevka Nerd Font 14\";} window {width: 180; height: 150;} entry{enabled: false;} inputbar{enabled: false;} element-text{horizontal-align: 0;}" \
+-theme-str "*{font: \"Iosevka Nerd Font 14\";} window {width: 180; height: 150;} entry{enabled: false;} inputbar{enabled: false;} element-text{horizontal-align: 0;} prompt{enabled: false;}" \
 -xoffset -12 -yoffset 53 \
 -location 3 \
--columns 1 \
 <<< "  Lock|  Reboot|  Shutdown")"
 case "$MENU" in
   *Lock) betterlockscreen -l;;
