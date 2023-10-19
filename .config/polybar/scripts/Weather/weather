@@ -44,10 +44,10 @@ COLOR_TEXT=""
 # Polybar settings ____________________________________________________________
 
 # Font for the weather icons
-WEATHER_FONT_CODE=4
+WEATHER_FONT_CODE=3
 
 # Font for the thermometer icon
-TEMP_FONT_CODE=4
+TEMP_FONT_CODE=3
 
 # Wind settings _______________________________________________________________
 
@@ -80,10 +80,10 @@ DISPLAY_WIND_UNIT="no"
 # Thermometer settings ________________________________________________________
 
 # When the thermometer icon turns red
-HOT_TEMP=25
+HOT_TEMP=30
 
 # When the thermometer icon turns blue
-COLD_TEMP=16
+COLD_TEMP=26
 
 # Other settings ______________________________________________________________
 
@@ -282,9 +282,9 @@ function setIcons {
         WIND="$WIND |"
     fi
     if [ "$UNITS" = "metric" ]; then
-        TEMP_ICON="󰔄"
+        TEMP_ICON="糖"
     elif [ "$UNITS" = "imperial" ]; then
-        TEMP_ICON="󰔅"
+        TEMP_ICON="󰔅 "
     else
         TEMP_ICON="󰔆"
     fi
@@ -301,7 +301,7 @@ function setIcons {
 }
 
 function outputCompact {
-    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR}$ICON %{F-}%{T-} $ERR_MSG$COLOR_TEXT_BEGIN$DESCRIPTION$COLOR_TEXT_END| $TEMP"
+    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR}$ICON %{F-}%{T-} $ERR_MSG$COLOR_TEXT_BEGIN$DESCRIPTION$COLOR_TEXT_END | $TEMP"
     # echo "Output: $OUTPUT" >> "$HOME/.weather.log"
     echo "$OUTPUT"
 }
@@ -317,7 +317,7 @@ if [ $ERROR -eq 0 ]; then
     WIND=""
     TEMP=`echo $RESPONSE | jq .main.temp`
     if [ $DISPLAY_LABEL = "yes" ]; then
-        DESCRIPTION=`echo "$RESPONSE" | jq .weather[0].description | tr -d '"' | awk '{for (i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'`" "
+        DESCRIPTION=`echo "$RESPONSE" | jq .weather[0].description | tr -d '"'`
     else
         DESCRIPTION=""
     fi
