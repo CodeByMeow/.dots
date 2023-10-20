@@ -7,7 +7,7 @@ return {
 		lazy = true,
 		config = true,
 	},
-	"yamatsum/nvim-nonicons",
+	{ "yamatsum/nvim-nonicons", config = true },
 	{ "MunifTanjim/nui.nvim", lazy = true },
 	-- MINI
 	{
