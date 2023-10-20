@@ -77,7 +77,9 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 - JetBrains Mono Nerd Font
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - SF Pro Display (ver Vietnames)
-- Noto-fonts-emoji
+
+### Icon
+    Papirus-icon-theme
 
 ### Music
     youtube-music-bin
