@@ -388,7 +388,7 @@ return {
 			dashboard.section.buttons.val = {
 				dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
 				dashboard.button("g", " " .. " Find text", ":Pick grep_live<CR>"),
-				dashboard.button("i", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
+				dashboard.button("e", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
 				dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 				dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 			}
