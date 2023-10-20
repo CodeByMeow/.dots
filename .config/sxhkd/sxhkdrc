@@ -10,15 +10,15 @@ super + Return
 super + @space
 	rofi -show window -show-icons
 
-# make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
-
 super + p
     bash ~/.config/polybar/scripts/sysmenu
 #
 # bspwm hotkeys
 #
+
+# quick open workspace 1
+super + q
+    bspc desktop --focus ^1.local
 
 # quit/restart bspwm
 super + alt + {q,r}
@@ -142,11 +142,13 @@ shift + Down
 # brightness control
 XF86MonBrightnessDown
 	light -U 10
+
 XF86MonBrightnessUp
 	light -A 10
 
 shift + Left
 	light -U 10
+
 shift + Right
 	light -A 10
 
@@ -167,6 +169,3 @@ ctrl + shift + space
 
 super + d
   firefox-developer-edition
-
-super + x
-  betterlockscreen -l
