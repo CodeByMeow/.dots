@@ -320,18 +320,30 @@ return {
 	"lambdalisue/suda.vim",
 	-- FORMAT
 	{
-		"mhartington/formatter.nvim",
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "isort", "black" },
+				javascript = { { "prettierd", "prettier" } },
+				javascriptreact = { { "prettierd", "prettier" } },
+				typescript = { { "prettierd", "prettier" } },
+				typescriptreact = { { "prettierd", "prettier" } },
+				["*"] = { "codespell" },
+				["_"] = { "trim_whitespace" },
+			},
+			format_on_save = {
+				timeout_ms = 500,
+				lsp_fallback = true,
+			},
+		},
 		keys = {
 			{
 				"fm",
 				function()
-					vim.cmd("Format")
-				end,
-			},
-			{
-				"fw",
-				function()
-					vim.cmd("FormatWrite")
+					require("conform").format({ async = true, lsp_fallback = true })
 				end,
 			},
 		},

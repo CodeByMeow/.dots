@@ -50,6 +50,17 @@ betterlockscreen postbird
 - [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
   - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
+### Polybar
+Module weather: You need create api file: __.owm-key__ from https://openweathermap.org/api
+Change your local in $HOME/.config/polybar/scripts/Weather/weather
+```
+    APIKEY=`cat $HOME/.config/polybar/scripts/Weather/.owm-key`
+    CITY_NAME='Ho Chi Minh City'
+    COUNTRY_CODE=VN
+    # Desired output language
+    LANG="vi"
+```
+
 ### System
 
 - [light](https://archlinux.org/packages/community/x86_64/light/):bulb: - Backlight controllers
