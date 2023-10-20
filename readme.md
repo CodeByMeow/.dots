@@ -79,7 +79,7 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 - SF Pro Display (ver Vietnames)
 
 ### Icon
-    Papirus-icon-theme
+    Vimix-icon-theme
 
 ### Music
     youtube-music-bin

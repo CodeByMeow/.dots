@@ -8,7 +8,7 @@ super + Return
 
 # program launcher (Apps)
 super + @space
-	rofi -show window -show-icons
+	rofi -show drun -show-icons
 
 super + p
     bash ~/.config/polybar/scripts/sysmenu

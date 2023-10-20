@@ -8,7 +8,7 @@
     fg-col2:#073642;
     grey:#586e75;
     width: 600;
-    font: "SF Pro Display 14";
+    font: "Iosevka Nerd Font 14";
 }
 
 element-text, element-icon , mode-switcher {
