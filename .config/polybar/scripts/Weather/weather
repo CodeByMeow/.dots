@@ -5,7 +5,7 @@
 # API settings ________________________________________________________________
 
 
-APIKEY=`cat $HOME/.config/polybar/scripts/Weather/.owm-key`
+APIKEY=`cat ~/.config/polybar/scripts/Weather/.owm-key`
 
 CITY_NAME='Ho Chi Minh City'
 COUNTRY_CODE=VN
