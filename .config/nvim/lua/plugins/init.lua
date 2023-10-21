@@ -331,6 +331,7 @@ return {
 				javascriptreact = { { "prettierd", "prettier" } },
 				typescript = { { "prettierd", "prettier" } },
 				typescriptreact = { { "prettierd", "prettier" } },
+				sh = { "beautysh" },
 				["*"] = { "codespell" },
 			},
 			format_on_save = {
