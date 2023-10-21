@@ -1,5 +1,5 @@
 configuration{
-    modi: "drun,window";
+    modi: "drun";
     show-icons: true;
     terminal: "kitty";
     drun-display-format: "{icon} {name}";
@@ -7,9 +7,7 @@ configuration{
     disable-history: false;
     hide-scrollbar: true;
     display-drun: " ";
-    display-window: " ";
     sidebar-mode: true;
-    drun-display-format:  "{name}";
 	window-format:        "{w} · {c} · {t}";
 }
 

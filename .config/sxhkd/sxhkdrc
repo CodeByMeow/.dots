@@ -12,6 +12,9 @@ super + @space
 
 super + p
     bash ~/.config/polybar/scripts/sysmenu
+
+super + n
+    rofi -modi "combi:~/custom/scripts/combi.sh" -show combi
 #
 # bspwm hotkeys
 #
@@ -28,9 +31,6 @@ super + alt + {q,r}
 super + {_,shift + }w
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
 
 # swap the current node and the biggest window
 super + g
