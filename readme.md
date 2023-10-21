@@ -12,25 +12,21 @@
 </div>
 
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
-- **Display Manager** 📺 [Ly](https://github.com/fairyglade/ly)
+- **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
 - **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
-- **Terminal Emulator** :a: [ Kitty ](https://sw.kovidgoyal.net/kitty)
-- **Shell**  [ Nushell ](https://www.nushell.sh)
+- **Terminal Emulator** :cat: [ Kitty ](https://sw.kovidgoyal.net/kitty)
+- **Shell** :beetle: [ Nushell ](https://www.nushell.sh)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Yazi ](https://yazi-rs.github.io/docs/)
-- **Editor** :pencil2: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
+- **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
 
 ---
 
 _Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
-### AUR Helper
-
-**Yet Another Yogurt** :heart: [yay](https://github.com/Jguer/yay)
-
-### Software
+### Dependencies
 
 ```
 sxhkd cava dunst unclutter duf
@@ -44,14 +40,25 @@ betterlockscreen postbird
 
 ### Shell setup
 
-- [ starship ](https://starship.rs/) - Shell theme
-- [z](https://github.com/ajeetdsouza/zoxide) : - Directory jumping
-- [peco](https://github.com/peco/peco) - Interactive filtering
-- [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
-  - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
+[ starship ](https://starship.rs/) - Shell theme  
+[zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping  
+[peco](https://github.com/peco/peco) - Interactive filtering  
+[tmux](https://github.com/tmux/tmux) - Terminal multiplexer  
+[tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
+
+### Common hotkey
+| Key  | Description   |
+|-------------- | -------------- |
+| Super + Enter | Kitty     |
+| Super + Space | Laucher     |
+| Super + p    | Power menu     |
+| Super + n    | Playerctl menu  |
+| Super + d    | Firefox Developer Edition  |
+
+See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
 ### Polybar
-Module weather: You need create api file with only key in __.owm-key__ from https://openweathermap.org/api  
+__Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)  
 Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ```
     APIKEY=`cat ~/.config/polybar/scripts/Weather/.owm-key`
@@ -61,25 +68,17 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
     LANG="vi"
 ```
 
-### System
-
-- [light](https://archlinux.org/packages/community/x86_64/light/):bulb: - Backlight controllers
-
-  ```
-  sudo chmod +s (which light)
-  ```
-
 ### Font
-
 - [ Victor Mono ](https://rubjo.github.io/victor-mono/)
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
+- [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - Font Awesome 6 Pro
 - JetBrains Mono Nerd Font
-- [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - SF Pro Display (ver Vietnames)
 
 ### Icon
-    Vimix-icon-theme
+    vimix-icon-theme
 
 ### Music
     youtube-music-bin
+
