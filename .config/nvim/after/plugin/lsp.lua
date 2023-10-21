@@ -17,6 +17,7 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"eslint",
 		"prismals",
+		"tailwindcss",
 	},
 	handlers = {
 		lsp_zero.default_setup,
