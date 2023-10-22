@@ -553,7 +553,7 @@ alias tpi = ~/.config/tmux/plugins/tpm/bin/install_plugins # Installs Tmux plugi
 alias tpu = ~/.config/tmux/plugins/tpm/bin/update_plugins all # Updates all Tmux plugins
 
 alias yt = ytfzf --ii --detach -ts --notify-playing
-alias meowfetch = bash ~/meowfetch.sh
+alias hollowfetch = bash ~/hollowfetch
 alias notify = tmux display-message
 
 $env.PATH = ($env.PATH | append ["~/.node-modules/", "~/.node-modules/bin", "~/.node-modules//share/man", "~/.cargo/bin"])
