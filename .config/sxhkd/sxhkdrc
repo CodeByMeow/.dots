@@ -14,7 +14,7 @@ super + p
     bash ~/.config/polybar/scripts/sysmenu
 
 super + n
-    rofi -modi "combi:~/custom/scripts/combi.sh" -show combi
+    rofi -modi "combi:~/custom/scripts/player.sh" -show combi
 #
 # bspwm hotkeys
 #
