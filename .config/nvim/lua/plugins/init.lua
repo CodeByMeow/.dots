@@ -428,7 +428,7 @@ return {
 						.. vim.version().minor
 						.. "."
 						.. vim.version().patch
-					local plugin = "󱐌 Neovim loaded " .. stats.loaded .. " plugins ﮣ in " .. ms .. "ms"
+					local plugin = "󱐌 Neovim loaded " .. stats.loaded .. " plugins  in " .. ms .. "ms"
 					local footer = version .. "\t" .. plugin .. "\n"
 					dashboard.section.footer.val = footer
 					pcall(vim.cmd.AlphaRedraw)
