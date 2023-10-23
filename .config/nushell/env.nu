@@ -30,7 +30,7 @@ def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
         $time_segment_color
-        (date now | date format '%m/%d/%Y %r')
+        (date now | format date '%m/%d/%Y %r')
     ] | str join | str replace --all "([/:])" $"(ansi light_magenta_bold)${1}($time_segment_color)" |
         str replace --all "([AP]M)" $"(ansi light_magenta_underline)${1}")
 

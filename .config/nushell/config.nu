@@ -539,8 +539,6 @@ $env.config = {
 
 alias g = git
 alias vim =  nvim
-alias vi = ~/app/nvim.appimage
-alias tap = xinput set-prop "PNP0C50:00 04F3:30AA Touchpad" "libinput Tapping Enabled" 1
 
 #Tmux
 alias tm = tmux
@@ -553,7 +551,7 @@ alias tpi = ~/.config/tmux/plugins/tpm/bin/install_plugins # Installs Tmux plugi
 alias tpu = ~/.config/tmux/plugins/tpm/bin/update_plugins all # Updates all Tmux plugins
 
 alias yt = ytfzf --ii --detach -ts --notify-playing
-alias hollowfetch = bash ~/hollowfetch
+alias hollowfetch = bash ~/custom/scripts/hollowfetch.sh
 
 $env.PATH = ($env.PATH | append ["~/.node-modules/", "~/.node-modules/bin", "~/.node-modules//share/man", "~/.cargo/bin"])
 $env.EDITOR = nvim
