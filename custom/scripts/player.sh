@@ -5,9 +5,8 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -hide-scrollbar true \
 -bw 0 \
 -theme-str "*{font: \"Iosevka Nerd Font 14\";}\
-window {width: 230; height: 150;} \
-mainbox {children: [listview];} \
-element-text{horizontal-align: 0;}"\
+window {width: 200; height: 150;} \
+mainbox {children: [listview];}" \
 <<< "怜  Next| Toggle|玲  Previous")"
 case "$MENU" in
     *Next) playerctl next ;;
