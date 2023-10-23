@@ -554,7 +554,6 @@ alias tpu = ~/.config/tmux/plugins/tpm/bin/update_plugins all # Updates all Tmux
 
 alias yt = ytfzf --ii --detach -ts --notify-playing
 alias hollowfetch = bash ~/hollowfetch
-alias notify = tmux display-message
 
 $env.PATH = ($env.PATH | append ["~/.node-modules/", "~/.node-modules/bin", "~/.node-modules//share/man", "~/.cargo/bin"])
 $env.EDITOR = nvim
