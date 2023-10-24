@@ -84,7 +84,7 @@ return {
 				end,
 			},
 			{
-				"<leader>e",
+				"<leader>o",
 				function()
 					MiniFiles.open()
 				end,
@@ -387,28 +387,19 @@ return {
 		opts = function()
 			local dashboard = require("alpha.themes.dashboard")
 			local logo = [[
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠶⠀⠀⠀⠀⠀⣈⣿⣦⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⡿⠋⠀⠀⠀⠀⠀⠹⣿⣿⡆⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣤⣤⣴⣤⣤⣄⠀⢠⣿⣿⠇⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢸⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣾⠋⠈⢻⣿⡝⠁⠀⢻⣿⣿⠋⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⣿⣄⣠⣿⣿⣧⣀⣠⣿⣿⣿⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⡿⠟⠀⣀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣷⡾⠿⠛⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⢀⣠⣴⣿⣿⣿⣿⣿⣿⣿⣿⡿⠓⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣀⡀⠀⠀⠀⠀⠀
-⠀⣰⡟⠉⣼⣿⠟⣡⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⡀⠀
-⢠⣿⠀⠀⣿⣿⣾⠿⠛⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡛⠻⠑⡀
-⠈⣿⠀⡼⢿⡏⠀⠀⠀⠹⣿⡆⠉⠻⣿⣿⣿⣿⣿⡻⢿⣿⠷⠞⠁
-⠀⢸⠇⠀⠈⡇⠀⠀⠀⠀⠘⢿⡄⠀⠸⡏⠀⠀⠉⡇⠀⠹⢦⡄⠀
-⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠸⠁⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                                             
+      ████ ██████           █████      ██
+     ███████████             █████ 
+     █████████ ███████████████████ ███   ███████████
+    █████████  ███    █████████████ █████ ██████████████
+   █████████ ██████████ █████████ █████ █████ ████ █████
+ ███████████ ███    ███ █████████ █████ █████ ████ █████
+██████  █████████████████████ ████ █████ █████ ████ ██████
 ]]
 			dashboard.section.header.val = vim.split(logo, "\n")
 			dashboard.section.buttons.val = {
 				dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
-				dashboard.button("e", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
+				dashboard.button("o", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
 				dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 				dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 			}
@@ -428,7 +419,7 @@ return {
 						.. vim.version().minor
 						.. "."
 						.. vim.version().patch
-					local plugin = "󱐌 Neovim loaded " .. stats.loaded .. " plugins  in " .. ms .. "ms"
+					local plugin = "󱐌 Neovim loaded " .. stats.loaded .. " plugins ﮣ in " .. ms .. "ms"
 					local footer = version .. "\t" .. plugin .. "\n"
 					dashboard.section.footer.val = footer
 					pcall(vim.cmd.AlphaRedraw)
