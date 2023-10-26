@@ -35,7 +35,7 @@ acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco onefetch
 jq bc rg yd ripgrep fd nodejs npm lxappearance nemo
-firefox-developer-edition
+firefox-developer-edition brave-nightly-bin
 betterlockscreen postbird
 ```
 

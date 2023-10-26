@@ -168,4 +168,4 @@ ctrl + shift + space
   gpick -so | xargs echo -n | xclip -selection clipboard
 
 super + d
-  firefox-developer-edition
+  brave-browser-nightly
