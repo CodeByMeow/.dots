@@ -13,10 +13,9 @@ workspaces() {
 # Application rules
 bspc rule -a Nemo state=floating follow=on
 bspc rule -a kitty desktop=^1 follow=on
-bspc rule -a "Brave-browser-nightly" desktop=^2 follow=on
+bspc rule -a "Brave-browser" desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
 bspc rule -a notion-app  desktop=^4 follow=on
-bspc rule -a firefoxdeveloperedition desktop=^5 follow=on
 bspc rule -a Postman  desktop=^6 follow=on
 bspc rule -a yuzu desktop=^7 follow=on
 bspc rule -a steam desktop=^8 follow=on
