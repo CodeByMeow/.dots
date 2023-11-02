@@ -7,7 +7,6 @@
 ─┴┘└─┘ ┴ └  ┴┴─┘└─┘└─┘
 
 ```
-![snap-3](https://github.com/CodeByMeow/dotfiles/assets/43630437/2262ad64-4fba-40e3-810b-579db9f49737)
 
 
 </div>
@@ -34,9 +33,9 @@ sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco onefetch
-jq bc rg yd ripgrep fd nodejs npm lxappearance nemo
-firefox-developer-edition brave-nightly-bin
-betterlockscreen postbird
+jq bc rg yd ripgrep fd nodejs npm nemo
+firefox xdg-user-dirs  reversal-icon-theme-git bibata-cursor-theme \
+betterlockscreen nwg-look-git
 ```
 
 ### Shell setup
@@ -54,7 +53,8 @@ betterlockscreen postbird
 | Super + Space | Laucher     |
 | Super + p    | Power menu     |
 | Super + n    | Playerctl menu  |
-| Super + d    | Firefox Developer Edition  |
+| Super + b    | Firefox  |
+| Super + q    | Kill current window |
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
@@ -76,9 +76,6 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 - Font Awesome 6 Pro
 - JetBrains Mono Nerd Font
 - SF Pro Display (ver Vietnames)
-
-### Icon
-    vimix-icon-theme
 
 ### Music
     youtube-music-bin

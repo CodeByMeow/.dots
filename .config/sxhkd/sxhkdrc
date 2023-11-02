@@ -6,6 +6,9 @@
 super + Return
     kitty
 
+super + b
+    firefox
+
 # program launcher (Apps)
 super + @space
 	rofi -show drun -show-icons
@@ -15,6 +18,9 @@ super + p
 
 super + n
     bash ~/custom/scripts/player.sh
+
+super + e
+    nemo
 #
 # bspwm hotkeys
 #
@@ -138,7 +144,7 @@ shift + Left
     brightnessctl set 10%-
 
 shift + Right
-	brightnessctl set 10%-
+	brightnessctl set +10%
 
 # Reload sxhkdrc
 super + shift + r
@@ -155,5 +161,3 @@ super + Print
 ctrl + shift + space
   gpick -so | xargs echo -n | xclip -selection clipboard
 
-super + b
-    firefox

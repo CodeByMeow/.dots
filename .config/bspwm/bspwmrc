@@ -11,14 +11,12 @@ workspaces() {
 }
 
 # Application rules
-bspc rule -a Thunar state=floating follow=on
+bspc rule -a Nemo state=floating follow=on center=true rectangle=900x625+0+0
 bspc rule -a kitty desktop=^1 follow=on
 bspc rule -a firefox desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
 bspc rule -a notion-app  desktop=^4 follow=on
-bspc rule -a Postman  desktop=^6 follow=on
-bspc rule -a yuzu desktop=^7 follow=on
-bspc rule -a steam desktop=^8 follow=on
+bspc rule -a steam desktop=^5 follow=on
 
 # apps in float mode
 bspc rule -a Nitrogen state=floating focus=on
@@ -44,4 +42,5 @@ pkill polybar
 nitrogen --restore &
 picom &
 unclutter -idle 10 &
+udiskie &
 ibus-daemon
