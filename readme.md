@@ -35,7 +35,7 @@ nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco onefetch
 jq bc rg yd ripgrep fd nodejs npm nemo
 firefox xdg-user-dirs  reversal-icon-theme-git bibata-cursor-theme \
-betterlockscreen nwg-look-git
+betterlockscreen nwg-look
 ```
 
 ### Shell setup
@@ -79,4 +79,5 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 
 ### Music
     youtube-music-bin
-
+### Game
+    gamemode mangohud

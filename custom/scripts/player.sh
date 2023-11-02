@@ -9,15 +9,14 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -selected-row 2 \
 -theme-str \
 "*{font: \"Iosevka Nerd Font Italic 14\";}\
-window {width: 360; height: 50;} \
+window {width: 280; height: 55;} \
 mainbox {children: [listview];} \
-element {padding: 2; horizontal-align: 0.5;} \
-listview {columns: 3; margin: 5;} \
+element {padding:0; horizontal-align: 0.5;} \
+listview {columns: 3; margin: 0;} \
 element selected {text-color: #fdf6e3; } \
 " \
-<<< "玲 PREV |  TOG|怜 NEXT")"
+<<< "  TOG|怜 NEXT")"
 case "$MENU" in
-    *PREV) playerctl previous ;;
     *TOG ) playerctl play-pause ;;
     *NEXT) playerctl  next
 esac

@@ -4,8 +4,8 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -hide-scrollbar true \
 -bw 0 \
 -theme-str "*{font: \"Iosevka Nerd Font 14\";}\
-window {width: 200; height: 150;}\
-mainbox {children: [listview];}" \
+window {width: 180; height: 160;}\
+mainbox {children: [listview];} element {padding: 0; horizontal-align: 0.2;}" \
 -xoffset -12 -yoffset 53 \
 -location 3 \
 <<< "  Lock|  Reboot|  Shutdown")"

@@ -11,4 +11,4 @@ configuration{
 	window-format:        "{w} · {c} · {t}";
 }
 
-@theme "solarized"
+@theme "gruvbox"
