@@ -5,15 +5,15 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 workspaces() {
     name=1
     for monitor in $(bspc query -M); do
-        bspc monitor "${monitor}" -n "$name" -d I II III IV V VI VII VIII
+        bspc monitor "${monitor}" -n "$name" -d I II III IV V 
         name=$((name + 1))
     done
 }
 
 # Application rules
-bspc rule -a Nemo state=floating follow=on
+bspc rule -a Thunar state=floating follow=on
 bspc rule -a kitty desktop=^1 follow=on
-bspc rule -a "Brave-browser" desktop=^2 follow=on
+bspc rule -a firefox desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
 bspc rule -a notion-app  desktop=^4 follow=on
 bspc rule -a Postman  desktop=^6 follow=on

@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty
+    kitty
 
 # program launcher (Apps)
 super + @space
@@ -19,16 +19,12 @@ super + n
 # bspwm hotkeys
 #
 
-# quick open workspace 1
-super + q
-    bspc desktop --focus ^1.local
-
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }q
 	bspc node -{c,k}
 
 
@@ -60,9 +56,6 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,n,e,i}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
 super + {_,shift + }c
@@ -125,32 +118,27 @@ super + {Left,Down,Up,Right}
 
 # volume control
 XF86AudioMute
-	amixer set Master toggle
-
-shift + Up
-	amixer set Master 5%+
+	pamixer -t
 
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	pamixer -i 5
 
 XF86AudioLowerVolume
-	amixer set Master 5%-
+	pamixer -d 5
 
-shift + Down
-	amixer set Master 5%-
 
 # brightness control
 XF86MonBrightnessDown
-	light -U 10
+	 brightnessctl set 10%-
 
 XF86MonBrightnessUp
-	light -A 10
+	brightnessctl set +10%
 
 shift + Left
-	light -U 10
+    brightnessctl set 10%-
 
 shift + Right
-	light -A 10
+	brightnessctl set 10%-
 
 # Reload sxhkdrc
 super + shift + r
@@ -167,5 +155,5 @@ super + Print
 ctrl + shift + space
   gpick -so | xargs echo -n | xclip -selection clipboard
 
-super + d
-  brave
+super + b
+    firefox
