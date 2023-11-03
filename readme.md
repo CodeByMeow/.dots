@@ -32,10 +32,10 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 sxhkd cava dunst unclutter duf
 acpilight gpick bluetooth-autoconnect flameshot
 nitrogen playerctl xorg-xsetroot
-tree-sitter-cli peco onefetch
+tree-sitter-cli peco
 jq bc rg yd ripgrep fd nodejs npm nemo
 firefox xdg-user-dirs  reversal-icon-theme-git bibata-cursor-theme \
-betterlockscreen nwg-look
+betterlockscreen nwg-look picom-allusive
 ```
 
 ### Shell setup

@@ -6,7 +6,7 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -location 2 \
 -xoffset -210 -yoffset 50 \
 -bw 0 \
--selected-row 2 \
+-selected-row 1 \
 -theme-str \
 "*{font: \"Iosevka Nerd Font Italic 14\";}\
 window {width: 280; height: 55;} \
