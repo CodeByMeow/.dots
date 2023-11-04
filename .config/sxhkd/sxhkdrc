@@ -14,10 +14,10 @@ super + @space
 	rofi -show drun -show-icons
 
 super + p
-    bash ~/.config/polybar/scripts/sysmenu
+    powermenu
 
 super + n
-    bash ~/custom/scripts/player.sh
+    next-play
 
 super + e
     nemo
