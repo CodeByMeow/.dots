@@ -9,10 +9,9 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -selected-row 1 \
 -theme-str \
 "*{font: \"Iosevka Nerd Font Italic 14\";}\
-window {width: 280; height: 55;} \
+window {width: 300;} \
 mainbox {children: [listview];} \
-element {padding:0; horizontal-align: 0.5;} \
-listview {columns: 3; margin: 0;} \
+listview {columns: 3; lines: 1;} \
 element selected {text-color: #fdf6e3; } \
 " \
 <<< "  TOG|怜 NEXT")"

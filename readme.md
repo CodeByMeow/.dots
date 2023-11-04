@@ -35,7 +35,7 @@ nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco
 jq bc rg yd ripgrep fd nodejs npm nemo
 firefox xdg-user-dirs  reversal-icon-theme-git bibata-cursor-theme \
-betterlockscreen nwg-look picom-allusive
+betterlockscreen nwg-look picom-allusive cifs-utils
 ```
 
 ### Shell setup
