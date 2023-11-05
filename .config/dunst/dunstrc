@@ -2,8 +2,8 @@
     font = SF Pro Display 11
     monitor = 0
     follow = mouse
-    width = 320
-    height = 320
+    width = 365
+    height = 180
     origin = top-right
     offset = 12x55
     scale = 0
@@ -38,7 +38,7 @@
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    corner_radius = 9
+    # corner_radius = 12
     ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
@@ -46,17 +46,17 @@
     mouse_right_click = close_all
 
 [urgency_low]
-    background = "#93A1A1"
-    foreground = "#073642"
+    background = "#3F3F3F"
+    foreground = "#D3D3D3"
     timeout = 5
 
 [urgency_normal]
-    background = "#93A1A1"
-    foreground = "#073642"
+    background = "#3F3F3F"
+    foreground = "#D3D3D3"
     timeout = 5
 
 [urgency_critical]
-    background = "#DC322F"
-    foreground = "#073642"
-    frame_color = "#073642"
+    background = "#705050"
+    foreground = "#D3D3D3"
+    frame_color = "#5F7F5F"
     timeout = 10

@@ -1,28 +1,27 @@
 [tab]
-active    = { fg = "#839496", bg = "#002B36" }
-inactive  = { fg = "#93A1A1", bg = "#073642" }
-max_width = 1
+active    = { fg = "#819090", bg = "#2B2B2B" }
+inactive  = { fg = "#8C8C8C", bg = "#2B2B2B" }
 
 [status]
-primary	  = { normal = "#93A1A1", select = "#839496", unset = "#586E75" }
-secondary = { normal = "#839496", select = "#839496", unset = "#839496" }
+primary	  = { normal = "#8C8C8C", select = "#819090", unset = "#5F5F5F" }
+secondary = { normal = "#819090", select = "#819090", unset = "#819090" }
 tertiary  = { normal = "#657B83", select = "#657B83", unset = "#657B83" }
-body      = { normal = "#073642", select = "#073642", unset = "#073642" }
-emphasis  = { normal = "#839496", select = "#839496", unset = "#839496" }
-info      = { normal = "#268BD2", select = "#268BD2", unset = "#268BD2" }
-success   = { normal = "#859900", select = "#859900", unset = "#859900" }
-warning   = { normal = "#B58900", select = "#B58900", unset = "#B58900" }
-danger    = { normal = "#CB4B16", select = "#CB4B16", unset = "#CB4B16" }
+body      = { normal = "#2B2B2B", select = "#2B2B2B", unset = "#2B2B2B" }
+emphasis  = { normal = "#819090", select = "#819090", unset = "#819090" }
+info      = { normal = "#668899", select = "#668899", unset = "#668899" }
+success   = { normal = "#708030", select = "#708030", unset = "#708030" }
+warning   = { normal = "#997000", select = "#997000", unset = "#997000" }
+danger    = { normal = "#AF5F00", select = "#AF5F00", unset = "#AF5F00" }
 separator = { opening = "", closing = "" }
 
 [progress]
-gauge = { fg = "#586E75", bg = "#073642" }
-label = { fg = "#839496", bold = true }
+gauge = { fg = "#5F5F5F", bg = "#2B2B2B" }
+label = { fg = "#819090", bold = true }
 
 [selection]
-hovered = { fg = "#073642", bg = "#839496" }
+hovered = { fg = "#2B2B2B", bg = "#819090" }
 
 [marker]
-selecting = { fg = "#859900", bg = "#859900" }
-selected  = { fg = "#B58900", bg = "#B58900" }
+selecting = { fg = "#708030", bg = "#708030" }
+selected  = { fg = "#997000", bg = "#997000" }
 

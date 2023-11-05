@@ -1,83 +1,185 @@
-# ~/.config/starship.toml
+## ░█▀▀░▀█▀░█▀█░█▀▄░█▀▀░█░█░▀█▀░█▀█
+## ░▀▀█░░█░░█▀█░█▀▄░▀▀█░█▀█░░█░░█▀▀
+## ░▀▀▀░░▀░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░░
+## CROSS-SHELL PROMPT
+## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
-# Inserts a blank line between shell prompts
+format = """
+$hostname\
+$directory\
+
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$vcsh\
+$hg_branch\
+$docker_context\
+$package\
+$custom\
+
+$sudo\
+
+$fill\
+$git_branch\
+$git_status\
+$git_commit\
+$cmd_duration\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$line_break\
+$character"""
+
+
+# Disable the blank line at the start of the prompt
 add_newline = true
 
-# Change the default prompt format
-format = """\
-[╭╴](238)$env_var\
-$all[╰─](238)$character"""
-
-# Change the default prompt characters
-[character]
-success_symbol = "[](green) "
-error_symbol = "[✕](red) "
-
-# Shows an icon that should be included by zshrc script based on the distribution or os
-#[env_var.STARSHIP_DISTRO]
-#format = '[$env_value](bold white)'  # removed space between distro and rest for pwsh
-#variable = "STARSHIP_DISTRO"
-#disabled = false
-
-# Shows the username
-[username]
-style_user = "white bold"
-style_root = "black bold"
-format = " [$user]($style) "
-disabled = false  # disable in powershell
-show_always = true
-
+# Second param
 [hostname]
-ssh_only = false
-format = "on [$hostname](bold yellow) "
-disabled = false
+format = "[](fg:#F0F0F0 bg:none)[█](fg:#333333 bg:#F0F0F0)[$ssh_symbol$hostname](bold bg:#333333)[](fg:#333333 bg:none) "
 
+# Third param
 [directory]
-truncation_length = 3
-truncation_symbol = "…/"
-home_symbol = " ~"
-read_only_style = "197"
-read_only = "  "
-format = "at [$path]($style)[$read_only]($read_only_style) "
+format = "[](fg:#2B2B2B bg:none)[$path]($style)[█](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
+style = "fg:#F0F0F0 bg:#2B2B2B bold"
+
+[character]
+success_symbol = "[ ](#E0E0E0 bold)"
+error_symbol = "[ ](#B66467 bold)"
+
+[cmd_duration]
+format = "[](fg:#2B2B2B bg:none)[$duration]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#C397D8 bg:#2B2B2B)[󱑂 ](fg:#2B2B2B bg:#C397D8)[](fg:#C397D8 bg:none)"
+style = "fg:#F0F0F0 bg:#2B2B2B bold"
 
 [git_branch]
-symbol = " "
-format = "on [$symbol$branch]($style) "
-truncation_length = 4
-truncation_symbol = "…/"
-style = "bold green"
+format = "[](fg:#F0F0F0 bg:none)[$branch]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#81C19B bg:#2B2B2B)[](fg:#2B2B2B bg:#81C19B)[](fg:#81C19B bg:none)"
+style = "fg:#F0F0F0 bg:#2B2B2B"
 
 [git_status]
-format = '[\($all_status$ahead_behind\)]($style) '
-style = "bold green"
-conflicted = "🏳"
-up_to_date = " "
-untracked = " "
-ahead = "⇡${count}"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}"
-stashed = " "
-modified = " "
-staged = '[++\($count\)](green)'
-renamed = " "
-deleted = " "
+format="[](fg:#F0F0F0 bg:none)[$all_status$ahead_behind]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
+style = "fg:#F0F0F0 bg:#2B2B2B"
 
-[terraform]
-format = "via [ terraform $version]($style) 壟 [$workspace]($style) "
+[git_commit]
+format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
+style = "green"
 
-[vagrant]
-format = "via [ vagrant $version]($style) "
+[git_state]
+rebase = "REBASING"
+merge =	"MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICKING"
+bisect = "BISECTING"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+style =	"yellow"
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+# # SYMBOLS
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+# [directory]
 
 [docker_context]
-format = "via [ $context](bold blue) "
-
-[python]
-symbol = " "
-python_binary = "python3"
-
-[nodejs]
-format = "via [ $version](bold green) "
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
 disabled = false
 
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[haskell]
+symbol = "λ "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+#pyenv_version_name = true
+format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
 [ruby]
-format = "via [ $version]($style) "
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
+[nodejs]
+format = "via [ Node.js $version](bold green) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+# Other languages configurations:
+c.disabled = true
+cmake.disabled = true
+haskell.disabled = true
+python.disabled = true
+ruby.disabled = true
+rust.disabled = true
+perl.disabled = true
+package.disabled = true
+lua.disabled = true
+nodejs.disabled = true
+java.disabled = true
+golang.disabled = true
