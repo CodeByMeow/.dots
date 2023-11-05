@@ -16,11 +16,9 @@ super + @space
 super + p
     powermenu
 
-super + n
-    next-play
-
 super + e
     nemo
+    
 #
 # bspwm hotkeys
 #
@@ -132,7 +130,6 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	pamixer -d 5
 
-
 # brightness control
 XF86MonBrightnessDown
 	 brightnessctl set 10%-
@@ -145,6 +142,13 @@ shift + Left
 
 shift + Right
 	brightnessctl set +10%
+
+# Playerctl
+alt + @n 
+    playerctl next
+
+alt + @p
+    playerctl play-pause
 
 # Reload sxhkdrc
 super + shift + r
