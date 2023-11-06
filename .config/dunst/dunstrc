@@ -44,16 +44,13 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
+    foreground = "#3F3F3F"
+    background = "#D3D3D3"
+    timeout = 5
 
 [urgency_low]
-    background = "#3F3F3F"
-    foreground = "#D3D3D3"
-    timeout = 5
 
 [urgency_normal]
-    background = "#3F3F3F"
-    foreground = "#D3D3D3"
-    timeout = 5
 
 [urgency_critical]
     background = "#705050"
