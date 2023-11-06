@@ -29,9 +29,9 @@
     ignore_newline = no
     stack_duplicates = true
     hide_duplicate_count = false
-    show_indicators = yes
+    show_indicators = no
     icon_position = left
-    icon_path = /usr/share/icons/Vimix-White-dark/32/status:/usr/share/icons/Vimix-White-dark/32/devices
+    icon_path = /usr/share/icons/Reversal-green-dark/status/32/:/usr/share/icons/Reversal-green-dark/devices/32
     icon_corner_radius = 9
     min_icon_size = 0
     max_icon_size = 32
