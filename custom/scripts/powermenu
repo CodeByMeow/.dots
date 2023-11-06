@@ -5,13 +5,13 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -bw 0 \
 -theme-str "*{font: \"Iosevka Nerd Font 14\";} \
 window {width: 180;} \
-listview {lines: 3;} \
+listview {lines: 3;  margin-right: 0px;} \
 mainbox {children: [listview];}" \
 -xoffset -12 -yoffset 53 \
 -location 3 \
-<<< "Lock|Reboot|Shutdown")"
+<<< " Lock|菱 Reboot|襤 Shutdown")"
 case "$MENU" in
-    *Lock) betterlockscreen -l ;;
+    *Lock) betterlockscreen -l;;
     *Reboot) systemctl reboot ;;
     *Shutdown) systemctl -i poweroff
 esac

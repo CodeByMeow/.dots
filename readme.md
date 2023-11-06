@@ -35,7 +35,7 @@ nitrogen playerctl xorg-xsetroot
 tree-sitter-cli peco
 jq bc rg yd ripgrep fd nodejs npm nemo
 firefox xdg-user-dirs  reversal-icon-theme-git bibata-cursor-theme \
-betterlockscreen nwg-look picom-allusive cifs-utils
+betterlockscreen nwg-look picom-allusive
 ```
 
 ### Shell setup
@@ -52,9 +52,10 @@ betterlockscreen nwg-look picom-allusive cifs-utils
 | Super + Enter | Kitty     |
 | Super + Space | Laucher     |
 | Super + p    | Power menu     |
-| Super + n    | Playerctl menu  |
 | Super + b    | Firefox  |
 | Super + q    | Kill current window |
+| Alt   + n    | Playerctl next |
+| Alt   + p    | Playerctl play-pause |
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
@@ -70,11 +71,10 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ```
 
 ### Font
-- [ Victor Mono ](https://rubjo.github.io/victor-mono/)
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
+- [Iosevka Mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai)
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - Font Awesome 6 Pro
-- JetBrains Mono Nerd Font
 - SF Pro Display (ver Vietnames)
 
 ### Music

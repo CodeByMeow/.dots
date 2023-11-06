@@ -35,11 +35,17 @@ local mode_icons = {
 
 require("staline").setup({
     sections = {
-        left = { "mode", "file_name", "branch", " ", "lsp" },
+        left = { "-mode", "file_name", "branch", " ", "lsp" },
         mid = { "lsp_name" },
         right = { "file_size", vim.bo.fileencoding:upper(), "line_column" },
     },
     mode_icons = mode_icons,
+    mode_colors = {
+        i = "#66A5AD",
+        n = "#888F94",
+        c = "#D68C67",
+        v = "#6099C0",
+    },
     lsp_symbols = {
         Error = icons.Error,
         Info = icons.Info,

@@ -5,7 +5,6 @@
 ## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
 format = """
-$hostname\
 $directory\
 
 $localip\
@@ -39,18 +38,14 @@ $character"""
 # Disable the blank line at the start of the prompt
 add_newline = true
 
-# Second param
-[hostname]
-format = "[](fg:#F0F0F0 bg:none)[█](fg:#333333 bg:#F0F0F0)[$ssh_symbol$hostname](bold bg:#333333)[](fg:#333333 bg:none) "
-
-# Third param
+# param
 [directory]
 format = "[](fg:#2B2B2B bg:none)[$path]($style)[█](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
 style = "fg:#F0F0F0 bg:#2B2B2B bold"
 
 [character]
-success_symbol = "[ ](#E0E0E0 bold)"
-error_symbol = "[ ](#B66467 bold)"
+success_symbol = "[](#E0E0E0 bold)"
+error_symbol = "[](#B66467 bold)"
 
 [cmd_duration]
 format = "[](fg:#2B2B2B bg:none)[$duration]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#C397D8 bg:#2B2B2B)[󱑂 ](fg:#2B2B2B bg:#C397D8)[](fg:#C397D8 bg:none)"
