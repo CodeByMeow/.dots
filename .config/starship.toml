@@ -57,11 +57,11 @@ format = "[](fg:#2B2B2B bg:none)[$duration]($style)[](fg:#2B2B2B bg:#2B2B2
 style = "fg:#F0F0F0 bg:#2B2B2B bold"
 
 [git_branch]
-format = "[](fg:#F0F0F0 bg:none)[$branch]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#81C19B bg:#2B2B2B)[](fg:#2B2B2B bg:#81C19B)[](fg:#81C19B bg:none)"
+format = "[](fg:#2B2B2B bg:none)[$branch]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#81C19B bg:#2B2B2B)[](fg:#2B2B2B bg:#81C19B)[](fg:#81C19B bg:none)"
 style = "fg:#F0F0F0 bg:#2B2B2B"
 
 [git_status]
-format="[](fg:#F0F0F0 bg:none)[$all_status$ahead_behind]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
+format="[](fg:#2B2B2B bg:none)[$all_status$ahead_behind]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
 style = "fg:#F0F0F0 bg:#2B2B2B"
 
 [git_commit]
