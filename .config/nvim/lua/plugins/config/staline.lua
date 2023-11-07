@@ -41,10 +41,10 @@ require("staline").setup({
     },
     mode_icons = mode_icons,
     mode_colors = {
-        i = "#66A5AD",
-        n = "#888F94",
-        c = "#D68C67",
-        v = "#6099C0",
+        i = "#83A598",
+        n = "#928374",
+        c = "#D65D0E",
+        v = "#458588"
     },
     lsp_symbols = {
         Error = icons.Error,

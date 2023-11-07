@@ -54,8 +54,8 @@ return {
                     -- Move current line in Normal mode
                     line_left = "<M-h>",
                     line_right = "<M-i>",
-                    line_up = "<M-e>",
-                    line_down = "<M-n>",
+                    line_up = "<M-u>",
+                    line_down = "<M-d>",
                 },
             })
         end,
@@ -94,12 +94,14 @@ return {
     },
     -- THEME
     {
-        "mcchrish/zenbones.nvim",
-        dependencies = "rktjmp/lush.nvim",
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
         config = function()
-            vim.cmd [[colorscheme zenbones]]
-            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-            vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+            require("gruvbox").setup {
+                dim_inactive = true,
+                transparent_mode = true,
+            }
+            vim.cmd("colorscheme gruvbox")
         end
     },
     -- INDENT
