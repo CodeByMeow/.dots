@@ -12,7 +12,7 @@
     indicate_hidden = yes
     transparency = 25
     separator_height = 2
-    padding = 8
+    padding = 4
     horizontal_padding = 10
     text_icon_padding = 0
     frame_width = 2
@@ -38,7 +38,7 @@
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    corner_radius = 12
+    corner_radius = 9
     ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
