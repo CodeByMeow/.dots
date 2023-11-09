@@ -31,9 +31,9 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  bg: #3f3f3f;
+  fg: #3f3f3f;
   bg-alt: #7f7f7f;
-  fg: #dcdccc;
+  bg: #dcdccc;
   blue: #8cd0d3;
 
   background-color: @bg;
@@ -43,6 +43,9 @@ configuration {
 window {
   transparency: "real";
   width: 350;
+  border: 10px;
+  border-color: @bg;
+  background-color: @fg;
 }
 
 mainbox {
@@ -50,7 +53,7 @@ mainbox {
 }
 
 inputbar {
-  background-color: @bg-alt;
+  background-color: @bg;
   children: [prompt, entry];
 }
 
@@ -73,14 +76,16 @@ element {
 }
 
 element-icon {
-  size: 32px;
+  size: 36px;
   padding: 10px 10px;
 }
 
 element-text {
-  padding: 10px;
+  padding: 20px 10px;
 }
 
-element-text selected {
-  text-color: @blue;
+element-text selected, 
+element-icon selected {
+  text-color: #fff;
+  background-color: @bg-alt;
 }
