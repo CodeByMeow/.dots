@@ -1,12 +1,12 @@
 local git = require("core.kind").git
 local icons = require("core.kind").diagnostics
 
-local nicon = "NORMAL"
-local iicon = "INSERT"
-local vicon = "VISUAL"
-local cicon = "COMMAND"
-local ricon = "REPLACE"
-local ticon = "TERMINAL"
+local nicon = "NORM"
+local iicon = "INSR"
+local vicon = "VISU"
+local cicon = "COMM"
+local ricon = "REPL"
+local ticon = "TERM"
 
 local mode_icons = {
     ["n"] = nicon,
