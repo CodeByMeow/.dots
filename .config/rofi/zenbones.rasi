@@ -31,9 +31,9 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  fg: #3f3f3f;
+  bg: #3f3f3f;
   bg-alt: #7f7f7f;
-  bg: #dcdccc;
+  fg: #dcdccc;
   blue: #8cd0d3;
 
   background-color: @bg;
@@ -44,8 +44,7 @@ window {
   transparency: "real";
   width: 350;
   border: 10px;
-  border-color: @bg;
-  background-color: @fg;
+  border-color: @fg;
 }
 
 mainbox {
