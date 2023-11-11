@@ -57,6 +57,7 @@ betterlockscreen nwg-look picom-allusive
 | Super + q    | Kill current window |
 | Alt   + n    | Playerctl next |
 | Alt   + p    | Playerctl play-pause |
+| Ctrl + Shift + Space| Color pick |
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
