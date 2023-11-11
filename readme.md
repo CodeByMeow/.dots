@@ -60,7 +60,7 @@ betterlockscreen nwg-look picom-allusive
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
-To use custom script: `sudo ln -s $HOME/custom/script/<namescript>.sh <namescript>
+To use custom script: `sudo ln -s $HOME/custom/script/<namescript>.sh <namescript>`
 
 ### Polybar
 __Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)  
