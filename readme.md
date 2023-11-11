@@ -7,6 +7,7 @@
 ─┴┘└─┘ ┴ └  ┴┴─┘└─┘└─┘
 
 ```
+![desktop](https://github.com/CodeByMeow/.dots/assets/43630437/6ed2fc79-0154-4959-8069-65bc2baff467)
 
 
 </div>
@@ -58,6 +59,8 @@ betterlockscreen nwg-look picom-allusive
 | Alt   + p    | Playerctl play-pause |
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
+
+To use custom script: `sudo ln -s $HOME/custom/script/<namescript>.sh <namescript>
 
 ### Polybar
 __Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)  
