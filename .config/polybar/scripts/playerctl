@@ -16,7 +16,7 @@ else
         title=${title:0:$title_lenght}...
     fi
     if [ ${#artist} -gt $artist_lenght ]; then
-        artist=$(echo "$artist" | sed -r 's/([a-zA-Z])[a-zA-Z]+/\1/g' | tr '[:lower:]' '[:upper:]')
+        artist=$(echo "$artist" | sed -r 's/([a-zA-Z])[a-zA-Z]+/\1/g' | tr -d ' ' | tr '[:lower:]' '[:upper:]')
     fi
 
     # Print the title and artist with a Font Awesome icon
