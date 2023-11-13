@@ -30,13 +30,14 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 ### Dependencies
 
 ```
-sxhkd cava dunst unclutter duf
-acpilight gpick bluetooth-autoconnect flameshot
-nitrogen playerctl xorg-xsetroot
-tree-sitter-cli peco
-jq bc rg yd ripgrep fd nodejs npm nemo
-firefox xdg-user-dirs  reversal-icon-theme-git bibata-cursor-theme \
-betterlockscreen nwg-look picom-allusive
+dunst unclutter duf gpick bluetooth-autoconnect flameshot 
+nitrogen  xorg-xsetroot tree-sitter-cli peco
+bc nodejs npm firefox  reversal-icon-theme-git bibata-cursor-theme 
+nwg-look rofi polybar picom-allusive ly xdg-user-dirs 
+jq rg ripgrep fd neovim tmux nemo betterlockscreen 
+youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
+xclip udiskie
+
 ```
 
 ### Shell setup
