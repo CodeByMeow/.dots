@@ -33,7 +33,7 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 dunst unclutter duf gpick bluetooth-autoconnect flameshot 
 nitrogen  xorg-xsetroot tree-sitter-cli peco
 bc nodejs npm firefox  reversal-icon-theme-git bibata-cursor-theme 
-nwg-look rofi polybar picom-allusive ly xdg-user-dirs 
+nwg-look rofi polybar picom-git ly xdg-user-dirs 
 jq rg ripgrep fd neovim tmux nemo betterlockscreen 
 youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
 xclip udiskie
