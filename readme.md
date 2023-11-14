@@ -86,5 +86,7 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
     youtube-music-bin
 ### Game
     gamemode mangohud
-### Pacman 󰮯 UI
-/etc/pacman.conf: ILoveCandy
+### Pacman UI
+    /etc/pacman.conf: ILoveCandy
+### Android file transfer
+    android-file-transfer
