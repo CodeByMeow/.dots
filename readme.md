@@ -18,7 +18,7 @@
 - **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
 - **Terminal Emulator** :cat: [ Kitty ](https://sw.kovidgoyal.net/kitty)
-- **Shell** :beetle: [ Nushell ](https://www.nushell.sh)
+- **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Yazi ](https://yazi-rs.github.io/docs/)
 - **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
