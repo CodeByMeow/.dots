@@ -15,6 +15,10 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
+	default = {
+		lazy = true,
+		version = false,
+	},
 	install = { colorscheme = { "gruvbox" } },
 	checker = { enabled = true }, -- automatically check for plugin updates
 	performance = {
