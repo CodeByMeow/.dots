@@ -4,13 +4,13 @@ vim.g.mapleader = " "
 
 -- Colemak Keybindings {{{
 ----------------------
---map("n", "n", "j", opts)
+map("n", "n", "j", opts)
 map("x", "n", "j", opts)
 map("o", "n", "j", opts)
--- map("n", "e", "k", opts)
+map("n", "e", "k", opts)
 map("x", "e", "k", opts)
 map("o", "e", "k", opts)
--- map("n", "i", "l", opts)
+map("n", "i", "l", opts)
 map("x", "i", "l", opts)
 map("o", "i", "l", opts)
 
@@ -82,4 +82,4 @@ map("n", "<S-Tab>", vim.cmd.bp)
 map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
 
 -- Cowboy
-require('core.discipline').cowboy()
+require('config.discipline').cowboy()

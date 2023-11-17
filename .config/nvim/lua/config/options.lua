@@ -19,12 +19,12 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 
--- cursor line
+-- cursor
 opt.cursorline = true
+opt.mouse = ""
 
 opt.swapfile = false
 opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
@@ -58,6 +58,7 @@ opt.shortmess:append("sI")
 -- slit windows
 opt.splitbelow = true
 opt.splitright = true
+opt.splitkeep = "cursor"
 
 opt.timeoutlen = 400
 opt.iskeyword:append("-")

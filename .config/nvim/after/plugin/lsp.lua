@@ -1,6 +1,6 @@
 ---@diagnostic disable: unused-local
 local lsp_zero = require("lsp-zero")
-local icons = require("core.kind")
+local icons = require("config.icons")
 lsp_zero.on_attach(function(_, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })
 end)
