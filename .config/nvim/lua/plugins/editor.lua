@@ -127,4 +127,26 @@ return {
 	"sunjon/shade.nvim",
 	-- SUDO
 	"lambdalisue/suda.vim",
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
+		opts = {
+			signs = {
+				add = { text = "▎" },
+				change = { text = "▎" },
+				delete = { text = "" },
+				topdelete = { text = "" },
+				changedelete = { text = "▎" },
+				untracked = { text = "▎" },
+			},
+		},
+	},
+	{
+		"NeogitOrg/neogit",
+		opts = { kind = "auto" },
+		config = true,
+		keys = {
+			{ "<leader>g", vim.cmd.Neogit },
+		},
+	},
 }

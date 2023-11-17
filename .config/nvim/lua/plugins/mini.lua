@@ -6,18 +6,19 @@ return {
 		require("mini.pick").setup()
 		require("mini.basics").setup()
 		require("mini.bufremove").setup()
-		require("mini.comment").setup()
+		require("mini.comment").setup({
+			options = {
+				custom_commentstring = function()
+					return require("ts_context_commentstring.internal").calculate_commentstring()
+						or vim.bo.commentstring
+				end,
+			},
+		})
 		require("mini.cursorword").setup()
 		require("mini.tabline").setup()
 		require("mini.indentscope").setup({
 			symbol = "│",
 			options = { try_as_border = true },
-		})
-		require("mini.align").setup({
-			mappings = {
-				start = "ma",
-				start_with_preview = "mA",
-			},
 		})
 		require("mini.files").setup({
 			mappings = {

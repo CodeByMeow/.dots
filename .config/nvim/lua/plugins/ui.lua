@@ -1,6 +1,7 @@
+---@diagnostic disable: different-requires
 return {
 	-- BASE
-	"nvim-lua/plenary.nvim",
+	{ "nvim-lua/plenary.nvim", lazy = true },
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = true,
@@ -236,7 +237,6 @@ return {
 	-- STARTER
 	{
 		"goolord/alpha-nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
 		event = "VimEnter",
 		opts = function()
 			local dashboard = require("alpha.themes.dashboard")
@@ -287,5 +287,15 @@ return {
 				end,
 			})
 		end,
+	},
+	-- MINIMAP
+	{
+		"gorbit99/codewindow.nvim",
+		config = function()
+			local codewindow = require("codewindow")
+			codewindow.setup()
+			codewindow.apply_default_keybinds()
+		end,
+		lazy = true,
 	},
 }
