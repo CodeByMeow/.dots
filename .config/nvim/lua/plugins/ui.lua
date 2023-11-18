@@ -261,7 +261,7 @@ return {
 				callback = function()
 					local stats = require("lazy").stats()
 					local ms = math.floor(stats.startuptime * 100) / 100
-					local version = "  󰥱 v"
+					local version = "   v"
 						.. vim.version().major
 						.. "."
 						.. vim.version().minor

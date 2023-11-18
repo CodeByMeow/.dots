@@ -82,4 +82,4 @@ map("n", "<S-Tab>", vim.cmd.bp)
 map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
 
 -- Cowboy
-require('config.discipline').cowboy()
+require("config.discipline").cowboy()

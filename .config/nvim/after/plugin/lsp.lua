@@ -1,4 +1,3 @@
----@diagnostic disable: unused-local
 local lsp_zero = require("lsp-zero")
 local icons = require("config.icons")
 lsp_zero.on_attach(function(_, bufnr)
@@ -54,32 +53,6 @@ local cmp_action = lsp_zero.cmp_action()
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-local cmp_kinds = {
-	Text = icons.kind["Text"][1],
-	Method = icons.kind["Method"][1],
-	Function = icons.kind["Function"][1],
-	Constructor = icons.kind["Constructor"][1],
-	Field = icons.kind["Field"][1],
-	Variable = icons.kind["Variable"][1],
-	Class = icons.kind["Class"][1],
-	Interface = icons.kind["Interface"][1],
-	Module = icons.kind["Module"][1],
-	Property = icons.kind["Property"][1],
-	Unit = icons.kind["Unit"][1],
-	Value = icons.kind["Value"][1],
-	Enum = icons.kind["Enum"][1],
-	Keyword = icons.kind["Key"][1],
-	Snippet = icons.kind["Snippet"][1],
-	File = icons.kind["File"][1],
-	Folder = icons.kind["Folder"][1],
-	EnumMember = icons.kind["EnumMember"][1],
-	Constant = icons.kind["Constant"][1],
-	Struct = icons.kind["Struct"][1],
-	Event = icons.kind["Event"][1],
-	Operator = icons.kind["Operator"][1],
-	TypeParameter = icons.kind["TypeParameter"][1],
-	Color = "  ",
-}
 
 cmp.setup({
 	mapping = cmp.mapping.preset.insert({
@@ -108,6 +81,7 @@ cmp.setup({
 		{ name = "path" },
 		{ name = "treesitter" },
 		{ name = "calc" },
+		{ name = "codeium", keyword_length = 3 },
 	},
 	entry_filter = function(entry, context)
 		local kind = entry:get_kind()
@@ -131,21 +105,26 @@ cmp.setup({
 	end,
 	formatting = {
 		format = function(entry, vim_item)
-			vim_item.kind = (cmp_kinds[vim_item.kind] or "") .. vim_item.kind
-			if entry.source.name == "calc" then
-				vim_item.kind = " 󰃬 "
+			local custom_menu_icon = {}
+			local source_icons = { calc = " 󰃬 ", codeium = " " }
+			for key, value in pairs(icons.kind) do
+				custom_menu_icon[key] = value[1]
 			end
+
+			vim_item.kind = (custom_menu_icon[vim_item.kind] or "") .. vim_item.kind
+			vim_item.kind = source_icons[entry.source.name] or vim_item.kind
+
 			return vim_item
 		end,
 	},
 	preselect = "item",
 	window = {
 		completion = {
-			border = "rounded",
+			border = "none",
 			scrollbar = "║",
 		},
 		documentation = {
-			border = "rounded",
+			border = "none",
 			scrollbar = "║",
 		},
 	},
