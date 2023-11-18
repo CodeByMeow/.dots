@@ -225,13 +225,6 @@ return {
 	{ "brenoprata10/nvim-highlight-colors", config = true },
 	-- TAKE A PICTURE
 	"segeljakt/vim-silicon",
-	-- LEETCODE
-	{
-		"kawre/leetcode.nvim",
-		opts = {
-			lang = "typescript",
-		},
-	},
 	-- SCROLL SMOOTH
 	{ "karb94/neoscroll.nvim", config = true },
 	-- STARTER
@@ -296,6 +289,5 @@ return {
 			codewindow.setup()
 			codewindow.apply_default_keybinds()
 		end,
-		lazy = true,
 	},
 }
