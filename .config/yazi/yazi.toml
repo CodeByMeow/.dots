@@ -1,0 +1,10 @@
+# yazi.toml
+[plugins]
+preload = [
+	"~/.config/yazi/ui.lua"
+]
+
+# theme.toml
+[manager]
+folder_offset  = [ 1, 0, 0, 0 ]
+preview_offset = [ 1, 1, 0, 1 ]

@@ -6,6 +6,7 @@ keymap = [
 	{ on = [ "Q" ],     exec = "quit --no-cwd-file", desc = "Exit the process without writing cwd-file" },
 	{ on = [ "<C-q>" ], exec = "close",              desc = "Close the current tab, or quit if it is last tab" },
 	{ on = [ "<C-z>" ], exec = "suspend",            desc = "Suspend the process" },
+    { on = [ "<C-s>" ], exec = '''shell "$SHELL" --block --confirm''', desc = "Open shell here" },
 
 	# Navigation
 	{ on = [ "e" ], exec = "arrow -1", desc = "Move cursor up" },

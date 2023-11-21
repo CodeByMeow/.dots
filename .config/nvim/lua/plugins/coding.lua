@@ -13,7 +13,7 @@ return {
 				default = {
 					augend.integer.alias.decimal,
 					augend.integer.alias.hex,
-					augend.date.alias["%Y/%m/%d"],
+					augend.date.alias["%d/%m/%Y"],
 					augend.constant.alias.bool,
 					augend.semver.alias.semver,
 					augend.constant.new({ elements = { "let", "const" } }),
