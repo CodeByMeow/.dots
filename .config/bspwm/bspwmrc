@@ -15,12 +15,11 @@ bspc rule -a Nemo state=floating follow=on center=true rectangle=900x625+0+0
 bspc rule -a kitty desktop=^1 follow=on
 bspc rule -a firefox desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
-bspc rule -a notion-app  desktop=^4 follow=on
 bspc rule -a steam desktop=^5 follow=on
 
 # apps in float mode
 bspc rule -a Nitrogen state=floating focus=on
-bspc rule -a Lxappearance state=floating focus=on
+bspc rule -a "Nwg-look" state=floating focus=on
 
 workspaces
 bspc config window_gap 12
