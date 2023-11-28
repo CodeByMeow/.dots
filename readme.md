@@ -27,7 +27,7 @@
 
 _Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
-_Note: I use codemark layout_
+_Note: I use colemak-dh keyboard layout_
 
 ### Dependencies
 
@@ -92,3 +92,5 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
     /etc/pacman.conf: ILoveCandy
 ### Android file transfer
     android-file-transfer
+### Audio controller
+    pavucontrol
