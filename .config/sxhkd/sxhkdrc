@@ -15,9 +15,6 @@ super + @space
 
 super + p
     powermenu
-
-super + e
-    nemo
     
 #
 # bspwm hotkeys

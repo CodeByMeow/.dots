@@ -12,8 +12,8 @@
     indicate_hidden = yes
     transparency = 25
     separator_height = 2
-    padding = 4
-    horizontal_padding = 10
+    padding = 6
+    horizontal_padding = 6
     text_icon_padding = 0
     frame_width = 1
     gap_size = 8
