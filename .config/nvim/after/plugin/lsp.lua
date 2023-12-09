@@ -82,6 +82,7 @@ cmp.setup({
 		{ name = "treesitter" },
 		{ name = "calc" },
 		{ name = "codeium", keyword_length = 3 },
+		{ name = "emmet_vim" },
 	},
 	entry_filter = function(entry, context)
 		local kind = entry:get_kind()

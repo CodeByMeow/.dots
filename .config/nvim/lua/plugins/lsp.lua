@@ -31,6 +31,7 @@ return {
 			delete_check_events = "TextChanged",
 		},
 	},
+	{ "dcampos/cmp-emmet-vim", dependencies = { "mattn/emmet-vim" } },
 	-- LSP SUPPORT
 	{ "VonHeikemen/lsp-zero.nvim", branch = "v3.x", lazy = true, config = false },
 	-- LSPSAGA
