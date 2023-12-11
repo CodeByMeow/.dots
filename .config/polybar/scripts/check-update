@@ -14,5 +14,5 @@ if [[ count -eq 0 ]];
 then
     echo "  "
 else
-    echo "   $count "
+    echo "   %{T5}$count %{T-}"
 fi 

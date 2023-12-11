@@ -10,7 +10,7 @@ APIKEY=`cat $HOME/.config/polybar/scripts/weather/.owm-key`
 CITY_NAME='Ho Chi Minh City'
 COUNTRY_CODE=VN
 # Desired output language
-LANG="vi"
+LANG="en"
 # UNITS can be "metric", "imperial" or "kelvin". Set KNOTS to "yes" if you
 # want the wind in knots:
 
@@ -45,7 +45,7 @@ COLOR_TEXT=""
 # Polybar settings ____________________________________________________________
 
 # Font for the weather icons
-WEATHER_FONT_CODE=3
+WEATHER_FONT_CODE=5
 
 # Font for the thermometer icon
 TEMP_FONT_CODE=3
@@ -302,7 +302,7 @@ function setIcons {
 }
 
 function outputCompact {
-    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR} $ICON %{F-}%{T-} $ERR_MSG$COLOR_TEXT_BEGIN $DESCRIPTION$COLOR_TEXT_END$TEMP"
+    OUTPUT="$WIND %{T$WEATHER_FONT_CODE}%{F$ICON_COLOR} $ICON %{F-} $ERR_MSG$COLOR_TEXT_BEGIN $DESCRIPTION$COLOR_TEXT_END$TEMP"
     # echo "Output: $OUTPUT" >> "$HOME/.weather.log"
     echo "$OUTPUT"
 }

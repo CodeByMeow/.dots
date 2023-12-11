@@ -3,14 +3,14 @@
 MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -hide-scrollbar true \
 -bw 0 \
--theme-str "*{font: \"Iosevka Nerd Font 14\";} \
-window {width: 180;} \
+-theme-str "*{font: \"Terminess Nerd Font 14\";} \
+window {width: 150;} \
 listview {lines: 3;  margin-right: 0px;} \
 element-text{ padding: 15px 0px 0px;} \
 mainbox {children: [listview];}" \
 -xoffset -12 -yoffset 54 \
 -location 3 \
-<<< " Lock|菱 Reboot|襤 Shutdown")"
+<<< "Lock|Reboot|Shutdown")"
 case "$MENU" in
     *Lock) betterlockscreen -l;;
     *Reboot) systemctl reboot ;;
