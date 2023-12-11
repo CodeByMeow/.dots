@@ -20,5 +20,5 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "%{T4}%{T2}$title - $artist%{T-}"
+    echo "%{T4}%{T5}$title - $artist%{T-}"
 fi
