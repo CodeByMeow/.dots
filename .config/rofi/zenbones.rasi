@@ -1,5 +1,5 @@
 configuration {
-  font: "Iosevka Mayukai Original Nerd Font Complete 12";
+  font: "Iosevka Mayukai Original Bold 14";
 
   modi: "drun";
 
