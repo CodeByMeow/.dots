@@ -3,8 +3,8 @@
 MENU="$(rofi -no-lazy-grab -sep "|" -dmenu \
 -hide-scrollbar true \
 -bw 0 \
--theme-str
-"window {width: 150;} \
+-theme-str "*{font: \"Iosevka Mayukai Original 12\";} \
+window {width: 135;} \
 listview {lines: 3;  margin-right: 0px;} \
 element-text{ padding: 10px;} \
 element{ children: [element-text];} \
