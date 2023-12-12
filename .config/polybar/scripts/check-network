@@ -2,7 +2,7 @@
 
 disconnected="睊"
 wireless_connected="直"
-ethernet_connected=""
+ethernet_connected=" "
 
 ID="$(ip link | awk '/state UP/ {print $2}')"
 

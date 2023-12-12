@@ -1,6 +1,6 @@
 #!/bin/bash
 
-title_lenght=18
+title_lenght=40
 artist_lenght=12
 
 # Get the title and artist of the currently playing media using Playerctl
@@ -9,7 +9,7 @@ artist=$(playerctl metadata --format "{{ artist }}" 2>/dev/null)
 
 # Check if title is empty (no media player found)
 if [ -z "$title" ]; then
-    echo "%{T5}   %{T-}"
+    echo " "
 else
     # Truncate the title if it exceeds the maximum length
     if [ ${#title} -gt $title_lenght ]; then
@@ -20,5 +20,5 @@ else
     fi
 
     # Print the title and artist with a Font Awesome icon
-    echo "%{T4}%{T5}$title - $artist%{T-}"
+    echo "$title - $artist"
 fi

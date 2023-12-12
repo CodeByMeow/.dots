@@ -1,5 +1,5 @@
 configuration {
-  font: "Terminess Nerd Font 16";
+  font: "Iosevka Mayukai Original Nerd Font Complete 12";
 
   modi: "drun";
 
