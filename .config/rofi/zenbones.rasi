@@ -31,7 +31,7 @@ configuration {
   padding: 0;
   spacing: 0;
 
-  bg: #3f3f3f;
+  bg: transparent;
   bg-alt: #7f7f7f;
   fg: #dcdccc;
   blue: #8cd0d3;
@@ -43,7 +43,7 @@ configuration {
 window {
   transparency: "real";
   width: 350;
-  border: 10px;
+  border: 2px;
   border-color: @fg;
 }
 

@@ -15,7 +15,7 @@
     padding = 6
     horizontal_padding = 6
     text_icon_padding = 0
-    frame_width = 10
+    frame_width = 1
     gap_size = 8
     separator_color = frame
     sort = yes

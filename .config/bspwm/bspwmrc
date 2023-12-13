@@ -24,9 +24,9 @@ bspc rule -a "Nwg-look" state=floating focus=on
 workspaces
 bspc config window_gap 12
 bspc config single_monocle true
-bspc config borderless_monocle false
+bspc config borderless_monocle true
 bspc config gapless_monocle false
-bspc config border_width 10
+bspc config border_width 2
 bspc config split_ratio 0.635
 bspc config top_padding 42
 bspc config normal_border_color "#3f3f3f"
