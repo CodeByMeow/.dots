@@ -7,10 +7,8 @@
 ─┴┘└─┘ ┴ └  ┴┴─┘└─┘└─┘
 
 ```
-![desktop](https://github.com/CodeByMeow/.dots/assets/43630437/6ed2fc79-0154-4959-8069-65bc2baff467)
-
-
 </div>
+![snapshot](https://github.com/CodeByMeow/.dots/assets/43630437/7efab57e-c769-4dd8-832d-ffefd4e9dc9a)
 
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
 - **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
