@@ -1,5 +1,4 @@
 <div align="center">
-
 ```css
 
 ┌┬┐┌─┐┌┬┐┌─┐┬┬  ┌─┐┌─┐
@@ -8,7 +7,11 @@
 
 ```
 </div>
-![snapshot](https://github.com/CodeByMeow/.dots/assets/43630437/7efab57e-c769-4dd8-832d-ffefd4e9dc9a)
+
+<div align="center">
+ ![snapshot](https://github.com/CodeByMeow/.dots/assets/43630437/48ba5ed8-b1fa-4cbc-8a75-aaf6ed7fc2af)
+</div>
+
 
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
 - **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
