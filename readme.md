@@ -9,10 +9,13 @@
 
 ```
 
- ![snapshot](https://github.com/CodeByMeow/.dots/assets/43630437/48ba5ed8-b1fa-4cbc-8a75-aaf6ed7fc2af)
  
 
 </div>
+
+<p align="center">
+ ![snapshot](https://github.com/CodeByMeow/.dots/assets/43630437/b96711c3-6bae-4f73-9cc1-36b21c6f4350)
+</p>
 
 
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
