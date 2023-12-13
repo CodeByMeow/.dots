@@ -1,8 +1,6 @@
 configuration {
   font: "Iosevka Mayukai Original Bold 14";
-
   modi: "drun";
-
   hover-select: true;
   me-select-entry: "";
   me-accept-entry: "!MousePrimary";
@@ -43,7 +41,7 @@ configuration {
 window {
   transparency: "real";
   width: 350;
-  border: 2px;
+  border: 0;
   border-color: @fg;
 }
 

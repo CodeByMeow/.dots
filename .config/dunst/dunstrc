@@ -15,7 +15,7 @@
     padding = 6
     horizontal_padding = 6
     text_icon_padding = 0
-    frame_width = 1
+    frame_width = 0
     gap_size = 8
     separator_color = frame
     sort = yes
@@ -38,7 +38,7 @@
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    corner_radius = 4
+    corner_radius = 9
     ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
