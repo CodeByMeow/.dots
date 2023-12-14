@@ -33,7 +33,13 @@ bc nodejs npm firefox  reversal-icon-theme-git bibata-cursor-theme
 nwg-look rofi polybar picom-git ly xdg-user-dirs 
 jq rg ripgrep fd neovim tmux nemo betterlockscreen 
 youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
-xclip udiskie
+xclip udiskie 
+
+```
+
+### Speedup arch
+```
+preload auto-cpufreq
 
 ```
 
@@ -49,11 +55,11 @@ xclip udiskie
 | Key  | Description   |
 |-------------- | -------------- |
 | Super + Enter | Kitty     |
-| Super + Space | Laucher     |
+| Super + Space | Laucher  rofi  |
 | Super + p    | Power menu     |
 | Super + b    | Firefox  |
 | Super + q    | Kill current window |
-| Alt   + n    | Playerctl next |
+| Alt   + Right| Playerctl next |
 | Alt   + p    | Playerctl play-pause |
 | Ctrl + Shift + Space| Color pick |
 
@@ -89,3 +95,4 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
     android-file-transfer
 ### Audio controller
     pavucontrol
+
