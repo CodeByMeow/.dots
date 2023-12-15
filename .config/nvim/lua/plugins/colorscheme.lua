@@ -10,8 +10,8 @@ return {
 				keywords = { italic = true },
 				functions = {},
 				variables = {},
-				sidebars = "dark", -- style for sidebars, see below
-				floats = "dark", -- style for floating windows
+				-- Background styles. Can be "dark", "transparent" or "normal"
+				floats = "transparent", -- style for floating windows
 			},
 		})
 		vim.api.nvim_set_hl(0, "HoverNormal", { bg = "none" })

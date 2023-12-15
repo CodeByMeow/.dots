@@ -45,7 +45,7 @@ style = "fg:#F0F0F0 bg:#2B2B2B bold"
 
 [character]
 success_symbol = "[](#E0E0E0 bold)"
-error_symbol = "[](#B66467 bold)"
+error_symbol = "[窱](#B66467 bold)"
 
 [cmd_duration]
 format = "[](fg:#2B2B2B bg:none)[$duration]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#C397D8 bg:#2B2B2B)[󱑂 ](fg:#2B2B2B bg:#C397D8)[](fg:#C397D8 bg:none)"
