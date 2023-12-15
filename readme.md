@@ -79,11 +79,10 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ```
 
 ### Font
-- [ Iosevka ](https://github.com/be5invis/Iosevka)
-- [Iosevka Mayukai](https://github.com/Iosevka-Mayukai/Iosevka-Mayukai)
+- [ Iosevka ](https://github.com/be5invis/Iosevka) 
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
 - Font Awesome 6 Pro
-- SF Pro Display (ver Vietnames)
+- Iosevka Ori Sans - _My custom Iosevka font_
 
 ### Music
     youtube-music-bin
