@@ -1,5 +1,5 @@
 configuration {
-  font: "Iosevka Ori SemiBold 12";
+  font: "Iosevka Ori Sans Bold 13";
   modi: "drun";
   hover-select: true;
   me-select-entry: "";
