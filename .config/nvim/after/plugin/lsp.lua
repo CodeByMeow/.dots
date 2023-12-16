@@ -121,11 +121,11 @@ cmp.setup({
 	preselect = "item",
 	window = {
 		completion = {
-			border = "none",
+			border = "single",
 			scrollbar = "║",
 		},
 		documentation = {
-			border = "rounded",
+			border = "single",
 			scrollbar = "║",
 		},
 	},
