@@ -149,4 +149,18 @@ return {
 			{ "<leader>g", vim.cmd.Neogit },
 		},
 	},
+	{
+		"bennypowers/nvim-regexplainer",
+		config = function()
+			require("regexplainer").setup({
+				mappings = {
+					toggle = "g,",
+				},
+			})
+		end,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"MunifTanjim/nui.nvim",
+		},
+	},
 }
