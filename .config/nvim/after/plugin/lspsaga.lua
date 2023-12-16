@@ -2,7 +2,7 @@ local kind = require("config.icons").kind
 require("lspsaga").setup({
 	ui = {
 		kind = kind,
-		border = "rounded",
+		border = "single",
 		code_action = " ",
 	},
 })
