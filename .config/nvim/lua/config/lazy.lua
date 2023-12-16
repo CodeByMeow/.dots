@@ -19,7 +19,7 @@ require("lazy").setup({
 		lazy = true,
 		version = false,
 	},
-	install = { colorscheme = { "gruvbox" } },
+	install = { colorscheme = { "solarized-osaka" } },
 	checker = { enabled = true }, -- automatically check for plugin updates
 	performance = {
 		rtp = {
