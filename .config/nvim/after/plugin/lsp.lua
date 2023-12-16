@@ -125,7 +125,7 @@ cmp.setup({
 			scrollbar = "║",
 		},
 		documentation = {
-			border = "none",
+			border = "rounded",
 			scrollbar = "║",
 		},
 	},

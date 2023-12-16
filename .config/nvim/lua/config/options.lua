@@ -36,7 +36,7 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.winblend = 0
 opt.wildoptions = "pum"
-opt.pumblend = 5
+opt.pumblend = 0
 opt.background = "dark"
 opt.colorcolumn = "80"
 
@@ -71,7 +71,7 @@ vim.cmd([[let &t_Cs = "\e[4:0m"]])
 
 opt.ruler = false
 vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
