@@ -21,6 +21,15 @@ return {
 			options = { try_as_border = true },
 		})
 		require("mini.files").setup({
+			content = {
+				filter = function(fs_entry)
+					if fs_entry.fs_type == "directory" and fs_entry.name == "node_modules" then
+						return false
+					end
+
+					return true
+				end,
+			},
 			mappings = {
 				go_in = "i",
 				go_in_plus = "I",
