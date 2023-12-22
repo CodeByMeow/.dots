@@ -113,34 +113,6 @@ return {
 		dependencies = {
 			"rcarriga/nvim-notify",
 		},
-		opts = {
-			lsp = {
-				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true,
-				},
-			},
-			routes = {
-				{
-					filter = {
-						event = "msg_show",
-						any = {
-							{ find = "%d+L, %d+B" },
-							{ find = "; after #%d+" },
-							{ find = "; before #%d+" },
-						},
-					},
-					view = "mini",
-				},
-			},
-			presets = {
-				bottom_search = true,
-				command_palette = true,
-				long_message_to_split = true,
-				inc_rename = true,
-			},
-		},
 		config = function()
 			local noice = require("noice")
 			noice.setup({
@@ -161,27 +133,9 @@ return {
 						["vim.lsp.util.stylize_markdown"] = true,
 						["cmp.entry.get_documentation"] = true,
 					},
-					signature = {
-						enabled = true,
-						auto_open = {
-							enabled = true,
-							trigger = true, -- Automatically show signature help when typing a trigger character from the LSP
-							luasnip = true, -- Will open signature help when jumping to Luasnip insert nodes
-							throttle = 50, -- Debounce lsp signature help request by 50ms
-						},
-					},
-					progress = {
-						enabled = true,
-						format = "lsp_progress",
-						format_done = "lsp_progress_done",
-						throttle = 1000 / 30, -- frequency to update lsp progress message
-						view = "mini",
-					},
 					hover = {
 						enabled = true,
-						silent = false, -- set to true to not show a message if hover is not available
-						view = nil, -- when nil, use defaults from documentation
-						opts = {}, -- merged with defaults from documentation
+						silent = true, -- set to true to not show a message if hover is not available
 					},
 				},
 				presets = {

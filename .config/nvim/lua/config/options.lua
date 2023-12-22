@@ -35,8 +35,6 @@ opt.scrolloff = 8
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.winblend = 0
-opt.wildoptions = "pum"
-opt.pumblend = 0
 opt.background = "dark"
 opt.colorcolumn = "80"
 
