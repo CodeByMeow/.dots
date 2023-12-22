@@ -176,7 +176,12 @@ return {
 	-- WIN VIEW
 	"sunjon/shade.nvim",
 	-- HIGHLIGHT COLOR
-	{ "brenoprata10/nvim-highlight-colors", config = true },
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = { "BufReadPre", "BufNewFile" },
+		-- config = true,
+		opts = { user_default_options = { name = false, mode = "virtualtext" } },
+	},
 	-- TAKE A PICTURE
 	"segeljakt/vim-silicon",
 	-- SCROLL SMOOTH
