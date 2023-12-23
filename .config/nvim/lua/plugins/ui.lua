@@ -1,4 +1,4 @@
----@diagnostic disable: different-requires
+---@diagnostic disable: different-requires, duplicate-set-field
 return {
 	-- BASE
 	{ "nvim-lua/plenary.nvim", lazy = true },
@@ -106,71 +106,6 @@ return {
 			})
 		end,
 	},
-	-- NOICE
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"rcarriga/nvim-notify",
-		},
-		config = function()
-			local noice = require("noice")
-			noice.setup({
-				cmdline = {
-					format = {
-						cmdline = { icon = " " },
-						search_down = { icon = " ▼ " },
-						search_up = { icon = " ▲" },
-						filter = { icon = " " },
-						lua = { icon = "" },
-						help = { icon = " " },
-					},
-				},
-
-				lsp = {
-					override = {
-						["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-						["vim.lsp.util.stylize_markdown"] = true,
-						["cmp.entry.get_documentation"] = true,
-					},
-					hover = {
-						enabled = true,
-						silent = true, -- set to true to not show a message if hover is not available
-					},
-				},
-				presets = {
-					bottom_search = false,
-					command_palette = true,
-					long_message_to_split = true,
-				},
-				views = {
-					cmdline_popup = {
-						border = {
-							style = "rounded",
-						},
-						filter_options = {},
-						win_options = {
-							winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-						},
-					},
-				},
-				routes = {
-					{
-						filter = {
-							event = "msg_show",
-							kind = "",
-							find = "written",
-						},
-						opts = { skip = true },
-					},
-				},
-			})
-
-			require("notify").setup({
-				background_colour = "#000000",
-			})
-		end,
-	},
 	-- DIANOGTIC HELP
 	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
 	-- WIN VIEW
@@ -179,8 +114,7 @@ return {
 	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPre", "BufNewFile" },
-		-- config = true,
-		opts = { user_default_options = { name = false, mode = "virtualtext" } },
+		opts = { user_default_options = { names = false, mode = "virtualtext" } },
 	},
 	-- TAKE A PICTURE
 	"segeljakt/vim-silicon",
@@ -251,6 +185,20 @@ return {
 			local codewindow = require("codewindow")
 			codewindow.setup()
 			codewindow.apply_default_keybinds()
+		end,
+	},
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			local banned_messages = { "No information available" }
+			vim.notify = function(msg, ...)
+				for _, banned in ipairs(banned_messages) do
+					if msg == banned then
+						return
+					end
+				end
+				return require("notify")(msg, ...)
+			end
 		end,
 	},
 }

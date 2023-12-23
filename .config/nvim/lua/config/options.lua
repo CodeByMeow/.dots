@@ -82,7 +82,7 @@ vim.g.netrw_liststyle = 3
 vim.g.editorconfig = false
 
 --showcmdloc
-opt.cmdheight = 0
+opt.cmdheight = 1
 opt.showcmdloc = "statusline"
 
 opt.laststatus = 2
