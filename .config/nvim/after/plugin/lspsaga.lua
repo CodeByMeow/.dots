@@ -1,10 +1,10 @@
 local kind = require("config.icons").kind
 require("lspsaga").setup({
-	ui = {
-		kind = kind,
-		border = "single",
-		code_action = " ",
-	},
+    ui = {
+        kind = kind,
+        border = "rounded",
+        code_action = " ",
+    },
 })
 
 local keymap = vim.keymap.set
