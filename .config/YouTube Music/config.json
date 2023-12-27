@@ -1,0 +1,70 @@
+{
+	"window-size": {
+		"width": 1896,
+		"height": 1014
+	},
+	"window-maximized": false,
+	"window-position": {
+		"x": 12,
+		"y": 54
+	},
+	"url": "https://music.youtube.com/watch?v=QDJgzJVVE2Y&list=RDAMVMMmq6xvA-Nzc&index=0",
+	"options": {
+		"tray": false,
+		"appVisible": true,
+		"autoUpdates": true,
+		"alwaysOnTop": false,
+		"hideMenu": true,
+		"hideMenuWarned": true,
+		"startAtLogin": false,
+		"disableHardwareAcceleration": false,
+		"removeUpgradeButton": false,
+		"restartOnConfigChanges": false,
+		"trayClickPlayPause": false,
+		"autoResetAppCache": false,
+		"resumeOnStart": true,
+		"likeButtons": "",
+		"proxy": "",
+		"startingPage": "",
+		"overrideUserAgent": false,
+		"themes": []
+	},
+	"plugins": {
+		"notifications": {
+			"enabled": true,
+			"unpauseNotification": true,
+			"urgency": "normal",
+			"interactive": true,
+			"toastStyle": 1,
+			"refreshOnPlayPause": true,
+			"trayControls": true,
+			"hideButtonText": true
+		},
+		"video-toggle": {
+			"mode": "custom"
+		},
+		"precise-volume": {
+			"globalShortcuts": {}
+		},
+		"discord": {
+			"listenAlong": true
+		},
+		"navigation": {
+			"enabled": false
+		},
+		"album-color-theme": {
+			"enabled": true
+		},
+		"ambient-mode": {
+			"enabled": false
+		},
+		"blur-nav-bar": {
+			"enabled": true
+		}
+	},
+	"__internal__": {
+		"migrations": {
+			"version": "3.1.1"
+		}
+	}
+}

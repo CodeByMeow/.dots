@@ -43,7 +43,8 @@
   tool = vimdiff
 [difftool "nvimdiff"]
 	cmd = vim -d \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
+    
 [mergetool "nvimdiff"]
 	cmd = vim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -53,3 +54,6 @@
 [user]
 	email = tranquanki28@gmail.com
 	name = CodeByMeow
+[status]
+	showUnstrackedFiles = no
+	showUntrackedFiles = no

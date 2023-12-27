@@ -27,7 +27,7 @@ _Note: I use colemak-dh keyboard layout_
 ### Dependencies
 
 ```
-dunst unclutter duf gpick bluetooth-autoconnect flameshot 
+libnotify dunst unclutter duf gpick bluetooth-autoconnect flameshot 
 nitrogen  xorg-xsetroot tree-sitter-cli peco
 bc nodejs npm firefox  reversal-icon-theme-git bibata-cursor-theme 
 nwg-look rofi polybar picom-git ly xdg-user-dirs 
@@ -81,7 +81,9 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ### Font
 - [ Iosevka ](https://github.com/be5invis/Iosevka) 
 - [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
+- JetBrains Mono Nerd Font
 - Font Awesome 6 Pro
+- Noto fonts
 - Iosevka Ori Sans - _My custom Iosevka font_
 
 ### Music
