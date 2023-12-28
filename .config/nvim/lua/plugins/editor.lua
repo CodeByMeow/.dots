@@ -143,8 +143,10 @@ return {
     },
     {
         "NeogitOrg/neogit",
-        opts = { kind = "auto" },
-        config = true,
+        opts = {
+            kind = "split",
+            graph_style = "unicode"
+        },
         keys = {
             { "<leader>g", vim.cmd.Neogit },
         },
