@@ -6,6 +6,7 @@ return {
         require("mini.pick").setup()
         require("mini.basics").setup()
         require("mini.bufremove").setup()
+        require("mini.splitjoin").setup()
         require("mini.comment").setup({
             options = {
                 custom_commentstring = function()
