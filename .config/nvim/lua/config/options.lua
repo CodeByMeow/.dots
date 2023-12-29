@@ -37,6 +37,8 @@ opt.isfname:append("@-@")
 opt.winblend = 0
 opt.background = "dark"
 opt.colorcolumn = "80"
+opt.listchars:append({ eol = "↵" })
+opt.list = true
 
 -- backspace
 opt.backspace = "indent,eol,start"
