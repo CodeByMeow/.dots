@@ -33,7 +33,7 @@ bc nodejs npm firefox  reversal-icon-theme-git bibata-cursor-theme
 nwg-look rofi polybar picom-git ly xdg-user-dirs 
 jq rg ripgrep fd neovim tmux nemo betterlockscreen 
 youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
-xclip udiskie 
+xclip udiskie deno
 
 ```
 
@@ -84,6 +84,7 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 - JetBrains Mono Nerd Font
 - Font Awesome 6 Pro
 - Noto fonts
+- Twemoji fonts
 - Iosevka Ori Sans - _My custom Iosevka font_
 
 ### Music
