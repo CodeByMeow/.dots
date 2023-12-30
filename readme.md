@@ -80,7 +80,7 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 
 ### Font
 - [ Iosevka ](https://github.com/be5invis/Iosevka) 
-- [ Source Han Sans ](https://software.manjaro.org/package/adobe-source-han-sans-jp-fonts)
+- [ Source Han Sans CN](https://software.manjaro.org/package/adobe-source-han-sans-cn-fonts)
 - JetBrains Mono Nerd Font
 - Font Awesome 6 Pro
 - Noto fonts
