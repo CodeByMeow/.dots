@@ -42,6 +42,7 @@ return {
         config = function()
             local git = require("config.icons").git
             local icons = require("config.icons").diagnostics
+            local CodeGPTModule = require("codegpt")
 
             local nicon = "NORM"
             local iicon = "INSR"
@@ -79,7 +80,7 @@ return {
                 sections = {
                     left = { "-mode", "file_name", "branch", " ", "lsp" },
                     mid = { "lsp_name" },
-                    right = { "file_size", vim.bo.fileencoding:upper(), "line_column" },
+                    right = { CodeGPTModule.get_status, "file_size", vim.bo.fileencoding:upper(), "line_column" },
                 },
                 mode_icons = mode_icons,
                 mode_colors = {
