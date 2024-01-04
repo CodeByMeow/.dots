@@ -38,74 +38,90 @@ return {
     },
     -- STATUS LINE
     {
-        "tamton-aquib/staline.nvim",
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            local git = require("config.icons").git
-            local icons = require("config.icons").diagnostics
+            local icons = require('config.icons').diagnostics
             local CodeGPTModule = require("codegpt")
-
-            local nicon = "NORM"
-            local iicon = "INSR"
-            local vicon = "VISU"
-            local cicon = "COMM"
-            local ricon = "REPL"
-            local ticon = "TERM"
-
-            local mode_icons = {
-                ["n"] = nicon,
-                ["no"] = nicon,
-                ["niI"] = nicon,
-                ["niR"] = nicon,
-                ["no"] = nicon,
-                ["niV"] = nicon,
-                ["nov"] = nicon,
-                ["noV"] = nicon,
-                ["i"] = iicon,
-                ["ic"] = iicon,
-                ["ix"] = iicon,
-                ["s"] = iicon,
-                ["S"] = iicon,
-                ["v"] = vicon,
-                ["V"] = vicon,
-                [""] = vicon,
-                ["r"] = ricon,
-                ["r?"] = ricon,
-                ["c"] = cicon,
-                ["t"] = ticon,
-                ["!"] = ticon,
-                ["R"] = ricon,
-            }
-
-            require("staline").setup({
+            local auto_theme_custom = require('lualine.themes.auto')
+            local branch_max_width = 40
+            local branch_min_width = 10
+            auto_theme_custom.normal.c.bg = "NONE"
+            require('lualine').setup {
+                options = {
+                    theme = auto_theme_custom
+                },
                 sections = {
-                    left = { "-mode", "file_name", "branch", " ", "lsp" },
-                    mid = { "lsp_name" },
-                    right = { CodeGPTModule.get_status, "file_size", vim.bo.fileencoding:upper(), "line_column" },
+                    lualine_a = { 'mode',
+                        {
+                            "branch",
+                            fmt = function(output)
+                                local win_width = vim.o.columns
+                                local max = branch_max_width
+                                if win_width * 0.25 < max then
+                                    max = math.floor(win_width * 0.25)
+                                end
+                                if max < branch_min_width then
+                                    max = branch_min_width
+                                end
+                                if max % 2 ~= 0 then
+                                    max = max + 1
+                                end
+                                if output:len() >= max then
+                                    return output:sub(1, (max / 2) - 1)
+                                        .. "..."
+                                        .. output:sub(-1 * ((max / 2) - 1), -1)
+                                end
+                                return output
+                            end,
+                        },
+                    },
+                    lualine_b = { 'diff' },
+                    lualine_c = {
+                        'filename',
+                        { 'diagnostics', symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint }, }
+                    },
+                    lualine_x = {
+                        CodeGPTModule.get_status,
+                        {
+                            function()
+                                local lsps = vim.lsp.get_clients()
+                                local icon = require("nvim-web-devicons").get_icon_by_filetype(
+                                    vim.bo.filetype
+                                )
+                                if lsps and #lsps > 0 then
+                                    local names = {}
+                                    for _, lsp in ipairs(lsps) do
+                                        table.insert(names, lsp.name)
+                                    end
+                                    return string.format("%s %s", table.concat(names, ", "), icon)
+                                else
+                                    return icon or ""
+                                end
+                            end,
+                            on_click = function()
+                                vim.api.nvim_command("LspInfo")
+                            end,
+                            color = function()
+                                local _, color = require("nvim-web-devicons").get_icon_cterm_color_by_filetype(
+                                    vim.bo.filetype
+                                )
+                                return { fg = color }
+                            end,
+                        } },
+                    lualine_y = { 'encoding', 'progress' },
+                    lualine_z = { 'location' }
                 },
-                mode_icons = mode_icons,
-                mode_colors = {
-                    i = "#83A598",
-                    n = "#928374",
-                    c = "#D65D0E",
-                    v = "#458588",
+                inactive_sections = {
+                    lualine_a = {},
+                    lualine_b = {},
+                    lualine_c = { 'filename' },
+                    lualine_x = { 'location' },
+                    lualine_y = {},
+                    lualine_z = {}
                 },
-                lsp_symbols = {
-                    Error = icons.Error,
-                    Info = icons.Info,
-                    Warn = icons.Warn,
-                    Hint = icons.Hint,
-                },
-                defaults = {
-                    true_colors = true,
-                    line_column = "[%l/%L] :%c 並%p%% ",
-                    branch_symbol = " ",
-                    lsp_client_symbol = "  ",
-                    mod_symbol = " " .. git.modified,
-                    cool_symbol = " " .. " ",
-                    full_path = false,
-                },
-            })
-        end,
+            }
+        end
     },
     -- DIANOGTIC HELP
     { "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true },
@@ -115,7 +131,6 @@ return {
     {
         "NvChad/nvim-colorizer.lua",
         event = { "BufReadPre", "BufNewFile" },
-        opts = { user_default_options = { names = false, mode = "virtualtext" } },
     },
     -- TAKE A PICTURE
     "segeljakt/vim-silicon",
@@ -200,6 +215,37 @@ return {
                 end
                 return require("notify")(msg, ...)
             end
+        end,
+    },
+    -- FILENAME
+    {
+        "b0o/incline.nvim",
+        dependencies = { "craftzdog/solarized-osaka.nvim" },
+        event = "BufReadPre",
+        priority = 1200,
+        config = function()
+            local colors = require("solarized-osaka.colors").setup()
+            require("incline").setup({
+                highlight = {
+                    groups = {
+                        InclineNormal = { guibg = colors.base0, guifg = colors.base04 },
+                        InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
+                    },
+                },
+                window = { margin = { vertical = 0, horizontal = 1 } },
+                hide = {
+                    cursorline = true,
+                },
+                render = function(props)
+                    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+                    if vim.bo[props.buf].modified then
+                        filename = "[+] " .. filename
+                    end
+
+                    local icon, color = require("nvim-web-devicons").get_icon_color(filename)
+                    return { { icon, guifg = color }, { " " }, { filename } }
+                end,
+            })
         end,
     },
 }
