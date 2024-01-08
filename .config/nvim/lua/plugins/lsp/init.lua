@@ -1,5 +1,5 @@
 local lsp_zero = require("lsp-zero")
-local icons    = require("config.icons")
+local icons    = require("lib.icons")
 
 lsp_zero.on_attach(function(_, bufnr)
     lsp_zero.default_keymaps({ buffer = bufnr })

@@ -1,3 +1,13 @@
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+vim.g.netrw_liststyle = 3
+
+-- disable EditorConfig
+vim.g.editorconfig = false
+
+vim.g.netrw_browsex_viewer = "xdg-open"
+
 local opt = vim.opt -- for conciseness
 
 -- line number
@@ -75,19 +85,9 @@ vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to de
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
-vim.g.netrw_liststyle = 3
-
--- disable EditorConfig
-vim.g.editorconfig = false
-
 --showcmdloc
 opt.cmdheight = 0
 opt.showcmdloc = "statusline"
 
 opt.laststatus = 2
 opt.showtabline = 2
-
-vim.g.netrw_browsex_viewer = "xdg-open"
