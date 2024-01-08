@@ -2,6 +2,15 @@ return {
     "echasnovski/mini.nvim",
     version = false,
     lazy = false,
+    dependencies = {
+        {
+            "JoosepAlviste/nvim-ts-context-commentstring",
+            lazy = true,
+            opts = {
+                enable_autocmd = false,
+            },
+        },
+    },
     config = function()
         require("mini.pick").setup()
         require("mini.basics").setup()
@@ -40,7 +49,6 @@ return {
             highlighters = {
                 fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
                 hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-                warn = { pattern = "%f[%w]()WARN()%f[%W]", group = "MiniHipatternsHack" },
                 todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
                 note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
                 hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),

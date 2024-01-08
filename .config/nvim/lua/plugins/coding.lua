@@ -21,13 +21,6 @@ return {
             })
         end,
     },
-    {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        lazy = true,
-        opts = {
-            enable_autocmd = false,
-        },
-    },
     -- Refactoring tool
     {
         "ThePrimeagen/refactoring.nvim",
@@ -44,7 +37,7 @@ return {
             },
         },
     },
-    -- GPT
+    -- AI GPT
     {
         "james1236/backseat.nvim",
         config = function()
@@ -52,7 +45,8 @@ return {
                 openai_api_key = vim.env.OPENAI_API_KEY,
                 openai_model_id = 'gpt-3.5-turbo',
             })
-        end
+        end,
+        lazy = true,
     },
     {
         "dpayne/CodeGPT.nvim",
@@ -62,6 +56,20 @@ return {
         },
         config = function()
             require("codegpt.config")
-        end
-    }
+        end,
+        lazy = true
+    },
+    -- CODEIUM
+    {
+        "Exafunction/codeium.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        config = function()
+            require("codeium").setup({})
+        end,
+        event = "BufEnter",
+        lazy = true
+    },
 }

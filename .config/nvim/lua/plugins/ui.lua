@@ -137,7 +137,7 @@ return {
         event = { "BufReadPre", "BufNewFile" },
     },
     -- TAKE A PICTURE
-    "segeljakt/vim-silicon",
+    { "segeljakt/vim-silicon",                        lazy = true },
     -- SCROLL SMOOTH
     { "karb94/neoscroll.nvim",                        config = true },
     -- STARTER
@@ -206,6 +206,7 @@ return {
             codewindow.setup()
             codewindow.apply_default_keybinds()
         end,
+        lazy = true,
     },
     {
         "rcarriga/nvim-notify",

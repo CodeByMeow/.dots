@@ -123,8 +123,6 @@ return {
             },
         },
     },
-    -- WIN VIEW
-    "sunjon/shade.nvim",
     -- SUDO
     "lambdalisue/suda.vim",
     {
