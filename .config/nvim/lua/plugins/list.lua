@@ -674,7 +674,6 @@ return {
             "hrsh7th/cmp-cmdline",
             "hrsh7th/cmp-calc",
         },
-        event = "InsertEnter"
     },
     -- SNIPPETS
     {
@@ -806,7 +805,7 @@ return {
         config = function()
             require("codeium").setup({})
         end,
-        event = "BufEnter",
+        event = "BufReadPre",
         lazy = true
     },
 }
