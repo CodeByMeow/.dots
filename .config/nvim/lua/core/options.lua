@@ -1,12 +1,12 @@
-vim.g.netrw_browse_split = 0
+vim.g.netrw_browse_split = 4
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+vim.g.netrw_altv = 1
 vim.g.netrw_liststyle = 3
+vim.g.netrw_browsex_viewer = "xdg-open"
 
 -- disable EditorConfig
 vim.g.editorconfig = false
-
-vim.g.netrw_browsex_viewer = "xdg-open"
 
 local opt = vim.opt -- for conciseness
 
@@ -18,7 +18,7 @@ opt.relativenumber = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-opt.expandtab = true
+opt.expandtab = false
 opt.autoindent = true
 opt.smartindent = true
 
@@ -31,10 +31,11 @@ opt.smartcase = true
 
 -- cursor
 opt.cursorline = true
-opt.mouse = ""
+opt.mouse = "a"
 
 opt.swapfile = false
 opt.backup = false
+opt.compatible = false
 opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
@@ -42,13 +43,16 @@ opt.incsearch = true
 -- appearance
 opt.termguicolors = true
 opt.scrolloff = 8
-opt.signcolumn = "yes"
+opt.sidescrolloff = 8
+opt.signcolumn = "auto"
 opt.isfname:append("@-@")
 opt.winblend = 0
 opt.background = "dark"
 opt.colorcolumn = "80"
 opt.listchars:append({ eol = "↵" })
 opt.list = true
+opt.title = true
+opt.pumheight = 10
 
 -- backspace
 opt.backspace = "indent,eol,start"
@@ -78,6 +82,7 @@ opt.ph = 7
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Cs = "\e[4:0m"]])
+vim.cmd('set path+=**')
 
 opt.ruler = false
 vim.o.foldcolumn = "1" -- '0' is not bad
@@ -85,9 +90,11 @@ vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to de
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
---showcmdloc
 opt.cmdheight = 0
+opt.showcmd = true
 opt.showcmdloc = "statusline"
+opt.showmode = false
 
 opt.laststatus = 2
 opt.showtabline = 2
+opt.syntax = "ON"
