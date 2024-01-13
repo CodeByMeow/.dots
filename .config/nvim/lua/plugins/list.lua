@@ -122,17 +122,15 @@ return {
 			}
 		end
 	},
-	-- DIANOGTIC HELP
-	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true,        event = "LspAttach" },
 	-- HIGHLIGHT COLOR
 	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPre", "BufNewFile" },
 	},
 	-- TAKE A PICTURE
-	{ "segeljakt/vim-silicon",                        lazy = true },
+	{ "segeljakt/vim-silicon", lazy = true },
 	-- SCROLL SMOOTH
-	{ "karb94/neoscroll.nvim",                        event = "BufReadPre", config = true },
+	{ "karb94/neoscroll.nvim", event = "BufReadPre", config = true },
 	-- STARTER
 	{
 		"goolord/alpha-nvim",
@@ -240,7 +238,7 @@ return {
 	-- MOVE
 	{
 		"folke/flash.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		keys = {
 			{
 				"s",
@@ -323,12 +321,16 @@ return {
 	-- UNDO TREE
 	{
 		"mbbill/undotree",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		keys = {
 			{ "<leader>u", vim.cmd.UndotreeToggle } }
 	},
 	-- SURROUND
-	{ "kylechui/nvim-surround",       config = true,                                event = "VeryLazy" },
+	{
+		"kylechui/nvim-surround",
+		config = true,
+		event = { "BufReadPre", "BufNewFile" },
+	},
 	-- ICONS PICKER
 	{
 		"ziontee113/icon-picker.nvim",
@@ -370,7 +372,7 @@ return {
 		},
 	},
 	-- SUDO
-	{ "lambdalisue/suda.vim",  event = "BufWritePre" },
+	{ "lambdalisue/suda.vim",         event = "BufWritePre" },
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPre", "BufNewFile" },
