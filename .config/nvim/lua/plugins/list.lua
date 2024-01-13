@@ -220,14 +220,14 @@ return {
 		"rcarriga/nvim-notify",
 		config = function()
 			local banned_messages = { "No information available" }
-			vim.notify = function(msg, ...)
+			vim.notify = vim.schedule_wrap(function(msg, ...)
 				for _, banned in ipairs(banned_messages) do
 					if msg == banned then
 						return
 					end
 				end
 				return require("notify")(msg, ...)
-			end
+			end)
 		end,
 		event = "VeryLazy"
 	},

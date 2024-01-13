@@ -1,4 +1,5 @@
 require("core.autocmds")
 require("core.options")
 require("core.keymaps")
+require("core.discipline").cowboy()
 require("plugins.lazy")
