@@ -35,36 +35,8 @@ return {
 		config = true,
 	},
 	{ "MunifTanjim/nui.nvim",  lazy = true },
-	-- INDENT
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-		main = "ibl",
-		opts = {
-			indent = {
-				char = "│",
-				tab_char = "│",
-			},
-			scope = { enabled = false },
-			exclude = {
-				filetypes = {
-					"help",
-					"alpha",
-					"dashboard",
-					"neo-tree",
-					"Trouble",
-					"trouble",
-					"lazy",
-					"mason",
-					"notify",
-					"toggleterm",
-					"lazyterm",
-				},
-			},
-		},
-	},
 	-- STATUS LINE
-	{ "j-hui/fidget.nvim",                            opts = {},     event = { "BufReadPre", "BufNewFile" } },
+	{ "j-hui/fidget.nvim",     opts = {},  event = { "BufReadPre", "BufNewFile" } },
 	{
 		'nvim-lualine/lualine.nvim',
 		event = { "BufReadPre", "BufNewFile" },
@@ -111,7 +83,10 @@ return {
 					lualine_b = { 'diff' },
 					lualine_c = {
 						'filename',
-						{ 'diagnostics', symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint }, }
+						{
+							'diagnostics',
+							symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint },
+						}
 					},
 					lualine_x = {
 						CodeGPTModule.get_status,
@@ -148,16 +123,16 @@ return {
 		end
 	},
 	-- DIANOGTIC HELP
-	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true, event = "LspAttach" },
+	{ "https://git.sr.ht/~whynothugo/lsp_lines.nvim", config = true,        event = "LspAttach" },
 	-- HIGHLIGHT COLOR
 	{
 		"NvChad/nvim-colorizer.lua",
 		event = { "BufReadPre", "BufNewFile" },
 	},
 	-- TAKE A PICTURE
-	{ "segeljakt/vim-silicon", lazy = true },
+	{ "segeljakt/vim-silicon",                        lazy = true },
 	-- SCROLL SMOOTH
-	{ "karb94/neoscroll.nvim", event = "BufReadPre", config = true },
+	{ "karb94/neoscroll.nvim",                        event = "BufReadPre", config = true },
 	-- STARTER
 	{
 		"goolord/alpha-nvim",
@@ -346,7 +321,12 @@ return {
 		config = true,
 	},
 	-- UNDO TREE
-	{ "mbbill/undotree",              event = "VeryLazy",                           keys = { { "<leader>u", vim.cmd.UndotreeToggle } } },
+	{
+		"mbbill/undotree",
+		event = "VeryLazy",
+		keys = {
+			{ "<leader>u", vim.cmd.UndotreeToggle } }
+	},
 	-- SURROUND
 	{ "kylechui/nvim-surround",       config = true,                                event = "VeryLazy" },
 	-- ICONS PICKER
