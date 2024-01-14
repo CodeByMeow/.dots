@@ -770,17 +770,6 @@ return {
 			})
 		end,
 	},
-	{
-		"dpayne/CodeGPT.nvim",
-		dependencies = {
-			'nvim-lua/plenary.nvim',
-			'MunifTanjim/nui.nvim',
-		},
-		config = function()
-			require("codegpt.config")
-		end,
-		lazy = true
-	},
 	-- CODEIUM
 	{
 		"Exafunction/codeium.nvim",

@@ -12,6 +12,7 @@ polybar -q memory &
 polybar -q cava &
 polybar -q player &
 polybar -q weather &
+polybar -q xkeyboard &
 polybar -q tray &
 polybar -q time &
 polybar -q powermenu &
