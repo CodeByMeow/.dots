@@ -1,7 +1,6 @@
 <p align="center">
 
- 
- ![snapshot](https://github.com/CodeByMeow/.dots/assets/43630437/b96711c3-6bae-4f73-9cc1-36b21c6f4350)
+ ![snap](https://github.com/CodeByMeow/.dots/assets/43630437/9fe7e4f2-630e-4e86-8911-af2ad0417b37)
 
  
 </p>
