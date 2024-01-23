@@ -13,6 +13,9 @@ super + b
 super + @space
 	rofi -show drun -show-icons
 
+super + w
+	rofi -show window -show-icons
+
 super + p
     powermenu
     

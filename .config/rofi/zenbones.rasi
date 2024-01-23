@@ -1,6 +1,6 @@
 configuration {
   font: "Iosevka Ori Sans Bold 13";
-  modi: "drun";
+  modi: "drun,window";
   hover-select: true;
   me-select-entry: "";
   me-accept-entry: "!MousePrimary";
