@@ -16,6 +16,7 @@ bspc rule -a firefox desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
 bspc rule -a "Chromium" desktop=^4 follow=on
 bspc rule -a steam desktop=^5 follow=on
+bspc rule -a "postman" desktop=^6 follow=on
 
 # apps in float mode
 bspc rule -a Nemo state=floating follow=on center=true rectangle=900x625+0+0
