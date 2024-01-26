@@ -23,8 +23,21 @@ return {
 			vim.api.nvim_set_hl(0, "HoverNormal", { bg = "none" })
 			vim.api.nvim_set_hl(0, "HoverBorder", { bg = "none" })
 
-			vim.cmd("colorscheme solarized-osaka")
+			-- vim.cmd("colorscheme solarized-osaka")
 		end,
+	},
+	{
+		"sainnhe/gruvbox-material",
+		config = function()
+			vim.api.nvim_set_hl(0, "HoverNormal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "HoverBorder", { bg = "none" })
+
+			vim.g.gruvbox_material_background = 'soft'
+			vim.g.gruvbox_material_enable_italic = 1
+			vim.g.gruvbox_material_transparent_background = 1
+
+			vim.cmd("colorscheme gruvbox-material")
+		end
 	},
 
 	-- BASE
@@ -202,6 +215,7 @@ return {
 				end
 				return require("notify")(msg, ...)
 			end)
+			require("notify").setup { background_colour = "#000000" }
 		end,
 		event = "VeryLazy"
 	},
