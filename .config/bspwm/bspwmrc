@@ -5,7 +5,12 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 workspaces() {
     name=1
     for monitor in $(bspc query -M); do
-        bspc monitor "${monitor}" -n "$name" -d I II III IV V VI
+        bspc monitor "${monitor}" -n "$name"
+		if [[ "$name" -eq 1 ]]; then
+			bspc monitor "${monitor}"	-d I II III IV V
+		else
+			bspc monitor "${monitor}"	-d VI VII VIII IX
+		fi
         name=$((name + 1))
     done
 }
@@ -14,9 +19,8 @@ workspaces() {
 bspc rule -a kitty desktop=^1 follow=on
 bspc rule -a firefox desktop=^2 follow=on
 bspc rule -a "YouTube Music" desktop=^3 follow=on
-bspc rule -a "Chromium" desktop=^4 follow=on
+bspc rule -a "Postman" desktop=^4 follow=on
 bspc rule -a steam desktop=^5 follow=on
-bspc rule -a "postman" desktop=^6 follow=on
 
 # apps in float mode
 bspc rule -a Nemo state=floating follow=on center=true rectangle=900x625+0+0

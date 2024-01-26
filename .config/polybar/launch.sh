@@ -12,7 +12,11 @@ polybar -q memory &
 polybar -q cava &
 polybar -q player &
 polybar -q weather &
-polybar -q xkeyboard &
-polybar -q tray &
+polybar -q keyboard &
+polybar -q system &
 polybar -q time &
 polybar -q powermenu &
+
+if [[ -n "$EXM" ]]; then
+	polybar -q extend_workspace
+fi
