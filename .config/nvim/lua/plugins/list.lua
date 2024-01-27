@@ -346,14 +346,6 @@ return {
 		config = true,
 		event = { "BufReadPre", "BufNewFile" },
 	},
-	-- ICONS PICKER
-	{
-		"ziontee113/icon-picker.nvim",
-		keys = { { "<leader><leader>y", "<cmd>:IconPickerYank nerd_font emoji<cr>" } },
-		dependencies = "stevearc/dressing.nvim",
-		config = true,
-		lazy = true
-	},
 	-- FORMAT
 	{
 		"stevearc/conform.nvim",
