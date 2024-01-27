@@ -33,6 +33,7 @@ nwg-look rofi polybar picom-git ly xdg-user-dirs
 jq rg ripgrep fd neovim tmux nemo betterlockscreen 
 youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
 xclip udiskie deno breaktimer tldr rofimoji rofi-calc
+ueberzug
 
 ```
 
@@ -40,6 +41,15 @@ xclip udiskie deno breaktimer tldr rofimoji rofi-calc
 ```
 preload auto-cpufreq
 
+```
+
+### Ly UI
+Edit: /etc/ly/config.in
+```
+animate = true
+animation = 1 //Cmatrix
+clock = %c
+blank_box = false
 ```
 
 ### Shell setup
