@@ -151,10 +151,9 @@ return {
 		opts = function()
 			local dashboard = require("alpha.themes.dashboard")
 			local logo = [[
-┏━━━━━━━━━━━━━━┓
-┃  󰩰 ⠀󰂙 ⠀  󰕇  ┃
-┃  🤩⠀😪⠀🤪 😭 ┃
-┗━━━━━━━━━━━━━━┛
+ ┏━━━━━━━━━━━━━━┓
+<┃  󰩰 ⠀󰂙 ⠀  󰕇  ┃>
+ ┗━━━━━━━━━━━━━━┛
 ]]
 			dashboard.section.header.val = vim.split(logo, "\n")
 			dashboard.section.buttons.val = {
@@ -589,7 +588,6 @@ return {
 					})
 				end,
 			},
-			"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 			{
 				'Wansmer/treesj',
 				keys = { '<space>m', '<space>j', '<space>s' },
@@ -597,7 +595,8 @@ return {
 				config = function()
 					require('treesj').setup()
 				end,
-			}
+			},
+			"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 		},
 		keys = {
 			{ "<leader>p", vim.cmd.TSPlaygroundToggle },

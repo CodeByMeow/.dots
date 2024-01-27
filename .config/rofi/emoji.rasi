@@ -1,0 +1,5 @@
+@import "config"
+
+element {
+  children: [element-text];
+}
