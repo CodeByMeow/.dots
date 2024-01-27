@@ -13,8 +13,17 @@ super + b
 super + @space
 	rofi -show drun -show-icons
 
+# window
 super + w
 	rofi -show window -show-icons
+
+# emoji
+super + e
+	rofimoji -a copy --selector-args="-theme ~/.config/rofi/emoji.rasi"
+
+# calculater
+super + c
+	rofi -show calc -modi calc -now-show-match -no-sort
 
 super + p
     powermenu
