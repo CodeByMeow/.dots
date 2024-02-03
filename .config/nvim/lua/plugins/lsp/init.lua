@@ -22,6 +22,7 @@ require("mason-lspconfig").setup({
 		"eslint",
 		"prismals",
 		"tailwindcss",
+		"emmet_ls"
 	},
 	handlers = {
 		lsp_zero.default_setup,
