@@ -18,7 +18,7 @@ super + w
 	rofi -show window -show-icons
 
 # emoji
-super + e
+super + r
 	rofimoji -a copy --selector-args="-theme ~/.config/rofi/emoji.rasi"
 
 # calculater

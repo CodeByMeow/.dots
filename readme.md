@@ -33,7 +33,7 @@ nwg-look rofi polybar picom-git ly xdg-user-dirs
 jq rg ripgrep fd neovim tmux nemo betterlockscreen 
 youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
 xclip udiskie deno breaktimer tldr rofimoji rofi-calc
-ueberzug
+ueberzug at
 
 ```
 
@@ -108,4 +108,5 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
     android-file-transfer
 ### Audio controller
     pavucontrol
-
+### Funny
+    pipes.sh peaclock
