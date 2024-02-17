@@ -36,6 +36,14 @@ return {
 			vim.g.gruvbox_material_enable_italic = 1
 			vim.g.gruvbox_material_transparent_background = 1
 
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "markdown" },
+				callback = function()
+					vim.api.nvim_set_hl(0, "Normal", { bg = "#2A2624", fg = "#DDC7A1" })
+					vim.opt.wrap = true
+				end
+			})
+
 			vim.cmd("colorscheme gruvbox-material")
 		end
 	},
@@ -423,9 +431,7 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		build = "deno task --quiet build:fast",
 		config = function()
-			require("peek").setup({
-				app = "chromium",
-			})
+			require("peek").setup()
 			vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 			vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 		end,

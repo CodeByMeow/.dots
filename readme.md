@@ -1,11 +1,3 @@
-<p align="center">
-
- ![snap](https://github.com/CodeByMeow/.dots/assets/43630437/9fe7e4f2-630e-4e86-8911-af2ad0417b37)
-
- 
-</p>
-
-
 - **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
 - **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
 - **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
@@ -15,7 +7,7 @@
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Yazi ](https://yazi-rs.github.io/docs/)
-- **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.9)
+- **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10)
 
 ---
 
