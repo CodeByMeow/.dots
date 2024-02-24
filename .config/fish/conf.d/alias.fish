@@ -21,3 +21,6 @@ alias lt="ls --tree"
 
 # peaclock
 alias peaclock="peaclock --config-dir ~/.config/peaclock"
+
+# xrandr
+alias xri="xrandr -o inverted"
