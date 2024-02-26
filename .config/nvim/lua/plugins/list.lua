@@ -127,9 +127,17 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 	},
 	-- TAKE A PICTURE
-	{ "segeljakt/vim-silicon", lazy = true },
+	{ "segeljakt/vim-silicon",        lazy = true },
 	-- SCROLL SMOOTH
-	{ "karb94/neoscroll.nvim", event = "BufReadPre", config = true },
+	{
+		"karb94/neoscroll.nvim",
+		event = "BufReadPre",
+		config = function()
+			require('neoscroll').setup({
+				mappings = { '<C-u>', '<C-d>', '<C-b>', '<C-f>', 'zt', 'zz', 'zb' },
+			})
+		end
+	},
 	-- STARTER
 	{
 		"goolord/alpha-nvim",
