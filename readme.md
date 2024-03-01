@@ -25,8 +25,14 @@ nwg-look rofi polybar picom-git ly xdg-user-dirs
 jq rg ripgrep fd neovim tmux nemo betterlockscreen 
 youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
 xclip udiskie deno breaktimer tldr rofimoji rofi-calc
-ueberzug at bsp-layout
+ueberzug at bsp-layout 
 
+```
+
+### Fisher
+```
+    yay -S fisher
+    fisher install jorgebucaran/nvm.fish
 ```
 
 ### Speedup arch
