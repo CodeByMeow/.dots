@@ -332,7 +332,7 @@ return {
 	-- ICONS PICKER
 	{
 		"ziontee113/icon-picker.nvim",
-		keys = { { "<leader><leader>y", "<cmd>:IconPickerYank nerd_font<cr>" } },
+		keys = { { "<leader><leader>y", "<cmd>:IconPickerYank emoji nerd_font <cr>" } },
 		dependencies = "stevearc/dressing.nvim",
 		config = true,
 		lazy = true
@@ -417,7 +417,9 @@ return {
 		event = { "BufReadPre", "BufNewFile" },
 		build = "deno task --quiet build:fast",
 		config = function()
-			require("peek").setup()
+			require("peek").setup({
+				app = 'browser',
+			})
 			vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
 			vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 		end,
@@ -779,4 +781,35 @@ return {
 		event = "BufReadPre",
 		lazy = true
 	},
+	{
+		"lukas-reineke/headlines.nvim",
+		event = "BufReadPre",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			vim.cmd([[highlight Headline1 guibg=#295715 guifg=white]])
+			vim.cmd([[highlight Headline2 guibg=#8d8200 guifg=white]])
+			vim.cmd([[highlight Headline3 guibg=#a56106 guifg=white]])
+			vim.cmd([[highlight Headline4 guibg=#7e0000 guifg=white]])
+			vim.cmd([[highlight Headline5 guibg=#1e0b7b guifg=white]])
+			vim.cmd([[highlight Headline6 guibg=#560b7b guifg=white]])
+			vim.cmd([[highlight CodeBlock guibg=#09090d]])
+			vim.cmd([[highlight Dash guifg=white]])
+
+			require("headlines").setup({
+				markdown = {
+					fat_headlines = true,
+					fat_headline_upper_string = "▄",
+					fat_headline_lower_string = "-",
+					headline_highlights = {
+						"Headline1",
+						"Headline2",
+						"Headline3",
+						"Headline4",
+						"Headline5",
+						"Headline6",
+					},
+				},
+			})
+		end,
+	}
 }
