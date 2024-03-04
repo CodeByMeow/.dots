@@ -428,7 +428,33 @@ return {
 		"folke/zen-mode.nvim",
 		event = "BufReadPre",
 		keys = {
-			{ '<leader>z', function() require("zen-mode").toggle() end }
+			{ '<leader>z', function()
+				require("zen-mode").toggle({
+					window = {
+						width = .65 -- width will be 85% of the editor width
+					}
+				})
+			end }
+		},
+		opts = {
+			plugins = {
+				kitty = {
+					enabled = true,
+					font = "+2", -- font size increment
+				},
+				tmux = {
+					enabled = true
+				},
+				gitsigns = { enabled = false },
+			}
+		}
+
+	},
+	{
+		"folke/twilight.nvim",
+		opts = {},
+		keys = {
+			{ '<leader>l', '<cmd>:Twilight<cr>' }
 		}
 	},
 	-- MINI
