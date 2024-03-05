@@ -8,7 +8,7 @@ end)
 -- LSP MANAGER
 require("mason").setup({
 	ui = {
-		border = "rounded"
+		border = "single"
 	}
 })
 require("mason-lspconfig").setup({
@@ -45,7 +45,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		style = "minimal",
-		border = "rounded",
+		border = "single",
 		source = "always",
 		header = "",
 		prefix = "",
@@ -126,14 +126,8 @@ cmp.setup({
 	},
 	preselect = "item",
 	window = {
-		completion = {
-			border = "rounded",
-			scrollbar = "║",
-		},
-		documentation = {
-			border = "rounded",
-			scrollbar = "║",
-		},
+		completion = { border = "single" },
+		documentation = { border = "single" },
 	},
 })
 

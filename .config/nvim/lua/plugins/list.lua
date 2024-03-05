@@ -7,25 +7,23 @@ return {
 	{
 		"sainnhe/gruvbox-material",
 		config = function()
-			vim.api.nvim_set_hl(0, "HoverNormal", { bg = "none" })
-			vim.api.nvim_set_hl(0, "HoverBorder", { bg = "none" })
-
 			vim.g.gruvbox_material_background = 'soft'
 			vim.g.gruvbox_material_enable_italic = 1
-			vim.g.gruvbox_material_transparent_background = 1
+			vim.g.gruvbox_material_transparent_background = 2
+			vim.g.gruvbox_material_float_style = 'dim'
 
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = { "markdown" },
 				callback = function()
-					vim.api.nvim_set_hl(0, "Normal", { bg = "#2A2624", fg = "#DDC7A1" })
 					vim.opt.wrap = true
 				end
 			})
 
+			vim.api.nvim_set_hl(0, "HoverNormal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "HoverBorder", { bg = "none" })
 			vim.cmd("colorscheme gruvbox-material")
 		end
 	},
-
 	-- BASE
 	{ "nvim-lua/plenary.nvim", lazy = true },
 	{
@@ -724,7 +722,7 @@ return {
 			require("lspsaga").setup({
 				ui = {
 					kind = kind,
-					border = "rounded",
+					border = "single",
 					code_action = " ",
 				},
 			})
