@@ -639,6 +639,7 @@ return {
 					"bash",
 					"prisma",
 					"regex",
+					"java"
 				},
 				auto_install = true,
 				highlight = { enable = true },
