@@ -408,7 +408,6 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"MunifTanjim/nui.nvim",
 		},
-		lazy = true
 	},
 	{
 		"toppair/peek.nvim",
