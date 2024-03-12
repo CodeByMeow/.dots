@@ -722,8 +722,11 @@ return {
 				ui = {
 					kind = kind,
 					border = "single",
-					code_action = " ",
+					code_action = "󰆤 ",
 				},
+				beacon = {
+					enable = true,
+				}
 			})
 		end,
 		keys = {
@@ -739,6 +742,7 @@ return {
 			{ "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>" },
 			{ "H",          "<cmd>Lspsaga hover_doc<CR>" },
 			{ "ga",         "<cmd>Lspsaga code_action<CR>",         mode = { "n", "v" } },
+			{ "go",         "<cmd>Lspsaga outline<CR>",             mode = { "n", "v" } },
 			{ "<leader>t",  "<cmd>Lspsaga term_toggle<CR>",         mode = { "n", "t" } }
 		}
 	},
