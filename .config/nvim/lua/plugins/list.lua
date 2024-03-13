@@ -76,6 +76,7 @@ return {
 								return output
 							end,
 						},
+
 					},
 					lualine_b = { 'diff' },
 					lualine_c = {
@@ -142,19 +143,41 @@ return {
 		event = "VimEnter",
 		opts = function()
 			local dashboard = require("alpha.themes.dashboard")
-			local logo = [[
- ┏━━━━━━━━━━━━━━┓
-<┃  󰩰 ⠀󰂙 ⠀  󰕇  ┃>
- ┗━━━━━━━━━━━━━━┛
-]]
-			dashboard.section.header.val = vim.split(logo, "\n")
+
+			dashboard.section.header.val = {
+				[[     █  █     ]],
+				[[     ██ ██     ]],
+				[[     █████     ]],
+				[[     ██ ███     ]],
+				[[     █  █     ]],
+				[[]],
+				[[N  E  O   V  I  M]],
+			}
+
+			vim.api.nvim_set_hl(0, "GreenF", {
+				fg = "#A9B665",
+				bg = nil,
+			})
+			vim.api.nvim_set_hl(0, "GreenFBlueB", {
+				fg = "#A9B665",
+				bg = "#7DAEA3",
+			})
+			dashboard.section.header.opts.hl = {
+				{ { "Blue", 5, 7 },  { "Green", 8, 22 } },
+				{ { "Blue", 5, 8 },  { "GreenFBlueB", 8, 11 }, { "Green", 9, 24 } },
+				{ { "Blue", 5, 10 }, { "GreenF", 10, 12, },    { "Green", 12, 26 } },
+				{ { "Blue", 5, 11 }, { "Green", 12, 24 } },
+				{ { "Blue", 5, 11 }, { "Green", 12, 22 } },
+				{ { "Blue", 5, 11 }, { "Green", 12, 22 } },
+				{ { "Blue", 0, 9 },  { "Green", 9, 18 } },
+			}
 			dashboard.section.buttons.val = {
 				dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
 				dashboard.button("o", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
 				dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 				dashboard.button("q", " " .. " Quit", ":qa<CR>"),
 			}
-			dashboard.section.header.opts.hl = "AlphaHeader"
+			-- dashboard.section.header.opts.hl = "AlphaHeader"
 			dashboard.opts.layout[1].val = 6
 			return dashboard
 		end,
@@ -467,6 +490,7 @@ return {
 			require("mini.comment").setup()
 			require("mini.cursorword").setup()
 			require("mini.tabline").setup()
+			require("mini.trailspace").setup()
 			require("mini.indentscope").setup({
 				symbol = "│",
 				options = { try_as_border = true },
@@ -839,5 +863,5 @@ return {
 				},
 			})
 		end,
-	}
+	},
 }
