@@ -33,7 +33,7 @@ return {
 	},
 	{ "MunifTanjim/nui.nvim",  lazy = true },
 	-- STATUS LINE
-	{ "j-hui/fidget.nvim",     opts = {},  event = { "BufReadPre", "BufNewFile" } },
+	{ "j-hui/fidget.nvim",     config = true, event = { "BufReadPre", "BufNewFile" } },
 	{
 		'nvim-lualine/lualine.nvim',
 		event = { "BufReadPre", "BufNewFile" },
@@ -114,8 +114,14 @@ return {
 								return { fg = color }
 							end,
 						} },
-					lualine_y = { 'filesize', 'encoding' },
-					lualine_z = { 'progress', 'location' }
+					lualine_y = {
+						'filesize',
+						'encoding'
+					},
+					lualine_z = {
+						'progress',
+						'location',
+					}
 				},
 			}
 		end
@@ -219,7 +225,11 @@ return {
 				end
 				return require("notify")(msg, ...)
 			end)
-			require("notify").setup { background_colour = "#000000" }
+			require("notify").setup {
+				background_colour = "#000000",
+				render = "wrapped-compact",
+				stages = "slide",
+			}
 		end,
 		event = "VeryLazy"
 	},
@@ -513,11 +523,10 @@ return {
 			})
 			require("mini.hipatterns").setup({
 				highlighters = {
-					fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
-					hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
-					todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
-					note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
-					hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+					fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "TSDanger" },
+					hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "TSWarning" },
+					todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "TSTodo" },
+					note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "TSNote" },
 				},
 			})
 			require("mini.move").setup({
@@ -549,7 +558,7 @@ return {
 				end,
 			},
 			{
-				"<leader>l",
+				"<leader>ff",
 				function()
 					vim.cmd("Pick grep_live")
 				end,

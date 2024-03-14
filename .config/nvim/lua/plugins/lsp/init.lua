@@ -40,17 +40,6 @@ lsp_zero.set_sign_icons({
 	info = icons.diagnostics.Info,
 })
 
-vim.diagnostic.config({
-	virtual_text = false,
-	severity_sort = true,
-	float = {
-		style = "minimal",
-		border = "single",
-		source = "always",
-		header = "",
-		prefix = "",
-	},
-})
 
 -- CMP
 local cmp = require("cmp")

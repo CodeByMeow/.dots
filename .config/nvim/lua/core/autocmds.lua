@@ -14,7 +14,15 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.diagnostic.config({
-	virtual_text = false
+	virtual_text = false,
+	severity_sort = true,
+	float = {
+		style = "minimal",
+		border = "single",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
 })
 
 local ns = vim.api.nvim_create_namespace('CurlineDiag')
