@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 				local diagnostics = vim.diagnostic.get(args.buf, { lnum = curline - 1 })
 				local virt_texts = { { (' '):rep(4) } }
 				for _, diag in ipairs(diagnostics) do
-					virt_texts[#virt_texts + 1] = { '󱓻 ' .. diag.message, 'Diagnostic' .. hi[diag.severity] }
+					virt_texts[#virt_texts + 1] = { '󱓻 ' .. diag.message, 'DiagnosticVirtualText' .. hi[diag.severity] }
 				end
 				vim.api.nvim_buf_set_extmark(args.buf, ns, curline - 1, 0, {
 					virt_text = virt_texts,

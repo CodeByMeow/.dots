@@ -5,24 +5,36 @@ end
 return {
 	-- UI
 	{
-		"sainnhe/gruvbox-material",
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
 		config = function()
-			vim.g.gruvbox_material_background = 'soft'
-			vim.g.gruvbox_material_enable_italic = 1
-			vim.g.gruvbox_material_transparent_background = 2
-			vim.g.gruvbox_material_float_style = 'dim'
-
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "markdown" },
-				callback = function()
-					vim.opt.wrap = true
-				end
-			})
-
-			vim.api.nvim_set_hl(0, "HoverNormal", { bg = "none" })
-			vim.api.nvim_set_hl(0, "HoverBorder", { bg = "none" })
-			vim.cmd("colorscheme gruvbox-material")
-		end
+			require('gruvbox').setup {
+				terminal_colors = true, -- add neovim terminal colors
+				undercurl = true,
+				underline = true,
+				bold = true,
+				italic = {
+					strings = true,
+					emphasis = true,
+					comments = true,
+					operators = false,
+					folds = true,
+				},
+				strikethrough = true,
+				invert_selection = false,
+				invert_signs = false,
+				invert_tabline = false,
+				invert_intend_guides = false,
+				inverse = true, -- invert background for search, diffs, statuslines and errors
+				contrast = "", -- can be "hard", "soft" or empty string
+				palette_overrides = {},
+				overrides = {},
+				dim_inactive = false,
+				transparent_mode = true,
+			}
+			vim.cmd("colorscheme gruvbox")
+		end,
+		opts = {}
 	},
 	-- BASE
 	{ "nvim-lua/plenary.nvim", lazy = true },
@@ -164,18 +176,22 @@ return {
 				fg = "#A9B665",
 				bg = nil,
 			})
+			vim.api.nvim_set_hl(0, "BlueF", {
+				fg = "#7DAEA3",
+				bg = nil,
+			})
 			vim.api.nvim_set_hl(0, "GreenFBlueB", {
 				fg = "#A9B665",
 				bg = "#7DAEA3",
 			})
 			dashboard.section.header.opts.hl = {
-				{ { "Blue", 5, 7 },  { "Green", 8, 22 } },
-				{ { "Blue", 5, 8 },  { "GreenFBlueB", 8, 11 }, { "Green", 9, 24 } },
-				{ { "Blue", 5, 10 }, { "GreenF", 10, 12, },    { "Green", 12, 26 } },
-				{ { "Blue", 5, 11 }, { "Green", 12, 24 } },
-				{ { "Blue", 5, 11 }, { "Green", 12, 22 } },
-				{ { "Blue", 5, 11 }, { "Green", 12, 22 } },
-				{ { "Blue", 0, 9 },  { "Green", 9, 18 } },
+				{ { "BlueF", 5, 7 },  { "GreenF", 8, 22 } },
+				{ { "BlueF", 5, 8 },  { "GreenFBlueB", 8, 11 }, { "GreenF", 9, 24 } },
+				{ { "BlueF", 5, 10 }, { "GreenF", 10, 12, },    { "GreenF", 12, 26 } },
+				{ { "BlueF", 5, 11 }, { "GreenF", 12, 24 } },
+				{ { "BlueF", 5, 11 }, { "GreenF", 12, 22 } },
+				{ { "BlueF", 5, 11 }, { "GreenF", 12, 22 } },
+				{ { "BlueF", 0, 9 },  { "GreenF", 9, 18 } },
 			}
 			dashboard.section.buttons.val = {
 				dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
@@ -282,33 +298,14 @@ return {
 	-- QUICK REOPEN
 	{
 		"ThePrimeagen/harpoon",
-		event = { "BufReadPre", "BufNewFile" },
-		keys = {
-			{
-				"ha",
-				function()
-					require("harpoon.mark").add_file()
-				end,
-			},
-			{
-				"hm",
-				function()
-					require("harpoon.ui").toggle_quick_menu()
-				end,
-			},
-			{
-				"hn",
-				function()
-					require("harpoon.ui").nav_next()
-				end,
-			},
-			{
-				"he",
-				function()
-					require("harpoon.ui").nav_prev()
-				end,
-			},
-		},
+		branch = "harpoon2",
+		config = function()
+			local harpoon2 = require('harpoon'):setup()
+			vim.keymap.set("n", "ha", function() harpoon2:list():append() end)
+			vim.keymap.set("n", "hm", function() harpoon2.ui:toggle_quick_menu(harpoon2:list()) end)
+			vim.keymap.set("n", "hn", function() harpoon2:list():next() end)
+			vim.keymap.set("n", "he", function() harpoon2:list():prev() end)
+		end
 	},
 	-- TMUX VIM
 	{
@@ -873,4 +870,5 @@ return {
 			})
 		end,
 	},
+
 }
