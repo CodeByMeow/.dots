@@ -34,7 +34,6 @@ return {
 			}
 			vim.cmd("colorscheme gruvbox")
 		end,
-		opts = {}
 	},
 	-- BASE
 	{ "nvim-lua/plenary.nvim", lazy = true },
