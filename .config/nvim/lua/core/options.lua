@@ -44,7 +44,7 @@ opt.incsearch = true
 opt.termguicolors = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.signcolumn = "auto"
+opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.winblend = 0
 opt.background = "dark"
