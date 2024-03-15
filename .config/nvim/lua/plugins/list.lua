@@ -925,7 +925,7 @@ return {
 			})
 		end,
 		keys = { {
-			"<leader>ht", "<Plug>RestNvim", desc = "Test current file"
+			"<leader>rt", "<Plug>RestNvim", desc = "Test current file"
 		} }
 	}
 
