@@ -98,3 +98,5 @@ opt.showmode = false
 opt.laststatus = 2
 opt.showtabline = 2
 opt.syntax = "ON"
+
+opt.completeopt = { "menu", "menuone", "noselect" }

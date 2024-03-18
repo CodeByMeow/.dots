@@ -41,7 +41,7 @@ map("n", "<leader>x", "<cmd>:bdelete<cr>")
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
 
--- Delete a word backwords
+-- Delete a word backwards
 map("n", "dw", 'vb"_d')
 
 -- Select all
@@ -80,3 +80,5 @@ map("n", "<Tab>", vim.cmd.bn)
 map("n", "<S-Tab>", vim.cmd.bp)
 
 map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
+
+require("user.discipline").cowboy()
