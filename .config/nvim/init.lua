@@ -46,5 +46,6 @@ spec("user.extras.peek")
 spec("user.extras.zenmode")
 spec("user.extras.twilight")
 spec("user.extras.iconpicker")
+spec("user.extras.luarocks")
 
 require("user.lazy")
