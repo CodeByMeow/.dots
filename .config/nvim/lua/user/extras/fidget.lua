@@ -5,7 +5,7 @@ function M.config()
 		notification = {
 			window = {
 				normal_hl = "CursorLineNr", -- Base highlight group in the notification window
-				winblend = 100, -- Background color opacity in the notification window
+				winblend = 0, -- Background color opacity in the notification window
 				border = "none", -- Border around the notification window
 				zindex = 45, -- Stacking priority of the notification window
 				max_width = 0, -- Maximum width of the notification window
@@ -17,6 +17,9 @@ function M.config()
 			},
 		},
 	})
+
+	vim.api.nvim_set_hl(0, "FidgetTitle", { link = "Normal" })
+	vim.api.nvim_set_hl(0, "FidgetTask", { link = "Normal" })
 end
 
 return M

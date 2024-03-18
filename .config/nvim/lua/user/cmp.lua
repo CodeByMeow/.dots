@@ -102,10 +102,8 @@ function M.config()
 					luasnip.expand_or_jump()
 				elseif check_backspace() then
 					fallback()
-					-- require("neotab").tabout()
 				else
 					fallback()
-					-- require("neotab").tabout()
 				end
 			end, {
 				"i",
@@ -164,7 +162,7 @@ function M.config()
 					custom_menu_icon[key] = value[1]
 				end
 
-				vim_item.kind = (custom_menu_icon[vim_item.kind] or "") .. vim_item.kind
+				vim_item.kind = (custom_menu_icon[vim_item.kind] or "  ") .. " " .. vim_item.kind
 				vim_item.kind = source_icons[entry.source.name] or vim_item.kind
 
 				return vim_item
