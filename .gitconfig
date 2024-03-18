@@ -26,6 +26,9 @@
   bm = branch --merged
   bn = branch --no-merged
   df = "!git hist | peco | awk '{print $2}' | xargs -I {} git diff {}^ {}"
+  hist = log --pretty=format:\"%Cgreen%h %Creset%cd %Cblue[%cn] %Creset%s%C(yellow)%d%C(reset)\" --graph --date=relative --decorate --all
+  llog = log --graph --name-status --pretty=format:\"%C(red)%h %C(reset)(%cd) %C(green)%an %Creset%s %C(yellow)%d%Creset\" --date=relative
+  open = "!hub browse"
   type = cat-file -t
   dump = cat-file -p
   find = "!f() { git log --pretty=format:\"%h %cd [%cn] %s%d\" --date=relative -S'pretty' -S\"$@\" | peco | awk '{print $1}' | xargs -I {} git diff {}^ {}; }; f"
@@ -33,7 +36,6 @@
   edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
   # add conflicted file on merge
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-  
 [difftool]
     prompt = true
 [diff]
@@ -41,7 +43,6 @@
 [difftool "nvimdiff"]
 	cmd = vim -d \"$LOCAL\" \"$REMOTE\"
 	path =
-    
 [mergetool "nvimdiff"]
 	cmd = vim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
