@@ -60,6 +60,11 @@ function M.config()
 			lualine_x = {
 				CodeGPTModule.get_status,
 				{
+					"rest",
+					icon = "",
+					fg = "#428890",
+				},
+				{
 					function()
 						local lsps = vim.lsp.get_clients()
 						local icon = require("nvim-web-devicons").get_icon_by_filetype(vim.bo.filetype)

@@ -73,6 +73,8 @@ function M.config()
 
 		lspconfig[server].setup(opts)
 	end
+
+	vim.keymap.set("n", "lh", "<cmd>:lua require('user.lspconfig').toggle_inlay_hints()<cr>")
 end
 
 return M
