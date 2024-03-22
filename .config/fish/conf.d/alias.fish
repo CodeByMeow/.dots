@@ -26,4 +26,4 @@ alias peaclock="peaclock --config-dir ~/.config/peaclock"
 alias xri="xrandr -o inverted"
 
 # translate shell
-alias t="trans :vi -b -speak"
+alias t="trans :vi -speak -b"

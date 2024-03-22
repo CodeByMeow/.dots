@@ -1,5 +1,6 @@
 local M = {
 	"james1236/backseat.nvim",
+	event = "VeryLazy",
 }
 function M.config()
 	require("backseat").setup({
