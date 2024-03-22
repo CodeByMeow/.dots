@@ -106,5 +106,6 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
     android-file-transfer
 ### Audio controller
     pavucontrol
-### Funny
-    pipes.sh peaclock
+
+### Tool translate
+    translate-shell
