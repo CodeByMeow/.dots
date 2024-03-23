@@ -62,7 +62,7 @@ blank_box = false
 | Key  | Description   |
 |-------------- | -------------- |
 | Super + Enter | Kitty     |
-| Super + Space | Laucher  rofi  |
+| Super + Space | Launcher  rofi  |
 | Super + p    | Power menu     |
 | Super + b    | Firefox  |
 | Super + q    | Kill current window |
@@ -88,10 +88,10 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ### Font
 - [ Iosevka ](https://github.com/be5invis/Iosevka) 
 - [ Source Han Sans CN](https://software.manjaro.org/package/adobe-source-han-sans-cn-fonts)
+- [ Source Han Sans KR](https://software.manjaro.org/package/adobe-source-han-sans-kr-fonts)
 - JetBrains Mono Nerd Font
 - Font Awesome 6 Pro
 - Noto fonts
-- Twemoji fonts
 - Iosevka Ori Sans - _My custom Iosevka font_
 
 ### Music
