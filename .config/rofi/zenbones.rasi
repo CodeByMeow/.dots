@@ -45,8 +45,6 @@ configuration {
 window {
   transparency: "real";
   width: 350;
-  border: 0;
-  border-color: @fg;
 }
 
 mainbox {
@@ -56,6 +54,8 @@ mainbox {
 inputbar {
   background-color: @bg;
   children: [prompt, entry];
+  border: 2 2 0 2;
+  border-color: @fg;
 }
 
 entry {
@@ -70,6 +70,8 @@ prompt {
 
 listview {
   lines: 5;
+  border: 2;
+  border-color: @fg;
 }
 
 element {

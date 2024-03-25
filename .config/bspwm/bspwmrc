@@ -31,13 +31,13 @@ bspc rule -a "Nwg-look" state=floating focus=on center=true
 workspaces
 bspc config window_gap 12
 bspc config single_monocle true
-bspc config borderless_monocle true
+bspc config borderless_monocle false
 bspc config gapless_monocle false
 bspc config border_width 2
 bspc config split_ratio 0.635
 bspc config top_padding 42
 bspc config normal_border_color "#3f3f3f"
-bspc config focused_border_color "#E0DCD1"
+bspc config focused_border_color "#FBF1C7"
 bspc rule -a Screenkey manage=off
 
 # autostart
