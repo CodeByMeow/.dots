@@ -1,104 +1,116 @@
 {
-	"keyMappings": "# Insert your preferred key mappings here.\nmap n scrollDown\nmap e scrollUp\nmap N previousTab\nmap E nextTab\nmap m performFind\nmap M performBackwardsFind\nmap t LinkHints.activateMode\nmap T LinkHints.activateModeToOpenInNewTab\n\nunmap j\nunmap k\nunmap f\nunmap F\nunmap J\nunmap K\nunmap B\nunmap b",
-	"searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
-	"settingsVersion": "2.0.6",
-	"userDefinedLinkHintCss": "input#vomnibarInput.vimiumReset {\n  color: #ebdbb2 !important;\n  background-color: #282828 !important;\n}\n\n#vomnibar {\n  border-color: #282828;\n  background-color: #282828;\n  border-radius: 50px;\n  border: none;\n  box-shadow: 0px 4px 40px rgba(50, 50, 50, 0.55);\n  top: 30px;\n  max-width: 650px;\n  width: calc(100% - 62px);\n  margin: 0 auto;\n  left: 0;\n  right: 0;\n}\n\n#vomnibar .vomnibarSearchArea {\n  background-color: #282828;\n  border-bottom: #282828;\n  background: none;\n  border-radius: 0;\n  border: none;\n  padding: 0;\n}\n\n#vomnibar input {\n  border-color: #282828;\n  color: #ebdbb2;\n  background-color: #282828;\n  border-radius: 5px;\n  border: none;\n  box-shadow: none;\n  font-size: 18px;\n  height: 50px;\n  margin: 0;\n  outline: none;\n  padding: 0 15px;\n  vertical-align: middle;\n}\n\n#vomnibar ul {\n  background-color: #282828;\n  margin: 0;\n}\n\n#vomnibar li {\n  border-bottom: #282828;\n}\n\n#vomnibar li .vomnibarUrl {\n  color: #fe8019;\n}\n\n#vomnibar li .vomnibarMatch {\n  color: #fabd2f;\n}\n\n#vomnibar li.vomnibarSelected {\n  background-color: #3c3836;\n}\n\n#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {\n  color: #fe8019;\n}\n\n#vomnibar li em, #vomnibar li .vomnibarTitle {\n  color: #ebdbb2;\n}",
-	"exclusionRules": [
-		{
-			"passKeys": "",
-			"pattern": "https?://mail.google.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://keytest.vn/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://app.diagrams.net/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://mockapi.io/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://bongo.cat/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://zty.pe/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://www.keybr.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://www.edclub.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://www.typing.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://www.kidztype.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://calendar.google.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://osu-web.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://danhgia.apj.vn/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://qwertysteno.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://host212.vietnix.vn:2083/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://config.qmk.fm/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://portal.vietnix.vn/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https://cpuv2proxmox8.vietnix.vn/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://cpuv2proxmox8.vietnix.vn:8006/?console=kvm&novnc=1&vmid=2803&vmname=2803&node=cpuv2proxmox8"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://app.spline.design/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://nickcoutsos.github.io/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://zalooa.freshdesk.com/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://chat.zalo.me/*"
-		},
-		{
-			"passKeys": "",
-			"pattern": "https?://www.notion.so/*"
-		}
-	]
+  "keyMappings": "# Insert your preferred key mappings here.\nmap n scrollDown\nmap e scrollUp\nmap N previousTab\nmap E nextTab\nmap m performFind\nmap M performBackwardsFind\nmap t LinkHints.activateMode\nmap T LinkHints.activateModeToOpenInNewTab\n\nunmap j\nunmap k\nunmap f\nunmap F\nunmap J\nunmap K",
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "settingsVersion": "2.0.6",
+  "userDefinedLinkHintCss": "input#vomnibarInput.vimiumReset {\n  color: #ebdbb2 !important;\n  background-color: #282828 !important;\n}\n\n#vomnibar {\n  border-color: #282828;\n  background-color: #282828;\n  border-radius: 50px;\n  border: none;\n  box-shadow: 0px 4px 40px rgba(50, 50, 50, 0.55);\n  top: 30px;\n  max-width: 650px;\n  width: calc(100% - 62px);\n  margin: 0 auto;\n  left: 0;\n  right: 0;\n}\n\n#vomnibar .vomnibarSearchArea {\n  background-color: #282828;\n  border-bottom: #282828;\n  background: none;\n  border-radius: 0;\n  border: none;\n  padding: 0;\n}\n\n#vomnibar input {\n  border-color: #282828;\n  color: #ebdbb2;\n  background-color: #282828;\n  border-radius: 5px;\n  border: none;\n  box-shadow: none;\n  font-size: 18px;\n  height: 50px;\n  margin: 0;\n  outline: none;\n  padding: 0 15px;\n  vertical-align: middle;\n}\n\n#vomnibar ul {\n  background-color: #282828;\n  margin: 0;\n}\n\n#vomnibar li {\n  border-bottom: #282828;\n}\n\n#vomnibar li .vomnibarUrl {\n  color: #fe8019;\n}\n\n#vomnibar li .vomnibarMatch {\n  color: #fabd2f;\n}\n\n#vomnibar li.vomnibarSelected {\n  background-color: #3c3836;\n}\n\n#vomnibar li em .vomnibarMatch, #vomnibar li .vomnibarTitle .vomnibarMatch {\n  color: #fe8019;\n}\n\n#vomnibar li em, #vomnibar li .vomnibarTitle {\n  color: #ebdbb2;\n}",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://keytest.vn/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://app.diagrams.net/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://mockapi.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://bongo.cat/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://zty.pe/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.keybr.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.edclub.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.typing.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.kidztype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://calendar.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://osu-web.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://danhgia.apj.vn/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://qwertysteno.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://host212.vietnix.vn:2083/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://config.qmk.fm/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://portal.vietnix.vn/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https://cpuv2proxmox8.vietnix.vn/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://cpuv2proxmox8.vietnix.vn:8006/?console=kvm&novnc=1&vmid=2803&vmname=2803&node=cpuv2proxmox8"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://app.spline.design/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://nickcoutsos.github.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://zalooa.freshdesk.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://docs.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.notion.so/lalisa/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.notion.so/lalisaa/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://monkeytype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://chat.zalo.me/*"
+    }
+  ]
 }
