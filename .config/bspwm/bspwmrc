@@ -17,7 +17,7 @@ workspaces() {
 
 # Application rules
 bspc rule -a kitty desktop=^1 follow=on
-bspc rule -a firefox desktop=^2 follow=on
+bspc rule -a firefox desktop=^2 follow=on 
 bspc rule -a "YouTube Music" desktop=^3 follow=on
 bspc rule -a "Notion" desktop=^4 follow=on
 bspc rule -a "Postman" desktop=^5 follow=on
