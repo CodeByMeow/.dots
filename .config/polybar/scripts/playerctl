@@ -11,7 +11,7 @@ limit=$((title_lenght*4))
 
 # Check if title is empty (no media player found)
 if [ -z "$title" ]; then
-    echo " "
+    echo "輸 "
 else
     # Truncate the title if it exceeds the maximum length
     if [ $word_count -gt $title_lenght ]; then
