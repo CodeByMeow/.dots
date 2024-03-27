@@ -1,6 +1,6 @@
 #!/bin/bash
 
-title_lenght=8
+title_lenght=7
 artist_lenght=3
 
 # Get the title and artist of the currently playing media using Playerctl
