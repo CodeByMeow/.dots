@@ -3,21 +3,10 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 }
 
-M.on_attach = function(client, bufnr)
-	if client.supports_method("textDocument/inlayHint") then
-		vim.lsp.inlay_hint.enable(bufnr, true)
-	end
-end
-
 function M.common_capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 	return capabilities
-end
-
-M.toggle_inlay_hints = function()
-	local bufnr = vim.api.nvim_get_current_buf()
-	vim.lsp.inlay_hint.enable(bufnr, not vim.lsp.inlay_hint.is_enabled(bufnr))
 end
 
 function M.config()
@@ -73,8 +62,6 @@ function M.config()
 
 		lspconfig[server].setup(opts)
 	end
-
-	vim.keymap.set("n", "lh", "<cmd>:lua require('user.lspconfig').toggle_inlay_hints()<cr>")
 end
 
 return M
