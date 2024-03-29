@@ -79,6 +79,7 @@ function M.config()
 		{ name = "nvim_lua" },
 		{ name = "buffer", keyword_length = 3 },
 		{ name = "luasnip", keyword_length = 2 },
+		{ name = "cmp_tabnine", keyword_length = 2 },
 		{ name = "path" },
 		{ name = "treesitter" },
 		{ name = "calc" },
@@ -157,7 +158,7 @@ function M.config()
 			expandable_indicator = true,
 			format = function(entry, vim_item)
 				local custom_menu_icon = {}
-				local source_icons = { calc = " 󰃬 ", codeium = " " }
+				local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  [TabNine]" }
 				for key, value in pairs(icons.kind) do
 					custom_menu_icon[key] = value[1]
 				end
@@ -190,29 +191,6 @@ function M.config()
 				},
 			},
 		}),
-	})
-
-	local bufIsBig = function(bufnr)
-		local max_filesize = 100 * 1024 -- 100 KB
-		---@diagnostic disable-next-line: undefined-field
-		local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(bufnr))
-		if ok and stats and stats.size > max_filesize then
-			return true
-		else
-			return false
-		end
-	end
-
-	vim.api.nvim_create_autocmd("BufReadPre", {
-		callback = function(t)
-			local sources = default_cmp_sources
-			if not bufIsBig(t.buf) then
-				sources[#sources + 1] = { name = "codeium", keyword_length = 3 }
-			end
-			cmp.setup.buffer({
-				sources = sources,
-			})
-		end,
 	})
 end
 
