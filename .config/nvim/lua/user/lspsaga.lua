@@ -25,7 +25,7 @@ function M.config()
 		ui = {
 			kind = kind,
 			border = "single",
-			code_action = "󰫣",
+			code_action = " ",
 		},
 		beacon = {
 			enable = true,

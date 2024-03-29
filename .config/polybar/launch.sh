@@ -16,7 +16,3 @@ polybar -q tray &
 polybar -q system &
 polybar -q time &
 polybar -q powermenu &
-
-if [[ -n "$EXM" ]]; then
-	polybar -q extend_workspace
-fi
