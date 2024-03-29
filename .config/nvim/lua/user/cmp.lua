@@ -78,9 +78,9 @@ function M.config()
 		},
 		{ name = "nvim_lua" },
 		{ name = "buffer", keyword_length = 3 },
-		{ name = "luasnip", keyword_length = 2 },
-		{ name = "cmp_tabnine", keyword_length = 2 },
 		{ name = "path" },
+		{ name = "cmp_tabnine", keyword_length = 2 },
+		{ name = "luasnip", keyword_length = 2 },
 		{ name = "treesitter" },
 		{ name = "calc" },
 		{ name = "emmet_vim" },
@@ -158,13 +158,14 @@ function M.config()
 			expandable_indicator = true,
 			format = function(entry, vim_item)
 				local custom_menu_icon = {}
-				local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  [TabNine]" }
+				local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  tabnine" }
 				for key, value in pairs(icons.kind) do
 					custom_menu_icon[key] = value[1]
 				end
 
 				vim_item.kind = (custom_menu_icon[vim_item.kind] or "  ") .. " " .. vim_item.kind
 				vim_item.kind = source_icons[entry.source.name] or vim_item.kind
+				vim.api.nvim_set_hl(0, "CmpItemKindTabNine", { fg = "#689D6A" })
 
 				return vim_item
 			end,
@@ -178,6 +179,7 @@ function M.config()
 			{ name = "buffer" },
 		},
 	})
+
 	-- `:` cmdline setup.
 	cmp.setup.cmdline(":", {
 		mapping = cmp.mapping.preset.cmdline(),
@@ -191,6 +193,14 @@ function M.config()
 				},
 			},
 		}),
+	})
+
+	vim.api.nvim_create_autocmd("BufReadPre", {
+		callback = function()
+			cmp.setup.buffer({
+				sources = default_cmp_sources,
+			})
+		end,
 	})
 end
 
