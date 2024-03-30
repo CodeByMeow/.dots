@@ -1,0 +1,61 @@
+configuration {
+    show-icons:                 true;
+	icon-theme:					"Reversal-green-dark";
+    display-drun:               "";
+    drun-display-format:        "{name}";
+    disable-history:            false;
+    fullscreen:                 false;
+    hide-scrollbar:             true;
+    sidebar-mode:               false;
+}
+
+window {
+    transparency:               "real";
+    background-color:           @bg;
+    text-color:                 @fg;
+    border-color:               @border;
+    border-radius:              0px;
+    width:                      30%;
+    x-offset:                   34.4%;
+    y-offset:                   30.4%;
+}
+
+mainbox {
+    background-color:           @bg;
+    spacing:                    0.8em;
+    children:                   [ listview ];
+}
+
+listview {
+	lines:						3;
+    spacing:                    5px;
+    dynamic:                    true;
+    cycle:                      true;
+    scroll-lines:               5;
+    orientation:                "vertical";
+    cursor-click:               true;
+}
+
+element {
+    padding:                    16px;
+    spacing:                    26px;
+    background-color:           transparent;
+    text-color:                 @fg;
+}
+
+element normal.normal {
+    background-color:           inherit;
+    text-color:                 inherit;
+}
+
+element-icon {
+    size:                       64px;
+    padding:                    16px 16px 16px 16px;
+    background-color:           transparent;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    vertical-align:             0.5;
+}

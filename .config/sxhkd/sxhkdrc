@@ -19,7 +19,7 @@ super + w
 
 # emoji
 super + r
-	rofimoji -a copy --selector-args="-theme ~/.config/rofi/emoji.rasi"
+	rofimoji -a copy --selector-args="-theme ~/.config/rofi/themes/emoji.rasi"
 
 # calculater
 super + c

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Get the list of desktops
+desktops=$(bspc query -D --names)
+
+# Set the prompt for Rofi
+prompt="Move window to desktop:"
+
+# Use Rofi to display the list of desktops with icons
+desktop=$(printf "%s\n" $desktops | rofi -dmenu -p "$prompt" -bw 0 -theme-str '@import "~/.config/rofi/themes/icon-grid.rasi"')
+
+# Move the focused window to the selected desktop
+bspc node -d "$desktop" --follow
