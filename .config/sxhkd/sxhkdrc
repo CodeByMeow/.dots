@@ -15,7 +15,7 @@ super + @space
 
 # window
 super + w
-	rofi -show window -show-icons
+	rofi -show window -show-icons -location 2 -yoffset 54
 
 # emoji
 super + r
