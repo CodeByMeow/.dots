@@ -5,7 +5,7 @@ pgrep -x sxhkd >/dev/null || sxhkd &
 workspaces() {
     for monitor in $(bspc query -M); do
         bspc monitor "${monitor}" -n "$((++name))"
-        [[ "$name" -eq 1 ]] && bspc monitor "${monitor}" -d I II III IV V VI VII
+        [[ "$name" -eq 1 ]] && bspc monitor "${monitor}" -d 1 2 3 4 5 6 7
     done
 }
 

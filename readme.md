@@ -72,7 +72,7 @@ blank_box = false
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
-To use custom script: `sudo ln -s $HOME/custom/script/<namescript>.sh <namescript>`
+To use custom script, move to `/usr/local/bin/`, run `sudo ln -s ~/.config/rofi/custom/${SCRIPT_NAME} .`
 
 ### Polybar
 __Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)  
