@@ -52,6 +52,7 @@ function M.config()
 			lualine_b = { "diff" },
 			lualine_c = {
 				"filename",
+				"g:mpv_title",
 				{
 					"diagnostics",
 					symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint },
@@ -77,9 +78,6 @@ function M.config()
 						else
 							return icon or ""
 						end
-					end,
-					on_click = function()
-						vim.api.nvim_command("LspInfo")
 					end,
 					color = function()
 						local _, color = require("nvim-web-devicons").get_icon_cterm_color_by_filetype(vim.bo.filetype)
