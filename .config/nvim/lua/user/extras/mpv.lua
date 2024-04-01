@@ -12,7 +12,7 @@ function M.config()
 		},
 	})
 
-	vim.keymap.set("n", "mm", function()
+	vim.keymap.set("n", "mk", function()
 		require("mpv").toggle_player()
 	end)
 end

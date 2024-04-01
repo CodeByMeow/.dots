@@ -18,14 +18,14 @@ _Note: I use colemak-dh keyboard layout_
 ### Dependencies
 
 ```
-libnotify dunst unclutter duf gpick bluetooth-autoconnect flameshot 
-nitrogen  xorg-xsetroot tree-sitter-cli peco
-bc nodejs npm firefox  reversal-icon-theme-git bibata-cursor-theme 
-nwg-look rofi polybar picom-git ly xdg-user-dirs 
-jq rg ripgrep fd neovim tmux nemo betterlockscreen 
-youtube-music-bin pamixer playerctl brightnessctl starship cava-git 
+libnotify dunst unclutter duf gpick bluetooth-autoconnect flameshot
+nitrogen xorg-xsetroot tree-sitter-cli peco
+bc nodejs npm firefox reversal-icon-theme-git bibata-cursor-theme
+nwg-look rofi polybar picom-git ly xdg-user-dirs
+jq rg ripgrep fd neovim tmux nemo betterlockscreen
+youtube-music-bin pamixer playerctl brightnessctl starship cava-git
 xclip udiskie deno breaktimer tldr rofimoji rofi-calc
-ueberzug at bsp-layout libmtp
+ueberzug at bsp-layout libmtp mpv
 
 ```
 
@@ -52,10 +52,10 @@ blank_box = false
 
 ### Shell setup
 
-[ starship ](https://starship.rs/) - Shell theme  
-[zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping  
-[peco](https://github.com/peco/peco) - Interactive filtering  
-[tmux](https://github.com/tmux/tmux) - Terminal multiplexer  
+[starship](https://starship.rs/) - Shell theme
+[zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping
+[peco](https://github.com/peco/peco) - Interactive filtering
+[tmux](https://github.com/tmux/tmux) - Terminal multiplexer
 [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
 ### Common hotkey
@@ -75,7 +75,7 @@ See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 To use custom script, move to `/usr/local/bin/`, run `sudo ln -s ~/.config/rofi/custom/${SCRIPT_NAME} .`
 
 ### Polybar
-__Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)  
+__Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)
 Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ```
     APIKEY=`cat ~/.config/polybar/scripts/Weather/.owm-key`
@@ -86,7 +86,7 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 ```
 
 ### Font
-- [ Iosevka ](https://github.com/be5invis/Iosevka) 
+- [ Iosevka ](https://github.com/be5invis/Iosevka)
 - [ Source Han Sans CN](https://software.manjaro.org/package/adobe-source-han-sans-cn-fonts)
 - [ Source Han Sans KR](https://software.manjaro.org/package/adobe-source-han-sans-kr-fonts)
 - JetBrains Mono Nerd Font
