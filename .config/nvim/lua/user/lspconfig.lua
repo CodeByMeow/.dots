@@ -3,16 +3,10 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 }
 
-function M.common_capabilities()
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.textDocument.completion.completionItem.snippetSupport = true
-	return capabilities
-end
-
 function M.config()
 	local lspconfig = require("lspconfig")
 	local icons = require("user.icons")
-	local servers = require("user.mason").servers
+	local servers = require("mason-lspconfig").get_installed_servers()
 
 	local default_diagnostic_config = {
 		signs = {
@@ -49,12 +43,8 @@ function M.config()
 		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
 	require("lspconfig.ui.windows").default_options.border = "single"
-	for _, server in pairs(servers) do
-		local opts = {
-			on_attach = M.on_attach,
-			capabilities = M.common_capabilities(),
-		}
-
+	for _, server in ipairs(servers) do
+		local opts = {}
 		local require_ok, settings = pcall(require, "user.lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)

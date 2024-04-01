@@ -7,7 +7,7 @@
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Yazi ](https://yazi-rs.github.io/docs/)
-- **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10)
+- **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
 
 ---
 

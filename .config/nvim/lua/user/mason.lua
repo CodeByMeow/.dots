@@ -5,7 +5,7 @@ local M = {
 	},
 }
 
-M.servers = {
+local server_names = {
 	"tsserver",
 	"lua_ls",
 	"cssls",
@@ -26,7 +26,8 @@ function M.config()
 	})
 
 	require("mason-lspconfig").setup({
-		ensure_installed = M.servers,
+		ensure_installed = server_names,
+		automatic_installation = true,
 	})
 end
 

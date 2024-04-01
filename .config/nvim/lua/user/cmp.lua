@@ -1,39 +1,39 @@
 local M = {
 	"hrsh7th/nvim-cmp",
-	envent = "InsertEnter",
+	event = "InsertEnter",
 	dependencies = {
 		{
 			"hrsh7th/cmp-buffer",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"hrsh7th/cmp-path",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"hrsh7th/cmp-nvim-lsp",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"hrsh7th/cmp-nvim-lua",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"hrsh7th/cmp-cmdline",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"hrsh7th/cmp-calc",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"saadparwaiz1/cmp_luasnip",
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"dcampos/cmp-emmet-vim",
 			dependencies = { "mattn/emmet-vim" },
-			envent = "InsertEnter",
+			event = "InsertEnter",
 		},
 		{
 			"L3MON4D3/LuaSnip",
