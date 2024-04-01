@@ -35,7 +35,7 @@ configuration {
 
   bg: transparent;
   bg-alt: #7f7f7f;
-  fg: #dcdccc;
+  fg: #EBDBB2;
   blue: #8cd0d3;
 
   background-color: @bg;
@@ -87,7 +87,7 @@ element-text {
   padding: 20px 10px;
 }
 
-element-text selected, 
+element-text selected,
 element-icon selected {
   text-color: #fff;
   background-color: @bg-alt;
