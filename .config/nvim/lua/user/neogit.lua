@@ -5,6 +5,7 @@ local M = {
 		{ "<leader>g", vim.cmd.Neogit },
 	},
 	event = { "BufReadPre", "BufNewFile" },
+	branch = "nightly",
 }
 
 function M.config()
