@@ -21,7 +21,7 @@ super + w
 super + r
 	rofimoji -a copy --selector-args="-theme ~/.config/rofi/themes/emoji.rasi"
 
-# calculater
+# calculator
 super + c
 	rofi -show calc -modi calc -now-show-match -no-sort
 
@@ -155,7 +155,7 @@ shift + Right
 	brightnessctl set +10%
 
 # Playerctl
-alt + Right
+alt + @n
     playerctl next
 
 alt + @p

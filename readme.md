@@ -59,16 +59,17 @@ blank_box = false
 [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
 ### Common hotkey
-| Key  | Description   |
-|-------------- | -------------- |
-| Super + Enter | Kitty     |
-| Super + Space | Launcher  rofi  |
-| Super + p    | Power menu     |
-| Super + b    | Firefox  |
-| Super + q    | Kill current window |
-| Alt   + Right| Playerctl next |
-| Alt   + p    | Playerctl play-pause |
-| Ctrl + Shift + Space| Color pick |
+| Key  | Description                  |
+|-------------- | --------------      |
+| Super + Enter | Kitty               |
+| Super + Space | Launcher  rofi      |
+| Super + p     | Power menu          |
+| Super + b     | Firefox             |
+| Super + q     | Kill current window |
+| Super + m     | Menu move window    |
+| Super + w     | Menu jump to desktop|
+| Alt   + n     | Playerctl next      |
+| Alt   + p     | Playerctl play-pause|
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
