@@ -44,7 +44,7 @@ format = "[](fg:#2B2B2B bg:none)[$path]($style)[█](fg:#2B2B2B bg:#2B2B2B)[�
 style = "fg:#F0F0F0 bg:#2B2B2B bold"
 
 [character]
-success_symbol = "[ ](#E0E0E0 bold)"
+success_symbol = "[ ](#81C19B bold)"
 error_symbol = "[窱](#B66467 bold)"
 
 [cmd_duration]
