@@ -155,7 +155,7 @@ shift + Right
 	brightnessctl set +10%
 
 # Playerctl
-alt + @n
+alt + Right
     playerctl next
 
 alt + @p

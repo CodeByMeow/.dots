@@ -68,7 +68,7 @@ blank_box = false
 | Super + q     | Kill current window |
 | Super + m     | Menu move window    |
 | Super + w     | Menu jump to desktop|
-| Alt   + n     | Playerctl next      |
+| Alt   + Right | Playerctl next      |
 | Alt   + p     | Playerctl play-pause|
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
