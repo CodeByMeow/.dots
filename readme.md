@@ -15,24 +15,26 @@ _Warning: Don't blindly use my settings unless you know what that entails. Use a
 
 _Note: I use colemak-dh keyboard layout_
 
+### Required
+- `nodejs`
+- `npm`
+
+```
+    fisher install jorgebucaran/nvm.fish`
+```
+
 ### Dependencies
 
 ```
 libnotify dunst unclutter duf gpick bluetooth-autoconnect flameshot
 nitrogen xorg-xsetroot tree-sitter-cli peco
-bc nodejs npm firefox reversal-icon-theme-git bibata-cursor-theme
+bc firefox reversal-icon-theme-git bibata-cursor-theme
 nwg-look rofi polybar picom-git ly xdg-user-dirs
 jq rg ripgrep fd neovim tmux nemo betterlockscreen
-youtube-music-bin pamixer playerctl brightnessctl starship cava-git
+pamixer playerctl brightnessctl starship cava-git
 xclip udiskie deno breaktimer tldr rofimoji rofi-calc
 ueberzug at bsp-layout libmtp mpv
 
-```
-
-### Fisher
-```
-    yay -S fisher
-    fisher install jorgebucaran/nvm.fish
 ```
 
 ### Speedup arch
@@ -42,7 +44,7 @@ preload auto-cpufreq
 ```
 
 ### Ly UI
-Edit: /etc/ly/config.in
+_Edit: /etc/ly/config.in_
 ```
 animate = true
 animation = 1 //Cmatrix
@@ -52,11 +54,11 @@ blank_box = false
 
 ### Shell setup
 
-[starship](https://starship.rs/) - Shell theme
-[zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping
-[peco](https://github.com/peco/peco) - Interactive filtering
-[tmux](https://github.com/tmux/tmux) - Terminal multiplexer
-[tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
+- [starship](https://starship.rs/) - Shell theme
+- [zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping
+- [peco](https://github.com/peco/peco) - Interactive filtering
+- [tmux](https://github.com/tmux/tmux) - Terminal multiplexer
+- [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
 ### Common hotkey
 | Key  | Description                  |
@@ -94,19 +96,20 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 - Font Awesome 6 Pro
 - Noto fonts
 - Iosevka Ori Sans - _My custom Iosevka font_
-
-### Music
-    youtube-music-bin
-### Game
-    gamemode mangohud
-### Fix Ubisoft connect
-    protontricks
 ### Pacman UI
     /etc/pacman.conf: ILoveCandy
-### Android file transfer
-    android-file-transfer
-### Audio controller
-    pavucontrol
 
-### Tool translate
-    translate-shell
+### Devtool
+
+- `heyperfine`: Benmarking tool.
+- `translate-shell`: command-line translation.
+- `bun`: JavaScript runtime and toolkit.
+
+### Tool
+
+- `youtube-music-bin`: Youtube music app.
+- `gamemode`
+- `mangohud`
+- `protontricks`: Ubsoft help.
+- `android-file-transfer`: File transfer android.
+- `pavucontrol`: Audio configuration.
