@@ -3,19 +3,12 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
-		{
-			"dpayne/CodeGPT.nvim",
-			config = function()
-				require("codegpt.config")
-			end,
-		},
 		{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
 	},
 }
 
 function M.config()
 	local icons = require("user.icons").diagnostics
-	local CodeGPTModule = require("codegpt")
 	local auto_theme_custom = require("lualine.themes.auto")
 	local branch_max_width = 40
 	local branch_min_width = 10
@@ -59,12 +52,6 @@ function M.config()
 				},
 			},
 			lualine_x = {
-				CodeGPTModule.get_status,
-				{
-					"rest",
-					icon = "",
-					fg = "#428890",
-				},
 				{
 					function()
 						local lsps = vim.lsp.get_clients()
