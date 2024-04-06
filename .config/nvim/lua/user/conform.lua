@@ -23,7 +23,6 @@ function M.config()
 			css = { { "prettierd", "prettier" } },
 			html = { { "prettierd", "prettier" } },
 			sh = { "beautysh" },
-			["*"] = { "codespell" },
 		},
 		format_on_save = {
 			timeout_ms = 1000,
