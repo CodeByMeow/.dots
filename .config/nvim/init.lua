@@ -43,7 +43,6 @@ spec("user.extras.peek")
 spec("user.extras.zenmode")
 spec("user.extras.twilight")
 spec("user.extras.iconpicker")
-spec("user.extras.mpv")
 spec("user.extras.codesnap")
 
 require("user.lazy")
