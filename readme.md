@@ -113,3 +113,8 @@ Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
 - `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
+### Input method
+
+- `fcixt5-config-qt`
+- `fcixt5-unikey`
+- `fcixt5-chinese-addons`
