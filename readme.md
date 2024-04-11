@@ -1,7 +1,7 @@
-- **Window Manager** :bento: [ BSPWM ](https://github.com/baskerville/bspwm)
+- **Window Manager** :bento: [ Hyprland ](https://hyprland.org/)
 - **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
-- **Panel** :blossom: [ Polybar ](https://github.com/polybar/polybar)
-- **Application Launcher** :rocket: [ Rofi ](https://github.com/davatorium/rofi)
+- **Panel** :blossom: [ Waybar ](https://github.com/Alexays/Waybar)
+- **Application Launcher** :rocket: [ Wofi ](https://hg.sr.ht/~scoopta/wofi)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
 - **Terminal Emulator** :cat: [ Kitty ](https://sw.kovidgoyal.net/kitty)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
@@ -26,14 +26,13 @@ _Note: I use colemak-dh keyboard layout_
 ### Dependencies
 
 ```
-libnotify dunst unclutter duf gpick bluetooth-autoconnect flameshot
-nitrogen xorg-xsetroot tree-sitter-cli peco
+libnotify dunst unclutter duf gpick bluetooth-autoconnect
+xorg-xsetroot tree-sitter-cli peco
 bc firefox reversal-icon-theme-git bibata-cursor-theme
-nwg-look rofi polybar picom-git ly xdg-user-dirs
-jq rg ripgrep fd neovim tmux nemo betterlockscreen
+nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
-xclip udiskie deno breaktimer tldr rofimoji rofi-calc
-ueberzug at bsp-layout libmtp mpv
+xclip udiskie deno breaktimer tldr ueberzug at libmtp mpv
+hyprpicker hyprshoot hyprpaper
 
 ```
 
@@ -66,27 +65,11 @@ blank_box = false
 | Super + Enter | Kitty               |
 | Super + Space | Launcher  rofi      |
 | Super + p     | Power menu          |
-| Super + b     | Firefox             |
 | Super + q     | Kill current window |
-| Super + m     | Menu move window    |
-| Super + w     | Menu jump to desktop|
-| Alt   + Right | Playerctl next      |
-| Alt   + p     | Playerctl play-pause|
 
 See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
 
 To use custom script, move to `/usr/local/bin/`, run `sudo ln -s ~/.config/rofi/custom/${SCRIPT_NAME} .`
-
-### Polybar
-__Module weather__ :cloud_with_lightning_and_rain: store apikey in __.owm-key__. [Get api](https://openweathermap.org/api)
-Change your local in file from path: ~/.config/polybar/scripts/Weather/weather
-```
-    APIKEY=`cat ~/.config/polybar/scripts/Weather/.owm-key`
-    CITY_NAME='Ho Chi Minh City'
-    COUNTRY_CODE=VN
-    # Desired output language
-    LANG="vi"
-```
 
 ### Font
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
