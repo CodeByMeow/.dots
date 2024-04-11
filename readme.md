@@ -26,13 +26,13 @@ _Note: I use colemak-dh keyboard layout_
 ### Dependencies
 
 ```
-libnotify dunst unclutter duf gpick bluetooth-autoconnect
+libnotify dunst unclutter duf bluetooth-autoconnect
 xorg-xsetroot tree-sitter-cli peco
 bc firefox reversal-icon-theme-git bibata-cursor-theme
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
-xclip udiskie deno breaktimer tldr ueberzug at libmtp mpv
-hyprpicker hyprshoot hyprpaper
+udiskie deno breaktimer tldr ueberzug at libmtp mpv
+hyprpicker hyprshoot hyprpaper wl-copy cliphist
 
 ```
 
