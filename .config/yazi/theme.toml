@@ -1,27 +1,171 @@
-[tab]
-active    = { fg = "#819090", bg = "#2B2B2B" }
-inactive  = { fg = "#8C8C8C", bg = "#2B2B2B" }
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
+[manager]
+cwd = { fg = "#8bd5ca" }
+
+# Hovered
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
+
+# Find
+find_keyword  = { fg = "#eed49f", bold = true, italic = true, underline = true }
+find_position = { fg = "#f5bde6", bg = "reset", bold = true, italic = true }
+
+# Marker
+marker_copied   = { fg = "#a6da95", bg = "#a6da95" }
+marker_cut      = { fg = "#ed8796", bg = "#ed8796" }
+marker_marked   = { fg = "#eed49f", bg = "#eed49f" }
+marker_selected = { fg = "#8aadf4", bg = "#8aadf4" }
+
+# Tab
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
+
+# Count
+count_copied   = { fg = "#24273a", bg = "#a6da95" }
+count_cut      = { fg = "#24273a", bg = "#ed8796" }
+count_selected = { fg = "#24273a", bg = "#8aadf4" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#8087a2" }
+
+# : }}}
+
+
+# : Status {{{
 
 [status]
-primary	  = { normal = "#8C8C8C", select = "#819090", unset = "#5F5F5F" }
-secondary = { normal = "#819090", select = "#819090", unset = "#819090" }
-tertiary  = { normal = "#657B83", select = "#657B83", unset = "#657B83" }
-body      = { normal = "#2B2B2B", select = "#2B2B2B", unset = "#2B2B2B" }
-emphasis  = { normal = "#819090", select = "#819090", unset = "#819090" }
-info      = { normal = "#668899", select = "#668899", unset = "#668899" }
-success   = { normal = "#708030", select = "#708030", unset = "#708030" }
-warning   = { normal = "#997000", select = "#997000", unset = "#997000" }
-danger    = { normal = "#AF5F00", select = "#AF5F00", unset = "#AF5F00" }
-separator = { opening = "", closing = "" }
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "#494d64", bg = "#494d64" }
 
-[progress]
-gauge = { fg = "#5F5F5F", bg = "#2B2B2B" }
-label = { fg = "#819090", bold = true }
+# Mode
+mode_normal = { fg = "#24273a", bg = "#8aadf4", bold = true }
+mode_select = { fg = "#24273a", bg = "#a6da95", bold = true }
+mode_unset  = { fg = "#24273a", bg = "#f0c6c6", bold = true }
 
-[selection]
-hovered = { fg = "#2B2B2B", bg = "#819090" }
+# Progress
+progress_label  = { fg = "#ffffff", bold = true }
+progress_normal = { fg = "#8aadf4", bg = "#494d64" }
+progress_error  = { fg = "#ed8796", bg = "#494d64" }
 
-[marker]
-selecting = { fg = "#708030", bg = "#708030" }
-selected  = { fg = "#997000", bg = "#997000" }
+# Permissions
+permissions_t = { fg = "#8aadf4" }
+permissions_r = { fg = "#eed49f" }
+permissions_w = { fg = "#ed8796" }
+permissions_x = { fg = "#a6da95" }
+permissions_s = { fg = "#8087a2" }
 
+# : }}}
+
+
+# : Select {{{
+
+[select]
+border   = { fg = "#8aadf4" }
+active   = { fg = "#f5bde6", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#8aadf4" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[completion]
+border = { fg = "#8aadf4" }
+
+# : }}}
+
+
+# : Tasks {{{
+
+[tasks]
+border  = { fg = "#8aadf4" }
+title   = {}
+hovered = { fg = "#f5bde6", underline = true }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+mask            = { bg = "#363a4f" }
+cand            = { fg = "#8bd5ca" }
+rest            = { fg = "#939ab7" }
+desc            = { fg = "#f5bde6" }
+separator       = "  "
+separator_style = { fg = "#5b6078" }
+
+# : }}}
+
+
+# : Help {{{
+
+[help]
+on      = { fg = "#8bd5ca" }
+run     = { fg = "#f5bde6" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#494d64", bg = "#cad3f5" }
+
+# : }}}
+
+
+# : Notify {{{
+
+[notify]
+title_info  = { fg = "#a6da95" }
+title_warn  = { fg = "#eed49f" }
+title_error = { fg = "#ed8796" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+	# Images
+	{ mime = "image/*", fg = "#8bd5ca" },
+
+	# Media
+	{ mime = "video/*", fg = "#eed49f" },
+	{ mime = "audio/*", fg = "#eed49f" },
+
+	# Archives
+	{ mime = "application/zip",             fg = "#f5bde6" },
+	{ mime = "application/x-tar",           fg = "#f5bde6" },
+	{ mime = "application/x-bzip*",         fg = "#f5bde6" },
+	{ mime = "application/x-bzip2",         fg = "#f5bde6" },
+	{ mime = "application/x-7z-compressed", fg = "#f5bde6" },
+	{ mime = "application/x-rar",           fg = "#f5bde6" },
+	{ mime = "application/x-xz",            fg = "#f5bde6" },
+
+	# Documents
+	{ mime = "application/doc",   fg = "#a6da95" },
+	{ mime = "application/pdf",   fg = "#a6da95" },
+	{ mime = "application/rtf",   fg = "#a6da95" },
+	{ mime = "application/vnd.*", fg = "#a6da95" },
+
+	# Fallback
+	{ name = "*", fg = "#cad3f5" },
+	{ name = "*/", fg = "#8aadf4" }
+]
+
+#

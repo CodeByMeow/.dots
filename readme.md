@@ -28,7 +28,7 @@ _Note: I use colemak-dh keyboard layout_
 ```
 libnotify dunst unclutter duf bluetooth-autoconnect
 xorg-xsetroot tree-sitter-cli peco
-bc firefox reversal-icon-theme-git bibata-cursor-theme
+bc firefox bibata-cursor-theme catppucin-gtk-theme-mocch
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug at libmtp mpv
@@ -59,18 +59,6 @@ blank_box = false
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer
 - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
 
-### Common hotkey
-| Key  | Description                  |
-|-------------- | --------------      |
-| Super + Enter | Kitty               |
-| Super + Space | Launcher  rofi      |
-| Super + p     | Power menu          |
-| Super + q     | Kill current window |
-
-See more in sxhkd config: _~/.config/sxhkd/sxhkdrc_
-
-To use custom script, move to `/usr/local/bin/`, run `sudo ln -s ~/.config/rofi/custom/${SCRIPT_NAME} .`
-
 ### Font
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
 - [ Source Han Sans CN](https://software.manjaro.org/package/adobe-source-han-sans-cn-fonts)
@@ -79,8 +67,9 @@ To use custom script, move to `/usr/local/bin/`, run `sudo ln -s ~/.config/rofi/
 - Font Awesome 6 Pro
 - Noto fonts
 - Iosevka Ori Sans - _My custom Iosevka font_
-### Pacman UI
+### UI
     /etc/pacman.conf: ILoveCandy
+[Icon theme](https://github.com/vinceliuice/Tela-circle-icon-theme.git): color dracula
 
 ### Devtool
 

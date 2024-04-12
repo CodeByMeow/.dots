@@ -41,7 +41,7 @@
 /* Move close button to the left on hover */
 .tab-label-container {
   order: 1;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .tabbrowser-tab .tab-close-button {
