@@ -1,5 +1,0 @@
-window {width: 172;x-offset: 12;y-offset: 54;}
-listview {lines: 4;  margin-right: 0px;}
-element-text{ padding: 10px; horizontal-align:0.5; }
-element{ children: [element-text];}
-mainbox {children: [listview];}
