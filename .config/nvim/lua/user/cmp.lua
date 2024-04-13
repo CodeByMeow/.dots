@@ -145,8 +145,8 @@ function M.config()
 		end,
 		preselect = "item",
 		window = {
-			completion = { border = "single", scrollbar = false },
-			documentation = { border = "single", scrollbar = false },
+			completion = { border = "rounded", scrollbar = false },
+			documentation = { border = "rounded", scrollbar = false },
 		},
 		snippet = {
 			expand = function(args)

@@ -25,7 +25,7 @@ function M.config()
 		float = {
 			focusable = true,
 			style = "minimal",
-			border = "single",
+			border = "rounded",
 			source = "always",
 			header = "",
 			prefix = "",
@@ -38,11 +38,11 @@ function M.config()
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
 	end
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 	vim.lsp.handlers["textDocument/signatureHelp"] =
-		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
+		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
-	require("lspconfig.ui.windows").default_options.border = "single"
+	require("lspconfig.ui.windows").default_options.border = "rounded"
 	for _, server in ipairs(servers) do
 		local opts = {}
 		local require_ok, settings = pcall(require, "user.lspsettings." .. server)

@@ -21,7 +21,7 @@ local server_names = {
 function M.config()
 	require("mason").setup({
 		ui = {
-			border = "single",
+			border = "rounded",
 		},
 	})
 

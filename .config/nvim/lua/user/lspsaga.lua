@@ -24,7 +24,7 @@ function M.config()
 	require("lspsaga").setup({
 		ui = {
 			kind = kind,
-			border = "single",
+			border = "rounded",
 			code_action = " ",
 		},
 		beacon = {

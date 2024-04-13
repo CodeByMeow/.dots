@@ -84,7 +84,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		style = "minimal",
-		border = "single",
+		border = "rounded",
 		source = "always",
 		header = "",
 		prefix = "",
