@@ -38,10 +38,10 @@ function M.config()
 		{ { "BlueF", 0, 9 }, { "GreenF", 9, 18 } },
 	}
 	dashboard.section.buttons.val = {
-		dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
+		dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
 		dashboard.button("o", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
 		dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
-		dashboard.button("q", " " .. " Quit", ":qa<CR>"),
+		dashboard.button("q", "󰩈 " .. " Quit", ":qa<CR>"),
 	}
 	dashboard.opts.layout[1].val = 6
 
