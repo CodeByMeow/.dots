@@ -136,3 +136,20 @@ tooltip {
 		background-position: 0 50%;
 	}
 }
+
+@keyframes blink-update {
+	to {
+		background-color: dodgerblue;
+	}
+}
+
+#custom-pacman {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#custom-pacman.pending-updates {
+	animation-name: blink-update;
+	animation-duration: 3s;
+}

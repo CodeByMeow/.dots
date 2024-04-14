@@ -21,13 +21,12 @@
 		"custom/weather",
 		"custom/empty",
 		"battery",
-		"custom/empty",
 		"cpu",
 		"memory",
 		"backlight",
 		"network",
 		"pulseaudio",
-		"custom/empty",
+		"custom/pacman",
 		"idle_inhibitor",
 		"clock",
 		"custom/empty"
@@ -205,6 +204,12 @@
 		"return-type": "json",
 		"format": "{}",
 		"tooltip": true,
+		"interval": 900
+	},
+	"custom/pacman": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "checkupdate.sh",
 		"interval": 900
 	}
 }
