@@ -16,7 +16,7 @@ city=$(echo "$location" | cut -d ',' -f 1)
 
 # Extract bar and tooltip from weather information
 bar=$(echo $weather | awk -F "|" '{print $1}')
-tooltip=$(echo $weather | awk -F "|" '{print $2}')
+tooltip="$city: $(echo $weather | awk -F "|" '{print $2}')"
 
 # Print the bar text and tooltip in JSON format
 echo "{\"text\":\"$bar\", \"tooltip\":\"$tooltip\"}"
