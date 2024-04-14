@@ -7,6 +7,8 @@
 	"passthrough": false,
 	"gtk-layer-shell": true,
 	"modules-left": [
+		"custom/empty",
+		"custom/empty",
 		"wlr/taskbar",
 		"tray",
 		"hyprland/window"
@@ -26,9 +28,10 @@
 		"backlight",
 		"network",
 		"pulseaudio",
+		"custom/empty",
 		"custom/pacman",
-		"idle_inhibitor",
 		"clock",
+		"custom/empty",
 		"custom/empty"
 	],
 	"wlr/taskbar": {
@@ -45,14 +48,6 @@
 		],
 		"app_ids-mapping": {
 			"firefoxdeveloperedition": "firefox-developer-edition"
-		}
-	},
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"rotate": 0,
-		"format-icons": {
-			"activated": "󰥔 ",
-			"deactivated": " "
 		}
 	},
 	"clock": {
@@ -160,13 +155,13 @@
 		}
 	},
 	"custom/empty": {
-		"format": "  ",
+		"format": " ",
 		"interval": "once",
 		"tooltip": false
 	},
 	"cpu": {
 		"interval": 1,
-		"format": "CPU {icon0}{icon1}{icon2}{icon3}",
+		"format": " {icon0}{icon1}{icon2}{icon3}",
 		"format-icons": [
 			"<span color='#a6e3a1'>▁</span>",
 			"<span color='#89b4fa'>▂</span>",
