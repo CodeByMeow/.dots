@@ -8,6 +8,7 @@
 	"gtk-layer-shell": true,
 	"modules-left": [
 		"wlr/taskbar",
+		"tray",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -19,14 +20,10 @@
 		"custom/empty",
 		"custom/weather",
 		"custom/empty",
-		"tray",
 		"battery",
 		"custom/empty",
-		"custom/empty",
 		"cpu",
-		"custom/empty",
 		"memory",
-		"custom/empty",
 		"backlight",
 		"network",
 		"pulseaudio",
@@ -204,7 +201,7 @@
 		"separate-outputs": true
 	},
 	"custom/weather": {
-		"exec": "~/.config/waybar/wttr.sh",
+		"exec": "wttr.sh",
 		"return-type": "json",
 		"format": "{}",
 		"tooltip": true,

@@ -18,8 +18,5 @@ city=$(echo "$location" | cut -d ',' -f 1)
 bar=$(echo $weather | awk -F "|" '{print $1}')
 tooltip=$(echo $weather | awk -F "|" '{print $2}')
 
-# Add city name to the bar
-bar_with_location="$city $bar"
-
 # Print the bar text and tooltip in JSON format
-echo "{\"text\":\"$bar_with_location\", \"tooltip\":\"$tooltip\"}"
+echo "{\"text\":\"$bar\", \"tooltip\":\"$tooltip\"}"

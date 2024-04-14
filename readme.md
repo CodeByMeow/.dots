@@ -28,11 +28,11 @@ _Note: I use colemak-dh keyboard layout_
 ```
 libnotify dunst unclutter duf bluetooth-autoconnect
 xorg-xsetroot tree-sitter-cli peco
-bc firefox bibata-cursor-theme catppucin-gtk-theme-mocch
+bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug at libmtp mpv
-hyprpicker hyprshoot hyprpaper wl-copy cliphist
+hyprpicker hyprshoot hyprpaper cliphist
 
 ```
 
