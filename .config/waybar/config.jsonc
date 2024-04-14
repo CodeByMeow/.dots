@@ -169,14 +169,14 @@
 		"interval": 1,
 		"format": "CPU {icon0}{icon1}{icon2}{icon3}",
 		"format-icons": [
-			"<span color='#a6e3a1'>▁</span>", // green (rosewater)
-			"<span color='#89b4fa'>▂</span>", // blue (blue)
-			"<span color='#cdd6f4'>▃</span>", // white (text)
-			"<span color='#cdd6f4'>▄</span>", // white (text)
-			"<span color='#f9e2af'>▅</span>", // yellow (yellow)
-			"<span color='#f9e2af'>▆</span>", // yellow (yellow)
-			"<span color='#f38ba8'>▇</span>", // orange (maroon)
-			"<span color='#eba0ac'>█</span>" // red (red)
+			"<span color='#a6e3a1'>▁</span>",
+			"<span color='#89b4fa'>▂</span>",
+			"<span color='#cdd6f4'>▃</span>",
+			"<span color='#cdd6f4'>▄</span>",
+			"<span color='#f9e2af'>▅</span>",
+			"<span color='#f9e2af'>▆</span>",
+			"<span color='#f38ba8'>▇</span>",
+			"<span color='#eba0ac'>█</span>"
 		],
 		"on-click": "kitty -e 'htop'"
 	},
