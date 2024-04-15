@@ -85,6 +85,8 @@ blank_box = false
 - `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
+- `checkupdates`: Checking new update aur.
+
 ### Input method
 
 - `fcixt5-config-qt`
