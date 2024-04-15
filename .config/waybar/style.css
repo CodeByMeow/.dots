@@ -139,6 +139,12 @@ tooltip {
 @keyframes blink {
   to {
     background-color: dodgerblue;
+    background-image: linear-gradient(
+      -45deg,
+      #fa8bff 0%,
+      #fa8bff 52%,
+      #2bd2ff 90%
+    );
   }
 }
 
