@@ -8,7 +8,6 @@
 	"gtk-layer-shell": true,
 	"modules-left": [
 		"custom/empty",
-		"custom/empty",
 		"wlr/taskbar",
 		"tray",
 		"hyprland/window"
@@ -30,7 +29,6 @@
 		"network",
 		"pulseaudio",
 		"clock",
-		"custom/empty",
 		"custom/empty"
 	],
 	"wlr/taskbar": {
@@ -135,6 +133,7 @@
 	},
 	"pulseaudio": {
 		"format": "{icon}  {volume}%",
+		"on-click": "pavucontrol",
 		"rotate": 0,
 		"format-muted": "婢",
 		"tooltip-format": "{icon}  {desc} // {volume}%",

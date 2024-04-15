@@ -16,7 +16,7 @@
     horizontal_padding = 6
     text_icon_padding = 0
     frame_width = 2
-    frame_color = "#02EC93"
+    frame_color = "#FD7F01"
     gap_size = 8
     separator_color = frame
     sort = yes
@@ -32,20 +32,21 @@
     hide_duplicate_count = false
     show_indicators = no
     icon_position = left
-    icon_path = /usr/share/icons/Reversal-green-dark/status/32/:/usr/share/icons/Reversal-green-dark/devices/32
-    icon_corner_radius = 8
+    icon_path = /home/ori/.config/dunst/assets/icons/:/home/ori/.local/share/icons/Tela-circle-dracula/32/status/:/home/ori/.local/share/icons/Tela-circle-dracula/32/devices/
+	enable_recursive_icon_lookup = false
+    icon_corner_radius = 9
     min_icon_size = 16
     max_icon_size = 64
     sticky_history = yes
     history_length = 20
     always_run_script = true
-    corner_radius = 8
+    corner_radius = 9
     ignore_dbusclose = false
     force_xinerama = false
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
-    background = "#3F3F3F"
+    background = "#1e1e1e44"
     foreground = "#EBDBB2"
     timeout = 5
 
