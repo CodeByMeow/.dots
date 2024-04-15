@@ -21,6 +21,7 @@
 	"modules-right": [
 		"custom/empty",
 		"custom/weather",
+		"custom/pacman",
 		"custom/empty",
 		"battery",
 		"cpu",
@@ -28,8 +29,6 @@
 		"backlight",
 		"network",
 		"pulseaudio",
-		"custom/empty",
-		"custom/pacman",
 		"clock",
 		"custom/empty",
 		"custom/empty"
@@ -155,7 +154,7 @@
 		}
 	},
 	"custom/empty": {
-		"format": " ",
+		"format": "  ",
 		"interval": "once",
 		"tooltip": false
 	},
@@ -196,6 +195,7 @@
 	},
 	"custom/weather": {
 		"exec": "wttr.sh",
+		"exec-if": "which wttr.sh",
 		"return-type": "json",
 		"format": "{}",
 		"tooltip": true,
@@ -205,6 +205,7 @@
 		"format": "{}",
 		"return-type": "json",
 		"exec": "checkupdate.sh",
+		"exec-if": "which checkupdate.sh",
 		"interval": 900
 	}
 }
