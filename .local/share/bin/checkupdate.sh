@@ -12,6 +12,10 @@ elif [ "$count" -gt 0 ]; then
     icon=" "
     text="$icon$count"
 	class="pending-updates"
+	rest=$((count - 5))
+	if [ "$rest" -gt 0 ]; then
+        tooltip="$tooltip\\nand $rest updates available."
+    fi
 fi
 
 echo '{"text":"'"$text"'", "tooltip":"'"$tooltip"'", "class":"'"$class"'"}'

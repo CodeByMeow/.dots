@@ -134,10 +134,10 @@
 		"interval": 2
 	},
 	"pulseaudio": {
-		"format": "{icon} {volume}%",
+		"format": "{icon}  {volume}%",
 		"rotate": 0,
 		"format-muted": "婢",
-		"tooltip-format": "{icon} {desc} // {volume}%",
+		"tooltip-format": "{icon}  {desc} // {volume}%",
 		"scroll-step": 5,
 		"format-icons": {
 			"headphone": "",
