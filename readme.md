@@ -32,7 +32,8 @@ bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug at libmtp mpv
-hyprpicker hyprshoot hyprpaper cliphist
+hyprpicker hyprshoot hyprpaper cliphist qt5-wayland qt6-wayland
+xdg-desktop-portal-hyprland
 
 ```
 
@@ -69,7 +70,7 @@ blank_box = false
 - Iosevka Ori Sans - _My custom Iosevka font_
 ### UI
     /etc/pacman.conf: ILoveCandy
-[Icon theme](https://github.com/vinceliuice/Tela-circle-icon-theme.git): color dracula
+[Icon theme](https://github.com/EliverLara/candy-icons): Candy icons
 
 ### Devtool
 
@@ -85,7 +86,7 @@ blank_box = false
 - `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
-- `checkupdates`: Checking new update aur.
+- `checkupdates`: Checking new update aur
 
 ### Input method
 

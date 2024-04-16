@@ -32,7 +32,7 @@
     hide_duplicate_count = false
     show_indicators = no
     icon_position = left
-    icon_path = /home/ori/.config/dunst/assets/icons/:/home/ori/.local/share/icons/Tela-circle-dracula/32/status/:/home/ori/.local/share/icons/Tela-circle-dracula/32/devices/
+    icon_path = /home/ori/.config/dunst/assets/icons/:/usr/share/icons/candy-icons/devices/
 	enable_recursive_icon_lookup = false
     icon_corner_radius = 9
     min_icon_size = 16
