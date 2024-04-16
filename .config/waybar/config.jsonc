@@ -203,8 +203,8 @@
 	"custom/pacman": {
 		"format": "{}",
 		"return-type": "json",
-		"exec": "checkupdate.sh",
-		"exec-if": "which checkupdate.sh",
+		"exec": "pacman.sh",
+		"exec-if": "which pacman.sh",
 		"interval": 900
 	}
 }
