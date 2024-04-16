@@ -8,6 +8,7 @@ class=""
 if [ -z "$updates" ]; then
     icon=" "
     text="$icon"
+    tooltip="There are no news for any repos, everything is up-to-date!"
 elif [ "$count" -gt 0 ]; then
     icon=" "
     text="$icon$count"
