@@ -1,339 +1,314 @@
-* {
-  font-family: "Ubuntu Light", tahoma, arial, helvetica, sans-serif;
-  font-weight: lighter;
+@charset "UTF-8";
+@-moz-document url(chrome://browser/content/browser.xhtml) {
+    /*Rounds a bit the url bar*/
+    #urlbar-background,
+    #searchbar,
+    #urlbar-input-containe {
+        border-radius: 5px !important;
+    }
+    /*Hides the QR Sharing Button inside URL*/
+    [data-l10n-id="qrcode-generate-page-action"] {
+        display: none;
+    }
+    /*Hides the "Translate Page"(TWP) Button inside the URL bar*/
+    [aria-label="Translate this page"] {
+        display: none;
+    }
+    #stop-reload-button {
+        display: none !important;
+    }
+    /*
+Hiding Context Menu Items
+*/
+    #context-back,
+    #context-forward,
+    #context-reload,
+    #context-bookmarkpage,
+    #context-sep-navigation,
+    #context-sendpagetodevice,
+    #context-addpagetowebpanel,
+    #context-inspect-a11y,
+    #context-setDesktopBackground,
+    #context-sep-setbackground,
+    #context-sendlinktodevice,
+    #context-sendimage,
+    #context-openlinkincontainertab,
+    #context-sendlink,
+    #context-savelink,
+    #context-openlinkprivate {
+        display: none !important;
+    }
+    /*Deletes the Floorp sidebar*/
+    #sidebar-select-box {
+        display: none !important;
+    }
+    /*Must do soomething for sure*/
+    #PersonalToolbar {
+        position: relative !important;
+    }
+    /*Minimize, maximize, and close buttons are round and uniform*/
+    .titlebar-button.titlebar-min,
+    .titlebar-button.titlebar-restore,
+    .titlebar-button.titlebar-close {
+        border-radius: 50%;
+        height: 10px !important;
+        width: 10px !important;
+        margin-top: auto !important;
+        border-radius: 100%;
+        padding: 8px !important;
+        margin-bottom: auto !important;
+        margin-left: 5px !important;
+        margin-right: 10px !important;
+    }
+    /*Hides minimeze, maximize, and close icon inside the buttons*/
+    .titlebar-button>.toolbarbutton-icon {
+        opacity: 0;
+    }
+    /*Changes the minimize, maximize and close windown button colors for a more pleasant  ~ a e s t h e t i c ~ */
+    .titlebar-button.titlebar-min {
+        background-color: #a6e3a1 !important;
+    }
+    .titlebar-button.titlebar-restore {
+        background-color: #f9e2af !important;
+    }
+    .titlebar-button.titlebar-close {
+        background-color: #eba0ac !important;
+    }
+    /*Removes the placeholder text inside the searchbar*/
+    #urlbar-input::placeholder,
+    .searchbar-textbox::placeholder {
+        opacity: 0 !important;
+    }
+    /*Makes the folders icons a sphere of the highlight color of the applied theme*/
+    .bookmark-item>.toolbarbutton-icon[type="menu"],
+    .menu-iconic.bookmark-item[container="true"]>.menu-iconic-left>image.menu-iconic-icon {
+        list-style-image: url("") !important;
+        /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
+        background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
+    }
+    .menu-iconic-left>image.menu-iconic-icon {
+        border-radius: 50%;
+    }
+    /*Removes the images from the bookmarks*/
+    .bookmark-item>image {
+        display: none;
+    }
+    /*Margins of the bookmarks*/
+    #personal-toolbar-empty-description,
+    toolbarbutton.bookmark-item:not(.subviewbutton) {
+        margin: 6px 10px 4px 10px !important;
+    }
+    /*It should align the window min, max and close buttons*/
+    .toolbarbutton-text {
+        margin: -2px 4px -2px 4px !important;
+    }
+    /*Makes all the icons of the webdsites on the tabs round*/
+    .tab-icon-image {
+        border-radius: 50%;
+    }
+    /*Changes the new tab icon to a solid circle of the hightlight color of the current theme*/
+    .tab-icon-image[src="chrome://branding/content/icon32.png"] {
+        content: url("") !important;
+        /* background-color: #eba0ac; For catppuccin mocha (reddish)*/
+        background-color: var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor));
+    }
+    /* Removes the text from the tabs*/
+    /*
+    .tab-label-container {
+    display: none !important;
+    }
+    .tabbrowser-tab:not([pinned]) {
+    flex: 0 !important;
+    }
+    .tab-close-button {
+    display: none;
+    }
+    */
+    /*Aligns the text inside the tabs to not be so crammed with the top of the screen*/
+    #urlbar-container {
+        margin-top: 5px !important;
+    }
+    /*Centers the navigation buttons more to the horizontal center of the titlebar*/
+    #back-button,
+    #reload-button,
+    #forward-button {
+        margin-top: 2px !important;
+    }
+    /*Aligns the url bar to the right leaving space for the tabs*/
+    #urlbar,
+    #urlbar-container {
+        margin-left: 650px;
+        position: absolute;
+        display: block;
+        width: 410px !important;
+    }
+    .toolbar-items {
+        width: 600px;
+        margin-left: 120px;
+        padding-right: 700px;
+    }
+    /*Brings the tabs to the front and makes them use all the available space*/
+    #TabsToolbar-customization-target {
+        width: 120%;
+        z-index: 999;
+    }
+    /*Removes a spacer to fit more elements into the single line*/
+    hbox.titlebar-spacer {
+        display: none !important;
+    }
+    /*Makes the navingation bar wider to align better the other items*/
+    #navbar {
+        width: 108% !important;
+    }
+    /*Makes the extensions button position relative to the other items*/
+    #unified-extensions-button {
+        position: relative;
+    }
+    /*Allows for the url bar to exceed the toolbar so that the extension button is clickable*/
+    #nav-bar:not([urlbar-exceeds-toolbar-bounds]),
+    toolbar[overflowable][customizing]>.customization-target {
+        overflow: visible !important;
+    }
+    /*Alings the 3 dots button*/
+    #PanelUI-button {
+        margin-right: -40px;
+    }
+    /*Aligns the urlbar*/
+    #urlbar {
+        margin-left: 700px;
+    }
+    /*Makes the titlebar (container of the tabs) clickthrough so that the urlbar and other items can be interacted with*/
+    #titlebar {
+        pointer-events: none;
+    }
+    /*Specifies the tabs (child of the titlebar) to be clickable to enable interactions with the tabs*/
+    #TabsToolbar-customization-target {
+        pointer-events: all;
+    }
+    /*Moves the min, max close window buttons to the furthest right*/
+    #floorp-tabbar-window-manage-container {
+        margin-left: auto;
+    }
+    /*Adjusts the sizing of the tabs and makes them be able to be much smaller*/
+    #tabbrowser-tabs {
+        max-width: 670px;
+        min-width: 670px;
+        --tab-min-width: 30px !important;
+    }
+    /*Highlights the active tab with an outine of the highlight color of the current theme*/
+    #TabsToolbar #firefox-view-button[open]:not(:focus-visible)>.toolbarbutton-icon:-moz-lwtheme,
+    .tab-background[selected]:not([multiselected="true"]):-moz-lwtheme {
+        outline: 1px solid var(--lwt-tab-line-color, var(--lwt-tabs-border-color, currentColor)) !important;
+        outline-offset: -1px !important;
+        border-radius: 5px !important;
+    }
+    /*Aligns the extension and three dots buttons to be more centered with the other UI in terms of vertical position*/
+    #unified-extensions-button,
+    #PanelUI-button,
+    #downloads-button {
+        margin-top: 5px !important;
+    }
+    /*Places the toolbar in the front so that the elements are clickable*/
+    #personal-toolbar {
+        z-index: 9999999 !important;
+    }
+    #PersonalToolbar {
+        position: absolute;
+        margin-top: -40px;
+        z-index: 9999;
+        /*Hides the complete bar*/
+        visibility: hidden;
+    }
+    #personal-bookmarks {
+        /* Shows only the icon, it has to be said explicitly because earlier we hid the parent*/
+        visibility: visible;
+        /*Ailgning the icon to fit inside the rest of the UI*/
+        margin-left: 90px;
+        margin-top: 1px;
+        margin-right: var(--tab-min-height) !important;
+        padding-top: 5px;
+        height: 36px !important;
+    }
+    /*Helps with aligning the bookmarks tab*/
+    #PlacesToolbar {
+        position: absolute;
+    }
+    /*Collapses all the bookmarks into a single icon - idea by: u/hansmn*/
+    #personal-bookmarks,
+    #PlacesToolbar,
+    #PlacesToolbarItems {
+        min-width: 0;
+        max-width: 0px !important;
+    }
+    /*Changes the icon from an arrow to the bookmark icon*/
+    #PlacesChevron {
+        list-style-image: url("chrome://browser/skin/fluentUI/bookmark-hollow.svg") !important;
+    }
+    /*Makes the bookmarks more compact - Credit: https://www.youtube.com/@Snowwie88*/
+    menupopup:not(.in-menulist)>menuitem,
+    menupopup:not(.in-menulist)>menu {
+        padding-block: 1px !important;
+        /* reduce to 3px, 2px, 1px or 0px as needed */
+        min-height: unset !important;
+        /* v92.0 - for padding below 4px */
+    }
+     :root {
+        --arrowpanel-menuitem-padding: 4px 8px !important;
+    }
 }
 
-@import url("file:///home/ori/.cache/wal/colors.css");
 
-body {
-  background: $background;
-  color: $foreground;
-}
+/* ------------------------------------------------------------------------------------------------------ */
 
-main {
-  background-image: url($wallpaper);
-}
 
-a {
-  color: $color4;
-}
+/* The following code is a modified extract of Oneline for Proton  by Newmanls (see credits in README.md) */
 
-/* Use the variables */
-#nav-bar {
-  background-image: var(--wallpaper);
-  color: var(--color7) !important;
-}
 
-h1 {
-  background-color: var(--color3);
-}
+/* Windows specific styles */
 
-/***** TAB BAR *****/
-
-/* Shrink tab bar */
-#tabbrowser-tabs,
-#tabbrowser-arrowscrollbox,
-#tabbrowser-tab,
-.tabbrowser-tab,
-.tab-stack,
-.tab-content,
-.tab-background {
-  height: 32px !important;
-  min-height: 32px !important;
-  margin-bottom: 0 !important;
-}
-
-:root {
-  --tab-min-height: 0 !important;
-  --tab-block-margin: 0 !important;
-}
-
-#tabs-newtab-button .toolbarbutton-icon,
-#alltabs-button .toolbarbutton-icon {
-  width: 32px !important;
-  padding: 8px !important;
-}
-
-#navigator-toolbox {
-  /* Remove black border */
-  margin-bottom: -1px;
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23) !important;
-  z-index: 1000 !important;
-}
-
-/* Move close button to the left on hover */
-.tab-label-container {
-  order: 1;
-  font-size: 14px;
-}
-
-.tabbrowser-tab .tab-close-button {
-  display: none !important;
-  border-radius: 0px !important;
-  margin-left: -4.5px !important;
-  margin-right: 2px !important;
-}
-
-.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-icon-stack {
-  display: none !important;
-  order: 3;
-}
-
-.tabbrowser-tab[selected="true"]:not([pinned]):hover .tab-close-button {
-  display: block !important;
-  position: relative;
-  order: 0;
-}
-
-/* Remove silly space */
-.titlebar-spacer {
-  width: 8px !important;
-}
-
-/** Buttons in tab bar **/
-#TabsToolbar .toolbarbutton-1 .toolbarbutton-icon {
-  width: 32px !important;
-  padding: 8px !important;
-  height: 100% !important;
-}
-
-toolbaritem:last-of-type {
-  margin-right: 16px !important;
-}
-
-/* Container color bar */
-.tab-context-line {
-  border-radius: 0px !important;
-  margin: 8px 1px 0 !important;
-}
-
-/***** NAV BAR *****/
-.urlbar-input-box {
-  font-size: 13px !important;
-  font-weight: light !important;
-}
-
-#nav-bar {
-  position: absolute !important;
-  top: 36px !important;
-  left: 0px !important;
-  right: 0px !important;
-  height: 0px !important;
-  border-radius: 0px !important;
-
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23) !important;
-
-  z-index: 1002 !important;
-  min-height: 0px !important;
-  transition:
-    height var(--animation-easing-function) 500ms 250ms,
-    opacity var(--animation-easing-function) 500ms 250ms !important;
-  opacity: 0 !important;
-}
-
-:root[customizing] #nav-bar,
-#navigator-toolbox:hover #nav-bar,
-#nav-bar:focus-within {
-  height: 40px !important;
-  opacity: 100 !important;
-  transition:
-    height var(--animation-easing-function) 500ms 100ms,
-    opacity var(--animation-easing-function) 500ms 100ms !important;
-}
-
-#urlbar[breakout] {
-  top: unset !important;
-}
-
-#nav-bar:focus-within #urlbar-input {
-  height: 28px !important;
-}
-
-#urlbar-input-container {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.urlbarView {
-  position: absolute !important;
-  background-color: light-dark(#f8f8f8, #303030) !important;
-  border-radius: 0px !important;
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23) !important;
-}
-
-/***** NAV BUTTONS *****/
-toolbarbutton#back-button,
-toolbarbutton#forward-button {
-  width: 42px !important;
-  transition:
-    width var(--animation-easing-function) 500ms,
-    opacity var(--animation-easing-function) 500ms !important;
-}
-
-toolbarbutton#back-button {
-  background-color: light-dark(
-    color-mix(in srgb, var(--toolbar-bgcolor), black 3%),
-    color-mix(in srgb, var(--toolbar-bgcolor), black 20%)
-  ) !important;
-  border-radius: 0px;
-  margin: 4px 0px 4px 20px !important;
-}
-
-toolbarbutton#forward-button {
-  background-color: light-dark(
-    color-mix(in srgb, var(--toolbar-bgcolor), black 3%),
-    color-mix(in srgb, var(--toolbar-bgcolor), black 20%)
-  ) !important;
-  border-radius: 0px;
-  margin: 4px -1px 4px 0px !important;
-}
-
-:root:not([customizing]) #nav-bar toolbarbutton#back-button[disabled="true"] {
-  width: 4px !important;
-  opacity: 1 !important;
-}
-
-:root:not([customizing])
-  #nav-bar
-  toolbarbutton#back-button[disabled="true"]
-  .toolbarbutton-icon {
-  opacity: 0;
-}
-
-:root:not([customizing])
-  #nav-bar
-  toolbarbutton#forward-button[disabled="true"] {
-  width: 4px !important;
-  opacity: 1 !important;
-}
-
-:root:not([customizing])
-  #nav-bar
-  toolbarbutton#forward-button[disabled="true"]
-  .toolbarbutton-icon {
-  opacity: 0;
-}
-
-#stop-reload-button {
-  background-color: light-dark(
-    color-mix(in srgb, var(--toolbar-bgcolor), black 3%),
-    color-mix(in srgb, var(--toolbar-bgcolor), black 20%)
-  ) !important;
-  padding: 4px !important;
-  border-radius: 0px;
-  margin: 4px 0px 4px 0px !important;
-  z-index: 5;
-}
-
-toolbarbutton#back-button:hover,
-toolbarbutton#forward-button:hover,
-#stop-reload-button:hover {
-  z-index: 10;
-}
-
-toolbarbutton#back-button .toolbarbutton-icon,
-toolbarbutton#forward-button .toolbarbutton-icon,
-#stop-reload-button .toolbarbutton-icon {
-  height: 30px !important;
-}
-
-#urlbar-background {
-  border-radius: 0px !important;
-  margin-left: -4px;
-  z-index: -1;
-}
-
-#urlbar {
-  padding-left: 8px !important;
-}
-
-#bookmarks-menu-button {
-  margin-right: 16px !important;
-}
-
-/***** BOOKMARKS BAR *****/
-
-#PersonalToolbar {
-  position: absolute !important;
-  top: 78px !important;
-  left: 0px !important;
-  right: 0px !important;
-  height: 0px !important;
-  border-radius: 0px !important;
-
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23) !important;
-
-  z-index: 1001 !important;
-  min-height: 0px !important;
-  transition:
-    height var(--animation-easing-function) 500ms 200ms,
-    opacity var(--animation-easing-function) 500ms 200ms !important;
-  opacity: 0 !important;
-}
-
-:root[customizing] #PersonalToolbar,
-#navigator-toolbox:hover #PersonalToolbar,
-#PersonalToolbar:focus-within {
-  height: 40px !important;
-  opacity: 100 !important;
-  transition:
-    height var(--animation-easing-function) 500ms 150ms,
-    opacity var(--animation-easing-function) 500ms 150ms !important;
-}
-
-/***** FIX THEMES *****/
-#nav-bar {
-  /* If your animated theme doesn't show in the nav-bar, uncomment the following line: */
-  /* background-image: var(--lwt-additional-images); */
-  /* (and obviously, comment out the following:) */
-  background-image: var(--lwt-header-image), var(--lwt-additional-images);
-
-  background-repeat: var(--lwt-background-tiling) !important;
-
-  /* If your theme doesn't fill out the screen, uncomment the following line: */
-  /* background-color: var(--lwt-accent-color) !important; */
-
-  background-position:
-    right top,
-    var(--lwt-background-alignment) !important;
-}
-
-#PersonalToolbar {
-  /* If your animated theme doesn't show in the bookmark-bar, uncomment the following line: */
-  /* background-image: var(--lwt-additional-images); */
-  /* (and obviously, comment out the following:) */
-  background-image: var(--lwt-header-image), var(--lwt-additional-images);
-
-  background-repeat: var(--lwt-background-tiling) !important;
-
-  /* If your theme doesn't fill out the screen, uncomment the following line: */
-  /* background-color: var(--lwt-accent-color) !important; */
-
-  background-position:
-    right top,
-    var(--lwt-background-alignment) !important;
-}
-
-/***** NOTIFICATION STACK *****/
-.notificationbox-stack {
-  z-index: 1010 !important;
-  width: 50% !important;
-  border-radius: 0px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  left: 0 !important;
-  right: 0 !important;
-}
-
-#nav-bar:hover,
-#nav-bar:focus-within {
-  z-index: 1020 !important;
+@media (-moz-platform: windows),
+(-moz-platform: windows-win10) {
+    /* Hide main tabs toolbar */
+     :root[tabsintitlebar] {
+        --uc-window-control-width: 137px;
+        /* Space at the right of nav-bar for window controls */
+        /* --uc-window-drag-space-width: 24px; */
+        /* To add extra window drag space in nav-bar */
+    }
+    #nav-bar {
+        border-inline: var(--uc-window-drag-space-width, 80px) solid var(--toolbar-bgcolor);
+        border-inline-style: solid !important;
+        border-right-width: calc(var(--uc-window-control-width, 0px) + var(--uc-window-drag-space-width, 0px));
+        /* This makes it possible to drag the maximized window. */
+        margin-left: -80px;
+        /* Removes the space left when hiding .titlebar-buttonbox-container */
+    }
+     :root {
+        --uc-toolbar-height: 32px;
+        --chrome-content-separator-color: none !important;
+    }
+     :root:not([uidensity="compact"]) {
+        --uc-toolbar-height: 38px;
+    }
+     :root:not([inFullscreen]) #nav-bar {
+        margin-top: calc(0px - var(--uc-toolbar-height));
+        z-index: 2;
+    }
+    /* For a rounded button design, uncomment both lines in .titlebar-buttonbox. */
+    .titlebar-buttonbox {
+        z-index: 3 !important;
+        /* padding-right:3px; */
+    }
+    .titlebar-buttonbox * {
+        /* border-radius: 5px; */
+        width: 35px;
+        height: 38px;
+        pointer-events: auto;
+    }
+    #titlebar {
+        z-index: 3;
+    }
+     :root[inFullscreen] #nav-bar {
+        border-right: none !important;
+    }
 }

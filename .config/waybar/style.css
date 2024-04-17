@@ -7,10 +7,10 @@
   min-height: 10px;
 }
 
-@import "theme.css";
+@import "/home/ori/.cache/wal/colors-waybar.css";
 
 window#waybar {
-  background: @bar-bg;
+  background: @background;
 }
 
 tooltip {
@@ -20,7 +20,7 @@ tooltip {
     #fa8bff 52%,
     #2bd2ff 90%
   );
-  color: @wb-act-color;
+  color: @color7;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -43,7 +43,7 @@ tooltip {
   padding-left: 3px;
   padding-right: 3px;
   margin-right: 0px;
-  color: @main-fg;
+  color: @foreground;
 }
 
 #workspaces button.active {
@@ -53,7 +53,7 @@ tooltip {
     #fa8bff 52%,
     #2bd2ff 90%
   );
-  color: @wb-act-fg;
+  color: @foreground;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -64,8 +64,7 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background: @wb-hvr-bg;
-  color: @wb-hvr-fg;
+  background: @color10;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
@@ -80,7 +79,7 @@ tooltip {
   padding-left: 3px;
   padding-right: 3px;
   margin-right: 0px;
-  color: @wb-color;
+  color: @background;
 }
 
 #taskbar button.active {
@@ -90,7 +89,7 @@ tooltip {
     #fa8bff 52%,
     #2bd2ff 90%
   );
-  color: @wb-act-color;
+  color: @color10;
   margin-left: 3px;
   padding-left: 12px;
   padding-right: 12px;
@@ -101,8 +100,8 @@ tooltip {
 }
 
 #taskbar button:hover {
-  background: @wb-hvr-bg;
-  color: @wb-hvr-color;
+  background: @color1;
+  color: @color10;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
@@ -121,8 +120,8 @@ tooltip {
 #custom-pacman,
 #custom-cava,
 #workspaces {
-  color: @main-fg;
-  background: @main-bg;
+  color: @foreground;
+  background: @background;
   opacity: 1;
   margin: 4px 0px 4px 0px;
   padding-left: 12px;
@@ -173,11 +172,11 @@ tooltip {
 #custom-pacman.pending-updates {
   animation-name: blink;
   animation-duration: 3s;
-  color: #ffffff;
+  color: @foreground;
 }
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  background-color: @color2;
+  color: @foreground;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
