@@ -10,6 +10,7 @@
 		"custom/empty",
 		"wlr/taskbar",
 		"tray",
+		"custom/cava",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -205,7 +206,7 @@
 		"return-type": "json",
 		"exec": "pacman.sh",
 		"exec-if": "which pacman.sh",
-		"interval": 900,
-		"on-click": "system-update.sh"
+		"on-click": "system-update.sh",
+		"interval": 900
 	}
 }

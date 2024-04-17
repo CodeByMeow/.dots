@@ -2,8 +2,11 @@
 
 aurhlpr='yay'
 updates=$(updates.sh)
+count=$(echo "$updates" | wc -l)
 
-if [[ "$update" -gt 0 ]] ; then
+if [ -z "$updates" ]; then
+	notify-send "There are no news for any repos, everything is up-to-date!"
+elif [[ "$count" -gt 0 ]] ; then
     trap 'pkill -RTMIN+20 waybar' EXIT
     command="
 	pfetch
@@ -12,6 +15,4 @@ if [[ "$update" -gt 0 ]] ; then
 	notify-send 'Update system successfully'
     "
     kitty --title systemupdate sh -c "${command}"
-else
-	notify-send "There are no news for any repos, everything is up-to-date!"
 fi
