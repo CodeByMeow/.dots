@@ -1,110 +1,59 @@
+/* Set global styles */
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: "JetBrainsMono NF", "Iosevka Nerd Font";
-  font-weight: bold;
-  font-size: 14px;
-  min-height: 10px;
+	border: none;
+	border-radius: 0px;
+	font-family: "JetBrainsMono NF", "Iosevka Nerd Font";
+	font-weight: bold;
+	font-size: 14px;
+	min-height: 10px;
 }
 
+/* Import colors from Wayland */
 @import "/home/ori/.cache/wal/colors-waybar.css";
 
+/* Apply styles to the Waybar window */
 window#waybar {
-  background: @background;
+	background: transparent;
 }
 
+/* Define styles for tooltips */
 tooltip {
-  background-image: linear-gradient(
-    -45deg,
-    #fa8bff 0%,
-    #fa8bff 52%,
-    #2bd2ff 90%
-  );
-  color: @color7;
-  margin-left: 3px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 3px;
-  animation: rotate 20s ease-in-out infinite;
-  background-size: 400% 400%;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-  border-radius: 9px;
-  border-width: 0px;
+	/* background: @background; */
+	color: @color7;
+	margin: 3px;
+	padding: 0 12px;
+	transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	border-radius: 9px;
+	border-width: 2px;
 }
 
-#workspaces button {
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0px;
-  border-radius: 9px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 0px;
-  color: @foreground;
-}
-
-#workspaces button.active {
-  background-image: linear-gradient(
-    -45deg,
-    #fa8bff 0%,
-    #fa8bff 52%,
-    #2bd2ff 90%
-  );
-  color: @foreground;
-  margin-left: 3px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 3px;
-  animation: rotate 20s ease-in-out infinite;
-  background-size: 400% 400%;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
-#workspaces button:hover {
-  background: @color10;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-}
-
+/* Styles for workspace buttons */
+#workspaces button,
 #taskbar button {
-  box-shadow: none;
-  text-shadow: none;
-  padding: 0px;
-  border-radius: 9px;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  margin-left: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  margin-right: 0px;
-  color: @background;
+	box-shadow: none;
+	text-shadow: none;
+	padding: 0px;
+	border-radius: 9px;
+	margin: 3px 0px;
+	padding: 4px 10px;
+	color: @foreground;
 }
 
+#workspaces button.active,
 #taskbar button.active {
-  background-image: linear-gradient(
-    -45deg,
-    #fa8bff 0%,
-    #fa8bff 52%,
-    #2bd2ff 90%
-  );
-  color: @color10;
-  margin-left: 3px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-right: 3px;
-  animation: rotate 20s ease-in-out infinite;
-  background-size: 400% 400%;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	color: @foreground;
+	background: @background;
 }
 
+/* Hover effect for workspace buttons */
+#workspaces button:hover,
 #taskbar button:hover {
-  background: @color1;
-  color: @color10;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	background: @color10;
+	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
+/* Additional element styles */
 #backlight,
 #battery,
 #clock,
@@ -120,78 +69,60 @@ tooltip {
 #custom-pacman,
 #custom-cava,
 #workspaces {
-  color: @foreground;
-  background: @background;
-  opacity: 1;
-  margin: 4px 0px 4px 0px;
-  padding-left: 12px;
-  padding-right: 12px;
-  border-radius: 18px;
+	color: @foreground;
+	opacity: 1;
+	margin: 4px 0px;
+	padding: 0 12px;
+	border-radius: 18px;
 }
 
+/* Fine-tuning for specific elements */
 #workspaces,
 #taskbar {
-  padding: 0px;
+	padding: 0px;
 }
 
-@keyframes rotate {
-  0% {
-    background-position: 0 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0 50%;
-  }
-}
-
-@keyframes blink {
-  to {
-    background-color: dodgerblue;
-    background-image: linear-gradient(
-      -45deg,
-      #fa8bff 0%,
-      #fa8bff 52%,
-      #2bd2ff 90%
-    );
-  }
-}
-
+/* Animation for pacman */
 #custom-pacman {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  padding-left: 6px;
-  padding-right: 6px;
-  color: #669467;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	padding: 0 6px;
+	color: #669467;
 }
 
 #custom-pacman.pending-updates {
-  animation-name: blink;
-  animation-duration: 3s;
-  color: @foreground;
-}
-#battery.critical:not(.charging) {
-  background-color: @color2;
-  color: @foreground;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+	animation-name: blink;
+	animation-duration: 3s;
+	color: @foreground;
 }
 
-#custom-cava {
-  animation: rotate 20s ease-in-out infinite;
-  background-size: 400% 400%;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-  background-image: linear-gradient(
-    -45deg,
-    #fa8bff 0%,
-    #fa8bff 52%,
-    #2bd2ff 90%
-  );
+/* Battery critical animation */
+#battery.critical:not(.charging) {
+	background-color: @color2;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+/* Define keyframes */
+@keyframes rotate {
+	0% {
+		background-position: 0 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0 50%;
+	}
+}
+
+@keyframes blink {
+	to {
+		background-color: dodgerblue;
+	}
 }

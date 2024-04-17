@@ -1,16 +1,13 @@
 {
 	"layer": "top",
 	"position": "top",
-	"mod": "dock",
+	// "mod": "dock",
 	"height": 32,
 	"exclusive": true,
 	"passthrough": false,
 	"gtk-layer-shell": true,
 	"modules-left": [
 		"custom/empty",
-		"wlr/taskbar",
-		"tray",
-		"custom/cava",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -22,13 +19,13 @@
 		"custom/empty",
 		"custom/weather",
 		"custom/pacman",
-		"custom/empty",
 		"battery",
 		"cpu",
 		"memory",
 		"backlight",
 		"network",
 		"pulseaudio",
+		"tray",
 		"clock",
 		"custom/empty"
 	],
@@ -75,7 +72,7 @@
 	"tray": {
 		"icon-size": 18,
 		"rotate": 0,
-		"spacing": 5
+		"spacing": 6
 	},
 	"battery": {
 		"states": {
