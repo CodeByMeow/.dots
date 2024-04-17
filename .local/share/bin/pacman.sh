@@ -1,6 +1,6 @@
 #!/bin/bash
 
-updates=$(updates.sh)
+updates=$(checkupdates 2> /dev/null)
 count=$(echo "$updates" | wc -l)
 tooltip=$(echo "$updates" | head -n 5 | sed 's/"/\\"/g' | awk -v RS="" '{gsub(/\n/,"\\n")}1')
 class=""
