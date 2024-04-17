@@ -205,6 +205,7 @@
 		"return-type": "json",
 		"exec": "pacman.sh",
 		"exec-if": "which pacman.sh",
-		"interval": 900
+		"interval": 900,
+		"on-click": "system-update.sh"
 	}
 }
