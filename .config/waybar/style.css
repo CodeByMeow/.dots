@@ -172,6 +172,7 @@ tooltip {
 #custom-pacman.pending-updates {
   animation-name: blink;
   animation-duration: 3s;
+  color: #ffffff;
 }
 #battery.critical:not(.charging) {
   background-color: #f53c3c;

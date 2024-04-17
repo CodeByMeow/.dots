@@ -5,7 +5,6 @@
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
 - **Terminal Emulator** :cat: [ Kitty ](https://sw.kovidgoyal.net/kitty)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
-- **Compositor** :shaved_ice: [Picom](https://github.com/yshui/picom)
 - **File Manager** :flower_playing_cards: [ Yazi ](https://yazi-rs.github.io/docs/)
 - **Editor** :sunglasses: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
 
@@ -32,7 +31,7 @@ bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug at libmtp mpv
-hyprpicker hyprshoot hyprpaper cliphist qt5-wayland qt6-wayland
+hyprpicker hyprshoot hyprpaper hyprlock hyprcursor cliphist qt5-wayland qt6-wayland
 xdg-desktop-portal-hyprland
 
 ```

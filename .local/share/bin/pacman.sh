@@ -6,7 +6,7 @@ tooltip=$(echo "$updates" | head -n 5 | sed 's/"/\\"/g' | awk -v RS="" '{gsub(/\
 class=""
 
 if [ -z "$updates" ]; then
-    icon=" "
+    icon=" "
     text="$icon"
     tooltip="There are no news for any repos, everything is up-to-date!"
 elif [ "$count" -gt 0 ]; then
