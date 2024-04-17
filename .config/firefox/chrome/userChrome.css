@@ -3,6 +3,31 @@
   font-weight: lighter;
 }
 
+@import url("file:///home/ori/.cache/wal/colors.css");
+
+body {
+  background: $background;
+  color: $foreground;
+}
+
+main {
+  background-image: url($wallpaper);
+}
+
+a {
+  color: $color4;
+}
+
+/* Use the variables */
+#nav-bar {
+  background-image: var(--wallpaper);
+  color: var(--color7) !important;
+}
+
+h1 {
+  background-color: var(--color3);
+}
+
 /***** TAB BAR *****/
 
 /* Shrink tab bar */
