@@ -18,13 +18,13 @@ window#waybar {
 
 /* Define styles for tooltips */
 tooltip {
-  background: #1e1e2e;
-  color: @color7;
+  background: @color1;
+  color: @foreground;
   margin: 3px;
   padding: 0 12px;
   border-width: 2px;
   border-style: solid;
-  border-color: #11111b;
+  border-color: @color1;
   border-radius: 9px;
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   box-shadow: none;
@@ -45,13 +45,13 @@ tooltip {
 #taskbar button.active {
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   color: @foreground;
-  background: @background;
+  background: @color2;
 }
 
 /* Hover effect for workspace buttons */
 #workspaces button:hover,
 #taskbar button:hover {
-  background: @color10;
+  background: @color3;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
