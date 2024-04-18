@@ -1,13 +1,14 @@
 {
 	"layer": "top",
 	"position": "top",
-	// "mod": "dock",
+	"mod": "dock",
 	"height": 32,
 	"exclusive": true,
 	"passthrough": false,
 	"gtk-layer-shell": true,
 	"modules-left": [
 		"custom/empty",
+		"clock",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -26,7 +27,6 @@
 		"network",
 		"pulseaudio",
 		"tray",
-		"clock",
 		"custom/empty"
 	],
 	"wlr/taskbar": {
@@ -126,7 +126,6 @@
 		"format-linked": "󰈀 {ifname} (No IP)",
 		"format-disconnected": "󰖪 ",
 		"tooltip-format-disconnected": "Disconnected",
-		"format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
 		"interval": 2
 	},
 	"pulseaudio": {

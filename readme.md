@@ -31,8 +31,9 @@ bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug at libmtp mpv
-hyprpicker hyprshoot hyprpaper hyprlock hyprcursor cliphist qt5-wayland qt6-wayland
+hyprpicker hyprshoot hyprpaper hyprlock hyprcursor hypridle cliphist qt5-wayland qt6-wayland
 xdg-desktop-portal-hyprland pywal
+swww swaybg
 
 ```
 

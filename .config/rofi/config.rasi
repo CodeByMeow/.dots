@@ -1,0 +1,140 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+	display-drun: "󱓞 App";
+	show-icons: true;
+	icon-theme: "candy-icons";
+}
+
+* {
+    font:   "JetBrainsMono 15";
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+    background-alt:              @selected-active-background; // Buttons background
+    selected:                    @selected-urgent-background; // Button selected
+    active:                      @selected-normal-background; // Window activated
+    urgent:                      @selected; // When hovering the activated window (maybe more?)
+
+    text-selected:               @background;
+    text-color:                  @foreground;
+    border-color:                @selected;
+}
+
+window {
+    enabled:                    true;
+    fullscreen:                 false;
+    transparency:               "real";
+    cursor:                     "default";
+    spacing:                    0px;
+    border:                     2px;
+    border-radius:              9px;
+    location:                   center;
+    anchor:                     center;
+
+    // Style Values
+    width:                      55%;
+	height:                     55%;
+    background-color:           #00000088;
+}
+
+mainbox {
+    padding:				    12px;
+    orientation:                 horizontal;
+    children:                    [ "imagebox", "listbox" ];
+    enabled:                     true;
+    background-color:            transparent;
+}
+
+imagebox {
+    padding:                     2px;
+    background-color:            transparent;
+    background-image:            url("~/.config/rofi/pokemon.png", height);
+    orientation:                 horizontal;
+}
+
+listbox {
+    spacing:                     20px;
+    padding:                     20px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ "inputbar", "listview", "message" ];
+}
+
+inputbar {
+    border:         2px;
+    padding:    8px 16px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+    enabled:                     true;
+    margin:                      20px;
+    background-color:            transparent;
+    border-radius:               9px;
+    orientation:                 horizontal;
+}
+
+prompt {
+    text-color: #ebdbb3;
+	background-color: transparent;
+}
+
+entry {
+    enabled:                     true;
+    expand:                      false;
+    width:                       100%;
+    border-radius:               10px;
+    text-color:                  inherit;
+    cursor:                      text;
+	background-color:		     transparent;
+	placeholder:				"Pika pika";
+}
+
+message {
+    margin:             12px 0 0;
+    border-radius:      9px;
+    border-color:       #b95cb9;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    lines:      8;
+    columns:    1;
+    enabled:                     true;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     10px;
+    background-color:            transparent;
+
+//  Adapt rofi theme
+    border:                      0px;
+}
+
+element {
+    padding:        8px 16px;
+    spacing:        8px;
+    border-radius:  9px;
+}
+
+element-icon {
+    size:           1.2em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: #ebdbb3;
+}
+
+/* ---- Dummy ---- */
+dummy {
+    expand:                      true;
+    background-color:            transparent;
+}
