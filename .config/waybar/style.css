@@ -45,13 +45,13 @@ tooltip {
 #taskbar button.active {
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   color: @foreground;
-  background: @color2;
+  background: @color3;
 }
 
 /* Hover effect for workspace buttons */
 #workspaces button:hover,
 #taskbar button:hover {
-  background: @color3;
+  background: @color5;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
@@ -111,6 +111,6 @@ tooltip {
 
 @keyframes blink {
   to {
-    background-color: @color4;
+    background-color: @color3;
   }
 }

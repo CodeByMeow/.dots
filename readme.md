@@ -1,7 +1,7 @@
 - **Window Manager** :bento: [ Hyprland ](https://hyprland.org/)
 - **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
 - **Panel** :blossom: [ Waybar ](https://github.com/Alexays/Waybar)
-- **Application Launcher** :rocket: [ Wofi ](https://hg.sr.ht/~scoopta/wofi)
+- **Application Launcher** :rocket: [ Rofi ](https://aur.archlinux.org/packages/rofi-pass-wayland-git)
 - **Desktop Notification** :herb: [Dunst](https://github.com/dunst-project/dunst)
 - **Terminal Emulator** :cat: [ Kitty ](https://sw.kovidgoyal.net/kitty)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
@@ -25,15 +25,15 @@ _Note: I use colemak-dh keyboard layout_
 ### Dependencies
 
 ```
-libnotify dunst unclutter duf bluetooth-autoconnect
+libnotify unclutter duf bluetooth-autoconnect
 xorg-xsetroot tree-sitter-cli peco
 bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
-udiskie deno breaktimer tldr ueberzug at libmtp mpv
+udiskie deno breaktimer tldr ueberzug libmtp mpv
 hyprpicker hyprshoot hyprpaper hyprlock hyprcursor hypridle cliphist qt5-wayland qt6-wayland
 xdg-desktop-portal-hyprland pywal
-swww swaybg
+swww swaybg wlogout
 
 ```
 
