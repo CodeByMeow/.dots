@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-_ps=(waybar swaync)
+_ps=(waybar swaync hyprlock)
 for _prs in "${_ps[@]}"; do
     if pidof "${_prs}" >/dev/null; then
         pkill "${_prs}"
