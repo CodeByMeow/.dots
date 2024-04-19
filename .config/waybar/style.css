@@ -17,6 +17,15 @@ window#waybar {
 }
 
 /* Define styles for tooltips */
+tooltip * {
+  background: transparent;
+}
+
+tooltip.background {
+  background: linear-gradient(300deg, @color1, @color2, @color3);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
 tooltip {
   color: @foreground;
   margin: 3px;
@@ -25,10 +34,6 @@ tooltip {
   border-radius: 9px;
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   box-shadow: none;
-
-  background: linear-gradient(300deg, @color1, @color2, @color3);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
 }
 
 /* Styles for workspace buttons */

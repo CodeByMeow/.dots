@@ -11,6 +11,10 @@ for _prs in "${_ps[@]}"; do
 done
 
 sleep 0.2
+# Relaunch hypr
+hyprBorder.sh > /dev/null 2>&1 &
+
+sleep 0.2
 # Relaunch waybar
 waybar > /dev/null 2>&1 &
 
