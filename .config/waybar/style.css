@@ -18,16 +18,17 @@ window#waybar {
 
 /* Define styles for tooltips */
 tooltip {
-  background: @color1;
   color: @foreground;
   margin: 3px;
   padding: 0 12px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: @color1;
+  border: 0;
   border-radius: 9px;
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   box-shadow: none;
+
+  background: linear-gradient(300deg, @color1, @color2, @color3);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
 }
 
 /* Styles for workspace buttons */
@@ -36,7 +37,7 @@ tooltip {
   box-shadow: none;
   text-shadow: none;
   border-radius: 9px;
-  margin: 3px 0px;
+  margin: 3px;
   padding: 4px 10px;
   color: @foreground;
 }
@@ -76,13 +77,7 @@ tooltip {
   padding: 0 6px;
   border-radius: 9px;
   margin: 3px 0px;
-  padding: 4px 10px;
-}
-
-/* Fine-tuning for specific elements */
-#workspaces,
-#taskbar {
-  padding: 0px;
+  padding: 0px 10px;
 }
 
 /* Animation for pacman */
@@ -112,5 +107,17 @@ tooltip {
 @keyframes blink {
   to {
     background-color: @color3;
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
