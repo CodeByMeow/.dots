@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
+
 # Wallpapers Path
 wallpaperDir="$HOME/Pictures/Wallpapers"
 themesDir="$HOME/.config/rofi"
 
 # Transition config
 FPS=60
-TYPE="any"
-DURATION=2
+TYPE="random"
+DURATION=1
 BEZIER="0.6,0.08,1.0,0.55"
 SWWW_PARAMS="--transition-fps ${FPS} --transition-type ${TYPE} --transition-duration ${DURATION} --transition-bezier ${BEZIER}"
 
@@ -30,7 +31,7 @@ rofiCommand="rofi -show -dmenu -theme ${themesDir}/wallpaper-select.rasi"
 executeCommand() {
 
     if command -v swww &>/dev/null; then
-        swww img "$1" ${SWWW_PARAMS}
+        swww img ${SWWW_PARAMS} "$1"
 
     elif command -v swaybg &>/dev/null; then
         swaybg -i "$1" &
@@ -109,7 +110,7 @@ fi
 main
 
 # Sleep to work properly
-sleep 0.2
-pywal.sh *
-sleep 0.2
+sleep 3
+pywal.sh no-tty
+sleep 0.3
 refresh.sh

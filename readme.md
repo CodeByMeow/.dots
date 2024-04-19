@@ -3,7 +3,7 @@
 - **Panel** :chocolate_bar: [ Waybar ](https://github.com/Alexays/Waybar)
 - **Application Launcher** :rocket: [ Rofi ](https://aur.archlinux.org/packages/rofi-pass-wayland-git)
 - **Notification Daemon** :loudspeaker: [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
-- **Terminal Emulator** :cat: [ Kitty ](https://sw.kovidgoyal.net/kitty)
+- **Terminal Emulator** :foot: [ Foot ](https://codeberg.org/dnkl/foot)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **File Manager** :duck: [ Yazi ](https://yazi-rs.github.io/docs/)
 - **Editor** :fire: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)

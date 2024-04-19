@@ -11,5 +11,9 @@ else
     monitor_scale=1
 fi
 
+if [ "$1" ];then
+    monitor_scale=$1
+fi
+
 # Set the monitor scale using hyprctl
 hyprctl keyword monitor ",preferred,auto,$monitor_scale"
