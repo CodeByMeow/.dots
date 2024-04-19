@@ -22,6 +22,11 @@ set -g status-bg "$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0')"
 set -g status-left "#[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color8'),bold] #(whoami) #[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color8'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0')]"
 setw -g window-status-format '#[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color1')]#[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color7'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color1')] #I  #{b:pane_current_path} #[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color1'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0'),nobold,nounderscore,noitalics]'
 setw -g window-status-current-format '#[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color7')]#[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color3'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color15')] #I #[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color15'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color3')] #{b:pane_current_path} #[fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color3'),bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0'),nobold]'
+
+# Additional styles for mode indicators
+set -g @mode_indicator_prefix_mode_style 'bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color4'),fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0')"
+set -g @mode_indicator_copy_mode_style 'bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color6'),fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0')"
+set -g @mode_indicator_empty_mode_style 'bg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color8'),fg=$(cat ~/.cache/wal/colors.json | jq -r '.colors.color0')"
 EOF
 
 tmux source-file $HOME/.config/tmux/tmux.conf
