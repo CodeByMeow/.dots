@@ -23,7 +23,7 @@ tooltip * {
 
 tooltip.background {
   background: linear-gradient(300deg, @color1, @color2, @color3);
-  background-size: 180% 180%;
+  background-size: 200% 200%;
   animation: gradient-animation 18s ease infinite;
 }
 tooltip {
