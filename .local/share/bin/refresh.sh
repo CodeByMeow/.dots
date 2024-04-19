@@ -19,4 +19,7 @@ tmuxColor.sh > /dev/null 2>&1 &
 # for cava-pywal (note, need to manually restart cava once wallpaper changes)
 ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
 
+sleep 1
+notify-send "Updated wallpaper and colorsheme!"
+
 exit 0
