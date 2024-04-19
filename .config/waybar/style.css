@@ -42,22 +42,21 @@ tooltip {
   box-shadow: none;
   text-shadow: none;
   border-radius: 9px;
-  margin: 3px;
-  padding: 4px 10px;
-  color: @color7;
+  margin: 3px 0px;
+  padding: 0px 10px;
 }
 
 #workspaces button.active,
 #taskbar button.active {
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   color: @color7;
-  background: @color3;
+  background: @color5;
 }
 
 /* Hover effect for workspace buttons */
 #workspaces button:hover,
 #taskbar button:hover {
-  background: @color5;
+  background: @color6;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
@@ -79,7 +78,6 @@ tooltip {
 #workspaces {
   color: @color7;
   opacity: 1;
-  padding: 0 6px;
   border-radius: 9px;
   margin: 3px 0px;
   padding: 0px 10px;
@@ -111,7 +109,7 @@ tooltip {
 
 @keyframes blink {
   to {
-    background-color: @color3;
+    background-color: @color6;
   }
 }
 

@@ -18,8 +18,8 @@
 	],
 	"modules-right": [
 		"custom/empty",
-		"custom/weather",
 		"custom/pacman",
+		"custom/weather",
 		"battery",
 		"cpu",
 		"memory",
