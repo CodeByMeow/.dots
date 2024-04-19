@@ -22,12 +22,12 @@ tooltip * {
 }
 
 tooltip.background {
-  background: linear-gradient(300deg, @color1, @color2, @color3);
+  background: linear-gradient(300deg, @color0, @color2, @color5);
   background-size: 200% 200%;
   animation: gradient-animation 18s ease infinite;
 }
 tooltip {
-  color: @foreground;
+  color: @color7;
   margin: 3px;
   padding: 0 12px;
   border: 0;
@@ -44,13 +44,13 @@ tooltip {
   border-radius: 9px;
   margin: 3px;
   padding: 4px 10px;
-  color: @foreground;
+  color: @color7;
 }
 
 #workspaces button.active,
 #taskbar button.active {
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-  color: @foreground;
+  color: @color7;
   background: @color3;
 }
 
@@ -77,7 +77,7 @@ tooltip {
 #custom-pacman,
 #custom-cava,
 #workspaces {
-  color: @foreground;
+  color: @color7;
   opacity: 1;
   padding: 0 6px;
   border-radius: 9px;
@@ -95,7 +95,7 @@ tooltip {
 #custom-pacman.pending-updates {
   animation-name: blink;
   animation-duration: 3s;
-  color: @foreground;
+  color: @color7;
 }
 
 /* Battery critical animation */
