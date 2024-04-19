@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-## /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# This script for selecting wallpapers (SUPER W)
-
 # Wallpapers Path
 wallpaperDir="$HOME/Pictures/Wallpapers"
 themesDir="$HOME/.config/rofi"
