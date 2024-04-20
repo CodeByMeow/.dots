@@ -3,6 +3,10 @@
 # Update tmux configuration with colors from Pywal
 tmux_conf="$HOME/.config/tmux/conf/status.conf"
 
+if [ ! -f "$tmux_conf" ];then
+    touch $tmux_conf
+fi
+
 cat > "$tmux_conf" <<EOF
 set -g status "on"
 set -g status-interval 1
