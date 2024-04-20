@@ -32,7 +32,7 @@ nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug libmtp mpv
 hyprpicker hyprshoot hyprpaper hyprlock hyprcursor hypridle cliphist qt5-wayland qt6-wayland
-xdg-desktop-portal-hyprland pywal
+xdg-desktop-portal-hyprland pywal acpi
 swww swaybg swaync wlogout
 
 ```
