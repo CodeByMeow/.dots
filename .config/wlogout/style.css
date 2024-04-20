@@ -1,57 +1,64 @@
 @import url("/home/ori/.cache/wal/colors-waybar.css");
 
 window {
-	font-family:
-		JetBrainsMono NF,
-		monospace;
-	font-size: 12pt;
-	color: @foreground;
-	background-color: transparent;
+  font-family:
+    JetBrainsMono NF,
+    monospace;
+  font-size: 12pt;
+  color: @foreground;
+  background-color: transparent;
 }
 
 button {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 60%;
-	border: none;
-	color: @foreground;
-	text-shadow: none;
-	border-radius: 20px 20px 20px 20px;
-	margin: 5px;
-	transition:
-		box-shadow 0.2s ease-in-out,
-		background-color 0.2s ease-in-out;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  border: none;
+  background-color: @background;
+  color: @foreground;
+  text-shadow: none;
+  border-radius: 20px 20px 20px 20px;
+  margin: 5px;
+  transition:
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
 }
 
 button:focus {
-	background-color: @color6;
+  background-color: @color6;
 }
 
 button:hover {
-	background-color: @color6;
+  background-color: @color6;
 }
 
 #lock {
-	background-image: image(url("/home/ori/.config/wlogout/icons/lock.png"));
-	background-size: 70%;
+  background-image: image(url("/home/ori/.config/wlogout/icons/lock.png"));
+  background-size: 70%;
 }
 
 #lock:focus {
-	background-image: image(url("/home/ori/.config/wlogout/icons/lock-hover.png"));
+  background-image: image(
+    url("/home/ori/.config/wlogout/icons/lock-hover.png")
+  );
 }
 
 #shutdown {
-	background-image: image(url("/home/ori/.config/wlogout/icons/power.png"));
+  background-image: image(url("/home/ori/.config/wlogout/icons/power.png"));
 }
 
 #shutdown:focus {
-	background-image: image(url("/home/ori/.config/wlogout/icons/power-hover.png"));
+  background-image: image(
+    url("/home/ori/.config/wlogout/icons/power-hover.png")
+  );
 }
 
 #reboot {
-	background-image: image(url("/home/ori/.config/wlogout/icons/restart.png"));
+  background-image: image(url("/home/ori/.config/wlogout/icons/restart.png"));
 }
 
 #reboot:focus {
-	background-image: image(url("/home/ori/.config/wlogout/icons/restart-hover.png"));
+  background-image: image(
+    url("/home/ori/.config/wlogout/icons/restart-hover.png")
+  );
 }
