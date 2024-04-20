@@ -10,11 +10,11 @@ if [ -z "$updates" ]; then
     text="$icon"
     tooltip="There are no news for any repos, everything is up-to-date!"
 elif [ "$count" -gt 0 ]; then
-    icon=" "
+    icon="󱧘 "
     text="$icon$count"
-	class="pending-updates"
-	rest=$((count - 5))
-	if [ "$rest" -gt 0 ]; then
+    class="pending-updates"
+    rest=$((count - 5))
+    if [ "$rest" -gt 0 ]; then
         tooltip="$tooltip\\nand $rest updates available."
     fi
 fi

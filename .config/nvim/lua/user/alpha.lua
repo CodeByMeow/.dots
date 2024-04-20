@@ -38,7 +38,7 @@ function M.config()
 		{ { "BlueF", 0, 9 }, { "GreenF", 9, 18 } },
 	}
 	dashboard.section.buttons.val = {
-		dashboard.button("f", " " .. " Find file", ":Pick files<CR>"),
+		dashboard.button("f", "󰀶 " .. " Find file", ":Pick files<CR>"),
 		dashboard.button("o", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
 		dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 		dashboard.button("q", "󰩈 " .. " Quit", ":qa<CR>"),
@@ -51,7 +51,7 @@ function M.config()
 		callback = function()
 			local stats = require("lazy").stats()
 			local ms = math.floor(stats.startuptime * 100) / 100
-			local version = "   v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
+			local version = "   v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
 			local plugin = "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms"
 			local footer = version .. "\t" .. plugin .. "\n"
 			dashboard.section.footer.val = footer

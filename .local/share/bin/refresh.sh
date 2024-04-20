@@ -10,6 +10,7 @@ done
 sleep 0.2
 swaync > /dev/null 2>&1 &
 waybar > /dev/null 2>&1 &
+swaync-client -rs > /dev/null 2>&1 &
 
 pywalfox update > /dev/null 2>&1 &
 hyprBorder.sh > /dev/null 2>&1 &
