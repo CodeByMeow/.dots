@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Update tmux configuration with colors from Pywal
 tmux_conf="$HOME/.config/tmux/conf/status.conf"

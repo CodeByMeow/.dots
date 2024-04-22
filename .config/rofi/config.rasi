@@ -50,8 +50,8 @@ mainbox {
 imagebox {
     padding:                     2px;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/pokemon.png", height);
     orientation:                 horizontal;
+	border-radius:				 9px;
 }
 
 listbox {

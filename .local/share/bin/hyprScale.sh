@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # Check if the host is a laptop using upower
 laptop_check=$(acpi -p 2>/dev/null)

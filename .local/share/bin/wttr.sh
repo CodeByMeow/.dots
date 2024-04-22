@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
 
 # Get public IP address
 ip=$(curl -s ifconfig.me)

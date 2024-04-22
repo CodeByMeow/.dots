@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # Set the path to the pywal colors file
 pywal_colors="$HOME/.cache/wal/colors.sh"

@@ -21,6 +21,7 @@ tmuxColor.sh > /dev/null 2>&1 &
 ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
 
 sleep 1
-notify-send -e -i "$HOME/.config/swaync/icons/wand.png" "Updated wallpaper and colorsheme!"
+icon="$HOME/.config/swaync/default.png"
+notify-send -e -i $icon "Thank me!, This is a magic 󱡃"
 
 exit 0

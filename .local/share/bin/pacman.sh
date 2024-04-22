@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 updates=$(checkupdates 2> /dev/null)
 count=$(echo "$updates" | wc -l)
