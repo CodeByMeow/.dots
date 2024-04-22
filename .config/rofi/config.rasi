@@ -2,6 +2,7 @@
 
 configuration {
 	display-drun: "󱓞  App";
+	display-window: "󰂽  Window";
 	show-icons:   true;
 	icon-theme:   "candy-icons";
 	modes:        [drun, window];
@@ -87,7 +88,7 @@ entry {
     text-color:                  inherit;
     cursor:                      text;
 	background-color:		     transparent;
-	placeholder:				"Pika pika";
+	placeholder:				"Type for search";
 }
 
 message {

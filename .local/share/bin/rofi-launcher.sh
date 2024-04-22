@@ -1,14 +1,16 @@
 #!/usr/bin/env sh
 
-wallpaper_path=$(readlink "$HOME/.current_wallpaper")
+wallpaper_path=$("getWallpaper.sh")
 
-check_file() {
-    if [ ! -f "$1" ]; then
-        echo "File $1 not found!"
-        exit 1
-    fi
-}
+for opt in $@; do
+    case "$opt" in
+        w)
+            rofi -show window -theme-str "imagebox {background-image: url('$wallpaper_path', height);}"
+            ;;
+        d)
+            rofi -show drun -theme-str "imagebox {background-image: url('$wallpaper_path', height);}"
+            ;;
+    esac
+done
 
-check_file "$wallpaper_path"
 
-rofi -show drun -theme-str "imagebox {background-image: url('$wallpaper_path', height);}"
