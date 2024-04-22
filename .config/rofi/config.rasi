@@ -1,16 +1,17 @@
 @import "~/.cache/wal/colors-rofi-dark"
 
 configuration {
-	display-drun: "󱓞 App";
-	show-icons: true;
-	icon-theme: "candy-icons";
+	display-drun: "󱓞  App";
+	show-icons:   true;
+	icon-theme:   "candy-icons";
+	modes:        [drun, window];
 }
 
 * {
-    font:   "JetBrainsMono 15";
-    margin:     0px;
-    padding:    0px;
-    spacing:    0px;
+    font:  						 "JetBrainsMono 15";
+    margin:						 0px;
+    padding:   					 0px;
+    spacing:   					 0px;
     background-alt:              @selected-active-background; // Buttons background
     selected:                    @selected-urgent-background; // Button selected
     active:                      @selected-normal-background; // Window activated
@@ -40,10 +41,10 @@ window {
 
 mainbox {
     padding:				    12px;
-    orientation:                 horizontal;
-    children:                    [ "imagebox", "listbox" ];
-    enabled:                     true;
-    background-color:            transparent;
+    orientation:                horizontal;
+    children:                   [ "imagebox", "listbox" ];
+    enabled:                    true;
+    background-color:           transparent;
 }
 
 imagebox {
@@ -62,27 +63,27 @@ listbox {
 }
 
 inputbar {
-    border:         2px;
-    padding:    8px 16px;
-    spacing:    8px;
-    children:   [ prompt, entry ];
-    enabled:                     true;
-    margin:                      20px;
-    background-color:            transparent;
-    border-radius:               9px;
-    orientation:                 horizontal;
+    border:						2px;
+    padding:					8px 16px;
+    spacing:					8px;
+    children:					[ prompt, entry ];
+    enabled:                    true;
+    margin:                     20px;
+    background-color:           transparent;
+    border-radius:              9px;
+    orientation:                horizontal;
 }
 
 prompt {
-    text-color: #ebdbb3;
-	background-color: transparent;
+    text-color:					#ebdbb3;
+	background-color:			transparent;
 }
 
 entry {
     enabled:                     true;
-    expand:                      false;
+    expand:                      true;
     width:                       100%;
-    border-radius:               10px;
+    border-radius:               9px;
     text-color:                  inherit;
     cursor:                      text;
 	background-color:		     transparent;
@@ -96,12 +97,12 @@ message {
 }
 
 textbox {
-    padding:    8px 24px;
+    padding:					8px 24px;
 }
 
 listview {
-    lines:      8;
-    columns:    1;
+    lines:						 8;
+    columns:					 1;
     enabled:                     true;
     lines:                       8;
     cycle:                       true;
@@ -122,6 +123,7 @@ element {
     padding:        8px 16px;
     spacing:        8px;
     border-radius:  9px;
+	children:		[element-icon, element-text];
 }
 
 element-icon {
