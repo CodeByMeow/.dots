@@ -31,7 +31,7 @@ bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
 nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
 pamixer playerctl brightnessctl starship cava-git
 udiskie deno breaktimer tldr ueberzug libmtp mpv
-hyprpicker hyprshoot hyprpaper hyprlock hyprcursor hypridle cliphist qt5-wayland qt6-wayland
+hyprpicker hyprshoot hyprlock hyprcursor hypridle cliphist qt5-wayland qt6-wayland
 xdg-desktop-portal-hyprland pywal acpi
 swww swaybg swaync wlogout
 
@@ -87,9 +87,10 @@ blank_box = false
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
 - `checkupdates`: Checking new update aur
+- `amberol`: Music
 
 ### Input method
 
-- `fcixt5-config-qt`
-- `fcixt5-unikey`
-- `fcixt5-chinese-addons`
+- `fcitx5-config-qt`
+- `fcitx5-unikey`
+- `fcitx5-chinese-addons`
