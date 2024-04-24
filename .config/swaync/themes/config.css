@@ -1,0 +1,14 @@
+* {
+	/*background-alt:        @color1;      Buttons background */
+	/*selected:              @color2;      Button selected */
+	/*hover:                 @color5;      Hover button */
+	/*urgent:                @color6;      Urgency critical */
+	/*text-selected:         @background; */
+
+	color: @text;
+
+	all: unset;
+	font-size: 18px;
+	font-family: "JetBrainsMono Nerd Font";
+	transition: 200ms;
+}
