@@ -3,6 +3,7 @@
 configuration {
 	display-drun: "󱓞  App";
 	display-window: "󰂽  Window";
+	display-dmenu: "󰆏  Clipboard";
 	show-icons:   true;
 	icon-theme:   "candy-icons";
 	modes:        [drun, window];
