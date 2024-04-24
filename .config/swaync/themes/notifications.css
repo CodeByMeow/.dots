@@ -4,21 +4,6 @@
 @define-color hover @color5;
 @define-color urgent @color2;
 
-* {
-	/*background-alt:        @color1;      Buttons background */
-	/*selected:              @color2;      Button selected */
-	/*hover:                 @color5;      Hover button */
-	/*urgent:                @color6;      Urgency critical */
-	/*text-selected:         @background; */
-
-	color: @text;
-
-	all: unset;
-	font-size: 16px;
-	font-family: "JetBrains Mono Nerd Font 16";
-	transition: 200ms;
-}
-
 .notification-row {
 	outline: none;
 	margin: 0;

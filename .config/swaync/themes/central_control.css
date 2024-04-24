@@ -4,14 +4,6 @@
 @define-color hover alpha(@selected, .4);
 @define-color urgent @color2;
 
-* {
-	color: @text;
-
-	all: unset;
-	font-size: 16px;
-	font-family: "JetBrains Mono Nerd Font 16";
-	transition: 200ms;
-}
 
 /* Avoid 'annoying' background */
 .blank-window {
