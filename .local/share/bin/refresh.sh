@@ -22,6 +22,6 @@ ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
 
 sleep 1
 icon="$HOME/.config/swaync/thankme.png"
-notify-send -e -i $icon "Amazing! Thank me! For nothing! 󱡃"
+notify-send -e -i $icon "Amazing!" "Thank me! For nothing! 󱡃"
 
 exit 0
