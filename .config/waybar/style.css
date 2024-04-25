@@ -3,61 +3,62 @@
 
 /* Set global styles */
 * {
-  border: none;
-  border-radius: 0px;
-  font-family: "JetBrainsMono NF", "Iosevka Nerd Font";
-  font-weight: bold;
-  font-size: 14px;
-  min-height: 10px;
+	border: none;
+	border-radius: 0px;
+	font-family: "Iosevka Nerd Font";
+	font-weight: bold;
+	font-size: 14px;
+	min-height: 10px;
 }
 
 /* Apply styles to the Waybar window */
 window#waybar {
-  background: transparent;
+	background: transparent;
 }
 
 /* Define styles for tooltips */
 tooltip * {
-  background: transparent;
+	background: transparent;
 }
 
 tooltip.background {
-  background: linear-gradient(300deg, @color0, @color2, @color5);
-  background-size: 200% 200%;
-  animation: gradient-animation 18s ease infinite;
+	background: linear-gradient(300deg, @color0, @color2, @color5);
+	background-size: 200% 200%;
+	animation: gradient-animation 18s ease infinite;
 }
+
 tooltip {
-  color: @color7;
-  margin: 3px;
-  padding: 0 12px;
-  border: 0;
-  border-radius: 9px;
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-  box-shadow: none;
+	color: @color7;
+	margin: 3px;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 9px;
+	transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	box-shadow: none;
 }
 
 /* Styles for workspace buttons */
 #workspaces button,
 #taskbar button {
-  box-shadow: none;
-  text-shadow: none;
-  border-radius: 9px;
-  margin: 3px 0px;
-  padding: 0px 10px;
+	box-shadow: none;
+	text-shadow: none;
+	border-radius: 9px;
+	margin: 2px;
+	padding: 0px 10px;
 }
 
 #workspaces button.active,
 #taskbar button.active {
-  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
-  color: @color7;
-  background: @color5;
+	transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	color: @color7;
+	background: @color5;
 }
 
 /* Hover effect for workspace buttons */
 #workspaces button:hover,
 #taskbar button:hover {
-  background: @color6;
-  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+	background: @color6;
+	transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 /* Additional element styles */
@@ -76,51 +77,53 @@ tooltip {
 #custom-pacman,
 #custom-notification,
 #workspaces {
-  color: @color7;
-  opacity: 1;
-  border-radius: 9px;
-  margin: 3px 0px;
-  padding: 0px 10px;
+	color: @color7;
+	opacity: 1;
+	border-radius: 9px;
+	margin: 3px 0px;
+	padding: 0px 10px;
 }
 
 /* Animation for pacman */
 #custom-pacman {
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #custom-pacman.pending-updates {
-  animation-name: blink;
-  animation-duration: 3s;
-  color: @color7;
+	animation-name: blink;
+	animation-duration: 3s;
+	color: @color7;
 }
 
 /* Battery critical animation */
 #battery.critical:not(.charging) {
-  background-color: @color2;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+	background-color: @color2;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 /* Define keyframes */
 
 @keyframes blink {
-  to {
-    background-color: @color6;
-  }
+	to {
+		background-color: @color6;
+	}
 }
 
 @keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
 }

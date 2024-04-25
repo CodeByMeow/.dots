@@ -9,6 +9,6 @@
 
 	all: unset;
 	font-size: 18px;
-	font-family: "JetBrainsMono Nerd Font";
+	font-family: "Iosevka";
 	transition: 200ms;
 }

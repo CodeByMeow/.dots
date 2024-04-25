@@ -22,21 +22,6 @@ _Note: I use colemak-dh keyboard layout_
     fisher install jorgebucaran/nvm.fish`
 ```
 
-### Dependencies
-
-```
-libnotify duf bluetooth-autoconnect
-xorg-xsetroot tree-sitter-cli peco
-bc firefox bibata-cursor-theme catppuccin-gtk-theme-mocha
-nwg-look ly xdg-user-dirs jq rg ripgrep fd neovim tmux nemo
-pamixer playerctl brightnessctl starship cava-git
-udiskie deno breaktimer tldr ueberzug libmtp mpv
-hyprpicker hyprshoot hyprlock hyprcursor hypridle cliphist qt5-wayland qt6-wayland
-xdg-desktop-portal-hyprland pywal acpi
-swww swaybg swaync wlogout
-
-```
-
 ### Speedup arch
 ```
 preload auto-cpufreq

@@ -15,11 +15,8 @@ alias la="ls -a"
 alias lla="ls -la"
 alias lt="ls --tree"
 
-# peaclock
-alias peaclock="peaclock --config-dir ~/.config/peaclock"
-
-# xrandr
-alias xri="xrandr -o inverted"
-
 # translate shell
 alias t="trans :vi -b"
+
+# Pacman
+alias httpsmirrors="rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
