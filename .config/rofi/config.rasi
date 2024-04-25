@@ -54,6 +54,7 @@ imagebox {
     background-color:            transparent;
     orientation:                 horizontal;
 	border-radius:				 9px;
+    background-image:            url("~/.current_wallpaper", height);
 }
 
 listbox {

@@ -2,7 +2,7 @@
 
 # Wallpapers Path
 wallpaperDir="$HOME/Pictures/Wallpapers"
-themesDir="$HOME/.config/rofi"
+themesDir="$HOME/.config/rofi/themes"
 
 # Transition config
 FPS=60
