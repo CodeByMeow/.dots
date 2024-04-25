@@ -70,6 +70,7 @@ function M.config()
 			"xml",
 			"http",
 			"graphql",
+			"vimdoc"
 		},
 		auto_install = true,
 		highlight = { enable = true },
