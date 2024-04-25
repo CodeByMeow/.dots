@@ -34,6 +34,7 @@ yay -S --needed --noconfirm \
   tmux \
   nemo \
   pamixer \
+  pavucontrol \
   playerctl \
   brightnessctl \
   starship \
