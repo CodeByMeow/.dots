@@ -51,7 +51,7 @@ blank_box = false
 - [ Source Han Sans KR](https://software.manjaro.org/package/adobe-source-han-sans-kr-fonts)
 - JetBrains Mono Nerd Font
 - Font Awesome 6 Pro
-- Noto fonts, Noto Emoji
+- Noto fonts emoji
 - Iosevka Ori Sans - _My custom Iosevka font_
 ### UI
     /etc/pacman.conf: ILoveCandy

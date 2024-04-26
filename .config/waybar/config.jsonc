@@ -191,12 +191,11 @@
 		"separate-outputs": true
 	},
 	"custom/weather": {
-		"exec": "wttr.sh",
-		"exec-if": "which wttr.sh",
-		"return-type": "json",
 		"format": "{}",
 		"tooltip": true,
-		"interval": 900
+		"interval": 3600,
+		"exec": "weather.sh",
+		"return-type": "json"
 	},
 	"custom/pacman": {
 		"format": "{}",
