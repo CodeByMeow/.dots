@@ -12,13 +12,7 @@ get_city() {
 }
 
 city=$(get_city)
-city_encoded=$(echo "$city" | sed 's/ /%20/g')
+city_encoded=$(echo "$city" | sed 's/ /_/g')
 
-weather_info=$(wttr.sh $city_encoded m format=1)
-weather_tooltip=$(wttr.sh $city_encoded mM format=2)
-tooltip="$city $weather_tooltip"
-
-json_output='{"text": "'"$weather_info"'","tooltip":"'"$tooltip"'"}'
-
-echo $json_output
+wttr.sh --location=$city_encoded
 
