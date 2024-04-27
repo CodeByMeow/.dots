@@ -191,7 +191,7 @@
 		"separate-outputs": true
 	},
 	"custom/weather": {
-		"format": "{} °",
+		"format": "{}°",
 		"tooltip": true,
 		"interval": 3600,
 		"exec": "weather.sh",
