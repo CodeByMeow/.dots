@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+if ! command -v checkupdates &> /dev/null
+then
+    echo "checkupdates could not be found"
+    exit 1
+fi
 updates=$(checkupdates 2> /dev/null)
 count=$(echo "$updates" | wc -l)
 tooltip=$(echo "$updates" | head -n 5 | sed 's/"/\\"/g' | awk -v RS="" '{gsub(/\n/,"\\n")}1')

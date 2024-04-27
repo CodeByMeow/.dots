@@ -71,7 +71,7 @@ blank_box = false
 - `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
-- `checkupdates`: Checking new update aur
+- `checkupdates-with-aur`: Checking new update aur
 - `amberol`: Music
 
 ### Input method
