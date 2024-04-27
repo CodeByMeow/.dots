@@ -60,7 +60,7 @@ mainbox {
 listview {
     enabled:                     true;
     columns:                     4;
-    lines:                       2;
+    lines:                       1;
     padding:                     26px 36px;
     cycle:                       true;
     dynamic:                     true;
@@ -68,11 +68,10 @@ listview {
     layout:                      vertical;
     reverse:                     false;
     fixed-height:                true;
-    fixed-columns:               false;
+    fixed-columns:               true;
 
     background-color:            transparent;
     spacing:                     20px;
-    //  Adapt rofi theme
     border:                      0px;
 
 }
@@ -88,7 +87,6 @@ element {
     cursor:                      pointer;
     background-color:            transparent;
 }
-
 
 element normal.normal {
     background-color:            inherit;
@@ -122,9 +120,9 @@ element alternate.active {
 }
 /* ---- Image Box ---- */
 element-icon {
-    size:                        30%;
+    size:                        33%;
     cursor:                      inherit;
-    expand: false;
+    expand:						 false;
     padding:                     0px;
     background-color:            inherit;
 }
@@ -135,8 +133,3 @@ element-text {
     background-color:            transparent;
 }
 
-// Adapt rofi theme
-element.alternate.normal {
-    background-color:            inherit;
-    text-color:                  inherit;
-}

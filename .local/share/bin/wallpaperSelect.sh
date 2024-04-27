@@ -81,6 +81,7 @@ main() {
         return 0
     fi
 
+
     # Find the selected file
     for file in "${PICS[@]}"; do
         # Getting the file
