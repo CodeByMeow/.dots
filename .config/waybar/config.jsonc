@@ -51,7 +51,7 @@
 		"format": "{:%I:%M %p}",
 		"interval": 1,
 		"format-alt": "{:%R 󰃭 %d·%m·%y}",
-		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"tooltip-format": "<small>{calendar}</small>",
 		"calendar": {
 			"mode": "month",
 			"mode-mon-col": 3,

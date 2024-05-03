@@ -163,6 +163,6 @@ TOOLTIP+="$LANG_FEELS_LIKE: $FEELS_LIKE°\n"
 TOOLTIP+="$LANG_WIND: $(echo "$CURRENT_CONDITION" | jq -r '.windspeedKmph') Km/h\n"
 TOOLTIP+="$LANG_HUMIDITY: $(echo "$CURRENT_CONDITION" | jq -r '.humidity')%\n"
 NEAREST_AREA=$(echo "$WEATHER_DATA" | jq '.nearest_area[0]')
-TOOLTIP+="$LANG_LOCATION: $(echo "$NEAREST_AREA" | jq -r '.areaName[0].value'), $(echo "$NEAREST_AREA" | jq -r '.country[0].value')\n"
+TOOLTIP+="$LANG_LOCATION: $(echo "$NEAREST_AREA" | jq -r '.areaName[0].value'), $(echo "$NEAREST_AREA" | jq -r '.country[0].value')"
 
 echo '{"text": "'"$TEXT"'", "tooltip":"'"$TOOLTIP"'"}'
