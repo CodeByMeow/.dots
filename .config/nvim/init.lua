@@ -3,7 +3,7 @@ require("user.autocmds")
 require("user.options")
 require("user.keymaps")
 
-spec("user.colorscheme")
+spec("user.themes")
 spec("user.plenary")
 spec("user.devicons")
 spec("user.lualine")
