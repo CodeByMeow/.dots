@@ -2,6 +2,7 @@ require("user.launch")
 require("user.autocmds")
 require("user.options")
 require("user.keymaps")
+require("user.help")
 
 spec("user.themes")
 spec("user.plenary")
