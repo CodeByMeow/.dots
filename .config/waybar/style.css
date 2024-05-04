@@ -51,7 +51,7 @@ tooltip {
 #taskbar button.active {
   transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
   color: @color7;
-  background: @color4;
+  background: @color2;
 }
 
 /* Hover effect for workspace buttons */
