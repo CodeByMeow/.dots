@@ -8,7 +8,6 @@
 	"gtk-layer-shell": true,
 	"modules-left": [
 		"custom/empty",
-		"clock",
 		"hyprland/window"
 	],
 	"modules-center": [
@@ -27,6 +26,7 @@
 		"backlight",
 		"network",
 		"pulseaudio",
+		"clock",
 		"tray",
 		"custom/power",
 		"custom/empty"
@@ -261,6 +261,6 @@
 		"exec": "echo ; echo 󰟡 power // blur",
 		"on-click": "wlogout.sh",
 		"interval": 86400, // once every day
-		"tooltip": true
+		"tooltip": false
 	}
 }

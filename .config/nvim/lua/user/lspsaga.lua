@@ -8,8 +8,18 @@ local M = {
 		{ "gt", "<cmd>Lspsaga peek_definition<CR>" },
 		{ "gd", "<cmd>Lspsaga goto_definition<CR>" },
 		{ "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>" },
-		{ "<leader>n", "<cmd>Lspsaga diagnostic_jump_prev<CR>" },
-		{ "<leader>e", "<cmd>Lspsaga diagnostic_jump_next<CR>" },
+		{
+			"<leader>n",
+			function()
+				require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+			end,
+		},
+		{
+			"<leader>e",
+			function()
+				require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+			end,
+		},
 		{ "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>" },
 		{ "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>" },
 		{ "H", "<cmd>Lspsaga hover_doc<CR>" },
@@ -29,6 +39,13 @@ function M.config()
 		},
 		beacon = {
 			enable = true,
+		},
+		diagnostic = {
+			max_height = 0.8,
+			keys = {
+				quit = { "q", "<ESC>" },
+			},
+			show_layout = "float",
 		},
 	})
 end

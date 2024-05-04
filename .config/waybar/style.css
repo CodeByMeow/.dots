@@ -44,7 +44,7 @@ tooltip {
   text-shadow: none;
   border-radius: 9px;
   margin: 2px;
-  padding: 0px 10px;
+  padding: 0 20px;
 }
 
 #workspaces button.active,
