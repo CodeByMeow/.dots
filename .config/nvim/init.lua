@@ -28,6 +28,7 @@ spec("user.refactor")
 spec("user.flash")
 spec("user.gitconflict")
 spec("user.regexplainer")
+spec("user.session")
 
 spec("user.extras.colorizer")
 spec("user.extras.fidget")

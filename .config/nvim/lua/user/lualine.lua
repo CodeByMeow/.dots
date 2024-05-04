@@ -44,8 +44,8 @@ function M.config()
 			},
 			lualine_b = { "diff" },
 			lualine_c = {
+				{ require("auto-session.lib").current_session_name },
 				"filename",
-				"g:mpv_title",
 				{
 					"diagnostics",
 					symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint },
