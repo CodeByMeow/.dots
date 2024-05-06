@@ -127,3 +127,7 @@ tooltip {
     background-position: 0% 50%;
   }
 }
+
+#window {
+  background-color: @color2;
+}
