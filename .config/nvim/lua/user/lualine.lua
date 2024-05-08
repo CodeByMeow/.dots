@@ -44,7 +44,6 @@ function M.config()
 			},
 			lualine_b = { "diff" },
 			lualine_c = {
-				{ require("auto-session.lib").current_session_name },
 				"filename",
 				{
 					"diagnostics",
