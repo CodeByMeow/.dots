@@ -18,18 +18,13 @@ function M.config()
 				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 			},
 		},
-		virtual_text = true,
+		virtual_text = {
+			source = "if_many",
+			prefix = "󰒡 ",
+		},
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
-		float = {
-			focusable = true,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
 	}
 
 	vim.diagnostic.config(default_diagnostic_config)
