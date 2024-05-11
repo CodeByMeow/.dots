@@ -28,7 +28,6 @@ spec("user.neogit")
 spec("user.flash")
 spec("user.gitconflict")
 spec("user.regexplainer")
-spec("user.leetcode")
 spec("user.luarocks")
 
 spec("user.extras.colorizer")
