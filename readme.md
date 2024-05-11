@@ -66,6 +66,7 @@ blank_box = false
 - `heyperfine`: Benmarking tool.
 - `translate-shell`: command-line translation.
 - `bun`: JavaScript runtime and toolkit.
+- `@antfu/ni`: Use the right package manager.
 
 ### Tool
 
