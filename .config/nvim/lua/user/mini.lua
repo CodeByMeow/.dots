@@ -34,6 +34,24 @@ local M = {
 				vim.cmd(":lua MiniFiles.open()")
 			end,
 		},
+		{
+			"ha",
+			function()
+				vim.cmd(":lua MiniVisits.add_path()")
+			end,
+		},
+		{
+			"hm",
+			function()
+				vim.cmd(":lua MiniVisits.select_path()")
+			end,
+		},
+		{
+			"hd",
+			function()
+				vim.cmd(":lua MiniVisits.remove_path()")
+			end,
+		},
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("FileType", {
@@ -115,6 +133,7 @@ function M.config()
 			enable = true,
 		},
 	})
+	require("mini.visits").setup({})
 end
 
 return M
