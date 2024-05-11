@@ -9,6 +9,9 @@
 - **Editor** :fire: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
 
 ---
+![Screenshot_03-May_14-41-05_2976](https://github.com/CodeByMeow/.dots/assets/43630437/32184d89-b8ca-42f5-a2e2-f0cba84b2972)
+
+
 
 _Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
