@@ -35,6 +35,7 @@ map("n", "x", '"_x')
 
 map("n", "<leader>w", "<cmd>:w<cr>")
 map("n", "<leader>q", "<cmd>:q<cr>")
+map("n", "<leader>wq", "<cmd>:wqa<cr>")
 map("n", "<leader>x", "<cmd>:bdelete<cr>")
 
 -- Increment/decrement

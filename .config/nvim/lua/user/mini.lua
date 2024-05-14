@@ -7,55 +7,68 @@ local M = {
 		{
 			"<leader>f",
 			function()
-				vim.cmd("Pick files")
+				require("mini.pick").builtin.files()
 			end,
 		},
 		{
 			"<leader>ff",
 			function()
-				vim.cmd("Pick grep_live")
+				local wrd = vim.fn.expand("<cWORD>")
+				require("mini.pick").builtin.grep_live({ pattern = wrd })
 			end,
 		},
 		{
-			"<leader>b",
+			"<leader><space>",
 			function()
-				vim.cmd("Pick buffers")
+				require("mini.pick").builtin.buffers()
 			end,
 		},
 		{
 			"<leader>h",
 			function()
-				vim.cmd("Pick help")
+				require("mini.pick").builtin.help()
 			end,
 		},
 		{
 			"<leader>o",
 			function()
-				vim.cmd(":lua MiniFiles.open()")
+				require("mini.files").open(vim.api.nvim_buf_get_name(0))
 			end,
 		},
 		{
 			"ha",
 			function()
-				vim.cmd(":lua MiniVisits.add_path()")
+				require("mini.visits").add_path()
 			end,
 		},
 		{
 			"hm",
 			function()
-				vim.cmd(":lua MiniVisits.select_path()")
+				require("mini.visits").select_path()
 			end,
 		},
 		{
 			"hd",
 			function()
-				vim.cmd(":lua MiniVisits.remove_path()")
+				require("mini.visits").remove_path()
 			end,
 		},
 		{
 			"um",
 			function()
 				require("mini.map").toggle()
+			end,
+		},
+		{
+			"<leader>fl",
+			function()
+				require("mini.extra").pickers.hl_groups()
+			end,
+		},
+		{
+			"<leader>,",
+			function()
+				require("mini.extra").pickers.buf_lines()
 			end,
 		},
 	},
@@ -91,6 +104,9 @@ function M.config()
 	require("mini.tabline").setup()
 	require("mini.trailspace").setup()
 	require("mini.align").setup()
+	require("mini.extra").setup()
+	require("mini.visits").setup()
+	require("mini.map").setup()
 	require("mini.indentscope").setup({
 		symbol = "│",
 		options = { try_as_border = true },
@@ -139,8 +155,6 @@ function M.config()
 			enable = true,
 		},
 	})
-	require("mini.visits").setup({})
-	require("mini.map").setup({})
 end
 
 return M
