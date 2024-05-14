@@ -52,6 +52,12 @@ local M = {
 				vim.cmd(":lua MiniVisits.remove_path()")
 			end,
 		},
+		{
+			"um",
+			function()
+				require("mini.map").toggle()
+			end,
+		},
 	},
 	init = function()
 		vim.api.nvim_create_autocmd("FileType", {
@@ -134,6 +140,7 @@ function M.config()
 		},
 	})
 	require("mini.visits").setup({})
+	require("mini.map").setup({})
 end
 
 return M
