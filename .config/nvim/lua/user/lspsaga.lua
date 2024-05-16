@@ -35,7 +35,7 @@ function M.config()
 		ui = {
 			kind = kind,
 			border = "rounded",
-			code_action = " ",
+			code_action = "󰫣 ",
 		},
 		beacon = {
 			enable = true,
@@ -46,6 +46,7 @@ function M.config()
 				quit = { "q", "<ESC>" },
 			},
 			show_layout = "float",
+			diagnostic_only_current = false,
 		},
 	})
 end
