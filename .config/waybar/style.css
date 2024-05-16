@@ -75,6 +75,7 @@ tooltip {
 #window,
 #custom-weather,
 #custom-pacman,
+#custom-pomo,
 #custom-notification,
 #workspaces {
   color: @color7;
@@ -130,4 +131,16 @@ tooltip {
 
 #window {
   background-color: @color2;
+}
+
+#custom-pomo.running {
+  background: @color6;
+}
+
+#custom-pomo.paused {
+  background: @color5;
+}
+
+#custom-pomo.finished {
+  background: @color3;
 }
