@@ -64,6 +64,7 @@ swaybg \
 swaync \
 wlogout \
 checkupdates-with-aur \
-nm-connection-editor
+nm-connection-editor \
+networkmanager
 
 echo ">>> Everything is ready!"
