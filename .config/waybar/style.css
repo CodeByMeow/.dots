@@ -134,11 +134,11 @@ tooltip {
 }
 
 #custom-pomo.running {
-  background: @color6;
+  background: @color5;
 }
 
 #custom-pomo.paused {
-  background: @color5;
+  background: @color6;
 }
 
 #custom-pomo.finished {
