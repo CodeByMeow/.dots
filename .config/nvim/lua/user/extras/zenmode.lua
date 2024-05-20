@@ -26,6 +26,7 @@ function M.config()
 				enabled = true,
 			},
 			gitsigns = { enabled = false },
+			twilight = { enabled = false },
 		},
 	})
 end
