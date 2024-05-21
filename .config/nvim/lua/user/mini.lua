@@ -60,7 +60,7 @@ local M = {
 			end,
 		},
 		{
-			"<leader>fl",
+			"<leader>cl",
 			function()
 				require("mini.extra").pickers.hl_groups()
 			end,
@@ -69,6 +69,12 @@ local M = {
 			"<leader>,",
 			function()
 				require("mini.extra").pickers.buf_lines()
+			end,
+		},
+		{
+			"gj",
+			function()
+				require("mini.splitjoin").toggle()
 			end,
 		},
 	},
@@ -155,6 +161,7 @@ function M.config()
 			enable = true,
 		},
 	})
+	require("mini.splitjoin").setup()
 end
 
 return M
