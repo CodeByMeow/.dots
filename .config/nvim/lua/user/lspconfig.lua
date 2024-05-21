@@ -3,6 +3,27 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 }
 
+M.on_attach = function(client, bufnr)
+	if client.supports_method("textDocument/inlayHint") then
+		vim.lsp.inlay_hint.enable(true)
+	end
+end
+
+function M.common_capabilities()
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities.textDocument.completion.completionItem.snippetSupport = true
+	return capabilities
+end
+
+M.toggle_inlay_hints = function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(bufnr))
+end
+
+vim.keymap.set("n", "<leader>.", function()
+	M.toggle_inlay_hints()
+end, { desc = "Toggle Inlay Hints" })
+
 function M.config()
 	local lspconfig = require("lspconfig")
 	local icons = require("user.icons")
@@ -62,7 +83,11 @@ function M.config()
 
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	for _, server in ipairs(servers) do
-		local opts = {}
+		local opts = {
+			on_attach = M.on_attach,
+			capabilities = M.common_capabilities(),
+		}
+
 		local require_ok, settings = pcall(require, "user.lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
