@@ -1,10 +1,10 @@
 local M = {}
 M = {
 	diagnostics = {
-		Error = " ",
+		Error = "󰅘 ",
 		Warn = " ",
 		Hint = " ",
-		Info = " ",
+		Info = "󰙎 ",
 	},
 	git = {
 		added = "󰜄 ",

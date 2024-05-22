@@ -162,6 +162,21 @@ function M.config()
 		},
 	})
 	require("mini.splitjoin").setup()
+	require("mini.notify").setup()
+	require("mini.git").setup()
+	require("mini.diff").setup({
+		-- Options for how hunks are visualized
+		view = {
+			style = "sign",
+
+			-- Signs used for hunks with 'sign' view
+			signs = { add = "▒", change = "▒", delete = "▒" },
+
+			-- Priority of used visualization extmarks
+			priority = 199,
+		},
+		mappings = {},
+	})
 end
 
 return M
