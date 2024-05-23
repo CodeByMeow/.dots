@@ -166,7 +166,7 @@ function M.config()
 	require("mini.diff").setup({
 		-- Options for how hunks are visualized
 		view = {
-			style = "sign",
+			style = vim.go.number and "number" or "sign",
 
 			-- Signs used for hunks with 'sign' view
 			signs = { add = "▒", change = "▒", delete = "▒" },

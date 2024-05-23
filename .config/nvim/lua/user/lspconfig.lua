@@ -44,6 +44,15 @@ function M.config()
 
 	vim.diagnostic.config({
 		virtual_text = false,
+		severity_sort = true,
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = icons.Error,
+				[vim.diagnostic.severity.WARN] = icons.Warn,
+				[vim.diagnostic.severity.HINT] = icons.Hint,
+				[vim.diagnostic.severity.INFO] = icons.Info,
+			},
+		},
 	})
 
 	-- Show diagnostic current line only
