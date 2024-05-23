@@ -10,8 +10,9 @@ function M.common_capabilities()
 end
 
 M.toggle_inlay_hints = function()
-	local bufnr = vim.api.nvim_get_current_buf()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(bufnr))
+	if vim.lsp.inlay_hint then
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled(nil))
+	end
 end
 
 vim.keymap.set("n", "<leader>.", function()
