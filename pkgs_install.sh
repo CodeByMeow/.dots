@@ -26,6 +26,7 @@ bc \
 firefox \
 bibata-cursor-theme \
 catppuccin-gtk-theme-mocha \
+whitesur-icon-theme \
 nwg-look \
 ly \
 xdg-user-dirs \

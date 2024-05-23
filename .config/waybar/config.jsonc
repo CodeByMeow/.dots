@@ -191,13 +191,8 @@
 	"hyprland/window": {
 		"format": " {}",
 		"separate-outputs": true,
-		"rewrite": {
-			"(.*) — Mozilla Firefox": " $1",
-			"(.*) - fish": "󰈺 [$1]",
-			"(.*) - zsh": "> [$1]",
-			"(.*) - kitty": "󰄛 [$1]",
-			"(.*) - foot": "󰽒 [$1]"
-		}
+		"icon": true,
+		"icon-size": 20
 	},
 	"custom/weather": {
 		"format": "{}°",

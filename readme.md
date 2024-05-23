@@ -59,7 +59,6 @@ blank_box = false
 - Iosevka Ori Sans - _My custom Iosevka font_
 ### UI
     /etc/pacman.conf: ILoveCandy
-[Icon ](https://github.com/EliverLara/candy-icons): :candy: Candy icons
 
 ### Devtool
 
