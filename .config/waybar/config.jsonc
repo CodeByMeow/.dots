@@ -255,7 +255,6 @@
 	},
 	"custom/power": {
 		"format": "⏻ ",
-		"exec": "echo ; echo 󰟡 power // blur",
 		"on-click": "wlogout.sh",
 		"interval": 86400, // once every day
 		"tooltip": false
