@@ -13,7 +13,6 @@
 	"modules-center": [
 		"custom/empty",
 		"hyprland/workspaces#kanji",
-		"custom/pomo",
 		"custom/empty"
 	],
 	"modules-right": [
@@ -260,14 +259,5 @@
 		"on-click": "wlogout.sh",
 		"interval": 86400, // once every day
 		"tooltip": false
-	},
-	"custom/pomo": {
-		"format": "   {}",
-		"exec": "pomodoro-cli status --format json --time-format digital",
-		"return-type": "json",
-		"on-click": "pomodoro-cli start --add 25m --notify;pkill -SIGRTMIN+10 waybar",
-		"on-click-middle": "pomodoro-cli pause",
-		"on-click-right": "pomodoro-cli stop",
-		"interval": 1
 	}
 }
