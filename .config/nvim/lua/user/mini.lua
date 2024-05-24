@@ -36,24 +36,6 @@ local M = {
 			end,
 		},
 		{
-			"ha",
-			function()
-				require("mini.visits").add_path()
-			end,
-		},
-		{
-			"hm",
-			function()
-				require("mini.visits").select_path()
-			end,
-		},
-		{
-			"hd",
-			function()
-				require("mini.visits").remove_path()
-			end,
-		},
-		{
 			"um",
 			function()
 				require("mini.map").toggle()
@@ -111,7 +93,6 @@ function M.config()
 	require("mini.trailspace").setup()
 	require("mini.align").setup()
 	require("mini.extra").setup()
-	require("mini.visits").setup()
 	require("mini.map").setup()
 	require("mini.indentscope").setup({
 		symbol = "│",

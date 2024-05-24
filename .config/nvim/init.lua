@@ -42,5 +42,6 @@ spec("user.extras.codesnap")
 spec("user.extras.image")
 spec("user.extras.hlcolors")
 spec("user.extras.fidget")
+spec("user.extras.harpoon")
 
 require("user.lazy")
