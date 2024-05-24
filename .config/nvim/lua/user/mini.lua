@@ -116,12 +116,17 @@ function M.config()
 	})
 	require("mini.hipatterns").setup({
 		highlighters = {
-			fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "TSDanger" },
-			hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "TSWarning" },
-			todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "TSTodo" },
-			note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "TSNote" },
+			-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+			fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+			hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+			todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+			note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+			-- Highlight hex color strings (`#rrggbb`) using that color
+			hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
 		},
 	})
+	-- TODO
 	require("mini.move").setup({
 		mappings = {
 			-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
