@@ -6,7 +6,20 @@ local M = {
 }
 
 function M.config()
-	require("neorg").setup()
+	require("neorg").setup({
+		load = {
+			["core.defaults"] = {},
+			["core.concealer"] = {},
+			["core.dirman"] = {
+				config = {
+					workspaces = {
+						notes = "~/notes",
+					},
+					default_workspace = "notes",
+				},
+			},
+		},
+	})
 end
 
 return M
