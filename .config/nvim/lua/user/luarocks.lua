@@ -5,7 +5,7 @@ local M = {
 
 function M.config()
 	require("luarocks-nvim").setup({
-		rocks = { "magick" },
+		rocks = { "magick", "neorg" },
 	})
 end
 
