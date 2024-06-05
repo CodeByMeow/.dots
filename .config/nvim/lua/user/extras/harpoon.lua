@@ -13,6 +13,9 @@ function M.config()
 	vim.keymap.set("n", "hm", function()
 		harpoon.ui:toggle_quick_menu(harpoon:list())
 	end)
+	vim.keymap.set("n", "hn", function()
+		harpoon:list():select(1)
+	end)
 end
 
 return M
