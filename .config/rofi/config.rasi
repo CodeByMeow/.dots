@@ -5,7 +5,7 @@ configuration {
 	display-window: "󰂽  Window";
 	display-dmenu: "󰆏  Clipboard";
 	show-icons:   true;
-	icon-theme:   "candy-icons";
+	icon-theme:   "WhiteSur-dark";
 	modes:        [drun, window];
 }
 
@@ -94,9 +94,9 @@ entry {
 }
 
 message {
-    margin:             12px 0 0;
-    border-radius:      9px;
-    border-color:       #b95cb9;
+    margin:						12px 0 0;
+    border-radius:      		9px;
+    border-color:       		#b95cb9;
 }
 
 textbox {
@@ -123,19 +123,19 @@ listview {
 }
 
 element {
-    padding:        8px 16px;
-    spacing:        8px;
-    border-radius:  9px;
-	children:		[element-icon, element-text];
+    padding:					8px 16px;
+    spacing:        			8px;
+    border-radius:  			9px;
+	children:					[element-icon, element-text];
 }
 
 element-icon {
-    size:           1.2em;
-    vertical-align: 0.5;
+    size:						1.2em;
+    vertical-align: 			0.5;
 }
 
 element-text {
-    text-color: #ebdbb3;
+    text-color:				#ebdbb3;
 }
 
 /* ---- Dummy ---- */
