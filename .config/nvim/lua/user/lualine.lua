@@ -1,10 +1,6 @@
 local M = {
 	"nvim-lualine/lualine.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-		{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
-	},
 }
 
 function M.config()

@@ -4,6 +4,7 @@ local M = {
 		"nvim-treesitter/nvim-treesitter",
 		"MunifTanjim/nui.nvim",
 	},
+	event = "BufReadPre",
 }
 
 function M.config()

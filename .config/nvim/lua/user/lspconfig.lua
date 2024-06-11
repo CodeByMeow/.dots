@@ -3,20 +3,20 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 }
 
-function M.common_capabilities()
+function common_capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 	return capabilities
 end
 
-M.toggle_inlay_hints = function()
+toggle_inlay_hints = function()
 	if vim.lsp.inlay_hint then
 		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
 	end
 end
 
 vim.keymap.set("n", "<leader>.", function()
-	M.toggle_inlay_hints()
+	toggle_inlay_hints()
 end, { desc = "Toggle Inlay Hints" })
 
 function M.config()
@@ -31,7 +31,7 @@ function M.config()
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	for _, server in ipairs(servers) do
 		local opts = {
-			capabilities = M.common_capabilities(),
+			capabilities = common_capabilities(),
 		}
 
 		local require_ok, settings = pcall(require, "user.lspsettings." .. server)
