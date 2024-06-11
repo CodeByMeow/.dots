@@ -11,13 +11,13 @@ local M = {
 		{
 			"<leader>n",
 			function()
-				require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+				require("lspsaga.diagnostic"):goto_prev()
 			end,
 		},
 		{
 			"<leader>e",
 			function()
-				require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+				require("lspsaga.diagnostic"):goto_prev()
 			end,
 		},
 		{ "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>" },
