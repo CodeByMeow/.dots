@@ -46,7 +46,17 @@ function M.config()
 			},
 			lualine_b = { "diff" },
 			lualine_c = {
-				"filename",
+				{
+					function()
+						local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+						local icon = require("nvim-web-devicons").get_icon_by_filetype(vim.bo.filetype)
+						return string.format("%s %s", icon, filename)
+					end,
+					color = function()
+						local _, color = require("nvim-web-devicons").get_icon_cterm_color_by_filetype(vim.bo.filetype)
+						return { fg = color }
+					end,
+				},
 				{
 					"diagnostics",
 					symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint },
@@ -56,15 +66,14 @@ function M.config()
 				{
 					function()
 						local lsps = vim.lsp.get_clients()
-						local icon = require("nvim-web-devicons").get_icon_by_filetype(vim.bo.filetype)
 						if lsps and #lsps > 0 then
 							local names = {}
 							for _, lsp in ipairs(lsps) do
 								table.insert(names, lsp.name)
 							end
-							return string.format("  %s %s", table.concat(names, ", "), icon)
+							return string.format("  %s", table.concat(names, ", "))
 						else
-							return icon or ""
+							return ""
 						end
 					end,
 					color = function()
