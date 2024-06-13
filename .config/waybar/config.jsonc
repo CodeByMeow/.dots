@@ -205,7 +205,7 @@
 		"return-type": "json",
 		"exec": "pacman.sh",
 		"exec-if": "which pacman.sh",
-		"on-click": "foot -T update yay -Syu && pkill -RTMIN+8 waybar && notify-send -e -i \"$HOME/.config/swaync/thankme.png\" 'Perfect !!!' 'The system has been updated'",
+		"on-click": "foot -T 'System upgrade' yay -Syu && pkill -RTMIN+8 waybar && notify-send -e -i \"$HOME/.config/swaync/thankme.png\" 'Perfect !!!' 'The system has been updated'",
 		"interval": 3600,
 		"signal": 8
 	},
