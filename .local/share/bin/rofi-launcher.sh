@@ -9,4 +9,6 @@ case "$1" in
     d)
         rofi -show drun
         ;;
+	*)
+		echo "Select options: w - window | d - drun"
 esac

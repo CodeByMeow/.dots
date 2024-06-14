@@ -1,61 +1,68 @@
+#  ╔╦╗╦ ╦╔╗╔╔═╗╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗	- Dunst config file for the rices
+#   ║║║ ║║║║╚═╗ ║   ║  ║ ║║║║╠╣ ║║ ╦	- https://github.com/gh0stzk/dotfiles
+#  ═╩╝╚═╝╝╚╝╚═╝ ╩   ╚═╝╚═╝╝╚╝╚  ╩╚═╝	- z0mbi3
+
 [global]
-    font = Iosevka Ori Sans 12
-    monitor = 0
-    follow = mouse
-    width = 377
-    height = 180
-    origin = top-right
-    offset = 10x10
-    scale = 0
-    notification_limit = 10
-    progress_bar = false
-    indicate_hidden = yes
-    transparency = 0
-    separator_height = 2
-    padding = 6
-    horizontal_padding = 6
-    text_icon_padding = 0
-    frame_width = 2
-    frame_color = "#FD7F01"
-    gap_size = 8
-    separator_color = frame
-    sort = yes
-    idle_threshold = 120
-    line_height = 2
-    markup = full
-    alignment = left
-    vertical_alignment = center
-    show_age_threshold = 60
-    ellipsize = middle
-    ignore_newline = no
-    stack_duplicates = true
-    hide_duplicate_count = false
-    show_indicators = no
-    icon_position = left
-    icon_path = /home/ori/.config/dunst/assets/icons/:/usr/share/icons/candy-icons/devices/
-	enable_recursive_icon_lookup = false
-    icon_corner_radius = 9
-    min_icon_size = 16
-    max_icon_size = 64
-    sticky_history = yes
-    history_length = 20
-    always_run_script = true
-    corner_radius = 9
-    ignore_dbusclose = false
-    force_xinerama = false
-    mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
-    background = "#1e1e1e00"
-    foreground = "#EBDBB2"
-    timeout = 5
+title = Dunst
+class = Dunst
+monitor = 0
+follow = mouse
+width = 300
+height = 300
+origin = top-right
+offset = 10x92
+indicate_hidden = yes
+shrink = yes
+
+transparency = 0
+separator_height = 2
+padding = 8
+horizontal_padding = 11
+frame_width = 6
+frame_color = "#1a1b26"
+separator_color = "#c0caf5"
+
+font = JetBrainsMono Nerd Font Medium 9
+
+line_height = 0
+markup = full
+format = "<span size='x-large' font_desc='Cantarell 9' weight='bold' foreground='#f9f9f9'>%s</span>\n%b"
+alignment = center
+
+idle_threshold = 120
+show_age_threshold = 60
+sort = no
+word_wrap = yes
+ignore_newline = no
+stack_duplicates = false
+hide_duplicate_count = yes
+show_indicators = no
+sticky_history = no
+history_length = 20
+always_run_script = true
+corner_radius = 4
+icon_position = left
+max_icon_size = 80
+
+icon_path = /usr/share/icons/Papirus-Dark/48x48/actions/:/usr/share/icons/Papirus-Dark/48x48/apps/:/usr/share/icons/Papirus-Dark/48x48/devices/:/usr/share/icons/Papirus-Dark/48x48/emblems/:/usr/share/icons/Papirus-Dark/48x48/emotes/:/usr/share/icons/Papirus-Dark/48x48/mimetypes/:/usr/share/icons/Papirus-Dark/48x48/places/:/usr/share/icons/Papirus-Dark/48x48/status/
+
+browser = firefox
+
+mouse_left_click = close_current
+mouse_middle_click = do_action
+mouse_right_click = close_all
 
 [urgency_low]
+timeout = 3
+background = "#1a1b26"
+foreground = "#c0caf5"
 
 [urgency_normal]
+timeout = 6
+background = "#1a1b26"
+foreground = "#c0caf5"
 
 [urgency_critical]
-    background = "#705050"
-    foreground = "#E0DCD1"
-    frame_color = "#EAB6BE"
-    timeout = 10
+timeout = 0
+background = "#1a1b26"
+foreground = "#c0caf5"
