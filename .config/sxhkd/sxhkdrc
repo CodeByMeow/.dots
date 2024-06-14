@@ -128,3 +128,8 @@ XF86AudioLowerVolume
 
 XF86AudioMute
 	volume_control.sh --toggle
+
+SHIFT + RIGHT 
+	brightnessctl set 10%+
+SHIFT + LEFT 
+	brightnessctl set 10%-
