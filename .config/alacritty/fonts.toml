@@ -1,0 +1,9 @@
+[font]
+size = 14
+
+builtin_box_drawing = true
+
+normal = { family = "Iosevka Ori Sans", style = "Regular" }
+bold = { family = "Iosevka Ori Sans", style = "Bold" }
+italic = { family = "Iosevka Ori Sans", style = "Italic" }
+bold_italic = { family = "Iosevka Ori Sans", style = "Bold Italic" }
