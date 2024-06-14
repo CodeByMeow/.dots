@@ -27,7 +27,7 @@ polybar &
 dunst &
 picom &
 feh --bg-fill "$HOME"/Pictures/Wallpapers/turn-nature.png &
-ibus &
+ibus-daemon -rxR &
 
 # Fix cursor
 xsetroot -cursor_name left_ptr
