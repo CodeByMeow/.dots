@@ -35,5 +35,6 @@ spec("user.extras.iconpicker")
 spec("user.extras.hlcolors")
 spec("user.extras.fidget")
 spec("user.extras.harpoon")
+spec("user.extras.dressing")
 
 require("user.lazy")
