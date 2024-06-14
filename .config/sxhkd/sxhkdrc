@@ -119,3 +119,12 @@ super + alt + shift + {h,n,e,i}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+XF86AudioRaiseVolume
+	volume_control.sh --inc
+
+XF86AudioLowerVolume
+	volume_control.sh --dec
+
+XF86AudioMute
+	volume_control.sh --toggle

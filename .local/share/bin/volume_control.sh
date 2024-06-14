@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/dunst/icons"
 
 # Get Volume
 get_volume() {

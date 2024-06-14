@@ -7,10 +7,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 #  ║║║║ ║╠╦╝╠╩╗╚═╗╠═╝╠═╣║  ║╣ ╚═╗
 #  ╚╩╝╚═╝╩╚═╩ ╩╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
 
-# Default 1 monitor with 6 workspaces
-for monitor in $(xrandr -q | grep -w 'connected' | cut -d' ' -f1); do
-    bspc monitor "$monitor" -d '1' '2' '3' '4' '5' '6'
-done
+bspc monitor -d 一 二 三 四 五
 
 bspc config border_width         2
 

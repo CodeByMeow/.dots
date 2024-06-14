@@ -79,7 +79,4 @@ blank_box = false
 - `amberol`: Music
 
 ### Input method
-
-- `fcitx5-config-qt`
-- `fcitx5-unikey`
-- `fcitx5-chinese-addons`
+- Ibus-unikey
