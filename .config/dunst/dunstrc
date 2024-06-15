@@ -4,7 +4,7 @@
     width = 300
     height = 300
     origin = top-right
-    offset = 10x50
+    offset = 9x50
     scale = 0
     notification_limit = 0
     progress_bar = true
@@ -47,7 +47,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 0
+    corner_radius = 4
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
