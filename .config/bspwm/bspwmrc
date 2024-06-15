@@ -23,11 +23,11 @@ bspc config gapless_monocle           false
 bspc config focus_follows_pointer     true
 bspc config pointer_follows_focus     false
 
-polybar &
 dunst &
 picom &
 feh --bg-fill "$HOME"/Pictures/Wallpapers/turn-nature.png &
-ibus-daemon -rxR &
+ibus-daemon -rxRd
 
 # Fix cursor
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
+"$HOME"/.config/polybar/launch.sh
