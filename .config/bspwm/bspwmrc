@@ -9,8 +9,17 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 一 二 三 四 五
 
-bspc config border_width         2
+bspc rule -a firefox desktop=^2 follow=on
 
+bspc rule -a Nemo state=floating follow=on center=true rectangle=900x625+0+0
+bspc rule -a Nitrogen state=floating focus=on center=true
+bspc rule -a "Nwg-look" state=floating focus=on center=true
+
+
+#  ╔╗ ╔═╗╔═╗╦ ╦╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗
+#  ╠╩╗╚═╗╠═╝║║║║║║  ║  ║ ║║║║╠╣ ║║ ╦
+#  ╚═╝╚═╝╩  ╚╩╝╩ ╩  ╚═╝╚═╝╝╚╝╚  ╩╚═╝
+bspc config border_width         2
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -23,11 +32,18 @@ bspc config gapless_monocle           false
 bspc config focus_follows_pointer     true
 bspc config pointer_follows_focus     false
 
-dunst &
-picom &
-feh --bg-fill "$HOME"/Pictures/Wallpapers/turn-nature.png &
-ibus-daemon -rxRd
 
-# Fix cursor
+
+#  ╔═╗╦ ╦╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗╔╦╗
+#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║
+#  ╩ ╩╚═╝ ╩ ╚═╝╚═╝ ╩ ╩ ╩╩╚═ ╩
+
+nm-applet &
 xsetroot -cursor_name left_ptr &
-"$HOME"/.config/polybar/launch.sh
+pkill polybar
+~/.config/polybar/launch.sh &
+nitrogen --restore &
+picom &
+unclutter -idle 10 &
+udiskie &
+ibus-daemon
