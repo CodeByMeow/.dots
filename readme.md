@@ -1,19 +1,14 @@
-- **Window Manager** :bento: [ Hyprland ](https://hyprland.org/)
+- **Window Manager** :bento: [ Bspwm ]
 - **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
-- **Panel** :chocolate_bar: [ Waybar ](https://github.com/Alexays/Waybar)
-- **Application Launcher** :rocket: [ Rofi ](https://aur.archlinux.org/packages/rofi-pass-wayland-git)
-- **Notification Daemon** :loudspeaker: [Swaync](https://github.com/ErikReider/SwayNotificationCenter)
-- **Terminal Emulator** :foot: [ Foot ](https://codeberg.org/dnkl/foot)
+- **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
+- **Application Launcher** :rocket: Rofi
+- **Notification Daemon** :loudspeaker: Dunst
+- **Terminal Emulator** :foot: [ Alarcitty ](https://alacritty.org/)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **File Manager** :duck: [ Yazi ](https://yazi-rs.github.io/docs/)
 - **Editor** :fire: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
 
 ---
-
-![hyprland](https://github.com/CodeByMeow/.dots/assets/43630437/58c0a712-9b1c-48eb-86ed-8f3cba16d672)
-
-
-
 _Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
 _Note: I use colemak-dh keyboard layout_
@@ -80,3 +75,4 @@ blank_box = false
 
 ### Input method
 - Ibus-unikey
+- Ibus-pinyin

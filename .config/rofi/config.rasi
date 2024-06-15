@@ -1,9 +1,9 @@
 @import "~/.cache/wal/colors-rofi-dark"
 
 configuration {
-	display-drun: "󱓞  App";
-	display-window: "󰂽  Window";
-	display-dmenu: "󰆏  Clipboard";
+	display-drun: "󱓞 ";
+	display-window: "󰂽 ";
+	display-dmenu: "󰆏 ";
 	show-icons:   true;
 	icon-theme:   "WhiteSur-dark";
 	modes:        [drun, window];
@@ -36,14 +36,14 @@ window {
     anchor:                     center;
 
     // Style Values
-    width:                      55%;
-	height:                     55%;
+    width:                      33%;
+	height:                     60%;
     background-color:           #00000088;
 }
 
 mainbox {
     padding:				    12px;
-    orientation:                horizontal;
+    orientation:                vertical;
     children:                   [ "imagebox", "listbox" ];
     enabled:                    true;
     background-color:           transparent;
@@ -54,12 +54,12 @@ imagebox {
     background-color:            transparent;
     orientation:                 horizontal;
 	border-radius:				 9px;
-    background-image:            url("~/.current_wallpaper", height);
+	background-image:			 url("./img/cute-look.jpg", width );
 }
 
 listbox {
     spacing:                     20px;
-    padding:                     20px;
+    padding:                     5px;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "listview", "message" ];
@@ -67,11 +67,11 @@ listbox {
 
 inputbar {
     border:						2px;
-    padding:					8px 16px;
+    padding:					15px 10px;
     spacing:					8px;
     children:					[ prompt, entry ];
     enabled:                    true;
-    margin:                     20px;
+    margin:                     20px 0 10px;
     background-color:           transparent;
     border-radius:              9px;
     orientation:                horizontal;
@@ -90,7 +90,7 @@ entry {
     text-color:                  inherit;
     cursor:                      text;
 	background-color:		     transparent;
-	placeholder:				"Type for search";
+	placeholder:				 "";
 }
 
 message {

@@ -1,33 +1,36 @@
-# (Tokyo Night) color scheme for Emilia Rice
+[colors]
+[[colors.indexed_colors]]
+index = 16
+color = "0xffa066"
 
-# Default colors
+[[colors.indexed_colors]]
+index = 17
+color = "0xff5d62"
+
 [colors.primary]
-background = "#1a1b26"
-foreground = "#a9b1d6"
+background = "0x1f1f28"
+foreground = "0xdcd7ba"
 
-# Cursor colors
-[colors.cursor]
-cursor = "#bb9af7"
-text = "#1a1b26"
-
-# Normal colors
 [colors.normal]
-black = "#32344a"
-blue = "#7aa2f7"
-cyan = "#449dab"
-green = "#9ece6a"
-magenta = "#ad8ee6"
-red = "#f7768e"
-white = "#787c99"
-yellow = "#e0af68"
+black = "0x090618"
+red = "0xc34043"
+green = "0x76946a"
+yellow = "0xc0a36e"
+blue = "0x7e9cd8"
+magenta = "0x957fb8"
+cyan = "0x6a9589"
+white = "0xc8c093"
 
-# Bright colors
 [colors.bright]
-black = "#444b6a"
-blue = "#7da6ff"
-cyan = "#0db9d7"
-green = "#b9f27c"
-magenta = "#bb9af7"
-red = "#ff7a93"
-white = "#acb0d0"
-yellow = "#ff9e64"
+black = "0x727169"
+red = "0xe82424"
+green = "0x98bb6c"
+yellow = "0xe6c384"
+blue = "0x7fb4ca"
+magenta = "0x938aa9"
+cyan = "0x7aa89f"
+white = "0xdcd7ba"
+
+[colors.selection]
+background = "0x2d4f67"
+foreground = "0xc8c093"

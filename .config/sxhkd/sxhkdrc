@@ -9,6 +9,12 @@ super + Return
 # program launcher
 super + @space
 	rofi-launcher.sh d
+	
+super + w
+	rofi-launcher.sh w
+
+super + v
+	rofi-launcher.sh h
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -133,3 +139,9 @@ SHIFT + RIGHT
 	brightnessctl set 10%+
 SHIFT + LEFT 
 	brightnessctl set 10%-
+
+super + k
+	gpick -o -s | xclip -sel c
+
+super + Print
+    flameshot gui --clipboard

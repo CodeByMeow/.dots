@@ -9,8 +9,8 @@ yay -S rate-mirrors --noconfirm
 echo ">>> Setting mirrors..."
 rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist
 
-echo ">>> Install hyprland manual dependencies..."
-yay -S gdb ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite xorg-xinput libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm xorg-xwayland libinput libliftoff libdisplay-info cpio tomlplusplus hyprlang hyprcursor
+echo ">>> Install manual dependencies..."
+yay -S gdb ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite xorg-xinput libxrender pixman  cairo pango seatd libxkbcommon xcb-util-wm  libinput libliftoff libdisplay-info cpio tomlplusplus 
 
 echo ">>> Installing packages..."
 
@@ -49,23 +49,10 @@ tldr \
 ueberzug \
 libmtp \
 mpv \
-hyprpicker \
-hyprshot \
-hyprlock \
-hyprcursor \
-hypridle \
-cliphist \
-qt5-wayland \
-qt6-wayland \
-xdg-desktop-portal-hyprland \
-pywal-git \
 acpi \
-swww \
-swaybg \
-swaync \
-wlogout \
 checkupdates-with-aur \
 nm-connection-editor \
-networkmanager
+networkmanager-git \
+rofi-gpaste-git \
 
 echo ">>> Everything is ready!"
