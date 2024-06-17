@@ -3,13 +3,13 @@ local M = {
 	event = { "BufReadPre", "BufNewFile" },
 }
 
-function common_capabilities()
+local function common_capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 	return capabilities
 end
 
-toggle_inlay_hints = function()
+local function toggle_inlay_hints()
 	if vim.lsp.inlay_hint then
 		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
 	end
