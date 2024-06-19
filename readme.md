@@ -3,7 +3,7 @@
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
-- **Terminal Emulator** :foot: [ Alarcitty ](https://alacritty.org/)
+- **Terminal Emulator** :beers: [ Alarcitty ](https://alacritty.org/)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **File Manager** :duck: [ Yazi ](https://yazi-rs.github.io/docs/)
 - **Editor** :fire: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
