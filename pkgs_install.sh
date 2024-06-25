@@ -46,7 +46,7 @@ udiskie \
 deno \
 breaktimer \
 tldr \
-ueberzug \
+ueberzugpp \
 libmtp \
 mpv \
 acpi \
