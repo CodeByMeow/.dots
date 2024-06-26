@@ -22,7 +22,7 @@ end, { desc = "Toggle Inlay Hints" })
 function M.config()
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()
-	local icons = require("user.icons").diagnostics
+	local icons = require("config.icons").diagnostics
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 	vim.lsp.handlers["textDocument/signatureHelp"] =
@@ -34,7 +34,7 @@ function M.config()
 			capabilities = common_capabilities(),
 		}
 
-		local require_ok, settings = pcall(require, "user.lspsettings." .. server)
+		local require_ok, settings = pcall(require, "config.lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end

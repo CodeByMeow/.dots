@@ -54,7 +54,7 @@ local M = {
 
 function M.config()
 	local cmp = require("cmp")
-	local icons = require("user.icons")
+	local icons = require("config.icons")
 	local luasnip = require("luasnip")
 
 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")

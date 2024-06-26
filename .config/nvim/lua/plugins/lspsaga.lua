@@ -30,7 +30,7 @@ local M = {
 }
 
 function M.config()
-	local kind = require("user.icons").kind
+	local kind = require("config.icons").kind
 	require("lspsaga").setup({
 		ui = {
 			kind = kind,

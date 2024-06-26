@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-	local icons = require("user.icons").diagnostics
+	local icons = require("config.icons").diagnostics
 	local auto_theme_custom = require("lualine.themes.auto")
 	local branch_max_width = 40
 	local branch_min_width = 10

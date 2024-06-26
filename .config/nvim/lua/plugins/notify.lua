@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-	local icons = require("user.icons")
+	local icons = require("config.icons")
 	local banned_messages = { "No information available" }
 	vim.notify = vim.schedule_wrap(function(msg, ...)
 		for _, banned in ipairs(banned_messages) do
