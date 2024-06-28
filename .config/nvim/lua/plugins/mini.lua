@@ -126,7 +126,6 @@ function M.config()
 			hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
 		},
 	})
-	-- TODO
 	require("mini.move").setup({
 		mappings = {
 			-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
