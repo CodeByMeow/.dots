@@ -1,12 +1,7 @@
-local M = {
+return {
 	"tzachar/cmp-tabnine",
 	build = "./install.sh",
 	dependencies = "hrsh7th/nvim-cmp",
 	event = "InsertEnter",
+	opts = {},
 }
-
-M.config = function()
-	require("cmp_tabnine").setup()
-end
-
-return M

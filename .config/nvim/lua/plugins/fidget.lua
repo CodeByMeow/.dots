@@ -1,7 +1,6 @@
-local M = { "j-hui/fidget.nvim" }
-
-function M.config()
-	require("fidget").setup({
+return {
+	"j-hui/fidget.nvim",
+	opts = {
 		notification = {
 			window = {
 				normal_hl = "Comment",
@@ -16,7 +15,5 @@ function M.config()
 				relative = "editor",
 			},
 		},
-	})
-end
-
-return M
+	},
+}

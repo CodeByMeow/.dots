@@ -1,4 +1,4 @@
-local M = {
+return {
 	"nvim-treesitter/nvim-treesitter",
 	event = { "BufReadPost", "BufNewFile" },
 	build = ":TSUpdate",
@@ -46,10 +46,7 @@ local M = {
 	keys = {
 		{ "<leader>p", vim.cmd.TSPlaygroundToggle },
 	},
-}
-
-function M.config()
-	require("nvim-treesitter.configs").setup({
+	opts = {
 		ensure_installed = {
 			"html",
 			"javascript",
@@ -70,7 +67,7 @@ function M.config()
 			"xml",
 			"http",
 			"graphql",
-			"vimdoc"
+			"vimdoc",
 		},
 		auto_install = true,
 		highlight = { enable = true },
@@ -101,7 +98,5 @@ function M.config()
 			},
 		},
 		ignore_install = { "help" },
-	})
-end
-
-return M
+	},
+}

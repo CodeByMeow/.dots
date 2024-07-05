@@ -1,7 +1,6 @@
-local M = {
+return {
 	"monaqa/dial.nvim",
-		-- stylua: ignore
-		event = "InsertEnter",
+	event = "InsertEnter",
 	keys = {
 		{
 			"<C-a>",
@@ -20,20 +19,17 @@ local M = {
 			desc = "Decrement",
 		},
 	},
+	config = function()
+		local augend = require("dial.augend")
+		require("dial.config").augends:register_group({
+			default = {
+				augend.integer.alias.decimal,
+				augend.integer.alias.hex,
+				augend.date.alias["%d/%m/%Y"],
+				augend.constant.alias.bool,
+				augend.semver.alias.semver,
+				augend.constant.new({ elements = { "let", "const" } }),
+			},
+		})
+	end,
 }
-
-function M.config()
-	local augend = require("dial.augend")
-	require("dial.config").augends:register_group({
-		default = {
-			augend.integer.alias.decimal,
-			augend.integer.alias.hex,
-			augend.date.alias["%d/%m/%Y"],
-			augend.constant.alias.bool,
-			augend.semver.alias.semver,
-			augend.constant.new({ elements = { "let", "const" } }),
-		},
-	})
-end
-
-return M

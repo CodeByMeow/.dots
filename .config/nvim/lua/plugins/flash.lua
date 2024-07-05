@@ -1,4 +1,4 @@
-local M = {
+return {
 	"folke/flash.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	keys = {
@@ -10,7 +10,3 @@ local M = {
 		},
 	},
 }
-
-function M.config() end
-
-return M

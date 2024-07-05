@@ -1,4 +1,4 @@
-local M = {
+return {
 	"nvimdev/lspsaga.nvim",
 	event = "LspAttach",
 	keys = {
@@ -27,28 +27,26 @@ local M = {
 		{ "go", "<cmd>Lspsaga outline<CR>", mode = { "n", "v" } },
 		{ "<leader>t", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" } },
 	},
-}
 
-function M.config()
-	local kind = require("config.icons").kind
-	require("lspsaga").setup({
-		ui = {
-			kind = kind,
-			border = "rounded",
-			code_action = "󰫣 ",
-		},
-		beacon = {
-			enable = true,
-		},
-		diagnostic = {
-			max_height = 0.8,
-			keys = {
-				quit = { "q", "<ESC>" },
+	config = function()
+		local kind = require("config.icons").kind
+		require("lspsaga").setup({
+			ui = {
+				kind = kind,
+				border = "rounded",
+				code_action = "󰫣 ",
 			},
-			show_layout = "float",
-			diagnostic_only_current = false,
-		},
-	})
-end
-
-return M
+			beacon = {
+				enable = true,
+			},
+			diagnostic = {
+				max_height = 0.8,
+				keys = {
+					quit = { "q", "<ESC>" },
+				},
+				show_layout = "float",
+				diagnostic_only_current = false,
+			},
+		})
+	end,
+}

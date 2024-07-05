@@ -1,9 +1,9 @@
 [font]
-size = 14.5
+size = 13
 
 builtin_box_drawing = true
 
-normal = { family = "Iosevka Ori Sans", style = "Regular" }
-bold = { family = "Iosevka Ori Sans", style = "Bold" }
-italic = { family = "Iosevka Ori Sans", style = "Italic" }
-bold_italic = { family = "Iosevka Ori Sans", style = "Bold Italic" }
+normal = { family = "JetBrainsMono NF", style = "Regular" }
+bold = { family = "JetBrainsMono NF", style = "Bold" }
+italic = { family = "JetBrainsMono NF", style = "Italic" }
+bold_italic = { family = "JetBrainsMono NF", style = "Bold Italic" }

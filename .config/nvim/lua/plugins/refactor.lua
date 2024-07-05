@@ -1,4 +1,4 @@
-local M = {
+return {
 	"ThePrimeagen/refactoring.nvim",
 	event = "BufReadPre",
 	keys = {
@@ -14,7 +14,3 @@ local M = {
 		},
 	},
 }
-
-function M.config() end
-
-return M

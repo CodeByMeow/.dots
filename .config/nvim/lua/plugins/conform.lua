@@ -1,4 +1,4 @@
-local M = {
+return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
 	cmd = { "ConformInfo" },
@@ -10,9 +10,7 @@ local M = {
 			end,
 		},
 	},
-}
-function M.config()
-	require("conform").setup({
+	opts = {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "isort", "black" },
@@ -28,7 +26,5 @@ function M.config()
 			timeout_ms = 1000,
 			lsp_fallback = true,
 		},
-	})
-end
-
-return M
+	},
+}

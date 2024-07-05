@@ -83,17 +83,18 @@ local M = {
 }
 
 function M.config()
-	require("mini.pick").setup()
+	require("mini.align").setup()
 	require("mini.basics").setup()
 	require("mini.bufremove").setup()
 	require("mini.comment").setup()
 	require("mini.cursorword").setup()
+	require("mini.extra").setup()
+	require("mini.icons").setup()
+	require("mini.map").setup()
+	require("mini.pick").setup()
 	require("mini.surround").setup()
 	require("mini.tabline").setup()
 	require("mini.trailspace").setup()
-	require("mini.align").setup()
-	require("mini.extra").setup()
-	require("mini.map").setup()
 	require("mini.indentscope").setup({
 		symbol = "│",
 		options = { try_as_border = true },
