@@ -9,7 +9,7 @@ super + Return
 # program launcher
 super + @space
 	rofi-launcher.sh d
-	
+
 super + w
 	rofi-launcher.sh w
 
@@ -135,11 +135,11 @@ XF86AudioLowerVolume
 XF86AudioMute
 	volume_control.sh --toggle
 
-XF86MonBrightness{Up,Down}  
-    brightnessctl set 10%{+,-}  
+XF86MonBrightness{Up,Down}
+    brightnessctl set 10%{+,-}
 
 super + k
-	gpick -o -s | xclip -sel c
+	gpick -o -s | tr -d '\n' | xclip -sel c
 
 super + Print
     flameshot gui --clipboard
