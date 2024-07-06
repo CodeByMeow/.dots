@@ -147,7 +147,6 @@ function M.config()
 			enable = true,
 		},
 	})
-	require("mini.splitjoin").setup()
 	require("mini.git").setup()
 	require("mini.diff").setup({
 		-- Options for how hunks are visualized

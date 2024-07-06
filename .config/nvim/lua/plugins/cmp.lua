@@ -154,16 +154,33 @@ return {
 				fields = { "abbr", "menu", "kind" },
 				expandable_indicator = true,
 				format = function(entry, vim_item)
+					local color_item = require("nvim-highlight-colors").format(entry, { kind = vim_item.kind })
+					local color = require("nvim-highlight-colors.color.utils")
+					local entryItem = entry:get_completion_item()
+					local entryDocs = entryItem.documentation
+					local color_hex = ""
+					if entryDocs ~= nil and type(entryDocs) == "string" then
+						color_hex = color.get_color_value(entryDocs)
+					end
+
+					if color_item.abbr_hl_group then
+						vim_item.kind_hl_group = color_item.abbr_hl_group
+						vim_item.kind = color_item.abbr .. " " .. color_hex
+					end
+
 					local custom_menu_icon = {}
-					local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  tabnine" }
+					local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  Tabnine" }
+
 					for key, value in pairs(icons.kind) do
 						custom_menu_icon[key] = value[1]
 					end
 
 					vim_item.kind = (custom_menu_icon[vim_item.kind] or "  ") .. " " .. vim_item.kind
 					vim_item.kind = source_icons[entry.source.name] or vim_item.kind
+
 					vim.api.nvim_set_hl(0, "CmpItemKindTabNine", { fg = "#689D6A" })
 
+					print(vim_item.kind)
 					return vim_item
 				end,
 			},

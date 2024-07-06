@@ -33,14 +33,6 @@ return {
 				})
 			end,
 		},
-		{
-			"Wansmer/treesj",
-			keys = { "<space>m", "<space>j", "<space>s" },
-			dependencies = { "nvim-treesitter/nvim-treesitter" },
-			config = function()
-				require("treesj").setup()
-			end,
-		},
 		"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 	},
 	keys = {
@@ -93,8 +85,8 @@ return {
 			},
 			swap = {
 				enable = true,
-				swap_next = { ["<leader>sn"] = "@parameter.inner" },
-				swap_previous = { ["<leader>sp"] = "@parameter.inner" },
+				swap_next = { ["<leader>a"] = "@parameter.inner" },
+				swap_previous = { ["<leader>A"] = "@parameter.inner" },
 			},
 		},
 		ignore_install = { "help" },
