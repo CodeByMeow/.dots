@@ -143,3 +143,6 @@ super + k
 
 super + Print
     flameshot gui --clipboard
+
+super + Delete
+	betterlockscreen -l dim
