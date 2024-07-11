@@ -72,7 +72,7 @@ return {
 								for _, lsp in ipairs(lsps) do
 									table.insert(names, lsp.name)
 								end
-								return string.format("  %s", table.concat(names, ", "))
+								return string.format("  %s", table.concat(names, ", "))
 							else
 								return ""
 							end
