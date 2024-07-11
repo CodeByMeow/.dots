@@ -49,7 +49,7 @@ opt.isfname:append("@-@")
 opt.winblend = 0
 opt.background = "dark"
 opt.colorcolumn = "80"
-opt.listchars:append({ eol = "↵", tab = "󰍟 ", trail = "·" })
+opt.listchars:append({ eol = "", tab = "󰍟 ", trail = "·" })
 opt.list = true
 opt.title = true
 opt.pumheight = 10

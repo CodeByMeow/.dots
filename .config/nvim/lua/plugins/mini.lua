@@ -89,12 +89,15 @@ function M.config()
 	require("mini.comment").setup()
 	require("mini.cursorword").setup()
 	require("mini.extra").setup()
+	require("mini.git").setup()
 	require("mini.icons").setup()
 	require("mini.map").setup()
-	require("mini.pick").setup()
 	require("mini.surround").setup()
 	require("mini.tabline").setup()
 	require("mini.trailspace").setup()
+	require("mini.pick").setup()
+
+	-- Override
 	require("mini.indentscope").setup({
 		symbol = "│",
 		options = { try_as_border = true },
@@ -117,25 +120,21 @@ function M.config()
 	})
 	require("mini.hipatterns").setup({
 		highlighters = {
-			-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
 			fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
 			hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
 			todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
 			note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
 
-			-- Highlight hex color strings (`#rrggbb`) using that color
 			hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
 		},
 	})
 	require("mini.move").setup({
 		mappings = {
-			-- Move visual selection in Visual mode. Defaults are Alt (Meta) + hjkl.
 			left = "<M-h>",
 			right = "<M-i>",
 			down = "<M-n>",
 			up = "<M-e>",
 
-			-- Move current line in Normal mode
 			line_left = "<M-h>",
 			line_right = "<M-i>",
 			line_up = "<M-u>",
@@ -147,16 +146,10 @@ function M.config()
 			enable = true,
 		},
 	})
-	require("mini.git").setup()
 	require("mini.diff").setup({
-		-- Options for how hunks are visualized
 		view = {
 			style = vim.go.number and "number" or "sign",
-
-			-- Signs used for hunks with 'sign' view
 			signs = { add = "▒", change = "▒", delete = "▒" },
-
-			-- Priority of used visualization extmarks
 			priority = 199,
 		},
 		mappings = {},
