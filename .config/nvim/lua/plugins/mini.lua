@@ -18,7 +18,7 @@ local M = {
 			end,
 		},
 		{
-			"<leader><space>",
+			"<leader>b",
 			function()
 				require("mini.pick").builtin.buffers()
 			end,
