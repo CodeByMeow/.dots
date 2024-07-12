@@ -128,7 +128,7 @@ toolbaritem:last-of-type {
   height: 28px !important;
 }
 
-#urlbar-input-container {
+.urlbar-input-container {
   width: 100% !important;
   height: 100% !important;
 }
