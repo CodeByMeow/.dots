@@ -43,13 +43,13 @@ return {
 					{
 						function()
 							local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
-							local icon = require("nvim-web-devicons").get_icon_by_filetype(vim.bo.filetype)
+							local icon = require("mini.icons").get("filetype", vim.bo.filetype)
 							return string.format("%s %s", icon, filename)
 						end,
 						color = function()
 							local _, color =
 								require("nvim-web-devicons").get_icon_cterm_color_by_filetype(vim.bo.filetype)
-							return { fg = color }
+							return { fg = color, gui = "italic" }
 						end,
 					},
 					{
@@ -72,7 +72,7 @@ return {
 								for _, lsp in ipairs(lsps) do
 									table.insert(names, lsp.name)
 								end
-								return string.format("  %s", table.concat(names, ", "))
+								return string.format("󱜚 %s", table.concat(names, ", "))
 							else
 								return ""
 							end

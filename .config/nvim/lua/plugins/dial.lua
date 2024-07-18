@@ -3,7 +3,7 @@ return {
 	event = "InsertEnter",
 	keys = {
 		{
-			"+",
+			"<C-a>",
 			function()
 				return require("dial.map").inc_normal()
 			end,
@@ -11,7 +11,7 @@ return {
 			desc = "Increment",
 		},
 		{
-			"-",
+			"<C-x>",
 			function()
 				return require("dial.map").dec_normal()
 			end,

@@ -7,3 +7,6 @@ normal = { family = "JetBrainsMono NF", style = "Regular" }
 bold = { family = "JetBrainsMono NF", style = "Bold" }
 italic = { family = "JetBrainsMono NF", style = "Italic" }
 bold_italic = { family = "JetBrainsMono NF", style = "Bold Italic" }
+
+offset = { x = 0, y = 1 }
+glyph_offset = { x= 0, y= 1 }
