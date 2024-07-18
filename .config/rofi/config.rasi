@@ -1,8 +1,8 @@
 @import "~/.cache/wal/colors-rofi-dark"
 
 configuration {
-	display-drun: "󰄛 ";
-	display-window: "󰂽 ";
+	display-drun: "🐱 ";
+	display-window: "🍱 ";
 	display-dmenu: "󰆏 ";
 	show-icons:   true;
 	icon-theme:   "WhiteSur-dark";
@@ -37,7 +37,7 @@ window {
 
     // Style Values
     width:                      33%;
-	height:                     60%;
+	height:                     65%;
     background-color:           #00000088;
 }
 
@@ -50,7 +50,6 @@ mainbox {
 }
 
 imagebox {
-    padding:                     2px;
     background-color:            transparent;
     orientation:                 horizontal;
 	border-radius:				 4px;
@@ -58,20 +57,17 @@ imagebox {
 }
 
 listbox {
-    spacing:                     20px;
-    padding:                     5px;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "listview", "message" ];
 }
 
 inputbar {
-    border:						2px;
     padding:					12px 10px;
     spacing:					8px;
     children:					[ prompt, entry ];
     enabled:                    true;
-    margin:                     20px 0 10px;
+    margin:                     20px 0 0;
     background-color:           transparent;
     border-radius:              4px;
     orientation:                horizontal;
@@ -100,14 +96,13 @@ message {
 }
 
 textbox {
-    padding:					8px 24px;
+    padding:					12px 8px;
 }
 
 listview {
     lines:						 8;
     columns:					 1;
     enabled:                     true;
-    lines:                       8;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -115,16 +110,14 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    spacing:                     10px;
+    spacing:                     8px;
     background-color:            transparent;
-
-//  Adapt rofi theme
-    border:                      0px;
+    margin:                      10px 0 0;
+	border:						 0;
 }
 
 element {
-    padding:					8px 16px;
-    spacing:        			8px;
+    padding:					12px 8px;
     border-radius:  			4px;
 	children:					[element-icon, element-text];
 }
@@ -132,6 +125,7 @@ element {
 element-icon {
     size:						1.2em;
     vertical-align: 			0.5;
+	padding:					0 10px 0 0;
 }
 
 element-text {
