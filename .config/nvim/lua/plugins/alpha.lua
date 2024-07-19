@@ -3,47 +3,12 @@ return {
 	event = "VimEnter",
 	config = function()
 		local dashboard = require("alpha.themes.dashboard")
-		dashboard.section.header.val = {
-			[[     █  █     ]],
-			[[     ██ ██     ]],
-			[[     █████     ]],
-			[[     ██ ███     ]],
-			[[     █  █     ]],
-			[[]],
-			[[N  E  O   V  I  M]],
-		}
-
-		vim.api.nvim_set_hl(0, "GreenF", {
-			fg = "#A9B665",
-			bg = nil,
-		})
-		vim.api.nvim_set_hl(0, "BlueF", {
-			fg = "#7DAEA3",
-			bg = nil,
-		})
-		vim.api.nvim_set_hl(0, "GreenFBlueB", {
-			fg = "#A9B665",
-			bg = "#7DAEA3",
-		})
-		dashboard.section.header.opts.hl = {
-			{ { "BlueF", 5, 7 }, { "GreenF", 8, 22 } },
-			{ { "BlueF", 5, 8 }, { "GreenFBlueB", 8, 11 }, { "GreenF", 9, 24 } },
-			{ { "BlueF", 5, 10 }, { "GreenF", 10, 12 }, { "GreenF", 12, 26 } },
-			{ { "BlueF", 5, 11 }, { "GreenF", 12, 24 } },
-			{ { "BlueF", 5, 11 }, { "GreenF", 12, 22 } },
-			{ { "BlueF", 5, 11 }, { "GreenF", 12, 22 } },
-			{ { "BlueF", 0, 9 }, { "GreenF", 9, 18 } },
-		}
 		dashboard.section.buttons.val = {
 			dashboard.button("f", "󰀶 " .. " Find file", ":Pick files<CR>"),
 			dashboard.button("o", " " .. " Files Manager", ":lua MiniFiles.open()<CR>"),
 			dashboard.button("l", "󰒲 " .. " Lazy", ":Lazy<CR>"),
 			dashboard.button("q", "󰩈 " .. " Quit", ":qa<CR>"),
 		}
-		dashboard.opts.layout[1].val = 6
-
-		require("alpha").setup(dashboard.opts)
-
 		vim.api.nvim_create_autocmd("User", {
 			callback = function()
 				local stats = require("lazy").stats()
@@ -71,9 +36,87 @@ return {
 			pattern = { "AlphaReady" },
 			callback = function()
 				vim.cmd([[
-      set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
-    ]])
-			end,
-		})
-	end,
+			  set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3
+			]])
+			end})
+  	  -- helper function for utf8 chars
+  	  local function getCharLen(s, pos)
+  		  local byte = string.byte(s, pos)
+  		  if not byte then
+  			  return nil
+  		  end
+  		  return (byte < 0x80 and 1) or (byte < 0xE0 and 2) or (byte < 0xF0 and 3) or (byte < 0xF8 and 4) or 1
+  	  end
+
+  	  local function applyColors(logo, colors, logoColors)
+  		  dashboard.section.header.val = logo
+
+  		  for key, color in pairs(colors) do
+  			  local name = "Alpha" .. key
+  			  vim.api.nvim_set_hl(0, name, color)
+  			  colors[key] = name
+  		  end
+
+  		  dashboard.section.header.opts.hl = {}
+  		  for i, line in ipairs(logoColors) do
+  			  local highlights = {}
+  			  local pos = 0
+
+  			  for j = 1, #line do
+  				  local opos = pos
+  				  pos = pos + getCharLen(logo[i], opos + 1)
+
+  				  local color_name = colors[line:sub(j, j)]
+  				  if color_name then
+  					  table.insert(highlights, { color_name, opos, pos })
+  				  end
+  			  end
+
+  			  table.insert(dashboard.section.header.opts.hl, highlights)
+  		  end
+  		  return dashboard.opts
+  	  end
+
+  	  require("alpha").setup(applyColors({
+  		  [[  ███       ███  ]],
+  		  [[  ████      ████ ]],
+  		  [[  ████     █████ ]],
+  		  [[ █ ████    █████ ]],
+  		  [[ ██ ████   █████ ]],
+  		  [[ ███ ████  █████ ]],
+  		  [[ ████ ████ ████ ]],
+  		  [[ █████  ████████ ]],
+  		  [[ █████   ███████ ]],
+  		  [[ █████    ██████ ]],
+  		  [[ █████     █████ ]],
+  		  [[ ████      ████ ]],
+  		  [[  ███       ███  ]],
+  		  [[                    ]],
+  		  [[  N  E  O  V  I  M  ]],
+  	  }, {
+  		  ["b"] = { fg = "#3399ff", ctermfg = 33 },
+  		  ["a"] = { fg = "#53C670", ctermfg = 35 },
+  		  ["g"] = { fg = "#39ac56", ctermfg = 29 },
+  		  ["h"] = { fg = "#33994d", ctermfg = 23},
+  		  ["i"] = { fg = "#33994d", bg = "#39ac56", ctermfg = 23, ctermbg = 29},
+  		  ["j"] = { fg = "#53C670", bg = "#33994d", ctermfg = 35, ctermbg = 23 },
+  		  ["k"] = { fg = "#30A572", ctermfg = 36},
+  	  }, {
+  		  [[  kkkka       gggg  ]],
+  		  [[  kkkkaa      ggggg ]],
+  		  [[ b kkkaaa     ggggg ]],
+  		  [[ bb kkaaaa    ggggg ]],
+  		  [[ bbb kaaaaa   ggggg ]],
+  		  [[ bbbb aaaaaa  ggggg ]],
+  		  [[ bbbbb aaaaaa igggg ]],
+  		  [[ bbbbb  aaaaaahiggg ]],
+  		  [[ bbbbb   aaaaajhigg ]],
+  		  [[ bbbbb    aaaaajhig ]],
+  		  [[ bbbbb     aaaaajhi ]],
+  		  [[ bbbbb      aaaaajh ]],
+  		  [[  bbbb       aaaaa  ]],
+  		  [[                    ]],
+  		  [[  a  a  a  b  b  b  ]],
+  	  }))
+    end,
 }

@@ -10,7 +10,6 @@ local server_names = {
 	"lua_ls",
 	"cssls",
 	"html",
-	"intelephense",
 	"jsonls",
 	"eslint",
 	"prismals",
