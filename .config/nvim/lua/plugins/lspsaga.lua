@@ -2,30 +2,31 @@ return {
 	"nvimdev/lspsaga.nvim",
 	event = "LspAttach",
 	keys = {
-		{ "gf", "<cmd>Lspsaga finder<CR>" },
-		{ "gr", "<cmd>Lspsaga rename<CR>" },
-		{ "grp", "<cmd>Lspsaga rename ++project<CR>" },
-		{ "gt", "<cmd>Lspsaga peek_definition<CR>" },
-		{ "gd", "<cmd>Lspsaga goto_definition<CR>" },
-		{ "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>" },
+		{ "gf", "<cmd>Lspsaga finder<CR>", desc = "LSPSaga Finder" },
+		{ "gr", "<cmd>Lspsaga rename<CR>", desc = "LSPSaga Rename"},
+		{ "gt", "<cmd>Lspsaga peek_definition<CR>", desc = "LSPSaga Peek" },
+		{ "gd", "<cmd>Lspsaga goto_definition<CR>", desc = "LSPSaga Goto Definition" },
+		{ "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "LSPSaga Show Buffer Diagnostics" },
 		{
 			"<leader>n",
 			function()
-				require("lspsaga.diagnostic"):goto_prev()
+				require("lspsaga.diagnostic"):goto_next()
 			end,
+			desc = "LSPSaga Go To Next diagnostic"
 		},
 		{
 			"<leader>e",
 			function()
 				require("lspsaga.diagnostic"):goto_prev()
 			end,
+			desc = "LSPSaga Go To Previous diagnostic"
 		},
-		{ "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>" },
-		{ "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>" },
-		{ "H", "<cmd>Lspsaga hover_doc<CR>" },
-		{ "ga", "<cmd>Lspsaga code_action<CR>", mode = { "n", "v" } },
-		{ "go", "<cmd>Lspsaga outline<CR>", mode = { "n", "v" } },
-		{ "<leader>t", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" } },
+		{ "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>", desc = "LSPSaga Incoming Calls" },
+		{ "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>", desc = "LSPSaga Outgoing Calls"},
+		{ "H", "<cmd>Lspsaga hover_doc<CR>", desc = "LSPSaga Hover Doc" },
+		{ "ga", "<cmd>Lspsaga code_action<CR>", mode = { "n", "v" }, desc = "LSPSaga Code Action" },
+		{ "go", "<cmd>Lspsaga outline<CR>", mode = { "n", "v" }, desc = "LSPSaga Outline"},
+		{ "<leader>t", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" }, desc = "Terminal" },
 	},
 
 	config = function()
