@@ -1,7 +1,5 @@
 return {
-    "lewis6991/gitsigns.nvim",
-	opts = {
-		linehl = true
-	},
-	event = "VeryLazy"
+	"lewis6991/gitsigns.nvim",
+	opts = {},
+	event = "VeryLazy",
 }
