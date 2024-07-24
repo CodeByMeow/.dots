@@ -1,63 +1,66 @@
 return {
-		"nvim-treesitter/nvim-treesitter",
-		query_linter = {
-			enable = true,
-			use_virtual_text = true,
-			lint_events = { "BufWrite", "CursorHold" },
+	"nvim-treesitter/nvim-treesitter",
+	query_linter = {
+		enable = true,
+		use_virtual_text = true,
+		lint_events = { "BufWrite", "CursorHold" },
+	},
+	build = ":TSUpdate",
+	playground = {
+		enable = true,
+		disable = {},
+		updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+		persist_queries = true, -- Whether the query persists across vim sessions
+		keybindings = {
+			toggle_query_editor = "o",
+			toggle_hl_groups = "i",
+			toggle_injected_languages = "t",
+			toggle_anonymous_nodes = "a",
+			toggle_language_display = "I",
+			focus_language = "f",
+			unfocus_language = "F",
+			update = "R",
+			goto_node = "<cr>",
+			show_help = "?",
 		},
-		build = ":TSUpdate",
-		playground = {
-			enable = true,
-			disable = {},
-			updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-			persist_queries = true, -- Whether the query persists across vim sessions
-			keybindings = {
-				toggle_query_editor = "o",
-				toggle_hl_groups = "i",
-				toggle_injected_languages = "t",
-				toggle_anonymous_nodes = "a",
-				toggle_language_display = "I",
-				focus_language = "f",
-				unfocus_language = "F",
-				update = "R",
-				goto_node = "<cr>",
-				show_help = "?",
+	},
+	dependencies = {
+		{
+			"nvim-treesitter/playground",
+			keys = {
+				{ "<leader>p", vim.cmd.TSPlaygroundToggle, desc = "Toggle playground" },
 			},
 		},
-		dependencies = {
-	{ "nvim-treesitter/playground", keys = {
-		{ "<leader>p", vim.cmd.TSPlaygroundToggle },
-	} },
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = function()
-			local npairs = require("nvim-autopairs")
-			local Rule = require("nvim-autopairs.rule")
+		{
+			"windwp/nvim-autopairs",
+			event = "InsertEnter",
+			config = function()
+				local npairs = require("nvim-autopairs")
+				local Rule = require("nvim-autopairs.rule")
 
-			npairs.setup({
-				check_ts = true,
-				ts_config = {
-					lua = { "string" }, -- it will not add a pair on that treesitter node
-					javascript = { "template_string" },
-					java = false, -- don't check treesitter on java
-				},
-				disable_filetype = { "Telescope", "vim" },
-			})
+				npairs.setup({
+					check_ts = true,
+					ts_config = {
+						lua = { "string" }, -- it will not add a pair on that treesitter node
+						javascript = { "template_string" },
+						java = false, -- don't check treesitter on java
+					},
+					disable_filetype = { "Telescope", "vim" },
+				})
 
-			local ts_conds = require("nvim-autopairs.ts-conds")
+				local ts_conds = require("nvim-autopairs.ts-conds")
 
-			-- press % => %% only while inside a comment or string
-			npairs.add_rules({
-				Rule("%", "%", "lua"):with_pair(ts_conds.is_ts_node({ "string", "comment" })),
-				Rule("$", "$", "lua"):with_pair(ts_conds.is_not_ts_node({ "function" })),
-			})
-		end,
-	},
-	"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
-	"windwp/nvim-ts-autotag",
-	"David-Kunz/markid",
-	"nvim-treesitter/nvim-treesitter-textobjects",
+				-- press % => %% only while inside a comment or string
+				npairs.add_rules({
+					Rule("%", "%", "lua"):with_pair(ts_conds.is_ts_node({ "string", "comment" })),
+					Rule("$", "$", "lua"):with_pair(ts_conds.is_not_ts_node({ "function" })),
+				})
+			end,
+		},
+		"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+		"windwp/nvim-ts-autotag",
+		"David-Kunz/markid",
+		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	opts = {
 		ensure_installed = {

@@ -33,10 +33,10 @@ map("x", "gl", ":<C-U>undo<CR>", opts)
 -- Do not yank with x
 map("n", "x", '"_x')
 
-map("n", "<leader>w", "<cmd>:w<cr>")
-map("n", "<leader>q", "<cmd>:q<cr>")
-map("n", "<leader>wq", "<cmd>:wqa<cr>")
-map("n", "<leader>x", "<cmd>:bdelete<cr>")
+map("n", "<leader>w", "<cmd>:w<cr>", vim.tbl_extend("keep", opts, { desc = "Save" }))
+map("n", "<leader>q", "<cmd>:q<cr>", vim.tbl_extend("keep", opts, { desc = "Quit" }))
+map("n", "<leader>wq", "<cmd>:wqa<cr>", vim.tbl_extend("keep", opts, { desc = "Save all and quit" }))
+map("n", "<leader>x", "<cmd>:bdelete<cr>", vim.tbl_extend("keep", opts, { desc = "Close buffer" }))
 
 -- Increment/decrement
 map("n", "+", "<C-a>")
@@ -73,7 +73,7 @@ map("n", "<ESC>", "<cmd>:noh<cr>", { noremap = true, silent = true })
 map("n", "m", "nzzzv")
 map("n", "M", "Nzzzv")
 
-map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current text" })
 map("c", "<C-e>", "<C-p>")
 
 -- Switch tabs

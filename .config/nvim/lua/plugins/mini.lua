@@ -9,7 +9,7 @@ local M = {
 			function()
 				require("mini.pick").builtin.files()
 			end,
-			desc = "Find File"
+			desc = "Find File",
 		},
 		{
 			"<leader>ff",
@@ -17,56 +17,56 @@ local M = {
 				local wrd = vim.fn.expand("<cWORD>")
 				require("mini.pick").builtin.grep_live({ pattern = wrd })
 			end,
-			desc = "Live Grep File"
+			desc = "Live Grep File",
 		},
 		{
 			"<leader>b",
 			function()
 				require("mini.pick").builtin.buffers()
 			end,
-			desc = "Buffers"
+			desc = "Buffers",
 		},
 		{
 			"<leader>h",
 			function()
 				require("mini.pick").builtin.help()
 			end,
-			desc = "Helps"
+			desc = "Helps",
 		},
 		{
 			"<leader>o",
 			function()
 				require("mini.files").open(vim.api.nvim_buf_get_name(0))
 			end,
-			desc = "Explorer"
+			desc = "Explorer",
 		},
 		{
 			"um",
 			function()
 				require("mini.map").toggle()
 			end,
-			desc = "Minimap"
+			desc = "Minimap",
 		},
 		{
 			"<leader>cl",
 			function()
 				require("mini.extra").pickers.hl_groups()
 			end,
-			desc = "Highlights"
+			desc = "Highlights",
 		},
 		{
 			"<leader>,",
 			function()
 				require("mini.extra").pickers.buf_lines()
 			end,
-			desc = "Lines"
+			desc = "Jump to line",
 		},
 		{
 			"gj",
 			function()
 				require("mini.splitjoin").toggle()
 			end,
-			desc = "Toggle SplitJoin"
+			desc = "Toggle SplitJoin",
 		},
 	},
 	init = function()
