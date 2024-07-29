@@ -3,7 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	keys = {
 		{
-			"s",
+			"f",
 			function()
 				require("flash").jump()
 			end,
