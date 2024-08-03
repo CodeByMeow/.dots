@@ -1,5 +1,4 @@
 - **Window Manager** :bento: [ Bspwm ]
-- **Display Manager** :tv: [Ly](https://github.com/fairyglade/ly)
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
@@ -25,15 +24,6 @@ _Note: I use colemak-dh keyboard layout_
 ```
 preload auto-cpufreq
 
-```
-
-### Ly UI
-_Edit: /etc/ly/config.in_
-```
-animate = true
-animation = 1 //Cmatrix
-clock = %c
-blank_box = false
 ```
 
 ### Shell setup
