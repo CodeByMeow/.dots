@@ -95,7 +95,11 @@ function M.config()
 	require("mini.align").setup()
 	require("mini.basics").setup()
 	require("mini.bufremove").setup()
-	require("mini.comment").setup()
+	require("mini.comment").setup({
+		mappings = {
+			comment_line = "<C-_>",
+		},
+	})
 	require("mini.cursorword").setup()
 	require("mini.extra").setup()
 	require("mini.icons").setup()
