@@ -35,7 +35,7 @@ return {
 			ui = {
 				kind = kind,
 				border = "rounded",
-				code_action = "󰫣 ",
+				code_action = " ",
 			},
 			beacon = {
 				enable = true,
