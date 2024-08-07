@@ -26,7 +26,7 @@ return {
 		{ "H", "<cmd>Lspsaga hover_doc<CR>", desc = "LSPSaga Hover Doc" },
 		{ "ga", "<cmd>Lspsaga code_action<CR>", mode = { "n", "v" }, desc = "LSPSaga Code Action" },
 		{ "go", "<cmd>Lspsaga outline<CR>", mode = { "n", "v" }, desc = "LSPSaga Outline" },
-		{ "T", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" }, desc = "Terminal" },
+		{ "<A-t>", "<cmd>Lspsaga term_toggle<CR>", mode = { "n", "t" }, desc = "Terminal" },
 	},
 
 	config = function()

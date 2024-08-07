@@ -29,6 +29,7 @@ return {
 				augend.constant.alias.bool,
 				augend.semver.alias.semver,
 				augend.constant.new({ elements = { "let", "const" } }),
+				augend.constant.new({ elements = { "On", "Off" } }),
 			},
 		})
 	end,

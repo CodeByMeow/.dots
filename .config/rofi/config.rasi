@@ -10,7 +10,7 @@ configuration {
 }
 
 * {
-    font:  						 "JetBrainsMono NF 15";
+    font:  						 "Hack Nerd Font 15";
     margin:						 0px;
     padding:   					 0px;
     spacing:   					 0px;
