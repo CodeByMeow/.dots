@@ -38,10 +38,9 @@ preload auto-cpufreq
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
 - [ Source Han Sans CN](https://software.manjaro.org/package/adobe-source-han-sans-cn-fonts)
 - [ Source Han Sans KR](https://software.manjaro.org/package/adobe-source-han-sans-kr-fonts)
-- JetBrains Mono Nerd Font
 - Font Awesome 6 Pro
 - Noto fonts emoji
-- Iosevka Ori Sans - _My custom Iosevka font_
+- Hack Nerd Font
 ### UI
     /etc/pacman.conf: ILoveCandy
 
