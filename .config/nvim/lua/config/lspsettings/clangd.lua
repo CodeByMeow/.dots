@@ -1,0 +1,5 @@
+return {
+	capabilities = {
+		signatureHelpProvider = false,
+	},
+}
