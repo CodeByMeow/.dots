@@ -33,18 +33,3 @@ bspc config focus_follows_pointer     true
 bspc config pointer_follows_focus     false
 
 
-
-#  ╔═╗╦ ╦╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗╔╦╗
-#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║
-#  ╩ ╩╚═╝ ╩ ╚═╝╚═╝ ╩ ╩ ╩╩╚═ ╩
-
-nm-applet &
-xsetroot -cursor_name left_ptr &
-pkill polybar
-~/.config/polybar/launch.sh &
-nitrogen --restore &
-picom &
-dunst &
-unclutter -idle 10 &
-udiskie &
-ibus-daemon
