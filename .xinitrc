@@ -17,6 +17,6 @@ dunst &
 unclutter -idle 10 &
 udiskie &
 ibus-daemon &
-alacritty &
+wezterm start -- tmux &
 firefox &
 exec bspwm

@@ -5,6 +5,7 @@
 ## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
 format = """
+$hostname\
 $directory\
 
 $localip\
@@ -38,26 +39,60 @@ $character"""
 # Disable the blank line at the start of the prompt
 add_newline = true
 
-# param
-[directory]
-format = "[](fg:#2B2B2B bg:none)[$path]($style)[█](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
-style = "fg:#F0F0F0 bg:#2B2B2B bold"
 
+# Second param
+[hostname]
+ssh_only = true 
+format = "[](fg:#252525 bg:none)[█](fg:#E8E3E3 bg:#252525)[$ssh_symbol$hostname](bold bg:#E8E3E3)[](fg:#E8E3E3 bg:none) "
+disabled = false
+
+# Third param
+[directory]
+format = "[](fg:#252525 bg:none)[$path]($style)[█](fg:#232526 bg:#232526)[](fg:#6791C9 bg:#252525)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none)"
+style = "fg:#E8E3E3 bg:#252525 bold"
+truncation_length = 3
+truncate_to_repo=false
+read_only = " "
+
+## SECOND LINE/ROW: Prompt
+# Prompt: param 2 └─
 [character]
-success_symbol = "[ ](#81C19B bold)"
-error_symbol = "[窱](#B66467 bold)"
+success_symbol = "[ ](#6791C9 bold)"
+error_symbol = "[ ](#B66467 bold)"
+
+[line_break]
+disabled = false
+
+[fill]
+symbol = ' '
+style = 'bold green'
 
 [cmd_duration]
-format = "[](fg:#2B2B2B bg:none)[$duration]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#C397D8 bg:#2B2B2B)[󱑂 ](fg:#2B2B2B bg:#C397D8)[](fg:#C397D8 bg:none)"
-style = "fg:#F0F0F0 bg:#2B2B2B bold"
+min_time = 1
+format = "[](fg:#252525 bg:none)[$duration]($style)[](fg:#252525 bg:#252525)[](fg:#C397D8 bg:#252525)[󱑂 ](fg:#252525 bg:#C397D8)[](fg:#C397D8 bg:none)"
+disabled = false
+style = "fg:#E8E3E3 bg:#252525 bold"
+
 
 [git_branch]
-format = "[](fg:#2B2B2B bg:none)[$branch]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#81C19B bg:#2B2B2B)[](fg:#2B2B2B bg:#81C19B)[](fg:#81C19B bg:none)"
-style = "fg:#F0F0F0 bg:#2B2B2B"
+format = "[](fg:#252525 bg:none)[$branch]($style)[](fg:#252525 bg:#252525)[](fg:#81C19B bg:#252525)[](fg:#252525 bg:#81C19B)[](fg:#81C19B bg:none) "
+style = "fg:#E8E3E3 bg:#252525"
+symbol = " "
 
 [git_status]
-format="[](fg:#2B2B2B bg:none)[$all_status$ahead_behind]($style)[](fg:#2B2B2B bg:#2B2B2B)[](fg:#E0E0E0 bg:#2B2B2B)[ ](fg:#2B2B2B bg:#E0E0E0)[](fg:#E0E0E0 bg:none)"
-style = "fg:#F0F0F0 bg:#2B2B2B"
+format="[](fg:#252525 bg:none)[$all_status$ahead_behind]($style)[](fg:#252525 bg:#252525)[](fg:#6791C9 bg:#252525)[ ](fg:#252525 bg:#6791C9)[](fg:#6791C9 bg:none) "
+style = "fg:#E8E3E3 bg:#252525"
+conflicted = "="
+ahead =	"⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+up_to_date = " 󰄸 "
+untracked = "?${count}"
+stashed = ""
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = " ${count}"
 
 [git_commit]
 format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"

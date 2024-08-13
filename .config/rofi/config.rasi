@@ -3,14 +3,13 @@
 configuration {
 	display-drun: "🔥 ";
 	display-window: "🏕️ ";
-	display-dmenu: "󰆏 ";
 	show-icons:   true;
 	icon-theme:   "WhiteSur-dark";
 	modes:        [drun, window];
 }
 
 * {
-    font:  						 "Hack Nerd Font 15";
+    font:  						 "Hack Nerd Font 15.5";
     margin:						 0px;
     padding:   					 0px;
     spacing:   					 0px;

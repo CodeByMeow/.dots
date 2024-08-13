@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Update package databases
-yay -Sy
-
 echo ">>> Install manual dependencies..."
 yay -S gdb \
     ninja \
@@ -30,10 +27,8 @@ yay -S gdb \
     cpio \
     tomlplusplus
 
-echo ">>> Installing packages..."
-
 # Install packages
-yay -S --needed --noconfirm \
+yay -S --needed \
     libnotify \
     duf \
     bluetooth-autoconnect \
@@ -73,7 +68,6 @@ yay -S --needed --noconfirm \
     catppuccin-gtk-theme-mocha \
     whitesur-icon-theme \
     nwg-look \
-    xdg-user-dirs \
     jq \
     ripgrep \
     fd \
@@ -93,6 +87,5 @@ yay -S --needed --noconfirm \
     libmtp \
     mpv \
     acpi \
-    checkupdates-with-aur \
 
     echo ">>> Everything is ready!"
