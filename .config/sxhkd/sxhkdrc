@@ -134,7 +134,7 @@ super + k
 	gpick -o -s | tr -d '\n' | xclip -sel c
 
 super + Print
-    flameshot gui --clipboard --path ~/Pictures/Screenshots/
+    flameshot gui --path ~/Pictures/Screenshots/
 
 super + Delete
 	betterlockscreen -l dim
