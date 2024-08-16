@@ -83,4 +83,7 @@ map("n", "<S-Tab>", vim.cmd.bp)
 map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
 map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+map("i", "<S-i>", "<Right>")
+map("i", "<S-h>", "<Left>")
+
 require("config.discipline").cowboy()
