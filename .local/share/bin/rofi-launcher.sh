@@ -7,9 +7,6 @@ case "$1" in
     d)
         rofi -show drun
         ;;
-    h)
-		rofi-gpaste
-        ;;
 	*)
-		echo "Select options: w - window | d - drun | h - history"
+		echo "Select options: w - window | d - drun"
 esac

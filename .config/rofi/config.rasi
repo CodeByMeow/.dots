@@ -1,138 +1,117 @@
-@import "~/.cache/wal/colors-rofi-dark"
+* {
+  font: "Hack Nerd Font 10";
 
-configuration {
-	display-drun: "🔥 ";
-	display-window: "🏕️ ";
-	show-icons:   true;
-	icon-theme:   "WhiteSur-dark";
-	modes:        [drun, window];
+  bg0    : #1f1f1f80;
+  bg1    : #202020bf;
+  bg2    : #2c2c2c;
+  bg3    : #393939bf;
+  fg0    : #ffffff;
+  fg1    : #cecece;
+  accent : #60cdff;
+  urgent : @accent;
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
 }
 
-* {
-    font:  						 "Hack Nerd Font 15.5";
-    margin:						 0px;
-    padding:   					 0px;
-    spacing:   					 0px;
-    background-alt:              @selected-active-background; // Buttons background
-    selected:                    @selected-urgent-background; // Button selected
-    active:                      @selected-normal-background; // Window activated
-    urgent:                      @selected; // When hovering the activated window (maybe more?)
-
-    text-selected:               @background;
-    text-color:                  @foreground;
-    border-color:                @selected;
+element-icon, element-text, scrollbar {
+  cursor: pointer;
 }
 
 window {
-    enabled:                    true;
-    fullscreen:                 false;
-    transparency:               "real";
-    cursor:                     "default";
-    spacing:                    0px;
-    border:                     2px;
-    border-radius:              4px;
-    location:                   center;
-    anchor:                     center;
+  location : south;
+  width    : 600px;
+  height   : 480px;
+  y-offset : -4px;
 
-    // Style Values
-    width:                      33%;
-	height:                     65%;
-    background-color:           #00000088;
+  background-color : @bg1;
+  border-radius    : 8px;
 }
 
 mainbox {
-    padding:				    12px;
-    orientation:                vertical;
-    children:                   [ "imagebox", "listbox" ];
-    enabled:                    true;
-    background-color:           transparent;
-}
-
-imagebox {
-    background-color:            transparent;
-    orientation:                 horizontal;
-	border-radius:				 4px;
-	background-image:			 url("./img/it-fire.jpg", width );
-}
-
-listbox {
-    background-color:            transparent;
-    orientation:                 vertical;
-    children:                    [ "inputbar", "listview", "message" ];
+  padding : 24px;
+  spacing : 24px;
 }
 
 inputbar {
-    padding:					12px 10px;
-    spacing:					8px;
-    children:					[ prompt, entry ];
-    enabled:                    true;
-    margin:                     20px 0 0;
-    background-color:           transparent;
-    border-radius:              4px;
-    orientation:                horizontal;
+  padding          : 8px;
+  spacing          : 4px;
+  children         : [ icon-search, entry ];
+  border           : 0 0 2px 0 solid;
+  border-color     : @accent;
+  border-radius    : 2px;
+  background-color : @bg0;
 }
 
-prompt {
-    text-color:					#ebdbb3;
-	background-color:			transparent;
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 24px;
 }
 
 entry {
-    enabled:                     true;
-    expand:                      true;
-    width:                       100%;
-    border-radius:               4px;
-    text-color:                  inherit;
-    cursor:                      text;
-	background-color:		     transparent;
-	placeholder:				 "";
-}
-
-message {
-    margin:						12px 0 0;
-    border-radius:      		4px;
-    border-color:       		#b95cb9;
+  font              : "Hack Nerd Font 12";
+  placeholder       : "Type here to search";
+  placeholder-color : @fg1;
+  color				: @fg1;
 }
 
 textbox {
-    padding:					12px 8px;
+  padding          : 4px 8px;
+  background-color : @bg2;
 }
 
 listview {
-    lines:						 8;
-    columns:					 1;
-    enabled:                     true;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    spacing:                     8px;
-    background-color:            transparent;
-    margin:                      10px 0 0;
-	border:						 0;
+  columns       : 1;
+  spacing       : 8px;
+  fixed-height  : true;
+  fixed-columns : true;
+  scrollbar : false;
 }
 
 element {
-    padding:					12px 8px;
-    border-radius:  			4px;
-	children:					[element-icon, element-text];
+  spacing       : 1em;
+  padding       : 8px;
+  border-radius : 2px;
+  children		: ["element-icon", "element-text"];
+}
+
+element normal urgent {
+  text-color: @urgent;
+}
+
+element normal active {
+  text-color: @accent;
+}
+
+element alternate active {
+  text-color: @accent;
+}
+
+element selected active {
+  text-color: @accent;
+}
+
+element selected {
+  background-color: @bg3;
+}
+
+element selected urgent {
+  background-color: @urgent;
 }
 
 element-icon {
-    size:						1.2em;
-    vertical-align: 			0.5;
-	padding:					0 10px 0 0;
+  size: 1.5em;
 }
 
 element-text {
-    text-color:				#ebdbb3;
-}
-
-/* ---- Dummy ---- */
-dummy {
-    expand:                      true;
-    background-color:            transparent;
+  text-color: inherit;
 }
