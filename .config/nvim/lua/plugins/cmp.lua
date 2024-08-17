@@ -25,6 +25,7 @@ return {
 			"hrsh7th/cmp-calc",
 			event = "InsertEnter",
 		},
+		  { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
 		{
 			"saadparwaiz1/cmp_luasnip",
 			event = "InsertEnter",
@@ -210,3 +211,4 @@ return {
 		})
 	end,
 }
+

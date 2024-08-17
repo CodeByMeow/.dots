@@ -40,9 +40,6 @@ preload auto-cpufreq
 - [ Source Han Sans KR](https://software.manjaro.org/package/adobe-source-han-sans-kr-fonts)
 - Font Awesome 6 Pro
 - Noto fonts emoji
-- Hack Nerd Font
-### UI
-    /etc/pacman.conf: ILoveCandy
 
 ### Devtool
 
@@ -53,14 +50,11 @@ preload auto-cpufreq
 
 ### Tool
 
-- `youtube-music-bin`: Youtube music app.
 - `gamemode`
 - `mangohud`
 - `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
-- `checkupdates-with-aur`: Checking new update aur
-- `amberol`: Music
 - `betterlockscreen`: Lock screen
 
 ### Input method

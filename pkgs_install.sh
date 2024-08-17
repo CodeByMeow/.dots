@@ -7,7 +7,7 @@ libxkbcommon xcb-util-wm libinput libliftoff libdisplay-info cpio tomlplusplus
 
 echo ">>> Installing packages..."
 yay -S --needed libnotify duf bluetooth-autoconnect xorg-xsetroot tree-sitter-cli peco bc \
-whitesur-icon-theme nwg-look jq ripgrep fd tmux nemo pamixer pavucontrol \
-playerctl brightnessctl starship cava-git udiskie deno tldr ueberzugpp libmtp mpv acpi
+nwg-look jq ripgrep fd tmux nemo pamixer pavucontrol \
+playerctl brightnessctl starship udiskie deno tldr ueberzugpp libmtp mpv acpi
 
 echo ">>> Everything is ready!"
