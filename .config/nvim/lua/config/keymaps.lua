@@ -4,31 +4,17 @@ vim.g.mapleader = " "
 
 -- Colemak Keybindings {{{
 ----------------------
-map("n", "n", "j", opts)
-map("x", "n", "j", opts)
-map("o", "n", "j", opts)
-map("n", "e", "k", opts)
-map("x", "e", "k", opts)
-map("o", "e", "k", opts)
-map("n", "i", "l", opts)
-map("x", "i", "l", opts)
-map("o", "i", "l", opts)
+map("", "n", "j", opts)
+map("", "e", "k", opts)
+map("", "i", "l", opts)
 
 -- Colemak Insert
-map("n", "u", "i", opts)
-map("n", "U", "I", opts)
-map("x", "u", "i", opts)
-map("x", "U", "I", opts)
-map("o", "u", "i", opts)
-map("o", "U", "I", opts)
+map("", "u", "i", opts)
+map("", "U", "I", opts)
 
 -- Undo/redo
 map("n", "l", "u", opts)
 map("x", "l", ":<C-U>undo<CR>", opts)
-map("n", "gl", "u", opts)
-map("x", "gl", ":<C-U>undo<CR>", opts)
-
--- }}}
 
 -- Do not yank with x
 map("n", "x", '"_x')
@@ -68,7 +54,7 @@ map("v", "<A-n>", ":m '>+1<CR>gv=gv")
 map("v", "<A-e>", ":m '<-2<CR>gv=gv")
 
 -- Escape highlight search
-map("n", "<ESC>", "<cmd>:noh<cr>", { noremap = true, silent = true })
+map("n", "<ESC>", "<cmd>:noh<cr>", opts)
 
 map("n", "m", "nzzzv")
 map("n", "M", "Nzzzv")
