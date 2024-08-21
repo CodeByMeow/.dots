@@ -4,7 +4,7 @@ return {
 	keys = {
 		{ "tf", "<cmd>Lspsaga finder<CR>", desc = "LSPSaga Finder" },
 		{ "tr", "<cmd>Lspsaga rename<CR>", desc = "LSPSaga Rename" },
-		{ "tt", "<cmd>Lspsaga peek_definition<CR>", desc = "LSPSaga Peek" },
+		{ "tp", "<cmd>Lspsaga peek_definition<CR>", desc = "LSPSaga Peek" },
 		{ "td", "<cmd>Lspsaga goto_definition<CR>", desc = "LSPSaga Goto Definition" },
 		{ "sd", "<cmd>Lspsaga show_buf_diagnostics<CR>", desc = "LSPSaga Show Buffer Diagnostics" },
 		{

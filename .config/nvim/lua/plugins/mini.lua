@@ -41,7 +41,7 @@ local M = {
 			desc = "Explorer",
 		},
 		{
-			"um",
+			"mp",
 			function()
 				require("mini.map").toggle()
 			end,
@@ -67,6 +67,13 @@ local M = {
 				require("mini.splitjoin").toggle()
 			end,
 			desc = "Toggle SplitJoin",
+		},
+		{
+			"tt",
+			function()
+				require("mini.trailspace").trim()
+			end,
+			desc = "Trim all trailspace",
 		},
 	},
 	init = function()
