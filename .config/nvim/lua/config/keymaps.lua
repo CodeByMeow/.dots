@@ -31,9 +31,6 @@ map("n", "-", "<C-x>")
 -- Delete a word backwards
 map("n", "dw", 'vb"_d')
 
--- Select all
-map("n", "<C-a>", "gg<S-v>G")
-
 -- Split window
 map("n", "ss", ":split<Return><C-w>w", { silent = true })
 map("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
@@ -68,5 +65,8 @@ map("n", "<S-Tab>", vim.cmd.bp)
 
 map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
 map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+map("n", "vub", "vib")
+map("n", "vuB", "viB")
 
 require("config.discipline").cowboy()
