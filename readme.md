@@ -56,6 +56,7 @@ preload auto-cpufreq
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
 - `betterlockscreen`: Lock screen
+- `debtap`: covert .deb to Arch package.
 
 ### Input method
 - Ibus-unikey
