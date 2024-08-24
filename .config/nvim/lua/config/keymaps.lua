@@ -2,15 +2,15 @@ local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
 vim.g.mapleader = " "
 
--- Colemak Keybindings {{{
-----------------------
+-- Colemak layout
 map("", "n", "j", opts)
 map("", "e", "k", opts)
 map("", "i", "l", opts)
 
--- Colemak Insert
 map("", "u", "i", opts)
 map("", "U", "I", opts)
+map("n", "vub", "vib")
+map("n", "vuB", "viB")
 
 -- Undo/redo
 map("n", "l", "u", opts)
@@ -68,5 +68,9 @@ map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 map("n", "vub", "vib")
 map("n", "vuB", "viB")
+
+-- disable internal "s"
+map("n", "s", "<Nop>")
+map("v", "s", "<Nop>")
 
 require("config.discipline").cowboy()
