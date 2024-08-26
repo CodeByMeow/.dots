@@ -12,7 +12,7 @@ local M = {
 			desc = "Find File",
 		},
 		{
-			"<leader>ff",
+			"<leader>g",
 			function()
 				local wrd = vim.fn.expand("<cWORD>")
 				require("mini.pick").builtin.grep_live({ pattern = wrd })
@@ -41,7 +41,7 @@ local M = {
 			desc = "Explorer",
 		},
 		{
-			"mp",
+			"<leader>m",
 			function()
 				require("mini.map").toggle()
 			end,

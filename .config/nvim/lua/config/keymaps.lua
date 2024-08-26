@@ -21,15 +21,11 @@ map("n", "x", '"_x')
 
 map("n", "<leader>w", "<cmd>:w<cr>", vim.tbl_extend("keep", opts, { desc = "Save" }))
 map("n", "<leader>q", "<cmd>:q<cr>", vim.tbl_extend("keep", opts, { desc = "Quit" }))
-map("n", "<leader>wq", "<cmd>:wqa<cr>", vim.tbl_extend("keep", opts, { desc = "Save all and quit" }))
 map("n", "<leader>x", "<cmd>:bdelete<cr>", vim.tbl_extend("keep", opts, { desc = "Close buffer" }))
 
 -- Increment/decrement
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
-
--- Delete a word backwards
-map("n", "dw", 'vb"_d')
 
 -- Split window
 map("n", "ss", ":split<Return><C-w>w", { silent = true })
