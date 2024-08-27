@@ -57,6 +57,7 @@ preload auto-cpufreq
 - `pavucontrol`: Audio configuration.
 - `betterlockscreen`: Lock screen
 - `debtap`: covert .deb to Arch package.
+- `taskwarrior`: to-do list cli.
 
 ### Input method
 - Ibus-unikey
