@@ -1,2 +1,0 @@
-edit /etc/bluetooth/man.conf
-uncomment AutoEnable=true
