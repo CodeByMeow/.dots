@@ -62,3 +62,8 @@ preload auto-cpufreq
 ### Input method
 - Ibus-unikey
 - Ibus-pinyin
+### Bluetooth
+
+```
+bluez bluez-utils bluetui blueman blueman-applet
+```
