@@ -7,10 +7,10 @@ xset -dpms &
 xset s noblank &
 xset s off &
 sxhkd &
-nm-applet &
+blueman-applet &
 xsetroot -cursor_name left_ptr &
 pkill polybar &
-~/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh &
 nitrogen --restore &
 picom &
 dunst &
