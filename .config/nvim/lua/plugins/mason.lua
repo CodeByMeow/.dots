@@ -6,7 +6,7 @@ local M = {
 }
 
 local server_names = {
-	"tsserver",
+	"ts_ls",
 	"lua_ls",
 	"cssls",
 	"html",
