@@ -22,7 +22,7 @@ bspc rule -a pavucontrol state=floating focus=on center=true
 #  ╔╗ ╔═╗╔═╗╦ ╦╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗
 #  ╠╩╗╚═╗╠═╝║║║║║║  ║  ║ ║║║║╠╣ ║║ ╦
 #  ╚═╝╚═╝╩  ╚╩╝╩ ╩  ╚═╝╚═╝╝╚╝╚  ╩╚═╝
-bspc config border_width         2
+bspc config border_width         3
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
