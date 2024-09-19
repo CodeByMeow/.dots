@@ -5,16 +5,16 @@ vim.g.netrw_altv = 1
 vim.g.netrw_liststyle = 3
 vim.g.netrw_browsex_viewer = "xdg-open"
 
--- disable EditorConfig
+-- Disable EditorConfig
 vim.g.editorconfig = false
 
 local opt = vim.opt -- for conciseness
 
--- line number
+-- Line number
 opt.nu = true
 opt.relativenumber = true
 
--- tab & indentation
+-- Tab & indentation
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
@@ -22,17 +22,24 @@ opt.expandtab = false
 opt.autoindent = true
 opt.smartindent = true
 
--- line wrapping
+-- Line wrapping
 opt.wrap = false
 
--- search settings
+-- Search settings
 opt.ignorecase = true
 opt.smartcase = true
 
--- cursor
+-- Cursor
 opt.cursorline = true
 opt.mouse = "a"
-
+opt.guicursor = {
+	"n-v-c:block",
+	"i-ci-ve:ver25",
+	"r-cr:hor20",
+	"o:hor50",
+	"a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+	"sm:block-blinkwait175-blinkoff150-blinkon175",
+}
 opt.swapfile = false
 opt.backup = false
 opt.compatible = false
@@ -40,7 +47,7 @@ opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
 
--- appearance
+-- Appearance
 opt.termguicolors = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
@@ -54,10 +61,10 @@ opt.list = true
 opt.title = true
 opt.pumheight = 10
 
--- backspace
+-- Backspace
 opt.backspace = "indent,eol,start"
 
--- clipboard
+-- Clipboard
 opt.clipboard:append("unnamedplus")
 
 opt.updatetime = 50
@@ -66,17 +73,17 @@ vim.scriptencoding = "utf-8"
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 
--- disable nvim intro
+-- Disable nvim intro
 opt.shortmess:append("sI")
 
--- slit windows
+-- Slit windows
 opt.splitbelow = true
 opt.splitright = true
 opt.splitkeep = "cursor"
 
 opt.timeoutlen = 400
 opt.iskeyword:append("-")
--- number of item show popup menu
+-- Number of item show popup menu
 opt.ph = 7
 
 -- Undercurl
