@@ -20,7 +20,7 @@ require("lazy").setup({
 		-- import your plugins
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "kanagawa" } },
+	install = { colorscheme = { "cyperdream" } },
 	checker = { enabled = true, notify = false },
 	performance = {
 		rtp = {
