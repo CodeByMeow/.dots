@@ -2,7 +2,7 @@
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
-- **Terminal Emulator** ::beers:: [ Alarcitty ](https://alacritty.org/)
+- **Terminal Emulator** ::beers:: [ Wezterm ](https://wezfurlong.org/wezterm/index.html)
 - **Shell** :fish: [ Fish ](https://fishshell.com/)
 - **File Manager** :duck: [ Yazi ](https://yazi-rs.github.io/docs/)
 - **Editor** :fire: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
@@ -55,13 +55,14 @@ preload auto-cpufreq
 - `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
+- `pamixer`: Sound controller
 - `betterlockscreen`: Lock screen
 - `debtap`: covert .deb to Arch package.
 - `taskwarrior`: to-do list cli.
 
 ### Input method
-- Ibus-unikey
-- Ibus-pinyin
+- fxcit5-unikey
+- fxcit5-chinese-addons
 ### Bluetooth
 
 ```

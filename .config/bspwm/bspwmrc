@@ -49,7 +49,7 @@ xset s noblank &
 xset s off &
 
 # Start input method framework
-ibus-daemon -drx &
+fcitx5 &
 
 sleep 1
 
