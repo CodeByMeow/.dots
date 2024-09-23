@@ -9,14 +9,13 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 一 二 三 四 五
 
-bspc rule -a "org.wezfurlong.wezterm" desktop=^1 follow=on
-bspc rule -a firefox desktop=^2 follow=on
-bspc rule -a steam desktop=^5 follow=on
+bspc rule -a "org.wezfurlong.wezterm" desktop=^1 follow=on state=tiled
+bspc rule -a "org.mozilla.firefox" desktop=^2 follow=on state=tiled
+bspc rule -a steam desktop=^5 follow=on state=tiled
 
 bspc rule -a '*:*:Picture-in-Picture' state=floating rectangle=600x338+0+0 center=true
 bspc rule -a Nemo state=floating follow=on center=true rectangle=900x625+0+0
 bspc rule -a Nitrogen state=floating focus=on center=true
-bspc rule -a "Nwg-look" state=floating focus=on center=true
 bspc rule -a pavucontrol state=floating focus=on center=true
 
 
@@ -36,3 +35,63 @@ bspc config focus_follows_pointer     true
 bspc config pointer_follows_focus     false
 
 
+#!/bin/sh
+#  ╔═╗╦ ╦╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗╔╦╗
+#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║
+#  ╩ ╩╚═╝ ╩ ╚═╝╚═╝ ╩ ╩ ╩╩╚═ ╩
+
+# Set cursor
+xsetroot -cursor_name left_ptr &
+
+# Display power management
+xset -dpms &
+xset s noblank &
+xset s off &
+
+# Start input method framework
+ibus-daemon -drx &
+
+sleep 1
+
+# Start compositor
+picom &
+
+sleep 1
+
+# Set wallpaper
+nitrogen --restore &
+
+# Kill existing polybar instances
+pkill polybar
+
+sleep 1
+
+# Launch polybar
+$HOME/.config/polybar/launch.sh &
+
+sleep 1
+
+# Start notification daemon
+dunst &
+
+# Start Bluetooth applet
+blueman-applet &
+
+# Hide cursor when inactive
+unclutter -idle 10 &
+
+# Automount removable media
+udiskie &
+
+# sleep 2
+
+# Start terminal emulator with tmux
+# wezterm start -- tmux &
+
+# sleep 2
+
+# Start web browser
+# firefox &
+
+# Keep the script running
+wait
