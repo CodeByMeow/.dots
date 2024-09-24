@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
 return {
-	color_scheme = "cyberdream",
+	colors = require("cyberdream"),
 	font = wezterm.font("Iosevka IBM"),
 	font_size = 15.5,
 	window_background_opacity = 0.65,
@@ -17,3 +17,5 @@ return {
 		bottom = "0.5cell",
 	},
 }
+
+
