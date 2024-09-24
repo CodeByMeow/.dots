@@ -17,7 +17,7 @@ fcitx5 &
 sleep 1
 
 # Start window manager
-bspwm &
+i3 &
 
 # Start compositor
 picom &

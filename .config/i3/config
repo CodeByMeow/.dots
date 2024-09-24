@@ -1,0 +1,118 @@
+# set modifier
+set $super Mod4
+set $alt Mod1
+
+# set font
+font pango:Ionicons 9, SF Pro Display 9
+
+# use mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+# start a terminal
+bindsym $super+Return exec wezterm
+
+# start dmenu (a program launcher)
+bindsym $super+space exec ~/.local/share/bin/rofi-launcher.sh d
+
+# common apps keybinds
+bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
+bindsym $super+l exec i3lock -i ~/Pictures/Wallpapers/lock.png
+bindsym $super+w exec firefox
+bindsym $super+e exec thunar
+
+# change volume and brightness
+bindsym XF86AudioRaiseVolume exec ~/.local/share/bin/volume_control.sh --inc
+bindsym XF86AudioLowerVolume exec ~/.local/share/bin/volume_control.sh --dec
+bindsym XF86AudioMute exec ~/.local/share/bin/volume_control.sh --toggle
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+
+# kill focused window
+bindsym $super+q kill
+
+# change focus
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
+
+# move focused window
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Right move right
+
+# split in horizontal or vertical orientation
+bindsym $super+h split h
+bindsym $super+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $super+s floating toggle
+
+# change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# switch to workspace
+bindsym $super+Control+Right workspace next
+bindsym $super+Control+Left workspace prev
+# Define workspaces with custom names
+set $ws1 "一"
+set $ws2 "二"
+set $ws3 "三"
+set $ws4 "四"
+set $ws5 "五"
+set $ws6 "六"
+
+# Bind keys to workspaces
+bindsym $super+1 workspace $ws1
+bindsym $super+2 workspace $ws2
+bindsym $super+3 workspace $ws3
+bindsym $super+4 workspace $ws4
+bindsym $super+5 workspace $ws5
+bindsym $super+6 workspace $ws6
+
+# Move focused container to workspace
+bindsym $super+Shift+1 move container to workspace $ws1
+bindsym $super+Shift+2 move container to workspace $ws2
+bindsym $super+Shift+3 move container to workspace $ws3
+bindsym $super+Shift+4 move container to workspace $ws4
+bindsym $super+Shift+5 move container to workspace $ws5
+bindsym $super+Shift+6 move container to workspace $ws6
+
+# Cycle through workspaces
+bindsym $super+Tab workspace next
+bindsym $super+Shift+Tab workspace prev
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+Shift+r exec "i3-msg restart"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Down resize grow height 5 px or 5 ppt
+	bindsym Up resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
+	bindsym Return mode "default"
+	}
+bindsym $super+r mode "resize"
+
+# colour of border, background, text, indicator, and child_border
+client.focused = #00ffcc #1b1b1b #ffffff #ff5733 #ff0080
+client.focused_inactive = #1b1b1b #ffcc00 #ffffff #1b1b1b #1b1b1b
+client.unfocused = #1b1b1b #ffcc00 #ffffff #1b1b1b #1b1b1b
+client.urgent = #ff0080 #1b1b1b #ffffff #ff5733 #00ffcc
+client.placeholder = #1b1b1b #ffcc00 #ffffff #1b1b1b #1b1b1b
+client.background = #1b1b1b
+
+# window rules, you can find the window class using xprop
+for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
+for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
+
+for_window [class=".*"] border pixel 3
+# hide_edge_borders smart
+gaps inner 3
+gaps outer 3
+smart_gaps off
