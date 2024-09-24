@@ -20,7 +20,7 @@ sleep 1
 i3 &
 
 # Start compositor
-picom &
+picom -b &
 
 sleep 1
 
