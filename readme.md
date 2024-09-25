@@ -1,4 +1,4 @@
-- **Window Manager** :bento: [ Bspwm ]
+- **Window Manager** :bento: [i3](https://i3wm.org/)
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
@@ -56,15 +56,7 @@ preload auto-cpufreq
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
 - `pamixer`: Sound controller
-- `betterlockscreen`: Lock screen
-- `debtap`: covert .deb to Arch package.
-- `taskwarrior`: to-do list cli.
 
 ### Input method
 - fxcit5-unikey
 - fxcit5-chinese-addons
-### Bluetooth
-
-```
-bluez bluez-utils bluetui blueman blueman-applet
-```
