@@ -12,18 +12,18 @@ floating_modifier $super
 bindsym $super+Return exec wezterm
 
 # start dmenu (a program launcher)
-bindsym $super+space exec ~/.local/share/bin/rofi-launcher.sh d
+bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher.sh d
 
 # common apps keybinds
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open ~/$f'
-bindsym $super+l exec i3lock -i ~/Pictures/Wallpapers/lock.png
+bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open $HOME/$f'
+bindsym $super+l exec i3lock -i $HOME/Pictures/Wallpapers/lock.png
 bindsym $super+w exec firefox
 bindsym $super+e exec nemo
 
 # change volume and brightness
-bindsym XF86AudioRaiseVolume exec ~/.local/share/bin/volume_control.sh --inc
-bindsym XF86AudioLowerVolume exec ~/.local/share/bin/volume_control.sh --dec
-bindsym XF86AudioMute exec ~/.local/share/bin/volume_control.sh --toggle
+bindsym XF86AudioRaiseVolume exec $HOME/.local/share/bin/volume_control.sh --inc
+bindsym XF86AudioLowerVolume exec $HOME/.local/share/bin/volume_control.sh --dec
+bindsym XF86AudioMute exec $HOME/.local/share/bin/volume_control.sh --toggle
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
@@ -65,6 +65,9 @@ set $ws3 "三"
 set $ws4 "四"
 set $ws5 "五"
 set $ws6 "六"
+set $ws6 "七"
+set $ws6 "八"
+set $ws6 "九"
 
 # Bind keys to workspaces
 bindsym $super+1 workspace $ws1
@@ -73,6 +76,9 @@ bindsym $super+3 workspace $ws3
 bindsym $super+4 workspace $ws4
 bindsym $super+5 workspace $ws5
 bindsym $super+6 workspace $ws6
+bindsym $super+7 workspace $ws7
+bindsym $super+8 workspace $ws8
+bindsym $super+9 workspace $ws9
 
 # Move focused container to workspace
 bindsym $super+Shift+1 move container to workspace $ws1
@@ -81,6 +87,9 @@ bindsym $super+Shift+3 move container to workspace $ws3
 bindsym $super+Shift+4 move container to workspace $ws4
 bindsym $super+Shift+5 move container to workspace $ws5
 bindsym $super+Shift+6 move container to workspace $ws6
+bindsym $super+Shift+7 move container to workspace $ws7
+bindsym $super+Shift+8 move container to workspace $ws8
+bindsym $super+Shift+9 move container to workspace $ws9
 
 # Cycle through workspaces
 bindsym $super+Tab workspace next
@@ -91,6 +100,9 @@ bindsym $super+Shift+r exec "i3-msg restart"
 
 #gpick
 bindsym $super+k exec gpick -o -s | tr -d '\n' | xclip -sel c
+
+#flameshot
+bindsym $super+Print exec flameshot gui --clipboard --path $HOME/Pictures/Screenshots 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -114,6 +126,11 @@ client.background = #F5A0A8
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
 for_window [class="org.mozilla.firefox"] move to workspace $ws2
+for_window [class="Zalo"] move to workspace $ws3
+for_window [class="Google-chrome"] move to workspace $ws4
+for_window [class="Postman"] move to workspace $ws5
+for_window [class="steam"] move to workspace $ws6
+
 for_window [class=".*"] border pixel 3
 
 focus_on_window_activation focus
