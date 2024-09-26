@@ -2,6 +2,8 @@
 set $super Mod4
 set $alt Mod1
 
+set $terminal wezterm
+
 # set font
 font pango:Ionicons 9, SF Pro Display 9
 
@@ -9,14 +11,14 @@ font pango:Ionicons 9, SF Pro Display 9
 floating_modifier $super
 
 # start a terminal
-bindsym $super+Return exec wezterm
+bindsym $super+Return exec $terminal
 
 # start dmenu (a program launcher)
 bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher.sh d
 bindsym $super+w exec $HOME/.local/share/bin/rofi-launcher.sh w
 
-# common apps keybinds
-bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'xdg-open $HOME/$f'
+#flameshot
+bindsym Print exec flameshot gui -r -p $HOME/Pictures/Screenshots/ | xclip -selection clipboard -t image/png
 bindsym $super+l exec i3lock -i $HOME/Pictures/Wallpapers/lock.png
 
 # change volume and brightness
@@ -58,15 +60,15 @@ bindsym $super+Shift+space focus mode_toggle
 bindsym $super+Right workspace next
 bindsym $super+Left workspace prev
 # Define workspaces with custom names
-set $ws1 "一"
-set $ws2 "二"
-set $ws3 "三"
-set $ws4 "四"
-set $ws5 "五"
-set $ws6 "六"
-set $ws6 "七"
-set $ws6 "八"
-set $ws6 "九"
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws6 "7:七"
+set $ws6 "8:八"
+set $ws6 "9:九"
 
 # Bind keys to workspaces
 bindsym $super+1 workspace $ws1
@@ -99,8 +101,6 @@ bindsym $super+Shift+r exec "i3-msg restart"
 #gpick
 bindsym $super+k exec gpick -o -s | tr -d '\n' | xclip -sel c
 
-#flameshot
-bindsym $super+Print exec flameshot gui -r -p $HOME/Pictures/Screenshots/ | xclip -selection clipboard -t image/png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
