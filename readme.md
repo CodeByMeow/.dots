@@ -17,7 +17,8 @@ _Note: I use colemak-dh keyboard layout_
 - `npm`
 
 ```
-    fisher install jorgebucaran/nvm.fish`
+    fisher install jorgebucaran/nvm.fish
+    fisher install rstacruz/fish-npm-global
 ```
 
 ### Speedup arch
