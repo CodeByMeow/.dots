@@ -60,3 +60,6 @@ preload auto-cpufreq
 ### Input method
 - fxcit5-unikey
 - fxcit5-chinese-addons
+
+### Webapp
+[WebCatalog Desktop](https://webcatalog.io/vi/apps/)
