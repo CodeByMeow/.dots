@@ -7,9 +7,6 @@ case "$1" in
     d)
         rofi -show drun
         ;;
-    p)
-        power-menu.sh
-        ;;
     *)
-        echo "Select options: w - window | d - drun | p - power menu"
+        echo "Select options: w - window | d - drun"
 esac
