@@ -11,7 +11,8 @@ return {
 	cursor_blink_ease_in = "Constant",
 	cursor_blink_ease_out = "Constant",
 	window_padding = { left = "1cell", right = "1cell", top = "0.5cell", bottom = "0.5cell" },
-	disable_default_key_bindings = true
+	disable_default_key_bindings = true,
+	window_decorations = "NONE"
 }
 
 

@@ -8,7 +8,7 @@ case "$1" in
         rofi -show drun
         ;;
     p)
-        rofi -modi "power:power-menu.sh" -show power
+        power-menu.sh
         ;;
     *)
         echo "Select options: w - window | d - drun | p - power menu"

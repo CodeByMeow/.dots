@@ -58,7 +58,7 @@ icon-search {
 }
 
 entry {
-  font              : "Hack Nerd Font 12";
+  font              : "SF Pro Display 12";
   placeholder       : "Type here to search";
   placeholder-color : @fg1;
   color				: @fg1;
