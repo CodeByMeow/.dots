@@ -17,9 +17,6 @@ fcitx5 &
 # Start window manager in the background
 exec i3 &
 
-# Start compositor
-picom -b &
-
 # Set wallpaper
 nitrogen --restore &
 

@@ -129,8 +129,6 @@ for_window [class="Google-chrome"] move to workspace $ws4
 for_window [class="Postman"] move to workspace $ws5
 for_window [class="steam"] move to workspace $ws6
 
-for_window [class=".*"] border pixel 3
-
 focus_on_window_activation focus
 
 hide_edge_borders smart
