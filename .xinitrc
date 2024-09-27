@@ -14,28 +14,18 @@ xset s off &
 # Start input method framework
 fcitx5 &
 
-sleep 1
-
-# Start window manager
-i3 &
+# Start window manager in the background
+exec i3 &
 
 # Start compositor
 picom -b &
 
-sleep 1
-
 # Set wallpaper
 nitrogen --restore &
 
-# Kill existing polybar instances
+# Kill existing polybar instances and launch it
 pkill polybar
-
-sleep 1
-
-# Launch polybar
 $HOME/.config/polybar/launch.sh &
-
-sleep 1
 
 # Start notification daemon
 dunst &
@@ -49,12 +39,8 @@ unclutter -idle 10 &
 # Automount removable media
 udiskie &
 
-sleep 2
-
 # Start terminal emulator with tmux
 wezterm start -- tmux &
-
-sleep 2
 
 # Start web browser
 firefox &
