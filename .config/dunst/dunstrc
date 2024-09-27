@@ -54,7 +54,7 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
-	background = "#1d2021"
+	background = "#2B3339"
 [experimental]
     per_monitor_dpi = false
 [urgency_low]
