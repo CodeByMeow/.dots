@@ -124,15 +124,15 @@ client.background = #F5A0A8
 # window rules, you can find the window class using xprop
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
+for_window [class="org.wezfurlong.wezterm"] move to workspace $ws1
 for_window [class="org.mozilla.firefox"] move to workspace $ws2
 for_window [class="Zalo"] move to workspace $ws3
 for_window [class="Google-chrome"] move to workspace $ws4
 for_window [class="Postman"] move to workspace $ws5
 for_window [class="steam"] move to workspace $ws6
+
 for_window [class="^.*"]  border pixel 3
-
 focus_on_window_activation focus
-
 hide_edge_borders smart
 gaps inner 3
 gaps outer 3
