@@ -59,8 +59,8 @@ preload auto-cpufreq
 - `pamixer`: Sound controller
 
 ### Input method
-- fxcit5-unikey
-- fxcit5-chinese-addons
+- fcitx5-unikey
+- fcitx5-chinese-addons
 
 ### Webapp
 [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
