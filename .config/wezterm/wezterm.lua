@@ -1,7 +1,8 @@
 local wezterm = require("wezterm")
+local colors = require("everforest-dark-medium")
 
 return {
-	color_scheme ="Everforest Dark Medium (Gogh)",
+	colors = colors,
 	font = wezterm.font("Iosevka IBM"),
 	font_size = 15.5,
 	window_background_opacity = 1.0,
