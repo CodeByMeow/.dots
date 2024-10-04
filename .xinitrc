@@ -12,7 +12,7 @@ xset s noblank &
 xset s off &
 
 # Start input method framework
-fcitx5 &
+ibus-daemon --xim &
 
 # Start window manager in the background
 exec i3 &
