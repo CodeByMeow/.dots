@@ -14,33 +14,25 @@ xset s off &
 # Start input method framework
 ibus-daemon --xim &
 
-# Start window manager in the background
-exec i3 &
+# Start i3 and wait for it to be ready
+i3 &
+sleep 2  # Give i3 some time to initialize
+
+# Kill existing polybar instances and launch it
+pkill polybar
+sleep 1  # Give time for existing instances to be killed
+$HOME/.config/polybar/launch.sh &
 
 # Set wallpaper
 nitrogen --restore &
 
-# Kill existing polybar instances and launch it
-pkill polybar
-$HOME/.config/polybar/launch.sh &
-
-# Start notification daemon
-dunst &
-
-# Start Bluetooth applet
-blueman-applet &
-
-# Hide cursor when inactive
-unclutter -idle 10 &
-
-# Automount removable media
-udiskie &
-
-# Start terminal emulator with tmux
-wezterm start -- tmux &
-
-# Start web browser
-firefox &
+# Other startup applications
+dunst &                           # Start notification daemon
+blueman-applet &                  # Start Bluetooth applet
+unclutter -idle 10 &              # Hide cursor when inactive
+udiskie &                         # Automount removable media
+wezterm start -- tmux &           # Start terminal emulator with tmux
+(sleep 2 && firefox) &
 
 # Keep the script running
 wait
