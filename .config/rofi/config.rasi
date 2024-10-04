@@ -26,10 +26,10 @@ window {
   location : south;
   width    : 600px;
   height   : 480px;
-  y-offset : -4px;
+  y-offset : -6px;
 
   background-color : @bg1;
-  border-radius    : 8px;
+  border-radius    : 0px;
 }
 
 mainbox {
