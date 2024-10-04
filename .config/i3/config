@@ -67,9 +67,9 @@ set $ws3 "3:三"
 set $ws4 "4:四"
 set $ws5 "5:五"
 set $ws6 "6:六"
-set $ws6 "7:七"
-set $ws6 "8:八"
-set $ws6 "9:九"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
 
 # Bind keys to workspaces
 bindsym $super+1 workspace $ws1

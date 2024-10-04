@@ -21,12 +21,6 @@ _Note: I use colemak-dh keyboard layout_
     fisher install rstacruz/fish-npm-global
 ```
 
-### Speedup arch
-```
-preload auto-cpufreq
-
-```
-
 ### Shell setup
 
 - [starship](https://starship.rs/) - Shell theme
