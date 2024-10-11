@@ -1,38 +1,23 @@
-# Colors (Kanagawa Wave)
-# Source https//github.com/rebelot/kanagawa.nvim
-
 [colors.primary]
-background = '#1f1f28'
-foreground = '#dcd7ba'
+background = '#2B3339'
+foreground = '#D8CAAC'
 
 [colors.normal]
-black   = '#090618'
-red     = '#c34043'
-green   = '#76946a'
-yellow  = '#c0a36e'
-blue    = '#7e9cd8'
-magenta = '#957fb8'
-cyan    = '#6a9589'
-white   = '#c8c093'
+black   = '#374247'
+red     = '#E67E80'
+green   = '#A7C080'
+yellow  = '#DBBC7F'
+blue    = '#7FBBB3'
+magenta = '#D699B6'
+cyan    = '#83C092'
+white   = '#D8CAAC'
 
 [colors.bright]
-black   = '#727169'
-red     = '#e82424'
-green   = '#98bb6c'
-yellow  = '#e6c384'
-blue    = '#7fb4ca'
-magenta = '#938aa9'
-cyan    = '#7aa89f'
-white   = '#dcd7ba'
-
-[colors.selection]
-background = '#2d4f67'
-foreground = '#c8c093'
-
-[[colors.indexed_colors]]
-index = 16
-color = '#ffa066'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#ff5d62'
+black   = '#374247'
+red     = '#E67E80'
+green   = '#A7C080'
+yellow  = '#DBBC7F'
+blue    = '#7FBBB3'
+magenta = '#D699B6'
+cyan    = '#83C092'
+white   = '#D8CAAC'

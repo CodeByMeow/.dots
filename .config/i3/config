@@ -2,7 +2,7 @@
 set $super Mod4
 set $alt Mod1
 
-set $terminal wezterm
+set $terminal alacritty
 
 # set font
 font pango:Ionicons 9, SF Pro Display 9
