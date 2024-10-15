@@ -31,7 +31,7 @@ dunst &                           # Start notification daemon
 blueman-applet &                  # Start Bluetooth applet
 unclutter -idle 10 &              # Hide cursor when inactive
 udiskie &                         # Automount removable media
-wezterm start -- tmux &           # Start terminal emulator with tmux
+alacritty -e tmux &           # Start terminal emulator with tmux
 (sleep 2 && firefox) &
 
 # Keep the script running
