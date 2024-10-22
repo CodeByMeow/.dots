@@ -114,12 +114,12 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 # colour of border, background, text, indicator, and child_border
-client.focused = #00ffcc #F5A0A8 #ffffff #5EF1FF #ff0080
-client.focused_inactive = #F5A0A8 #ffcc00 #ffffff #F5A0A8 #F5A0A8
-client.unfocused = #F5A0A8 #ffcc00 #ffffff #F5A0A8 #F5A0A8
-client.urgent = #ff0080 #F5A0A8 #ffffff #ff5733 #00ffcc
-client.placeholder = #F5A0A8 #ffcc00 #ffffff #F5A0A8 #F5A0A8
-client.background = #F5A0A8
+client.focused       = #5C6A72 #A7C080 #D3C6AA #3A4947 #F85552
+client.focused_inactive = #868D80 #A7C080 #D3C6AA #868D80 #868D80
+client.unfocused     = #868D80 #A7C080 #D3C6AA #868D80 #868D80
+client.urgent        = #F85552 #A7C080 #D3C6AA #E67E80 #5C6A72
+client.placeholder   = #868D80 #A7C080 #D3C6AA #868D80 #868D80
+client.background    = #2B3339
 
 # window rules, you can find the window class using xprop
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
