@@ -16,4 +16,4 @@ alias lla="ls -la"
 alias lt="ls --tree"
 
 # translate shell
-alias t="trans :vi -b"
+alias t="trans :vi"
