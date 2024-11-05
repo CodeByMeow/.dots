@@ -114,7 +114,7 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 # colour of border, background, text, indicator, and child_border
-client.focused       = #5C6A72 #A7C080 #D3C6AA #3A4947 #F85552
+client.focused       = #5C6A72 #A7C080 #3A4947 #D3C6AA  #F85552
 client.focused_inactive = #868D80 #A7C080 #D3C6AA #868D80 #868D80
 client.unfocused     = #868D80 #A7C080 #D3C6AA #868D80 #868D80
 client.urgent        = #F85552 #A7C080 #D3C6AA #E67E80 #5C6A72
@@ -129,7 +129,7 @@ for_window [class="firefox|Firefox|firefox-default"] move to workspace $ws2
 for_window [class="Zalo"] move to workspace $ws3
 for_window [class="Google-chrome"] move to workspace $ws4
 for_window [class="Postman"] move to workspace $ws5
-for_window [class="steam"] move to workspace $ws6
+for_window [class="discord"] move to workspace $ws6
 
 for_window [class="^.*"]  border pixel 3
 focus_on_window_activation focus
