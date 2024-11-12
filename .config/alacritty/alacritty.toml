@@ -5,9 +5,9 @@
 #  ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║
 #  ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝
 
-import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/fonts.toml"]
+general.import = ["~/.config/alacritty/colors.toml", "~/.config/alacritty/fonts.toml"]
 
-live_config_reload = true
+general.live_config_reload = true
 
 [cursor]
 blink_interval = 550

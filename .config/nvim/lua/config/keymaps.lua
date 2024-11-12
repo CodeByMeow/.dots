@@ -3,11 +3,11 @@ local map = vim.keymap.set
 vim.g.mapleader = " "
 
 -- Toggle state for Colemak layout
-local toggle_colemak = true
+local toggle_default_layout = false
 
 -- Toggle Colemak layout mappings
-local function toggle_colemak_layout()
-    if toggle_colemak then
+local function toggle_layout()
+    if toggle_default_layout then
         -- Enable Colemak mappings
         map("", "n", "j", opts)
         map("", "e", "k", opts)
@@ -29,11 +29,11 @@ local function toggle_colemak_layout()
         vim.notify("Colemak layout deactivated", vim.log.levels.INFO)
     end
     -- Toggle state
-    toggle_colemak = not toggle_colemak
+    toggle_default_layout = not toggle_default_layout
 end
 
 -- Set the toggle keybinding
-map("n", "<leader>lc", toggle_colemak_layout, opts)
+map("n", "<leader>lc", toggle_layout, opts)
 
 -- Undo/redo mappings
 map("n", "l", "u", opts)
