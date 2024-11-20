@@ -29,6 +29,8 @@ map("n", "<leader>lc", toggle_layout, { desc = "Toggle Colemak layout" })
 
 map("n", "vub", "vib", opts)
 map("n", "vuB", "viB", opts)
+map("n", "vut", "vit", opts)
+map("n", "vuw", "viw", opts)
 map("n", "l", "u", opts)
 map("x", "l", ":<C-U>undo<CR>", opts)
 map("n", "x", '"_x')
