@@ -11,6 +11,12 @@ local function toggle_layout()
         map("", "i", "l", opts)
         map("", "u", "i", opts)
         map("", "U", "I", opts)
+		map("n", "vub", "vib", opts)
+		map("n", "vuB", "viB", opts)
+		map("n", "vut", "vit", opts)
+		map("n", "vuw", "viw", opts)
+		map("n", "l", "u", opts)
+		map("x", "l", ":<C-U>undo<CR>", opts)
         vim.notify("Colemak layout activated", vim.log.levels.INFO)
     else
         -- Reset to default layout
@@ -27,12 +33,6 @@ end
 -- Set the toggle keybinding
 map("n", "<leader>lc", toggle_layout, { desc = "Toggle Colemak layout" })
 
-map("n", "vub", "vib", opts)
-map("n", "vuB", "viB", opts)
-map("n", "vut", "vit", opts)
-map("n", "vuw", "viw", opts)
-map("n", "l", "u", opts)
-map("x", "l", ":<C-U>undo<CR>", opts)
 map("n", "x", '"_x')
 map("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>:q<cr>", { desc = "Quit" })
