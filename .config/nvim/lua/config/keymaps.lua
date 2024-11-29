@@ -4,30 +4,30 @@ local toggle_colemark = true
 vim.g.mapleader = " "
 
 local function toggle_layout()
-    if toggle_colemark then
-        -- Activate Colemak layout
-        map("", "n", "j", opts)
-        map("", "e", "k", opts)
-        map("", "i", "l", opts)
-        map("", "u", "i", opts)
-        map("", "U", "I", opts)
+	if toggle_colemark then
+		-- Activate Colemak layout
+		map("", "n", "j", opts)
+		map("", "e", "k", opts)
+		map("", "i", "l", opts)
+		map("", "u", "i", opts)
+		map("", "U", "I", opts)
 		map("n", "vub", "vib", opts)
 		map("n", "vuB", "viB", opts)
 		map("n", "vut", "vit", opts)
 		map("n", "vuw", "viw", opts)
 		map("n", "l", "u", opts)
 		map("x", "l", ":<C-U>undo<CR>", opts)
-        vim.notify("Colemak layout activated", vim.log.levels.INFO)
-    else
-        -- Reset to default layout
-        map("", "n", "n", opts)
-        map("", "e", "e", opts)
-        map("", "i", "i", opts)
-        map("", "u", "u", opts)
-        map("", "U", "U", opts)
-        vim.notify("Default layout activated", vim.log.levels.INFO)
-    end
-    toggle_colemark = not toggle_colemark
+		vim.notify("Colemak layout activated", vim.log.levels.INFO)
+	else
+		-- Reset to default layout
+		map("", "n", "n", opts)
+		map("", "e", "e", opts)
+		map("", "i", "i", opts)
+		map("", "u", "u", opts)
+		map("", "U", "U", opts)
+		vim.notify("Default layout activated", vim.log.levels.INFO)
+	end
+	toggle_colemark = not toggle_colemark
 end
 
 -- Set the toggle keybinding
