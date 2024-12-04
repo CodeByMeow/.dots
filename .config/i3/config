@@ -136,4 +136,4 @@ focus_on_window_activation focus
 hide_edge_borders smart
 gaps inner 3
 gaps outer 3
-smart_gaps on
+smart_gaps off
