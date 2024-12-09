@@ -15,12 +15,12 @@ xset s off &
 ibus-daemon --xim &
 
 # Start i3 and wait for it to be ready
-i3 &
-sleep 2  # Give i3 some time to initialize
+exec i3 &
+# Wait for i3 to start
+while ! pgrep -x "i3" > /dev/null; do
+    sleep 0.1
+done
 
-# Kill existing polybar instances and launch it
-pkill polybar
-sleep 1  # Give time for existing instances to be killed
 $HOME/.config/polybar/launch.sh &
 
 # Set wallpaper
