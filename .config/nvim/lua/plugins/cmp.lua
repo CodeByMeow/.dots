@@ -25,7 +25,7 @@ return {
 			"hrsh7th/cmp-calc",
 			event = "InsertEnter",
 		},
-		  { 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
+		{ "codota/tabnine-nvim", build = "./dl_binaries.sh" },
 		{
 			"saadparwaiz1/cmp_luasnip",
 			event = "InsertEnter",
@@ -74,6 +74,7 @@ return {
 					return true
 				end,
 			},
+			{ name = "codeium" },
 			{ name = "nvim_lua" },
 			{ name = "buffer", keyword_length = 3 },
 			{ name = "path" },
@@ -170,7 +171,7 @@ return {
 					end
 
 					local custom_menu_icon = {}
-					local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  Tabnine" }
+					local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  Tabnine", codeium = "  Codeium" }
 
 					for key, value in pairs(icons.kind) do
 						custom_menu_icon[key] = value[1]
@@ -180,6 +181,7 @@ return {
 					vim_item.kind = source_icons[entry.source.name] or vim_item.kind
 
 					vim.api.nvim_set_hl(0, "CmpItemKindTabNine", { fg = "#689D6A" })
+					vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { fg = "#09B6A2" })
 
 					print(vim_item.kind)
 					return vim_item
@@ -211,4 +213,3 @@ return {
 		})
 	end,
 }
-
