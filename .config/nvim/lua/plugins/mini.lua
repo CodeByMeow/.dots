@@ -12,7 +12,7 @@ local M = {
 			desc = "Find File",
 		},
 		{
-			"<leader>g",
+			"<leader>mg",
 			function()
 				local wrd = vim.fn.expand("<cWORD>")
 				require("mini.pick").builtin.grep_live({ pattern = wrd })
@@ -20,14 +20,14 @@ local M = {
 			desc = "Live Grep File",
 		},
 		{
-			"<leader>b",
+			"<leader>mb",
 			function()
 				require("mini.pick").builtin.buffers()
 			end,
 			desc = "Buffers",
 		},
 		{
-			"<leader>h",
+			"<leader>mp",
 			function()
 				require("mini.pick").builtin.help()
 			end,
@@ -41,14 +41,14 @@ local M = {
 			desc = "Explorer",
 		},
 		{
-			"<leader>m",
+			"<leader>mm",
 			function()
 				require("mini.map").toggle()
 			end,
 			desc = "Minimap",
 		},
 		{
-			"<leader>cl",
+			"<leader>mh",
 			function()
 				require("mini.extra").pickers.hl_groups()
 			end,
@@ -69,7 +69,7 @@ local M = {
 			desc = "Toggle SplitJoin",
 		},
 		{
-			"tt",
+			"<leader>mt",
 			function()
 				require("mini.trailspace").trim()
 			end,
