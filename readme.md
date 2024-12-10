@@ -45,9 +45,6 @@ _Note: I use colemak-dh keyboard layout_
 
 ### Tool
 
-- `gamemode`
-- `mangohud`
-- `protontricks`: Ubsoft help.
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
 - `pamixer`: Sound controller
