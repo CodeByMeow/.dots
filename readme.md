@@ -55,3 +55,8 @@ _Note: I use colemak-dh keyboard layout_
 
 ### Webapp
 [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
+
+### UI
+```
+xcompmgr
+```
