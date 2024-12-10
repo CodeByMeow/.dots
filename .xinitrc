@@ -14,15 +14,6 @@ xset s off &
 # Start input method framework
 ibus-daemon --xim &
 
-# Start i3 and wait for it to be ready
-exec i3 &
-# Wait for i3 to start
-while ! pgrep -x "i3" > /dev/null; do
-    sleep 0.1
-done
-
-$HOME/.config/polybar/launch.sh &
-
 # Set wallpaper
 nitrogen --restore &
 
@@ -31,8 +22,12 @@ dunst &                           # Start notification daemon
 blueman-applet &                  # Start Bluetooth applet
 unclutter -idle 10 &              # Hide cursor when inactive
 udiskie &                         # Automount removable media
-alacritty -e tmux &           # Start terminal emulator with tmux
-(sleep 2 && firefox) &
 
-# Keep the script running
+# Start i3 (last line to prevent termination)
+exec i3 &
+
+# Launch terminal and browser
+(sleep 1 && alacritty -e tmux) &
+(sleep 1 && firefox) &
+
 wait

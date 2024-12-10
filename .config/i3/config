@@ -137,3 +137,6 @@ hide_edge_borders smart
 gaps inner 3
 gaps outer 3
 smart_gaps off
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55
