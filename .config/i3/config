@@ -20,7 +20,7 @@ bindsym $super+w exec $HOME/.local/share/bin/rofi-launcher.sh w
 bindsym $super+p exec $HOME/.local/share/bin/power-menu.sh
 
 #flameshot
-bindsym Print exec flameshot gui -r -p $HOME/Pictures/Screenshots/ | xclip -selection clipboard -t image/png
+bindsym Print exec $HOME/.local/share/bin/screenshot.sh
 bindsym $super+l exec i3lock -i $HOME/Pictures/Wallpapers/lock.png
 
 # change volume and brightness
