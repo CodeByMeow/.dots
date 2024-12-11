@@ -36,13 +36,13 @@ add_newline = true
 # Hostname
 [hostname]
 ssh_only = true
-format = "[󰢥](fg:#2b3339 bg:none)[█](fg:#d3c6aa bg:#2b3339)[$ssh_symbol$hostname](bold bg:#d3c6aa)[󰢣](fg:#d3c6aa bg:none)"
+format = "[󰢥](fg:#aa2b3339 bg:none)[█](fg:#d3c6aa bg:#aa2b3339)[$ssh_symbol$hostname](bold bg:#d3c6aa)[󰢣](fg:#d3c6aa bg:none)"
 disabled = false
 
 # Directory
 [directory]
-format = "[$path]($style)[█](fg:#2b3339 bg:#2b3339)[󰷏 ](bg:#2b3339 fg:#7fbbb3)"
-style = "fg:#d3c6aa bg:#2b3339 bold"
+format = "[$path]($style)[ 󰷏 ](bg:#aa2b3339 fg:#7fbbb3)"
+style = "fg:#d3c6aa bg:#aa2b3339 bold"
 truncation_length = 3
 truncate_to_repo = false
 read_only = " "
@@ -61,19 +61,19 @@ style = 'bold #a7c080'
 
 [cmd_duration]
 min_time = 1
-format = "[$duration]($style) [󱑂 ](bg:#2b3339 fg:#dbbc7f)"
+format = "[$duration]($style) [󱑂 ](bg:#aa2b3339 fg:#dbbc7f)"
 disabled = false
-style = "fg:#d3c6aa bg:#2b3339 bold"
+style = "fg:#d3c6aa bg:#aa2b3339 bold"
 
 # Git Branch
 [git_branch]
-format = " [$branch]($style) [](bg:#2b3339 fg:#7fbbb3)"
-style = "fg:#d3c6aa bg:#2b3339"
+format = " [$branch]($style) [](bg:#aa2b3339 fg:#7fbbb3)"
+style = "fg:#d3c6aa bg:#aa2b3339"
 
 # Git Status
 [git_status]
-format = " [$all_status$ahead_behind]($style) [ ](bg:#2b3339 fg:#7fbbb3)"
-style = "fg:#d3c6aa bg:#2b3339"
+format = " [$all_status$ahead_behind]($style) [ ](bg:#aa2b3339 fg:#7fbbb3)"
+style = "fg:#d3c6aa bg:#aa2b3339"
 conflicted = "="
 ahead = "⇡ ${count}"
 behind = "⇣ ${count}"
