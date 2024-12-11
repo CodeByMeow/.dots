@@ -3,7 +3,7 @@
     follow = none
     width = (0,300)
     origin = top-right
-    offset = (6,38)
+    offset = (5,38)
     scale = 0
     notification_limit = 0
     progress_bar = true
@@ -14,8 +14,8 @@
     indicate_hidden = yes
     transparency = 0
     separator_height = 2
-    padding = 8
-    horizontal_padding = 8
+    padding = 4
+    horizontal_padding = 4
     text_icon_padding = 0
     frame_width = 2
     gap_size = 0
@@ -35,8 +35,8 @@
     show_indicators = yes
     enable_recursive_icon_lookup = true
     icon_position = left
-    min_icon_size = 40
-    max_icon_size = 90
+    min_icon_size = 32
+    max_icon_size = 48
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
@@ -44,7 +44,8 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 4
+    corner_radius = 8
+	icon_corner_radius = 4
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
@@ -56,6 +57,7 @@
     per_monitor_dpi = false
 [urgency_low]
     timeout = 10
+	max_icon_size = 80
 [urgency_normal]
     timeout = 10
 [urgency_critical]
