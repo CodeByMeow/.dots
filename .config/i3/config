@@ -12,7 +12,7 @@ font pango:Ionicons 9, SF Pro Display 9
 floating_modifier $super
 
 # start a terminal
-Geeenbindsym $super+Return exec $terminal
+bindsym $super+Return exec $terminal
 
 # start dmenu (a program launcher)
 bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher.sh d
