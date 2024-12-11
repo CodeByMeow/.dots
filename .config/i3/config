@@ -8,10 +8,11 @@ set $terminal alacritty
 font pango:Ionicons 9, SF Pro Display 9
 
 # use mouse+$super to drag floating windows to their wanted position
+
 floating_modifier $super
 
 # start a terminal
-bindsym $super+Return exec $terminal
+Geeenbindsym $super+Return exec $terminal
 
 # start dmenu (a program launcher)
 bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher.sh d
