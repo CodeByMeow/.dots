@@ -16,9 +16,9 @@
     separator_height = 2
     padding = 4
     horizontal_padding = 4
-    text_icon_padding = 0
+    text_icon_padding = 4
     frame_width = 2
-    gap_size = 0
+    gap_size = 4
     separator_color = frame
     sort = yes
     font = Iosevka Ori Sans 11
@@ -56,9 +56,9 @@
 [experimental]
     per_monitor_dpi = false
 [urgency_low]
-    timeout = 10
-	max_icon_size = 80
+    timeout = 5
 [urgency_normal]
+	max_icon_size = 100
     timeout = 10
 [urgency_critical]
     timeout = 0

@@ -8,4 +8,4 @@ flameshot gui -r -p "$SCREENSHOT_DIR" | xclip -selection clipboard -t image/png
 
 latest_screenshot=$("$LS" -t "$SCREENSHOT_DIR" | head -n1)
 
-notify-send -u low -i "$SCREENSHOT_DIR/$latest_screenshot" "Screenshot saved to clipboard"
+notify-send -i "$SCREENSHOT_DIR/$latest_screenshot" "Screenshot saved to clipboard"
