@@ -1,10 +1,10 @@
 local opts = { noremap = true, silent = true }
 local map = vim.keymap.set
-local toggle_colemark = true
+vim.g.toggle_colemark = true
 vim.g.mapleader = " "
 
-local function toggle_layout()
-	if toggle_colemark then
+local function active_layout()
+	if vim.g.toggle_colemark then
 		-- Activate Colemak layout
 		map("", "n", "j", opts)
 		map("", "e", "k", opts)
@@ -17,7 +17,6 @@ local function toggle_layout()
 		map("n", "vuw", "viw", opts)
 		map("n", "l", "u", opts)
 		map("x", "l", ":<C-U>undo<CR>", opts)
-		vim.notify("Colemak layout activated", vim.log.levels.INFO)
 	else
 		-- Reset to default layout
 		map("", "n", "n", opts)
@@ -25,9 +24,22 @@ local function toggle_layout()
 		map("", "i", "i", opts)
 		map("", "u", "u", opts)
 		map("", "U", "U", opts)
-		vim.notify("Default layout activated", vim.log.levels.INFO)
 	end
-	toggle_colemark = not toggle_colemark
+	-- Safely refresh Lualine if it is loaded
+	if package.loaded["lualine"] then
+		require("lualine").refresh()
+	else
+		vim.defer_fn(function()
+			if package.loaded["lualine"] then
+				require("lualine").refresh()
+			end
+		end, 50) -- Retry after 50ms
+	end
+end
+
+local function toggle_layout()
+	vim.g.toggle_colemark = not vim.g.toggle_colemark
+	active_layout()
 end
 
 -- Set the toggle keybinding
@@ -63,6 +75,6 @@ map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "s", "<Nop>")
 map("v", "s", "<Nop>")
 
-toggle_layout()
+active_layout()
 -- Cowboy discipline
 require("config.discipline").cowboy()

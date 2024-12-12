@@ -62,6 +62,15 @@ return {
 							return ok and m.waiting and "󰩈" or ""
 						end,
 					},
+					{
+						function()
+							if vim.g.toggle_colemark then
+								return "󰯱 Colemak"
+							else
+								return "󰯶 Default"
+							end
+						end,
+					},
 				},
 				lualine_x = {
 					{
