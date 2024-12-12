@@ -15,7 +15,6 @@ _Note: I use colemak-dh keyboard layout_
 ### Required
 - `nodejs`
 - `npm`
-
 ```
     fisher install jorgebucaran/nvm.fish
     fisher install rstacruz/fish-npm-global
@@ -54,8 +53,9 @@ _Note: I use colemak-dh keyboard layout_
 - fcitx5-unikey
 - fcitx5-chinese-addons
 
-### Webapp
+### App
 [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
+Pomotroid
 
 ### UI
 ```
