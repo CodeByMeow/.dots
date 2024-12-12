@@ -1,11 +1,29 @@
 #!/bin/bash
-SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
-LS="/usr/bin/ls"
 
+# Directory to store screenshots
+SCREENSHOT_DIR="$HOME/Pictures/Screenshots"
+
+# Ensure the screenshot directory exists
 mkdir -p "$SCREENSHOT_DIR"
 
-flameshot gui -r -p "$SCREENSHOT_DIR" | xclip -selection clipboard -t image/png
+# Generate a timestamped filename
+SCREENSHOT_FILE="screenshot_$(date +%Y%m%d_%H%M%S).png"
+FULL_PATH="$SCREENSHOT_DIR/$SCREENSHOT_FILE"
 
-latest_screenshot=$("$LS" -t "$SCREENSHOT_DIR" | head -n1)
+# Take screenshot
+maim -s "$FULL_PATH"
 
-notify-send -i "$SCREENSHOT_DIR/$latest_screenshot" "Screenshot saved to clipboard"
+# Check if screenshot was successful
+if [ $? -eq 0 ]; then
+    # Copy to clipboard
+    xclip -selection clipboard -t image/png < "$FULL_PATH"
+
+    # Send notification with the screenshot as an icon
+    notify-send -i "$FULL_PATH" "Screenshot Captured" "Saved to $FULL_PATH"
+else
+    # Remove the empty/invalid file if screenshot was cancelled
+    rm -f "$FULL_PATH"
+
+    # Send a simple notification without referencing any file path
+    notify-send -u low "Screenshot Cancelled"
+fi

@@ -1,7 +1,7 @@
 [global]
     monitor = 0
     follow = none
-    width = (0,300)
+    width = (100,300)
     origin = top-right
     offset = (5,38)
     scale = 0
@@ -36,7 +36,7 @@
     enable_recursive_icon_lookup = true
     icon_position = left
     min_icon_size = 32
-    max_icon_size = 48
+    max_icon_size = 80
     sticky_history = yes
     history_length = 20
     dmenu = /usr/bin/dmenu -p dunst:
@@ -57,8 +57,8 @@
     per_monitor_dpi = false
 [urgency_low]
     timeout = 5
+	max_icon_size = 24
 [urgency_normal]
-	max_icon_size = 100
     timeout = 10
 [urgency_critical]
     timeout = 0
