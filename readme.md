@@ -48,6 +48,7 @@ _Note: I use colemak-dh keyboard layout_
 - `android-file-transfer`: File transfer android.
 - `pavucontrol`: Audio configuration.
 - `pamixer`: Sound controller
+- `maim`: Screenshot tool
 
 ### Input method
 - fcitx5-unikey
