@@ -35,10 +35,10 @@ i3lock \
     --layout-color=$text \
     --date-color=$text \
     --time-color=$text \
-    --time-font="JetBrains Mono" \
-    --date-font="JetBrains Mono" \
-    --time-size=42 \
-    --date-size=24 \
+    --time-font="Iosevka IBM" \
+    --date-font="Iosevka IBM" \
+    --time-size=40 \
+    --date-size=22 \
     --radius=120 \
     --ring-width=20 \
     --indicator
