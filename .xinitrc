@@ -28,6 +28,5 @@ exec i3 &
 
 # Launch terminal and browser
 (sleep 1 && alacritty -e tmux) &
-(sleep 1 && firefox) &
 
 wait
