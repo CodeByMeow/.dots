@@ -27,7 +27,7 @@ local M = {
 			desc = "Buffers",
 		},
 		{
-			"<leader>mp",
+			"<leader>mh",
 			function()
 				require("mini.pick").builtin.help()
 			end,
@@ -48,7 +48,7 @@ local M = {
 			desc = "Minimap",
 		},
 		{
-			"<leader>mh",
+			"<leader>mc",
 			function()
 				require("mini.extra").pickers.hl_groups()
 			end,
