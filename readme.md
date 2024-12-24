@@ -55,8 +55,9 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - fcitx5-chinese-addons
 
 ### App
-- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)  
+- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
 - Pomotroid
+- Youtube-music
 
 ### UI
 ```
