@@ -59,7 +59,6 @@ icon-search {
 
 entry {
   font              : "SF Pro Display 12";
-  placeholder       : "Type here to search";
   placeholder-color : @fg1;
   color				: @fg1;
 }

@@ -14,19 +14,19 @@ floating_modifier $super
 # start a terminal
 bindsym $super+Return exec $terminal
 
-# start dmenu (a program launcher)
-bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher.sh d
-bindsym $super+w exec $HOME/.local/share/bin/rofi-launcher.sh w
-bindsym $super+p exec $HOME/.local/share/bin/power-menu.sh
+# start launcher (a program launcher)
+bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher d
+bindsym $super+w exec $HOME/.local/share/bin/rofi-launcher w
+bindsym $super+p exec $HOME/.local/share/bin/power-menu
 
 #flameshot
-bindsym Print exec $HOME/.local/share/bin/screenshot.sh
-bindsym $super+l exec $HOME/.local/share/bin/i3lock.sh
+bindsym Print exec $HOME/.local/share/bin/screenshot
+bindsym $super+l exec $HOME/.local/share/bin/i3lock
 
 # change volume and brightness
-bindsym XF86AudioRaiseVolume exec $HOME/.local/share/bin/volume_control.sh --inc
-bindsym XF86AudioLowerVolume exec $HOME/.local/share/bin/volume_control.sh --dec
-bindsym XF86AudioMute exec $HOME/.local/share/bin/volume_control.sh --toggle
+bindsym XF86AudioRaiseVolume exec $HOME/.local/share/bin/volume_control --inc
+bindsym XF86AudioLowerVolume exec $HOME/.local/share/bin/volume_control --dec
+bindsym XF86AudioMute exec $HOME/.local/share/bin/volume_control --toggle
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
@@ -137,10 +137,10 @@ for_window [class="^.*"] border pixel 4
 focus_on_window_activation focus
 hide_edge_borders smart
 gaps inner 10
-gaps outer 3
+gaps outer 0
 gaps top 0
 smart_gaps off
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch
 exec_always --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55
-exec --no-startup-id $HOME/.local/share/bin/welcome.sh
+exec --no-startup-id $HOME/.local/share/bin/welcome

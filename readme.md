@@ -1,5 +1,4 @@
 - **Window Manager** :bento: [i3](https://i3wm.org/)  
-*Saving and restoring i3 workspaces* :truck: [i3-resurrect](https://github.com/JonnyHaystack/i3-resurrect)
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
