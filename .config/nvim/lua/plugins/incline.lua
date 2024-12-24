@@ -20,7 +20,9 @@ return {
 					filename = "[No Name]"
 				end
 				local _, ft_color = devicons.get_icon_color(filename)
-				if (ft_color == nil) then ft_color = "#BA9C6B" end
+				if ft_color == nil then
+					ft_color = "#BA9C6B"
+				end
 				local ft_icon = miniIcon.get("filetype", vim.bo.filetype)
 				local modified = vim.bo[props.buf].modified
 				return {

@@ -1,4 +1,5 @@
-- **Window Manager** :bento: [i3](https://i3wm.org/)
+- **Window Manager** :bento: [i3](https://i3wm.org/)  
+*Saving and restoring i3 workspaces* :truck: [i3-resurrect](https://github.com/JonnyHaystack/i3-resurrect)
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
@@ -8,9 +9,9 @@
 - **Editor** :fire: [ Neovim ](https://github.com/neovim/neovim) (>= 0.10) (npm install -g neovim)
 
 ---
-_Warning: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
+_Warning :rotating_light: Don't blindly use my settings unless you know what that entails. Use at your own risk!_
 
-_Note: I use colemak-dh keyboard layout_
+_Note :wrench: I use colemak-dh keyboard layout_
 
 ### Required
 - `nodejs`
@@ -54,8 +55,8 @@ _Note: I use colemak-dh keyboard layout_
 - fcitx5-chinese-addons
 
 ### App
-[WebCatalog Desktop](https://webcatalog.io/vi/apps/)
-Pomotroid
+- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)  
+- Pomotroid
 
 ### UI
 ```
