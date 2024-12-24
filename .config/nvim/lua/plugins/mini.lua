@@ -62,7 +62,7 @@ local M = {
 			desc = "Jump to line",
 		},
 		{
-			"gj",
+			"<leader>j",
 			function()
 				require("mini.splitjoin").toggle()
 			end,
