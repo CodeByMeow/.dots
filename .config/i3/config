@@ -141,6 +141,6 @@ gaps outer 0
 gaps top 0
 smart_gaps off
 
-exec_always --no-startup-id $HOME/.config/polybar/launch
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55
 exec --no-startup-id $HOME/.local/share/bin/welcome
