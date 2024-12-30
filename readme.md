@@ -52,13 +52,13 @@ _Note :wrench: I use colemak-dh keyboard layout_
 ### Input method
 - fcitx5-unikey
 - fcitx5-chinese-addons
-
+i
 ### App
-- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
-- Pomotroid
+- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)- Pomotroid
 - Youtube-music
 
 ### UI
 ```
-xcompmgr
+// xcompmgr
+fastcompmgr
 ```
