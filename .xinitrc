@@ -12,7 +12,8 @@ xset s noblank &
 xset s off &
 
 # Start input method framework
-ibus-daemon --xim &
+# ibus-daemon --xim &
+fcitx5 -d &
 
 # Set wallpaper
 nitrogen --restore &

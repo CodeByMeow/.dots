@@ -6,4 +6,4 @@ export XMODIFIERS=@im=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export EDITOR=nvim
-export BROWSER='/usr/bin/zen-browser'           # default web browser
+export BROWSER='/usr/bin/zen-browser'
