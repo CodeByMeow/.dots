@@ -1,4 +1,4 @@
-- **Window Manager** :bento: [i3](https://i3wm.org/)  
+- **Window Manager** :bento: [i3](https://i3wm.org/)
 - **Status Bar** :chocolate_bar: [ Polybar ](https://polybar.github.io/)
 - **Application Launcher** :rocket: Rofi
 - **Notification Daemon** :loudspeaker: Dunst
@@ -54,11 +54,6 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - fcitx5-chinese-addons
 
 ### App
-- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)- Pomotroid
+- [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
+- Pomotroid
 - Youtube-music
-
-### UI
-```
-// xcompmgr
-fastcompmgr
-```
