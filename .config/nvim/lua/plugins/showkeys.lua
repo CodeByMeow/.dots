@@ -2,7 +2,7 @@ return {
 	"nvzone/showkeys",
 	cmd = "ShowkeysToggle",
 	config = {
-		position = "top-right",
+		position = "bottom-right",
 	},
 	init = function()
 		vim.cmd("ShowkeysToggle")
