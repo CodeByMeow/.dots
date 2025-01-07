@@ -25,9 +25,5 @@ unclutter -idle 10 &              # Hide cursor when inactive
 udiskie &                         # Automount removable media
 
 # Start i3 (last line to prevent termination)
-exec i3 &
+exec i3
 
-# Launch terminal and browser
-(sleep 1 && alacritty -e tmux) &
-
-wait
