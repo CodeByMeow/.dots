@@ -142,5 +142,5 @@ gaps top 0
 smart_gaps off
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
+exec_always --no-startup-id fastcompmgr -o 0.4 -r 12 -c -C
 exec --no-startup-id $HOME/.local/share/bin/welcome

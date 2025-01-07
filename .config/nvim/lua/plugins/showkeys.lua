@@ -1,7 +1,7 @@
 return {
 	"nvzone/showkeys",
 	cmd = "ShowkeysToggle",
-	config = {
+	opts = {
 		position = "bottom-right",
 	},
 	init = function()

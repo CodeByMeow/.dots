@@ -27,6 +27,7 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - [peco](https://github.com/peco/peco) - Interactive filtering
 - [tmux](https://github.com/tmux/tmux) - Terminal multiplexer
 - [tpm](https://github.com/tmux-plugins/tpm) - Tmux Plugin Manager
+- fastcommgr
 
 ### Font
 - [ Iosevka ](https://github.com/be5invis/Iosevka)
@@ -58,3 +59,4 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
 - Pomotroid
 - Youtube-music
+
