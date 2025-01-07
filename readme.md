@@ -34,6 +34,7 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - [ Source Han Sans KR](https://software.manjaro.org/package/adobe-source-han-sans-kr-fonts)
 - Font Awesome 6 Pro
 - Noto fonts emoji
+- Hack Nerd Font
 
 ### Devtool
 
