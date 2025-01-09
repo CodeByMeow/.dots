@@ -1,4 +1,5 @@
 #!/bin/bash
-ICON_PATH="$HOME/.config/dunst/icons/welcome-neko.png"
+ICON_PATH="$HOME/.config/dunst/icons/Baymax.png"
 
-notify-send -i "$ICON_PATH" "Welcome back master, Nya!🐾"
+notify-send -i "$ICON_PATH" "Hello!" "I am Baymax, your personal healthcare companion!" -t 5000
+notify-send -i "$ICON_PATH" "Bada-lada-la!" "Would you like a hug?"
