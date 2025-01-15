@@ -15,7 +15,6 @@ local server_names = {
 	"prismals",
 	"tailwindcss",
 	"emmet_ls",
-	"clangd",
 }
 
 function M.config()

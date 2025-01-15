@@ -1,5 +1,7 @@
 {
-    "diagnostics.disable": [
-        "undefined-field"
+    "diagnostics.globals": [
+        "vim",
+        "spec",
+        "Snacks"
     ]
 }

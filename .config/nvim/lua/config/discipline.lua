@@ -1,7 +1,6 @@
 local M = {}
 
 function M.cowboy()
-	---@type table?
 	local id
 	local ok = true
 	for key, value in pairs({ h = "h", n = "j", e = "k", i = "l" }) do

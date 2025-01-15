@@ -74,6 +74,9 @@ map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v
 map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "s", "<Nop>")
 map("v", "s", "<Nop>")
+map("n", "H", function()
+	return vim.lsp.buf.hover()
+end)
 
 active_layout()
 -- Cowboy discipline

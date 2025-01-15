@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
-		-- import your plugins
 		{ import = "plugins" },
 	},
 	install = { colorscheme = { "everforest" } },
@@ -29,7 +28,7 @@ require("lazy").setup({
 				"gzip",
 				"matchit",
 				"matchparen",
-				"netrwPlugin",
+				-- "netrwPlugin",
 				"tarPlugin",
 				"tohtml",
 				"tutor",

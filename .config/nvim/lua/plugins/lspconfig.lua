@@ -9,16 +9,6 @@ local function common_capabilities()
 	return capabilities
 end
 
-local function toggle_inlay_hints()
-	if vim.lsp.inlay_hint then
-		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-	end
-end
-
-vim.keymap.set("n", "<leader>.", function()
-	toggle_inlay_hints()
-end, { desc = "Toggle Inlay Hints" })
-
 function M.config()
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()

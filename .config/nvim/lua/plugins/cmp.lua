@@ -171,9 +171,9 @@ return {
 					end
 
 					local custom_menu_icon = {}
-					local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  Tabnine", codeium = "  Codeium" }
+					local source_icons = { calc = " 󰃬 ", cmp_tabnine = "󰫈  Tabnine", codeium = "󰁨  Codeium" }
 
-					for key, value in pairs(icons.kind) do
+					for key, value in pairs(icons.kinds) do
 						custom_menu_icon[key] = value[1]
 					end
 
