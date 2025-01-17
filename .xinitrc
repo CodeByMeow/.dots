@@ -15,9 +15,6 @@ xset s off &
 # ibus-daemon --xim &
 fcitx5 -d &
 
-# Set wallpaper
-nitrogen --restore &
-
 # Other startup applications
 dunst &                           # Start notification daemon
 blueman-applet &                  # Start Bluetooth applet
