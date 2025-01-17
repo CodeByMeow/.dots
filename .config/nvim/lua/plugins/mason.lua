@@ -13,7 +13,6 @@ local server_names = {
 	"jsonls",
 	"eslint",
 	"prismals",
-	"tailwindcss",
 	"emmet_ls",
 }
 

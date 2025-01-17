@@ -61,12 +61,9 @@ return {
 		bigfile = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		notifier = {
-			enabled = true,
-			timeout = 3000,
-		},
-		quickfile = { enabled = true },
+		notifier = { enabled = true },
 		scroll = { enabled = true },
+		quickfile = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		picker = { enabled = true, opts = {
@@ -77,6 +74,11 @@ return {
 		styles = {
 			notification = {
 				wo = { wrap = true },
+				filter = {
+					event = "notify",
+					find = "No information available",
+				},
+				opts = { skip = true },
 			},
 		},
 	},
