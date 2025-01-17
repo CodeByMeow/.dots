@@ -43,13 +43,14 @@ return {
 					{
 						function()
 							local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
-							local icon = require("mini.icons").get("filetype", vim.bo.filetype)
-							return string.format("%s %s", icon, filename)
+							local ft_icon = require("mini.icons").get("filetype", vim.bo.filetype)
+
+							return string.format("%s %s", ft_icon, filename)
 						end,
 						color = function()
 							local _, color =
 								require("nvim-web-devicons").get_icon_cterm_color_by_filetype(vim.bo.filetype)
-							return { fg = color, gui = "italic" }
+							return { gui = "italic" }
 						end,
 					},
 					{
