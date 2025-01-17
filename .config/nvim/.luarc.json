@@ -3,5 +3,9 @@
         "vim",
         "spec",
         "Snacks"
+    ],
+    "diagnostics.disable": [
+        "param-type-mismatch",
+        "undefined-field"
     ]
 }

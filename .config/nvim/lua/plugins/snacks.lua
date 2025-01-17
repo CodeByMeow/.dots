@@ -22,12 +22,11 @@ return {
 						action = ":lua Snacks.dashboard.pick('oldfiles')",
 					},
 					{
-						icon = " ",
+						icon = " ",
 						key = "c",
 						desc = "Config",
 						action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
 					},
-					{ icon = " ", key = "s", desc = "Restore Session", section = "session" },
 					{
 						icon = "󰒲 ",
 						key = "L",
@@ -35,7 +34,7 @@ return {
 						action = ":Lazy",
 						enabled = package.loaded.lazy ~= nil,
 					},
-					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
+					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
 				header = [[
   ___     ___    ___   __  __ /\_\    ___ ___    

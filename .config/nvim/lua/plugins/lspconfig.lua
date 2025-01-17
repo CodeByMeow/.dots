@@ -9,6 +9,11 @@ local function common_capabilities()
 	return capabilities
 end
 
+local function on_attach()
+	vim.keymap.set("n", "<leader>sr", vim.lsp.buf.rename, { desc = "LSP Rename" })
+	vim.keymap.set("n", "<leader>sa", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
+end
+
 function M.config()
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()
@@ -22,6 +27,7 @@ function M.config()
 	for _, server in ipairs(servers) do
 		local opts = {
 			capabilities = common_capabilities(),
+			on_attach = on_attach,
 		}
 
 		local require_ok, settings = pcall(require, "config.lspsettings." .. server)

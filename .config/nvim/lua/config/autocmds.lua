@@ -121,3 +121,14 @@ vim.api.nvim_create_autocmd("LspProgress", {
 		})
 	end,
 })
+
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+	callback = function()
+		local diagnostics = vim.diagnostic.get(0)
+		if #diagnostics > 0 then
+			vim.diagnostic.setloclist({ open = false })
+		end
+
+		vim.diagnostic.setqflist({ open = false })
+	end,
+})
