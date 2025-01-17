@@ -10,6 +10,14 @@ return {
 				keys = {
 					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 					{
+						icon = "󰮩 ",
+						key = "o",
+						desc = "Browse",
+						action = function()
+							require("mini.files").open(vim.api.nvim_buf_get_name(0))
+						end,
+					},
+					{
 						icon = " ",
 						key = "g",
 						desc = "Find Text",
