@@ -340,5 +340,12 @@ return {
 			end,
 			desc = "LSP Symbols",
 		},
+		{
+			"<leader>t",
+			function()
+				Snacks.terminal()
+			end,
+			desc = "Toggle Terminal",
+		},
 	},
 }
