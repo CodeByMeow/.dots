@@ -71,12 +71,15 @@ map("c", "<C-e>", "<C-p>")
 map("n", "<Tab>", vim.cmd.bn)
 map("n", "<S-Tab>", vim.cmd.bp)
 map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>')
-map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 map("n", "s", "<Nop>")
 map("v", "s", "<Nop>")
+
 map("n", "H", function()
 	return vim.lsp.buf.hover()
 end)
+
+map("n", "<leader>t", "<cmd>:ToggleTerm dir=%:p:h<CR>")
+map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 active_layout()
 -- Cowboy discipline
