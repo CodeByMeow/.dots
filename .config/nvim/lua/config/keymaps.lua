@@ -82,5 +82,3 @@ map("n", "<leader>t", "<cmd>:ToggleTerm dir=%:p:h<CR>")
 map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 active_layout()
--- Cowboy discipline
-require("config.discipline").cowboy()
