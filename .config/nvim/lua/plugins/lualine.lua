@@ -42,14 +42,21 @@ return {
 				lualine_c = {
 					{
 						function()
-							local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
 							local ft_icon = require("mini.icons").get("filetype", vim.bo.filetype)
-
-							return string.format("%s %s", ft_icon, filename)
+							return string.format("%s", ft_icon)
 						end,
 						color = function()
 							local _, color =
 								require("nvim-web-devicons").get_icon_cterm_color_by_filetype(vim.bo.filetype)
+							return { fg = color }
+						end,
+					},
+					{
+						function()
+							local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
+							return string.format("%s", filename)
+						end,
+						color = function()
 							return { gui = "italic" }
 						end,
 					},
@@ -57,23 +64,17 @@ return {
 						"diagnostics",
 						symbols = { error = icons.Error, warn = icons.Warn, info = icons.Info, hint = icons.Hint },
 					},
-					{
-						function()
-							local ok, m = pcall(require, "better_escape")
-							return ok and m.waiting and "󰩈" or ""
-						end,
-					},
-					{
-						function()
-							if vim.g.toggle_colemark then
-								return "󰯱 Colemak"
-							else
-								return "󰯶 Default"
-							end
-						end,
-					},
 				},
 				lualine_x = {
+					function()
+						if vim.g.toggle_colemark then
+							return "  Colemak"
+						else
+							return "  Default"
+						end
+					end,
+				},
+				lualine_y = {
 					{
 						function()
 							local lsps = vim.lsp.get_clients()
@@ -87,20 +88,13 @@ return {
 								return ""
 							end
 						end,
-						color = function()
-							local _, color =
-								require("nvim-web-devicons").get_icon_cterm_color_by_filetype(vim.bo.filetype)
-							return { fg = color }
-						end,
 					},
-				},
-				lualine_y = {
 					"filesize",
 					"encoding",
 				},
 				lualine_z = {
-					"progress",
 					"location",
+					"progress",
 				},
 			},
 		})
