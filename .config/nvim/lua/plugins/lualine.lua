@@ -56,9 +56,6 @@ return {
 							local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":t")
 							return string.format("%s", filename)
 						end,
-						color = function()
-							return { gui = "italic" }
-						end,
 					},
 					{
 						"diagnostics",

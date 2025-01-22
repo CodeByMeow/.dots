@@ -125,9 +125,9 @@ client.background    = #2B3339
 # window rules, you can find the window class using xprop
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
 for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
-for_window [class="alacritty"] move to workspace $ws1
-for_window [class="firefox|Firefox|firefox-default|zen-beta"] move to workspace $ws2
-for_window [class="firefox|Firefox|firefox-default|zen-beta"] focus
+for_window [class="Alacritty"] move to workspace $ws1
+for_window [class="firefox|Firefox|firefox-default|zen-beta|zen"] move to workspace $ws2
+for_window [class="firefox|Firefox|firefox-default|zen-beta|zen"] focus
 for_window [class="Zalo"] move to workspace $ws3
 for_window [class="Postman"] move to workspace $ws4
 for_window [class="Google-chrome"] move to workspace $ws5
@@ -147,5 +147,5 @@ exec --no-startup-id $HOME/.screenlayout/Home.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id fastcompmgr -o 0.4 -r 12 -c -C
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id alacritty -e tmux
+exec --no-startup-id $terminal -e tmux
 exec --no-startup-id bash -c "sleep 2 && $HOME/.local/share/bin/welcome"
