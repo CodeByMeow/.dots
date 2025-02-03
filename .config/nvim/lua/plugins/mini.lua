@@ -5,6 +5,13 @@ local M = {
 	event = { "BufReadPre" },
 	keys = {
 		{
+			"<leader>o",
+			function()
+				require("mini.files").open(vim.api.nvim_buf_get_name(0))
+			end,
+			desc = "Explorer",
+		},
+		{
 			"<leader>j",
 			function()
 				require("mini.splitjoin").toggle()
