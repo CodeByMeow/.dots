@@ -4,6 +4,12 @@ return {
 	lazy = false,
 	opts = {
 		animate = { enabled = true },
+		explorer = {
+			enabled = true,
+			opts = {
+				replace_netrw = true,
+			},
+		},
 		dashboard = {
 			enabled = true,
 			preset = {
@@ -13,9 +19,7 @@ return {
 						icon = "󰮩 ",
 						key = "o",
 						desc = "Browse",
-						action = function()
-							require("mini.files").open(vim.api.nvim_buf_get_name(0))
-						end,
+						action = ":lua Snacks.picker.explorer()",
 					},
 					{
 						icon = " ",
@@ -67,11 +71,17 @@ return {
 		lazygit = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
-		picker = { enabled = true, opts = {
-			icons = {
-				kinds = require("config.icons").snacks,
+		picker = {
+			enabled = true,
+			opts = {
+				icons = {
+					kinds = require("config.icons").snacks,
+				},
+				sources = {
+					explorer = {},
+				},
 			},
-		} },
+		},
 		styles = {
 			notification = {
 				wo = { wrap = true },
@@ -406,6 +416,13 @@ return {
 				Snacks.notifier.hide()
 			end,
 			desc = "Dismiss All Notifications",
+		},
+		{
+			"<leader>o",
+			function()
+				Snacks.picker.explorer()
+			end,
+			desc = "Explorer",
 		},
 	},
 }
