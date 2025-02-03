@@ -69,6 +69,7 @@ return {
 				sources = {
 					explorer = {},
 				},
+				ui_select = true,
 			},
 		},
 		styles = {
