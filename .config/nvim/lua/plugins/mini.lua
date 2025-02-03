@@ -5,13 +5,6 @@ local M = {
 	event = { "BufReadPre" },
 	keys = {
 		{
-			"<leader>o",
-			function()
-				require("mini.files").open(vim.api.nvim_buf_get_name(0))
-			end,
-			desc = "Explorer",
-		},
-		{
 			"<leader>j",
 			function()
 				require("mini.splitjoin").toggle()
@@ -61,22 +54,6 @@ function M.config()
 	require("mini.indentscope").setup({
 		symbol = "│",
 		options = { try_as_border = true },
-	})
-	require("mini.files").setup({
-		content = {
-			filter = function(fs_entry)
-				if fs_entry.fs_type == "directory" and fs_entry.name == "node_modules" then
-					return false
-				end
-
-				return true
-			end,
-		},
-		mappings = {
-			go_in = "i",
-			go_in_plus = "I",
-			synchronize = "<leader>w",
-		},
 	})
 	require("mini.move").setup({
 		mappings = {

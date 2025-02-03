@@ -4,19 +4,12 @@ return {
 	lazy = false,
 	opts = {
 		animate = { enabled = true },
+		explorer = { enabled = true },
 		dashboard = {
 			enabled = true,
 			preset = {
 				keys = {
 					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-					{
-						icon = "󰮩 ",
-						key = "o",
-						desc = "Browse",
-						action = function()
-							require("mini.files").open(vim.api.nvim_buf_get_name(0))
-						end,
-					},
 					{
 						icon = " ",
 						key = "g",
@@ -412,6 +405,40 @@ return {
 				Snacks.notifier.hide()
 			end,
 			desc = "Dismiss All Notifications",
+		},
+		{
+			"<leader>o",
+			function()
+				Snacks.explorer({
+					replace_netrw = true,
+					win = {
+						list = {
+							keys = {
+								["<BS>"] = "explorer_up",
+								[","] = "confirm",
+								["h"] = "explorer_close", -- close directory
+								["a"] = "explorer_add",
+								["d"] = "explorer_del",
+								["r"] = "explorer_rename",
+								["c"] = "explorer_copy",
+								["m"] = "explorer_move",
+								["o"] = "explorer_open", -- open with system application
+								["P"] = "toggle_preview",
+								["y"] = "explorer_yank",
+								["u"] = "explorer_update",
+								["<c-c>"] = "explorer_cd",
+								["."] = "explorer_focus",
+								["I"] = "toggle_ignored",
+								["H"] = "toggle_hidden",
+								["Z"] = "explorer_close_all",
+								["]g"] = "explorer_git_next",
+								["[g"] = "explorer_git_prev",
+							},
+						},
+					},
+				})
+			end,
+			desc = "File Explorer",
 		},
 	},
 }
