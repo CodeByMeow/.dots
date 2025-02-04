@@ -412,6 +412,7 @@ return {
 			function()
 				Snacks.explorer({
 					replace_netrw = true,
+					auto_close = true,
 					win = {
 						list = {
 							keys = {
