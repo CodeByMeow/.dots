@@ -46,7 +46,21 @@ function M.config()
 	require("mini.basics").setup()
 	require("mini.bufremove").setup()
 	require("mini.extra").setup()
-	require("mini.icons").setup()
+	require("mini.icons").setup({
+		file = {
+			["package.json"] = { glyph = " ", hl = "MiniIconsRed" },
+			["package-lock.json"] = { glyph = " ", hl = "MiniIconsRed" },
+			["tsconfig.json"] = { glyph = " ", hl = "MiniIconsBlue" },
+			["docker-compose.yml"] = { glyph = " ", hl = "MiniIconsBlue" },
+			["readme.md"] = { glyph = " ", hl = "MiniIconsGrey" },
+			["README.md"] = { glyph = " ", hl = "MiniIconsGrey" },
+		},
+		extension = {
+			["test.js"] = { glyph = "", hl = "MiniIconsYellow" },
+			["test.ts"] = { glyph = "", hl = "MiniIconsBlue" },
+			["txt"] = { glyph = "", hl = "MiniIconsGray" },
+		},
+	})
 	require("mini.surround").setup()
 	require("mini.tabline").setup()
 
