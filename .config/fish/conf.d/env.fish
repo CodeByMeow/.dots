@@ -7,3 +7,5 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export EDITOR=nvim
 export BROWSER='/usr/bin/zen-browser'
+export PROVIDER='ollama'
+export MODEL=mistral

@@ -27,3 +27,7 @@ Now edit _/usr/share/icons/default/index.theme_ and edit Inherits= to the name o
 ```
 bun add -g @antfu/ni
 ```
+# Ai-Commit & Ollama
+```
+npm install -g https://github.com/insulineru/ai-commit
+```
