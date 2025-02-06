@@ -109,8 +109,8 @@ return {
 			},
 			swap = {
 				enable = true,
-				swap_next = { ["<leader>sn"] = "@parameter.inner" },
-				swap_previous = { ["<leader>sp"] = "@parameter.inner" },
+				swap_next = { ["<leader>a"] = "@parameter.inner" },
+				swap_previous = { ["<leader>A"] = "@parameter.inner" },
 			},
 		},
 		ignore_install = { "help" },
