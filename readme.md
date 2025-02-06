@@ -50,6 +50,7 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - `pavucontrol`: Audio configuration.
 - `pamixer`: Sound controller
 - `maim`: Screenshot tool
+- `glow`: Render markdown on the CLI, with pizzazz!
 
 ### Input method
 - fcitx5-unikey
