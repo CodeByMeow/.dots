@@ -132,3 +132,13 @@ vim.api.nvim_create_autocmd("DiagnosticChanged", {
 		vim.diagnostic.setqflist({ open = false })
 	end,
 })
+
+-- Remember folds
+vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+	pattern = { "*" },
+	command = "if expand('%') != '' && &buftype != 'terminal' | mkview | endif",
+})
+vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	pattern = { "*" },
+	command = "if expand('%') != '' && &buftype != 'terminal' | silent! loadview | endif",
+})
