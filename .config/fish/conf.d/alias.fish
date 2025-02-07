@@ -17,3 +17,6 @@ alias lt="ls --tree"
 
 # translate shell
 alias t="trans :vi"
+
+# fzf cd
+alias sd "cd (fd -td -H | fzf)"
