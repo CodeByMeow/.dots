@@ -19,5 +19,5 @@ alias lt="ls --tree"
 alias t="trans :vi"
 
 # fzf cd
-alias sd "cd (fd -td -H | fzf)"
+alias sf "cd (fd -td -H | fzf)"
 alias ff "~/.local/share/bin/fzf-preview.sh"
