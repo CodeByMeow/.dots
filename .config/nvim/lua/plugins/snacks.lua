@@ -9,28 +9,40 @@ return {
 			enabled = true,
 			preset = {
 				keys = {
-					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 					{
-						icon = " ",
+						icon = "󰂽 ",
+						key = "o",
+						desc = "Open Explorer",
+						action = function()
+							Snacks.explorer.open({
+								replace_netrw = true,
+								auto_close = true,
+								win = {
+									list = {
+										keys = {
+											[","] = "confirm",
+										},
+									},
+								},
+							})
+						end,
+					},
+					{
+						icon = "󰈞 ",
 						key = "g",
 						desc = "Find Text",
 						action = ":lua Snacks.dashboard.pick('live_grep')",
 					},
 					{
-						icon = " ",
+						icon = "󰙰 ",
 						key = "r",
 						desc = "Recent Files",
 						action = ":lua Snacks.dashboard.pick('oldfiles')",
 					},
 					{
-						icon = " ",
-						key = "c",
-						desc = "Config",
-						action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
-					},
-					{
 						icon = "󰒲 ",
-						key = "L",
+						key = "l",
 						desc = "Lazy",
 						action = ":Lazy",
 						enabled = package.loaded.lazy ~= nil,
@@ -410,37 +422,19 @@ return {
 		{
 			"<leader>o",
 			function()
-				Snacks.explorer({
+				Snacks.explorer.open({
 					replace_netrw = true,
 					auto_close = true,
 					win = {
 						list = {
 							keys = {
-								["<BS>"] = "explorer_up",
 								[","] = "confirm",
-								["h"] = "explorer_close", -- close directory
-								["a"] = "explorer_add",
-								["d"] = "explorer_del",
-								["r"] = "explorer_rename",
-								["c"] = "explorer_copy",
-								["m"] = "explorer_move",
-								["o"] = "explorer_open", -- open with system application
-								["P"] = "toggle_preview",
-								["y"] = "explorer_yank",
-								["u"] = "explorer_update",
-								["<c-c>"] = "explorer_cd",
-								["."] = "explorer_focus",
-								["I"] = "toggle_ignored",
-								["H"] = "toggle_hidden",
-								["Z"] = "explorer_close_all",
-								["]g"] = "explorer_git_next",
-								["[g"] = "explorer_git_prev",
 							},
 						},
 					},
 				})
 			end,
-			desc = "File Explorer",
+			desc = "Open Explorer",
 		},
 	},
 }
