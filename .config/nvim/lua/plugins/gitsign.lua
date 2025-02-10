@@ -3,4 +3,5 @@ return {
 	opts = {
 		current_line_blame = true,
 	},
+	event = "BufRead",
 }

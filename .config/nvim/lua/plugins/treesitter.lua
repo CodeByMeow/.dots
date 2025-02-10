@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	event = "BufEnter",
 	query_linter = {
 		enable = true,
 		use_virtual_text = true,
