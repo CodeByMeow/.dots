@@ -370,26 +370,19 @@ return {
 			desc = "Delete Buffer",
 		},
 		{
-			"<leader>cR",
+			"<leader>cr",
 			function()
 				Snacks.rename.rename_file()
 			end,
 			desc = "Rename File",
 		},
 		{
-			"<leader>gB",
+			"<leader>gb",
 			function()
 				Snacks.gitbrowse()
 			end,
 			desc = "Git Browse",
 			mode = { "n", "v" },
-		},
-		{
-			"<leader>gb",
-			function()
-				Snacks.git.blame_line()
-			end,
-			desc = "Git Blame Line",
 		},
 		{
 			"<leader>gf",
