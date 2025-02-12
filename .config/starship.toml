@@ -1,112 +1,129 @@
-# General Prompt Formatting
 format = """
-$hostname\
-$directory\
+[┌─ $username](bold green)$directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
+[└─ $shell](bold blue)$character
+"""
+[username]
+style_user = "green bold"
+style_root = "red bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
 
-$localip\
-$shlvl\
-$singularity\
-$kubernetes\
-$vcsh\
-$hg_branch\
-$docker_context\
-$package\
-$custom\
-
-$sudo\
-
-$fill\
-$git_branch\
-$git_status\
-$git_commit\
-$cmd_duration\
-$jobs\
-$battery\
-$time\
-$status\
-$os\
-$container\
-$shell\
-$line_break\
-$character"""
-
-# Disable the blank line at the start of the prompt
-add_newline = true
-
-# Hostname
 [hostname]
-ssh_only = true
-format = "[󰢥](fg:#aa2b3339 bg:none)[█](fg:#d3c6aa bg:#aa2b3339)[$ssh_symbol$hostname](bold bg:#d3c6aa)[󰢣](fg:#d3c6aa bg:none)"
+ssh_only = false
+format = 'on [$hostname](bold yellow) '
+trim_at = "."
 disabled = false
 
-# Directory
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[](bold blue)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[󰅖](bold red)"
+#  
+# configure directory
 [directory]
-format = "[$path]($style)[ 󰷏 ](bg:#aa2b3339 fg:#7fbbb3)"
-style = "fg:#d3c6aa bg:#aa2b3339 bold"
-truncation_length = 3
-truncate_to_repo = false
-read_only = " "
+read_only = " "
+truncation_length = 10
+truncate_to_repo = true # truncates directory to root folder if in github repo
+style = "bold italic green"
 
-# Character (Prompt symbol)
-[character]
-success_symbol = "[ ](#a7c080 bold)"
-error_symbol = "[ ](#e67e80 bold)"
-
-[line_break]
+[shell]
+bash_indicator = ' '
+fish_indicator = ' '
+unknown_indicator = '  shell'
+style = 'blue bold'
 disabled = false
-
-[fill]
-symbol = ' '
-style = 'bold #a7c080'
 
 [cmd_duration]
-min_time = 1
-format = "[$duration]($style) [󱑂 ](bg:#aa2b3339 fg:#dbbc7f)"
+min_time = 4
+show_milliseconds = false
 disabled = false
-style = "fg:#d3c6aa bg:#aa2b3339 bold"
+style = "bold italic red"
 
-# Git Branch
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
 [git_branch]
 format = " [$branch]($style) [](bg:#aa2b3339 fg:#7fbbb3)"
 style = "fg:#d3c6aa bg:#aa2b3339"
 
-# Git Status
-[git_status]
-format = " [$all_status$ahead_behind]($style) [ ](bg:#aa2b3339 fg:#7fbbb3)"
-style = "fg:#d3c6aa bg:#aa2b3339"
-conflicted = "="
-ahead = "⇡ ${count}"
-behind = "⇣ ${count}"
-diverged = "⇕⇡ ${ahead_count}⇣${behind_count}"
-up_to_date = "󰄸 "
-untracked = "? ${count}"
-stashed = "󰲻 "
-modified = "! ${count}"
-staged = "+ ${count}"
-renamed = "» ${count}"
-deleted = "󱟃 ${count}"
+[golang]
+symbol = " "
 
-[git_commit]
-format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
-style = "fg:#83c092"
+[hg_branch]
+symbol = " "
 
-# Symbols for other services
-[aws]
-symbol = "  "
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
 
 [python]
-format = "via [ Python $version](bold #a7c080)"
-style = "bold #a7c080"
-disabled = true
+symbol = " "
+#pyenv_version_name = true
+format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
 
 [nodejs]
-format = "via [ Node.js $version](bold #a7c080)"
-style = "bold #a7c080"
-disabled = true
-
-[docker_context]
-symbol = " "
-format = "via [$symbol$context]($style)"
-style = "bold #83c092"
-only_with_files = true
-disabled = false
+format = "via [ Node.js $version](bold green) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
