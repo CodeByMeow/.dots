@@ -9,4 +9,6 @@ export EDITOR=nvim
 export BROWSER='/usr/bin/zen-browser'
 export PROVIDER='ollama'
 export MODEL=mistral
+export TASKRC="$HOME/.taskrc"
+export TASKDATA="$HOME/tasks"
 
