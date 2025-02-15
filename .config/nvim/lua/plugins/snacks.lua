@@ -11,24 +11,6 @@ return {
 				keys = {
 					{ icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
 					{
-						icon = "󰂽 ",
-						key = "o",
-						desc = "Open Explorer",
-						action = function()
-							Snacks.explorer.open({
-								replace_netrw = true,
-								auto_close = true,
-								win = {
-									list = {
-										keys = {
-											[","] = "confirm",
-										},
-									},
-								},
-							})
-						end,
-					},
-					{
 						icon = "󰈞 ",
 						key = "g",
 						desc = "Find Text",
@@ -420,7 +402,7 @@ return {
 			desc = "Dismiss All Notifications",
 		},
 		{
-			"<leader>o",
+			"<leader>e",
 			function()
 				Snacks.explorer.open({
 					replace_netrw = true,
