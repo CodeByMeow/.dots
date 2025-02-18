@@ -1,15 +1,17 @@
-vim.api.nvim_create_autocmd("InsertLeave", {
+local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
+
+autocmd("InsertLeave", {
 	pattern = "*",
 	command = "set nopaste",
 })
 
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+autocmd({ "BufWinEnter" }, {
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+autocmd({ "FileType" }, {
 	pattern = {
 		"netrw",
 		"Jaq",
@@ -33,32 +35,32 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
+autocmd({ "CmdWinEnter" }, {
 	callback = function()
 		vim.cmd("quit")
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "VimResized" }, {
+autocmd({ "VimResized" }, {
 	callback = function()
 		vim.cmd("tabdo wincmd =")
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+autocmd({ "BufWinEnter" }, {
 	pattern = { "*" },
 	callback = function()
 		vim.cmd("checktime")
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+autocmd({ "TextYankPost" }, {
 	callback = function()
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 40 })
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
 	callback = function()
 		vim.opt_local.wrap = true
@@ -66,7 +68,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "CursorHold" }, {
+autocmd({ "CursorHold" }, {
 	callback = function()
 		local status_ok, luasnip = pcall(require, "luasnip")
 		if not status_ok then
@@ -78,7 +80,7 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd("DiagnosticChanged", {
+autocmd("DiagnosticChanged", {
 	callback = function()
 		local diagnostics = vim.diagnostic.get(0)
 		if #diagnostics > 0 then
@@ -90,11 +92,60 @@ vim.api.nvim_create_autocmd("DiagnosticChanged", {
 })
 
 -- Remember folds
-vim.api.nvim_create_autocmd({ "BufWinLeave" }, {
+autocmd({ "BufWinLeave" }, {
 	pattern = { "*" },
 	command = "if expand('%') != '' && &buftype != 'terminal' | mkview | endif",
 })
-vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+
+autocmd({ "BufWinEnter" }, {
 	pattern = { "*" },
 	command = "if expand('%') != '' && &buftype != 'terminal' | silent! loadview | endif",
+})
+
+-- Highlight on yank
+autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = "1000",
+		})
+	end,
+})
+
+-- Remove whitespace on save
+autocmd("BufWritePre", {
+	pattern = "",
+	command = ":%s/\\s\\+$//e",
+})
+
+-- Auto format on save using the attached (optionally filtered) language servere clients
+-- https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
+autocmd("BufWritePre", {
+	pattern = "",
+	command = ":silent lua vim.lsp.buf.format()",
+})
+
+-- Don"t auto commenting new lines
+autocmd("BufEnter", {
+	pattern = "",
+	command = "set fo-=c fo-=r fo-=o",
+})
+
+autocmd("Filetype", {
+	pattern = { "xml", "html", "xhtml", "css", "scss", "javascript", "typescript", "yaml", "lua" },
+	command = "setlocal shiftwidth=2 tabstop=2",
+})
+
+-- Set colorcolumn
+autocmd("Filetype", {
+	pattern = { "python", "rst", "c", "cpp" },
+	command = "set colorcolumn=80",
+})
+
+autocmd("Filetype", {
+	pattern = { "gitcommit", "markdown", "text" },
+	callback = function()
+		vim.opt_local.wrap = true
+		vim.opt_local.spell = true
+	end,
 })

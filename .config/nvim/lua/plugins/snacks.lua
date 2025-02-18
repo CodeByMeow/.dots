@@ -4,7 +4,6 @@ return {
 	lazy = false,
 	opts = {
 		animate = { enabled = true },
-		image = { enabled = true },
 		explorer = { enabled = true },
 		dashboard = {
 			enabled = true,
@@ -32,16 +31,9 @@ return {
 					},
 					{ icon = " ", key = "q", desc = "Quit", action = ":qa" },
 				},
-				header = [[
-  ___     ___    ___   __  __ /\_\    ___ ___    
- / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  
-/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ 
-\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\
- \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/
-]],
 			},
 			sections = {
-				{ section = "header" },
+				{ section = "terminal", cmd = "fortune -s | cowsay", hl = "header", padding = 1, indent = 8 },
 				{ section = "keys", gap = 1, padding = 1 },
 				{ section = "startup" },
 			},

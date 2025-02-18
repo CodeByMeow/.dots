@@ -6,7 +6,7 @@ return {
 				enable = false,
 			},
 			diagnostics = {
-				globals = { "vim", "spec" },
+				globals = { "vim", "spec", "Snack" },
 			},
 			runtime = {
 				version = "LuaJIT",

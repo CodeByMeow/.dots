@@ -72,6 +72,8 @@ opt.updatetime = 50
 vim.scriptencoding = "utf-8"
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
+opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
+opt.syntax = "enable"
 
 -- Disable nvim intro
 opt.shortmess:append("sI")
@@ -95,7 +97,7 @@ opt.ruler = false
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 2 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 2
-vim.o.foldenable = false
+vim.o.foldenable = true
 vim.wo.conceallevel = 2
 
 opt.cmdheight = 0
@@ -105,6 +107,5 @@ opt.showmode = false
 
 opt.laststatus = 2
 opt.showtabline = 2
-opt.syntax = "ON"
 
 opt.completeopt = { "menu", "menuone", "noselect" }
