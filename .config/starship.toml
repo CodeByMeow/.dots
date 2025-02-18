@@ -269,7 +269,7 @@ style = "fg:color_env"
 format = '[( $symbol( $version) )]($style)'
 
 [docker_context]
-symbol = ""
+symbol = ""
 style = "fg:color_docker"
 format = '[( $symbol( $context) )]($style)'
 
