@@ -4,6 +4,7 @@ return {
 	lazy = false,
 	opts = {
 		animate = { enabled = true },
+		image = { enabled = true },
 		explorer = { enabled = true },
 		dashboard = {
 			enabled = true,

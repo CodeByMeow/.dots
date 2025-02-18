@@ -1,0 +1,10 @@
+font-family = Iosevka IBM
+font-size = 15
+theme = Everforest Dark - Hard
+window-padding-x = 4
+window-padding-y = 4
+background-opacity = 0
+cursor-style = block
+cursor-style-blink = true
+gtk-titlebar = false
+
