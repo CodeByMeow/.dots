@@ -97,7 +97,7 @@ opt.ruler = false
 vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 2 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 2
-vim.o.foldenable = true
+vim.o.foldenable = false
 vim.wo.conceallevel = 2
 
 opt.cmdheight = 0
