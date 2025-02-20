@@ -44,6 +44,11 @@ return {
 		require("mini.basics").setup()
 		require("mini.bufremove").setup()
 		require("mini.extra").setup()
+		require("mini.jump").setup({
+			mappings = {
+				repeat_jump = ",",
+			},
+		})
 		require("mini.icons").setup({
 			file = {
 				["package.json"] = { glyph = " ", hl = "MiniIconsRed" },
@@ -67,6 +72,7 @@ return {
 			symbol = "│",
 			options = { try_as_border = true },
 		})
+
 		require("mini.move").setup({
 			mappings = {
 				left = "<M-h>",
@@ -86,7 +92,6 @@ return {
 				signs = { add = "▒", change = "▒", delete = "▒" },
 				priority = 199,
 			},
-			mappings = {},
 		})
 	end,
 }
