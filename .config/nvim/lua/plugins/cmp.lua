@@ -187,6 +187,13 @@ return {
 					return vim_item
 				end,
 			},
+			enabled = function()
+				local filetype = vim.bo.filetype
+				if filetype == "scss" then
+					return vim.fn.getline("."):match("%$") == nil
+				end
+				return true
+			end,
 		})
 
 		-- `:` cmdline setup.
