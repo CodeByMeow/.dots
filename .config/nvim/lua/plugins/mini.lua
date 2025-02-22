@@ -57,6 +57,7 @@ return {
 				["docker-compose.yml"] = { glyph = " ", hl = "MiniIconsBlue" },
 				["readme.md"] = { glyph = " ", hl = "MiniIconsGrey" },
 				["README.md"] = { glyph = " ", hl = "MiniIconsGrey" },
+				[".prettierrc"] = { glyph = " ", hl = "MiniIconsRed" },
 			},
 			extension = {
 				["test.js"] = { glyph = "", hl = "MiniIconsYellow" },
