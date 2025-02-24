@@ -21,3 +21,6 @@ alias t="trans :vi"
 # fzf cd
 alias sf "cd (fd -td -H | fzf)"
 alias ff "~/.local/share/bin/fzf-preview.sh"
+
+# image preview
+alias iv "kitten icat"
