@@ -12,4 +12,5 @@ export MODEL=mistral
 export TASKRC="$HOME/.taskrc"
 export TASKDATA="$HOME/tasks"
 export XDG_CONFIG_HOME="$HOME/.config"
+export SASS_PATH="node_modules"
 
