@@ -12,7 +12,6 @@ local server_names = {
 	"html",
 	"jsonls",
 	"eslint",
-	"prismals",
 	"emmet_ls",
 }
 
