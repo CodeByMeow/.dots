@@ -124,15 +124,14 @@ client.placeholder   = #3D484D #A7C080 #7A8478 #3D484D #3D484D
 client.background    = #2B3339
 
 # window rules, you can find the window class using xprop
-for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] floating enable
-for_window [class=Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver] focus
-for_window [class="ghostty"] move to workspace $ws1
-for_window [class="firefox|Firefox|firefox-default|zen-beta|zen"] move to workspace $ws2
+assign [class="ghostty"] → $ws1
+assign [class="firefox|Firefox|firefox-default|zen-beta|zen"] → $ws2
+assign [class="Zalo"] → $ws3
+
+for_window [class="Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver|Nemo"] floating enable
+for_window [class="Eog|Sxiv|feh|mpv|Vlc|File-roller|Xarchiver|Nemo"] focus
 for_window [class="firefox|Firefox|firefox-default|zen-beta|zen"] focus
-for_window [class="Zalo"] move to workspace $ws3
-for_window [class="Postman"] move to workspace $ws4
-for_window [class="Google-chrome"] move to workspace $ws5
-for_window [class="discord"] move to workspace $ws6
+
 
 for_window [class="^.*"] border pixel 3
 focus_on_window_activation focus
