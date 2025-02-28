@@ -17,6 +17,7 @@ bindsym $super+Return exec $terminal
 # start launcher (a program launcher)
 bindsym $super+space exec $HOME/.local/share/bin/rofi-launcher d
 bindsym $super+w exec $HOME/.local/share/bin/rofi-launcher w
+bindsym $super+u exec $HOME/.local/share/bin/rofi-launcher u
 bindsym $super+p exec $HOME/.local/share/bin/power-menu
 
 #flameshot

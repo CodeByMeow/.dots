@@ -18,6 +18,10 @@
   spacing : 0;
 }
 
+configuration {
+	mode: [emoji, drun, windows];
+}
+
 element-icon, element-text, scrollbar {
   cursor: pointer;
 }
