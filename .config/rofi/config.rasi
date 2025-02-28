@@ -19,7 +19,7 @@
 }
 
 configuration {
-	mode: [emoji, drun, windows];
+  modes: [window,drun, emoji];
 }
 
 element-icon, element-text, scrollbar {
