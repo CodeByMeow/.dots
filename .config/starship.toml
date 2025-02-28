@@ -27,6 +27,8 @@ $kubernetes\
 $shell\
 $container\
 $jobs\
+$lua\
+$localip\
 ${battery}\
 $time\
 $cmd_duration\
@@ -35,7 +37,7 @@ $line_break\
 $character\
 """
 
-palette = 'default'
+palette = 'gruvbox_dark'
 
 [palettes.default]
 
@@ -115,7 +117,7 @@ color_vimcmd_visual = '#d79921'
 [os]
 disabled = false
 style = "fg:color_os"
-format = '[$symbol]($style)'
+format = '[ $symbol]($style)'
 
 [os.symbols]
 Windows = "󰍲"
@@ -142,19 +144,19 @@ RedHatEnterprise = "󱄛"
 Pop = ""
 
 [username]
-show_always = true
+show_always = false
 style_user = "fg:color_username"
 style_root = "bold fg:color_danger"
-format = '[ $user ]($style)'
+format = '[ $user]($style)'
 
 [directory]
 style = "fg:color_directory"
 read_only_style = "fg:color_directory"
 repo_root_style = "bold fg:color_directory"
-format = "[ $path ]($style)"
+format = " [$path]($style)"
 read_only = "  "
 home_symbol = "~"
-truncation_symbol = "../"
+truncation_symbol = ".. /"
 truncation_length = 0
 truncate_to_repo = true
 fish_style_pwd_dir_length = 0
@@ -163,7 +165,7 @@ use_logical_path = true
 [git_branch]
 symbol = ""
 style = "fg:color_git"
-format = '[($symbol $branch )]($style)'
+format = ' [($symbol $branch)]($style)'
 only_attached = true
 ignore_branches = []
 truncation_length = 25
@@ -173,7 +175,7 @@ disabled = false
 
 [git_commit]
 style = "fg:color_git"
-format = "[(( $tag)( @$hash) )]($style)"
+format = "[ (( $tag)( @$hash))]($style)"
 commit_hash_length = 7
 only_detached = true
 tag_symbol = "󰓼 "
@@ -182,7 +184,7 @@ disabled = false
 
 [git_status]
 style = "fg:color_git"
-format = '[($ahead_behind )($all_status )]($style)'
+format = '[ ($ahead_behind )($all_status)]($style)'
 stashed = "*${count}"
 ahead = "⇡ ${count}"
 behind = "⇣ ${count}"
@@ -198,7 +200,7 @@ ignore_submodules = false
 disabled = false
 
 [git_metrics]
-format = '[(([+$added]($added_style))([-$deleted]($deleted_style)) )](fg:color_git)'
+format = '[(([+$added]($added_style))([-$deleted]($deleted_style)))](fg:color_git)'
 added_style = "fg:color_git_added"
 deleted_style = "fg:color_git_deleted"
 only_nonzero_diffs = true
@@ -206,7 +208,7 @@ disabled = false
 
 [git_state]
 style = "fg:color_danger"
-format = '[($state( $progress_current/$progress_total) )]($style bold)'
+format = '[($state( $progress_current/$progress_total))]($style bold)'
 rebase = "REBASING"
 merge = "MERGING"
 revert = "REVERTING"
@@ -219,32 +221,32 @@ disabled = false
 [nodejs]
 symbol = ""
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [c]
 symbol = ""
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [rust]
 symbol = "󱘗"
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [golang]
 symbol = "󰟓"
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [php]
 symbol = ""
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [java]
 symbol = ""
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [kotlin]
 symbol = ""
@@ -254,34 +256,39 @@ format = '[( $symbol( $version) )]($style)'
 [haskell]
 symbol = ""
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [python]
 symbol = ""
 style = "fg:color_env"
-format = '[( $symbol( $version)( $virtualenv) )]($style)'
+format = '[( $symbol( $version)( $virtualenv))]($style)'
 version_format = '${raw}'
 
 [package]
 disabled = false
 symbol = "󰏗"
 style = "fg:color_env"
-format = '[( $symbol( $version) )]($style)'
+format = '[( $symbol( $version))]($style)'
 
 [docker_context]
 symbol = ""
 style = "fg:color_docker"
-format = '[( $symbol( $context) )]($style)'
+format = '[( $symbol( $context))]($style)'
 
 [kubernetes]
 symbol = "󱃾"
 style = "fg:color_kubernetes"
-format = '[( $symbol( $cluster) )]($style)'
+format = '[( $symbol( $cluster))]($style)'
 disabled = false
+
+[lua]
+symbol = ""
+style = "fg:blue"
+format = '[ $symbol $version]($style) '
 
 [shell]
 disabled = false
-format = '[ $indicator]($style)'
+format = '[  $indicator]($style)'
 bash_indicator = "bash"
 fish_indicator = "fish"
 zsh_indicator = "zsh"
@@ -298,12 +305,12 @@ style = "fg:color_shell"
 
 [container]
 style = "fg:color_container"
-format = '[ $symbol $name ]($style)'
+format = '[ $symbol $name]($style)'
 
 [jobs]
 symbol = "󰒋"
 style = "fg:color_other"
-format = '[ $symbol( $number) ]($style)'
+format = '[ $symbol( $number)]($style)'
 symbol_threshold = 1
 number_threshold = 1
 
@@ -336,14 +343,14 @@ format = '[ 󰔛 $time ]($style)'
 
 [cmd_duration]
 min_time = 2000
-format = '[ 󱫑 $duration ]($style)'
+format = '[ 󱫑 $duration]($style)'
 style = 'fg:color_duration'
 show_milliseconds = false
 disabled = false
 
 [status]
 disabled = false
-format = '[( $symbol( $common_meaning)( $signal_name) )]($style)'
+format = '[( $symbol( $common_meaning)( $signal_name))]($style)'
 map_symbol = true
 pipestatus = true
 symbol = '󰅙 '
@@ -356,6 +363,12 @@ style = 'bold fg:color_danger'
 recognize_signal_code = true
 
 [line_break]
+disabled = false
+
+[localip]
+ssh_only = false
+style = "fg:color_other"
+format = '[ 󰒪 $localipv4]($style)'
 disabled = false
 
 [character]
