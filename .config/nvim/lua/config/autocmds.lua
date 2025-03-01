@@ -138,7 +138,7 @@ autocmd("Filetype", {
 
 -- Set colorcolumn
 autocmd("Filetype", {
-	pattern = { "python", "rst", "c", "cpp" },
+	pattern = { "python", "rst", "c", "cpp", "php" },
 	command = "set colorcolumn=80",
 })
 
