@@ -1,5 +1,4 @@
-﻿
-return {
+﻿return {
 	"aserowy/tmux.nvim",
 	event = "VeryLazy",
 	keys = {

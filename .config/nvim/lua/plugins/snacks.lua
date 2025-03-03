@@ -4,7 +4,7 @@ return {
 	lazy = false,
 	opts = {
 		animate = { enabled = true },
-		explorer = { enabled = true },
+		bigfile = { enabled = true },
 		dashboard = {
 			enabled = true,
 			preset = {
@@ -46,13 +46,15 @@ return {
 				{ section = "startup" },
 			},
 		},
-		bigfile = { enabled = true },
+		explorer = { enabled = true },
+		scope = { enabled = true },
+		image = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		notifier = { enabled = true },
-		scroll = { enabled = true },
-		quickfile = { enabled = true },
 		lazygit = { enabled = true },
+		notifier = { enabled = true },
+		quickfile = { enabled = true },
+		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		picker = {
@@ -123,13 +125,6 @@ return {
 			desc = "Find Config File",
 		},
 		{
-			"<leader>ff",
-			function()
-				Snacks.picker.files()
-			end,
-			desc = "Find Files",
-		},
-		{
 			"<leader>fg",
 			function()
 				Snacks.picker.git_files()
@@ -172,13 +167,6 @@ return {
 				Snacks.picker.grep_buffers()
 			end,
 			desc = "Grep Open Buffers",
-		},
-		{
-			"<leader>sg",
-			function()
-				Snacks.picker.grep()
-			end,
-			desc = "Grep",
 		},
 		{
 			"<leader>sw",

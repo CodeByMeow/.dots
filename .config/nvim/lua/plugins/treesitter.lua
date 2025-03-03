@@ -61,7 +61,6 @@ return {
 		"https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
 		"windwp/nvim-ts-autotag",
 		"David-Kunz/markid",
-		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	opts = {
 		ensure_installed = {
@@ -94,26 +93,6 @@ return {
 		incremental_selection = { enable = true },
 		indent = { enable = true, disable = { "yaml" } },
 		markid = { enable = true },
-		textobjects = {
-			select = {
-				enable = true,
-				lookahead = true,
-				keymaps = {
-					["oa"] = { query = "@assignment.outer", desc = "Select outer part of the assignment" },
-					["ia"] = { query = "@assignment.inner", desc = "Select inner part of the assignment" },
-					["la"] = { query = "@assignment.lhs", desc = "Select left hand side of the assignment" },
-					["ra"] = { query = "@assignment.rhs", desc = "Select right hand side of the assignment" },
-
-					["af"] = { query = "@function.outer", desc = "Select outer part of the function" },
-					["if"] = { query = "@function.inner", desc = "Select inner part of the function" },
-				},
-			},
-			swap = {
-				enable = true,
-				swap_next = { ["<leader>a"] = "@parameter.inner" },
-				swap_previous = { ["<leader>A"] = "@parameter.inner" },
-			},
-		},
 		ignore_install = { "help" },
 	},
 	config = function(_, opts)
