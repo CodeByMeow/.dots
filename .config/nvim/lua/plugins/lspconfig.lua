@@ -9,11 +9,7 @@ local function common_capabilities()
 	return capabilities
 end
 
-local function on_attach(client, bufnr)
-	local _, navic = pcall(require, "nvim-navic")
-	if navic then
-		navic.attach(client, bufnr)
-	end
+local function on_attach()
 	vim.keymap.set("n", "<leader>sr", vim.lsp.buf.rename, { desc = "LSP Rename" })
 	vim.keymap.set("n", "<leader>sa", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 end
