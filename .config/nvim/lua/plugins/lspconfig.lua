@@ -9,7 +9,11 @@ local function common_capabilities()
 	return capabilities
 end
 
-local function on_attach()
+local function on_attach(client, bufnr)
+	local _, navic = pcall(require, "nvim-navic")
+	if navic then
+		navic.attach(client, bufnr)
+	end
 	vim.keymap.set("n", "<leader>sr", vim.lsp.buf.rename, { desc = "LSP Rename" })
 	vim.keymap.set("n", "<leader>sa", vim.lsp.buf.code_action, { desc = "LSP Code Action" })
 end
@@ -18,25 +22,6 @@ function M.config()
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()
 	local icons = require("config.icons").diagnostics
-
-	local hover = vim.lsp.buf.hover
-	---@diagnostic disable-next-line: duplicate-set-field
-	vim.lsp.buf.hover = function()
-		return hover({
-			border = "rounded",
-			max_height = math.floor(vim.o.lines * 0.5),
-			max_width = math.floor(vim.o.columns * 0.4),
-		})
-	end
-	local signature_help = vim.lsp.buf.signature_help
-	---@diagnostic disable-next-line: duplicate-set-field
-	vim.lsp.buf.signature_help = function()
-		return signature_help({
-			border = "rounded",
-			max_height = math.floor(vim.o.lines * 0.5),
-			max_width = math.floor(vim.o.columns * 0.4),
-		})
-	end
 
 	require("lspconfig.ui.windows").default_options.border = "rounded"
 	for _, server in ipairs(servers) do
