@@ -1,43 +1,21 @@
 return {
 	"hrsh7th/nvim-cmp",
+	event = "InsertEnter",
 	dependencies = {
-		{
-			"hrsh7th/cmp-buffer",
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-path",
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-nvim-lsp",
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-nvim-lua",
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-cmdline",
-			event = "InsertEnter",
-		},
-		{
-			"hrsh7th/cmp-calc",
-			event = "InsertEnter",
-		},
+		{ "hrsh7th/cmp-buffer" },
+		{ "hrsh7th/cmp-path" },
+		{ "hrsh7th/cmp-nvim-lsp" },
+		{ "hrsh7th/cmp-nvim-lua" },
+		{ "hrsh7th/cmp-cmdline" },
+		{ "hrsh7th/cmp-nvim-lsp-signature-help" },
 		{ "codota/tabnine-nvim", build = "./dl_binaries.sh" },
-		{
-			"saadparwaiz1/cmp_luasnip",
-			event = "InsertEnter",
-		},
+		{ "saadparwaiz1/cmp_luasnip" },
 		{
 			"dcampos/cmp-emmet-vim",
 			dependencies = { "mattn/emmet-vim" },
-			event = "InsertEnter",
 		},
 		{
 			"L3MON4D3/LuaSnip",
-			event = "InsertEnter",
 			build = "make install_jsregexp",
 			dependencies = {
 				"rafamadriz/friendly-snippets",
@@ -76,22 +54,21 @@ return {
 			},
 			{ name = "codeium" },
 			{ name = "nvim_lua" },
+			{ name = "nvim_lsp_signature_help" },
 			{ name = "buffer", keyword_length = 3 },
 			{ name = "path" },
 			{ name = "cmp_tabnine", keyword_length = 2 },
 			{ name = "luasnip", keyword_length = 2 },
 			{ name = "treesitter" },
-			{ name = "calc" },
 			{ name = "emmet_vim" },
 		})
 
 		cmp.setup({
 			mapping = cmp.mapping.preset.insert({
-				["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-				["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+				["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+				["<C-e>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
 				["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-				["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 				["<CR>"] = cmp.mapping.confirm({ select = true }),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
@@ -179,11 +156,6 @@ return {
 
 					vim_item.kind = (custom_menu_icon[vim_item.kind] or "  ") .. " " .. vim_item.kind
 					vim_item.kind = source_icons[entry.source.name] or vim_item.kind
-
-					vim.api.nvim_set_hl(0, "CmpItemKindTabNine", { fg = "#689D6A" })
-					vim.api.nvim_set_hl(0, "CmpItemKindCodeium", { fg = "#09B6A2" })
-
-					print(vim_item.kind)
 					return vim_item
 				end,
 			},
