@@ -75,7 +75,7 @@ opt.matchpairs = { "(:)", "{:}", "[:]", "<:>" }
 opt.syntax = "enable"
 
 -- Disable nvim intro
-opt.shortmess:append("sI")
+-- opt.shortmess:append("sI")
 
 -- Slit windows
 opt.splitbelow = true
