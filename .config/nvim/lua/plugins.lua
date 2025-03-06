@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 -- Load mini.deps
-require('mini.deps').setup({ path = { package = path_package } })
+require("mini.deps").setup({ path = { package = path_package } })
 
 -- Destructure mini.deps functions
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
@@ -21,7 +21,6 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 now(function()
 	-- UI and basic settings
 	vim.o.termguicolors = true
-	vim.cmd("colorscheme randomhue")
 
 	-- Mini plugin basic setups
 	require("mini.notify").setup()
@@ -36,26 +35,8 @@ now(function()
 		},
 	})
 
-	-- File and extension icons
-	local icon_config = {
-		file = {
-			["package.json"] = { glyph = " ", hl = "MiniIconsRed" },
-			["package-lock.json"] = { glyph = " ", hl = "MiniIconsRed" },
-			["tsconfig.json"] = { glyph = " ", hl = "MiniIconsBlue" },
-			["docker-compose.yml"] = { glyph = " ", hl = "MiniIconsBlue" },
-			["readme.md"] = { glyph = " ", hl = "MiniIconsGrey" },
-			["README.md"] = { glyph = " ", hl = "MiniIconsGrey" },
-			[".prettierrc"] = { glyph = " ", hl = "MiniIconsRed" },
-		},
-		extension = {
-			["test.js"] = { glyph = "", hl = "MiniIconsYellow" },
-			["test.ts"] = { glyph = "", hl = "MiniIconsBlue" },
-			["txt"] = { glyph = "", hl = "MiniIconsGray" },
-		},
-	}
-
-	require("mini.basics").setup({ file = icon_config.file, extension = icon_config.extension })
-	require("mini.icons").setup(icon_config)
+	require("mini.basics").setup()
+	require("mini.icons").setup()
 end)
 
 -- Delayed plugin setups
@@ -105,11 +86,15 @@ now(function()
 		{ source = "aserowy/tmux.nvim" },
 		{ source = "lewis6991/gitsigns.nvim" },
 		{ source = "dstein64/vim-startuptime" },
+		{ source = "alexxGmZ/e-ink.nvim" },
+		{ source = "ThePrimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } },
 	}
 
 	for _, plugin in ipairs(custom_plugins) do
 		add(plugin)
 	end
+
+	vim.cmd.colorscheme("e-ink")
 
 	-- Which-key configuration
 	require("which-key").setup({
@@ -134,23 +119,127 @@ now(function()
 	require("gitsigns").setup({ current_line_blame = true })
 end)
 
+-- Harpoon configuration
+local harpoon = require("harpoon")
+harpoon.setup()
+vim.keymap.set("n", "<leader>ha", function()
+	harpoon:list():add()
+end, { desc = "Add to quick menu" })
+vim.keymap.set("n", "<leader>hm", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Toggle quick menu" })
+vim.keymap.set("n", "<leader>hn", function()
+	harpoon:list():select(1)
+end, { desc = "Select first entry in quick menu" })
+
 -- LSP and related configurations
 later(function()
 	-- Additional plugins
 	add({ source = "lambdalisue/suda.vim" })
+	add({ source = "brenoprata10/nvim-highlight-colors" })
+	require("nvim-highlight-colors").setup()
 
+	-- LSP
 	add({
 		source = "neovim/nvim-lspconfig",
 		depends = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 	})
 
-	-- Completion
-	add({ source = "ms-jpq/coq_nvim" })
-	vim.g.coq_settings = {
-		clients = {
-			"",
+	add({
+		source = "hrsh7th/nvim-cmp",
+		depends = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"L3MON4D3/LuaSnip",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"saadparwaiz1/cmp_luasnip",
 		},
-	}
+	})
+
+	add({
+		source = "dcampos/cmp-emmet-vim",
+		depends = { "mattn/emmet-vim" },
+	})
+
+	add({ source = "Exafunction/codeium.nvim", depends = { "nvim-lua/plenary.nvim" } })
+	require("codeium").setup()
+
+	-- Completion
+	local cmp = require("cmp")
+	local luasnip = require("luasnip")
+
+	cmp.setup({
+		snippet = {
+			expand = function(args)
+				luasnip.lsp_expand(args.body)
+			end,
+		},
+		mapping = cmp.mapping.preset.insert({
+			["<C-Space>"] = cmp.mapping.complete(),
+			["<CR>"] = cmp.mapping.confirm({ select = true }),
+			["<Tab>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_next_item()
+				elseif luasnip.expand_or_jumpable() then
+					luasnip.expand_or_jump()
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+			["<S-Tab>"] = cmp.mapping(function(fallback)
+				if cmp.visible() then
+					cmp.select_prev_item()
+				elseif luasnip.jumpable(-1) then
+					luasnip.jump(-1)
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+		}),
+		sources = cmp.config.sources({
+			{
+				name = "nvim_lsp",
+				entry_filter = function(entry)
+					if entry:get_kind() == 15 then
+						return false
+					end
+					return true
+				end,
+			},
+			{ name = "nvim_lsp_signature_help" },
+			{ name = "codeium" },
+			{ name = "luasnip" },
+			{ name = "buffer" },
+			{ name = "path" },
+			{ name = "tabnine" },
+			{ name = "emmet_vim" },
+		}),
+		enabled = function()
+			local filetype = vim.bo.filetype
+			if filetype == "scss" then
+				return vim.fn.getline("."):match("%$") == nil
+			end
+			return true
+		end,
+	})
+
+	cmp.setup.cmdline("/", {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = {
+			{ name = "buffer" },
+		},
+	})
+
+	cmp.setup.cmdline(":", {
+		mapping = cmp.mapping.preset.cmdline(),
+		sources = cmp.config.sources({
+			{ name = "path" },
+		}, {
+			{ name = "cmdline" },
+		}),
+	})
 
 	local server_names = {
 		"ts_ls",
@@ -247,11 +336,10 @@ later(function()
 	-- Configure LSP servers
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()
-	local coq = require("coq")
 
 	require("lspconfig.ui.windows").default_options.border = "single"
 	for _, server in ipairs(servers) do
-		local capabilities = coq.lsp_ensure_capabilities(common_capabilities())
+		local capabilities = common_capabilities()
 		local opts = {
 			capabilities = capabilities,
 			on_attach = on_attach,
