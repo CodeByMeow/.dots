@@ -1,8 +1,8 @@
+---@diagnostic disable: undefined-global, undefined-field
 local path_package = vim.fn.stdpath("data") .. "/site/"
 local mini_path = path_package .. "pack/deps/start/mini.nvim"
 
 -- Automatically install mini.nvim if not present
----@diagnostic disable-next-line: undefined-field
 if not vim.loop.fs_stat(mini_path) then
 	vim.cmd('echo "Installing `mini.nvim`" | redraw')
 	local clone_cmd = { "git", "clone", "--filter=blob:none", "https://github.com/echasnovski/mini.nvim", mini_path }
@@ -27,7 +27,6 @@ now(function()
 	require("mini.notify").setup()
 	vim.notify = require("mini.notify").make_notify()
 	require("mini.tabline").setup()
-	require("mini.statusline").setup()
 
 	-- Mini files configuration
 	require("mini.files").setup({
@@ -101,6 +100,16 @@ end)
 
 -- Custom plugins and their configurations
 now(function()
+	local function build_blink(params)
+		vim.notify("Building blink.cmp", vim.log.levels.INFO)
+		local obj = vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
+		if obj.code == 0 then
+			vim.notify("Building blink.cmp done", vim.log.levels.INFO)
+		else
+			vim.notify("Building blink.cmp failed", vim.log.levels.ERROR)
+		end
+	end
+
 	local custom_plugins = {
 		{
 			source = "neovim/nvim-lspconfig",
@@ -109,6 +118,14 @@ now(function()
 		{ source = "folke/which-key.nvim" },
 		{ source = "aserowy/tmux.nvim" },
 		{ source = "lewis6991/gitsigns.nvim" },
+		{ source = "dstein64/vim-startuptime" },
+		{
+			source = "saghen/blink.cmp",
+			hooks = {
+				post_install = build_blink,
+				post_checkout = build_blink,
+			},
+		},
 	}
 
 	for _, plugin in ipairs(custom_plugins) do
@@ -154,7 +171,7 @@ later(function()
 		"emmet_ls",
 	}
 
-	require("mason").setup({ ui = { border = "rounded" } })
+	require("mason").setup({ ui = { border = "single" } })
 	require("mason-lspconfig").setup({
 		ensure_installed = server_names,
 		automatic_installation = true,
@@ -209,7 +226,7 @@ later(function()
 			vim.tbl_extend("force", opts, { desc = "Go to Type Definition" })
 		)
 		-- Hover Documentation
-		vim.keymap.set("n", "k", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover Documentation" }))
+		vim.keymap.set("n", "H", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover Documentation" }))
 
 		-- Signature Help
 		vim.keymap.set(
@@ -239,16 +256,65 @@ later(function()
 	-- Configure LSP servers
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()
-	local icons = require("config.icons").diagnostics
+	local blinkcmp = require("blink.cmp")
 
-	require("lspconfig.ui.windows").default_options.border = "rounded"
+	blinkcmp.setup({
+		keymap = {
+			["<C-space>"] = {
+				"show",
+				"show_documentation",
+				"hide_documentation",
+			},
+			["<C-e>"] = { "hide" },
+			["<CR>"] = { "accept", "fallback" },
+
+			["<Tab>"] = { "select_next", "fallback" },
+			["<S-Tab>"] = { "select_prev", "fallback" },
+		},
+		completion = {
+			list = {
+				selection = {
+					auto_insert = true,
+				},
+			},
+			menu = {
+				border = "single",
+				auto_show = true,
+				draw = {
+					columns = {
+						{
+							"label",
+							gap = 1,
+						},
+						{ "kind" },
+					},
+				},
+			},
+			documentation = {
+				window = { border = "single" },
+				auto_show = true,
+			},
+		},
+		appearance = {
+			use_nvim_cmp_as_default = false,
+		},
+		sources = {
+			default = { "lsp", "path", "buffer", "cmdline" },
+		},
+		cmdline = {
+			enabled = true,
+		},
+	})
+
+	require("lspconfig.ui.windows").default_options.border = "single"
 	for _, server in ipairs(servers) do
+		local capabilities = blinkcmp.get_lsp_capabilities(common_capabilities())
 		local opts = {
-			capabilities = common_capabilities(),
+			capabilities = capabilities,
 			on_attach = on_attach,
 		}
 
-		local require_ok, settings = pcall(require, "config.lspsettings." .. server)
+		local require_ok, settings = pcall(require, "lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end
@@ -261,14 +327,6 @@ later(function()
 		virtual_lines = true,
 		virtual_text = false,
 		severity_sort = true,
-		signs = {
-			text = {
-				[vim.diagnostic.severity.ERROR] = icons.Error,
-				[vim.diagnostic.severity.WARN] = icons.Warn,
-				[vim.diagnostic.severity.HINT] = icons.Hint,
-				[vim.diagnostic.severity.INFO] = icons.Info,
-			},
-		},
 	})
 
 	-- Show diagnostic float on cursor move
@@ -349,6 +407,43 @@ later(function()
 	-- LSP end hints
 	add({ source = "chrisgrieser/nvim-lsp-endhints" })
 	require("lsp-endhints").setup()
+
+	-- Namu
+	add({ source = "bassamsdata/namu.nvim" })
+
+	require("namu").setup({
+		-- Enable the modules you want
+		namu_symbols = {
+			enable = true,
+			options = {
+				window = {
+					auto_size = true,
+					min_height = 1,
+					min_width = 20,
+					max_width = 120,
+					max_height = 30,
+					padding = 2,
+					border = "single",
+					title_pos = "left",
+					show_footer = true,
+					footer_pos = "right",
+					relative = "editor",
+					style = "minimal",
+					width_ratio = 0.6,
+					height_ratio = 0.6,
+					title_prefix = "󰠭 ",
+				},
+			},
+		},
+		ui_select = { enable = false }, -- vim.ui.select() wrapper
+	})
+
+	-- === Suggested Keymaps: ===
+	local namu = require("namu.namu_symbols")
+	vim.keymap.set("n", "<leader>ss", namu.show, {
+		desc = "Jump to LSP symbol",
+		silent = true,
+	})
 end)
 
 -- Keymaps
@@ -360,7 +455,7 @@ vim.keymap.set("n", "<leader><leader>", function()
 	require("mini.pick").builtin.files()
 end, { desc = "Mini Pick File" })
 
-vim.keymap.set("n", "<leader>o", function()
+vim.keymap.set("n", "<leader>n", function()
 	require("mini.files").open(vim.api.nvim_buf_get_name(0))
 end, { desc = "Mini Explorer" })
 
@@ -372,16 +467,16 @@ vim.keymap.set("n", "<leader>h", function()
 	require("mini.pick").builtin.help()
 end, { desc = "Mini Pick Help" })
 
-vim.keymap.set("n", "<leader>c", function()
+vim.keymap.set("n", "<leader>H", function()
 	require("mini.extra").pickers.hl_groups()
 end, { desc = "Mini Highlight" })
 
 -- Tmux navigation keymaps
 local tmux_navigation = {
-	{ key = "<C-Left>", func = "move_left" },
+	{ key = "<C-h>", func = "move_left" },
 	{ key = "<C-Right>", func = "move_right" },
-	{ key = "<C-Up>", func = "move_top" },
-	{ key = "<C-Down>", func = "move_bottom" },
+	{ key = "<C-n>", func = "move_bottom" },
+	{ key = "<C-e>", func = "move_top" },
 }
 
 for _, nav in ipairs(tmux_navigation) do

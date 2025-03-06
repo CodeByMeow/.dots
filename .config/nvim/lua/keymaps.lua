@@ -79,10 +79,10 @@ map("n", "-", "<C-x>")
 -- Window splits and navigation
 map("n", "ss", ":split<Return><C-w>w", { silent = true })
 map("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
-map("n", "sh", "<C-w>h")
-map("n", "sn", "<C-w>j")
-map("n", "se", "<C-w>k")
-map("n", "si", "<C-w>l")
+map("n", "wh", "<C-w>h")
+map("n", "wn", "<C-w>j")
+map("n", "we", "<C-w>k")
+map("n", "wi", "<C-w>l")
 
 -- Line movement
 map("n", "<A-n>", ":m .+1<CR>")
