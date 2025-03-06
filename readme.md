@@ -15,6 +15,7 @@ _Note :wrench: I use colemak-dh keyboard layout_
 ### Required
 - `nodejs`
 - `npm`
+- `rustup default nightly`
 ```
     fisher install jorgebucaran/nvm.fish
     fisher install rstacruz/fish-npm-global

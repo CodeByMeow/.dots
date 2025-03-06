@@ -11,8 +11,8 @@ if not vim.loop.fs_stat(mini_path) then
 	vim.cmd('echo "Installed `mini.nvim`" | redraw')
 end
 
--- Set up mini.deps
-require("mini.deps").setup({ path = { package = path_package } })
+-- Load mini.deps
+require('mini.deps').setup({ path = { package = path_package } })
 
 -- Destructure mini.deps functions
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
@@ -100,32 +100,11 @@ end)
 
 -- Custom plugins and their configurations
 now(function()
-	local function build_blink(params)
-		vim.notify("Building blink.cmp", vim.log.levels.INFO)
-		local obj = vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
-		if obj.code == 0 then
-			vim.notify("Building blink.cmp done", vim.log.levels.INFO)
-		else
-			vim.notify("Building blink.cmp failed", vim.log.levels.ERROR)
-		end
-	end
-
 	local custom_plugins = {
-		{
-			source = "neovim/nvim-lspconfig",
-			depends = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
-		},
 		{ source = "folke/which-key.nvim" },
 		{ source = "aserowy/tmux.nvim" },
 		{ source = "lewis6991/gitsigns.nvim" },
 		{ source = "dstein64/vim-startuptime" },
-		{
-			source = "saghen/blink.cmp",
-			hooks = {
-				post_install = build_blink,
-				post_checkout = build_blink,
-			},
-		},
 	}
 
 	for _, plugin in ipairs(custom_plugins) do
@@ -160,7 +139,19 @@ later(function()
 	-- Additional plugins
 	add({ source = "lambdalisue/suda.vim" })
 
-	-- LSP server configuration
+	add({
+		source = "neovim/nvim-lspconfig",
+		depends = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
+	})
+
+	-- Completion
+	add({ source = "ms-jpq/coq_nvim" })
+	vim.g.coq_settings = {
+		clients = {
+			"",
+		},
+	}
+
 	local server_names = {
 		"ts_ls",
 		"lua_ls",
@@ -256,59 +247,11 @@ later(function()
 	-- Configure LSP servers
 	local lspconfig = require("lspconfig")
 	local servers = require("mason-lspconfig").get_installed_servers()
-	local blinkcmp = require("blink.cmp")
-
-	blinkcmp.setup({
-		keymap = {
-			["<C-space>"] = {
-				"show",
-				"show_documentation",
-				"hide_documentation",
-			},
-			["<C-e>"] = { "hide" },
-			["<CR>"] = { "accept", "fallback" },
-
-			["<Tab>"] = { "select_next", "fallback" },
-			["<S-Tab>"] = { "select_prev", "fallback" },
-		},
-		completion = {
-			list = {
-				selection = {
-					auto_insert = true,
-				},
-			},
-			menu = {
-				border = "single",
-				auto_show = true,
-				draw = {
-					columns = {
-						{
-							"label",
-							gap = 1,
-						},
-						{ "kind" },
-					},
-				},
-			},
-			documentation = {
-				window = { border = "single" },
-				auto_show = true,
-			},
-		},
-		appearance = {
-			use_nvim_cmp_as_default = false,
-		},
-		sources = {
-			default = { "lsp", "path", "buffer", "cmdline" },
-		},
-		cmdline = {
-			enabled = true,
-		},
-	})
+	local coq = require("coq")
 
 	require("lspconfig.ui.windows").default_options.border = "single"
 	for _, server in ipairs(servers) do
-		local capabilities = blinkcmp.get_lsp_capabilities(common_capabilities())
+		local capabilities = coq.lsp_ensure_capabilities(common_capabilities())
 		local opts = {
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -451,25 +394,13 @@ vim.keymap.set("n", "<leader>?", function()
 	require("which-key").show({ global = false })
 end, { desc = "Buffer Local Keymaps (which-key)" })
 
-vim.keymap.set("n", "<leader><leader>", function()
-	require("mini.pick").builtin.files()
-end, { desc = "Mini Pick File" })
-
-vim.keymap.set("n", "<leader>n", function()
-	require("mini.files").open(vim.api.nvim_buf_get_name(0))
-end, { desc = "Mini Explorer" })
-
-vim.keymap.set("n", "<leader>b", function()
-	require("mini.pick").builtin.buffers()
-end, { desc = "Mini Pick Buffers" })
-
-vim.keymap.set("n", "<leader>h", function()
-	require("mini.pick").builtin.help()
-end, { desc = "Mini Pick Help" })
-
-vim.keymap.set("n", "<leader>H", function()
-	require("mini.extra").pickers.hl_groups()
-end, { desc = "Mini Highlight" })
+vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "Mini Pick File" })
+vim.keymap.set("n", "<leader>g", "<cmd>Pick grep_live<cr>", { desc = "Mini Pick Grep Live" })
+vim.keymap.set("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Mini Pick Buffers" })
+vim.keymap.set("n", "<leader>h", "<cmd>Pick help<cr>", { desc = "Mini Pick Help" })
+vim.keymap.set("n", "<leader>d", "<cmd>Pick diagnostic<cr>", { desc = "Mini Pick Diagnostic" })
+vim.keymap.set("n", "<leader>H", "<cmd>Pick hl_groups<cr>", { desc = "Mini Highlight" })
+vim.keymap.set("n", "<leader>n", "<cmd>lua MiniFiles.open()<cr>", { desc = "Mini Explorer" })
 
 -- Tmux navigation keymaps
 local tmux_navigation = {
