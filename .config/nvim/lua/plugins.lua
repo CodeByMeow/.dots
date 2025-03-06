@@ -87,13 +87,16 @@ now(function()
 		{ source = "lewis6991/gitsigns.nvim" },
 		{ source = "dstein64/vim-startuptime" },
 		{ source = "alexxGmZ/e-ink.nvim" },
+		{ source = "mbbill/undotree" },
 		{ source = "ThePrimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } },
+		{ source = "nvim-tree/nvim-web-devicons" },
 	}
 
 	for _, plugin in ipairs(custom_plugins) do
 		add(plugin)
 	end
 
+	-- Theme
 	vim.cmd.colorscheme("e-ink")
 
 	-- Which-key configuration
