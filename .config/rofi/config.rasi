@@ -1,5 +1,5 @@
 * {
-  font: "SF Pro Display 10";
+  font: "Iosevka Nerd Font 12";
 
   bg0    : #2b3339;
   bg1    : #323c41;
@@ -27,9 +27,9 @@ element-icon, element-text, scrollbar {
 }
 
 window {
-  location : south;
-  width    : 600px;
-  height   : 480px;
+  location : center;
+  width    : 500px;
+  height   : 300px;
   y-offset : -6px;
 
   background-color : @bg1;
@@ -62,7 +62,7 @@ icon-search {
 }
 
 entry {
-  font              : "SF Pro Display 12";
+  font              : "Iosevka Nerd Font 12";
   placeholder-color : @fg1;
   color				: @fg1;
 }
