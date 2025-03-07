@@ -29,10 +29,10 @@ $container\
 $jobs\
 $lua\
 $localip\
-${battery}\
 $time\
 $cmd_duration\
 $status\
+${battery}\
 $line_break\
 $character\
 """
@@ -339,7 +339,7 @@ style = "fg:color_other"
 disabled = false
 time_format = "%R"
 style = "fg:color_time"
-format = '[ 󰔛 $time ]($style)'
+format = '[ 󰔛 $time]($style)'
 
 [cmd_duration]
 min_time = 2000
