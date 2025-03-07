@@ -90,7 +90,6 @@ now(function()
 		{ source = "mbbill/undotree" },
 		{ source = "ThePrimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } },
 		{ source = "nvim-tree/nvim-web-devicons" },
-		{ source = "max397574/better-escape.nvim" },
 	}
 
 	for _, plugin in ipairs(custom_plugins) do
@@ -112,38 +111,6 @@ now(function()
 		},
 		win = {
 			border = "single",
-		},
-	})
-
-	-- Better escape configuration
-	require("better_escape").setup({
-		timeout = vim.o.timeoutlen,
-		mappings = {
-			i = {
-				i = {
-					i = "<Esc>",
-				},
-			},
-			c = {
-				i = {
-					i = "<Esc>",
-				},
-			},
-			t = {
-				i = {
-					i = "<Esc>",
-				},
-			},
-			v = {
-				i = {
-					i = "<Esc>",
-				},
-			},
-			s = {
-				i = {
-					i = "<Esc>",
-				},
-			},
 		},
 	})
 
