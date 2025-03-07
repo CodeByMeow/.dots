@@ -110,6 +110,9 @@ now(function()
 			group = "+",
 			ellipsis = "…",
 		},
+		win = {
+			border = "single",
+		},
 	})
 
 	-- Better escape configuration
@@ -158,13 +161,13 @@ end)
 -- Harpoon configuration
 local harpoon = require("harpoon")
 harpoon.setup()
-vim.keymap.set("n", "<leader>ha", function()
+vim.keymap.set("n", "<leader>pa", function()
 	harpoon:list():add()
 end, { desc = "Add to quick menu" })
-vim.keymap.set("n", "<leader>hm", function()
+vim.keymap.set("n", "<leader>pm", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end, { desc = "Toggle quick menu" })
-vim.keymap.set("n", "<leader>hn", function()
+vim.keymap.set("n", "<leader>pn", function()
 	harpoon:list():select(1)
 end, { desc = "Select first entry in quick menu" })
 
