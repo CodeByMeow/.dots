@@ -209,7 +209,7 @@ later(function()
 	-- Folds
 	add({ source = "kevinhwang91/nvim-ufo", depends = { "kevinhwang91/promise-async" } })
 	require("ufo").setup({
-		provider_selector = function(bufnr, filetype, buftype)
+		provider_selector = function()
 			return { "treesitter", "indent" }
 		end,
 	})
@@ -537,7 +537,7 @@ vim.keymap.set("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Mini Pick Bu
 vim.keymap.set("n", "<leader>h", "<cmd>Pick help<cr>", { desc = "Mini Pick Help" })
 vim.keymap.set("n", "<leader>d", "<cmd>Pick diagnostic<cr>", { desc = "Mini Pick Diagnostic" })
 vim.keymap.set("n", "<leader>H", "<cmd>Pick hl_groups<cr>", { desc = "Mini Highlight" })
-vim.keymap.set("n", "<leader>n", "<cmd>lua MiniFiles.open()<cr>", { desc = "Mini Explorer" })
+vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Mini Explorer" })
 
 -- Tmux navigation keymaps
 local tmux_navigation = {
