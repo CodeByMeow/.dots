@@ -90,6 +90,7 @@ now(function()
 		{ source = "mbbill/undotree" },
 		{ source = "ThePrimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } },
 		{ source = "nvim-tree/nvim-web-devicons" },
+		{ source = "max397574/better-escape.nvim" },
 	}
 
 	for _, plugin in ipairs(custom_plugins) do
@@ -108,6 +109,38 @@ now(function()
 			separator = "",
 			group = "+",
 			ellipsis = "…",
+		},
+	})
+
+	-- Better escape configuration
+	require("better_escape").setup({
+		timeout = vim.o.timeoutlen,
+		mappings = {
+			i = {
+				i = {
+					i = "<Esc>",
+				},
+			},
+			c = {
+				i = {
+					i = "<Esc>",
+				},
+			},
+			t = {
+				i = {
+					i = "<Esc>",
+				},
+			},
+			v = {
+				i = {
+					i = "<Esc>",
+				},
+			},
+			s = {
+				i = {
+					i = "<Esc>",
+				},
+			},
 		},
 	})
 
@@ -135,10 +168,10 @@ vim.keymap.set("n", "<leader>hn", function()
 	harpoon:list():select(1)
 end, { desc = "Select first entry in quick menu" })
 
--- LSP and related configurations
 later(function()
 	-- Additional plugins
 	add({ source = "lambdalisue/suda.vim" })
+
 	add({ source = "brenoprata10/nvim-highlight-colors" })
 	require("nvim-highlight-colors").setup()
 
@@ -148,6 +181,7 @@ later(function()
 		depends = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
 	})
 
+	-- CMP
 	add({
 		source = "hrsh7th/nvim-cmp",
 		depends = {
@@ -169,7 +203,15 @@ later(function()
 	add({ source = "Exafunction/codeium.nvim", depends = { "nvim-lua/plenary.nvim" } })
 	require("codeium").setup()
 
-	-- Completion
+	-- Folds
+	add({ source = "kevinhwang91/nvim-ufo", depends = { "kevinhwang91/promise-async" } })
+	require("ufo").setup({
+		provider_selector = function(bufnr, filetype, buftype)
+			return { "treesitter", "indent" }
+		end,
+	})
+
+	-- CMP configuration
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
 
@@ -487,6 +529,7 @@ end, { desc = "Buffer Local Keymaps (which-key)" })
 
 vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "Mini Pick File" })
 vim.keymap.set("n", "<leader>g", "<cmd>Pick grep_live<cr>", { desc = "Mini Pick Grep Live" })
+vim.keymap.set("n", "<leader>o", "<cmd>Pick oldfiles<cr>", { desc = "Mini Pick Old Files" })
 vim.keymap.set("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Mini Pick Buffers" })
 vim.keymap.set("n", "<leader>h", "<cmd>Pick help<cr>", { desc = "Mini Pick Help" })
 vim.keymap.set("n", "<leader>d", "<cmd>Pick diagnostic<cr>", { desc = "Mini Pick Diagnostic" })
@@ -511,3 +554,14 @@ end
 vim.keymap.set("n", "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>")
 vim.keymap.set("n", "<leader>tT", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
 vim.keymap.set("n", "<leader>ts", "<cmd>Trouble symbols toggle focus=false<cr>")
+
+-- Folds
+vim.keymap.set("n", "zR", function()
+	require("ufo").openAllFolds()
+end)
+vim.keymap.set("n", "zM", function()
+	require("ufo").closeAllFolds()
+end)
+
+-- Undotree
+vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Toggle UndoTree" })
