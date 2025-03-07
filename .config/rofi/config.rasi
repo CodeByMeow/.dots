@@ -1,5 +1,5 @@
 * {
-  font: "Iosevka Nerd Font 12";
+  font: "Hack Nerd Font Mono 10";
 
   bg0    : #2b3339;
   bg1    : #323c41;
@@ -28,8 +28,8 @@ element-icon, element-text, scrollbar {
 
 window {
   location : center;
-  width    : 500px;
-  height   : 300px;
+  width    : 400px;
+  height   : 220px;
   y-offset : -6px;
 
   background-color : @bg1;
@@ -37,12 +37,12 @@ window {
 }
 
 mainbox {
-  padding : 24px;
-  spacing : 24px;
+  padding : 8px;
+  spacing : 8px;
 }
 
 inputbar {
-  padding          : 8px;
+  padding          : 8px 20px;
   spacing          : 4px;
   children         : [ icon-search, entry ];
   border           : 0 0 2px 0 solid;
@@ -62,7 +62,7 @@ icon-search {
 }
 
 entry {
-  font              : "Iosevka Nerd Font 12";
+  font              : "Hack Nerd Font Mono 10";
   placeholder-color : @fg1;
   color				: @fg1;
 }
