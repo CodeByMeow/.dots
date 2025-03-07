@@ -39,15 +39,6 @@ local function mode()
 	return "%#StatusLineMode#" .. display_mode .. "%*"
 end
 
-local function python_env()
-	local virtual_env = os.getenv("VIRTUAL_ENV_PROMPT")
-	if virtual_env == nil then
-		return ""
-	end
-
-	return string.format("%%#StatusLineMedium# %s%%*", virtual_env)
-end
-
 local function lsp_active()
 	if not rawget(vim, "lsp") then
 		return ""
@@ -61,7 +52,7 @@ local function lsp_active()
 		return ""
 	end
 
-	local space = "%#StatusLineMedium# %*"
+	local space = "%#Normal# %*"
 	local lsp_names = {}
 
 	for _, client in ipairs(clients) do
@@ -70,13 +61,13 @@ local function lsp_active()
 
 	local lsp_text = table.concat(lsp_names, ",")
 
-	return space .. "%#StatusLineMedium#" .. lsp_text .. "%*"
+	return space .. "%#Normal#" .. lsp_text .. "%*"
 end
 
 local function diagnostics_error()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.ERROR)
 	if count > 0 then
-		return string.format("%%#StatusLineLspError# %se%%*", count)
+		return string.format("%%#DiagnosticError# %se%%*", count)
 	end
 
 	return ""
@@ -85,7 +76,7 @@ end
 local function diagnostics_warns()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.WARN)
 	if count > 0 then
-		return string.format("%%#StatusLineLspWarn# %sw%%*", count)
+		return string.format("%%#DiagnosticWarn# %sw%%*", count)
 	end
 
 	return ""
@@ -94,7 +85,7 @@ end
 local function diagnostics_hint()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.HINT)
 	if count > 0 then
-		return string.format("%%#StatusLineLspHint# %sh%%*", count)
+		return string.format("%%#DiagnosticHint# %sh%%*", count)
 	end
 
 	return ""
@@ -103,7 +94,7 @@ end
 local function diagnostics_info()
 	local count = get_lsp_diagnostics_count(vim.diagnostic.severity.INFO)
 	if count > 0 then
-		return string.format("%%#StatusLineLspInfo# %si%%*", count)
+		return string.format("%%#DiagnosticInfo# %si%%*", count)
 	end
 
 	return ""
@@ -172,13 +163,13 @@ local function lsp_status()
 		lsp_message = string.format("%s %s", lsp_message, percentage)
 	end
 
-	return string.format("%%#StatusLineLspMessages#%s%%* ", lsp_message)
+	return string.format("%%#MsgArea#%s%%* ", lsp_message)
 end
 
 local function git_diff_added()
 	local added = get_git_diff("added")
 	if added > 0 then
-		return string.format("%%#StatusLineGitDiffAdded#+%s%%*", added)
+		return string.format("%%#diffAdded#+%s%%*", added)
 	end
 
 	return ""
@@ -187,7 +178,7 @@ end
 local function git_diff_changed()
 	local changed = get_git_diff("changed")
 	if changed > 0 then
-		return string.format("%%#StatusLineGitDiffChanged#~%s%%*", changed)
+		return string.format("%%#diffChanged#~%s%%*", changed)
 	end
 
 	return ""
@@ -196,14 +187,14 @@ end
 local function git_diff_removed()
 	local removed = get_git_diff("removed")
 	if removed > 0 then
-		return string.format("%%#StatusLineGitDiffRemoved#-%s%%*", removed)
+		return string.format("%%#diffRemoved#-%s%%*", removed)
 	end
 
 	return ""
 end
 
 local function git_branch_icon()
-	return "%#StatusLineGitBranchIcon#%*"
+	return "%#Normal#%*"
 end
 
 local function git_branch()
@@ -213,12 +204,12 @@ local function git_branch()
 		return ""
 	end
 
-	return string.format("%%#StatusLineMedium#%s%%*", branch)
+	return string.format("%%#Normal#%s%%*", branch)
 end
 
 local function full_git()
 	local full = ""
-	local space = "%#StatusLineMedium# %*"
+	local space = "%#Normal# %*"
 
 	local branch = git_branch()
 	if branch ~= "" then
@@ -248,12 +239,12 @@ local function file_percentage()
 	local current_line = vim.api.nvim_win_get_cursor(0)[1]
 	local lines = vim.api.nvim_buf_line_count(0)
 
-	return string.format("%%#StatusLineMedium#  %d%%%% %%*", math.ceil(current_line / lines * 100))
+	return string.format("%%#Normal#  %d%%%% %%*", math.ceil(current_line / lines * 100))
 end
 
 local function total_lines()
 	local lines = vim.fn.line("$")
-	return string.format("%%#StatusLineMedium#of %s %%*", lines)
+	return string.format("%%#Normal#of %s %%*", lines)
 end
 
 local function formatted_filetype(hlgroup)
@@ -299,19 +290,21 @@ StatusLine.active = function()
 
 	local statusline = {
 		mode(),
-		full_git(),
-		"%=",
-		"%=",
-		"%S ",
-		lsp_status(),
+		" %t",
+		"%r",
+		"%m",
 		diagnostics_error(),
 		diagnostics_warns(),
 		diagnostics_hint(),
 		diagnostics_info(),
+		full_git(),
+		"%=",
+		"%=",
+		lsp_status(),
 		lsp_active(),
-		python_env(),
 		file_percentage(),
 		total_lines(),
+		"%3l:%-2c ",
 	}
 
 	return table.concat(statusline)
@@ -332,6 +325,7 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter", "FileType" }, {
 		"mason",
 		"noice",
 		"qf",
+		"mini",
 	},
 	callback = function()
 		vim.opt_local.statusline = "%!v:lua.StatusLine.inactive()"

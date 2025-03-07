@@ -290,9 +290,9 @@ later(function()
 		)
 
 		-- Rename
-		vim.keymap.set("n", "<leader>rn", function()
+		vim.keymap.set("n", "<leader>r", function()
 			return ":IncRename " .. vim.fn.expand("<cword>")
-		end, { expr = true })
+		end, { expr = true, desc = "LSP Rename" })
 
 		-- Jump to Definition
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to Definition" }))

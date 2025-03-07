@@ -96,7 +96,7 @@ map("v", "<A-e>", ":m '<-2<CR>gv=gv")
 map("n", "<ESC>", "<cmd>:noh<cr>", opts)
 map("n", "m", "nzzzv")
 map("n", "M", "Nzzzv")
-map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current text" })
+map("n", "<leader>R", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace current text" })
 
 -- Command mode
 map("c", "<C-e>", "<C-p>")
