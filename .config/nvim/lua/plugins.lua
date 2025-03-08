@@ -481,7 +481,7 @@ later(function()
 				},
 			},
 		},
-		ui_select = { enable = false }, -- vim.ui.select() wrapper
+		ui_select = { enable = true }, -- vim.ui.select() wrapper
 	})
 
 	-- === Suggested Keymaps: ===
@@ -535,3 +535,6 @@ end)
 
 -- Undotree
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeToggle<cr>", { desc = "Toggle UndoTree" })
+
+-- MiniDeps
+vim.keymap.set("n", "<leader>U", "<cmd>DepsUpdate<cr>", { desc = "Update Dependencies" })

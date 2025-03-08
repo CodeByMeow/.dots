@@ -163,7 +163,7 @@ fish_style_pwd_dir_length = 0
 use_logical_path = true
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "fg:color_git"
 format = ' [($symbol $branch)]($style)'
 only_attached = true
