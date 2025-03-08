@@ -1,9 +1,9 @@
-vim.g.netrw_browse_split = 4
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
 vim.g.netrw_altv = 1
-vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_browse_split = 4
 vim.g.netrw_browsex_viewer = "xdg-open"
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 25
 
 -- Disable EditorConfig
 vim.g.editorconfig = false
@@ -64,7 +64,7 @@ opt.pumheight = 10
 opt.backspace = "indent,eol,start"
 
 -- Clipboard
-opt.clipboard:append("unnamedplus")
+opt.clipboard = "unnamedplus"
 
 opt.updatetime = 50
 

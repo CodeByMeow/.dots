@@ -52,6 +52,8 @@ later(function()
 		"mini.pairs",
 		"mini.pick",
 		"mini.surround",
+		"mini.trailspace",
+		"mini.hipatterns",
 	}
 
 	for _, plugin in ipairs(mini_plugins) do
@@ -76,6 +78,20 @@ later(function()
 	require("mini.indentscope").setup({
 		symbol = "│",
 		options = { try_as_border = true },
+	})
+
+	local hipatterns = require("mini.hipatterns")
+	hipatterns.setup({
+		highlighters = {
+			-- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+			fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+			hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+			todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+			note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+
+			-- Highlight hex color strings (`#rrggbb`) using that color
+			hex_color = hipatterns.gen_highlighter.hex_color(),
+		},
 	})
 end)
 
@@ -142,9 +158,6 @@ later(function()
 	-- Additional plugins
 	add({ source = "lambdalisue/suda.vim" })
 
-	add({ source = "brenoprata10/nvim-highlight-colors" })
-	require("nvim-highlight-colors").setup()
-
 	-- LSP
 	add({
 		source = "neovim/nvim-lspconfig",
@@ -159,9 +172,23 @@ later(function()
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 			"saadparwaiz1/cmp_luasnip",
+		},
+	})
+
+	add({
+		source = "L3MON4D3/LuaSnip",
+		hooks = {
+			post_install = function(params)
+				vim.notify("Building lua snippets", vim.log.levels.INFO)
+				local obj = vim.system({ "make", "install_jsregexp" }, { cwd = params.path }):wait()
+				if obj.code == 0 then
+					vim.notify("Building lua snippets done", vim.log.levels.INFO)
+				else
+					vim.notify("Building lua snippets failed", vim.log.levels.ERROR)
+				end
+			end,
 		},
 	})
 
@@ -497,14 +524,15 @@ vim.keymap.set("n", "<leader>?", function()
 	require("which-key").show({ global = false })
 end, { desc = "Buffer Local Keymaps (which-key)" })
 
-vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "Mini Pick File" })
-vim.keymap.set("n", "<leader>g", "<cmd>Pick grep_live<cr>", { desc = "Mini Pick Grep Live" })
-vim.keymap.set("n", "<leader>o", "<cmd>Pick oldfiles<cr>", { desc = "Mini Pick Old Files" })
-vim.keymap.set("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Mini Pick Buffers" })
-vim.keymap.set("n", "<leader>h", "<cmd>Pick help<cr>", { desc = "Mini Pick Help" })
-vim.keymap.set("n", "<leader>d", "<cmd>Pick diagnostic<cr>", { desc = "Mini Pick Diagnostic" })
-vim.keymap.set("n", "<leader>H", "<cmd>Pick hl_groups<cr>", { desc = "Mini Highlight" })
-vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Mini Explorer" })
+vim.keymap.set("n", "<leader><leader>", "<cmd>Pick files<cr>", { desc = "Pick File" })
+vim.keymap.set("n", "<leader>g", "<cmd>Pick grep_live<cr>", { desc = "Pick Grep Live" })
+vim.keymap.set("n", "<leader>o", "<cmd>Pick oldfiles<cr>", { desc = "Pick Old Files" })
+vim.keymap.set("n", "<leader>b", "<cmd>Pick buffers<cr>", { desc = "Pick Buffers" })
+vim.keymap.set("n", "<leader>h", "<cmd>Pick help<cr>", { desc = "Pick Help" })
+vim.keymap.set("n", "<leader>d", "<cmd>Pick diagnostic<cr>", { desc = "Pick Diagnostic" })
+vim.keymap.set("n", "<leader>H", "<cmd>Pick hl_groups<cr>", { desc = "Highlight" })
+vim.keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>", { desc = "Explorer" })
+vim.keymap.set("n", "<leader>ll", "<cmd>lua MiniTrailspace.trim()<cr>", { desc = "Trailing Space" })
 
 -- Tmux navigation keymaps
 local tmux_navigation = {
