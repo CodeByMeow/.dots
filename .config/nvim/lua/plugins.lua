@@ -73,6 +73,8 @@ later(function()
 		require("mini." .. plugin).setup()
 	end
 
+	MiniIcons.tweak_lsp_kind()
+
 	-- Specialized mini plugin configurations
 	local specialized_mini_plugins = {
 		move = {

@@ -235,6 +235,16 @@ local function full_git()
 	return full
 end
 
+local function python_env()
+	local virtual_env = os.getenv("VIRTUAL_ENV_PROMPT")
+	if virtual_env == nil then
+		return ""
+	end
+
+	virtual_env = virtual_env:gsub("%s+", "") -- delete spaces
+	return string.format("%%#StatusLineMedium# %s%%*", virtual_env)
+end
+
 local function file_percentage()
 	local current_line = vim.api.nvim_win_get_cursor(0)[1]
 	local lines = vim.api.nvim_buf_line_count(0)
@@ -300,6 +310,7 @@ StatusLine.active = function()
 		full_git(),
 		"%=",
 		"%=",
+		python_env(),
 		lsp_status(),
 		lsp_active(),
 		file_percentage(),
