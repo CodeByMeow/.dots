@@ -112,6 +112,9 @@ map("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v
 map("n", "s", "<Nop>")
 map("v", "s", "<Nop>")
 
+-- Exit terminal mode
+map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 -- Immediate initialization
 active_layout()
 

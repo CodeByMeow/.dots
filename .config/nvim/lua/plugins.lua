@@ -144,13 +144,6 @@ now(function()
 		win = { border = "single" },
 	})
 
-	-- Configure tmux
-	require("tmux").setup({
-		copy_sync = { enable = true },
-		navigation = { enable_default_keybindings = false },
-		resize = { enable_default_keybindings = false },
-	})
-
 	-- Configure gitsigns
 	require("gitsigns").setup({ current_line_blame = true })
 end)
@@ -194,6 +187,10 @@ setup_harpoon()
 later(function()
 	-- Add suda
 	add({ source = "lambdalisue/suda.vim" })
+
+	-- Termail Toggle
+	add({ source = "akinsho/toggleterm.nvim" })
+	require("toggleterm").setup()
 
 	-- LSP setup
 	add({
@@ -592,24 +589,13 @@ local function setup_keymaps()
 
 		-- MiniDeps
 		{ mode = "n", key = "<leader>U", fn = "<cmd>DepsUpdate<cr>", desc = "Update Dependencies" },
+
+		-- Toggle Term
+		{ mode = "n", key = "<leader><CR>", fn = "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
 	}
 
 	for _, map in ipairs(keymaps) do
 		vim.keymap.set(map.mode, map.key, map.fn, { desc = map.desc })
-	end
-
-	-- Tmux navigation keymaps
-	local tmux_nav = {
-		{ key = "<C-h>", func = "move_left" },
-		{ key = "<C-Right>", func = "move_right" },
-		{ key = "<C-n>", func = "move_bottom" },
-		{ key = "<C-e>", func = "move_top" },
-	}
-
-	for _, nav in ipairs(tmux_nav) do
-		vim.keymap.set("n", nav.key, function()
-			require("tmux")[nav.func]()
-		end)
 	end
 end
 setup_keymaps()
