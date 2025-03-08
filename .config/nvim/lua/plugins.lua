@@ -407,21 +407,6 @@ later(function()
 
 			lspconfig[server].setup(opts)
 		end
-
-		-- Diagnostic configuration
-		vim.diagnostic.config({
-			virtual_lines = true,
-			virtual_text = false,
-			severity_sort = true,
-		})
-
-		-- Diagnostic float on cursor move
-		vim.api.nvim_create_autocmd("CursorMoved", {
-			pattern = "*",
-			callback = function()
-				vim.diagnostic.open_float(nil, { focusable = false })
-			end,
-		})
 	end
 	setup_lsp()
 

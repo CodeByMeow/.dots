@@ -55,7 +55,7 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 opt.winblend = 0
 opt.background = "dark"
-opt.listchars:append({ eol = "", tab = "󰍟 ", trail = "·" })
+opt.listchars:append({ eol = "", tab = " ", trail = "·" })
 opt.list = true
 opt.title = true
 opt.pumheight = 10
@@ -120,3 +120,9 @@ opt.laststatus = 2
 opt.showtabline = 2
 
 opt.completeopt = { "menu", "menuone", "noselect" }
+
+vim.diagnostic.config({
+	virtual_lines = true,
+	virtual_text = false,
+	severity_sort = true,
+})

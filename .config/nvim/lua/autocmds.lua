@@ -149,3 +149,11 @@ autocmd("Filetype", {
 		vim.opt_local.spell = true
 	end,
 })
+
+-- Diagnostic float on cursor move
+autocmd("CursorMoved", {
+	pattern = "*",
+	callback = function()
+		vim.diagnostic.open_float(nil, { focusable = false })
+	end,
+})

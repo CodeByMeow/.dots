@@ -51,6 +51,7 @@ _Note :wrench: I use colemak-dh keyboard layout_
 - `pamixer`: Sound controller
 - `maim`: Screenshot tool
 - `glow`: Render markdown on the CLI, with pizzazz!
+- `xclip`: Clipboard tool
 
 ### Input method
 - fcitx5-unikey
@@ -58,6 +59,5 @@ _Note :wrench: I use colemak-dh keyboard layout_
 
 ### App
 - [WebCatalog Desktop](https://webcatalog.io/vi/apps/)
-- Pomotroid
-- Youtube-music
+- Breaktimer
 

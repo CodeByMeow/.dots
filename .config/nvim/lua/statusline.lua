@@ -33,10 +33,11 @@ local function mode()
 		[""] = "V-BLOCK",
 		c = "COMMAND",
 		R = "REPLACE",
+		t = "TERM",
 	}
 
 	local display_mode = mode_map[mode_code] or mode_code
-	return "%#StatusLineMode#" .. display_mode .. "%*"
+	return "%#StatusLine#" .. display_mode .. "%*"
 end
 
 local function lsp_active()
@@ -303,13 +304,13 @@ StatusLine.active = function()
 		" %t",
 		"%r",
 		"%m",
+		full_git(),
+		"%=",
+		"%=",
 		diagnostics_error(),
 		diagnostics_warns(),
 		diagnostics_hint(),
 		diagnostics_info(),
-		full_git(),
-		"%=",
-		"%=",
 		python_env(),
 		lsp_status(),
 		lsp_active(),
