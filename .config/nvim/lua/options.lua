@@ -78,7 +78,7 @@ vim.g.clipboard = {
 	cache_enabled = 0,
 }
 
-opt.updatetime = 50
+opt.updatetime = 250
 
 vim.scriptencoding = "utf-8"
 opt.encoding = "utf-8"

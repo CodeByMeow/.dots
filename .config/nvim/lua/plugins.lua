@@ -341,6 +341,21 @@ later(function()
 		local function on_attach()
 			local keymap_opts = { buffer = true, noremap = true, silent = true }
 
+			vim.api.nvim_create_autocmd("CursorHold", {
+				buffer = bufnr,
+				callback = function()
+					local opts = {
+						focusable = false,
+						close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+						border = "single",
+						source = "always",
+						prefix = " ",
+						scope = "cursor",
+					}
+					vim.diagnostic.open_float(nil, opts)
+				end,
+			})
+
 			local lsp_keymaps = {
 				{ mode = "n", key = "<leader>ca", fn = vim.lsp.buf.code_action, desc = "LSP Code Actions" },
 				{
