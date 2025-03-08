@@ -65,6 +65,18 @@ opt.backspace = "indent,eol,start"
 
 -- Clipboard
 opt.clipboard = "unnamedplus"
+vim.g.clipboard = {
+	name = "xclip",
+	copy = {
+		["+"] = "xclip -selection clipboard -i",
+		["*"] = "xclip -selection clipboard -i",
+	},
+	paste = {
+		["+"] = "xclip -selection clipboard -o",
+		["*"] = "xclip -selection clipboard -o",
+	},
+	cache_enabled = 0,
+}
 
 opt.updatetime = 50
 
