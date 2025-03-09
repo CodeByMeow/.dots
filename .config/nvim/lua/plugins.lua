@@ -123,6 +123,11 @@ now(function()
 		{ source = "lewis6991/gitsigns.nvim" },
 		{ source = "mbbill/undotree" },
 		{ source = "nvim-tree/nvim-web-devicons" },
+		-- LSP setup
+		{
+			source = "neovim/nvim-lspconfig",
+			depends = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
+		},
 	}
 
 	-- Add all plugins at once
@@ -148,168 +153,6 @@ now(function()
 
 	-- Configure gitsigns
 	require("gitsigns").setup({ current_line_blame = true })
-end)
-
--- Harpoon configuration in its own scope
-local function setup_harpoon()
-	local harpoon = require("harpoon")
-	harpoon.setup()
-
-	local mappings = {
-		{
-			key = "<leader>pa",
-			fn = function()
-				harpoon:list():add()
-			end,
-			desc = "Add to quick menu",
-		},
-		{
-			key = "<leader>pm",
-			fn = function()
-				harpoon.ui:toggle_quick_menu(harpoon:list())
-			end,
-			desc = "Toggle quick menu",
-		},
-		{
-			key = "<leader>pn",
-			fn = function()
-				harpoon:list():select(1)
-			end,
-			desc = "Select first entry in quick menu",
-		},
-	}
-
-	for _, map in ipairs(mappings) do
-		vim.keymap.set("n", map.key, map.fn, { desc = map.desc })
-	end
-end
-setup_harpoon()
-
--- LSP and completion setup
-later(function()
-	-- Add suda
-	add({ source = "lambdalisue/suda.vim" })
-
-	-- Termail Toggle
-	add({ source = "akinsho/toggleterm.nvim" })
-	require("toggleterm").setup()
-
-	-- LSP setup
-	add({
-		source = "neovim/nvim-lspconfig",
-		depends = { "williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim" },
-	})
-
-	-- CMP and its dependencies
-	add({
-		source = "hrsh7th/nvim-cmp",
-		depends = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
-			"saadparwaiz1/cmp_luasnip",
-		},
-	})
-
-	-- LuaSnip
-	add({
-		source = "L3MON4D3/LuaSnip",
-		hooks = {
-			post_install = function(params)
-				vim.notify("Building lua snippets", vim.log.levels.INFO)
-				local result = vim.system({ "make", "install_jsregexp" }, { cwd = params.path }):wait()
-				local level = result.code == 0 and vim.log.levels.INFO or vim.log.levels.ERROR
-				local status = result.code == 0 and "done" or "failed"
-				vim.notify("Building lua snippets " .. status, level)
-			end,
-		},
-	})
-
-	-- Emmet
-	add({
-		source = "dcampos/cmp-emmet-vim",
-		depends = { "mattn/emmet-vim" },
-	})
-
-	-- Codeium
-	add({ source = "Exafunction/codeium.nvim", depends = { "nvim-lua/plenary.nvim" } })
-	require("codeium").setup()
-
-	-- Folds with UFO
-	add({ source = "kevinhwang91/nvim-ufo", depends = { "kevinhwang91/promise-async" } })
-	require("ufo").setup({
-		provider_selector = function()
-			return { "treesitter", "indent" }
-		end,
-	})
-
-	-- CMP configuration
-	local function setup_cmp()
-		local cmp = require("cmp")
-		local luasnip = require("luasnip")
-
-		cmp.setup({
-			snippet = {
-				expand = function(args)
-					luasnip.lsp_expand(args.body)
-				end,
-			},
-			mapping = cmp.mapping.preset.insert({
-				["<C-Space>"] = cmp.mapping.complete(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
-				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
-						luasnip.jump(-1)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-			}),
-			sources = cmp.config.sources({
-				{
-					name = "nvim_lsp",
-					entry_filter = function(entry)
-						return entry:get_kind() ~= 15
-					end,
-				},
-				{ name = "nvim_lsp_signature_help" },
-				{ name = "codeium" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
-				{ name = "tabnine" },
-				{ name = "emmet_vim" },
-			}),
-			enabled = function()
-				return vim.bo.filetype ~= "scss" or vim.fn.getline("."):match("%$") == nil
-			end,
-		})
-
-		-- Command line completion
-		cmp.setup.cmdline("/", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = { { name = "buffer" } },
-		})
-
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
-			sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
-		})
-	end
-	setup_cmp()
 
 	-- LSP setup
 	local function setup_lsp()
@@ -425,6 +268,158 @@ later(function()
 	end
 	setup_lsp()
 
+	-- Harpoon configuration in its own scope
+	local function setup_harpoon()
+		local harpoon = require("harpoon")
+		harpoon.setup()
+
+		local mappings = {
+			{
+				key = "<leader>pa",
+				fn = function()
+					harpoon:list():add()
+				end,
+				desc = "Add to quick menu",
+			},
+			{
+				key = "<leader>pm",
+				fn = function()
+					harpoon.ui:toggle_quick_menu(harpoon:list())
+				end,
+				desc = "Toggle quick menu",
+			},
+			{
+				key = "<leader>pn",
+				fn = function()
+					harpoon:list():select(1)
+				end,
+				desc = "Select first entry in quick menu",
+			},
+		}
+
+		for _, map in ipairs(mappings) do
+			vim.keymap.set("n", map.key, map.fn, { desc = map.desc })
+		end
+	end
+	setup_harpoon()
+	-- end of now
+end)
+
+later(function()
+	-- Add suda
+	add({ source = "lambdalisue/suda.vim" })
+
+	-- Termail Toggle
+	add({ source = "akinsho/toggleterm.nvim" })
+	require("toggleterm").setup()
+
+	-- CMP and its dependencies
+	add({
+		source = "hrsh7th/nvim-cmp",
+		depends = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-nvim-lsp-signature-help",
+			"saadparwaiz1/cmp_luasnip",
+			"dcampos/cmp-emmet-vim",
+			"mattn/emmet-vim",
+		},
+	})
+
+	-- LuaSnip
+	add({
+		source = "L3MON4D3/LuaSnip",
+		hooks = {
+			post_install = function(params)
+				vim.notify("Building lua snippets", vim.log.levels.INFO)
+				local result = vim.system({ "make", "install_jsregexp" }, { cwd = params.path }):wait()
+				local level = result.code == 0 and vim.log.levels.INFO or vim.log.levels.ERROR
+				local status = result.code == 0 and "done" or "failed"
+				vim.notify("Building lua snippets " .. status, level)
+			end,
+		},
+	})
+
+	-- Codeium
+	add({ source = "Exafunction/codeium.nvim", depends = { "nvim-lua/plenary.nvim" } })
+	require("codeium").setup()
+
+	-- CMP configuration
+	local function setup_cmp()
+		local cmp = require("cmp")
+		local luasnip = require("luasnip")
+
+		cmp.setup({
+			snippet = {
+				expand = function(args)
+					luasnip.lsp_expand(args.body)
+				end,
+			},
+			mapping = cmp.mapping.preset.insert({
+				["<C-Space>"] = cmp.mapping.complete(),
+				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif luasnip.expand_or_jumpable() then
+						luasnip.expand_or_jump()
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif luasnip.jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+			}),
+			sources = cmp.config.sources({
+				{
+					name = "nvim_lsp",
+					entry_filter = function(entry)
+						return entry:get_kind() ~= 15
+					end,
+				},
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "codeium" },
+				{ name = "luasnip" },
+				{ name = "buffer" },
+				{ name = "path" },
+				{ name = "tabnine" },
+				{ name = "emmet_vim" },
+			}),
+			enabled = function()
+				return vim.bo.filetype ~= "scss" or vim.fn.getline("."):match("%$") == nil
+			end,
+		})
+
+		-- Command line completion
+		cmp.setup.cmdline("/", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = { { name = "buffer" } },
+		})
+
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+		})
+	end
+	setup_cmp()
+
+	-- Folds with UFO
+	add({ source = "kevinhwang91/nvim-ufo", depends = { "kevinhwang91/promise-async" } })
+	require("ufo").setup({
+		provider_selector = function()
+			return { "treesitter", "indent" }
+		end,
+	})
+
 	-- Formatting configuration
 	add({ source = "stevearc/conform.nvim" })
 	require("conform").setup({
@@ -524,12 +519,6 @@ later(function()
 		},
 		ui_select = { enable = true },
 	})
-
-	-- Namu keymaps
-	vim.keymap.set("n", "<leader>ss", require("namu.namu_symbols").show, {
-		desc = "Jump to LSP symbol",
-		silent = true,
-	})
 end)
 
 -- Global keymaps
@@ -594,6 +583,15 @@ local function setup_keymaps()
 
 		-- Toggle Term
 		{ mode = "n", key = "<leader><CR>", fn = "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+		-- Namu keymaps
+		{
+			mode = "n",
+			key = "<leader>ss",
+			fn = function()
+				require("namu.namu_symbols").show()
+			end,
+			desc = "Jump to LSP symbol",
+		},
 	}
 
 	for _, map in ipairs(keymaps) do
