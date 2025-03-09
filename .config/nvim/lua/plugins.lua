@@ -340,6 +340,7 @@ later(function()
 				vim.notify("Building lua snippets " .. status, level)
 			end,
 		},
+		depends = { "rafamadriz/friendly-snippets" },
 	})
 
 	-- Codeium
@@ -350,6 +351,8 @@ later(function()
 	local function setup_cmp()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
+
+		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
 			snippet = {
@@ -387,8 +390,8 @@ later(function()
 					end,
 				},
 				{ name = "nvim_lsp_signature_help" },
-				{ name = "codeium" },
 				{ name = "luasnip" },
+				{ name = "codeium" },
 				{ name = "buffer" },
 				{ name = "path" },
 				{ name = "tabnine" },
