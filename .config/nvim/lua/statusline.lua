@@ -314,9 +314,9 @@ StatusLine.active = function()
 		python_env(),
 		lsp_status(),
 		lsp_active(),
+		" %3l:%-2c",
 		file_percentage(),
 		total_lines(),
-		"%3l:%-2c ",
 	}
 
 	return table.concat(statusline)
