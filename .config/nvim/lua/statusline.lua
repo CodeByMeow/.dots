@@ -136,16 +136,7 @@ end
 -- Status line
 StatusLine = {}
 
-StatusLine.inactive = function()
-	return "%%#StatusLineMode# " .. (vim.bo.filetype or vim.fn.expand("%:e")) .. " %%*"
-end
-
 StatusLine.active = function()
-	local ft = vim.bo.filetype
-	if ft == "qf" or ft == "help" or not vim.o.modifiable then
-		return StatusLine.inactive()
-	end
-
 	return table.concat({
 		mode(),
 		" %t",
