@@ -4,6 +4,9 @@ local data_path = vim.fn.stdpath("data")
 local path_package = data_path .. "/site/"
 local mini_path = path_package .. "pack/deps/start/mini.nvim"
 
+-- Basic UI settings
+vim.o.termguicolors = true
+
 -- Auto-install mini.nvim if not present
 if not vim.loop.fs_stat(mini_path) then
 	vim.notify("Installing mini.nvim", vim.log.levels.INFO)
@@ -23,9 +26,6 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 -- Group all basic settings into one function
 now(function()
-	-- Basic UI settings
-	vim.o.termguicolors = true
-
 	-- Initialize basic mini plugins
 	local mini_basic_plugins = {
 		notify = { config = {} },
@@ -73,8 +73,6 @@ later(function()
 		require("mini." .. plugin).setup()
 	end
 
-	MiniIcons.tweak_lsp_kind()
-
 	-- Specialized mini plugin configurations
 	local specialized_mini_plugins = {
 		move = {
@@ -109,6 +107,52 @@ later(function()
 	for plugin, config in pairs(specialized_mini_plugins) do
 		require("mini." .. plugin).setup(config)
 	end
+
+	-- Clue
+	local miniclue = require("mini.clue")
+	miniclue.setup({
+		triggers = {
+			-- Leader triggers
+			{ mode = "n", keys = "<Leader>" },
+			{ mode = "x", keys = "<Leader>" },
+
+			-- Built-in completion
+			{ mode = "i", keys = "<C-x>" },
+
+			-- `g` key
+			{ mode = "n", keys = "g" },
+			{ mode = "x", keys = "g" },
+
+			-- Marks
+			{ mode = "n", keys = "'" },
+			{ mode = "n", keys = "`" },
+			{ mode = "x", keys = "'" },
+			{ mode = "x", keys = "`" },
+
+			-- Registers
+			{ mode = "n", keys = '"' },
+			{ mode = "x", keys = '"' },
+			{ mode = "i", keys = "<C-r>" },
+			{ mode = "c", keys = "<C-r>" },
+
+			-- Window commands
+			{ mode = "n", keys = "<C-w>" },
+
+			-- `z` key
+			{ mode = "n", keys = "z" },
+			{ mode = "x", keys = "z" },
+		},
+
+		clues = {
+			-- Enhance this by adding descriptions for <Leader> mapping groups
+			miniclue.gen_clues.builtin_completion(),
+			miniclue.gen_clues.g(),
+			miniclue.gen_clues.marks(),
+			miniclue.gen_clues.registers(),
+			miniclue.gen_clues.windows(),
+			miniclue.gen_clues.z(),
+		},
+	})
 end)
 
 -- Custom plugins installation and setup
@@ -116,10 +160,8 @@ now(function()
 	-- Group all custom plugins with their dependencies
 	local custom_plugins = {
 		{ source = "alexxGmZ/e-ink.nvim" },
-		{ source = "ThePrimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } },
 		{ source = "aserowy/tmux.nvim" },
 		{ source = "dstein64/vim-startuptime" },
-		{ source = "folke/which-key.nvim" },
 		{ source = "lewis6991/gitsigns.nvim" },
 		{ source = "mbbill/undotree" },
 		{ source = "nvim-tree/nvim-web-devicons" },
@@ -137,19 +179,6 @@ now(function()
 
 	-- Apply theme
 	vim.cmd.colorscheme("e-ink")
-
-	-- Configure which-key
-	require("which-key").setup({
-		preset = "helix",
-		icons = {
-			mappings = false,
-			breadcrumb = "»",
-			separator = "",
-			group = "+",
-			ellipsis = "…",
-		},
-		win = { border = "single" },
-	})
 
 	-- Configure gitsigns
 	require("gitsigns").setup({ current_line_blame = true })
@@ -268,40 +297,6 @@ now(function()
 	end
 	setup_lsp()
 
-	-- Harpoon configuration in its own scope
-	local function setup_harpoon()
-		local harpoon = require("harpoon")
-		harpoon.setup()
-
-		local mappings = {
-			{
-				key = "<leader>pa",
-				fn = function()
-					harpoon:list():add()
-				end,
-				desc = "Add to quick menu",
-			},
-			{
-				key = "<leader>pm",
-				fn = function()
-					harpoon.ui:toggle_quick_menu(harpoon:list())
-				end,
-				desc = "Toggle quick menu",
-			},
-			{
-				key = "<leader>pn",
-				fn = function()
-					harpoon:list():select(1)
-				end,
-				desc = "Select first entry in quick menu",
-			},
-		}
-
-		for _, map in ipairs(mappings) do
-			vim.keymap.set("n", map.key, map.fn, { desc = map.desc })
-		end
-	end
-	setup_harpoon()
 	-- end of now
 end)
 
@@ -522,21 +517,47 @@ later(function()
 		},
 		ui_select = { enable = true },
 	})
+
+	add({ source = "ThePrimeagen/harpoon", checkout = "harpoon2", depends = { "nvim-lua/plenary.nvim" } })
+	-- Harpoon configuration in its own scope
+	local function setup_harpoon()
+		local harpoon = require("harpoon")
+		harpoon.setup()
+
+		local mappings = {
+			{
+				key = "<leader>pa",
+				fn = function()
+					harpoon:list():add()
+				end,
+				desc = "Add to quick menu",
+			},
+			{
+				key = "<leader>pm",
+				fn = function()
+					harpoon.ui:toggle_quick_menu(harpoon:list())
+				end,
+				desc = "Toggle quick menu",
+			},
+			{
+				key = "<leader>pn",
+				fn = function()
+					harpoon:list():select(1)
+				end,
+				desc = "Select first entry in quick menu",
+			},
+		}
+
+		for _, map in ipairs(mappings) do
+			vim.keymap.set("n", map.key, map.fn, { desc = map.desc })
+		end
+	end
+	setup_harpoon()
 end)
 
 -- Global keymaps
 local function setup_keymaps()
 	local keymaps = {
-		-- Which-key
-		{
-			mode = "n",
-			key = "<leader>?",
-			fn = function()
-				require("which-key").show({ global = false })
-			end,
-			desc = "Buffer Local Keymaps (which-key)",
-		},
-
 		-- File navigation
 		{ mode = "n", key = "<leader><leader>", fn = "<cmd>Pick files<cr>", desc = "Pick File" },
 		{ mode = "n", key = "<leader>g", fn = "<cmd>Pick grep_live<cr>", desc = "Pick Grep Live" },
