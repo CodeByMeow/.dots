@@ -277,6 +277,13 @@ local redeable_filetypes = {
 	["tsplayground"] = true,
 }
 
+local function readonly_indicator()
+	if vim.bo.readonly then
+		return " "
+	end
+	return ""
+end
+
 StatusLine.active = function()
 	local mode_str = vim.api.nvim_get_mode().mode
 	if mode_str == "t" or mode_str == "nt" then
@@ -302,7 +309,7 @@ StatusLine.active = function()
 	local statusline = {
 		mode(),
 		" %t",
-		"%r",
+		readonly_indicator(),
 		"%m",
 		full_git(),
 		"%=",
