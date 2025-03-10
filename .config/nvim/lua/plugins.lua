@@ -601,10 +601,10 @@ local function setup_keymaps()
 		{ mode = "n", key = "<Leader>ll", fn = "<Cmd>lua MiniTrailspace.trim()<CR>", desc = "Trailing Space" },
 
 		-- Trouble
-		{ mode = "n", key = "<Leader>tb", fn = "<Cmd>Trouble diagnostics toggle<CR>", desc = "Toggle Diagnostics" },
+		{ mode = "n", key = "<Leader>tp", fn = "<Cmd>Trouble diagnostics toggle<CR>", desc = "Toggle Diagnostics" },
 		{
 			mode = "n",
-			key = "<Leader>tT",
+			key = "<Leader>tb",
 			fn = "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>",
 			desc = "Toggle Buffer Diagnostics",
 		},

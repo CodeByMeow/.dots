@@ -129,6 +129,10 @@ local function readonly_indicator()
 	return vim.bo.readonly and " " or ""
 end
 
+local function keyboard_layout()
+	return vim.g.toggle_colemark and " Colemak-DH" or ""
+end
+
 -- Status line
 StatusLine = {}
 
@@ -153,6 +157,7 @@ StatusLine.active = function()
 		diagnostics_display(),
 		lsp_status(),
 		lsp_active(),
+		keyboard_layout(),
 		" %3l:%-2c",
 		file_percentage(),
 		total_lines(),
