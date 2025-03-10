@@ -13,7 +13,7 @@ if not vim.loop.fs_stat(mini_path) then
 	local clone_cmd = { "git", "clone", "--filter=blob:none", "https://github.com/echasnovski/mini.nvim", mini_path }
 	local success = vim.fn.system(clone_cmd)
 	if success then
-		vim.cmd("packadd mini.nvim | helptags ALL")
+		vim.Cmd("packadd mini.nvim | helptags ALL")
 		vim.notify("Installed mini.nvim", vim.log.levels.INFO)
 	else
 		vim.notify("Failed to install mini.nvim", vim.log.levels.ERROR)
@@ -160,7 +160,6 @@ now(function()
 	-- Group all custom plugins with their dependencies
 	local custom_plugins = {
 		{ source = "alexxGmZ/e-ink.nvim" },
-		{ source = "aserowy/tmux.nvim" },
 		{ source = "dstein64/vim-startuptime" },
 		{ source = "lewis6991/gitsigns.nvim" },
 		{ source = "mbbill/undotree" },
@@ -210,7 +209,7 @@ now(function()
 		end
 
 		-- LSP on_attach function with keymaps
-		local function on_attach()
+		local function on_attach(client, bufnr)
 			local keymap_opts = { buffer = true, noremap = true, silent = true }
 
 			vim.api.nvim_create_autocmd("CursorHold", {
@@ -228,11 +227,41 @@ now(function()
 				end,
 			})
 
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+				border = "single",
+			})
+
+			-- The blow command will highlight the current variable and its usages in the buffer.
+			if client.server_capabilities.documentHighlightProvider then
+				vim.cmd([[
+					hi! link LspReferenceRead Visual
+					hi! link LspReferenceText Visual
+					hi! link LspReferenceWrite Visual
+					]])
+
+				local gid = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
+				vim.api.nvim_create_autocmd("CursorHold", {
+					group = gid,
+					buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.document_highlight()
+					end,
+				})
+
+				vim.api.nvim_create_autocmd("CursorMoved", {
+					group = gid,
+					buffer = bufnr,
+					callback = function()
+						vim.lsp.buf.clear_references()
+					end,
+				})
+			end
+
 			local lsp_keymaps = {
-				{ mode = "n", key = "<leader>ca", fn = vim.lsp.buf.code_action, desc = "LSP Code Actions" },
+				{ mode = "n", key = "<Leader>ca", fn = vim.lsp.buf.code_action, desc = "LSP Code Actions" },
 				{
 					mode = "n",
-					key = "<leader>r",
+					key = "<Leader>r",
 					fn = function()
 						return ":IncRename " .. vim.fn.expand("<cword>")
 					end,
@@ -445,7 +474,7 @@ later(function()
 		monitor = "main",
 		hooks = {
 			post_checkout = function()
-				vim.cmd("TSUpdate")
+				vim.Cmd("TSUpdate")
 			end,
 		},
 		depends = {
@@ -526,21 +555,21 @@ later(function()
 
 		local mappings = {
 			{
-				key = "<leader>pa",
+				key = "<Leader>pa",
 				fn = function()
 					harpoon:list():add()
 				end,
 				desc = "Add to quick menu",
 			},
 			{
-				key = "<leader>pm",
+				key = "<Leader>pm",
 				fn = function()
 					harpoon.ui:toggle_quick_menu(harpoon:list())
 				end,
 				desc = "Toggle quick menu",
 			},
 			{
-				key = "<leader>pn",
+				key = "<Leader>pn",
 				fn = function()
 					harpoon:list():select(1)
 				end,
@@ -559,27 +588,27 @@ end)
 local function setup_keymaps()
 	local keymaps = {
 		-- File navigation
-		{ mode = "n", key = "<leader><leader>", fn = "<cmd>Pick files<cr>", desc = "Pick File" },
-		{ mode = "n", key = "<leader>g", fn = "<cmd>Pick grep_live<cr>", desc = "Pick Grep Live" },
-		{ mode = "n", key = "<leader>o", fn = "<cmd>Pick oldfiles<cr>", desc = "Pick Old Files" },
-		{ mode = "n", key = "<leader>b", fn = "<cmd>Pick buffers<cr>", desc = "Pick Buffers" },
-		{ mode = "n", key = "<leader>h", fn = "<cmd>Pick help<cr>", desc = "Pick Help" },
-		{ mode = "n", key = "<leader>d", fn = "<cmd>Pick diagnostic<cr>", desc = "Pick Diagnostic" },
-		{ mode = "n", key = "<leader>H", fn = "<cmd>Pick hl_groups<cr>", desc = "Highlight" },
+		{ mode = "n", key = "<Leader><Leader>", fn = "<Cmd>Pick files<CR>", desc = "Pick File" },
+		{ mode = "n", key = "<Leader>g", fn = "<Cmd>Pick grep_live<CR>", desc = "Pick Grep Live" },
+		{ mode = "n", key = "<Leader>o", fn = "<Cmd>Pick oldfiles<CR>", desc = "Pick Old Files" },
+		{ mode = "n", key = "<Leader>b", fn = "<Cmd>Pick buffers<CR>", desc = "Pick Buffers" },
+		{ mode = "n", key = "<Leader>h", fn = "<Cmd>Pick help<CR>", desc = "Pick Help" },
+		{ mode = "n", key = "<Leader>d", fn = "<Cmd>Pick diagnostic<CR>", desc = "Pick Diagnostic" },
+		{ mode = "n", key = "<Leader>H", fn = "<Cmd>Pick hl_groups<CR>", desc = "Highlight" },
 
 		-- Utilities
-		{ mode = "n", key = "<leader>e", fn = "<cmd>lua MiniFiles.open()<cr>", desc = "Explorer" },
-		{ mode = "n", key = "<leader>ll", fn = "<cmd>lua MiniTrailspace.trim()<cr>", desc = "Trailing Space" },
+		{ mode = "n", key = "<Leader>e", fn = "<Cmd>lua MiniFiles.open()<CR>", desc = "Explorer" },
+		{ mode = "n", key = "<Leader>ll", fn = "<Cmd>lua MiniTrailspace.trim()<CR>", desc = "Trailing Space" },
 
 		-- Trouble
-		{ mode = "n", key = "<leader>tt", fn = "<cmd>Trouble diagnostics toggle<cr>", desc = "Toggle Diagnostics" },
+		{ mode = "n", key = "<Leader>tb", fn = "<Cmd>Trouble diagnostics toggle<CR>", desc = "Toggle Diagnostics" },
 		{
 			mode = "n",
-			key = "<leader>tT",
-			fn = "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+			key = "<Leader>tT",
+			fn = "<Cmd>Trouble diagnostics toggle filter.buf=0<CR>",
 			desc = "Toggle Buffer Diagnostics",
 		},
-		{ mode = "n", key = "<leader>ts", fn = "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Toggle Symbols" },
+		{ mode = "n", key = "<Leader>ts", fn = "<Cmd>Trouble symbols toggle focus=false<CR>", desc = "Toggle Symbols" },
 
 		-- Folds
 		{
@@ -600,17 +629,18 @@ local function setup_keymaps()
 		},
 
 		-- Undotree
-		{ mode = "n", key = "<leader>u", fn = "<cmd>UndotreeToggle<cr>", desc = "Toggle UndoTree" },
+		{ mode = "n", key = "<Leader>u", fn = "<Cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },
 
 		-- MiniDeps
-		{ mode = "n", key = "<leader>U", fn = "<cmd>DepsUpdate<cr>", desc = "Update Dependencies" },
+		{ mode = "n", key = "<Leader>U", fn = "<Cmd>DepsUpdate<CR>", desc = "Update Dependencies" },
 
 		-- Toggle Term
-		{ mode = "n", key = "<leader><CR>", fn = "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+		{ mode = "n", key = "<Leader>tt", fn = "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
+
 		-- Namu keymaps
 		{
 			mode = "n",
-			key = "<leader>ss",
+			key = "<Leader>ss",
 			fn = function()
 				require("namu.namu_symbols").show()
 			end,
