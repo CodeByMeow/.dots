@@ -34,12 +34,7 @@ local function active_layout()
 		end
 
 		-- Specific mappings
-		map("n", "vub", "vib", opts)
-		map("n", "vuB", "viB", opts)
-		map("n", "vut", "vit", opts)
-		map("n", "vuw", "viw", opts)
 		map("x", "l", ":<C-U>undo<CR>", opts)
-		map("n", "cuw", "ciw", opts)
 	else
 		-- Reset to default layout
 		local modes = { "n", "v", "x" }
