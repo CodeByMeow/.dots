@@ -632,7 +632,17 @@ local function setup_keymaps()
 		{ mode = "n", key = "<Leader>u", fn = "<Cmd>UndotreeToggle<CR>", desc = "Toggle UndoTree" },
 
 		-- MiniDeps
-		{ mode = "n", key = "<Leader>U", fn = "<Cmd>DepsUpdate<CR>", desc = "Update Dependencies" },
+		{
+			mode = "n",
+			key = "<Leader>U",
+			fn = function()
+				vim.notify("Starting update dependencies", vim.log.levels.INFO)
+				vim.defer_fn(function()
+					MiniDeps.update()
+				end, 500)
+			end,
+			desc = "Update Dependencies",
+		},
 
 		-- Toggle Term
 		{ mode = "n", key = "<Leader>tt", fn = "<Cmd>ToggleTerm<CR>", desc = "Toggle Terminal" },
