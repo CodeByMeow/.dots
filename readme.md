@@ -39,7 +39,7 @@ _Note :wrench: I use colemak-dh keyboard layout_
 
 ### Devtool
 
-- `heyperfine`: Benmarking tool.
+- `hyperfine`: Benmarking tool.
 - `translate-shell`: command-line translation.
 - `bun`: JavaScript runtime and toolkit.
 - `@antfu/ni`: Use the right package manager.
