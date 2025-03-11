@@ -66,6 +66,7 @@ later(function()
 		"pick",
 		"surround",
 		"trailspace",
+		"splitjoin",
 	}
 
 	-- Setup all standard plugins
