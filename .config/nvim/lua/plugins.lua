@@ -6,6 +6,7 @@ local mini_path = path_package .. "pack/deps/start/mini.nvim"
 
 -- Basic UI settings
 vim.o.termguicolors = true
+vim.g.border = "single"
 
 -- Auto-install mini.nvim if not present
 if not vim.loop.fs_stat(mini_path) then
@@ -196,7 +197,7 @@ now(function()
 		}
 
 		-- Setup Mason first
-		require("mason").setup({ ui = { border = "single" } })
+		require("mason").setup({ ui = { border = vim.g.border } })
 		require("mason-lspconfig").setup({
 			ensure_installed = server_names,
 			automatic_installation = true,
@@ -219,7 +220,7 @@ now(function()
 					local opts = {
 						focusable = false,
 						close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-						border = "single",
+						border = vim.g.border,
 						source = "always",
 						prefix = " ",
 						scope = "cursor",
@@ -228,9 +229,13 @@ now(function()
 				end,
 			})
 
-			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-				border = "single",
-			})
+			local custom_util_open_floating_preview = vim.lsp.util.open_floating_preview
+			---@diagnostic disable-next-line: duplicate-set-field
+			function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+				opts = opts or {}
+				opts.border = opts.border or vim.g.border
+				return custom_util_open_floating_preview(contents, syntax, opts, ...)
+			end
 
 			-- The blow command will highlight the current variable and its usages in the buffer.
 			if client.server_capabilities.documentHighlightProvider then
@@ -309,7 +314,7 @@ now(function()
 		local lspconfig = require("lspconfig")
 		local servers = require("mason-lspconfig").get_installed_servers()
 
-		require("lspconfig.ui.windows").default_options.border = "single"
+		require("lspconfig.ui.windows").default_options.border = vim.g.border
 
 		for _, server in ipairs(servers) do
 			local opts = {
@@ -484,37 +489,40 @@ later(function()
 		},
 	})
 
-	require("nvim-treesitter.configs").setup({
-		ensure_installed = {
-			"html",
-			"javascript",
-			"typescript",
-			"lua",
-			"css",
-			"php",
-			"jsdoc",
-			"json",
-			"tsx",
-			"markdown",
-			"markdown_inline",
-			"vim",
-			"bash",
-			"prisma",
-			"regex",
-			"java",
-			"xml",
-			"http",
-			"graphql",
-			"vimdoc",
-		},
-		auto_install = true,
-		highlight = { enable = true },
-		rainbow = { enable = true, disable = { "html" } },
-		autotag = { enable = true },
-		incremental_selection = { enable = true },
-		indent = { enable = true, disable = { "yaml" } },
-		ignore_install = { "help" },
-	})
+	local function setup_treesitter()
+		require("nvim-treesitter.configs").setup({
+			ensure_installed = {
+				"html",
+				"javascript",
+				"typescript",
+				"lua",
+				"css",
+				"php",
+				"jsdoc",
+				"json",
+				"tsx",
+				"markdown",
+				"markdown_inline",
+				"vim",
+				"bash",
+				"prisma",
+				"regex",
+				"java",
+				"xml",
+				"http",
+				"graphql",
+				"vimdoc",
+			},
+			auto_install = true,
+			highlight = { enable = true },
+			rainbow = { enable = true, disable = { "html" } },
+			autotag = { enable = true },
+			incremental_selection = { enable = true },
+			indent = { enable = true, disable = { "yaml" } },
+			ignore_install = { "help" },
+		})
+	end
+	setup_treesitter()
 
 	-- LSP end hints
 	add({ source = "chrisgrieser/nvim-lsp-endhints" })
@@ -533,7 +541,7 @@ later(function()
 					max_width = 120,
 					max_height = 30,
 					padding = 2,
-					border = "single",
+					border = vim.g.border,
 					title_pos = "left",
 					footer_pos = "right",
 					show_footer = true,
