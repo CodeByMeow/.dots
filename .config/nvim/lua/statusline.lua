@@ -82,6 +82,26 @@ local function lsp_status()
 	return string.format("%%#MsgArea#%s%%* ", msg)
 end
 
+vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+	local client = vim.lsp.get_client_by_id(ctx.client_id)
+	if not client then
+		return
+	end
+
+	local value = result.value
+	if not value then
+		return
+	end
+
+	lsp_progress.client = client.name
+	lsp_progress.kind = value.kind
+	lsp_progress.title = value.title or ""
+	lsp_progress.percentage = value.percentage
+	lsp_progress.message = value.message
+
+	vim.cmd("redrawstatus")
+end
+
 -- Git info
 local function git_info()
 	local branch = vim.b.gitsigns_head or ""
@@ -110,7 +130,7 @@ local function git_diff()
 		table.insert(parts, string.format("%%#diffRemoved#-%s%%*", removed))
 	end
 
-	return table.concat(parts, " ") -- Chỉ nối các phần có dữ liệu
+	return table.concat(parts, " ")
 end
 
 -- File info
