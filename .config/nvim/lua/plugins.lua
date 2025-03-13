@@ -214,13 +214,24 @@ now(function()
 		local function on_attach(client, bufnr)
 			local keymap_opts = { buffer = true, noremap = true, silent = true }
 
+			vim.diagnostic.config({
+				virtual_text = false,
+				virtual_lines = false,
+				float = {
+					border = vim.g.border,
+				},
+				underline = true,
+				jump = {
+					float = true,
+				},
+			})
+
 			vim.api.nvim_create_autocmd("CursorHold", {
 				buffer = bufnr,
 				callback = function()
 					local opts = {
 						focusable = false,
 						close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-						border = vim.g.border,
 						source = "always",
 						prefix = " ",
 						scope = "cursor",
