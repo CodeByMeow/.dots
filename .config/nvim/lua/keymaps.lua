@@ -110,6 +110,34 @@ map("v", "s", "<Nop>")
 -- Exit terminal mode
 map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
+-- Tmux
+local function move(direction, tmux_flag)
+	local win_count = #vim.api.nvim_list_wins()
+
+	local current_win = vim.api.nvim_get_current_win()
+	vim.cmd("wincmd " .. direction)
+	local new_win = vim.api.nvim_get_current_win()
+
+	if win_count > 1 and new_win ~= current_win then
+		return
+	end
+
+	vim.fn.system("tmux select-pane -" .. tmux_flag)
+end
+
+map("n", "<C-Left>", function()
+	move("h", "L")
+end, opts)
+map("n", "<C-Down>", function()
+	move("j", "D")
+end, opts)
+map("n", "<C-Up>", function()
+	move("k", "U")
+end, opts)
+map("n", "<C-Right>", function()
+	move("l", "R")
+end, opts)
+
 -- Immediate initialization
 active_layout()
 
